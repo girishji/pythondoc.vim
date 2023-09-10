@@ -1,4 +1,4 @@
-*http.txt;*                                   Last change: 2023 Sep 09
+*http.txt;*                                   Last change: 2023 Sep 10
 
 "http" — HTTP modules
 *********************
@@ -24,7 +24,7 @@ HyperText Transfer Protocol:
 The "http" module also defines the following enums that help you work
 with http related code:
 
-class http.HTTPStatus                          *HTTPStatus..http.txt;*
+class http.HTTPStatus                           *HTTPStatus..http.txt*
 
    New in version 3.5.
 
@@ -232,7 +232,7 @@ category:
       >>> HTTPStatus.OK.is_client_error
       False
 <
-class http.HTTPMethod                          *HTTPMethod..http.txt;*
+class http.HTTPMethod                           *HTTPMethod..http.txt*
 
    New in version 3.11.
 

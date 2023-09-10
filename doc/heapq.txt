@@ -1,4 +1,4 @@
-*heapq.txt;*                                  Last change: 2023 Sep 09
+*heapq.txt;*                                  Last change: 2023 Sep 10
 
 "heapq" — Heap queue algorithm
 ******************************
@@ -35,28 +35,28 @@ a populated list into a heap via function "heapify()".
 
 The following functions are provided:
 
-heapq.heappush(heap, item)                    *heappush()..heapq.txt;*
+heapq.heappush(heap, item)                     *heappush()..heapq.txt*
 
    Push the value _item_ onto the _heap_, maintaining the heap
    invariant.
 
-heapq.heappop(heap)                            *heappop()..heapq.txt;*
+heapq.heappop(heap)                             *heappop()..heapq.txt*
 
    Pop and return the smallest item from the _heap_, maintaining the
    heap invariant.  If the heap is empty, "IndexError" is raised.  To
    access the smallest item without popping it, use "heap[0]".
 
-heapq.heappushpop(heap, item)              *heappushpop()..heapq.txt;*
+heapq.heappushpop(heap, item)               *heappushpop()..heapq.txt*
 
    Push _item_ on the heap, then pop and return the smallest item from
    the _heap_.  The combined action runs more efficiently than
    "heappush()" followed by a separate call to "heappop()".
 
-heapq.heapify(x)                               *heapify()..heapq.txt;*
+heapq.heapify(x)                                *heapify()..heapq.txt*
 
    Transform list _x_ into a heap, in-place, in linear time.
 
-heapq.heapreplace(heap, item)              *heapreplace()..heapq.txt;*
+heapq.heapreplace(heap, item)               *heapreplace()..heapq.txt*
 
    Pop and return the smallest item from the _heap_, and also push the
    new _item_. The heap size doesn’t change. If the heap is empty,
@@ -74,7 +74,7 @@ heapq.heapreplace(heap, item)              *heapreplace()..heapq.txt;*
 
 The module also offers three general purpose functions based on heaps.
 
-                                                 *merge()..heapq.txt;*
+                                                  *merge()..heapq.txt*
 heapq.merge(*iterables, key=None, reverse=False)
 
    Merge multiple sorted inputs into a single sorted output (for
@@ -102,7 +102,7 @@ heapq.merge(*iterables, key=None, reverse=False)
    Changed in version 3.5: Added the optional _key_ and _reverse_
    parameters.
 
-heapq.nlargest(n, iterable, key=None)         *nlargest()..heapq.txt;*
+heapq.nlargest(n, iterable, key=None)          *nlargest()..heapq.txt*
 
    Return a list with the _n_ largest elements from the dataset
    defined by _iterable_.  _key_, if provided, specifies a function of
@@ -110,7 +110,7 @@ heapq.nlargest(n, iterable, key=None)         *nlargest()..heapq.txt;*
    element in _iterable_ (for example, "key=str.lower").  Equivalent
    to:  "sorted(iterable, key=key, reverse=True)[:n]".
 
-heapq.nsmallest(n, iterable, key=None)       *nsmallest()..heapq.txt;*
+heapq.nsmallest(n, iterable, key=None)        *nsmallest()..heapq.txt*
 
    Return a list with the _n_ smallest elements from the dataset
    defined by _iterable_.  _key_, if provided, specifies a function of

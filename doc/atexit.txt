@@ -1,4 +1,4 @@
-*atexit.txt;*                                 Last change: 2023 Sep 09
+*atexit.txt;*                                 Last change: 2023 Sep 10
 
 "atexit" — Exit handlers
 ************************
@@ -23,7 +23,7 @@ Changed in version 3.7: When used with C-API subinterpreters,
 registered functions are local to the interpreter they were registered
 in.
 
-atexit.register(func, *args, **kwargs)       *register()..atexit.txt;*
+atexit.register(func, *args, **kwargs)        *register()..atexit.txt*
 
    Register _func_ as a function to be executed at termination.  Any
    optional arguments that are to be passed to _func_ must be passed
@@ -56,7 +56,7 @@ atexit.register(func, *args, **kwargs)       *register()..atexit.txt;*
    "os.fork()" a new process in a registered function now leads to
    "RuntimeError".
 
-atexit.unregister(func)                    *unregister()..atexit.txt;*
+atexit.unregister(func)                     *unregister()..atexit.txt*
 
    Remove _func_ from the list of functions to be run at interpreter
    shutdown. "unregister()" silently does nothing if _func_ was not

@@ -1,4 +1,4 @@
-*tkintercolorchooser.txt;*                    Last change: 2023 Sep 09
+*tkinter.colorchooser.txt;*                   Last change: 2023 Sep 10
 
 "tkinter.colorchooser" — Color choosing dialog
 **********************************************
@@ -12,10 +12,10 @@ interface to the native color picker dialog. "Chooser" implements a
 modal color choosing dialog window. The "Chooser" class inherits from
 the "Dialog" class.
 
-                                   *Chooser..tkintercolorchooser.txt;*
+                                   *Chooser..tkinter.colorchooser.txt*
 class tkinter.colorchooser.Chooser(master=None, **options)
 
-                                *askcolor()..tkintercolorchooser.txt;*
+                                *askcolor()..tkinter.colorchooser.txt*
 tkinter.colorchooser.askcolor(color=None, **options)
 
    Create a color choosing dialog. A call to this method will show the

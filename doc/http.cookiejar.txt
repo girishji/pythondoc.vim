@@ -1,4 +1,4 @@
-*httpcookiejar.txt;*                          Last change: 2023 Sep 09
+*http.cookiejar.txt;*                         Last change: 2023 Sep 10
 
 "http.cookiejar" — Cookie handling for HTTP clients
 ***************************************************
@@ -34,7 +34,7 @@ Note:
 
 The module defines the following exception:
 
-exception http.cookiejar.LoadError     *LoadError..httpcookiejar.txt;*
+exception http.cookiejar.LoadError     *LoadError..http.cookiejar.txt*
 
    Instances of "FileCookieJar" raise this exception on failure to
    load cookies from a file.  "LoadError" is a subclass of "OSError".
@@ -44,7 +44,7 @@ exception http.cookiejar.LoadError     *LoadError..httpcookiejar.txt;*
 
 The following classes are provided:
 
-                                       *CookieJar..httpcookiejar.txt;*
+                                       *CookieJar..http.cookiejar.txt*
 class http.cookiejar.CookieJar(policy=None)
 
    _policy_ is an object implementing the "CookiePolicy" interface.
@@ -55,7 +55,7 @@ class http.cookiejar.CookieJar(policy=None)
    Subclasses are also responsible for storing and retrieving cookies
    from a file or database.
 
-                                   *FileCookieJar..httpcookiejar.txt;*
+                                   *FileCookieJar..http.cookiejar.txt*
 class http.cookiejar.FileCookieJar(filename=None, delayload=None, policy=None)
 
    _policy_ is an object implementing the "CookiePolicy" interface.
@@ -74,12 +74,12 @@ class http.cookiejar.FileCookieJar(filename=None, delayload=None, policy=None)
    Changed in version 3.8: The filename parameter supports a _path-
    like object_.
 
-class http.cookiejar.CookiePolicy   *CookiePolicy..httpcookiejar.txt;*
+class http.cookiejar.CookiePolicy   *CookiePolicy..http.cookiejar.txt*
 
    This class is responsible for deciding whether each cookie should
    be accepted from / returned to the server.
 
-                             *DefaultCookiePolicy..httpcookiejar.txt;*
+                             *DefaultCookiePolicy..http.cookiejar.txt*
 class http.cookiejar.DefaultCookiePolicy(blocked_domains=None, allowed_domains=None, netscape=True, rfc2965=False, rfc2109_as_netscape=None, hide_cookie2=False, strict_domain=False, strict_rfc2965_unverifiable=True, strict_ns_unverifiable=False, strict_ns_domain=DefaultCookiePolicy.DomainLiberal, strict_ns_set_initial_dollar=False, strict_ns_set_path=False, secure_protocols=('https', 'wss'))
 
    Constructor arguments should be passed as keyword arguments only.
@@ -103,7 +103,7 @@ class http.cookiejar.DefaultCookiePolicy(blocked_domains=None, allowed_domains=N
    "DefaultCookiePolicy" also provides some parameters to allow some
    fine-tuning of policy.
 
-class http.cookiejar.Cookie               *Cookie..httpcookiejar.txt;*
+class http.cookiejar.Cookie               *Cookie..http.cookiejar.txt*
 
    This class represents Netscape, **RFC 2109** and **RFC 2965**
    cookies.  It is not expected that users of "http.cookiejar"
@@ -148,7 +148,7 @@ contained "Cookie" objects.
 
 "CookieJar" has the following methods:
 
-                   *CookieJar.add_cookie_header()..httpcookiejar.txt;*
+                   *CookieJar.add_cookie_header()..http.cookiejar.txt*
 CookieJar.add_cookie_header(request)
 
    Add correct _Cookie_ header to _request_.
@@ -167,7 +167,7 @@ CookieJar.add_cookie_header(request)
    attribute. Dependency on a deprecated method
    "get_origin_req_host()" has been removed.
 
-                     *CookieJar.extract_cookies()..httpcookiejar.txt;*
+                     *CookieJar.extract_cookies()..http.cookiejar.txt*
 CookieJar.extract_cookies(response, request)
 
    Extract cookies from HTTP _response_ and store them in the
@@ -193,12 +193,12 @@ CookieJar.extract_cookies(response, request)
    attribute. Dependency on a deprecated method
    "get_origin_req_host()" has been removed.
 
-                          *CookieJar.set_policy()..httpcookiejar.txt;*
+                          *CookieJar.set_policy()..http.cookiejar.txt*
 CookieJar.set_policy(policy)
 
    Set the "CookiePolicy" instance to be used.
 
-                        *CookieJar.make_cookies()..httpcookiejar.txt;*
+                        *CookieJar.make_cookies()..http.cookiejar.txt*
 CookieJar.make_cookies(response, request)
 
    Return sequence of "Cookie" objects extracted from _response_
@@ -207,18 +207,18 @@ CookieJar.make_cookies(response, request)
    See the documentation for "extract_cookies()" for the interfaces
    required of the _response_ and _request_ arguments.
 
-                    *CookieJar.set_cookie_if_ok()..httpcookiejar.txt;*
+                    *CookieJar.set_cookie_if_ok()..http.cookiejar.txt*
 CookieJar.set_cookie_if_ok(cookie, request)
 
    Set a "Cookie" if policy says it’s OK to do so.
 
-                          *CookieJar.set_cookie()..httpcookiejar.txt;*
+                          *CookieJar.set_cookie()..http.cookiejar.txt*
 CookieJar.set_cookie(cookie)
 
    Set a "Cookie", without checking with policy to see whether or not
    it should be set.
 
-                               *CookieJar.clear()..httpcookiejar.txt;*
+                               *CookieJar.clear()..http.cookiejar.txt*
 CookieJar.clear([domain[, path[, name]]])
 
    Clear some cookies.
@@ -231,7 +231,7 @@ CookieJar.clear([domain[, path[, name]]])
 
    Raises "KeyError" if no matching cookie exists.
 
-               *CookieJar.clear_session_cookies()..httpcookiejar.txt;*
+               *CookieJar.clear_session_cookies()..http.cookiejar.txt*
 CookieJar.clear_session_cookies()
 
    Discard all session cookies.
@@ -248,7 +248,7 @@ CookieJar.clear_session_cookies()
 
 "FileCookieJar" implements the following additional methods:
 
-                            *FileCookieJar.save()..httpcookiejar.txt;*
+                            *FileCookieJar.save()..http.cookiejar.txt*
 FileCookieJar.save(filename=None, ignore_discard=False, ignore_expires=False)
 
    Save cookies to a file.
@@ -268,7 +268,7 @@ FileCookieJar.save(filename=None, ignore_discard=False, ignore_expires=False)
    cookies it contains.  Saved cookies can be restored later using the
    "load()" or "revert()" methods.
 
-                            *FileCookieJar.load()..httpcookiejar.txt;*
+                            *FileCookieJar.load()..http.cookiejar.txt*
 FileCookieJar.load(filename=None, ignore_discard=False, ignore_expires=False)
 
    Load cookies from a file.
@@ -284,7 +284,7 @@ FileCookieJar.load(filename=None, ignore_discard=False, ignore_expires=False)
    Changed in version 3.3: "IOError" used to be raised, it is now an
    alias of "OSError".
 
-                          *FileCookieJar.revert()..httpcookiejar.txt;*
+                          *FileCookieJar.revert()..http.cookiejar.txt*
 FileCookieJar.revert(filename=None, ignore_discard=False, ignore_expires=False)
 
    Clear all cookies and reload cookies from a saved file.
@@ -294,12 +294,12 @@ FileCookieJar.revert(filename=None, ignore_discard=False, ignore_expires=False)
 
 "FileCookieJar" instances have the following public attributes:
 
-FileCookieJar.filename    *FileCookieJar.filename..httpcookiejar.txt;*
+FileCookieJar.filename    *FileCookieJar.filename..http.cookiejar.txt*
 
    Filename of default file in which to keep cookies.  This attribute
    may be assigned to.
 
-                         *FileCookieJar.delayload..httpcookiejar.txt;*
+                         *FileCookieJar.delayload..http.cookiejar.txt*
 FileCookieJar.delayload
 
    If true, load cookies lazily from disk.  This attribute should not
@@ -316,7 +316,7 @@ FileCookieJar subclasses and co-operation with web browsers
 The following "CookieJar" subclasses are provided for reading and
 writing.
 
-                                *MozillaCookieJar..httpcookiejar.txt;*
+                                *MozillaCookieJar..http.cookiejar.txt*
 class http.cookiejar.MozillaCookieJar(filename=None, delayload=None, policy=None)
 
    A "FileCookieJar" that can load from and save cookies to disk in
@@ -338,7 +338,7 @@ class http.cookiejar.MozillaCookieJar(filename=None, delayload=None, policy=None
    Also note that cookies saved while Mozilla is running will get
    clobbered by Mozilla.
 
-                                    *LWPCookieJar..httpcookiejar.txt;*
+                                    *LWPCookieJar..http.cookiejar.txt*
 class http.cookiejar.LWPCookieJar(filename=None, delayload=None, policy=None)
 
    A "FileCookieJar" that can load from and save cookies to disk in
@@ -356,7 +356,7 @@ CookiePolicy Objects
 Objects implementing the "CookiePolicy" interface have the following
 methods:
 
-                           *CookiePolicy.set_ok()..httpcookiejar.txt;*
+                           *CookiePolicy.set_ok()..http.cookiejar.txt*
 CookiePolicy.set_ok(cookie, request)
 
    Return boolean value indicating whether cookie should be accepted
@@ -366,7 +366,7 @@ CookiePolicy.set_ok(cookie, request)
    implementing the interface defined by the documentation for
    "CookieJar.extract_cookies()".
 
-                        *CookiePolicy.return_ok()..httpcookiejar.txt;*
+                        *CookiePolicy.return_ok()..http.cookiejar.txt*
 CookiePolicy.return_ok(cookie, request)
 
    Return boolean value indicating whether cookie should be returned
@@ -376,7 +376,7 @@ CookiePolicy.return_ok(cookie, request)
    implementing the interface defined by the documentation for
    "CookieJar.add_cookie_header()".
 
-                 *CookiePolicy.domain_return_ok()..httpcookiejar.txt;*
+                 *CookiePolicy.domain_return_ok()..http.cookiejar.txt*
 CookiePolicy.domain_return_ok(domain, request)
 
    Return "False" if cookies should not be returned, given cookie
@@ -402,7 +402,7 @@ CookiePolicy.domain_return_ok(domain, request)
 
    The _request_ argument is as documented for "return_ok()".
 
-                   *CookiePolicy.path_return_ok()..httpcookiejar.txt;*
+                   *CookiePolicy.path_return_ok()..http.cookiejar.txt*
 CookiePolicy.path_return_ok(path, request)
 
    Return "False" if cookies should not be returned, given cookie
@@ -415,15 +415,15 @@ In addition to implementing the methods above, implementations of the
 indicating which protocols should be used, and how.  All of these
 attributes may be assigned to.
 
-CookiePolicy.netscape      *CookiePolicy.netscape..httpcookiejar.txt;*
+CookiePolicy.netscape      *CookiePolicy.netscape..http.cookiejar.txt*
 
    Implement Netscape protocol.
 
-CookiePolicy.rfc2965        *CookiePolicy.rfc2965..httpcookiejar.txt;*
+CookiePolicy.rfc2965        *CookiePolicy.rfc2965..http.cookiejar.txt*
 
    Implement **RFC 2965** protocol.
 
-                       *CookiePolicy.hide_cookie2..httpcookiejar.txt;*
+                       *CookiePolicy.hide_cookie2..http.cookiejar.txt*
 CookiePolicy.hide_cookie2
 
    Don’t add _Cookie2_ header to requests (the presence of this header
@@ -484,33 +484,33 @@ exactly.  For example, if blocked_domains contains ""192.168.1.2"" and
 
 "DefaultCookiePolicy" implements the following additional methods:
 
-           *DefaultCookiePolicy.blocked_domains()..httpcookiejar.txt;*
+           *DefaultCookiePolicy.blocked_domains()..http.cookiejar.txt*
 DefaultCookiePolicy.blocked_domains()
 
    Return the sequence of blocked domains (as a tuple).
 
-       *DefaultCookiePolicy.set_blocked_domains()..httpcookiejar.txt;*
+       *DefaultCookiePolicy.set_blocked_domains()..http.cookiejar.txt*
 DefaultCookiePolicy.set_blocked_domains(blocked_domains)
 
    Set the sequence of blocked domains.
 
-                *DefaultCookiePolicy.is_blocked()..httpcookiejar.txt;*
+                *DefaultCookiePolicy.is_blocked()..http.cookiejar.txt*
 DefaultCookiePolicy.is_blocked(domain)
 
    Return "True" if _domain_ is on the blocklist for setting or
    receiving cookies.
 
-           *DefaultCookiePolicy.allowed_domains()..httpcookiejar.txt;*
+           *DefaultCookiePolicy.allowed_domains()..http.cookiejar.txt*
 DefaultCookiePolicy.allowed_domains()
 
    Return "None", or the sequence of allowed domains (as a tuple).
 
-       *DefaultCookiePolicy.set_allowed_domains()..httpcookiejar.txt;*
+       *DefaultCookiePolicy.set_allowed_domains()..http.cookiejar.txt*
 DefaultCookiePolicy.set_allowed_domains(allowed_domains)
 
    Set the sequence of allowed domains, or "None".
 
-            *DefaultCookiePolicy.is_not_allowed()..httpcookiejar.txt;*
+            *DefaultCookiePolicy.is_not_allowed()..http.cookiejar.txt*
 DefaultCookiePolicy.is_not_allowed(domain)
 
    Return "True" if _domain_ is not on the allowlist for setting or
@@ -520,7 +520,7 @@ DefaultCookiePolicy.is_not_allowed(domain)
 are all initialised from the constructor arguments of the same name,
 and which may all be assigned to.
 
-         *DefaultCookiePolicy.rfc2109_as_netscape..httpcookiejar.txt;*
+         *DefaultCookiePolicy.rfc2109_as_netscape..http.cookiejar.txt*
 DefaultCookiePolicy.rfc2109_as_netscape
 
    If true, request that the "CookieJar" instance downgrade **RFC
@@ -533,7 +533,7 @@ DefaultCookiePolicy.rfc2109_as_netscape
 
 General strictness switches:
 
-               *DefaultCookiePolicy.strict_domain..httpcookiejar.txt;*
+               *DefaultCookiePolicy.strict_domain..http.cookiejar.txt*
 DefaultCookiePolicy.strict_domain
 
    Don’t allow sites to set two-component domains with country-code
@@ -542,7 +542,7 @@ DefaultCookiePolicy.strict_domain
 
 **RFC 2965** protocol strictness switches:
 
- *DefaultCookiePolicy.strict_rfc2965_unverifiable..httpcookiejar.txt;*
+ *DefaultCookiePolicy.strict_rfc2965_unverifiable..http.cookiejar.txt*
 DefaultCookiePolicy.strict_rfc2965_unverifiable
 
    Follow **RFC 2965** rules on unverifiable transactions (usually, an
@@ -552,25 +552,25 @@ DefaultCookiePolicy.strict_rfc2965_unverifiable
 
 Netscape protocol strictness switches:
 
-      *DefaultCookiePolicy.strict_ns_unverifiable..httpcookiejar.txt;*
+      *DefaultCookiePolicy.strict_ns_unverifiable..http.cookiejar.txt*
 DefaultCookiePolicy.strict_ns_unverifiable
 
    Apply **RFC 2965** rules on unverifiable transactions even to
    Netscape cookies.
 
-            *DefaultCookiePolicy.strict_ns_domain..httpcookiejar.txt;*
+            *DefaultCookiePolicy.strict_ns_domain..http.cookiejar.txt*
 DefaultCookiePolicy.strict_ns_domain
 
    Flags indicating how strict to be with domain-matching rules for
    Netscape cookies.  See below for acceptable values.
 
-*DefaultCookiePolicy.strict_ns_set_initial_dollar..httpcookiejar.txt;*
+*DefaultCookiePolicy.strict_ns_set_initial_dollar..http.cookiejar.txt*
 DefaultCookiePolicy.strict_ns_set_initial_dollar
 
    Ignore cookies in Set-Cookie: headers that have names starting with
    "'$'".
 
-          *DefaultCookiePolicy.strict_ns_set_path..httpcookiejar.txt;*
+          *DefaultCookiePolicy.strict_ns_set_path..http.cookiejar.txt*
 DefaultCookiePolicy.strict_ns_set_path
 
    Don’t allow setting cookies whose path doesn’t path-match request
@@ -580,14 +580,14 @@ DefaultCookiePolicy.strict_ns_set_path
 by or-ing together (for example,
 "DomainStrictNoDots|DomainStrictNonDomain" means both flags are set).
 
-          *DefaultCookiePolicy.DomainStrictNoDots..httpcookiejar.txt;*
+          *DefaultCookiePolicy.DomainStrictNoDots..http.cookiejar.txt*
 DefaultCookiePolicy.DomainStrictNoDots
 
    When setting cookies, the ‘host prefix’ must not contain a dot (eg.
    "www.foo.bar.com" can’t set a cookie for ".bar.com", because
    "www.foo" contains a dot).
 
-       *DefaultCookiePolicy.DomainStrictNonDomain..httpcookiejar.txt;*
+       *DefaultCookiePolicy.DomainStrictNonDomain..http.cookiejar.txt*
 DefaultCookiePolicy.DomainStrictNonDomain
 
    Cookies that did not explicitly specify a "domain" cookie-attribute
@@ -595,7 +595,7 @@ DefaultCookiePolicy.DomainStrictNonDomain
    cookie (eg. "spam.example.com" won’t be returned cookies from
    "example.com" that had no "domain" cookie-attribute).
 
-          *DefaultCookiePolicy.DomainRFC2965Match..httpcookiejar.txt;*
+          *DefaultCookiePolicy.DomainRFC2965Match..http.cookiejar.txt*
 DefaultCookiePolicy.DomainRFC2965Match
 
    When setting cookies, require a full **RFC 2965** domain-match.
@@ -603,13 +603,13 @@ DefaultCookiePolicy.DomainRFC2965Match
 The following attributes are provided for convenience, and are the
 most useful combinations of the above flags:
 
-               *DefaultCookiePolicy.DomainLiberal..httpcookiejar.txt;*
+               *DefaultCookiePolicy.DomainLiberal..http.cookiejar.txt*
 DefaultCookiePolicy.DomainLiberal
 
    Equivalent to 0 (ie. all of the above Netscape domain strictness
    flags switched off).
 
-                *DefaultCookiePolicy.DomainStrict..httpcookiejar.txt;*
+                *DefaultCookiePolicy.DomainStrict..http.cookiejar.txt*
 DefaultCookiePolicy.DomainStrict
 
    Equivalent to "DomainStrictNoDots|DomainStrictNonDomain".
@@ -631,54 +631,54 @@ rare circumstances in a "CookiePolicy" method.  The class does not
 enforce internal consistency, so you should know what you’re doing if
 you do that.
 
-Cookie.version                    *Cookie.version..httpcookiejar.txt;*
+Cookie.version                    *Cookie.version..http.cookiejar.txt*
 
    Integer or "None".  Netscape cookies have "version" 0. **RFC 2965**
    and **RFC 2109** cookies have a "version" cookie-attribute of 1.
    However, note that "http.cookiejar" may ‘downgrade’ RFC 2109
    cookies to Netscape cookies, in which case "version" is 0.
 
-Cookie.name                          *Cookie.name..httpcookiejar.txt;*
+Cookie.name                          *Cookie.name..http.cookiejar.txt*
 
    Cookie name (a string).
 
-Cookie.value                        *Cookie.value..httpcookiejar.txt;*
+Cookie.value                        *Cookie.value..http.cookiejar.txt*
 
    Cookie value (a string), or "None".
 
-Cookie.port                          *Cookie.port..httpcookiejar.txt;*
+Cookie.port                          *Cookie.port..http.cookiejar.txt*
 
    String representing a port or a set of ports (eg. ‘80’, or
    ‘80,8080’), or "None".
 
-Cookie.path                          *Cookie.path..httpcookiejar.txt;*
+Cookie.path                          *Cookie.path..http.cookiejar.txt*
 
    Cookie path (a string, eg. "'/acme/rocket_launchers'").
 
-Cookie.secure                      *Cookie.secure..httpcookiejar.txt;*
+Cookie.secure                      *Cookie.secure..http.cookiejar.txt*
 
    "True" if cookie should only be returned over a secure connection.
 
-Cookie.expires                    *Cookie.expires..httpcookiejar.txt;*
+Cookie.expires                    *Cookie.expires..http.cookiejar.txt*
 
    Integer expiry date in seconds since epoch, or "None".  See also
    the "is_expired()" method.
 
-Cookie.discard                    *Cookie.discard..httpcookiejar.txt;*
+Cookie.discard                    *Cookie.discard..http.cookiejar.txt*
 
    "True" if this is a session cookie.
 
-Cookie.comment                    *Cookie.comment..httpcookiejar.txt;*
+Cookie.comment                    *Cookie.comment..http.cookiejar.txt*
 
    String comment from the server explaining the function of this
    cookie, or "None".
 
-Cookie.comment_url            *Cookie.comment_url..httpcookiejar.txt;*
+Cookie.comment_url            *Cookie.comment_url..http.cookiejar.txt*
 
    URL linking to a comment from the server explaining the function of
    this cookie, or "None".
 
-Cookie.rfc2109                    *Cookie.rfc2109..httpcookiejar.txt;*
+Cookie.rfc2109                    *Cookie.rfc2109..http.cookiejar.txt*
 
    "True" if this cookie was received as an **RFC 2109** cookie (ie.
    the cookie arrived in a _Set-Cookie_ header, and the value of the
@@ -686,17 +686,17 @@ Cookie.rfc2109                    *Cookie.rfc2109..httpcookiejar.txt;*
    provided because "http.cookiejar" may ‘downgrade’ RFC 2109 cookies
    to Netscape cookies, in which case "version" is 0.
 
-Cookie.port_specified      *Cookie.port_specified..httpcookiejar.txt;*
+Cookie.port_specified      *Cookie.port_specified..http.cookiejar.txt*
 
    "True" if a port or set of ports was explicitly specified by the
    server (in the _Set-Cookie_ / _Set-Cookie2_ header).
 
-                         *Cookie.domain_specified..httpcookiejar.txt;*
+                         *Cookie.domain_specified..http.cookiejar.txt*
 Cookie.domain_specified
 
    "True" if a domain was explicitly specified by the server.
 
-                       *Cookie.domain_initial_dot..httpcookiejar.txt;*
+                       *Cookie.domain_initial_dot..http.cookiejar.txt*
 Cookie.domain_initial_dot
 
    "True" if the domain explicitly specified by the server began with
@@ -705,25 +705,25 @@ Cookie.domain_initial_dot
 Cookies may have additional non-standard cookie-attributes.  These may
 be accessed using the following methods:
 
-                   *Cookie.has_nonstandard_attr()..httpcookiejar.txt;*
+                   *Cookie.has_nonstandard_attr()..http.cookiejar.txt*
 Cookie.has_nonstandard_attr(name)
 
    Return "True" if cookie has the named cookie-attribute.
 
-                   *Cookie.get_nonstandard_attr()..httpcookiejar.txt;*
+                   *Cookie.get_nonstandard_attr()..http.cookiejar.txt*
 Cookie.get_nonstandard_attr(name, default=None)
 
    If cookie has the named cookie-attribute, return its value.
    Otherwise, return _default_.
 
-                   *Cookie.set_nonstandard_attr()..httpcookiejar.txt;*
+                   *Cookie.set_nonstandard_attr()..http.cookiejar.txt*
 Cookie.set_nonstandard_attr(name, value)
 
    Set the value of the named cookie-attribute.
 
 The "Cookie" class also defines the following method:
 
-                             *Cookie.is_expired()..httpcookiejar.txt;*
+                             *Cookie.is_expired()..http.cookiejar.txt*
 Cookie.is_expired(now=None)
 
    "True" if cookie has passed the time at which the server requested

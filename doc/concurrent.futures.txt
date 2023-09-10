@@ -1,4 +1,4 @@
-*concurrentfutures.txt;*                      Last change: 2023 Sep 09
+*concurrent.futures.txt;*                     Last change: 2023 Sep 10
 
 "concurrent.futures" — Launching parallel tasks
 ***********************************************
@@ -28,7 +28,7 @@ more information.
 Executor Objects
 ================
 
-class concurrent.futures.Executor   *Executor..concurrentfutures.txt;*
+class concurrent.futures.Executor   *Executor..concurrent.futures.txt*
 
    An abstract class that provides methods to execute calls
    asynchronously.  It should not be used directly, but through its
@@ -45,7 +45,7 @@ class concurrent.futures.Executor   *Executor..concurrentfutures.txt;*
                 print(future.result())
 <
 
-                              *Executor.map()..concurrentfutures.txt;*
+                              *Executor.map()..concurrent.futures.txt*
       map(func, *iterables, timeout=None, chunksize=1)
 
          Similar to "map(func, *iterables)" except:
@@ -76,7 +76,7 @@ class concurrent.futures.Executor   *Executor..concurrentfutures.txt;*
 
          Changed in version 3.5: Added the _chunksize_ argument.
 
-                         *Executor.shutdown()..concurrentfutures.txt;*
+                         *Executor.shutdown()..concurrent.futures.txt*
       shutdown(wait=True, *, cancel_futures=False)
 
          Signal the executor that it should free any resources that it
@@ -155,7 +155,7 @@ And:
    executor.submit(wait_on_future)
 <
 
-                          *ThreadPoolExecutor..concurrentfutures.txt;*
+                          *ThreadPoolExecutor..concurrent.futures.txt*
 class concurrent.futures.ThreadPoolExecutor(max_workers=None, thread_name_prefix='', initializer=None, initargs=())
 
    An "Executor" subclass that uses a pool of at most _max_workers_
@@ -244,7 +244,7 @@ interpreter.
 Calling "Executor" or "Future" methods from a callable submitted to a
 "ProcessPoolExecutor" will result in deadlock.
 
-                         *ProcessPoolExecutor..concurrentfutures.txt;*
+                         *ProcessPoolExecutor..concurrent.futures.txt*
 class concurrent.futures.ProcessPoolExecutor(max_workers=None, mp_context=None, initializer=None, initargs=(), max_tasks_per_child=None)
 
    An "Executor" subclass that executes calls asynchronously using a
@@ -341,34 +341,34 @@ Future Objects
 The "Future" class encapsulates the asynchronous execution of a
 callable. "Future" instances are created by "Executor.submit()".
 
-class concurrent.futures.Future       *Future..concurrentfutures.txt;*
+class concurrent.futures.Future       *Future..concurrent.futures.txt*
 
    Encapsulates the asynchronous execution of a callable.  "Future"
    instances are created by "Executor.submit()" and should not be
    created directly except for testing.
 
-      cancel()                     *Future.cancel()..concurrentfutures.txt;*
+      cancel()                     *Future.cancel()..concurrent.futures.txt*
 
          Attempt to cancel the call.  If the call is currently being
          executed or finished running and cannot be cancelled then the
          method will return "False", otherwise the call will be
          cancelled and the method will return "True".
 
-      cancelled()               *Future.cancelled()..concurrentfutures.txt;*
+      cancelled()               *Future.cancelled()..concurrent.futures.txt*
 
          Return "True" if the call was successfully cancelled.
 
-      running()                   *Future.running()..concurrentfutures.txt;*
+      running()                   *Future.running()..concurrent.futures.txt*
 
          Return "True" if the call is currently being executed and
          cannot be cancelled.
 
-      done()                         *Future.done()..concurrentfutures.txt;*
+      done()                         *Future.done()..concurrent.futures.txt*
 
          Return "True" if the call was successfully cancelled or
          finished running.
 
-      result(timeout=None)         *Future.result()..concurrentfutures.txt;*
+      result(timeout=None)         *Future.result()..concurrent.futures.txt*
 
          Return the value returned by the call. If the call hasn’t yet
          completed then this method will wait up to _timeout_ seconds.
@@ -383,7 +383,7 @@ class concurrent.futures.Future       *Future..concurrentfutures.txt;*
          If the call raised an exception, this method will raise the
          same exception.
 
-      exception(timeout=None)   *Future.exception()..concurrentfutures.txt;*
+      exception(timeout=None)   *Future.exception()..concurrent.futures.txt*
 
          Return the exception raised by the call.  If the call hasn’t
          yet completed then this method will wait up to _timeout_
@@ -397,7 +397,7 @@ class concurrent.futures.Future       *Future..concurrentfutures.txt;*
 
          If the call completed without raising, "None" is returned.
 
-                  *Future.add_done_callback()..concurrentfutures.txt;*
+                  *Future.add_done_callback()..concurrent.futures.txt*
       add_done_callback(fn)
 
          Attaches the callable _fn_ to the future.  _fn_ will be
@@ -435,7 +435,7 @@ class concurrent.futures.Future       *Future..concurrentfutures.txt;*
          after "Future.set_result()" or "Future.set_exception()" have
          been called.
 
-      set_result(result)       *Future.set_result()..concurrentfutures.txt;*
+      set_result(result)       *Future.set_result()..concurrent.futures.txt*
 
          Sets the result of the work associated with the "Future" to
          _result_.
@@ -447,7 +447,7 @@ class concurrent.futures.Future       *Future..concurrentfutures.txt;*
          "concurrent.futures.InvalidStateError" if the "Future" is
          already done.
 
-                      *Future.set_exception()..concurrentfutures.txt;*
+                      *Future.set_exception()..concurrent.futures.txt*
       set_exception(exception)
 
          Sets the result of the work associated with the "Future" to
@@ -464,7 +464,7 @@ class concurrent.futures.Future       *Future..concurrentfutures.txt;*
 Module Functions
 ================
 
-                                      *wait()..concurrentfutures.txt;*
+                                      *wait()..concurrent.futures.txt*
 concurrent.futures.wait(fs, timeout=None, return_when=ALL_COMPLETED)
 
    Wait for the "Future" instances (possibly created by different
@@ -498,7 +498,7 @@ concurrent.futures.wait(fs, timeout=None, return_when=ALL_COMPLETED)
    |                               | futures finish or are cancelled.         |
    +-------------------------------+------------------------------------------+
 
-                              *as_completed()..concurrentfutures.txt;*
+                              *as_completed()..concurrent.futures.txt*
 concurrent.futures.as_completed(fs, timeout=None)
 
    Returns an iterator over the "Future" instances (possibly created
@@ -522,12 +522,12 @@ See also:
 Exception classes
 =================
 
-                              *CancelledError..concurrentfutures.txt;*
+                              *CancelledError..concurrent.futures.txt*
 exception concurrent.futures.CancelledError
 
    Raised when a future is cancelled.
 
-                                *TimeoutError..concurrentfutures.txt;*
+                                *TimeoutError..concurrent.futures.txt*
 exception concurrent.futures.TimeoutError
 
    A deprecated alias of "TimeoutError", raised when a future
@@ -536,7 +536,7 @@ exception concurrent.futures.TimeoutError
    Changed in version 3.11: This class was made an alias of
    "TimeoutError".
 
-                              *BrokenExecutor..concurrentfutures.txt;*
+                              *BrokenExecutor..concurrent.futures.txt*
 exception concurrent.futures.BrokenExecutor
 
    Derived from "RuntimeError", this exception class is raised when an
@@ -545,7 +545,7 @@ exception concurrent.futures.BrokenExecutor
 
    New in version 3.7.
 
-                           *InvalidStateError..concurrentfutures.txt;*
+                           *InvalidStateError..concurrent.futures.txt*
 exception concurrent.futures.InvalidStateError
 
    Raised when an operation is performed on a future that is not
@@ -553,7 +553,7 @@ exception concurrent.futures.InvalidStateError
 
    New in version 3.8.
 
-                            *BrokenThreadPool..concurrentfutures.txt;*
+                            *BrokenThreadPool..concurrent.futures.txt*
 exception concurrent.futures.thread.BrokenThreadPool
 
    Derived from "BrokenExecutor", this exception class is raised when
@@ -562,7 +562,7 @@ exception concurrent.futures.thread.BrokenThreadPool
 
    New in version 3.7.
 
-                           *BrokenProcessPool..concurrentfutures.txt;*
+                           *BrokenProcessPool..concurrent.futures.txt*
 exception concurrent.futures.process.BrokenProcessPool
 
    Derived from "BrokenExecutor" (formerly "RuntimeError"), this

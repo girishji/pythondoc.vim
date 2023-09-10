@@ -1,4 +1,4 @@
-*mailbox.txt;*                                Last change: 2023 Sep 09
+*mailbox.txt;*                                Last change: 2023 Sep 10
 
 "mailbox" — Manipulate mailboxes in various formats
 ***************************************************
@@ -23,7 +23,7 @@ See also:
 "Mailbox" objects
 =================
 
-class mailbox.Mailbox                          *Mailbox..mailbox.txt;*
+class mailbox.Mailbox                           *Mailbox..mailbox.txt*
 
    A mailbox, which may be inspected and modified.
 
@@ -75,7 +75,7 @@ class mailbox.Mailbox                          *Mailbox..mailbox.txt;*
 
    "Mailbox" instances have the following methods:
 
-   add(message)                             *Mailbox.add()..mailbox.txt;*
+   add(message)                              *Mailbox.add()..mailbox.txt*
 
       Add _message_ to the mailbox and return the key that has been
       assigned to it.
@@ -91,9 +91,9 @@ class mailbox.Mailbox                          *Mailbox..mailbox.txt;*
 
       Changed in version 3.2: Support for binary input was added.
 
-   remove(key)                           *Mailbox.remove()..mailbox.txt;*
-   __delitem__(key)                 *Mailbox.__delitem__()..mailbox.txt;*
-   discard(key)                         *Mailbox.discard()..mailbox.txt;*
+   remove(key)                            *Mailbox.remove()..mailbox.txt*
+   __delitem__(key)                  *Mailbox.__delitem__()..mailbox.txt*
+   discard(key)                          *Mailbox.discard()..mailbox.txt*
 
       Delete the message corresponding to _key_ from the mailbox.
 
@@ -104,7 +104,7 @@ class mailbox.Mailbox                          *Mailbox..mailbox.txt;*
       mailbox format supports concurrent modification by other
       processes.
 
-   __setitem__(key, message)        *Mailbox.__setitem__()..mailbox.txt;*
+   __setitem__(key, message)         *Mailbox.__setitem__()..mailbox.txt*
 
       Replace the message corresponding to _key_ with _message_. Raise
       a "KeyError" exception if no message already corresponds to
@@ -120,15 +120,15 @@ class mailbox.Mailbox                          *Mailbox..mailbox.txt;*
       of the message that currently corresponds to _key_ is left
       unchanged.
 
-   iterkeys()                          *Mailbox.iterkeys()..mailbox.txt;*
-   keys()                                  *Mailbox.keys()..mailbox.txt;*
+   iterkeys()                           *Mailbox.iterkeys()..mailbox.txt*
+   keys()                                   *Mailbox.keys()..mailbox.txt*
 
       Return an iterator over all keys if called as "iterkeys()" or
       return a list of keys if called as "keys()".
 
-   itervalues()                      *Mailbox.itervalues()..mailbox.txt;*
-   __iter__()                          *Mailbox.__iter__()..mailbox.txt;*
-   values()                              *Mailbox.values()..mailbox.txt;*
+   itervalues()                       *Mailbox.itervalues()..mailbox.txt*
+   __iter__()                           *Mailbox.__iter__()..mailbox.txt*
+   values()                               *Mailbox.values()..mailbox.txt*
 
       Return an iterator over representations of all messages if
       called as "itervalues()" or "__iter__()" or return a list of
@@ -142,8 +142,8 @@ class mailbox.Mailbox                          *Mailbox..mailbox.txt;*
         The behavior of "__iter__()" is unlike that of dictionaries,
         which iterate over keys.
 
-   iteritems()                        *Mailbox.iteritems()..mailbox.txt;*
-   items()                                *Mailbox.items()..mailbox.txt;*
+   iteritems()                         *Mailbox.iteritems()..mailbox.txt*
+   items()                                 *Mailbox.items()..mailbox.txt*
 
       Return an iterator over (_key_, _message_) pairs, where _key_ is
       a key and _message_ is a message representation, if called as
@@ -153,8 +153,8 @@ class mailbox.Mailbox                          *Mailbox..mailbox.txt;*
       message factory was specified when the "Mailbox" instance was
       initialized.
 
-   get(key, default=None)                   *Mailbox.get()..mailbox.txt;*
-   __getitem__(key)                 *Mailbox.__getitem__()..mailbox.txt;*
+   get(key, default=None)                    *Mailbox.get()..mailbox.txt*
+   __getitem__(key)                  *Mailbox.__getitem__()..mailbox.txt*
 
       Return a representation of the message corresponding to _key_.
       If no such message exists, _default_ is returned if the method
@@ -164,14 +164,14 @@ class mailbox.Mailbox                          *Mailbox..mailbox.txt;*
       "Message" subclass unless a custom message factory was specified
       when the "Mailbox" instance was initialized.
 
-   get_message(key)                 *Mailbox.get_message()..mailbox.txt;*
+   get_message(key)                  *Mailbox.get_message()..mailbox.txt*
 
       Return a representation of the message corresponding to _key_ as
       an instance of the appropriate format-specific "Message"
       subclass, or raise a "KeyError" exception if no such message
       exists.
 
-   get_bytes(key)                     *Mailbox.get_bytes()..mailbox.txt;*
+   get_bytes(key)                      *Mailbox.get_bytes()..mailbox.txt*
 
       Return a byte representation of the message corresponding to
       _key_, or raise a "KeyError" exception if no such message
@@ -179,7 +179,7 @@ class mailbox.Mailbox                          *Mailbox..mailbox.txt;*
 
       New in version 3.2.
 
-   get_string(key)                   *Mailbox.get_string()..mailbox.txt;*
+   get_string(key)                    *Mailbox.get_string()..mailbox.txt*
 
       Return a string representation of the message corresponding to
       _key_, or raise a "KeyError" exception if no such message
@@ -187,7 +187,7 @@ class mailbox.Mailbox                          *Mailbox..mailbox.txt;*
       "email.message.Message" to convert it to a 7bit clean
       representation.
 
-   get_file(key)                       *Mailbox.get_file()..mailbox.txt;*
+   get_file(key)                        *Mailbox.get_file()..mailbox.txt*
 
       Return a file-like representation of the message corresponding
       to _key_, or raise a "KeyError" exception if no such message
@@ -207,20 +207,20 @@ class mailbox.Mailbox                          *Mailbox..mailbox.txt;*
         mailbox.  More specific documentation is provided by each
         subclass.
 
-   __contains__(key)               *Mailbox.__contains__()..mailbox.txt;*
+   __contains__(key)                *Mailbox.__contains__()..mailbox.txt*
 
       Return "True" if _key_ corresponds to a message, "False"
       otherwise.
 
-   __len__()                            *Mailbox.__len__()..mailbox.txt;*
+   __len__()                             *Mailbox.__len__()..mailbox.txt*
 
       Return a count of messages in the mailbox.
 
-   clear()                                *Mailbox.clear()..mailbox.txt;*
+   clear()                                 *Mailbox.clear()..mailbox.txt*
 
       Delete all messages from the mailbox.
 
-   pop(key, default=None)                   *Mailbox.pop()..mailbox.txt;*
+   pop(key, default=None)                    *Mailbox.pop()..mailbox.txt*
 
       Return a representation of the message corresponding to _key_
       and delete the message. If no such message exists, return
@@ -229,7 +229,7 @@ class mailbox.Mailbox                          *Mailbox..mailbox.txt;*
       message factory was specified when the "Mailbox" instance was
       initialized.
 
-   popitem()                            *Mailbox.popitem()..mailbox.txt;*
+   popitem()                             *Mailbox.popitem()..mailbox.txt*
 
       Return an arbitrary (_key_, _message_) pair, where _key_ is a
       key and _message_ is a message representation, and delete the
@@ -239,7 +239,7 @@ class mailbox.Mailbox                          *Mailbox..mailbox.txt;*
       custom message factory was specified when the "Mailbox" instance
       was initialized.
 
-   update(arg)                           *Mailbox.update()..mailbox.txt;*
+   update(arg)                            *Mailbox.update()..mailbox.txt*
 
       Parameter _arg_ should be a _key_-to-_message_ mapping or an
       iterable of (_key_, _message_) pairs. Updates the mailbox so
@@ -254,14 +254,14 @@ class mailbox.Mailbox                          *Mailbox..mailbox.txt;*
 
         Unlike with dictionaries, keyword arguments are not supported.
 
-   flush()                                *Mailbox.flush()..mailbox.txt;*
+   flush()                                 *Mailbox.flush()..mailbox.txt*
 
       Write any pending changes to the filesystem. For some "Mailbox"
       subclasses, changes are always written immediately and "flush()"
       does nothing, but you should still make a habit of calling this
       method.
 
-   lock()                                  *Mailbox.lock()..mailbox.txt;*
+   lock()                                   *Mailbox.lock()..mailbox.txt*
 
       Acquire an exclusive advisory lock on the mailbox so that other
       processes know not to modify it. An "ExternalClashError" is
@@ -270,11 +270,11 @@ class mailbox.Mailbox                          *Mailbox..mailbox.txt;*
       _always_ lock the mailbox before making any modifications to its
       contents.
 
-   unlock()                              *Mailbox.unlock()..mailbox.txt;*
+   unlock()                               *Mailbox.unlock()..mailbox.txt*
 
       Release the lock on the mailbox, if any.
 
-   close()                                *Mailbox.close()..mailbox.txt;*
+   close()                                 *Mailbox.close()..mailbox.txt*
 
       Flush the mailbox, unlock it if necessary, and close any open
       files. For some "Mailbox" subclasses, this method does nothing.
@@ -283,7 +283,7 @@ class mailbox.Mailbox                          *Mailbox..mailbox.txt;*
 "Maildir"
 ---------
 
-                                               *Maildir..mailbox.txt;*
+                                                *Maildir..mailbox.txt*
 class mailbox.Maildir(dirname, factory=None, create=True)
 
    A subclass of "Mailbox" for mailboxes in Maildir format. Parameter
@@ -340,28 +340,28 @@ class mailbox.Maildir(dirname, factory=None, create=True)
    "Maildir" instances have all of the methods of "Mailbox" in
    addition to the following:
 
-   list_folders()                  *Maildir.list_folders()..mailbox.txt;*
+   list_folders()                   *Maildir.list_folders()..mailbox.txt*
 
       Return a list of the names of all folders.
 
-   get_folder(folder)                *Maildir.get_folder()..mailbox.txt;*
+   get_folder(folder)                 *Maildir.get_folder()..mailbox.txt*
 
       Return a "Maildir" instance representing the folder whose name
       is _folder_. A "NoSuchMailboxError" exception is raised if the
       folder does not exist.
 
-   add_folder(folder)                *Maildir.add_folder()..mailbox.txt;*
+   add_folder(folder)                 *Maildir.add_folder()..mailbox.txt*
 
       Create a folder whose name is _folder_ and return a "Maildir"
       instance representing it.
 
-   remove_folder(folder)          *Maildir.remove_folder()..mailbox.txt;*
+   remove_folder(folder)           *Maildir.remove_folder()..mailbox.txt*
 
       Delete the folder whose name is _folder_. If the folder contains
       any messages, a "NotEmptyError" exception will be raised and the
       folder will not be deleted.
 
-   clean()                                *Maildir.clean()..mailbox.txt;*
+   clean()                                 *Maildir.clean()..mailbox.txt*
 
       Delete temporary files from the mailbox that have not been
       accessed in the last 36 hours. The Maildir specification says
@@ -370,9 +370,9 @@ class mailbox.Maildir(dirname, factory=None, create=True)
    Some "Mailbox" methods implemented by "Maildir" deserve special
    remarks:
 
-   add(message)                             *Maildir.add()..mailbox.txt;*
-   __setitem__(key, message)        *Maildir.__setitem__()..mailbox.txt;*
-   update(arg)                           *Maildir.update()..mailbox.txt;*
+   add(message)                              *Maildir.add()..mailbox.txt*
+   __setitem__(key, message)         *Maildir.__setitem__()..mailbox.txt*
+   update(arg)                            *Maildir.update()..mailbox.txt*
 
       Warning:
 
@@ -382,24 +382,24 @@ class mailbox.Maildir(dirname, factory=None, create=True)
         unless threads are coordinated to avoid using these methods to
         manipulate the same mailbox simultaneously.
 
-   flush()                                *Maildir.flush()..mailbox.txt;*
+   flush()                                 *Maildir.flush()..mailbox.txt*
 
       All changes to Maildir mailboxes are immediately applied, so
       this method does nothing.
 
-   lock()                                  *Maildir.lock()..mailbox.txt;*
-   unlock()                              *Maildir.unlock()..mailbox.txt;*
+   lock()                                   *Maildir.lock()..mailbox.txt*
+   unlock()                               *Maildir.unlock()..mailbox.txt*
 
       Maildir mailboxes do not support (or require) locking, so these
       methods do nothing.
 
-   close()                                *Maildir.close()..mailbox.txt;*
+   close()                                 *Maildir.close()..mailbox.txt*
 
       "Maildir" instances do not keep any open files and the
       underlying mailboxes do not support locking, so this method does
       nothing.
 
-   get_file(key)                       *Maildir.get_file()..mailbox.txt;*
+   get_file(key)                        *Maildir.get_file()..mailbox.txt*
 
       Depending upon the host platform, it may not be possible to
       modify or remove the underlying message while the returned file
@@ -419,7 +419,7 @@ See also:
 "mbox"
 ------
 
-                                                  *mbox..mailbox.txt;*
+                                                   *mbox..mailbox.txt*
 class mailbox.mbox(path, factory=None, create=True)
 
    A subclass of "Mailbox" for mailboxes in mbox format. Parameter
@@ -446,14 +446,14 @@ class mailbox.mbox(path, factory=None, create=True)
    Some "Mailbox" methods implemented by "mbox" deserve special
    remarks:
 
-   get_file(key)                          *mbox.get_file()..mailbox.txt;*
+   get_file(key)                           *mbox.get_file()..mailbox.txt*
 
       Using the file after calling "flush()" or "close()" on the
       "mbox" instance may yield unpredictable results or raise an
       exception.
 
-   lock()                                     *mbox.lock()..mailbox.txt;*
-   unlock()                                 *mbox.unlock()..mailbox.txt;*
+   lock()                                      *mbox.lock()..mailbox.txt*
+   unlock()                                  *mbox.unlock()..mailbox.txt*
 
       Three locking mechanisms are used—dot locking and, if available,
       the "flock()" and "lockf()" system calls.
@@ -475,7 +475,7 @@ See also:
 "MH"
 ----
 
-class mailbox.MH(path, factory=None, create=True)   *MH..mailbox.txt;*
+class mailbox.MH(path, factory=None, create=True)    *MH..mailbox.txt*
 
    A subclass of "Mailbox" for mailboxes in MH format. Parameter
    _factory_ is a callable object that accepts a file-like message
@@ -501,39 +501,39 @@ class mailbox.MH(path, factory=None, create=True)   *MH..mailbox.txt;*
    "MH" instances have all of the methods of "Mailbox" in addition to
    the following:
 
-   list_folders()                       *MH.list_folders()..mailbox.txt;*
+   list_folders()                        *MH.list_folders()..mailbox.txt*
 
       Return a list of the names of all folders.
 
-   get_folder(folder)                     *MH.get_folder()..mailbox.txt;*
+   get_folder(folder)                      *MH.get_folder()..mailbox.txt*
 
       Return an "MH" instance representing the folder whose name is
       _folder_. A "NoSuchMailboxError" exception is raised if the
       folder does not exist.
 
-   add_folder(folder)                     *MH.add_folder()..mailbox.txt;*
+   add_folder(folder)                      *MH.add_folder()..mailbox.txt*
 
       Create a folder whose name is _folder_ and return an "MH"
       instance representing it.
 
-   remove_folder(folder)               *MH.remove_folder()..mailbox.txt;*
+   remove_folder(folder)                *MH.remove_folder()..mailbox.txt*
 
       Delete the folder whose name is _folder_. If the folder contains
       any messages, a "NotEmptyError" exception will be raised and the
       folder will not be deleted.
 
-   get_sequences()                     *MH.get_sequences()..mailbox.txt;*
+   get_sequences()                      *MH.get_sequences()..mailbox.txt*
 
       Return a dictionary of sequence names mapped to key lists. If
       there are no sequences, the empty dictionary is returned.
 
-   set_sequences(sequences)            *MH.set_sequences()..mailbox.txt;*
+   set_sequences(sequences)             *MH.set_sequences()..mailbox.txt*
 
       Re-define the sequences that exist in the mailbox based upon
       _sequences_, a dictionary of names mapped to key lists, like
       returned by "get_sequences()".
 
-   pack()                                       *MH.pack()..mailbox.txt;*
+   pack()                                        *MH.pack()..mailbox.txt*
 
       Rename messages in the mailbox as necessary to eliminate gaps in
       numbering.  Entries in the sequences list are updated
@@ -546,16 +546,16 @@ class mailbox.MH(path, factory=None, create=True)   *MH..mailbox.txt;*
 
    Some "Mailbox" methods implemented by "MH" deserve special remarks:
 
-   remove(key)                                *MH.remove()..mailbox.txt;*
-   __delitem__(key)                      *MH.__delitem__()..mailbox.txt;*
-   discard(key)                              *MH.discard()..mailbox.txt;*
+   remove(key)                                 *MH.remove()..mailbox.txt*
+   __delitem__(key)                       *MH.__delitem__()..mailbox.txt*
+   discard(key)                               *MH.discard()..mailbox.txt*
 
       These methods immediately delete the message. The MH convention
       of marking a message for deletion by prepending a comma to its
       name is not used.
 
-   lock()                                       *MH.lock()..mailbox.txt;*
-   unlock()                                   *MH.unlock()..mailbox.txt;*
+   lock()                                        *MH.lock()..mailbox.txt*
+   unlock()                                    *MH.unlock()..mailbox.txt*
 
       Three locking mechanisms are used—dot locking and, if available,
       the "flock()" and "lockf()" system calls. For MH mailboxes,
@@ -563,18 +563,18 @@ class mailbox.MH(path, factory=None, create=True)   *MH..mailbox.txt;*
       only for the duration of any operations that affect them,
       locking individual message files.
 
-   get_file(key)                            *MH.get_file()..mailbox.txt;*
+   get_file(key)                             *MH.get_file()..mailbox.txt*
 
       Depending upon the host platform, it may not be possible to
       remove the underlying message while the returned file remains
       open.
 
-   flush()                                     *MH.flush()..mailbox.txt;*
+   flush()                                      *MH.flush()..mailbox.txt*
 
       All changes to MH mailboxes are immediately applied, so this
       method does nothing.
 
-   close()                                     *MH.close()..mailbox.txt;*
+   close()                                      *MH.close()..mailbox.txt*
 
       "MH" instances do not keep any open files, so this method is
       equivalent to "unlock()".
@@ -592,7 +592,7 @@ See also:
 "Babyl"
 -------
 
-                                                 *Babyl..mailbox.txt;*
+                                                  *Babyl..mailbox.txt*
 class mailbox.Babyl(path, factory=None, create=True)
 
    A subclass of "Mailbox" for mailboxes in Babyl format. Parameter
@@ -622,7 +622,7 @@ class mailbox.Babyl(path, factory=None, create=True)
    "Babyl" instances have all of the methods of "Mailbox" in addition
    to the following:
 
-   get_labels()                        *Babyl.get_labels()..mailbox.txt;*
+   get_labels()                         *Babyl.get_labels()..mailbox.txt*
 
       Return a list of the names of all user-defined labels used in
       the mailbox.
@@ -637,7 +637,7 @@ class mailbox.Babyl(path, factory=None, create=True)
    Some "Mailbox" methods implemented by "Babyl" deserve special
    remarks:
 
-   get_file(key)                         *Babyl.get_file()..mailbox.txt;*
+   get_file(key)                          *Babyl.get_file()..mailbox.txt*
 
       In Babyl mailboxes, the headers of a message are not stored
       contiguously with the body of the message. To generate a file-
@@ -647,8 +647,8 @@ class mailbox.Babyl(path, factory=None, create=True)
       independent of the underlying mailbox but does not save memory
       compared to a string representation.
 
-   lock()                                    *Babyl.lock()..mailbox.txt;*
-   unlock()                                *Babyl.unlock()..mailbox.txt;*
+   lock()                                     *Babyl.lock()..mailbox.txt*
+   unlock()                                 *Babyl.unlock()..mailbox.txt*
 
       Three locking mechanisms are used—dot locking and, if available,
       the "flock()" and "lockf()" system calls.
@@ -665,7 +665,7 @@ See also:
 "MMDF"
 ------
 
-                                                  *MMDF..mailbox.txt;*
+                                                   *MMDF..mailbox.txt*
 class mailbox.MMDF(path, factory=None, create=True)
 
    A subclass of "Mailbox" for mailboxes in MMDF format. Parameter
@@ -689,14 +689,14 @@ class mailbox.MMDF(path, factory=None, create=True)
    Some "Mailbox" methods implemented by "MMDF" deserve special
    remarks:
 
-   get_file(key)                          *MMDF.get_file()..mailbox.txt;*
+   get_file(key)                           *MMDF.get_file()..mailbox.txt*
 
       Using the file after calling "flush()" or "close()" on the
       "MMDF" instance may yield unpredictable results or raise an
       exception.
 
-   lock()                                     *MMDF.lock()..mailbox.txt;*
-   unlock()                                 *MMDF.unlock()..mailbox.txt;*
+   lock()                                      *MMDF.lock()..mailbox.txt*
+   unlock()                                  *MMDF.unlock()..mailbox.txt*
 
       Three locking mechanisms are used—dot locking and, if available,
       the "flock()" and "lockf()" system calls.
@@ -715,7 +715,7 @@ See also:
 "Message" objects
 =================
 
-class mailbox.Message(message=None)            *Message..mailbox.txt;*
+class mailbox.Message(message=None)             *Message..mailbox.txt*
 
    A subclass of the "email.message" module’s "Message". Subclasses of
    "mailbox.Message" add mailbox-format-specific state and behavior.
@@ -751,7 +751,7 @@ class mailbox.Message(message=None)            *Message..mailbox.txt;*
 "MaildirMessage"
 ----------------
 
-                                        *MaildirMessage..mailbox.txt;*
+                                         *MaildirMessage..mailbox.txt*
 class mailbox.MaildirMessage(message=None)
 
    A message with Maildir-specific behaviors. Parameter _message_ has
@@ -787,7 +787,7 @@ class mailbox.MaildirMessage(message=None)
 
    "MaildirMessage" instances offer the following methods:
 
-   get_subdir()               *MaildirMessage.get_subdir()..mailbox.txt;*
+   get_subdir()                *MaildirMessage.get_subdir()..mailbox.txt*
 
       Return either “new” (if the message should be stored in the
       "new" subdirectory) or “cur” (if the message should be stored in
@@ -800,12 +800,12 @@ class mailbox.MaildirMessage(message=None)
         been read. A message "msg" has been read if ""S" in
         msg.get_flags()" is "True".
 
-   set_subdir(subdir)         *MaildirMessage.set_subdir()..mailbox.txt;*
+   set_subdir(subdir)          *MaildirMessage.set_subdir()..mailbox.txt*
 
       Set the subdirectory the message should be stored in. Parameter
       _subdir_ must be either “new” or “cur”.
 
-   get_flags()                 *MaildirMessage.get_flags()..mailbox.txt;*
+   get_flags()                  *MaildirMessage.get_flags()..mailbox.txt*
 
       Return a string specifying the flags that are currently set. If
       the message complies with the standard Maildir format, the
@@ -814,11 +814,11 @@ class mailbox.MaildirMessage(message=None)
       "'T'". The empty string is returned if no flags are set or if
       “info” contains experimental semantics.
 
-   set_flags(flags)            *MaildirMessage.set_flags()..mailbox.txt;*
+   set_flags(flags)             *MaildirMessage.set_flags()..mailbox.txt*
 
       Set the flags specified by _flags_ and unset all others.
 
-   add_flag(flag)               *MaildirMessage.add_flag()..mailbox.txt;*
+   add_flag(flag)                *MaildirMessage.add_flag()..mailbox.txt*
 
       Set the flag(s) specified by _flag_ without changing other
       flags. To add more than one flag at a time, _flag_ may be a
@@ -826,7 +826,7 @@ class mailbox.MaildirMessage(message=None)
       overwritten whether or not it contains experimental information
       rather than flags.
 
-   remove_flag(flag)         *MaildirMessage.remove_flag()..mailbox.txt;*
+   remove_flag(flag)          *MaildirMessage.remove_flag()..mailbox.txt*
 
       Unset the flag(s) specified by _flag_ without changing other
       flags. To remove more than one flag at a time, _flag_ maybe a
@@ -834,23 +834,23 @@ class mailbox.MaildirMessage(message=None)
       experimental information rather than flags, the current “info”
       is not modified.
 
-   get_date()                   *MaildirMessage.get_date()..mailbox.txt;*
+   get_date()                    *MaildirMessage.get_date()..mailbox.txt*
 
       Return the delivery date of the message as a floating-point
       number representing seconds since the epoch.
 
-   set_date(date)               *MaildirMessage.set_date()..mailbox.txt;*
+   set_date(date)                *MaildirMessage.set_date()..mailbox.txt*
 
       Set the delivery date of the message to _date_, a floating-point
       number representing seconds since the epoch.
 
-   get_info()                   *MaildirMessage.get_info()..mailbox.txt;*
+   get_info()                    *MaildirMessage.get_info()..mailbox.txt*
 
       Return a string containing the “info” for a message. This is
       useful for accessing and modifying “info” that is experimental
       (i.e., not a list of flags).
 
-   set_info(info)               *MaildirMessage.set_info()..mailbox.txt;*
+   set_info(info)                *MaildirMessage.set_info()..mailbox.txt*
 
       Set “info” to _info_, which should be a string.
 
@@ -908,7 +908,7 @@ When a "MaildirMessage" instance is created based upon a
 "mboxMessage"
 -------------
 
-class mailbox.mboxMessage(message=None)    *mboxMessage..mailbox.txt;*
+class mailbox.mboxMessage(message=None)     *mboxMessage..mailbox.txt*
 
    A message with mbox-specific behaviors. Parameter _message_ has the
    same meaning as with the "Message" constructor.
@@ -944,13 +944,13 @@ class mailbox.mboxMessage(message=None)    *mboxMessage..mailbox.txt;*
 
    "mboxMessage" instances offer the following methods:
 
-   get_from()                      *mboxMessage.get_from()..mailbox.txt;*
+   get_from()                       *mboxMessage.get_from()..mailbox.txt*
 
       Return a string representing the “From “ line that marks the
       start of the message in an mbox mailbox. The leading “From “ and
       the trailing newline are excluded.
 
-   set_from(from_, time_=None)     *mboxMessage.set_from()..mailbox.txt;*
+   set_from(from_, time_=None)      *mboxMessage.set_from()..mailbox.txt*
 
       Set the “From “ line to _from__, which should be specified
       without a leading “From “ or trailing newline. For convenience,
@@ -959,27 +959,27 @@ class mailbox.mboxMessage(message=None)    *mboxMessage..mailbox.txt;*
       "time.struct_time" instance, a tuple suitable for passing to
       "time.strftime()", or "True" (to use "time.gmtime()").
 
-   get_flags()                    *mboxMessage.get_flags()..mailbox.txt;*
+   get_flags()                     *mboxMessage.get_flags()..mailbox.txt*
 
       Return a string specifying the flags that are currently set. If
       the message complies with the conventional format, the result is
       the concatenation in the following order of zero or one
       occurrence of each of "'R'", "'O'", "'D'", "'F'", and "'A'".
 
-   set_flags(flags)               *mboxMessage.set_flags()..mailbox.txt;*
+   set_flags(flags)                *mboxMessage.set_flags()..mailbox.txt*
 
       Set the flags specified by _flags_ and unset all others.
       Parameter _flags_ should be the concatenation in any order of
       zero or more occurrences of each of "'R'", "'O'", "'D'", "'F'",
       and "'A'".
 
-   add_flag(flag)                  *mboxMessage.add_flag()..mailbox.txt;*
+   add_flag(flag)                   *mboxMessage.add_flag()..mailbox.txt*
 
       Set the flag(s) specified by _flag_ without changing other
       flags. To add more than one flag at a time, _flag_ may be a
       string of more than one character.
 
-   remove_flag(flag)            *mboxMessage.remove_flag()..mailbox.txt;*
+   remove_flag(flag)             *mboxMessage.remove_flag()..mailbox.txt*
 
       Unset the flag(s) specified by _flag_ without changing other
       flags. To remove more than one flag at a time, _flag_ maybe a
@@ -1056,7 +1056,7 @@ correspond:
 "MHMessage"
 -----------
 
-class mailbox.MHMessage(message=None)        *MHMessage..mailbox.txt;*
+class mailbox.MHMessage(message=None)         *MHMessage..mailbox.txt*
 
    A message with MH-specific behaviors. Parameter _message_ has the
    same meaning as with the "Message" constructor.
@@ -1079,22 +1079,21 @@ class mailbox.MHMessage(message=None)        *MHMessage..mailbox.txt;*
 
    "MHMessage" instances offer the following methods:
 
-   get_sequences()              *MHMessage.get_sequences()..mailbox.txt;*
+   get_sequences()               *MHMessage.get_sequences()..mailbox.txt*
 
       Return a list of the names of sequences that include this
       message.
 
-   set_sequences(sequences)     *MHMessage.set_sequences()..mailbox.txt;*
+   set_sequences(sequences)      *MHMessage.set_sequences()..mailbox.txt*
 
       Set the list of sequences that include this message.
 
-   add_sequence(sequence)        *MHMessage.add_sequence()..mailbox.txt;*
+   add_sequence(sequence)         *MHMessage.add_sequence()..mailbox.txt*
 
       Add _sequence_ to the list of sequences that include this
       message.
 
-                           *MHMessage.remove_sequence()..mailbox.txt;*
-   remove_sequence(sequence)
+   remove_sequence(sequence)   *MHMessage.remove_sequence()..mailbox.txt*
 
       Remove _sequence_ from the list of sequences that include this
       message.
@@ -1141,8 +1140,7 @@ instance, the following conversions take place:
 "BabylMessage"
 --------------
 
-                                          *BabylMessage..mailbox.txt;*
-class mailbox.BabylMessage(message=None)
+class mailbox.BabylMessage(message=None)   *BabylMessage..mailbox.txt*
 
    A message with Babyl-specific behaviors. Parameter _message_ has
    the same meaning as with the "Message" constructor.
@@ -1174,35 +1172,35 @@ class mailbox.BabylMessage(message=None)
 
    "BabylMessage" instances offer the following methods:
 
-   get_labels()                 *BabylMessage.get_labels()..mailbox.txt;*
+   get_labels()                  *BabylMessage.get_labels()..mailbox.txt*
 
       Return a list of labels on the message.
 
-   set_labels(labels)           *BabylMessage.set_labels()..mailbox.txt;*
+   set_labels(labels)            *BabylMessage.set_labels()..mailbox.txt*
 
       Set the list of labels on the message to _labels_.
 
-   add_label(label)              *BabylMessage.add_label()..mailbox.txt;*
+   add_label(label)               *BabylMessage.add_label()..mailbox.txt*
 
       Add _label_ to the list of labels on the message.
 
-   remove_label(label)        *BabylMessage.remove_label()..mailbox.txt;*
+   remove_label(label)         *BabylMessage.remove_label()..mailbox.txt*
 
       Remove _label_ from the list of labels on the message.
 
-   get_visible()               *BabylMessage.get_visible()..mailbox.txt;*
+   get_visible()                *BabylMessage.get_visible()..mailbox.txt*
 
       Return an "Message" instance whose headers are the message’s
       visible headers and whose body is empty.
 
-   set_visible(visible)        *BabylMessage.set_visible()..mailbox.txt;*
+   set_visible(visible)         *BabylMessage.set_visible()..mailbox.txt*
 
       Set the message’s visible headers to be the same as the headers
       in _message_.  Parameter _visible_ should be a "Message"
       instance, an "email.message.Message" instance, a string, or a
       file-like object (which should be open in text mode).
 
-   update_visible()         *BabylMessage.update_visible()..mailbox.txt;*
+   update_visible()          *BabylMessage.update_visible()..mailbox.txt*
 
       When a "BabylMessage" instance’s original headers are modified,
       the visible headers are not automatically modified to
@@ -1258,7 +1256,7 @@ instance, the following conversions take place:
 "MMDFMessage"
 -------------
 
-class mailbox.MMDFMessage(message=None)    *MMDFMessage..mailbox.txt;*
+class mailbox.MMDFMessage(message=None)     *MMDFMessage..mailbox.txt*
 
    A message with MMDF-specific behaviors. Parameter _message_ has the
    same meaning as with the "Message" constructor.
@@ -1293,13 +1291,13 @@ class mailbox.MMDFMessage(message=None)    *MMDFMessage..mailbox.txt;*
    "MMDFMessage" instances offer the following methods, which are
    identical to those offered by "mboxMessage":
 
-   get_from()                      *MMDFMessage.get_from()..mailbox.txt;*
+   get_from()                       *MMDFMessage.get_from()..mailbox.txt*
 
       Return a string representing the “From “ line that marks the
       start of the message in an mbox mailbox. The leading “From “ and
       the trailing newline are excluded.
 
-   set_from(from_, time_=None)     *MMDFMessage.set_from()..mailbox.txt;*
+   set_from(from_, time_=None)      *MMDFMessage.set_from()..mailbox.txt*
 
       Set the “From “ line to _from__, which should be specified
       without a leading “From “ or trailing newline. For convenience,
@@ -1308,27 +1306,27 @@ class mailbox.MMDFMessage(message=None)    *MMDFMessage..mailbox.txt;*
       "time.struct_time" instance, a tuple suitable for passing to
       "time.strftime()", or "True" (to use "time.gmtime()").
 
-   get_flags()                    *MMDFMessage.get_flags()..mailbox.txt;*
+   get_flags()                     *MMDFMessage.get_flags()..mailbox.txt*
 
       Return a string specifying the flags that are currently set. If
       the message complies with the conventional format, the result is
       the concatenation in the following order of zero or one
       occurrence of each of "'R'", "'O'", "'D'", "'F'", and "'A'".
 
-   set_flags(flags)               *MMDFMessage.set_flags()..mailbox.txt;*
+   set_flags(flags)                *MMDFMessage.set_flags()..mailbox.txt*
 
       Set the flags specified by _flags_ and unset all others.
       Parameter _flags_ should be the concatenation in any order of
       zero or more occurrences of each of "'R'", "'O'", "'D'", "'F'",
       and "'A'".
 
-   add_flag(flag)                  *MMDFMessage.add_flag()..mailbox.txt;*
+   add_flag(flag)                   *MMDFMessage.add_flag()..mailbox.txt*
 
       Set the flag(s) specified by _flag_ without changing other
       flags. To add more than one flag at a time, _flag_ may be a
       string of more than one character.
 
-   remove_flag(flag)            *MMDFMessage.remove_flag()..mailbox.txt;*
+   remove_flag(flag)             *MMDFMessage.remove_flag()..mailbox.txt*
 
       Unset the flag(s) specified by _flag_ without changing other
       flags. To remove more than one flag at a time, _flag_ maybe a
@@ -1407,11 +1405,11 @@ Exceptions
 
 The following exception classes are defined in the "mailbox" module:
 
-exception mailbox.Error                          *Error..mailbox.txt;*
+exception mailbox.Error                           *Error..mailbox.txt*
 
    The based class for all other module-specific exceptions.
 
-                                    *NoSuchMailboxError..mailbox.txt;*
+                                     *NoSuchMailboxError..mailbox.txt*
 exception mailbox.NoSuchMailboxError
 
    Raised when a mailbox is expected but is not found, such as when
@@ -1419,12 +1417,12 @@ exception mailbox.NoSuchMailboxError
    (and with the _create_ parameter set to "False"), or when opening a
    folder that does not exist.
 
-exception mailbox.NotEmptyError          *NotEmptyError..mailbox.txt;*
+exception mailbox.NotEmptyError           *NotEmptyError..mailbox.txt*
 
    Raised when a mailbox is not empty but is expected to be, such as
    when deleting a folder that contains messages.
 
-                                    *ExternalClashError..mailbox.txt;*
+                                     *ExternalClashError..mailbox.txt*
 exception mailbox.ExternalClashError
 
    Raised when some mailbox-related condition beyond the control of
@@ -1432,7 +1430,7 @@ exception mailbox.ExternalClashError
    to acquire a lock that another program already holds a lock, or
    when a uniquely generated file name already exists.
 
-exception mailbox.FormatError              *FormatError..mailbox.txt;*
+exception mailbox.FormatError               *FormatError..mailbox.txt*
 
    Raised when the data in a file cannot be parsed, such as when an
    "MH" instance attempts to read a corrupted ".mh_sequences" file.

@@ -1,4 +1,4 @@
-*emailiterators.txt;*                         Last change: 2023 Sep 09
+*email.iterators.txt;*                        Last change: 2023 Sep 10
 
 "email.iterators": Iterators
 ****************************
@@ -11,7 +11,7 @@ Iterating over a message object tree is fairly easy with the
 "Message.walk" method.  The "email.iterators" module provides some
 useful higher level iterations over message object trees.
 
-                           *body_line_iterator()..emailiterators.txt;*
+                           *body_line_iterator()..email.iterators.txt*
 email.iterators.body_line_iterator(msg, decode=False)
 
    This iterates over all the payloads in all the subparts of _msg_,
@@ -23,7 +23,7 @@ email.iterators.body_line_iterator(msg, decode=False)
 
    Optional _decode_ is passed through to "Message.get_payload".
 
-                       *typed_subpart_iterator()..emailiterators.txt;*
+                       *typed_subpart_iterator()..email.iterators.txt*
 email.iterators.typed_subpart_iterator(msg, maintype='text', subtype=None)
 
    This iterates over all the subparts of _msg_, returning only those
@@ -41,7 +41,7 @@ The following function has been added as a useful debugging tool.  It
 should _not_ be considered part of the supported public interface for
 the package.
 
-                                   *_structure()..emailiterators.txt;*
+                                   *_structure()..email.iterators.txt*
 email.iterators._structure(msg, fp=None, level=0, include_default=False)
 
    Prints an indented representation of the content types of the

@@ -1,4 +1,4 @@
-*poplib.txt;*                                 Last change: 2023 Sep 09
+*poplib.txt;*                                 Last change: 2023 Sep 10
 
 "poplib" — POP3 protocol client
 *******************************
@@ -32,7 +32,7 @@ more information.
 
 The "poplib" module provides two classes:
 
-                                                   *POP3..poplib.txt;*
+                                                    *POP3..poplib.txt*
 class poplib.POP3(host, port=POP3_PORT[, timeout])
 
    This class implements the actual POP3 protocol.  The connection is
@@ -52,7 +52,7 @@ class poplib.POP3(host, port=POP3_PORT[, timeout])
    zero, it will raise a "ValueError" to prevent the creation of a
    non-blocking socket.
 
-                                               *POP3_SSL..poplib.txt;*
+                                                *POP3_SSL..poplib.txt*
 class poplib.POP3_SSL(host, port=POP3_SSL_PORT, *, timeout=None, context=None)
 
    This is a subclass of "POP3" that connects to the server over an
@@ -86,7 +86,7 @@ class poplib.POP3_SSL(host, port=POP3_SSL_PORT, *, timeout=None, context=None)
 
 One exception is defined as an attribute of the "poplib" module:
 
-exception poplib.error_proto                *error_proto..poplib.txt;*
+exception poplib.error_proto                 *error_proto..poplib.txt*
 
    Exception raised on any errors from this module (errors from
    "socket" module are not caught). The reason for the exception is
@@ -112,7 +112,7 @@ lowercase; most return the response text sent by the server.
 
 A "POP3" instance has the following methods:
 
-POP3.set_debuglevel(level)        *POP3.set_debuglevel()..poplib.txt;*
+POP3.set_debuglevel(level)         *POP3.set_debuglevel()..poplib.txt*
 
    Set the instance’s debugging level.  This controls the amount of
    debugging output printed.  The default, "0", produces no debugging
@@ -121,73 +121,73 @@ POP3.set_debuglevel(level)        *POP3.set_debuglevel()..poplib.txt;*
    higher produces the maximum amount of debugging output, logging
    each line sent and received on the control connection.
 
-POP3.getwelcome()                     *POP3.getwelcome()..poplib.txt;*
+POP3.getwelcome()                      *POP3.getwelcome()..poplib.txt*
 
    Returns the greeting string sent by the POP3 server.
 
-POP3.capa()                                 *POP3.capa()..poplib.txt;*
+POP3.capa()                                  *POP3.capa()..poplib.txt*
 
    Query the server’s capabilities as specified in **RFC 2449**.
    Returns a dictionary in the form "{'name': ['param'...]}".
 
    New in version 3.4.
 
-POP3.user(username)                         *POP3.user()..poplib.txt;*
+POP3.user(username)                          *POP3.user()..poplib.txt*
 
    Send user command, response should indicate that a password is
    required.
 
-POP3.pass_(password)                       *POP3.pass_()..poplib.txt;*
+POP3.pass_(password)                        *POP3.pass_()..poplib.txt*
 
    Send password, response includes message count and mailbox size.
    Note: the mailbox on the server is locked until "quit()" is called.
 
-POP3.apop(user, secret)                     *POP3.apop()..poplib.txt;*
+POP3.apop(user, secret)                      *POP3.apop()..poplib.txt*
 
    Use the more secure APOP authentication to log into the POP3
    server.
 
-POP3.rpop(user)                             *POP3.rpop()..poplib.txt;*
+POP3.rpop(user)                              *POP3.rpop()..poplib.txt*
 
    Use RPOP authentication (similar to UNIX r-commands) to log into
    POP3 server.
 
-POP3.stat()                                 *POP3.stat()..poplib.txt;*
+POP3.stat()                                  *POP3.stat()..poplib.txt*
 
    Get mailbox status.  The result is a tuple of 2 integers: "(message
    count, mailbox size)".
 
-POP3.list([which])                          *POP3.list()..poplib.txt;*
+POP3.list([which])                           *POP3.list()..poplib.txt*
 
    Request message list, result is in the form "(response, ['mesg_num
    octets', ...], octets)". If _which_ is set, it is the message to
    list.
 
-POP3.retr(which)                            *POP3.retr()..poplib.txt;*
+POP3.retr(which)                             *POP3.retr()..poplib.txt*
 
    Retrieve whole message number _which_, and set its seen flag.
    Result is in form "(response, ['line', ...], octets)".
 
-POP3.dele(which)                            *POP3.dele()..poplib.txt;*
+POP3.dele(which)                             *POP3.dele()..poplib.txt*
 
    Flag message number _which_ for deletion.  On most servers
    deletions are not actually performed until QUIT (the major
    exception is Eudora QPOP, which deliberately violates the RFCs by
    doing pending deletes on any disconnect).
 
-POP3.rset()                                 *POP3.rset()..poplib.txt;*
+POP3.rset()                                  *POP3.rset()..poplib.txt*
 
    Remove any deletion marks for the mailbox.
 
-POP3.noop()                                 *POP3.noop()..poplib.txt;*
+POP3.noop()                                  *POP3.noop()..poplib.txt*
 
    Do nothing.  Might be used as a keep-alive.
 
-POP3.quit()                                 *POP3.quit()..poplib.txt;*
+POP3.quit()                                  *POP3.quit()..poplib.txt*
 
    Signoff:  commit changes, unlock mailbox, drop connection.
 
-POP3.top(which, howmuch)                     *POP3.top()..poplib.txt;*
+POP3.top(which, howmuch)                      *POP3.top()..poplib.txt*
 
    Retrieves the message header plus _howmuch_ lines of the message
    after the header of message number _which_. Result is in form
@@ -199,21 +199,21 @@ POP3.top(which, howmuch)                     *POP3.top()..poplib.txt;*
    servers. Test this method by hand against the POP3 servers you will
    use before trusting it.
 
-POP3.uidl(which=None)                       *POP3.uidl()..poplib.txt;*
+POP3.uidl(which=None)                        *POP3.uidl()..poplib.txt*
 
    Return message digest (unique id) list. If _which_ is specified,
    result contains the unique id for that message in the form
    "'response mesgnum uid", otherwise result is list "(response,
    ['mesgnum uid', ...], octets)".
 
-POP3.utf8()                                 *POP3.utf8()..poplib.txt;*
+POP3.utf8()                                  *POP3.utf8()..poplib.txt*
 
    Try to switch to UTF-8 mode. Returns the server response if
    successful, raises "error_proto" if not. Specified in **RFC 6856**.
 
    New in version 3.5.
 
-POP3.stls(context=None)                     *POP3.stls()..poplib.txt;*
+POP3.stls(context=None)                      *POP3.stls()..poplib.txt*
 
    Start a TLS session on the active connection as specified in **RFC
    2595**. This is only allowed before user authentication

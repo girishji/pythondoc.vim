@@ -1,4 +1,4 @@
-*htmlentities.txt;*                           Last change: 2023 Sep 09
+*html.entities.txt;*                          Last change: 2023 Sep 10
 
 "html.entities" — Definitions of HTML general entities
 ******************************************************
@@ -10,7 +10,7 @@
 This module defines four dictionaries, "html5", "name2codepoint",
 "codepoint2name", and "entitydefs".
 
-html.entities.html5                         *html5..htmlentities.txt;*
+html.entities.html5                         *html5..html.entities.txt*
 
    A dictionary that maps HTML5 named character references [1] to the
    equivalent Unicode character(s), e.g. "html5['gt;'] == '>'". Note
@@ -21,17 +21,17 @@ html.entities.html5                         *html5..htmlentities.txt;*
 
    New in version 3.3.
 
-html.entities.entitydefs               *entitydefs..htmlentities.txt;*
+html.entities.entitydefs               *entitydefs..html.entities.txt*
 
    A dictionary mapping XHTML 1.0 entity definitions to their
    replacement text in ISO Latin-1.
 
-html.entities.name2codepoint       *name2codepoint..htmlentities.txt;*
+html.entities.name2codepoint       *name2codepoint..html.entities.txt*
 
    A dictionary that maps HTML4 entity names to the Unicode code
    points.
 
-html.entities.codepoint2name       *codepoint2name..htmlentities.txt;*
+html.entities.codepoint2name       *codepoint2name..html.entities.txt*
 
    A dictionary that maps Unicode code points to HTML4 entity names.
 

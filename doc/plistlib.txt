@@ -1,4 +1,4 @@
-*plistlib.txt;*                               Last change: 2023 Sep 09
+*plistlib.txt;*                               Last change: 2023 Sep 10
 
 "plistlib" — Generate and parse Apple ".plist" files
 ****************************************************
@@ -40,7 +40,7 @@ See also:
 
 This module defines the following functions:
 
-                                               *load()..plistlib.txt;*
+                                                *load()..plistlib.txt*
 plistlib.load(fp, *, fmt=None, dict_type=dict)
 
    Read a plist file. _fp_ should be a readable and binary file
@@ -69,7 +69,7 @@ plistlib.load(fp, *, fmt=None, dict_type=dict)
 
    New in version 3.4.
 
-                                              *loads()..plistlib.txt;*
+                                               *loads()..plistlib.txt*
 plistlib.loads(data, *, fmt=None, dict_type=dict)
 
    Load a plist from a bytes object. See "load()" for an explanation
@@ -77,7 +77,7 @@ plistlib.loads(data, *, fmt=None, dict_type=dict)
 
    New in version 3.4.
 
-                                               *dump()..plistlib.txt;*
+                                                *dump()..plistlib.txt*
 plistlib.dump(value, fp, *, fmt=FMT_XML, sort_keys=True, skipkeys=False)
 
    Write _value_ to a plist file. _Fp_ should be a writable, binary
@@ -106,7 +106,7 @@ plistlib.dump(value, fp, *, fmt=FMT_XML, sort_keys=True, skipkeys=False)
 
    New in version 3.4.
 
-                                              *dumps()..plistlib.txt;*
+                                               *dumps()..plistlib.txt*
 plistlib.dumps(value, *, fmt=FMT_XML, sort_keys=True, skipkeys=False)
 
    Return _value_ as a plist-formatted bytes object. See the
@@ -117,7 +117,7 @@ plistlib.dumps(value, *, fmt=FMT_XML, sort_keys=True, skipkeys=False)
 
 The following classes are available:
 
-class plistlib.UID(data)                          *UID..plistlib.txt;*
+class plistlib.UID(data)                           *UID..plistlib.txt*
 
    Wraps an "int".  This is used when reading or writing
    NSKeyedArchiver encoded data, which contains UID (see PList
@@ -130,13 +130,13 @@ class plistlib.UID(data)                          *UID..plistlib.txt;*
 
 The following constants are available:
 
-plistlib.FMT_XML                              *FMT_XML..plistlib.txt;*
+plistlib.FMT_XML                               *FMT_XML..plistlib.txt*
 
    The XML format for plist files.
 
    New in version 3.4.
 
-plistlib.FMT_BINARY                        *FMT_BINARY..plistlib.txt;*
+plistlib.FMT_BINARY                         *FMT_BINARY..plistlib.txt*
 
    The binary format for plist files
 

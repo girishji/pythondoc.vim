@@ -1,4 +1,4 @@
-*howto-isolating-extensions.txt;*             Last change: 2023 Sep 09
+*howto-isolating-extensions.txt;*             Last change: 2023 Sep 10
 
 Isolating Extension Modules
 ***************************

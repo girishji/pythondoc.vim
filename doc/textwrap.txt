@@ -1,4 +1,4 @@
-*textwrap.txt;*                               Last change: 2023 Sep 09
+*textwrap.txt;*                               Last change: 2023 Sep 10
 
 "textwrap" — Text wrapping and filling
 **************************************
@@ -13,7 +13,7 @@ wrapping or filling one or two text strings, the convenience functions
 should be good enough; otherwise, you should use an instance of
 "TextWrapper" for efficiency.
 
-                                               *wrap()..textwrap.txt;*
+                                                *wrap()..textwrap.txt*
 textwrap.wrap(text, width=70, *, initial_indent='', subsequent_indent='', expand_tabs=True, replace_whitespace=True, fix_sentence_endings=False, break_long_words=True, drop_whitespace=True, break_on_hyphens=True, tabsize=8, max_lines=None, placeholder=' [...]')
 
    Wraps the single paragraph in _text_ (a string) so every line is at
@@ -26,7 +26,7 @@ textwrap.wrap(text, width=70, *, initial_indent='', subsequent_indent='', expand
    See the "TextWrapper.wrap()" method for additional details on how
    "wrap()" behaves.
 
-                                               *fill()..textwrap.txt;*
+                                                *fill()..textwrap.txt*
 textwrap.fill(text, width=70, *, initial_indent='', subsequent_indent='', expand_tabs=True, replace_whitespace=True, fix_sentence_endings=False, break_long_words=True, drop_whitespace=True, break_on_hyphens=True, tabsize=8, max_lines=None, placeholder=' [...]')
 
    Wraps the single paragraph in _text_, and returns a single string
@@ -37,7 +37,7 @@ textwrap.fill(text, width=70, *, initial_indent='', subsequent_indent='', expand
    In particular, "fill()" accepts exactly the same keyword arguments
    as "wrap()".
 
-                                            *shorten()..textwrap.txt;*
+                                             *shorten()..textwrap.txt*
 textwrap.shorten(text, width, *, fix_sentence_endings=False, break_long_words=True, break_on_hyphens=True, placeholder=' [...]')
 
    Collapse and truncate the given _text_ to fit in the given _width_.
@@ -62,7 +62,7 @@ textwrap.shorten(text, width, *, fix_sentence_endings=False, break_long_words=Tr
 
    New in version 3.4.
 
-textwrap.dedent(text)                        *dedent()..textwrap.txt;*
+textwrap.dedent(text)                         *dedent()..textwrap.txt*
 
    Remove any common leading whitespace from every line in _text_.
 
@@ -89,7 +89,7 @@ textwrap.dedent(text)                        *dedent()..textwrap.txt;*
           print(repr(dedent(s)))  # prints 'hello\n  world\n'
 <
 
-                                             *indent()..textwrap.txt;*
+                                              *indent()..textwrap.txt*
 textwrap.indent(text, prefix, predicate=None)
 
    Add _prefix_ to the beginning of selected lines in _text_.
@@ -127,7 +127,7 @@ Text is preferably wrapped on whitespaces and right after the hyphens
 in hyphenated words; only then will long words be broken if necessary,
 unless "TextWrapper.break_long_words" is set to false.
 
-class textwrap.TextWrapper(**kwargs)      *TextWrapper..textwrap.txt;*
+class textwrap.TextWrapper(**kwargs)       *TextWrapper..textwrap.txt*
 
    The "TextWrapper" constructor accepts a number of optional keyword
    arguments.  Each keyword argument corresponds to an instance
@@ -147,20 +147,20 @@ class textwrap.TextWrapper(**kwargs)      *TextWrapper..textwrap.txt;*
    The "TextWrapper" instance attributes (and keyword arguments to the
    constructor) are as follows:
 
-   width                               *TextWrapper.width..textwrap.txt;*
+   width                                *TextWrapper.width..textwrap.txt*
 
       (default: "70") The maximum length of wrapped lines.  As long as
       there are no individual words in the input text longer than
       "width", "TextWrapper" guarantees that no output line will be
       longer than "width" characters.
 
-   expand_tabs                   *TextWrapper.expand_tabs..textwrap.txt;*
+   expand_tabs                    *TextWrapper.expand_tabs..textwrap.txt*
 
       (default: "True") If true, then all tab characters in _text_
       will be expanded to spaces using the "expandtabs()" method of
       _text_.
 
-   tabsize                           *TextWrapper.tabsize..textwrap.txt;*
+   tabsize                            *TextWrapper.tabsize..textwrap.txt*
 
       (default: "8") If "expand_tabs" is true, then all tab characters
       in _text_ will be expanded to zero or more spaces, depending on
@@ -168,7 +168,7 @@ class textwrap.TextWrapper(**kwargs)      *TextWrapper..textwrap.txt;*
 
       New in version 3.3.
 
-   replace_whitespace     *TextWrapper.replace_whitespace..textwrap.txt;*
+   replace_whitespace      *TextWrapper.replace_whitespace..textwrap.txt*
 
       (default: "True") If true, after tab expansion but before
       wrapping, the "wrap()" method will replace each whitespace
@@ -189,7 +189,7 @@ class textwrap.TextWrapper(**kwargs)      *TextWrapper..textwrap.txt;*
         text should be split into paragraphs (using "str.splitlines()"
         or similar) which are wrapped separately.
 
-   drop_whitespace           *TextWrapper.drop_whitespace..textwrap.txt;*
+   drop_whitespace            *TextWrapper.drop_whitespace..textwrap.txt*
 
       (default: "True") If true, whitespace at the beginning and
       ending of every line (after wrapping but before indenting) is
@@ -198,19 +198,19 @@ class textwrap.TextWrapper(**kwargs)      *TextWrapper..textwrap.txt;*
       being dropped takes up an entire line, the whole line is
       dropped.
 
-   initial_indent             *TextWrapper.initial_indent..textwrap.txt;*
+   initial_indent              *TextWrapper.initial_indent..textwrap.txt*
 
       (default: "''") String that will be prepended to the first line
       of wrapped output.  Counts towards the length of the first line.
       The empty string is not indented.
 
-   subsequent_indent       *TextWrapper.subsequent_indent..textwrap.txt;*
+   subsequent_indent        *TextWrapper.subsequent_indent..textwrap.txt*
 
       (default: "''") String that will be prepended to all lines of
       wrapped output except the first.  Counts towards the length of
       each line except the first.
 
-                     *TextWrapper.fix_sentence_endings..textwrap.txt;*
+                      *TextWrapper.fix_sentence_endings..textwrap.txt*
    fix_sentence_endings
 
       (default: "False") If true, "TextWrapper" attempts to detect
@@ -237,7 +237,7 @@ class textwrap.TextWrapper(**kwargs)      *TextWrapper..textwrap.txt;*
       sentences on the same line, it is specific to English-language
       texts.
 
-   break_long_words         *TextWrapper.break_long_words..textwrap.txt;*
+   break_long_words          *TextWrapper.break_long_words..textwrap.txt*
 
       (default: "True") If true, then words longer than "width" will
       be broken in order to ensure that no lines are longer than
@@ -246,7 +246,7 @@ class textwrap.TextWrapper(**kwargs)      *TextWrapper..textwrap.txt;*
       on a line by themselves, in order to minimize the amount by
       which "width" is exceeded.)
 
-   break_on_hyphens         *TextWrapper.break_on_hyphens..textwrap.txt;*
+   break_on_hyphens          *TextWrapper.break_on_hyphens..textwrap.txt*
 
       (default: "True") If true, wrapping will occur preferably on
       whitespaces and right after hyphens in compound words, as it is
@@ -256,7 +256,7 @@ class textwrap.TextWrapper(**kwargs)      *TextWrapper..textwrap.txt;*
       insecable words.  Default behaviour in previous versions was to
       always allow breaking hyphenated words.
 
-   max_lines                       *TextWrapper.max_lines..textwrap.txt;*
+   max_lines                        *TextWrapper.max_lines..textwrap.txt*
 
       (default: "None") If not "None", then the output will contain at
       most _max_lines_ lines, with _placeholder_ appearing at the end
@@ -264,7 +264,7 @@ class textwrap.TextWrapper(**kwargs)      *TextWrapper..textwrap.txt;*
 
       New in version 3.4.
 
-   placeholder                   *TextWrapper.placeholder..textwrap.txt;*
+   placeholder                    *TextWrapper.placeholder..textwrap.txt*
 
       (default: "' [...]'") String that will appear at the end of the
       output text if it has been truncated.
@@ -274,7 +274,7 @@ class textwrap.TextWrapper(**kwargs)      *TextWrapper..textwrap.txt;*
    "TextWrapper" also provides some public methods, analogous to the
    module-level convenience functions:
 
-   wrap(text)                         *TextWrapper.wrap()..textwrap.txt;*
+   wrap(text)                          *TextWrapper.wrap()..textwrap.txt*
 
       Wraps the single paragraph in _text_ (a string) so every line is
       at most "width" characters long.  All wrapping options are taken
@@ -282,7 +282,7 @@ class textwrap.TextWrapper(**kwargs)      *TextWrapper..textwrap.txt;*
       a list of output lines, without final newlines.  If the wrapped
       output has no content, the returned list is empty.
 
-   fill(text)                         *TextWrapper.fill()..textwrap.txt;*
+   fill(text)                          *TextWrapper.fill()..textwrap.txt*
 
       Wraps the single paragraph in _text_, and returns a single
       string containing the wrapped paragraph.

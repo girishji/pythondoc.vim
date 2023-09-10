@@ -1,4 +1,4 @@
-*typing.txt;*                                 Last change: 2023 Sep 09
+*typing.txt;*                                 Last change: 2023 Sep 10
 
 "typing" — Support for type hints
 *********************************
@@ -805,7 +805,7 @@ Special types
 These can be used as types in annotations. They do not support
 subscription using "[]".
 
-typing.Any                                          *Any..typing.txt;*
+typing.Any                                           *Any..typing.txt*
 
    Special type indicating an unconstrained type.
 
@@ -817,7 +817,7 @@ typing.Any                                          *Any..typing.txt;*
    This can be useful for avoiding type checker errors with classes
    that can duck type anywhere or are highly dynamic.
 
-typing.AnyStr                                    *AnyStr..typing.txt;*
+typing.AnyStr                                     *AnyStr..typing.txt*
 
    A constrained type variable.
 
@@ -860,7 +860,7 @@ typing.AnyStr                                    *AnyStr..typing.txt;*
    runtime when it is accessed or imported from "typing". "AnyStr"
    will be removed from "typing" in Python 3.18.
 
-typing.LiteralString                      *LiteralString..typing.txt;*
+typing.LiteralString                       *LiteralString..typing.txt*
 
    Special type that includes only literal strings.
 
@@ -892,7 +892,7 @@ typing.LiteralString                      *LiteralString..typing.txt;*
 
    New in version 3.11.
 
-typing.Never                                      *Never..typing.txt;*
+typing.Never                                       *Never..typing.txt*
 
    The bottom type, a type that has no members.
 
@@ -918,7 +918,7 @@ typing.Never                                      *Never..typing.txt;*
    used to express the same concept. "Never" was added to make the
    intended meaning more explicit.
 
-typing.NoReturn                                *NoReturn..typing.txt;*
+typing.NoReturn                                 *NoReturn..typing.txt*
 
    Special type indicating that a function never returns.
 
@@ -938,7 +938,7 @@ typing.NoReturn                                *NoReturn..typing.txt;*
 
    New in version 3.6.2.
 
-typing.Self                                        *Self..typing.txt;*
+typing.Self                                         *Self..typing.txt*
 
    Special type to represent the current enclosed class.
 
@@ -997,7 +997,7 @@ typing.Self                                        *Self..typing.txt;*
 
    New in version 3.11.
 
-typing.TypeAlias                              *TypeAlias..typing.txt;*
+typing.TypeAlias                               *TypeAlias..typing.txt*
 
    Special annotation for explicitly declaring a type alias.
 
@@ -1045,7 +1045,7 @@ Special forms
 These can be used as types in annotations. They all support
 subscription using "[]", but each has a unique syntax.
 
-typing.Union                                      *Union..typing.txt;*
+typing.Union                                       *Union..typing.txt*
 
    Union type; "Union[X, Y]" is equivalent to "X | Y" and means either
    X or Y.
@@ -1081,7 +1081,7 @@ typing.Union                                      *Union..typing.txt;*
    Changed in version 3.10: Unions can now be written as "X | Y". See
    union type expressions.
 
-typing.Optional                                *Optional..typing.txt;*
+typing.Optional                                 *Optional..typing.txt*
 
    "Optional[X]" is equivalent to "X | None" (or "Union[X, None]").
 
@@ -1103,7 +1103,7 @@ typing.Optional                                *Optional..typing.txt;*
    Changed in version 3.10: Optional can now be written as "X | None".
    See union type expressions.
 
-typing.Concatenate                          *Concatenate..typing.txt;*
+typing.Concatenate                           *Concatenate..typing.txt*
 
    Special form for annotating higher-order functions.
 
@@ -1161,7 +1161,7 @@ typing.Concatenate                          *Concatenate..typing.txt;*
 
      * Annotating callable objects
 
-typing.Literal                                  *Literal..typing.txt;*
+typing.Literal                                   *Literal..typing.txt*
 
    Special typing form to define “literal types”.
 
@@ -1194,7 +1194,7 @@ typing.Literal                                  *Literal..typing.txt;*
    during equality comparisons if one of their parameters are not
    _hashable_.
 
-typing.ClassVar                                *ClassVar..typing.txt;*
+typing.ClassVar                                 *ClassVar..typing.txt*
 
    Special type construct to mark class variables.
 
@@ -1221,7 +1221,7 @@ typing.ClassVar                                *ClassVar..typing.txt;*
 <
    New in version 3.5.3.
 
-typing.Final                                      *Final..typing.txt;*
+typing.Final                                       *Final..typing.txt*
 
    Special typing construct to indicate final names to type checkers.
 
@@ -1244,7 +1244,7 @@ typing.Final                                      *Final..typing.txt;*
 
    New in version 3.8.
 
-typing.Required                                *Required..typing.txt;*
+typing.Required                                 *Required..typing.txt*
 
    Special typing construct to mark a "TypedDict" key as required.
 
@@ -1253,7 +1253,7 @@ typing.Required                                *Required..typing.txt;*
 
    New in version 3.11.
 
-typing.NotRequired                          *NotRequired..typing.txt;*
+typing.NotRequired                           *NotRequired..typing.txt*
 
    Special typing construct to mark a "TypedDict" key as potentially
    missing.
@@ -1262,7 +1262,7 @@ typing.NotRequired                          *NotRequired..typing.txt;*
 
    New in version 3.11.
 
-typing.Annotated                              *Annotated..typing.txt;*
+typing.Annotated                               *Annotated..typing.txt*
 
    Special typing form to add context-specific metadata to an
    annotation.
@@ -1396,7 +1396,7 @@ typing.Annotated                              *Annotated..typing.txt;*
 
    New in version 3.9.
 
-typing.TypeGuard                              *TypeGuard..typing.txt;*
+typing.TypeGuard                               *TypeGuard..typing.txt*
 
    Special typing construct for marking user-defined type guard
    functions.
@@ -1471,7 +1471,7 @@ typing.TypeGuard                              *TypeGuard..typing.txt;*
 
    New in version 3.10.
 
-typing.Unpack                                    *Unpack..typing.txt;*
+typing.Unpack                                     *Unpack..typing.txt*
 
    Typing operator to conceptually mark an object as having been
    unpacked.
@@ -1529,7 +1529,7 @@ lists and the "type" statement). For compatibility with Python 3.11
 and earlier, they can also be created without the dedicated syntax, as
 documented below.
 
-class typing.Generic                            *Generic..typing.txt;*
+class typing.Generic                             *Generic..typing.txt*
 
    Abstract base class for generic types.
 
@@ -1568,7 +1568,7 @@ class typing.Generic                            *Generic..typing.txt;*
               # Etc.
 <
 
-                                                *TypeVar..typing.txt;*
+                                                 *TypeVar..typing.txt*
 class typing.TypeVar(name, *constraints, bound=None, covariant=False, contravariant=False, infer_variance=False)
 
    Type variable.
@@ -1669,27 +1669,27 @@ class typing.TypeVar(name, *constraints, bound=None, covariant=False, contravari
 <
    At runtime, "isinstance(x, T)" will raise "TypeError".
 
-   __name__                               *TypeVar.__name__..typing.txt;*
+   __name__                                *TypeVar.__name__..typing.txt*
 
       The name of the type variable.
 
-   __covariant__                     *TypeVar.__covariant__..typing.txt;*
+   __covariant__                      *TypeVar.__covariant__..typing.txt*
 
       Whether the type var has been explicitly marked as covariant.
 
-   __contravariant__             *TypeVar.__contravariant__..typing.txt;*
+   __contravariant__              *TypeVar.__contravariant__..typing.txt*
 
       Whether the type var has been explicitly marked as
       contravariant.
 
-   __infer_variance__           *TypeVar.__infer_variance__..typing.txt;*
+   __infer_variance__            *TypeVar.__infer_variance__..typing.txt*
 
       Whether the type variable’s variance should be inferred by type
       checkers.
 
       New in version 3.12.
 
-   __bound__                             *TypeVar.__bound__..typing.txt;*
+   __bound__                              *TypeVar.__bound__..typing.txt*
 
       The bound of the type variable, if any.
 
@@ -1698,7 +1698,7 @@ class typing.TypeVar(name, *constraints, bound=None, covariant=False, contravari
       is accessed, not when the type variable is created (see Lazy
       evaluation).
 
-   __constraints__                 *TypeVar.__constraints__..typing.txt;*
+   __constraints__                  *TypeVar.__constraints__..typing.txt*
 
       A tuple containing the constraints of the type variable, if any.
 
@@ -1711,7 +1711,7 @@ class typing.TypeVar(name, *constraints, bound=None, covariant=False, contravari
    the type parameter syntax introduced by **PEP 695**. The
    "infer_variance" parameter was added.
 
-class typing.TypeVarTuple(name)            *TypeVarTuple..typing.txt;*
+class typing.TypeVarTuple(name)             *TypeVarTuple..typing.txt*
 
    Type variable tuple. A specialized form of "type variable" that
    enables _variadic_ generics.
@@ -1816,7 +1816,7 @@ class typing.TypeVarTuple(name)            *TypeVarTuple..typing.txt;*
 
    See **PEP 646** for more details on type variable tuples.
 
-   __name__                          *TypeVarTuple.__name__..typing.txt;*
+   __name__                           *TypeVarTuple.__name__..typing.txt*
 
       The name of the type variable tuple.
 
@@ -1825,7 +1825,7 @@ class typing.TypeVarTuple(name)            *TypeVarTuple..typing.txt;*
    Changed in version 3.12: Type variable tuples can now be declared
    using the type parameter syntax introduced by **PEP 695**.
 
-                                              *ParamSpec..typing.txt;*
+                                               *ParamSpec..typing.txt*
 class typing.ParamSpec(name, *, bound=None, covariant=False, contravariant=False)
 
    Parameter specification variable.  A specialized version of "type
@@ -1881,9 +1881,9 @@ class typing.ParamSpec(name, *, bound=None, covariant=False, contravariant=False
       decorator when returning the "inner" function, or the static
       type checker must be told to ignore the "return inner".
 
-   args                                     *ParamSpec.args..typing.txt;*
+   args                                      *ParamSpec.args..typing.txt*
 
-   kwargs                                 *ParamSpec.kwargs..typing.txt;*
+   kwargs                                  *ParamSpec.kwargs..typing.txt*
 
       Since "ParamSpec" captures both positional and keyword
       parameters, "P.args" and "P.kwargs" can be used to split a
@@ -1896,7 +1896,7 @@ class typing.ParamSpec(name, *, bound=None, covariant=False, contravariant=False
       "P.kwargs" are instances respectively of "ParamSpecArgs" and
       "ParamSpecKwargs".
 
-   __name__                             *ParamSpec.__name__..typing.txt;*
+   __name__                              *ParamSpec.__name__..typing.txt*
 
       The name of the parameter specification.
 
@@ -1925,9 +1925,9 @@ class typing.ParamSpec(name, *, bound=None, covariant=False, contravariant=False
 
      * Annotating callable objects
 
-typing.ParamSpecArgs                      *ParamSpecArgs..typing.txt;*
+typing.ParamSpecArgs                       *ParamSpecArgs..typing.txt*
 
-typing.ParamSpecKwargs                  *ParamSpecKwargs..typing.txt;*
+typing.ParamSpecKwargs                   *ParamSpecKwargs..typing.txt*
 
    Arguments and keyword arguments attributes of a "ParamSpec". The
    "P.args" attribute of a "ParamSpec" is an instance of
@@ -1947,7 +1947,7 @@ typing.ParamSpecKwargs                  *ParamSpecKwargs..typing.txt;*
 <
    New in version 3.10.
 
-                                          *TypeAliasType..typing.txt;*
+                                           *TypeAliasType..typing.txt*
 class typing.TypeAliasType(name, value, *, type_params=())
 
    The type of type aliases created through the "type" statement.
@@ -1960,7 +1960,7 @@ class typing.TypeAliasType(name, value, *, type_params=())
 <
    New in version 3.12.
 
-   __name__                         *TypeAliasType.__name__..typing.txt;*
+   __name__                          *TypeAliasType.__name__..typing.txt*
 
       The name of the type alias:
 >
@@ -1968,7 +1968,7 @@ class typing.TypeAliasType(name, value, *, type_params=())
          >>> Alias.__name__
          'Alias'
 <
-   __module__                     *TypeAliasType.__module__..typing.txt;*
+   __module__                      *TypeAliasType.__module__..typing.txt*
 
       The module in which the type alias was defined:
 >
@@ -1976,7 +1976,7 @@ class typing.TypeAliasType(name, value, *, type_params=())
          >>> Alias.__module__
          '__main__'
 <
-   __type_params__           *TypeAliasType.__type_params__..typing.txt;*
+   __type_params__            *TypeAliasType.__type_params__..typing.txt*
 
       The type parameters of the type alias, or an empty tuple if the
       alias is not generic:
@@ -1988,7 +1988,7 @@ class typing.TypeAliasType(name, value, *, type_params=())
          >>> NotGeneric.__type_params__
          ()
 <
-   __value__                       *TypeAliasType.__value__..typing.txt;*
+   __value__                        *TypeAliasType.__value__..typing.txt*
 
       The type alias’s value. This is lazily evaluated, so names used
       in the definition of the alias are not resolved until the
@@ -2013,7 +2013,7 @@ These functions and classes should not be used directly as
 annotations. Their intended purpose is to be building blocks for
 creating and declaring types.
 
-class typing.NamedTuple                      *NamedTuple..typing.txt;*
+class typing.NamedTuple                       *NamedTuple..typing.txt*
 
    Typed version of "collections.namedtuple()".
 
@@ -2103,7 +2103,7 @@ class typing.NamedTuple                      *NamedTuple..typing.txt;*
    with 0 fields, use "class NT(NamedTuple): pass" or "NT =
    NamedTuple("NT", [])".
 
-class typing.NewType(name, tp)                  *NewType..typing.txt;*
+class typing.NewType(name, tp)                   *NewType..typing.txt*
 
    Helper class to create low-overhead distinct types.
 
@@ -2116,15 +2116,15 @@ class typing.NewType(name, tp)                  *NewType..typing.txt;*
       UserId = NewType('UserId', int)  # Declare the NewType "UserId"
       first_user = UserId(1)  # "UserId" returns the argument unchanged at runtime
 <
-   __module__                           *NewType.__module__..typing.txt;*
+   __module__                            *NewType.__module__..typing.txt*
 
       The module in which the new type is defined.
 
-   __name__                               *NewType.__name__..typing.txt;*
+   __name__                                *NewType.__name__..typing.txt*
 
       The name of the new type.
 
-   __supertype__                     *NewType.__supertype__..typing.txt;*
+   __supertype__                      *NewType.__supertype__..typing.txt*
 
       The type that the new type is based on.
 
@@ -2133,7 +2133,7 @@ class typing.NewType(name, tp)                  *NewType..typing.txt;*
    Changed in version 3.10: "NewType" is now a class rather than a
    function.
 
-class typing.Protocol(Generic)                 *Protocol..typing.txt;*
+class typing.Protocol(Generic)                  *Protocol..typing.txt*
 
    Base class for protocol classes.
 
@@ -2177,7 +2177,7 @@ class typing.Protocol(Generic)                 *Protocol..typing.txt;*
 <
    New in version 3.8.
 
-@typing.runtime_checkable           *runtime_checkable()..typing.txt;*
+@typing.runtime_checkable            *runtime_checkable()..typing.txt*
 
    Mark a protocol class as a runtime protocol.
 
@@ -2234,7 +2234,7 @@ class typing.Protocol(Generic)                 *Protocol..typing.txt;*
    "isinstance()" checks comparing objects to the protocol. See
    “What’s new in Python 3.12” for more details.
 
-class typing.TypedDict(dict)                  *TypedDict..typing.txt;*
+class typing.TypedDict(dict)                   *TypedDict..typing.txt*
 
    Special construct to add type hints to a dictionary. At runtime it
    is a plain "dict".
@@ -2367,7 +2367,7 @@ class typing.TypedDict(dict)                  *TypedDict..typing.txt;*
    practices), "__total__", "__required_keys__", and
    "__optional_keys__".
 
-   __total__                           *TypedDict.__total__..typing.txt;*
+   __total__                            *TypedDict.__total__..typing.txt*
 
       "Point2D.__total__" gives the value of the "total" argument.
       Example:
@@ -2383,11 +2383,11 @@ class typing.TypedDict(dict)                  *TypedDict..typing.txt;*
          >>> Point3D.__total__
          True
 <
-   __required_keys__           *TypedDict.__required_keys__..typing.txt;*
+   __required_keys__            *TypedDict.__required_keys__..typing.txt*
 
       New in version 3.9.
 
-   __optional_keys__           *TypedDict.__optional_keys__..typing.txt;*
+   __optional_keys__            *TypedDict.__optional_keys__..typing.txt*
 
       "Point2D.__required_keys__" and "Point2D.__optional_keys__"
       return "frozenset" objects containing required and non-required
@@ -2447,34 +2447,34 @@ Protocols
 The following protocols are provided by the typing module. All are
 decorated with "@runtime_checkable".
 
-class typing.SupportsAbs                    *SupportsAbs..typing.txt;*
+class typing.SupportsAbs                     *SupportsAbs..typing.txt*
 
    An ABC with one abstract method "__abs__" that is covariant in its
    return type.
 
-class typing.SupportsBytes                *SupportsBytes..typing.txt;*
+class typing.SupportsBytes                 *SupportsBytes..typing.txt*
 
    An ABC with one abstract method "__bytes__".
 
-class typing.SupportsComplex            *SupportsComplex..typing.txt;*
+class typing.SupportsComplex             *SupportsComplex..typing.txt*
 
    An ABC with one abstract method "__complex__".
 
-class typing.SupportsFloat                *SupportsFloat..typing.txt;*
+class typing.SupportsFloat                 *SupportsFloat..typing.txt*
 
    An ABC with one abstract method "__float__".
 
-class typing.SupportsIndex                *SupportsIndex..typing.txt;*
+class typing.SupportsIndex                 *SupportsIndex..typing.txt*
 
    An ABC with one abstract method "__index__".
 
    New in version 3.8.
 
-class typing.SupportsInt                    *SupportsInt..typing.txt;*
+class typing.SupportsInt                     *SupportsInt..typing.txt*
 
    An ABC with one abstract method "__int__".
 
-class typing.SupportsRound                *SupportsRound..typing.txt;*
+class typing.SupportsRound                 *SupportsRound..typing.txt*
 
    An ABC with one abstract method "__round__" that is covariant in
    its return type.
@@ -2483,9 +2483,9 @@ class typing.SupportsRound                *SupportsRound..typing.txt;*
 ABCs for working with IO
 ------------------------
 
-class typing.IO                                      *IO..typing.txt;*
-class typing.TextIO                              *TextIO..typing.txt;*
-class typing.BinaryIO                          *BinaryIO..typing.txt;*
+class typing.IO                                       *IO..typing.txt*
+class typing.TextIO                               *TextIO..typing.txt*
+class typing.BinaryIO                           *BinaryIO..typing.txt*
 
    Generic type "IO[AnyStr]" and its subclasses "TextIO(IO[str])" and
    "BinaryIO(IO[bytes])" represent the types of I/O streams such as
@@ -2495,7 +2495,7 @@ class typing.BinaryIO                          *BinaryIO..typing.txt;*
 Functions and decorators
 ------------------------
 
-typing.cast(typ, val)                            *cast()..typing.txt;*
+typing.cast(typ, val)                             *cast()..typing.txt*
 
    Cast a value to a type.
 
@@ -2504,7 +2504,7 @@ typing.cast(typ, val)                            *cast()..typing.txt;*
    intentionally don’t check anything (we want this to be as fast as
    possible).
 
-typing.assert_type(val, typ, /)           *assert_type()..typing.txt;*
+typing.assert_type(val, typ, /)            *assert_type()..typing.txt*
 
    Ask a static type checker to confirm that _val_ has an inferred
    type of _typ_.
@@ -2533,7 +2533,7 @@ typing.assert_type(val, typ, /)           *assert_type()..typing.txt;*
 <
    New in version 3.11.
 
-typing.assert_never(arg, /)              *assert_never()..typing.txt;*
+typing.assert_never(arg, /)               *assert_never()..typing.txt*
 
    Ask a static type checker to confirm that a line of code is
    unreachable.
@@ -2570,7 +2570,7 @@ typing.assert_never(arg, /)              *assert_never()..typing.txt;*
 
    New in version 3.11.
 
-typing.reveal_type(obj, /)                *reveal_type()..typing.txt;*
+typing.reveal_type(obj, /)                 *reveal_type()..typing.txt*
 
    Reveal the inferred static type of an expression.
 
@@ -2601,7 +2601,7 @@ typing.reveal_type(obj, /)                *reveal_type()..typing.txt;*
 <
    New in version 3.11.
 
-                                  *dataclass_transform()..typing.txt;*
+                                   *dataclass_transform()..typing.txt*
 @typing.dataclass_transform(*, eq_default=True, order_default=False, kw_only_default=False, frozen_default=False, field_specifiers=(), **kwargs)
 
    Decorator to mark an object as providing "dataclass"-like behavior.
@@ -2730,7 +2730,7 @@ typing.reveal_type(obj, /)                *reveal_type()..typing.txt;*
 
    New in version 3.11.
 
-@typing.overload                             *overload()..typing.txt;*
+@typing.overload                              *overload()..typing.txt*
 
    Decorator for creating overloaded functions and methods.
 
@@ -2769,7 +2769,7 @@ typing.reveal_type(obj, /)                *reveal_type()..typing.txt;*
    Changed in version 3.11: Overloaded functions can now be
    introspected at runtime using "get_overloads()".
 
-typing.get_overloads(func)              *get_overloads()..typing.txt;*
+typing.get_overloads(func)               *get_overloads()..typing.txt*
 
    Return a sequence of "@overload"-decorated definitions for _func_.
 
@@ -2785,7 +2785,7 @@ typing.get_overloads(func)              *get_overloads()..typing.txt;*
 
    New in version 3.11.
 
-typing.clear_overloads()              *clear_overloads()..typing.txt;*
+typing.clear_overloads()               *clear_overloads()..typing.txt*
 
    Clear all registered overloads in the internal registry.
 
@@ -2793,7 +2793,7 @@ typing.clear_overloads()              *clear_overloads()..typing.txt;*
 
    New in version 3.11.
 
-@typing.final                                   *final()..typing.txt;*
+@typing.final                                    *final()..typing.txt*
 
    Decorator to indicate final methods and final classes.
 
@@ -2830,7 +2830,7 @@ typing.clear_overloads()              *clear_overloads()..typing.txt;*
    the decorator returns the object unchanged without raising an
    exception.
 
-@typing.no_type_check                   *no_type_check()..typing.txt;*
+@typing.no_type_check                    *no_type_check()..typing.txt*
 
    Decorator to indicate that annotations are not type hints.
 
@@ -2842,7 +2842,7 @@ typing.clear_overloads()              *clear_overloads()..typing.txt;*
 
    "@no_type_check" mutates the decorated object in place.
 
-                              *no_type_check_decorator()..typing.txt;*
+                               *no_type_check_decorator()..typing.txt*
 @typing.no_type_check_decorator
 
    Decorator to give another decorator the "no_type_check()" effect.
@@ -2854,7 +2854,7 @@ typing.clear_overloads()              *clear_overloads()..typing.txt;*
    type checker ever added support for "@no_type_check_decorator". It
    is therefore deprecated, and will be removed in Python 3.15.
 
-@typing.override                             *override()..typing.txt;*
+@typing.override                              *override()..typing.txt*
 
    Decorator to indicate that a method in a subclass is intended to
    override a method or attribute in a superclass.
@@ -2892,7 +2892,7 @@ typing.clear_overloads()              *clear_overloads()..typing.txt;*
 
    New in version 3.12.
 
-@typing.type_check_only               *type_check_only()..typing.txt;*
+@typing.type_check_only                *type_check_only()..typing.txt*
 
    Decorator to mark a class or function as unavailable at runtime.
 
@@ -2914,7 +2914,7 @@ typing.clear_overloads()              *clear_overloads()..typing.txt;*
 Introspection helpers
 ---------------------
 
-                                       *get_type_hints()..typing.txt;*
+                                        *get_type_hints()..typing.txt*
 typing.get_type_hints(obj, globalns=None, localns=None, include_extras=False)
 
    Return a dictionary containing type hints for a function, method,
@@ -2954,7 +2954,7 @@ typing.get_type_hints(obj, globalns=None, localns=None, include_extras=False)
    function and method annotations if a default value equal to "None"
    was set. Now the annotation is returned unchanged.
 
-typing.get_origin(tp)                      *get_origin()..typing.txt;*
+typing.get_origin(tp)                       *get_origin()..typing.txt*
 
    Get the unsubscripted version of a type: for a typing object of the
    form "X[Y, Z, ...]" return "X".
@@ -2975,7 +2975,7 @@ typing.get_origin(tp)                      *get_origin()..typing.txt;*
 <
    New in version 3.8.
 
-typing.get_args(tp)                          *get_args()..typing.txt;*
+typing.get_args(tp)                           *get_args()..typing.txt*
 
    Get type arguments with all substitutions performed: for a typing
    object of the form "X[Y, Z, ...]" return "(Y, Z, ...)".
@@ -2993,8 +2993,7 @@ typing.get_args(tp)                          *get_args()..typing.txt;*
 <
    New in version 3.8.
 
-                                 *get_protocol_members()..typing.txt;*
-typing.get_protocol_members(tp)
+typing.get_protocol_members(tp)   *get_protocol_members()..typing.txt*
 
    Return the set of members defined in a "Protocol".
 >
@@ -3009,7 +3008,7 @@ typing.get_protocol_members(tp)
 
    New in version 3.13.
 
-typing.is_protocol(tp)                    *is_protocol()..typing.txt;*
+typing.is_protocol(tp)                     *is_protocol()..typing.txt*
 
    Determine if a type is a "Protocol".
 
@@ -3024,7 +3023,7 @@ typing.is_protocol(tp)                    *is_protocol()..typing.txt;*
 <
    New in version 3.13.
 
-typing.is_typeddict(tp)                  *is_typeddict()..typing.txt;*
+typing.is_typeddict(tp)                   *is_typeddict()..typing.txt*
 
    Check if a type is a "TypedDict".
 
@@ -3043,7 +3042,7 @@ typing.is_typeddict(tp)                  *is_typeddict()..typing.txt;*
 <
    New in version 3.10.
 
-class typing.ForwardRef                      *ForwardRef..typing.txt;*
+class typing.ForwardRef                       *ForwardRef..typing.txt*
 
    Class used for internal typing representation of string forward
    references.
@@ -3064,7 +3063,7 @@ class typing.ForwardRef                      *ForwardRef..typing.txt;*
 Constant
 --------
 
-typing.TYPE_CHECKING                      *TYPE_CHECKING..typing.txt;*
+typing.TYPE_CHECKING                       *TYPE_CHECKING..typing.txt*
 
    A special constant that is assumed to be "True" by 3rd party static
    type checkers. It is "False" at runtime.
@@ -3121,7 +3120,7 @@ or newer.
 Aliases to built-in types
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
-class typing.Dict(dict, MutableMapping[KT, VT])    *Dict..typing.txt;*
+class typing.Dict(dict, MutableMapping[KT, VT])     *Dict..typing.txt*
 
    Deprecated alias to "dict".
 
@@ -3137,7 +3136,7 @@ class typing.Dict(dict, MutableMapping[KT, VT])    *Dict..typing.txt;*
    Deprecated since version 3.9: "builtins.dict" now supports
    subscripting ("[]"). See **PEP 585** and Generic Alias Type.
 
-class typing.List(list, MutableSequence[T])        *List..typing.txt;*
+class typing.List(list, MutableSequence[T])         *List..typing.txt*
 
    Deprecated alias to "list".
 
@@ -3156,7 +3155,7 @@ class typing.List(list, MutableSequence[T])        *List..typing.txt;*
    Deprecated since version 3.9: "builtins.list" now supports
    subscripting ("[]"). See **PEP 585** and Generic Alias Type.
 
-class typing.Set(set, MutableSet[T])                *Set..typing.txt;*
+class typing.Set(set, MutableSet[T])                 *Set..typing.txt*
 
    Deprecated alias to "builtins.set".
 
@@ -3167,7 +3166,7 @@ class typing.Set(set, MutableSet[T])                *Set..typing.txt;*
    Deprecated since version 3.9: "builtins.set" now supports
    subscripting ("[]"). See **PEP 585** and Generic Alias Type.
 
-                                              *FrozenSet..typing.txt;*
+                                               *FrozenSet..typing.txt*
 class typing.FrozenSet(frozenset, AbstractSet[T_co])
 
    Deprecated alias to "builtins.frozenset".
@@ -3175,7 +3174,7 @@ class typing.FrozenSet(frozenset, AbstractSet[T_co])
    Deprecated since version 3.9: "builtins.frozenset" now supports
    subscripting ("[]"). See **PEP 585** and Generic Alias Type.
 
-typing.Tuple                                      *Tuple..typing.txt;*
+typing.Tuple                                       *Tuple..typing.txt*
 
    Deprecated alias for "tuple".
 
@@ -3185,7 +3184,7 @@ typing.Tuple                                      *Tuple..typing.txt;*
    Deprecated since version 3.9: "builtins.tuple" now supports
    subscripting ("[]"). See **PEP 585** and Generic Alias Type.
 
-class typing.Type(Generic[CT_co])                  *Type..typing.txt;*
+class typing.Type(Generic[CT_co])                   *Type..typing.txt*
 
    Deprecated alias to "type".
 
@@ -3201,7 +3200,7 @@ class typing.Type(Generic[CT_co])                  *Type..typing.txt;*
 Aliases to types in "collections"
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-                                            *DefaultDict..typing.txt;*
+                                             *DefaultDict..typing.txt*
 class typing.DefaultDict(collections.defaultdict, MutableMapping[KT, VT])
 
    Deprecated alias to "collections.defaultdict".
@@ -3212,7 +3211,7 @@ class typing.DefaultDict(collections.defaultdict, MutableMapping[KT, VT])
    supports subscripting ("[]"). See **PEP 585** and Generic Alias
    Type.
 
-                                            *OrderedDict..typing.txt;*
+                                             *OrderedDict..typing.txt*
 class typing.OrderedDict(collections.OrderedDict, MutableMapping[KT, VT])
 
    Deprecated alias to "collections.OrderedDict".
@@ -3223,7 +3222,7 @@ class typing.OrderedDict(collections.OrderedDict, MutableMapping[KT, VT])
    supports subscripting ("[]"). See **PEP 585** and Generic Alias
    Type.
 
-                                               *ChainMap..typing.txt;*
+                                                *ChainMap..typing.txt*
 class typing.ChainMap(collections.ChainMap, MutableMapping[KT, VT])
 
    Deprecated alias to "collections.ChainMap".
@@ -3235,7 +3234,7 @@ class typing.ChainMap(collections.ChainMap, MutableMapping[KT, VT])
    Deprecated since version 3.9: "collections.ChainMap" now supports
    subscripting ("[]"). See **PEP 585** and Generic Alias Type.
 
-                                                *Counter..typing.txt;*
+                                                 *Counter..typing.txt*
 class typing.Counter(collections.Counter, Dict[T, int])
 
    Deprecated alias to "collections.Counter".
@@ -3247,7 +3246,7 @@ class typing.Counter(collections.Counter, Dict[T, int])
    Deprecated since version 3.9: "collections.Counter" now supports
    subscripting ("[]"). See **PEP 585** and Generic Alias Type.
 
-class typing.Deque(deque, MutableSequence[T])     *Deque..typing.txt;*
+class typing.Deque(deque, MutableSequence[T])      *Deque..typing.txt*
 
    Deprecated alias to "collections.deque".
 
@@ -3262,8 +3261,8 @@ class typing.Deque(deque, MutableSequence[T])     *Deque..typing.txt;*
 Aliases to other concrete types
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-class typing.Pattern                            *Pattern..typing.txt;*
-class typing.Match                                *Match..typing.txt;*
+class typing.Pattern                             *Pattern..typing.txt*
+class typing.Match                                 *Match..typing.txt*
 
    Deprecated aliases corresponding to the return types from
    "re.compile()" and "re.match()".
@@ -3276,7 +3275,7 @@ class typing.Match                                *Match..typing.txt;*
    Deprecated since version 3.9: Classes "Pattern" and "Match" from
    "re" now support "[]". See **PEP 585** and Generic Alias Type.
 
-class typing.Text                                  *Text..typing.txt;*
+class typing.Text                                   *Text..typing.txt*
 
    Deprecated alias for "str".
 
@@ -3300,15 +3299,14 @@ class typing.Text                                  *Text..typing.txt;*
 Aliases to container ABCs in "collections.abc"
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-                                            *AbstractSet..typing.txt;*
-class typing.AbstractSet(Collection[T_co])
+class typing.AbstractSet(Collection[T_co])   *AbstractSet..typing.txt*
 
    Deprecated alias to "collections.abc.Set".
 
    Deprecated since version 3.9: "collections.abc.Set" now supports
    subscripting ("[]"). See **PEP 585** and Generic Alias Type.
 
-class typing.ByteString(Sequence[int])       *ByteString..typing.txt;*
+class typing.ByteString(Sequence[int])        *ByteString..typing.txt*
 
    This type represents the types "bytes", "bytearray", and
    "memoryview" of byte sequences.
@@ -3317,7 +3315,7 @@ class typing.ByteString(Sequence[int])       *ByteString..typing.txt;*
    Prefer "collections.abc.Buffer", or a union like "bytes | bytearray
    | memoryview".
 
-                                             *Collection..typing.txt;*
+                                              *Collection..typing.txt*
 class typing.Collection(Sized, Iterable[T_co], Container[T_co])
 
    Deprecated alias to "collections.abc.Collection".
@@ -3328,7 +3326,7 @@ class typing.Collection(Sized, Iterable[T_co], Container[T_co])
    supports subscripting ("[]"). See **PEP 585** and Generic Alias
    Type.
 
-class typing.Container(Generic[T_co])         *Container..typing.txt;*
+class typing.Container(Generic[T_co])          *Container..typing.txt*
 
    Deprecated alias to "collections.abc.Container".
 
@@ -3336,7 +3334,7 @@ class typing.Container(Generic[T_co])         *Container..typing.txt;*
    supports subscripting ("[]"). See **PEP 585** and Generic Alias
    Type.
 
-                                              *ItemsView..typing.txt;*
+                                               *ItemsView..typing.txt*
 class typing.ItemsView(MappingView, AbstractSet[tuple[KT_co, VT_co]])
 
    Deprecated alias to "collections.abc.ItemsView".
@@ -3345,7 +3343,7 @@ class typing.ItemsView(MappingView, AbstractSet[tuple[KT_co, VT_co]])
    supports subscripting ("[]"). See **PEP 585** and Generic Alias
    Type.
 
-                                               *KeysView..typing.txt;*
+                                                *KeysView..typing.txt*
 class typing.KeysView(MappingView, AbstractSet[KT_co])
 
    Deprecated alias to "collections.abc.KeysView".
@@ -3354,7 +3352,7 @@ class typing.KeysView(MappingView, AbstractSet[KT_co])
    supports subscripting ("[]"). See **PEP 585** and Generic Alias
    Type.
 
-                                                *Mapping..typing.txt;*
+                                                 *Mapping..typing.txt*
 class typing.Mapping(Collection[KT], Generic[KT, VT_co])
 
    Deprecated alias to "collections.abc.Mapping".
@@ -3368,7 +3366,7 @@ class typing.Mapping(Collection[KT], Generic[KT, VT_co])
    supports subscripting ("[]"). See **PEP 585** and Generic Alias
    Type.
 
-class typing.MappingView(Sized)             *MappingView..typing.txt;*
+class typing.MappingView(Sized)              *MappingView..typing.txt*
 
    Deprecated alias to "collections.abc.MappingView".
 
@@ -3376,7 +3374,7 @@ class typing.MappingView(Sized)             *MappingView..typing.txt;*
    supports subscripting ("[]"). See **PEP 585** and Generic Alias
    Type.
 
-                                         *MutableMapping..typing.txt;*
+                                          *MutableMapping..typing.txt*
 class typing.MutableMapping(Mapping[KT, VT])
 
    Deprecated alias to "collections.abc.MutableMapping".
@@ -3385,7 +3383,7 @@ class typing.MutableMapping(Mapping[KT, VT])
    supports subscripting ("[]"). See **PEP 585** and Generic Alias
    Type.
 
-                                        *MutableSequence..typing.txt;*
+                                         *MutableSequence..typing.txt*
 class typing.MutableSequence(Sequence[T])
 
    Deprecated alias to "collections.abc.MutableSequence".
@@ -3394,7 +3392,7 @@ class typing.MutableSequence(Sequence[T])
    supports subscripting ("[]"). See **PEP 585** and Generic Alias
    Type.
 
-class typing.MutableSet(AbstractSet[T])      *MutableSet..typing.txt;*
+class typing.MutableSet(AbstractSet[T])       *MutableSet..typing.txt*
 
    Deprecated alias to "collections.abc.MutableSet".
 
@@ -3402,7 +3400,7 @@ class typing.MutableSet(AbstractSet[T])      *MutableSet..typing.txt;*
    supports subscripting ("[]"). See **PEP 585** and Generic Alias
    Type.
 
-                                               *Sequence..typing.txt;*
+                                                *Sequence..typing.txt*
 class typing.Sequence(Reversible[T_co], Collection[T_co])
 
    Deprecated alias to "collections.abc.Sequence".
@@ -3411,7 +3409,7 @@ class typing.Sequence(Reversible[T_co], Collection[T_co])
    supports subscripting ("[]"). See **PEP 585** and Generic Alias
    Type.
 
-                                             *ValuesView..typing.txt;*
+                                              *ValuesView..typing.txt*
 class typing.ValuesView(MappingView, Collection[_VT_co])
 
    Deprecated alias to "collections.abc.ValuesView".
@@ -3424,7 +3422,7 @@ class typing.ValuesView(MappingView, Collection[_VT_co])
 Aliases to asynchronous ABCs in "collections.abc"
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-                                              *Coroutine..typing.txt;*
+                                               *Coroutine..typing.txt*
 class typing.Coroutine(Awaitable[ReturnType], Generic[YieldType, SendType, ReturnType])
 
    Deprecated alias to "collections.abc.Coroutine".
@@ -3444,7 +3442,7 @@ class typing.Coroutine(Awaitable[ReturnType], Generic[YieldType, SendType, Retur
    supports subscripting ("[]"). See **PEP 585** and Generic Alias
    Type.
 
-                                         *AsyncGenerator..typing.txt;*
+                                          *AsyncGenerator..typing.txt*
 class typing.AsyncGenerator(AsyncIterator[YieldType], Generic[YieldType, SendType])
 
    Deprecated alias to "collections.abc.AsyncGenerator".
@@ -3484,7 +3482,7 @@ class typing.AsyncGenerator(AsyncIterator[YieldType], Generic[YieldType, SendTyp
    supports subscripting ("[]"). See **PEP 585** and Generic Alias
    Type.
 
-                                          *AsyncIterable..typing.txt;*
+                                           *AsyncIterable..typing.txt*
 class typing.AsyncIterable(Generic[T_co])
 
    Deprecated alias to "collections.abc.AsyncIterable".
@@ -3495,7 +3493,7 @@ class typing.AsyncIterable(Generic[T_co])
    supports subscripting ("[]"). See **PEP 585** and Generic Alias
    Type.
 
-                                          *AsyncIterator..typing.txt;*
+                                           *AsyncIterator..typing.txt*
 class typing.AsyncIterator(AsyncIterable[T_co])
 
    Deprecated alias to "collections.abc.AsyncIterator".
@@ -3506,7 +3504,7 @@ class typing.AsyncIterator(AsyncIterable[T_co])
    supports subscripting ("[]"). See **PEP 585** and Generic Alias
    Type.
 
-class typing.Awaitable(Generic[T_co])         *Awaitable..typing.txt;*
+class typing.Awaitable(Generic[T_co])          *Awaitable..typing.txt*
 
    Deprecated alias to "collections.abc.Awaitable".
 
@@ -3520,7 +3518,7 @@ class typing.Awaitable(Generic[T_co])         *Awaitable..typing.txt;*
 Aliases to other ABCs in "collections.abc"
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-class typing.Iterable(Generic[T_co])           *Iterable..typing.txt;*
+class typing.Iterable(Generic[T_co])            *Iterable..typing.txt*
 
    Deprecated alias to "collections.abc.Iterable".
 
@@ -3528,7 +3526,7 @@ class typing.Iterable(Generic[T_co])           *Iterable..typing.txt;*
    supports subscripting ("[]"). See **PEP 585** and Generic Alias
    Type.
 
-class typing.Iterator(Iterable[T_co])          *Iterator..typing.txt;*
+class typing.Iterator(Iterable[T_co])           *Iterator..typing.txt*
 
    Deprecated alias to "collections.abc.Iterator".
 
@@ -3536,7 +3534,7 @@ class typing.Iterator(Iterable[T_co])          *Iterator..typing.txt;*
    supports subscripting ("[]"). See **PEP 585** and Generic Alias
    Type.
 
-typing.Callable                                *Callable..typing.txt;*
+typing.Callable                                 *Callable..typing.txt*
 
    Deprecated alias to "collections.abc.Callable".
 
@@ -3551,7 +3549,7 @@ typing.Callable                                *Callable..typing.txt;*
    Changed in version 3.10: "Callable" now supports "ParamSpec" and
    "Concatenate". See **PEP 612** for more details.
 
-                                              *Generator..typing.txt;*
+                                               *Generator..typing.txt*
 class typing.Generator(Iterator[YieldType], Generic[YieldType, SendType, ReturnType])
 
    Deprecated alias to "collections.abc.Generator".
@@ -3589,14 +3587,14 @@ class typing.Generator(Iterator[YieldType], Generic[YieldType, SendType, ReturnT
    supports subscripting ("[]"). See **PEP 585** and Generic Alias
    Type.
 
-class typing.Hashable                          *Hashable..typing.txt;*
+class typing.Hashable                           *Hashable..typing.txt*
 
    Deprecated alias to "collections.abc.Hashable".
 
    Deprecated since version 3.12: Use "collections.abc.Hashable"
    directly instead.
 
-class typing.Reversible(Iterable[T_co])      *Reversible..typing.txt;*
+class typing.Reversible(Iterable[T_co])       *Reversible..typing.txt*
 
    Deprecated alias to "collections.abc.Reversible".
 
@@ -3604,7 +3602,7 @@ class typing.Reversible(Iterable[T_co])      *Reversible..typing.txt;*
    supports subscripting ("[]"). See **PEP 585** and Generic Alias
    Type.
 
-class typing.Sized                                *Sized..typing.txt;*
+class typing.Sized                                 *Sized..typing.txt*
 
    Deprecated alias to "collections.abc.Sized".
 
@@ -3615,7 +3613,7 @@ class typing.Sized                                *Sized..typing.txt;*
 Aliases to "contextlib" ABCs
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-                                         *ContextManager..typing.txt;*
+                                          *ContextManager..typing.txt*
 class typing.ContextManager(Generic[T_co])
 
    Deprecated alias to "contextlib.AbstractContextManager".
@@ -3628,7 +3626,7 @@ class typing.ContextManager(Generic[T_co])
    now supports subscripting ("[]"). See **PEP 585** and Generic Alias
    Type.
 
-                                    *AsyncContextManager..typing.txt;*
+                                     *AsyncContextManager..typing.txt*
 class typing.AsyncContextManager(Generic[T_co])
 
    Deprecated alias to "contextlib.AbstractAsyncContextManager".

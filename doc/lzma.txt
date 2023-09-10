@@ -1,4 +1,4 @@
-*lzma.txt;*                                   Last change: 2023 Sep 09
+*lzma.txt;*                                   Last change: 2023 Sep 10
 
 "lzma" — Compression using the LZMA algorithm
 *********************************************
@@ -20,7 +20,7 @@ The interface provided by this module is very similar to that of the
 safe, so if you need to use a single "LZMAFile" instance from multiple
 threads, it is necessary to protect it with a lock.
 
-exception lzma.LZMAError                        *LZMAError..lzma.txt;*
+exception lzma.LZMAError                         *LZMAError..lzma.txt*
 
    This exception is raised when an error occurs during compression or
    decompression, or while initializing the compressor/decompressor
@@ -30,7 +30,7 @@ exception lzma.LZMAError                        *LZMAError..lzma.txt;*
 Reading and writing compressed files
 ====================================
 
-                                                   *open()..lzma.txt;*
+                                                    *open()..lzma.txt*
 lzma.open(filename, mode='rb', *, format=None, check=-1, preset=None, filters=None, encoding=None, errors=None, newline=None)
 
    Open an LZMA-compressed file in binary or text mode, returning a
@@ -66,7 +66,7 @@ lzma.open(filename, mode='rb', *, format=None, check=-1, preset=None, filters=No
 
    Changed in version 3.6: Accepts a _path-like object_.
 
-                                                 *LZMAFile..lzma.txt;*
+                                                  *LZMAFile..lzma.txt*
 class lzma.LZMAFile(filename=None, mode='r', *, format=None, check=-1, preset=None, filters=None)
 
    Open an LZMA-compressed file in binary mode.
@@ -105,7 +105,7 @@ class lzma.LZMAFile(filename=None, mode='r', *, format=None, check=-1, preset=No
 
    The following method is also provided:
 
-   peek(size=-1)                             *LZMAFile.peek()..lzma.txt;*
+   peek(size=-1)                              *LZMAFile.peek()..lzma.txt*
 
       Return buffered data without advancing the file position. At
       least one byte of data will be returned, unless EOF has been
@@ -131,7 +131,7 @@ class lzma.LZMAFile(filename=None, mode='r', *, format=None, check=-1, preset=No
 Compressing and decompressing data in memory
 ============================================
 
-                                           *LZMACompressor..lzma.txt;*
+                                            *LZMACompressor..lzma.txt*
 class lzma.LZMACompressor(format=FORMAT_XZ, check=-1, preset=None, filters=None)
 
    Create a compressor object, which can be used to compress data
@@ -197,7 +197,7 @@ class lzma.LZMACompressor(format=FORMAT_XZ, check=-1, preset=None, filters=None)
    The _filters_ argument (if provided) should be a filter chain
    specifier. See Specifying custom filter chains for details.
 
-   compress(data)                  *LZMACompressor.compress()..lzma.txt;*
+   compress(data)                   *LZMACompressor.compress()..lzma.txt*
 
       Compress _data_ (a "bytes" object), returning a "bytes" object
       containing compressed data for at least part of the input. Some
@@ -206,14 +206,14 @@ class lzma.LZMACompressor(format=FORMAT_XZ, check=-1, preset=None, filters=None)
       concatenated with the output of any previous calls to
       "compress()".
 
-   flush()                            *LZMACompressor.flush()..lzma.txt;*
+   flush()                             *LZMACompressor.flush()..lzma.txt*
 
       Finish the compression process, returning a "bytes" object
       containing any data stored in the compressor’s internal buffers.
 
       The compressor cannot be used after this method has been called.
 
-                                         *LZMADecompressor..lzma.txt;*
+                                          *LZMADecompressor..lzma.txt*
 class lzma.LZMADecompressor(format=FORMAT_AUTO, memlimit=None, filters=None)
 
    Create a decompressor object, which can be used to decompress data
@@ -246,7 +246,7 @@ class lzma.LZMADecompressor(format=FORMAT_AUTO, memlimit=None, filters=None)
      "LZMADecompressor", you must create a new decompressor for each
      stream.
 
-                            *LZMADecompressor.decompress()..lzma.txt;*
+                             *LZMADecompressor.decompress()..lzma.txt*
    decompress(data, max_length=-1)
 
       Decompress _data_ (a _bytes-like object_), returning
@@ -272,30 +272,30 @@ class lzma.LZMADecompressor(format=FORMAT_AUTO, memlimit=None, filters=None)
 
       Changed in version 3.5: Added the _max_length_ parameter.
 
-   check                              *LZMADecompressor.check..lzma.txt;*
+   check                               *LZMADecompressor.check..lzma.txt*
 
       The ID of the integrity check used by the input stream. This may
       be "CHECK_UNKNOWN" until enough of the input has been decoded to
       determine what integrity check it uses.
 
-   eof                                  *LZMADecompressor.eof..lzma.txt;*
+   eof                                   *LZMADecompressor.eof..lzma.txt*
 
       "True" if the end-of-stream marker has been reached.
 
-   unused_data                  *LZMADecompressor.unused_data..lzma.txt;*
+   unused_data                   *LZMADecompressor.unused_data..lzma.txt*
 
       Data found after the end of the compressed stream.
 
       Before the end of the stream is reached, this will be "b""".
 
-   needs_input                  *LZMADecompressor.needs_input..lzma.txt;*
+   needs_input                   *LZMADecompressor.needs_input..lzma.txt*
 
       "False" if the "decompress()" method can provide more
       decompressed data before requiring new uncompressed input.
 
       New in version 3.5.
 
-                                               *compress()..lzma.txt;*
+                                                *compress()..lzma.txt*
 lzma.compress(data, format=FORMAT_XZ, check=-1, preset=None, filters=None)
 
    Compress _data_ (a "bytes" object), returning the compressed data
@@ -304,7 +304,7 @@ lzma.compress(data, format=FORMAT_XZ, check=-1, preset=None, filters=None)
    See "LZMACompressor" above for a description of the _format_,
    _check_, _preset_ and _filters_ arguments.
 
-                                             *decompress()..lzma.txt;*
+                                              *decompress()..lzma.txt*
 lzma.decompress(data, format=FORMAT_AUTO, memlimit=None, filters=None)
 
    Decompress _data_ (a "bytes" object), returning the uncompressed
@@ -321,7 +321,7 @@ lzma.decompress(data, format=FORMAT_AUTO, memlimit=None, filters=None)
 Miscellaneous
 =============
 
-lzma.is_check_supported(check)       *is_check_supported()..lzma.txt;*
+lzma.is_check_supported(check)        *is_check_supported()..lzma.txt*
 
    Return "True" if the given integrity check is supported on this
    system.

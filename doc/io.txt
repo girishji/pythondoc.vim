@@ -1,4 +1,4 @@
-*io.txt;*                                     Last change: 2023 Sep 09
+*io.txt;*                                     Last change: 2023 Sep 10
 
 "io" — Core tools for working with streams
 ******************************************
@@ -144,13 +144,13 @@ default (i.e. "encoding="utf-8"") for new APIs.
 High-level Module Interface
 ===========================
 
-io.DEFAULT_BUFFER_SIZE                  *DEFAULT_BUFFER_SIZE..io.txt;*
+io.DEFAULT_BUFFER_SIZE                   *DEFAULT_BUFFER_SIZE..io.txt*
 
    An int containing the default buffer size used by the module’s
    buffered I/O classes.  "open()" uses the file’s blksize (as
    obtained by "os.stat()") if possible.
 
-                                                     *open()..io.txt;*
+                                                      *open()..io.txt*
 io.open(file, mode='r', buffering=-1, encoding=None, errors=None, newline=None, closefd=True, opener=None)
 
    This is an alias for the builtin "open()" function.
@@ -159,7 +159,7 @@ io.open(file, mode='r', buffering=-1, encoding=None, errors=None, newline=None, 
    _path_, _mode_ and _flags_. The _mode_ and _flags_ arguments may
    have been modified or inferred from the original call.
 
-io.open_code(path)                              *open_code()..io.txt;*
+io.open_code(path)                               *open_code()..io.txt*
 
    Opens the provided file with mode "'rb'". This function should be
    used when the intent is to treat the contents as executable code.
@@ -174,7 +174,7 @@ io.open_code(path)                              *open_code()..io.txt;*
 
    New in version 3.8.
 
-                                            *text_encoding()..io.txt;*
+                                             *text_encoding()..io.txt*
 io.text_encoding(encoding, stacklevel=2, /)
 
    This is a helper function for callables that use "open()" or
@@ -202,12 +202,12 @@ io.text_encoding(encoding, stacklevel=2, /)
    Changed in version 3.11: "text_encoding()" returns “utf-8” when
    UTF-8 mode is enabled and _encoding_ is "None".
 
-exception io.BlockingIOError                *BlockingIOError..io.txt;*
+exception io.BlockingIOError                 *BlockingIOError..io.txt*
 
    This is a compatibility alias for the builtin "BlockingIOError"
    exception.
 
-exception io.UnsupportedOperation      *UnsupportedOperation..io.txt;*
+exception io.UnsupportedOperation       *UnsupportedOperation..io.txt*
 
    An exception inheriting "OSError" and "ValueError" that is raised
    when an unsupported operation is called on a stream.
@@ -284,7 +284,7 @@ The following table summarizes the ABCs provided by the "io" module:
 I/O Base Classes
 ----------------
 
-class io.IOBase                                      *IOBase..io.txt;*
+class io.IOBase                                       *IOBase..io.txt*
 
    The abstract base class for all I/O classes.
 
@@ -323,7 +323,7 @@ class io.IOBase                                      *IOBase..io.txt;*
 <
    "IOBase" provides these data attributes and methods:
 
-   close()                                      *IOBase.close()..io.txt;*
+   close()                                       *IOBase.close()..io.txt*
 
       Flush and close this stream. This method has no effect if the
       file is already closed. Once the file is closed, any operation
@@ -332,32 +332,32 @@ class io.IOBase                                      *IOBase..io.txt;*
       As a convenience, it is allowed to call this method more than
       once; only the first call, however, will have an effect.
 
-   closed                                        *IOBase.closed..io.txt;*
+   closed                                         *IOBase.closed..io.txt*
 
       "True" if the stream is closed.
 
-   fileno()                                    *IOBase.fileno()..io.txt;*
+   fileno()                                     *IOBase.fileno()..io.txt*
 
       Return the underlying file descriptor (an integer) of the stream
       if it exists.  An "OSError" is raised if the IO object does not
       use a file descriptor.
 
-   flush()                                      *IOBase.flush()..io.txt;*
+   flush()                                       *IOBase.flush()..io.txt*
 
       Flush the write buffers of the stream if applicable.  This does
       nothing for read-only and non-blocking streams.
 
-   isatty()                                    *IOBase.isatty()..io.txt;*
+   isatty()                                     *IOBase.isatty()..io.txt*
 
       Return "True" if the stream is interactive (i.e., connected to a
       terminal/tty device).
 
-   readable()                                *IOBase.readable()..io.txt;*
+   readable()                                 *IOBase.readable()..io.txt*
 
       Return "True" if the stream can be read from. If "False",
       "read()" will raise "OSError".
 
-   readline(size=-1, /)                      *IOBase.readline()..io.txt;*
+   readline(size=-1, /)                       *IOBase.readline()..io.txt*
 
       Read and return one line from the stream.  If _size_ is
       specified, at most _size_ bytes will be read.
@@ -366,7 +366,7 @@ class io.IOBase                                      *IOBase..io.txt;*
       files, the _newline_ argument to "open()" can be used to select
       the line terminator(s) recognized.
 
-   readlines(hint=-1, /)                    *IOBase.readlines()..io.txt;*
+   readlines(hint=-1, /)                     *IOBase.readlines()..io.txt*
 
       Read and return a list of lines from the stream.  _hint_ can be
       specified to control the number of lines read: no more lines
@@ -379,7 +379,7 @@ class io.IOBase                                      *IOBase..io.txt;*
       Note that it’s already possible to iterate on file objects using
       "for line in file: ..." without calling "file.readlines()".
 
-   seek(offset, whence=os.SEEK_SET, /)           *IOBase.seek()..io.txt;*
+   seek(offset, whence=os.SEEK_SET, /)            *IOBase.seek()..io.txt*
 
       Change the stream position to the given byte _offset_,
       interpreted relative to the position indicated by _whence_, and
@@ -401,16 +401,16 @@ class io.IOBase                                      *IOBase..io.txt;*
       valid values for a file could depend on it being open in text or
       binary mode.
 
-   seekable()                                *IOBase.seekable()..io.txt;*
+   seekable()                                 *IOBase.seekable()..io.txt*
 
       Return "True" if the stream supports random access.  If "False",
       "seek()", "tell()" and "truncate()" will raise "OSError".
 
-   tell()                                        *IOBase.tell()..io.txt;*
+   tell()                                         *IOBase.tell()..io.txt*
 
       Return the current stream position.
 
-   truncate(size=None, /)                    *IOBase.truncate()..io.txt;*
+   truncate(size=None, /)                     *IOBase.truncate()..io.txt*
 
       Resize the stream to the given _size_ in bytes (or the current
       position if _size_ is not specified).  The current stream
@@ -423,24 +423,24 @@ class io.IOBase                                      *IOBase..io.txt;*
       Changed in version 3.5: Windows will now zero-fill files when
       extending.
 
-   writable()                                *IOBase.writable()..io.txt;*
+   writable()                                 *IOBase.writable()..io.txt*
 
       Return "True" if the stream supports writing.  If "False",
       "write()" and "truncate()" will raise "OSError".
 
-   writelines(lines, /)                    *IOBase.writelines()..io.txt;*
+   writelines(lines, /)                     *IOBase.writelines()..io.txt*
 
       Write a list of lines to the stream.  Line separators are not
       added, so it is usual for each of the lines provided to have a
       line separator at the end.
 
-   __del__()                                  *IOBase.__del__()..io.txt;*
+   __del__()                                   *IOBase.__del__()..io.txt*
 
       Prepare for object destruction. "IOBase" provides a default
       implementation of this method that calls the instance’s
       "close()" method.
 
-class io.RawIOBase                                *RawIOBase..io.txt;*
+class io.RawIOBase                                 *RawIOBase..io.txt*
 
    Base class for raw binary streams.  It inherits "IOBase".
 
@@ -453,7 +453,7 @@ class io.RawIOBase                                *RawIOBase..io.txt;*
    "RawIOBase" provides these methods in addition to those from
    "IOBase":
 
-   read(size=-1, /)                           *RawIOBase.read()..io.txt;*
+   read(size=-1, /)                            *RawIOBase.read()..io.txt*
 
       Read up to _size_ bytes from the object and return them.  As a
       convenience, if _size_ is unspecified or -1, all bytes until EOF
@@ -468,19 +468,19 @@ class io.RawIOBase                                *RawIOBase..io.txt;*
       The default implementation defers to "readall()" and
       "readinto()".
 
-   readall()                               *RawIOBase.readall()..io.txt;*
+   readall()                                *RawIOBase.readall()..io.txt*
 
       Read and return all the bytes from the stream until EOF, using
       multiple calls to the stream if necessary.
 
-   readinto(b, /)                         *RawIOBase.readinto()..io.txt;*
+   readinto(b, /)                          *RawIOBase.readinto()..io.txt*
 
       Read bytes into a pre-allocated, writable _bytes-like object_
       _b_, and return the number of bytes read.  For example, _b_
       might be a "bytearray". If the object is in non-blocking mode
       and no bytes are available, "None" is returned.
 
-   write(b, /)                               *RawIOBase.write()..io.txt;*
+   write(b, /)                                *RawIOBase.write()..io.txt*
 
       Write the given _bytes-like object_, _b_, to the underlying raw
       stream, and return the number of bytes written.  This can be
@@ -492,7 +492,7 @@ class io.RawIOBase                                *RawIOBase..io.txt;*
       the implementation should only access _b_ during the method
       call.
 
-class io.BufferedIOBase                      *BufferedIOBase..io.txt;*
+class io.BufferedIOBase                       *BufferedIOBase..io.txt*
 
    Base class for binary streams that support some kind of buffering.
    It inherits "IOBase".
@@ -517,13 +517,13 @@ class io.BufferedIOBase                      *BufferedIOBase..io.txt;*
    "BufferedIOBase" provides or overrides these data attributes and
    methods in addition to those from "IOBase":
 
-   raw                                      *BufferedIOBase.raw..io.txt;*
+   raw                                       *BufferedIOBase.raw..io.txt*
 
       The underlying raw stream (a "RawIOBase" instance) that
       "BufferedIOBase" deals with.  This is not part of the
       "BufferedIOBase" API and may not exist on some implementations.
 
-   detach()                            *BufferedIOBase.detach()..io.txt;*
+   detach()                             *BufferedIOBase.detach()..io.txt*
 
       Separate the underlying raw stream from the buffer and return
       it.
@@ -537,7 +537,7 @@ class io.BufferedIOBase                      *BufferedIOBase..io.txt;*
 
       New in version 3.1.
 
-   read(size=-1, /)                      *BufferedIOBase.read()..io.txt;*
+   read(size=-1, /)                       *BufferedIOBase.read()..io.txt*
 
       Read and return up to _size_ bytes.  If the argument is omitted,
       "None", or negative, data is read and returned until EOF is
@@ -553,7 +553,7 @@ class io.BufferedIOBase                      *BufferedIOBase..io.txt;*
       A "BlockingIOError" is raised if the underlying raw stream is in
       non blocking-mode, and has no data available at the moment.
 
-   read1(size=-1, /)                    *BufferedIOBase.read1()..io.txt;*
+   read1(size=-1, /)                     *BufferedIOBase.read1()..io.txt*
 
       Read and return up to _size_ bytes, with at most one call to the
       underlying raw stream’s "read()" (or "readinto()") method.  This
@@ -563,7 +563,7 @@ class io.BufferedIOBase                      *BufferedIOBase..io.txt;*
       If _size_ is "-1" (the default), an arbitrary number of bytes
       are returned (more than zero unless EOF is reached).
 
-   readinto(b, /)                    *BufferedIOBase.readinto()..io.txt;*
+   readinto(b, /)                     *BufferedIOBase.readinto()..io.txt*
 
       Read bytes into a pre-allocated, writable _bytes-like object_
       _b_ and return the number of bytes read. For example, _b_ might
@@ -575,7 +575,7 @@ class io.BufferedIOBase                      *BufferedIOBase..io.txt;*
       A "BlockingIOError" is raised if the underlying raw stream is in
       non blocking-mode, and has no data available at the moment.
 
-   readinto1(b, /)                  *BufferedIOBase.readinto1()..io.txt;*
+   readinto1(b, /)                   *BufferedIOBase.readinto1()..io.txt*
 
       Read bytes into a pre-allocated, writable _bytes-like object_
       _b_, using at most one call to the underlying raw stream’s
@@ -587,7 +587,7 @@ class io.BufferedIOBase                      *BufferedIOBase..io.txt;*
 
       New in version 3.5.
 
-   write(b, /)                          *BufferedIOBase.write()..io.txt;*
+   write(b, /)                           *BufferedIOBase.write()..io.txt*
 
       Write the given _bytes-like object_, _b_, and return the number
       of bytes written (always equal to the length of _b_ in bytes,
@@ -608,7 +608,7 @@ class io.BufferedIOBase                      *BufferedIOBase..io.txt;*
 Raw File I/O
 ------------
 
-                                                     *FileIO..io.txt;*
+                                                      *FileIO..io.txt*
 class io.FileIO(name, mode='r', closefd=True, opener=None)
 
    A raw binary stream representing an OS-level file containing bytes
@@ -656,11 +656,11 @@ class io.FileIO(name, mode='r', closefd=True, opener=None)
    "FileIO" provides these data attributes in addition to those from
    "RawIOBase" and "IOBase":
 
-   mode                                            *FileIO.mode..io.txt;*
+   mode                                             *FileIO.mode..io.txt*
 
       The mode as given in the constructor.
 
-   name                                            *FileIO.name..io.txt;*
+   name                                             *FileIO.name..io.txt*
 
       The file name.  This is the file descriptor of the file when no
       name is given in the constructor.
@@ -672,7 +672,7 @@ Buffered Streams
 Buffered I/O streams provide a higher-level interface to an I/O device
 than raw I/O does.
 
-class io.BytesIO(initial_bytes=b'')                 *BytesIO..io.txt;*
+class io.BytesIO(initial_bytes=b'')                  *BytesIO..io.txt*
 
    A binary stream using an in-memory bytes buffer.  It inherits
    "BufferedIOBase".  The buffer is discarded when the "close()"
@@ -684,7 +684,7 @@ class io.BytesIO(initial_bytes=b'')                 *BytesIO..io.txt;*
    "BytesIO" provides or overrides these methods in addition to those
    from "BufferedIOBase" and "IOBase":
 
-   getbuffer()                             *BytesIO.getbuffer()..io.txt;*
+   getbuffer()                              *BytesIO.getbuffer()..io.txt*
 
       Return a readable and writable view over the contents of the
       buffer without copying them.  Also, mutating the view will
@@ -703,23 +703,23 @@ class io.BytesIO(initial_bytes=b'')                 *BytesIO..io.txt;*
 
       New in version 3.2.
 
-   getvalue()                               *BytesIO.getvalue()..io.txt;*
+   getvalue()                                *BytesIO.getvalue()..io.txt*
 
       Return "bytes" containing the entire contents of the buffer.
 
-   read1(size=-1, /)                           *BytesIO.read1()..io.txt;*
+   read1(size=-1, /)                            *BytesIO.read1()..io.txt*
 
       In "BytesIO", this is the same as "read()".
 
       Changed in version 3.7: The _size_ argument is now optional.
 
-   readinto1(b, /)                         *BytesIO.readinto1()..io.txt;*
+   readinto1(b, /)                          *BytesIO.readinto1()..io.txt*
 
       In "BytesIO", this is the same as "readinto()".
 
       New in version 3.5.
 
-                                             *BufferedReader..io.txt;*
+                                              *BufferedReader..io.txt*
 class io.BufferedReader(raw, buffer_size=DEFAULT_BUFFER_SIZE)
 
    A buffered binary stream providing higher-level access to a
@@ -738,20 +738,20 @@ class io.BufferedReader(raw, buffer_size=DEFAULT_BUFFER_SIZE)
    "BufferedReader" provides or overrides these methods in addition to
    those from "BufferedIOBase" and "IOBase":
 
-   peek(size=0, /)                       *BufferedReader.peek()..io.txt;*
+   peek(size=0, /)                        *BufferedReader.peek()..io.txt*
 
       Return bytes from the stream without advancing the position.  At
       most one single read on the raw stream is done to satisfy the
       call. The number of bytes returned may be less or more than
       requested.
 
-   read(size=-1, /)                      *BufferedReader.read()..io.txt;*
+   read(size=-1, /)                       *BufferedReader.read()..io.txt*
 
       Read and return _size_ bytes, or if _size_ is not given or
       negative, until EOF or if the read call would block in non-
       blocking mode.
 
-   read1(size=-1, /)                    *BufferedReader.read1()..io.txt;*
+   read1(size=-1, /)                     *BufferedReader.read1()..io.txt*
 
       Read and return up to _size_ bytes with only one call on the raw
       stream. If at least one byte is buffered, only buffered bytes
@@ -759,7 +759,7 @@ class io.BufferedReader(raw, buffer_size=DEFAULT_BUFFER_SIZE)
 
       Changed in version 3.7: The _size_ argument is now optional.
 
-                                             *BufferedWriter..io.txt;*
+                                              *BufferedWriter..io.txt*
 class io.BufferedWriter(raw, buffer_size=DEFAULT_BUFFER_SIZE)
 
    A buffered binary stream providing higher-level access to a
@@ -785,19 +785,19 @@ class io.BufferedWriter(raw, buffer_size=DEFAULT_BUFFER_SIZE)
    "BufferedWriter" provides or overrides these methods in addition to
    those from "BufferedIOBase" and "IOBase":
 
-   flush()                              *BufferedWriter.flush()..io.txt;*
+   flush()                               *BufferedWriter.flush()..io.txt*
 
       Force bytes held in the buffer into the raw stream.  A
       "BlockingIOError" should be raised if the raw stream blocks.
 
-   write(b, /)                          *BufferedWriter.write()..io.txt;*
+   write(b, /)                           *BufferedWriter.write()..io.txt*
 
       Write the _bytes-like object_, _b_, and return the number of
       bytes written.  When in non-blocking mode, a "BlockingIOError"
       is raised if the buffer needs to be written out but the raw
       stream blocks.
 
-                                             *BufferedRandom..io.txt;*
+                                              *BufferedRandom..io.txt*
 class io.BufferedRandom(raw, buffer_size=DEFAULT_BUFFER_SIZE)
 
    A buffered binary stream providing higher-level access to a
@@ -812,7 +812,7 @@ class io.BufferedRandom(raw, buffer_size=DEFAULT_BUFFER_SIZE)
    "BufferedWriter" can do.  In addition, "seek()" and "tell()" are
    guaranteed to be implemented.
 
-                                             *BufferedRWPair..io.txt;*
+                                              *BufferedRWPair..io.txt*
 class io.BufferedRWPair(reader, writer, buffer_size=DEFAULT_BUFFER_SIZE, /)
 
    A buffered binary stream providing higher-level access to two non
@@ -836,7 +836,7 @@ class io.BufferedRWPair(reader, writer, buffer_size=DEFAULT_BUFFER_SIZE, /)
 Text I/O
 --------
 
-class io.TextIOBase                              *TextIOBase..io.txt;*
+class io.TextIOBase                               *TextIOBase..io.txt*
 
    Base class for text streams.  This class provides a character and
    line based interface to stream I/O.  It inherits "IOBase".
@@ -844,28 +844,28 @@ class io.TextIOBase                              *TextIOBase..io.txt;*
    "TextIOBase" provides or overrides these data attributes and
    methods in addition to those from "IOBase":
 
-   encoding                                *TextIOBase.encoding..io.txt;*
+   encoding                                 *TextIOBase.encoding..io.txt*
 
       The name of the encoding used to decode the stream’s bytes into
       strings, and to encode strings into bytes.
 
-   errors                                    *TextIOBase.errors..io.txt;*
+   errors                                     *TextIOBase.errors..io.txt*
 
       The error setting of the decoder or encoder.
 
-   newlines                                *TextIOBase.newlines..io.txt;*
+   newlines                                 *TextIOBase.newlines..io.txt*
 
       A string, a tuple of strings, or "None", indicating the newlines
       translated so far.  Depending on the implementation and the
       initial constructor flags, this may not be available.
 
-   buffer                                    *TextIOBase.buffer..io.txt;*
+   buffer                                     *TextIOBase.buffer..io.txt*
 
       The underlying binary buffer (a "BufferedIOBase" instance) that
       "TextIOBase" deals with.  This is not part of the "TextIOBase"
       API and may not exist in some implementations.
 
-   detach()                                *TextIOBase.detach()..io.txt;*
+   detach()                                 *TextIOBase.detach()..io.txt*
 
       Separate the underlying binary buffer from the "TextIOBase" and
       return it.
@@ -879,19 +879,19 @@ class io.TextIOBase                              *TextIOBase..io.txt;*
 
       New in version 3.1.
 
-   read(size=-1, /)                          *TextIOBase.read()..io.txt;*
+   read(size=-1, /)                           *TextIOBase.read()..io.txt*
 
       Read and return at most _size_ characters from the stream as a
       single "str".  If _size_ is negative or "None", reads until EOF.
 
-   readline(size=-1, /)                  *TextIOBase.readline()..io.txt;*
+   readline(size=-1, /)                   *TextIOBase.readline()..io.txt*
 
       Read until newline or EOF and return a single "str".  If the
       stream is already at EOF, an empty string is returned.
 
       If _size_ is specified, at most _size_ characters will be read.
 
-   seek(offset, whence=SEEK_SET, /)          *TextIOBase.seek()..io.txt;*
+   seek(offset, whence=SEEK_SET, /)           *TextIOBase.seek()..io.txt*
 
       Change the stream position to the given _offset_.  Behaviour
       depends on the _whence_ parameter.  The default value for
@@ -913,18 +913,18 @@ class io.TextIOBase                              *TextIOBase..io.txt;*
 
       New in version 3.1: The "SEEK_*" constants.
 
-   tell()                                    *TextIOBase.tell()..io.txt;*
+   tell()                                     *TextIOBase.tell()..io.txt*
 
       Return the current stream position as an opaque number.  The
       number does not usually represent a number of bytes in the
       underlying binary storage.
 
-   write(s, /)                              *TextIOBase.write()..io.txt;*
+   write(s, /)                               *TextIOBase.write()..io.txt*
 
       Write the string _s_ to the stream and return the number of
       characters written.
 
-                                              *TextIOWrapper..io.txt;*
+                                               *TextIOWrapper..io.txt*
 class io.TextIOWrapper(buffer, encoding=None, errors=None, newline=None, line_buffering=False, write_through=False)
 
    A buffered text stream providing higher-level access to a
@@ -991,18 +991,18 @@ class io.TextIOWrapper(buffer, encoding=None, errors=None, newline=None, line_bu
    "TextIOWrapper" provides these data attributes and methods in
    addition to those from "TextIOBase" and "IOBase":
 
-   line_buffering                 *TextIOWrapper.line_buffering..io.txt;*
+   line_buffering                  *TextIOWrapper.line_buffering..io.txt*
 
       Whether line buffering is enabled.
 
-   write_through                   *TextIOWrapper.write_through..io.txt;*
+   write_through                    *TextIOWrapper.write_through..io.txt*
 
       Whether writes are passed immediately to the underlying binary
       buffer.
 
       New in version 3.7.
 
-                                *TextIOWrapper.reconfigure()..io.txt;*
+                                 *TextIOWrapper.reconfigure()..io.txt*
    reconfigure(*, encoding=None, errors=None, newline=None, line_buffering=None, write_through=None)
 
       Reconfigure this text stream using new settings for _encoding_,
@@ -1024,7 +1024,7 @@ class io.TextIOWrapper(buffer, encoding=None, errors=None, newline=None, line_bu
       Changed in version 3.11: The method supports "encoding="locale""
       option.
 
-   seek(cookie, whence=os.SEEK_SET, /)    *TextIOWrapper.seek()..io.txt;*
+   seek(cookie, whence=os.SEEK_SET, /)     *TextIOWrapper.seek()..io.txt*
 
       Set the stream position. Return the new stream position as an
       "int".
@@ -1047,14 +1047,13 @@ class io.TextIOWrapper(buffer, encoding=None, errors=None, newline=None, line_bu
 
       See also: "os.SEEK_SET", "os.SEEK_CUR", and "os.SEEK_END".
 
-   tell()                                 *TextIOWrapper.tell()..io.txt;*
+   tell()                                  *TextIOWrapper.tell()..io.txt*
 
       Return the stream position as an opaque number. The return value
       of "tell()" can be given as input to "seek()", to restore a
       previous stream position.
 
-                                                   *StringIO..io.txt;*
-class io.StringIO(initial_value='', newline='\n')
+class io.StringIO(initial_value='', newline='\n')   *StringIO..io.txt*
 
    A text stream using an in-memory text buffer.  It inherits
    "TextIOBase".
@@ -1078,7 +1077,7 @@ class io.StringIO(initial_value='', newline='\n')
    "StringIO" provides this method in addition to those from
    "TextIOBase" and "IOBase":
 
-   getvalue()                              *StringIO.getvalue()..io.txt;*
+   getvalue()                               *StringIO.getvalue()..io.txt*
 
       Return a "str" containing the entire contents of the buffer.
       Newlines are decoded as if by "read()", although the stream
@@ -1101,7 +1100,7 @@ class io.StringIO(initial_value='', newline='\n')
       output.close()
 <
 
-                                  *IncrementalNewlineDecoder..io.txt;*
+                                   *IncrementalNewlineDecoder..io.txt*
 class io.IncrementalNewlineDecoder
 
    A helper codec that decodes newlines for _universal newlines_ mode.

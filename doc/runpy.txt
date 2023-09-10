@@ -1,4 +1,4 @@
-*runpy.txt;*                                  Last change: 2023 Sep 09
+*runpy.txt;*                                  Last change: 2023 Sep 10
 
 "runpy" — Locating and executing Python modules
 ***********************************************
@@ -23,7 +23,7 @@ returned. If that limitation is not acceptable for a given use case,
 
 The "runpy" module provides two functions:
 
-                                            *run_module()..runpy.txt;*
+                                             *run_module()..runpy.txt*
 runpy.run_module(mod_name, init_globals=None, run_name=None, alter_sys=False)
 
    Execute the code of the specified module and return the resulting
@@ -92,7 +92,7 @@ runpy.run_module(mod_name, init_globals=None, run_name=None, alter_sys=False)
    and "__package__" are deprecated. See "ModuleSpec" for
    alternatives.
 
-                                              *run_path()..runpy.txt;*
+                                               *run_path()..runpy.txt*
 runpy.run_path(path_name, init_globals=None, run_name=None)
 
    Execute the code at the named filesystem location and return the

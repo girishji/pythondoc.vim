@@ -1,4 +1,4 @@
-*loggingconfig.txt;*                          Last change: 2023 Sep 09
+*logging.config.txt;*                         Last change: 2023 Sep 10
 
 "logging.config" — Logging configuration
 ****************************************
@@ -32,7 +32,7 @@ configure the logging module using these functions or by making calls
 to the main API (defined in "logging" itself) and defining handlers
 which are declared either in "logging" or "logging.handlers".
 
-logging.config.dictConfig(config)   *dictConfig()..loggingconfig.txt;*
+logging.config.dictConfig(config)   *dictConfig()..logging.config.txt*
 
    Takes the logging configuration from a dictionary.  The contents of
    this dictionary are described in Configuration dictionary schema
@@ -80,7 +80,7 @@ logging.config.dictConfig(config)   *dictConfig()..loggingconfig.txt;*
 
    New in version 3.2.
 
-                                    *fileConfig()..loggingconfig.txt;*
+                                    *fileConfig()..logging.config.txt*
 logging.config.fileConfig(fname, defaults=None, disable_existing_loggers=True, encoding=None)
 
    Reads the logging configuration from a "configparser"-format file.
@@ -133,7 +133,7 @@ logging.config.fileConfig(fname, defaults=None, disable_existing_loggers=True, e
    Changed in version 3.12: An exception will be thrown if the
    provided file doesn’t exist or is invalid or empty.
 
-                                        *listen()..loggingconfig.txt;*
+                                        *listen()..logging.config.txt*
 logging.config.listen(port=DEFAULT_LOGGING_CONFIG_PORT, verify=None)
 
    Starts up a socket server on the specified port, and listens for
@@ -191,7 +191,7 @@ logging.config.listen(port=DEFAULT_LOGGING_CONFIG_PORT, verify=None)
      "disable_existing_loggers" as "False" in the configuration you
      send.
 
-logging.config.stopListening()   *stopListening()..loggingconfig.txt;*
+logging.config.stopListening()   *stopListening()..logging.config.txt*
 
    Stops the listening server which was created with a call to
    "listen()". This is typically called before calling "join()" on the

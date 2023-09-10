@@ -1,4 +1,4 @@
-*distribution.txt;*                           Last change: 2023 Sep 09
+*distribution.txt;*                           Last change: 2023 Sep 10
 
 Software Packaging and Distribution
 ***********************************

@@ -1,4 +1,4 @@
-*re.txt;*                                     Last change: 2023 Sep 09
+*re.txt;*                                     Last change: 2023 Sep 10
 
 "re" — Regular expression operations
 ************************************
@@ -579,14 +579,14 @@ Flags
 Changed in version 3.6: Flag constants are now instances of
 "RegexFlag", which is a subclass of "enum.IntFlag".
 
-class re.RegexFlag                                *RegexFlag..re.txt;*
+class re.RegexFlag                                 *RegexFlag..re.txt*
 
    An "enum.IntFlag" class containing the regex options listed below.
 
    New in version 3.11: - added to "__all__"
 
-re.A                                                      *A..re.txt;*
-re.ASCII                                              *ASCII..re.txt;*
+re.A                                                       *A..re.txt*
+re.ASCII                                               *ASCII..re.txt*
 
    Make "\w", "\W", "\b", "\B", "\d", "\D", "\s" and "\S" perform
    ASCII-only matching instead of full Unicode matching.  This is only
@@ -599,13 +599,13 @@ re.ASCII                                              *ASCII..re.txt;*
    Unicode by default for strings (and Unicode matching isn’t allowed
    for bytes).
 
-re.DEBUG                                              *DEBUG..re.txt;*
+re.DEBUG                                               *DEBUG..re.txt*
 
    Display debug information about compiled expression. No
    corresponding inline flag.
 
-re.I                                                      *I..re.txt;*
-re.IGNORECASE                                    *IGNORECASE..re.txt;*
+re.I                                                       *I..re.txt*
+re.IGNORECASE                                     *IGNORECASE..re.txt*
 
    Perform case-insensitive matching; expressions like "[A-Z]" will
    also match lowercase letters.  Full Unicode matching (such as "Ü"
@@ -622,8 +622,8 @@ re.IGNORECASE                                    *IGNORECASE..re.txt;*
    (U+212A, Kelvin sign). If the "ASCII" flag is used, only letters
    ‘a’ to ‘z’ and ‘A’ to ‘Z’ are matched.
 
-re.L                                                      *L..re.txt;*
-re.LOCALE                                            *LOCALE..re.txt;*
+re.L                                                       *L..re.txt*
+re.LOCALE                                             *LOCALE..re.txt*
 
    Make "\w", "\W", "\b", "\B" and case-insensitive matching dependent
    on the current locale.  This flag can be used only with bytes
@@ -642,8 +642,8 @@ re.LOCALE                                            *LOCALE..re.txt;*
    time.  Only the locale at matching time affects the result of
    matching.
 
-re.M                                                      *M..re.txt;*
-re.MULTILINE                                      *MULTILINE..re.txt;*
+re.M                                                       *M..re.txt*
+re.MULTILINE                                       *MULTILINE..re.txt*
 
    When specified, the pattern character "'^'" matches at the
    beginning of the string and at the beginning of each line
@@ -654,7 +654,7 @@ re.MULTILINE                                      *MULTILINE..re.txt;*
    the string and immediately before the newline (if any) at the end
    of the string. Corresponds to the inline flag "(?m)".
 
-re.NOFLAG                                            *NOFLAG..re.txt;*
+re.NOFLAG                                             *NOFLAG..re.txt*
 
    Indicates no flag being applied, the value is "0".  This flag may
    be used as a default value for a function keyword argument or as a
@@ -666,15 +666,15 @@ re.NOFLAG                                            *NOFLAG..re.txt;*
 <
    New in version 3.11.
 
-re.S                                                      *S..re.txt;*
-re.DOTALL                                            *DOTALL..re.txt;*
+re.S                                                       *S..re.txt*
+re.DOTALL                                             *DOTALL..re.txt*
 
    Make the "'.'" special character match any character at all,
    including a newline; without this flag, "'.'" will match anything
    _except_ a newline. Corresponds to the inline flag "(?s)".
 
-re.U                                                      *U..re.txt;*
-re.UNICODE                                          *UNICODE..re.txt;*
+re.U                                                       *U..re.txt*
+re.UNICODE                                           *UNICODE..re.txt*
 
    In Python 2, this flag made special sequences include Unicode
    characters in matches. Since Python 3, Unicode characters are
@@ -684,8 +684,8 @@ re.UNICODE                                          *UNICODE..re.txt;*
 
    This flag is only kept for backward compatibility.
 
-re.X                                                      *X..re.txt;*
-re.VERBOSE                                          *VERBOSE..re.txt;*
+re.X                                                       *X..re.txt*
+re.VERBOSE                                           *VERBOSE..re.txt*
 
    This flag allows you to write regular expressions that look nicer
    and are more readable by allowing you to visually separate logical
@@ -711,7 +711,7 @@ re.VERBOSE                                          *VERBOSE..re.txt;*
 Functions
 ---------
 
-re.compile(pattern, flags=0)                      *compile()..re.txt;*
+re.compile(pattern, flags=0)                       *compile()..re.txt*
 
    Compile a regular expression pattern into a regular expression
    object, which can be used for matching using its "match()",
@@ -741,7 +741,7 @@ re.compile(pattern, flags=0)                      *compile()..re.txt;*
      cached, so programs that use only a few regular expressions at a
      time needn’t worry about compiling regular expressions.
 
-re.search(pattern, string, flags=0)                *search()..re.txt;*
+re.search(pattern, string, flags=0)                 *search()..re.txt*
 
    Scan through _string_ looking for the first location where the
    regular expression _pattern_ produces a match, and return a
@@ -749,7 +749,7 @@ re.search(pattern, string, flags=0)                *search()..re.txt;*
    matches the pattern; note that this is different from finding a
    zero-length match at some point in the string.
 
-re.match(pattern, string, flags=0)                  *match()..re.txt;*
+re.match(pattern, string, flags=0)                   *match()..re.txt*
 
    If zero or more characters at the beginning of _string_ match the
    regular expression _pattern_, return a corresponding "Match".
@@ -762,7 +762,7 @@ re.match(pattern, string, flags=0)                  *match()..re.txt;*
    If you want to locate a match anywhere in _string_, use "search()"
    instead (see also search() vs. match()).
 
-re.fullmatch(pattern, string, flags=0)          *fullmatch()..re.txt;*
+re.fullmatch(pattern, string, flags=0)           *fullmatch()..re.txt*
 
    If the whole _string_ matches the regular expression _pattern_,
    return a corresponding "Match".  Return "None" if the string does
@@ -771,7 +771,7 @@ re.fullmatch(pattern, string, flags=0)          *fullmatch()..re.txt;*
 
    New in version 3.4.
 
-re.split(pattern, string, maxsplit=0, flags=0)      *split()..re.txt;*
+re.split(pattern, string, maxsplit=0, flags=0)       *split()..re.txt*
 
    Split _string_ by the occurrences of _pattern_.  If capturing
    parentheses are used in _pattern_, then the text of all groups in
@@ -818,7 +818,7 @@ re.split(pattern, string, maxsplit=0, flags=0)      *split()..re.txt;*
    positional arguments is deprecated. In future Python versions they
    will be keyword-only parameters.
 
-re.findall(pattern, string, flags=0)              *findall()..re.txt;*
+re.findall(pattern, string, flags=0)               *findall()..re.txt*
 
    Return all non-overlapping matches of _pattern_ in _string_, as a
    list of strings or tuples.  The _string_ is scanned left-to-right,
@@ -840,7 +840,7 @@ re.findall(pattern, string, flags=0)              *findall()..re.txt;*
    Changed in version 3.7: Non-empty matches can now start just after
    a previous empty match.
 
-re.finditer(pattern, string, flags=0)            *finditer()..re.txt;*
+re.finditer(pattern, string, flags=0)             *finditer()..re.txt*
 
    Return an _iterator_ yielding "Match" objects over all non-
    overlapping matches for the RE _pattern_ in _string_.  The _string_
@@ -850,7 +850,7 @@ re.finditer(pattern, string, flags=0)            *finditer()..re.txt;*
    Changed in version 3.7: Non-empty matches can now start just after
    a previous empty match.
 
-re.sub(pattern, repl, string, count=0, flags=0)       *sub()..re.txt;*
+re.sub(pattern, repl, string, count=0, flags=0)        *sub()..re.txt*
 
    Return the string obtained by replacing the leftmost non-
    overlapping occurrences of _pattern_ in _string_ by the replacement
@@ -920,12 +920,12 @@ re.sub(pattern, repl, string, count=0, flags=0)       *sub()..re.txt;*
    positional arguments is deprecated. In future Python versions they
    will be keyword-only parameters.
 
-re.subn(pattern, repl, string, count=0, flags=0)     *subn()..re.txt;*
+re.subn(pattern, repl, string, count=0, flags=0)      *subn()..re.txt*
 
    Perform the same operation as "sub()", but return a tuple
    "(new_string, number_of_subs_made)".
 
-re.escape(pattern)                                 *escape()..re.txt;*
+re.escape(pattern)                                  *escape()..re.txt*
 
    Escape special characters in _pattern_. This is useful if you want
    to match an arbitrary literal string that may have regular
@@ -958,7 +958,7 @@ re.escape(pattern)                                 *escape()..re.txt;*
    "'"'", "'%'", ""'"", "','", "'/'", "':'", "';'", "'<'", "'='",
    "'>'", "'@'", and ""`"" are no longer escaped.
 
-re.purge()                                          *purge()..re.txt;*
+re.purge()                                           *purge()..re.txt*
 
    Clear the regular expression cache.
 
@@ -966,7 +966,7 @@ re.purge()                                          *purge()..re.txt;*
 Exceptions
 ----------
 
-exception re.error(msg, pattern=None, pos=None)       *error..re.txt;*
+exception re.error(msg, pattern=None, pos=None)        *error..re.txt*
 
    Exception raised when a string passed to one of the functions here
    is not a valid regular expression (for example, it might contain
@@ -975,23 +975,23 @@ exception re.error(msg, pattern=None, pos=None)       *error..re.txt;*
    no match for a pattern.  The error instance has the following
    additional attributes:
 
-   msg                                               *error.msg..re.txt;*
+   msg                                                *error.msg..re.txt*
 
       The unformatted error message.
 
-   pattern                                       *error.pattern..re.txt;*
+   pattern                                        *error.pattern..re.txt*
 
       The regular expression pattern.
 
-   pos                                               *error.pos..re.txt;*
+   pos                                                *error.pos..re.txt*
 
       The index in _pattern_ where compilation failed (may be "None").
 
-   lineno                                         *error.lineno..re.txt;*
+   lineno                                          *error.lineno..re.txt*
 
       The line corresponding to _pos_ (may be "None").
 
-   colno                                           *error.colno..re.txt;*
+   colno                                            *error.colno..re.txt*
 
       The column corresponding to _pos_ (may be "None").
 
@@ -1001,14 +1001,14 @@ exception re.error(msg, pattern=None, pos=None)       *error..re.txt;*
 Regular Expression Objects
 ==========================
 
-class re.Pattern                                    *Pattern..re.txt;*
+class re.Pattern                                     *Pattern..re.txt*
 
    Compiled regular expression object returned by "re.compile()".
 
    Changed in version 3.9: "re.Pattern" supports "[]" to indicate a
    Unicode (str) or bytes pattern. See Generic Alias Type.
 
-Pattern.search(string[, pos[, endpos]])    *Pattern.search()..re.txt;*
+Pattern.search(string[, pos[, endpos]])     *Pattern.search()..re.txt*
 
    Scan through _string_ looking for the first location where this
    regular expression produces a match, and return a corresponding
@@ -1036,7 +1036,7 @@ Pattern.search(string[, pos[, endpos]])    *Pattern.search()..re.txt;*
       <re.Match object; span=(0, 1), match='d'>
       >>> pattern.search("dog", 1)  # No match; search doesn't include the "d"
 <
-Pattern.match(string[, pos[, endpos]])      *Pattern.match()..re.txt;*
+Pattern.match(string[, pos[, endpos]])       *Pattern.match()..re.txt*
 
    If zero or more characters at the _beginning_ of _string_ match
    this regular expression, return a corresponding "Match". Return
@@ -1054,7 +1054,7 @@ Pattern.match(string[, pos[, endpos]])      *Pattern.match()..re.txt;*
    If you want to locate a match anywhere in _string_, use "search()"
    instead (see also search() vs. match()).
 
-                                        *Pattern.fullmatch()..re.txt;*
+                                         *Pattern.fullmatch()..re.txt*
 Pattern.fullmatch(string[, pos[, endpos]])
 
    If the whole _string_ matches this regular expression, return a
@@ -1072,50 +1072,49 @@ Pattern.fullmatch(string[, pos[, endpos]])
 <
    New in version 3.4.
 
-Pattern.split(string, maxsplit=0)           *Pattern.split()..re.txt;*
+Pattern.split(string, maxsplit=0)            *Pattern.split()..re.txt*
 
    Identical to the "split()" function, using the compiled pattern.
 
-                                          *Pattern.findall()..re.txt;*
-Pattern.findall(string[, pos[, endpos]])
+Pattern.findall(string[, pos[, endpos]])   *Pattern.findall()..re.txt*
 
    Similar to the "findall()" function, using the compiled pattern,
    but also accepts optional _pos_ and _endpos_ parameters that limit
    the search region like for "search()".
 
-                                         *Pattern.finditer()..re.txt;*
+                                          *Pattern.finditer()..re.txt*
 Pattern.finditer(string[, pos[, endpos]])
 
    Similar to the "finditer()" function, using the compiled pattern,
    but also accepts optional _pos_ and _endpos_ parameters that limit
    the search region like for "search()".
 
-Pattern.sub(repl, string, count=0)            *Pattern.sub()..re.txt;*
+Pattern.sub(repl, string, count=0)             *Pattern.sub()..re.txt*
 
    Identical to the "sub()" function, using the compiled pattern.
 
-Pattern.subn(repl, string, count=0)          *Pattern.subn()..re.txt;*
+Pattern.subn(repl, string, count=0)           *Pattern.subn()..re.txt*
 
    Identical to the "subn()" function, using the compiled pattern.
 
-Pattern.flags                                 *Pattern.flags..re.txt;*
+Pattern.flags                                  *Pattern.flags..re.txt*
 
    The regex matching flags.  This is a combination of the flags given
    to "compile()", any "(?...)" inline flags in the pattern, and
    implicit flags such as "UNICODE" if the pattern is a Unicode
    string.
 
-Pattern.groups                               *Pattern.groups..re.txt;*
+Pattern.groups                                *Pattern.groups..re.txt*
 
    The number of capturing groups in the pattern.
 
-Pattern.groupindex                       *Pattern.groupindex..re.txt;*
+Pattern.groupindex                        *Pattern.groupindex..re.txt*
 
    A dictionary mapping any symbolic group names defined by "(?P<id>)"
    to group numbers.  The dictionary is empty if no symbolic groups
    were used in the pattern.
 
-Pattern.pattern                             *Pattern.pattern..re.txt;*
+Pattern.pattern                              *Pattern.pattern..re.txt*
 
    The pattern string from which the pattern object was compiled.
 
@@ -1135,14 +1134,14 @@ whether there was a match with a simple "if" statement:
    if match:
        process(match)
 <
-class re.Match                                        *Match..re.txt;*
+class re.Match                                         *Match..re.txt*
 
    Match object returned by successful "match"es and "search"es.
 
    Changed in version 3.9: "re.Match" supports "[]" to indicate a
    Unicode (str) or bytes match. See Generic Alias Type.
 
-Match.expand(template)                       *Match.expand()..re.txt;*
+Match.expand(template)                        *Match.expand()..re.txt*
 
    Return the string obtained by doing backslash substitution on the
    template string _template_, as done by the "sub()" method. Escapes
@@ -1154,7 +1153,7 @@ Match.expand(template)                       *Match.expand()..re.txt;*
    Changed in version 3.5: Unmatched groups are replaced with an empty
    string.
 
-Match.group([group1, ...])                    *Match.group()..re.txt;*
+Match.group([group1, ...])                     *Match.group()..re.txt*
 
    Returns one or more subgroups of the match.  If there is a single
    argument, the result is a single string; if there are multiple
@@ -1207,7 +1206,7 @@ Match.group([group1, ...])                    *Match.group()..re.txt;*
       >>> m.group(1)                        # Returns only the last match.
       'c3'
 <
-Match.__getitem__(g)                    *Match.__getitem__()..re.txt;*
+Match.__getitem__(g)                     *Match.__getitem__()..re.txt*
 
    This is identical to "m.group(g)".  This allows easier access to an
    individual group from a match:
@@ -1230,7 +1229,7 @@ Match.__getitem__(g)                    *Match.__getitem__()..re.txt;*
 <
    New in version 3.6.
 
-Match.groups(default=None)                   *Match.groups()..re.txt;*
+Match.groups(default=None)                    *Match.groups()..re.txt*
 
    Return a tuple containing all the subgroups of the match, from 1 up
    to however many groups are in the pattern.  The _default_ argument
@@ -1253,7 +1252,7 @@ Match.groups(default=None)                   *Match.groups()..re.txt;*
       >>> m.groups('0')   # Now, the second group defaults to '0'.
       ('24', '0')
 <
-Match.groupdict(default=None)             *Match.groupdict()..re.txt;*
+Match.groupdict(default=None)              *Match.groupdict()..re.txt*
 
    Return a dictionary containing all the _named_ subgroups of the
    match, keyed by the subgroup name.  The _default_ argument is used
@@ -1264,8 +1263,8 @@ Match.groupdict(default=None)             *Match.groupdict()..re.txt;*
       >>> m.groupdict()
       {'first_name': 'Malcolm', 'last_name': 'Reynolds'}
 <
-Match.start([group])                          *Match.start()..re.txt;*
-Match.end([group])                              *Match.end()..re.txt;*
+Match.start([group])                           *Match.start()..re.txt*
+Match.end([group])                               *Match.end()..re.txt*
 
    Return the indices of the start and end of the substring matched by
    _group_; _group_ defaults to zero (meaning the whole matched
@@ -1289,26 +1288,26 @@ Match.end([group])                              *Match.end()..re.txt;*
       >>> email[:m.start()] + email[m.end():]
       'tony@tiger.net'
 <
-Match.span([group])                            *Match.span()..re.txt;*
+Match.span([group])                             *Match.span()..re.txt*
 
    For a match _m_, return the 2-tuple "(m.start(group),
    m.end(group))". Note that if _group_ did not contribute to the
    match, this is "(-1, -1)". _group_ defaults to zero, the entire
    match.
 
-Match.pos                                         *Match.pos..re.txt;*
+Match.pos                                          *Match.pos..re.txt*
 
    The value of _pos_ which was passed to the "search()" or "match()"
    method of a regex object.  This is the index into the string at
    which the RE engine started looking for a match.
 
-Match.endpos                                   *Match.endpos..re.txt;*
+Match.endpos                                    *Match.endpos..re.txt*
 
    The value of _endpos_ which was passed to the "search()" or
    "match()" method of a regex object.  This is the index into the
    string beyond which the RE engine will not go.
 
-Match.lastindex                             *Match.lastindex..re.txt;*
+Match.lastindex                              *Match.lastindex..re.txt*
 
    The integer index of the last matched capturing group, or "None" if
    no group was matched at all. For example, the expressions "(a)b",
@@ -1316,17 +1315,17 @@ Match.lastindex                             *Match.lastindex..re.txt;*
    the string "'ab'", while the expression "(a)(b)" will have
    "lastindex == 2", if applied to the same string.
 
-Match.lastgroup                             *Match.lastgroup..re.txt;*
+Match.lastgroup                              *Match.lastgroup..re.txt*
 
    The name of the last matched capturing group, or "None" if the
    group didn’t have a name, or if no group was matched at all.
 
-Match.re                                           *Match.re..re.txt;*
+Match.re                                            *Match.re..re.txt*
 
    The regular expression object whose "match()" or "search()" method
    produced this match instance.
 
-Match.string                                   *Match.string..re.txt;*
+Match.string                                    *Match.string..re.txt*
 
    The string passed to "match()" or "search()".
 

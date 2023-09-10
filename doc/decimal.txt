@@ -1,4 +1,4 @@
-*decimal.txt;*                                Last change: 2023 Sep 09
+*decimal.txt;*                                Last change: 2023 Sep 10
 
 "decimal" — Decimal fixed point and floating point arithmetic
 *************************************************************
@@ -304,7 +304,7 @@ differently than with other Python numeric types.
 Decimal objects
 ===============
 
-                                               *Decimal..decimal.txt;*
+                                                *Decimal..decimal.txt*
 class decimal.Decimal(value='0', context=None)
 
    Construct a new "Decimal" object based from _value_.
@@ -408,7 +408,7 @@ class decimal.Decimal(value='0', context=None)
    In addition to the standard numeric properties, decimal floating
    point objects also have a number of specialized methods:
 
-   adjusted()                          *Decimal.adjusted()..decimal.txt;*
+   adjusted()                           *Decimal.adjusted()..decimal.txt*
 
       Return the adjusted exponent after shifting out the
       coefficient’s rightmost digits until only the lead digit
@@ -416,7 +416,7 @@ class decimal.Decimal(value='0', context=None)
       determining the position of the most significant digit with
       respect to the decimal point.
 
-   as_integer_ratio()          *Decimal.as_integer_ratio()..decimal.txt;*
+   as_integer_ratio()           *Decimal.as_integer_ratio()..decimal.txt*
 
       Return a pair "(n, d)" of integers that represent the given
       "Decimal" instance as a fraction, in lowest terms and with a
@@ -430,18 +430,18 @@ class decimal.Decimal(value='0', context=None)
 
    New in version 3.6.
 
-   as_tuple()                          *Decimal.as_tuple()..decimal.txt;*
+   as_tuple()                           *Decimal.as_tuple()..decimal.txt*
 
       Return a _named tuple_ representation of the number:
       "DecimalTuple(sign, digits, exponent)".
 
-   canonical()                        *Decimal.canonical()..decimal.txt;*
+   canonical()                         *Decimal.canonical()..decimal.txt*
 
       Return the canonical encoding of the argument.  Currently, the
       encoding of a "Decimal" instance is always canonical, so this
       operation returns its argument unchanged.
 
-   compare(other, context=None)         *Decimal.compare()..decimal.txt;*
+   compare(other, context=None)          *Decimal.compare()..decimal.txt*
 
       Compare the values of two Decimal instances.  "compare()"
       returns a Decimal instance, and if either operand is a NaN then
@@ -453,7 +453,7 @@ class decimal.Decimal(value='0', context=None)
          a > b            ==> Decimal('1')
 <
 
-                              *Decimal.compare_signal()..decimal.txt;*
+                               *Decimal.compare_signal()..decimal.txt*
    compare_signal(other, context=None)
 
       This operation is identical to the "compare()" method, except
@@ -461,7 +461,7 @@ class decimal.Decimal(value='0', context=None)
       signaling NaN then any quiet NaN operand is treated as though it
       were a signaling NaN.
 
-                               *Decimal.compare_total()..decimal.txt;*
+                                *Decimal.compare_total()..decimal.txt*
    compare_total(other, context=None)
 
       Compare two operands using their abstract representation rather
@@ -486,7 +486,7 @@ class decimal.Decimal(value='0', context=None)
       C version may raise InvalidOperation if the second operand
       cannot be converted exactly.
 
-                           *Decimal.compare_total_mag()..decimal.txt;*
+                            *Decimal.compare_total_mag()..decimal.txt*
    compare_total_mag(other, context=None)
 
       Compare two operands using their abstract representation rather
@@ -499,24 +499,24 @@ class decimal.Decimal(value='0', context=None)
       C version may raise InvalidOperation if the second operand
       cannot be converted exactly.
 
-   conjugate()                        *Decimal.conjugate()..decimal.txt;*
+   conjugate()                         *Decimal.conjugate()..decimal.txt*
 
       Just returns self, this method is only to comply with the
       Decimal Specification.
 
-   copy_abs()                          *Decimal.copy_abs()..decimal.txt;*
+   copy_abs()                           *Decimal.copy_abs()..decimal.txt*
 
       Return the absolute value of the argument.  This operation is
       unaffected by the context and is quiet: no flags are changed and
       no rounding is performed.
 
-   copy_negate()                    *Decimal.copy_negate()..decimal.txt;*
+   copy_negate()                     *Decimal.copy_negate()..decimal.txt*
 
       Return the negation of the argument.  This operation is
       unaffected by the context and is quiet: no flags are changed and
       no rounding is performed.
 
-   copy_sign(other, context=None)     *Decimal.copy_sign()..decimal.txt;*
+   copy_sign(other, context=None)      *Decimal.copy_sign()..decimal.txt*
 
       Return a copy of the first operand with the sign set to be the
       same as the sign of the second operand.  For example:
@@ -529,7 +529,7 @@ class decimal.Decimal(value='0', context=None)
       C version may raise InvalidOperation if the second operand
       cannot be converted exactly.
 
-   exp(context=None)                        *Decimal.exp()..decimal.txt;*
+   exp(context=None)                         *Decimal.exp()..decimal.txt*
 
       Return the value of the (natural) exponential function "e**x" at
       the given number.  The result is correctly rounded using the
@@ -540,7 +540,7 @@ class decimal.Decimal(value='0', context=None)
       >>> Decimal(321).exp()
       Decimal('2.561702493119680037517373933E+139')
 
-   classmethod from_float(f)         *Decimal.from_float()..decimal.txt;*
+   classmethod from_float(f)          *Decimal.from_float()..decimal.txt*
 
       Alternative constructor that only accepts instances of "float"
       or "int".
@@ -568,7 +568,7 @@ class decimal.Decimal(value='0', context=None)
 <
       New in version 3.1.
 
-   fma(other, third, context=None)          *Decimal.fma()..decimal.txt;*
+   fma(other, third, context=None)           *Decimal.fma()..decimal.txt*
 
       Fused multiply-add.  Return self*other+third with no rounding of
       the intermediate product self*other.
@@ -576,70 +576,70 @@ class decimal.Decimal(value='0', context=None)
       >>> Decimal(2).fma(3, 5)
       Decimal('11')
 
-   is_canonical()                  *Decimal.is_canonical()..decimal.txt;*
+   is_canonical()                   *Decimal.is_canonical()..decimal.txt*
 
       Return "True" if the argument is canonical and "False"
       otherwise.  Currently, a "Decimal" instance is always canonical,
       so this operation always returns "True".
 
-   is_finite()                        *Decimal.is_finite()..decimal.txt;*
+   is_finite()                         *Decimal.is_finite()..decimal.txt*
 
       Return "True" if the argument is a finite number, and "False" if
       the argument is an infinity or a NaN.
 
-   is_infinite()                    *Decimal.is_infinite()..decimal.txt;*
+   is_infinite()                     *Decimal.is_infinite()..decimal.txt*
 
       Return "True" if the argument is either positive or negative
       infinity and "False" otherwise.
 
-   is_nan()                              *Decimal.is_nan()..decimal.txt;*
+   is_nan()                               *Decimal.is_nan()..decimal.txt*
 
       Return "True" if the argument is a (quiet or signaling) NaN and
       "False" otherwise.
 
-   is_normal(context=None)            *Decimal.is_normal()..decimal.txt;*
+   is_normal(context=None)             *Decimal.is_normal()..decimal.txt*
 
       Return "True" if the argument is a _normal_ finite number.
       Return "False" if the argument is zero, subnormal, infinite or a
       NaN.
 
-   is_qnan()                            *Decimal.is_qnan()..decimal.txt;*
+   is_qnan()                             *Decimal.is_qnan()..decimal.txt*
 
       Return "True" if the argument is a quiet NaN, and "False"
       otherwise.
 
-   is_signed()                        *Decimal.is_signed()..decimal.txt;*
+   is_signed()                         *Decimal.is_signed()..decimal.txt*
 
       Return "True" if the argument has a negative sign and "False"
       otherwise.  Note that zeros and NaNs can both carry signs.
 
-   is_snan()                            *Decimal.is_snan()..decimal.txt;*
+   is_snan()                             *Decimal.is_snan()..decimal.txt*
 
       Return "True" if the argument is a signaling NaN and "False"
       otherwise.
 
-   is_subnormal(context=None)      *Decimal.is_subnormal()..decimal.txt;*
+   is_subnormal(context=None)       *Decimal.is_subnormal()..decimal.txt*
 
       Return "True" if the argument is subnormal, and "False"
       otherwise.
 
-   is_zero()                            *Decimal.is_zero()..decimal.txt;*
+   is_zero()                             *Decimal.is_zero()..decimal.txt*
 
       Return "True" if the argument is a (positive or negative) zero
       and "False" otherwise.
 
-   ln(context=None)                          *Decimal.ln()..decimal.txt;*
+   ln(context=None)                           *Decimal.ln()..decimal.txt*
 
       Return the natural (base e) logarithm of the operand.  The
       result is correctly rounded using the "ROUND_HALF_EVEN" rounding
       mode.
 
-   log10(context=None)                    *Decimal.log10()..decimal.txt;*
+   log10(context=None)                     *Decimal.log10()..decimal.txt*
 
       Return the base ten logarithm of the operand.  The result is
       correctly rounded using the "ROUND_HALF_EVEN" rounding mode.
 
-   logb(context=None)                      *Decimal.logb()..decimal.txt;*
+   logb(context=None)                       *Decimal.logb()..decimal.txt*
 
       For a nonzero number, return the adjusted exponent of its
       operand as a "Decimal" instance.  If the operand is a zero then
@@ -647,69 +647,68 @@ class decimal.Decimal(value='0', context=None)
       is raised.  If the operand is an infinity then
       "Decimal('Infinity')" is returned.
 
-                                 *Decimal.logical_and()..decimal.txt;*
+                                  *Decimal.logical_and()..decimal.txt*
    logical_and(other, context=None)
 
       "logical_and()" is a logical operation which takes two _logical
       operands_ (see Logical operands).  The result is the digit-wise
       "and" of the two operands.
 
-                              *Decimal.logical_invert()..decimal.txt;*
-   logical_invert(context=None)
+   logical_invert(context=None)   *Decimal.logical_invert()..decimal.txt*
 
       "logical_invert()" is a logical operation.  The result is the
       digit-wise inversion of the operand.
 
-   logical_or(other, context=None)   *Decimal.logical_or()..decimal.txt;*
+   logical_or(other, context=None)    *Decimal.logical_or()..decimal.txt*
 
       "logical_or()" is a logical operation which takes two _logical
       operands_ (see Logical operands).  The result is the digit-wise
       "or" of the two operands.
 
-                                 *Decimal.logical_xor()..decimal.txt;*
+                                  *Decimal.logical_xor()..decimal.txt*
    logical_xor(other, context=None)
 
       "logical_xor()" is a logical operation which takes two _logical
       operands_ (see Logical operands).  The result is the digit-wise
       exclusive or of the two operands.
 
-   max(other, context=None)                 *Decimal.max()..decimal.txt;*
+   max(other, context=None)                  *Decimal.max()..decimal.txt*
 
       Like "max(self, other)" except that the context rounding rule is
       applied before returning and that "NaN" values are either
       signaled or ignored (depending on the context and whether they
       are signaling or quiet).
 
-   max_mag(other, context=None)         *Decimal.max_mag()..decimal.txt;*
+   max_mag(other, context=None)          *Decimal.max_mag()..decimal.txt*
 
       Similar to the "max()" method, but the comparison is done using
       the absolute values of the operands.
 
-   min(other, context=None)                 *Decimal.min()..decimal.txt;*
+   min(other, context=None)                  *Decimal.min()..decimal.txt*
 
       Like "min(self, other)" except that the context rounding rule is
       applied before returning and that "NaN" values are either
       signaled or ignored (depending on the context and whether they
       are signaling or quiet).
 
-   min_mag(other, context=None)         *Decimal.min_mag()..decimal.txt;*
+   min_mag(other, context=None)          *Decimal.min_mag()..decimal.txt*
 
       Similar to the "min()" method, but the comparison is done using
       the absolute values of the operands.
 
-   next_minus(context=None)          *Decimal.next_minus()..decimal.txt;*
+   next_minus(context=None)           *Decimal.next_minus()..decimal.txt*
 
       Return the largest number representable in the given context (or
       in the current thread’s context if no context is given) that is
       smaller than the given operand.
 
-   next_plus(context=None)            *Decimal.next_plus()..decimal.txt;*
+   next_plus(context=None)             *Decimal.next_plus()..decimal.txt*
 
       Return the smallest number representable in the given context
       (or in the current thread’s context if no context is given) that
       is larger than the given operand.
 
-                                 *Decimal.next_toward()..decimal.txt;*
+                                  *Decimal.next_toward()..decimal.txt*
    next_toward(other, context=None)
 
       If the two operands are unequal, return the number closest to
@@ -718,7 +717,7 @@ class decimal.Decimal(value='0', context=None)
       operand with the sign set to be the same as the sign of the
       second operand.
 
-   normalize(context=None)            *Decimal.normalize()..decimal.txt;*
+   normalize(context=None)             *Decimal.normalize()..decimal.txt*
 
       Used for producing canonical values of an equivalence class
       within either the current context or the specified context.
@@ -740,7 +739,7 @@ class decimal.Decimal(value='0', context=None)
       In the latest versions of the specification, this operation is
       also known as "reduce".
 
-   number_class(context=None)      *Decimal.number_class()..decimal.txt;*
+   number_class(context=None)       *Decimal.number_class()..decimal.txt*
 
       Return a string describing the _class_ of the operand.  The
       returned value is one of the following ten strings.
@@ -772,7 +771,7 @@ class decimal.Decimal(value='0', context=None)
 
       * ""sNaN"", indicating that the operand is a signaling NaN.
 
-                                    *Decimal.quantize()..decimal.txt;*
+                                     *Decimal.quantize()..decimal.txt*
    quantize(exp, rounding=None, context=None)
 
       Return a value equal to the first operand after rounding and
@@ -799,13 +798,13 @@ class decimal.Decimal(value='0', context=None)
       An error is returned whenever the resulting exponent is greater
       than "Emax" or less than "Etiny()".
 
-   radix()                                *Decimal.radix()..decimal.txt;*
+   radix()                                 *Decimal.radix()..decimal.txt*
 
       Return "Decimal(10)", the radix (base) in which the "Decimal"
       class does all its arithmetic.  Included for compatibility with
       the specification.
 
-                              *Decimal.remainder_near()..decimal.txt;*
+                               *Decimal.remainder_near()..decimal.txt*
    remainder_near(other, context=None)
 
       Return the remainder from dividing _self_ by _other_.  This
@@ -824,7 +823,7 @@ class decimal.Decimal(value='0', context=None)
       >>> Decimal(35).remainder_near(Decimal(10))
       Decimal('-5')
 
-   rotate(other, context=None)           *Decimal.rotate()..decimal.txt;*
+   rotate(other, context=None)            *Decimal.rotate()..decimal.txt*
 
       Return the result of rotating the digits of the first operand by
       an amount specified by the second operand.  The second operand
@@ -836,7 +835,7 @@ class decimal.Decimal(value='0', context=None)
       zeros to length precision if necessary.  The sign and exponent
       of the first operand are unchanged.
 
-                                *Decimal.same_quantum()..decimal.txt;*
+                                 *Decimal.same_quantum()..decimal.txt*
    same_quantum(other, context=None)
 
       Test whether self and other have the same exponent or whether
@@ -847,13 +846,13 @@ class decimal.Decimal(value='0', context=None)
       C version may raise InvalidOperation if the second operand
       cannot be converted exactly.
 
-   scaleb(other, context=None)           *Decimal.scaleb()..decimal.txt;*
+   scaleb(other, context=None)            *Decimal.scaleb()..decimal.txt*
 
       Return the first operand with exponent adjusted by the second.
       Equivalently, return the first operand multiplied by
       "10**other".  The second operand must be an integer.
 
-   shift(other, context=None)             *Decimal.shift()..decimal.txt;*
+   shift(other, context=None)              *Decimal.shift()..decimal.txt*
 
       Return the result of shifting the digits of the first operand by
       an amount specified by the second operand.  The second operand
@@ -864,11 +863,11 @@ class decimal.Decimal(value='0', context=None)
       Digits shifted into the coefficient are zeros.  The sign and
       exponent of the first operand are unchanged.
 
-   sqrt(context=None)                      *Decimal.sqrt()..decimal.txt;*
+   sqrt(context=None)                       *Decimal.sqrt()..decimal.txt*
 
       Return the square root of the argument to full precision.
 
-   to_eng_string(context=None)    *Decimal.to_eng_string()..decimal.txt;*
+   to_eng_string(context=None)     *Decimal.to_eng_string()..decimal.txt*
 
       Convert to a string, using engineering notation if an exponent
       is needed.
@@ -881,14 +880,14 @@ class decimal.Decimal(value='0', context=None)
       For example, this converts "Decimal('123E+1')" to
       "Decimal('1.23E+3')".
 
-                                 *Decimal.to_integral()..decimal.txt;*
+                                  *Decimal.to_integral()..decimal.txt*
    to_integral(rounding=None, context=None)
 
       Identical to the "to_integral_value()" method.  The
       "to_integral" name has been kept for compatibility with older
       versions.
 
-                           *Decimal.to_integral_exact()..decimal.txt;*
+                            *Decimal.to_integral_exact()..decimal.txt*
    to_integral_exact(rounding=None, context=None)
 
       Round to the nearest integer, signaling "Inexact" or "Rounded"
@@ -897,7 +896,7 @@ class decimal.Decimal(value='0', context=None)
       given "context".  If neither parameter is given then the
       rounding mode of the current context is used.
 
-                           *Decimal.to_integral_value()..decimal.txt;*
+                            *Decimal.to_integral_value()..decimal.txt*
    to_integral_value(rounding=None, context=None)
 
       Round to the nearest integer without signaling "Inexact" or
@@ -925,18 +924,18 @@ as exceptions, and limit the range for exponents.
 Each thread has its own current context which is accessed or changed
 using the "getcontext()" and "setcontext()" functions:
 
-decimal.getcontext()                      *getcontext()..decimal.txt;*
+decimal.getcontext()                       *getcontext()..decimal.txt*
 
    Return the current context for the active thread.
 
-decimal.setcontext(c)                     *setcontext()..decimal.txt;*
+decimal.setcontext(c)                      *setcontext()..decimal.txt*
 
    Set the current context for the active thread to _c_.
 
 You can also use the "with" statement and the "localcontext()"
 function to temporarily change the active context.
 
-                                        *localcontext()..decimal.txt;*
+                                         *localcontext()..decimal.txt*
 decimal.localcontext(ctx=None, **kwargs)
 
    Return a context manager that will set the current context for the
@@ -975,7 +974,7 @@ New contexts can also be created using the "Context" constructor
 described below. In addition, the module provides three pre-made
 contexts:
 
-class decimal.BasicContext                *BasicContext..decimal.txt;*
+class decimal.BasicContext                 *BasicContext..decimal.txt*
 
    This is a standard context defined by the General Decimal
    Arithmetic Specification.  Precision is set to nine.  Rounding is
@@ -986,7 +985,7 @@ class decimal.BasicContext                *BasicContext..decimal.txt;*
    Because many of the traps are enabled, this context is useful for
    debugging.
 
-class decimal.ExtendedContext          *ExtendedContext..decimal.txt;*
+class decimal.ExtendedContext           *ExtendedContext..decimal.txt*
 
    This is a standard context defined by the General Decimal
    Arithmetic Specification.  Precision is set to nine.  Rounding is
@@ -999,7 +998,7 @@ class decimal.ExtendedContext          *ExtendedContext..decimal.txt;*
    application to complete a run in the presence of conditions that
    would otherwise halt the program.
 
-class decimal.DefaultContext            *DefaultContext..decimal.txt;*
+class decimal.DefaultContext             *DefaultContext..decimal.txt*
 
    This context is used by the "Context" constructor as a prototype
    for new contexts.  Changing a field (such a precision) has the
@@ -1023,7 +1022,7 @@ class decimal.DefaultContext            *DefaultContext..decimal.txt;*
 In addition to the three supplied contexts, new contexts can be
 created with the "Context" constructor.
 
-                                               *Context..decimal.txt;*
+                                                *Context..decimal.txt*
 class decimal.Context(prec=None, rounding=None, Emin=None, Emax=None, capitals=None, clamp=None, flags=None, traps=None)
 
    Creates a new context.  If a field is not specified or is "None",
@@ -1075,25 +1074,25 @@ class decimal.Context(prec=None, rounding=None, Emin=None, Emax=None, capitals=N
    "Context" method accepts a Python integer (an instance of "int")
    anywhere that a Decimal instance is accepted.
 
-   clear_flags()                    *Context.clear_flags()..decimal.txt;*
+   clear_flags()                     *Context.clear_flags()..decimal.txt*
 
       Resets all of the flags to "0".
 
-   clear_traps()                    *Context.clear_traps()..decimal.txt;*
+   clear_traps()                     *Context.clear_traps()..decimal.txt*
 
       Resets all of the traps to "0".
 
       New in version 3.3.
 
-   copy()                                  *Context.copy()..decimal.txt;*
+   copy()                                   *Context.copy()..decimal.txt*
 
       Return a duplicate of the context.
 
-   copy_decimal(num)               *Context.copy_decimal()..decimal.txt;*
+   copy_decimal(num)                *Context.copy_decimal()..decimal.txt*
 
       Return a copy of the Decimal instance num.
 
-   create_decimal(num)           *Context.create_decimal()..decimal.txt;*
+   create_decimal(num)            *Context.create_decimal()..decimal.txt*
 
       Creates a new Decimal instance from _num_ but using _self_ as
       context. Unlike the "Decimal" constructor, the context
@@ -1117,7 +1116,7 @@ class decimal.Context(prec=None, rounding=None, Emin=None, Emax=None, capitals=N
       specification. If the argument is a string, no leading or
       trailing whitespace or underscores are permitted.
 
-                   *Context.create_decimal_from_float()..decimal.txt;*
+                    *Context.create_decimal_from_float()..decimal.txt*
    create_decimal_from_float(f)
 
       Creates a new Decimal instance from a float _f_ but rounding
@@ -1136,13 +1135,13 @@ class decimal.Context(prec=None, rounding=None, Emin=None, Emax=None, capitals=N
 <
       New in version 3.1.
 
-   Etiny()                                *Context.Etiny()..decimal.txt;*
+   Etiny()                                 *Context.Etiny()..decimal.txt*
 
       Returns a value equal to "Emin - prec + 1" which is the minimum
       exponent value for subnormal results.  When underflow occurs,
       the exponent is set to "Etiny".
 
-   Etop()                                  *Context.Etop()..decimal.txt;*
+   Etop()                                   *Context.Etop()..decimal.txt*
 
       Returns a value equal to "Emax - prec + 1".
 
@@ -1153,192 +1152,192 @@ class decimal.Context(prec=None, rounding=None, Emin=None, Emax=None, capitals=N
    specific context.  The methods are similar to those for the
    "Decimal" class and are only briefly recounted here.
 
-   abs(x)                                   *Context.abs()..decimal.txt;*
+   abs(x)                                    *Context.abs()..decimal.txt*
 
       Returns the absolute value of _x_.
 
-   add(x, y)                                *Context.add()..decimal.txt;*
+   add(x, y)                                 *Context.add()..decimal.txt*
 
       Return the sum of _x_ and _y_.
 
-   canonical(x)                       *Context.canonical()..decimal.txt;*
+   canonical(x)                        *Context.canonical()..decimal.txt*
 
       Returns the same Decimal object _x_.
 
-   compare(x, y)                        *Context.compare()..decimal.txt;*
+   compare(x, y)                         *Context.compare()..decimal.txt*
 
       Compares _x_ and _y_ numerically.
 
-   compare_signal(x, y)          *Context.compare_signal()..decimal.txt;*
+   compare_signal(x, y)           *Context.compare_signal()..decimal.txt*
 
       Compares the values of the two operands numerically.
 
-   compare_total(x, y)            *Context.compare_total()..decimal.txt;*
+   compare_total(x, y)             *Context.compare_total()..decimal.txt*
 
       Compares two operands using their abstract representation.
 
-   compare_total_mag(x, y)    *Context.compare_total_mag()..decimal.txt;*
+   compare_total_mag(x, y)     *Context.compare_total_mag()..decimal.txt*
 
       Compares two operands using their abstract representation,
       ignoring sign.
 
-   copy_abs(x)                         *Context.copy_abs()..decimal.txt;*
+   copy_abs(x)                          *Context.copy_abs()..decimal.txt*
 
       Returns a copy of _x_ with the sign set to 0.
 
-   copy_negate(x)                   *Context.copy_negate()..decimal.txt;*
+   copy_negate(x)                    *Context.copy_negate()..decimal.txt*
 
       Returns a copy of _x_ with the sign inverted.
 
-   copy_sign(x, y)                    *Context.copy_sign()..decimal.txt;*
+   copy_sign(x, y)                     *Context.copy_sign()..decimal.txt*
 
       Copies the sign from _y_ to _x_.
 
-   divide(x, y)                          *Context.divide()..decimal.txt;*
+   divide(x, y)                           *Context.divide()..decimal.txt*
 
       Return _x_ divided by _y_.
 
-   divide_int(x, y)                  *Context.divide_int()..decimal.txt;*
+   divide_int(x, y)                   *Context.divide_int()..decimal.txt*
 
       Return _x_ divided by _y_, truncated to an integer.
 
-   divmod(x, y)                          *Context.divmod()..decimal.txt;*
+   divmod(x, y)                           *Context.divmod()..decimal.txt*
 
       Divides two numbers and returns the integer part of the result.
 
-   exp(x)                                   *Context.exp()..decimal.txt;*
+   exp(x)                                    *Context.exp()..decimal.txt*
 
       Returns "e ** x".
 
-   fma(x, y, z)                             *Context.fma()..decimal.txt;*
+   fma(x, y, z)                              *Context.fma()..decimal.txt*
 
       Returns _x_ multiplied by _y_, plus _z_.
 
-   is_canonical(x)                 *Context.is_canonical()..decimal.txt;*
+   is_canonical(x)                  *Context.is_canonical()..decimal.txt*
 
       Returns "True" if _x_ is canonical; otherwise returns "False".
 
-   is_finite(x)                       *Context.is_finite()..decimal.txt;*
+   is_finite(x)                        *Context.is_finite()..decimal.txt*
 
       Returns "True" if _x_ is finite; otherwise returns "False".
 
-   is_infinite(x)                   *Context.is_infinite()..decimal.txt;*
+   is_infinite(x)                    *Context.is_infinite()..decimal.txt*
 
       Returns "True" if _x_ is infinite; otherwise returns "False".
 
-   is_nan(x)                             *Context.is_nan()..decimal.txt;*
+   is_nan(x)                              *Context.is_nan()..decimal.txt*
 
       Returns "True" if _x_ is a qNaN or sNaN; otherwise returns
       "False".
 
-   is_normal(x)                       *Context.is_normal()..decimal.txt;*
+   is_normal(x)                        *Context.is_normal()..decimal.txt*
 
       Returns "True" if _x_ is a normal number; otherwise returns
       "False".
 
-   is_qnan(x)                           *Context.is_qnan()..decimal.txt;*
+   is_qnan(x)                            *Context.is_qnan()..decimal.txt*
 
       Returns "True" if _x_ is a quiet NaN; otherwise returns "False".
 
-   is_signed(x)                       *Context.is_signed()..decimal.txt;*
+   is_signed(x)                        *Context.is_signed()..decimal.txt*
 
       Returns "True" if _x_ is negative; otherwise returns "False".
 
-   is_snan(x)                           *Context.is_snan()..decimal.txt;*
+   is_snan(x)                            *Context.is_snan()..decimal.txt*
 
       Returns "True" if _x_ is a signaling NaN; otherwise returns
       "False".
 
-   is_subnormal(x)                 *Context.is_subnormal()..decimal.txt;*
+   is_subnormal(x)                  *Context.is_subnormal()..decimal.txt*
 
       Returns "True" if _x_ is subnormal; otherwise returns "False".
 
-   is_zero(x)                           *Context.is_zero()..decimal.txt;*
+   is_zero(x)                            *Context.is_zero()..decimal.txt*
 
       Returns "True" if _x_ is a zero; otherwise returns "False".
 
-   ln(x)                                     *Context.ln()..decimal.txt;*
+   ln(x)                                      *Context.ln()..decimal.txt*
 
       Returns the natural (base e) logarithm of _x_.
 
-   log10(x)                               *Context.log10()..decimal.txt;*
+   log10(x)                                *Context.log10()..decimal.txt*
 
       Returns the base 10 logarithm of _x_.
 
-   logb(x)                                 *Context.logb()..decimal.txt;*
+   logb(x)                                  *Context.logb()..decimal.txt*
 
       Returns the exponent of the magnitude of the operand’s MSD.
 
-   logical_and(x, y)                *Context.logical_and()..decimal.txt;*
+   logical_and(x, y)                 *Context.logical_and()..decimal.txt*
 
       Applies the logical operation _and_ between each operand’s
       digits.
 
-   logical_invert(x)             *Context.logical_invert()..decimal.txt;*
+   logical_invert(x)              *Context.logical_invert()..decimal.txt*
 
       Invert all the digits in _x_.
 
-   logical_or(x, y)                  *Context.logical_or()..decimal.txt;*
+   logical_or(x, y)                   *Context.logical_or()..decimal.txt*
 
       Applies the logical operation _or_ between each operand’s
       digits.
 
-   logical_xor(x, y)                *Context.logical_xor()..decimal.txt;*
+   logical_xor(x, y)                 *Context.logical_xor()..decimal.txt*
 
       Applies the logical operation _xor_ between each operand’s
       digits.
 
-   max(x, y)                                *Context.max()..decimal.txt;*
+   max(x, y)                                 *Context.max()..decimal.txt*
 
       Compares two values numerically and returns the maximum.
 
-   max_mag(x, y)                        *Context.max_mag()..decimal.txt;*
+   max_mag(x, y)                         *Context.max_mag()..decimal.txt*
 
       Compares the values numerically with their sign ignored.
 
-   min(x, y)                                *Context.min()..decimal.txt;*
+   min(x, y)                                 *Context.min()..decimal.txt*
 
       Compares two values numerically and returns the minimum.
 
-   min_mag(x, y)                        *Context.min_mag()..decimal.txt;*
+   min_mag(x, y)                         *Context.min_mag()..decimal.txt*
 
       Compares the values numerically with their sign ignored.
 
-   minus(x)                               *Context.minus()..decimal.txt;*
+   minus(x)                                *Context.minus()..decimal.txt*
 
       Minus corresponds to the unary prefix minus operator in Python.
 
-   multiply(x, y)                      *Context.multiply()..decimal.txt;*
+   multiply(x, y)                       *Context.multiply()..decimal.txt*
 
       Return the product of _x_ and _y_.
 
-   next_minus(x)                     *Context.next_minus()..decimal.txt;*
+   next_minus(x)                      *Context.next_minus()..decimal.txt*
 
       Returns the largest representable number smaller than _x_.
 
-   next_plus(x)                       *Context.next_plus()..decimal.txt;*
+   next_plus(x)                        *Context.next_plus()..decimal.txt*
 
       Returns the smallest representable number larger than _x_.
 
-   next_toward(x, y)                *Context.next_toward()..decimal.txt;*
+   next_toward(x, y)                 *Context.next_toward()..decimal.txt*
 
       Returns the number closest to _x_, in direction towards _y_.
 
-   normalize(x)                       *Context.normalize()..decimal.txt;*
+   normalize(x)                        *Context.normalize()..decimal.txt*
 
       Reduces _x_ to its simplest form.
 
-   number_class(x)                 *Context.number_class()..decimal.txt;*
+   number_class(x)                  *Context.number_class()..decimal.txt*
 
       Returns an indication of the class of _x_.
 
-   plus(x)                                 *Context.plus()..decimal.txt;*
+   plus(x)                                  *Context.plus()..decimal.txt*
 
       Plus corresponds to the unary prefix plus operator in Python.
       This operation applies the context precision and rounding, so it
       is _not_ an identity operation.
 
-   power(x, y, modulo=None)               *Context.power()..decimal.txt;*
+   power(x, y, modulo=None)                *Context.power()..decimal.txt*
 
       Return "x" to the power of "y", reduced modulo "modulo" if
       given.
@@ -1377,53 +1376,53 @@ class decimal.Context(prec=None, rounding=None, Emin=None, Emax=None, capitals=N
       the exponents of "x", "y" and "modulo".  The result is always
       exact.
 
-   quantize(x, y)                      *Context.quantize()..decimal.txt;*
+   quantize(x, y)                       *Context.quantize()..decimal.txt*
 
       Returns a value equal to _x_ (rounded), having the exponent of
       _y_.
 
-   radix()                                *Context.radix()..decimal.txt;*
+   radix()                                 *Context.radix()..decimal.txt*
 
       Just returns 10, as this is Decimal, :)
 
-   remainder(x, y)                    *Context.remainder()..decimal.txt;*
+   remainder(x, y)                     *Context.remainder()..decimal.txt*
 
       Returns the remainder from integer division.
 
       The sign of the result, if non-zero, is the same as that of the
       original dividend.
 
-   remainder_near(x, y)          *Context.remainder_near()..decimal.txt;*
+   remainder_near(x, y)           *Context.remainder_near()..decimal.txt*
 
       Returns "x - y * n", where _n_ is the integer nearest the exact
       value of "x / y" (if the result is 0 then its sign will be the
       sign of _x_).
 
-   rotate(x, y)                          *Context.rotate()..decimal.txt;*
+   rotate(x, y)                           *Context.rotate()..decimal.txt*
 
       Returns a rotated copy of _x_, _y_ times.
 
-   same_quantum(x, y)              *Context.same_quantum()..decimal.txt;*
+   same_quantum(x, y)               *Context.same_quantum()..decimal.txt*
 
       Returns "True" if the two operands have the same exponent.
 
-   scaleb(x, y)                          *Context.scaleb()..decimal.txt;*
+   scaleb(x, y)                           *Context.scaleb()..decimal.txt*
 
       Returns the first operand after adding the second value its exp.
 
-   shift(x, y)                            *Context.shift()..decimal.txt;*
+   shift(x, y)                             *Context.shift()..decimal.txt*
 
       Returns a shifted copy of _x_, _y_ times.
 
-   sqrt(x)                                 *Context.sqrt()..decimal.txt;*
+   sqrt(x)                                  *Context.sqrt()..decimal.txt*
 
       Square root of a non-negative number to context precision.
 
-   subtract(x, y)                      *Context.subtract()..decimal.txt;*
+   subtract(x, y)                       *Context.subtract()..decimal.txt*
 
       Return the difference between _x_ and _y_.
 
-   to_eng_string(x)               *Context.to_eng_string()..decimal.txt;*
+   to_eng_string(x)                *Context.to_eng_string()..decimal.txt*
 
       Convert to a string, using engineering notation if an exponent
       is needed.
@@ -1433,11 +1432,11 @@ class decimal.Context(prec=None, rounding=None, Emin=None, Emax=None, capitals=N
       and may require the addition of either one or two trailing
       zeros.
 
-   to_integral_exact(x)       *Context.to_integral_exact()..decimal.txt;*
+   to_integral_exact(x)        *Context.to_integral_exact()..decimal.txt*
 
       Rounds to an integer.
 
-   to_sci_string(x)               *Context.to_sci_string()..decimal.txt;*
+   to_sci_string(x)                *Context.to_sci_string()..decimal.txt*
 
       Converts a number to a string using scientific notation.
 
@@ -1460,14 +1459,14 @@ are also included in the pure Python version for compatibility.
 | decimal.MIN_ETINY     | "-849999999"          | "-1999999999999999997"          |
 +-----------------------+-----------------------+---------------------------------+
 
-decimal.HAVE_THREADS                      *HAVE_THREADS..decimal.txt;*
+decimal.HAVE_THREADS                       *HAVE_THREADS..decimal.txt*
 
    The value is "True".  Deprecated, because Python now always has
    threads.
 
    Deprecated since version 3.9.
 
-decimal.HAVE_CONTEXTVAR                *HAVE_CONTEXTVAR..decimal.txt;*
+decimal.HAVE_CONTEXTVAR                 *HAVE_CONTEXTVAR..decimal.txt*
 
    The default value is "True". If Python is "configured using the
    --without-decimal-contextvar option", the C version uses a thread-
@@ -1480,35 +1479,35 @@ New in version 3.9: backported to 3.7 and 3.8.
 Rounding modes
 ==============
 
-decimal.ROUND_CEILING                    *ROUND_CEILING..decimal.txt;*
+decimal.ROUND_CEILING                     *ROUND_CEILING..decimal.txt*
 
    Round towards "Infinity".
 
-decimal.ROUND_DOWN                          *ROUND_DOWN..decimal.txt;*
+decimal.ROUND_DOWN                           *ROUND_DOWN..decimal.txt*
 
    Round towards zero.
 
-decimal.ROUND_FLOOR                        *ROUND_FLOOR..decimal.txt;*
+decimal.ROUND_FLOOR                         *ROUND_FLOOR..decimal.txt*
 
    Round towards "-Infinity".
 
-decimal.ROUND_HALF_DOWN                *ROUND_HALF_DOWN..decimal.txt;*
+decimal.ROUND_HALF_DOWN                 *ROUND_HALF_DOWN..decimal.txt*
 
    Round to nearest with ties going towards zero.
 
-decimal.ROUND_HALF_EVEN                *ROUND_HALF_EVEN..decimal.txt;*
+decimal.ROUND_HALF_EVEN                 *ROUND_HALF_EVEN..decimal.txt*
 
    Round to nearest with ties going to nearest even integer.
 
-decimal.ROUND_HALF_UP                    *ROUND_HALF_UP..decimal.txt;*
+decimal.ROUND_HALF_UP                     *ROUND_HALF_UP..decimal.txt*
 
    Round to nearest with ties going away from zero.
 
-decimal.ROUND_UP                              *ROUND_UP..decimal.txt;*
+decimal.ROUND_UP                               *ROUND_UP..decimal.txt*
 
    Round away from zero.
 
-decimal.ROUND_05UP                          *ROUND_05UP..decimal.txt;*
+decimal.ROUND_05UP                           *ROUND_05UP..decimal.txt*
 
    Round away from zero if last digit after rounding towards zero
    would have been 0 or 5; otherwise round towards zero.
@@ -1531,7 +1530,7 @@ condition causes a Python exception to be raised.  For example, if the
 "DivisionByZero" trap is set, then a "DivisionByZero" exception is
 raised upon encountering the condition.
 
-class decimal.Clamped                          *Clamped..decimal.txt;*
+class decimal.Clamped                           *Clamped..decimal.txt*
 
    Altered an exponent to fit representation constraints.
 
@@ -1539,11 +1538,11 @@ class decimal.Clamped                          *Clamped..decimal.txt;*
    context’s "Emin" and "Emax" limits.  If possible, the exponent is
    reduced to fit by adding zeros to the coefficient.
 
-class decimal.DecimalException        *DecimalException..decimal.txt;*
+class decimal.DecimalException         *DecimalException..decimal.txt*
 
    Base class for other signals and a subclass of "ArithmeticError".
 
-class decimal.DivisionByZero            *DivisionByZero..decimal.txt;*
+class decimal.DivisionByZero             *DivisionByZero..decimal.txt*
 
    Signals the division of a non-infinite number by zero.
 
@@ -1552,7 +1551,7 @@ class decimal.DivisionByZero            *DivisionByZero..decimal.txt;*
    "Infinity" or "-Infinity" with the sign determined by the inputs to
    the calculation.
 
-class decimal.Inexact                          *Inexact..decimal.txt;*
+class decimal.Inexact                           *Inexact..decimal.txt*
 
    Indicates that rounding occurred and the result is not exact.
 
@@ -1560,7 +1559,7 @@ class decimal.Inexact                          *Inexact..decimal.txt;*
    rounded result is returned.  The signal flag or trap is used to
    detect when results are inexact.
 
-class decimal.InvalidOperation        *InvalidOperation..decimal.txt;*
+class decimal.InvalidOperation         *InvalidOperation..decimal.txt*
 
    An invalid operation was performed.
 
@@ -1577,7 +1576,7 @@ class decimal.InvalidOperation        *InvalidOperation..decimal.txt;*
       x ** (non-integer)
       x ** Infinity
 <
-class decimal.Overflow                        *Overflow..decimal.txt;*
+class decimal.Overflow                         *Overflow..decimal.txt*
 
    Numerical overflow.
 
@@ -1587,7 +1586,7 @@ class decimal.Overflow                        *Overflow..decimal.txt;*
    number or rounding outward to "Infinity".  In either case,
    "Inexact" and "Rounded" are also signaled.
 
-class decimal.Rounded                          *Rounded..decimal.txt;*
+class decimal.Rounded                           *Rounded..decimal.txt*
 
    Rounding occurred though possibly no information was lost.
 
@@ -1596,21 +1595,21 @@ class decimal.Rounded                          *Rounded..decimal.txt;*
    returns the result unchanged.  This signal is used to detect loss
    of significant digits.
 
-class decimal.Subnormal                      *Subnormal..decimal.txt;*
+class decimal.Subnormal                       *Subnormal..decimal.txt*
 
    Exponent was lower than "Emin" prior to rounding.
 
    Occurs when an operation result is subnormal (the exponent is too
    small). If not trapped, returns the result unchanged.
 
-class decimal.Underflow                      *Underflow..decimal.txt;*
+class decimal.Underflow                       *Underflow..decimal.txt*
 
    Numerical underflow with result rounded to zero.
 
    Occurs when a subnormal result is pushed to zero by rounding.
    "Inexact" and "Subnormal" are also signaled.
 
-class decimal.FloatOperation            *FloatOperation..decimal.txt;*
+class decimal.FloatOperation             *FloatOperation..decimal.txt*
 
    Enable stricter semantics for mixing floats and Decimals.
 

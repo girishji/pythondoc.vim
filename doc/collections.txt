@@ -1,4 +1,4 @@
-*collections.txt;*                            Last change: 2023 Sep 09
+*collections.txt;*                            Last change: 2023 Sep 10
 
 "collections" — Container datatypes
 ***********************************
@@ -45,7 +45,7 @@ calls.
 The class can be used to simulate nested scopes and is useful in
 templating.
 
-class collections.ChainMap(*maps)         *ChainMap..collections.txt;*
+class collections.ChainMap(*maps)          *ChainMap..collections.txt*
 
    A "ChainMap" groups multiple dicts or other mappings together to
    create a single, updateable view.  If no _maps_ are specified, a
@@ -68,14 +68,14 @@ class collections.ChainMap(*maps)         *ChainMap..collections.txt;*
    there is a _maps_ attribute, a method for creating new subcontexts,
    and a property for accessing all but the first mapping:
 
-   maps                                 *ChainMap.maps..collections.txt;*
+   maps                                  *ChainMap.maps..collections.txt*
 
       A user updateable list of mappings.  The list is ordered from
       first-searched to last-searched.  It is the only stored state
       and can be modified to change which mappings are searched.  The
       list should always contain at least one mapping.
 
-   new_child(m=None, **kwargs)   *ChainMap.new_child()..collections.txt;*
+   new_child(m=None, **kwargs)    *ChainMap.new_child()..collections.txt*
 
       Returns a new "ChainMap" containing a new map followed by all of
       the maps in the current instance.  If "m" is specified, it
@@ -91,7 +91,7 @@ class collections.ChainMap(*maps)         *ChainMap..collections.txt;*
 
       Changed in version 3.10: Keyword arguments support was added.
 
-   parents                           *ChainMap.parents..collections.txt;*
+   parents                            *ChainMap.parents..collections.txt*
 
       Property returning a new "ChainMap" containing all of the maps
       in the current instance except the first one.  This is useful
@@ -235,7 +235,7 @@ For example:
     ('you', 554),  ('a', 546), ('my', 514), ('hamlet', 471), ('in', 451)]
 <
 
-                                           *Counter..collections.txt;*
+                                            *Counter..collections.txt*
 class collections.Counter([iterable-or-mapping])
 
    A "Counter" is a "dict" subclass for counting _hashable_ objects.
@@ -276,7 +276,7 @@ class collections.Counter([iterable-or-mapping])
    Counter objects support additional methods beyond those available
    for all dictionaries:
 
-   elements()                      *Counter.elements()..collections.txt;*
+   elements()                       *Counter.elements()..collections.txt*
 
       Return an iterator over elements repeating each as many times as
       its count.  Elements are returned in the order first
@@ -287,7 +287,7 @@ class collections.Counter([iterable-or-mapping])
       >>> sorted(c.elements())
       ['a', 'a', 'a', 'a', 'b', 'b']
 
-   most_common([n])             *Counter.most_common()..collections.txt;*
+   most_common([n])              *Counter.most_common()..collections.txt*
 
       Return a list of the _n_ most common elements and their counts
       from the most common to the least.  If _n_ is omitted or "None",
@@ -297,7 +297,7 @@ class collections.Counter([iterable-or-mapping])
       >>> Counter('abracadabra').most_common(3)
       [('a', 5), ('b', 2), ('r', 2)]
 
-                                *Counter.subtract()..collections.txt;*
+                                 *Counter.subtract()..collections.txt*
    subtract([iterable-or-mapping])
 
       Elements are subtracted from an _iterable_ or from another
@@ -313,7 +313,7 @@ class collections.Counter([iterable-or-mapping])
 
       New in version 3.2.
 
-   total()                            *Counter.total()..collections.txt;*
+   total()                             *Counter.total()..collections.txt*
 
       Compute the sum of the counts.
 
@@ -326,11 +326,11 @@ class collections.Counter([iterable-or-mapping])
    The usual dictionary methods are available for "Counter" objects
    except for two which work differently for counters.
 
-   fromkeys(iterable)              *Counter.fromkeys()..collections.txt;*
+   fromkeys(iterable)               *Counter.fromkeys()..collections.txt*
 
       This class method is not implemented for "Counter" objects.
 
-   update([iterable-or-mapping])     *Counter.update()..collections.txt;*
+   update([iterable-or-mapping])      *Counter.update()..collections.txt*
 
       Elements are counted from an _iterable_ or added-in from another
       _mapping_ (or counter).  Like "dict.update()" but adds counts
@@ -449,7 +449,7 @@ See also:
 "deque" objects
 ===============
 
-                                             *deque..collections.txt;*
+                                              *deque..collections.txt*
 class collections.deque([iterable[, maxlen]])
 
    Returns a new deque object initialized left-to-right (using
@@ -479,42 +479,42 @@ class collections.deque([iterable[, maxlen]])
 
    Deque objects support the following methods:
 
-   append(x)                           *deque.append()..collections.txt;*
+   append(x)                            *deque.append()..collections.txt*
 
       Add _x_ to the right side of the deque.
 
-   appendleft(x)                   *deque.appendleft()..collections.txt;*
+   appendleft(x)                    *deque.appendleft()..collections.txt*
 
       Add _x_ to the left side of the deque.
 
-   clear()                              *deque.clear()..collections.txt;*
+   clear()                               *deque.clear()..collections.txt*
 
       Remove all elements from the deque leaving it with length 0.
 
-   copy()                                *deque.copy()..collections.txt;*
+   copy()                                 *deque.copy()..collections.txt*
 
       Create a shallow copy of the deque.
 
       New in version 3.5.
 
-   count(x)                             *deque.count()..collections.txt;*
+   count(x)                              *deque.count()..collections.txt*
 
       Count the number of deque elements equal to _x_.
 
       New in version 3.2.
 
-   extend(iterable)                    *deque.extend()..collections.txt;*
+   extend(iterable)                     *deque.extend()..collections.txt*
 
       Extend the right side of the deque by appending elements from
       the iterable argument.
 
-   extendleft(iterable)            *deque.extendleft()..collections.txt;*
+   extendleft(iterable)             *deque.extendleft()..collections.txt*
 
       Extend the left side of the deque by appending elements from
       _iterable_. Note, the series of left appends results in
       reversing the order of elements in the iterable argument.
 
-   index(x[, start[, stop]])            *deque.index()..collections.txt;*
+   index(x[, start[, stop]])             *deque.index()..collections.txt*
 
       Return the position of _x_ in the deque (at or after index
       _start_ and before index _stop_).  Returns the first match or
@@ -522,7 +522,7 @@ class collections.deque([iterable[, maxlen]])
 
       New in version 3.5.
 
-   insert(i, x)                        *deque.insert()..collections.txt;*
+   insert(i, x)                         *deque.insert()..collections.txt*
 
       Insert _x_ into the deque at position _i_.
 
@@ -531,29 +531,29 @@ class collections.deque([iterable[, maxlen]])
 
       New in version 3.5.
 
-   pop()                                  *deque.pop()..collections.txt;*
+   pop()                                   *deque.pop()..collections.txt*
 
       Remove and return an element from the right side of the deque.
       If no elements are present, raises an "IndexError".
 
-   popleft()                          *deque.popleft()..collections.txt;*
+   popleft()                           *deque.popleft()..collections.txt*
 
       Remove and return an element from the left side of the deque. If
       no elements are present, raises an "IndexError".
 
-   remove(value)                       *deque.remove()..collections.txt;*
+   remove(value)                        *deque.remove()..collections.txt*
 
       Remove the first occurrence of _value_.  If not found, raises a
       "ValueError".
 
-   reverse()                          *deque.reverse()..collections.txt;*
+   reverse()                           *deque.reverse()..collections.txt*
 
       Reverse the elements of the deque in-place and then return
       "None".
 
       New in version 3.2.
 
-   rotate(n=1)                         *deque.rotate()..collections.txt;*
+   rotate(n=1)                          *deque.rotate()..collections.txt*
 
       Rotate the deque _n_ steps to the right.  If _n_ is negative,
       rotate to the left.
@@ -564,7 +564,7 @@ class collections.deque([iterable[, maxlen]])
 
    Deque objects also provide one read-only attribute:
 
-   maxlen                                *deque.maxlen..collections.txt;*
+   maxlen                                 *deque.maxlen..collections.txt*
 
       Maximum size of a deque or "None" if unbounded.
 
@@ -700,7 +700,7 @@ it is easy to implement Forth style stack manipulations such as "dup",
 "defaultdict" objects
 =====================
 
-                                       *defaultdict..collections.txt;*
+                                        *defaultdict..collections.txt*
 class collections.defaultdict(default_factory=None, /[, ...])
 
    Return a new dictionary-like object.  "defaultdict" is a subclass
@@ -716,7 +716,7 @@ class collections.defaultdict(default_factory=None, /[, ...])
    "defaultdict" objects support the following method in addition to
    the standard "dict" operations:
 
-   __missing__(key)         *defaultdict.__missing__()..collections.txt;*
+   __missing__(key)          *defaultdict.__missing__()..collections.txt*
 
       If the "default_factory" attribute is "None", this raises a
       "KeyError" exception with the _key_ as argument.
@@ -739,7 +739,7 @@ class collections.defaultdict(default_factory=None, /[, ...])
 
    "defaultdict" objects support the following instance variable:
 
-   default_factory        *defaultdict.default_factory..collections.txt;*
+   default_factory         *defaultdict.default_factory..collections.txt*
 
       This attribute is used by the "__missing__()" method; it is
       initialized from the first argument to the constructor, if
@@ -828,7 +828,7 @@ more readable, self-documenting code.  They can be used wherever
 regular tuples are used, and they add the ability to access fields by
 name instead of position index.
 
-                                      *namedtuple()..collections.txt;*
+                                       *namedtuple()..collections.txt*
 collections.namedtuple(typename, field_names, *, rename=False, defaults=None, module=None)
 
    Returns a new tuple subclass named _typename_.  The new subclass is
@@ -918,7 +918,7 @@ three additional methods and two attributes.  To prevent conflicts
 with field names, the method and attribute names start with an
 underscore.
 
-                            *somenamedtuple._make()..collections.txt;*
+                             *somenamedtuple._make()..collections.txt*
 classmethod somenamedtuple._make(iterable)
 
    Class method that makes a new instance from an existing sequence or
@@ -928,9 +928,7 @@ classmethod somenamedtuple._make(iterable)
       >>> Point._make(t)
       Point(x=11, y=22)
 <
-
-                          *somenamedtuple._asdict()..collections.txt;*
-somenamedtuple._asdict()
+somenamedtuple._asdict()   *somenamedtuple._asdict()..collections.txt*
 
    Return a new "dict" which maps field names to their corresponding
    values:
@@ -948,7 +946,7 @@ somenamedtuple._asdict()
    suggested remediation is to cast the result to the desired type:
    "OrderedDict(nt._asdict())".
 
-                         *somenamedtuple._replace()..collections.txt;*
+                          *somenamedtuple._replace()..collections.txt*
 somenamedtuple._replace(**kwargs)
 
    Return a new instance of the named tuple replacing specified fields
@@ -964,7 +962,7 @@ somenamedtuple._replace(**kwargs)
    Named tuples are also supported by generic function
    "copy.replace()".
 
-somenamedtuple._fields      *somenamedtuple._fields..collections.txt;*
+somenamedtuple._fields       *somenamedtuple._fields..collections.txt*
 
    Tuple of strings listing the field names.  Useful for introspection
    and for creating new named tuple types from existing named tuples.
@@ -978,7 +976,7 @@ somenamedtuple._fields      *somenamedtuple._fields..collections.txt;*
       Pixel(x=11, y=22, red=128, green=255, blue=0)
 <
 
-                    *somenamedtuple._field_defaults..collections.txt;*
+                     *somenamedtuple._field_defaults..collections.txt*
 somenamedtuple._field_defaults
 
    Dictionary mapping field names to default values.
@@ -1109,7 +1107,7 @@ Some differences from "dict" still remain:
 
 * Until Python 3.8, "dict" lacked a "__reversed__()" method.
 
-                                       *OrderedDict..collections.txt;*
+                                        *OrderedDict..collections.txt*
 class collections.OrderedDict([items])
 
    Return an instance of a "dict" subclass that has methods
@@ -1117,14 +1115,14 @@ class collections.OrderedDict([items])
 
    New in version 3.1.
 
-   popitem(last=True)           *OrderedDict.popitem()..collections.txt;*
+   popitem(last=True)            *OrderedDict.popitem()..collections.txt*
 
       The "popitem()" method for ordered dictionaries returns and
       removes a (key, value) pair.  The pairs are returned in LIFO
       (last-in, first-out) order if _last_ is true or FIFO (first-in,
       first-out) order if false.
 
-                         *OrderedDict.move_to_end()..collections.txt;*
+                          *OrderedDict.move_to_end()..collections.txt*
    move_to_end(key, last=True)
 
       Move an existing _key_ to either end of an ordered dictionary.
@@ -1250,7 +1248,7 @@ subclass directly from "dict"; however, this class can be easier to
 work with because the underlying dictionary is accessible as an
 attribute.
 
-                                          *UserDict..collections.txt;*
+                                           *UserDict..collections.txt*
 class collections.UserDict([initialdata])
 
    Class that simulates a dictionary.  The instance’s contents are
@@ -1263,7 +1261,7 @@ class collections.UserDict([initialdata])
    In addition to supporting the methods and operations of mappings,
    "UserDict" instances provide the following attribute:
 
-   data                                 *UserDict.data..collections.txt;*
+   data                                  *UserDict.data..collections.txt*
 
       A real dictionary used to store the contents of the "UserDict"
       class.
@@ -1281,7 +1279,7 @@ The need for this class has been partially supplanted by the ability
 to subclass directly from "list"; however, this class can be easier to
 work with because the underlying list is accessible as an attribute.
 
-class collections.UserList([list])        *UserList..collections.txt;*
+class collections.UserList([list])         *UserList..collections.txt*
 
    Class that simulates a list.  The instance’s contents are kept in a
    regular list, which is accessible via the "data" attribute of
@@ -1293,7 +1291,7 @@ class collections.UserList([list])        *UserList..collections.txt;*
    In addition to supporting the methods and operations of mutable
    sequences, "UserList" instances provide the following attribute:
 
-   data                                 *UserList.data..collections.txt;*
+   data                                  *UserList.data..collections.txt*
 
       A real "list" object used to store the contents of the
       "UserList" class.
@@ -1319,7 +1317,7 @@ need for this class has been partially supplanted by the ability to
 subclass directly from "str"; however, this class can be easier to
 work with because the underlying string is accessible as an attribute.
 
-class collections.UserString(seq)       *UserString..collections.txt;*
+class collections.UserString(seq)        *UserString..collections.txt*
 
    Class that simulates a string object.  The instance’s content is
    kept in a regular string object, which is accessible via the "data"
@@ -1331,7 +1329,7 @@ class collections.UserString(seq)       *UserString..collections.txt;*
    In addition to supporting the methods and operations of strings,
    "UserString" instances provide the following attribute:
 
-   data                               *UserString.data..collections.txt;*
+   data                                *UserString.data..collections.txt*
 
       A real "str" object used to store the contents of the
       "UserString" class.

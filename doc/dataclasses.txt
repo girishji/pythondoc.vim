@@ -1,4 +1,4 @@
-*dataclasses.txt;*                            Last change: 2023 Sep 09
+*dataclasses.txt;*                            Last change: 2023 Sep 10
 
 "dataclasses" — Data Classes
 ****************************
@@ -43,7 +43,7 @@ New in version 3.7.
 Module contents
 ===============
 
-                                       *dataclass()..dataclasses.txt;*
+                                        *dataclass()..dataclasses.txt*
 @dataclasses.dataclass(*, init=True, repr=True, eq=True, order=False, unsafe_hash=False, frozen=False, match_args=True, kw_only=False, slots=False, weakref_slot=False)
 
    This function is a _decorator_ that is used to add generated
@@ -220,7 +220,7 @@ Module contents
    follows a field with a default value.  This is true whether this
    occurs in a single class, or as a result of class inheritance.
 
-                                           *field()..dataclasses.txt;*
+                                            *field()..dataclasses.txt*
 dataclasses.field(*, default=MISSING, default_factory=MISSING, init=True, repr=True, hash=None, compare=True, metadata=None, kw_only=MISSING)
 
    For common and simple use cases, no other functionality is
@@ -308,7 +308,7 @@ dataclasses.field(*, default=MISSING, default_factory=MISSING, init=True, repr=T
    will be "20", and the class attributes "C.x" and "C.y" will not be
    set.
 
-class dataclasses.Field                      *Field..dataclasses.txt;*
+class dataclasses.Field                       *Field..dataclasses.txt*
 
    "Field" objects describe each defined field. These objects are
    created internally, and are returned by the "fields()" module-level
@@ -326,7 +326,7 @@ class dataclasses.Field                      *Field..dataclasses.txt;*
    Other attributes may exist, but they are private and must not be
    inspected or relied on.
 
-dataclasses.fields(class_or_instance)     *fields()..dataclasses.txt;*
+dataclasses.fields(class_or_instance)      *fields()..dataclasses.txt*
 
    Returns a tuple of "Field" objects that define the fields for this
    dataclass.  Accepts either a dataclass, or an instance of a
@@ -334,7 +334,7 @@ dataclasses.fields(class_or_instance)     *fields()..dataclasses.txt;*
    of one. Does not return pseudo-fields which are "ClassVar" or
    "InitVar".
 
-                                          *asdict()..dataclasses.txt;*
+                                           *asdict()..dataclasses.txt*
 dataclasses.asdict(obj, *, dict_factory=dict)
 
    Converts the dataclass "obj" to a dict (by using the factory
@@ -366,7 +366,7 @@ dataclasses.asdict(obj, *, dict_factory=dict)
 <
    "asdict()" raises "TypeError" if "obj" is not a dataclass instance.
 
-                                         *astuple()..dataclasses.txt;*
+                                          *astuple()..dataclasses.txt*
 dataclasses.astuple(obj, *, tuple_factory=tuple)
 
    Converts the dataclass "obj" to a tuple (by using the factory
@@ -386,7 +386,7 @@ dataclasses.astuple(obj, *, tuple_factory=tuple)
    "astuple()" raises "TypeError" if "obj" is not a dataclass
    instance.
 
-                                  *make_dataclass()..dataclasses.txt;*
+                                   *make_dataclass()..dataclasses.txt*
 dataclasses.make_dataclass(cls_name, fields, *, bases=(), namespace=None, init=True, repr=True, eq=True, order=False, unsafe_hash=False, frozen=False, match_args=True, kw_only=False, slots=False, weakref_slot=False, module=None)
 
    Creates a new dataclass with name "cls_name", fields as defined in
@@ -425,7 +425,7 @@ dataclasses.make_dataclass(cls_name, fields, *, bases=(), namespace=None, init=T
           def add_one(self):
               return self.x + 1
 <
-dataclasses.replace(obj, /, **changes)   *replace()..dataclasses.txt;*
+dataclasses.replace(obj, /, **changes)    *replace()..dataclasses.txt*
 
    Creates a new object of the same type as "obj", replacing fields
    with values from "changes".  If "obj" is not a Data Class, raises
@@ -455,7 +455,7 @@ dataclasses.replace(obj, /, **changes)   *replace()..dataclasses.txt;*
    Dataclass instances are also supported by generic function
    "copy.replace()".
 
-dataclasses.is_dataclass(obj)       *is_dataclass()..dataclasses.txt;*
+dataclasses.is_dataclass(obj)        *is_dataclass()..dataclasses.txt*
 
    Return "True" if its parameter is a dataclass or an instance of
    one, otherwise return "False".
@@ -467,11 +467,11 @@ dataclasses.is_dataclass(obj)       *is_dataclass()..dataclasses.txt;*
       def is_dataclass_instance(obj):
           return is_dataclass(obj) and not isinstance(obj, type)
 <
-dataclasses.MISSING                        *MISSING..dataclasses.txt;*
+dataclasses.MISSING                         *MISSING..dataclasses.txt*
 
    A sentinel value signifying a missing default or default_factory.
 
-dataclasses.KW_ONLY                        *KW_ONLY..dataclasses.txt;*
+dataclasses.KW_ONLY                         *KW_ONLY..dataclasses.txt*
 
    A sentinel value used as a type annotation.  Any fields after a
    pseudo-field with the type of "KW_ONLY" are marked as keyword-only
@@ -498,7 +498,7 @@ dataclasses.KW_ONLY                        *KW_ONLY..dataclasses.txt;*
 
    New in version 3.10.
 
-                               *FrozenInstanceError..dataclasses.txt;*
+                                *FrozenInstanceError..dataclasses.txt*
 exception dataclasses.FrozenInstanceError
 
    Raised when an implicitly defined "__setattr__()" or
@@ -509,7 +509,7 @@ exception dataclasses.FrozenInstanceError
 Post-init processing
 ====================
 
-dataclasses.__post_init__()        *__post_init__()..dataclasses.txt;*
+dataclasses.__post_init__()         *__post_init__()..dataclasses.txt*
 
    When defined on the class, it will be called by the generated
    "__init__()", normally as "self.__post_init__()". However, if any

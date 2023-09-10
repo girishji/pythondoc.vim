@@ -1,4 +1,4 @@
-*codecs.txt;*                                 Last change: 2023 Sep 09
+*codecs.txt;*                                 Last change: 2023 Sep 10
 
 "codecs" — Codec registry and base classes
 ******************************************
@@ -20,7 +20,7 @@ codecs that encode to "bytes".
 The module defines the following functions for encoding and decoding
 with any codec:
 
-                                               *encode()..codecs.txt;*
+                                                *encode()..codecs.txt*
 codecs.encode(obj, encoding='utf-8', errors='strict')
 
    Encodes _obj_ using the codec registered for _encoding_.
@@ -31,7 +31,7 @@ codecs.encode(obj, encoding='utf-8', errors='strict')
    "UnicodeEncodeError"). Refer to Codec Base Classes for more
    information on codec error handling.
 
-                                               *decode()..codecs.txt;*
+                                                *decode()..codecs.txt*
 codecs.decode(obj, encoding='utf-8', errors='strict')
 
    Decodes _obj_ using the codec registered for _encoding_.
@@ -44,7 +44,7 @@ codecs.decode(obj, encoding='utf-8', errors='strict')
 
 The full details for each codec can also be looked up directly:
 
-codecs.lookup(encoding)                        *lookup()..codecs.txt;*
+codecs.lookup(encoding)                         *lookup()..codecs.txt*
 
    Looks up the codec info in the Python codec registry and returns a
    "CodecInfo" object as defined below.
@@ -55,18 +55,18 @@ codecs.lookup(encoding)                        *lookup()..codecs.txt;*
    the "CodecInfo" object is stored in the cache and returned to the
    caller.
 
-                                              *CodecInfo..codecs.txt;*
+                                               *CodecInfo..codecs.txt*
 class codecs.CodecInfo(encode, decode, streamreader=None, streamwriter=None, incrementalencoder=None, incrementaldecoder=None, name=None)
 
    Codec details when looking up the codec registry. The constructor
    arguments are stored in attributes of the same name:
 
-   name                                     *CodecInfo.name..codecs.txt;*
+   name                                      *CodecInfo.name..codecs.txt*
 
       The name of the encoding.
 
-   encode                                 *CodecInfo.encode..codecs.txt;*
-   decode                                 *CodecInfo.decode..codecs.txt;*
+   encode                                  *CodecInfo.encode..codecs.txt*
+   decode                                  *CodecInfo.decode..codecs.txt*
 
       The stateless encoding and decoding functions. These must be
       functions or methods which have the same interface as the
@@ -74,16 +74,16 @@ class codecs.CodecInfo(encode, decode, streamreader=None, streamwriter=None, inc
       Interface). The functions or methods are expected to work in a
       stateless mode.
 
-   incrementalencoder         *CodecInfo.incrementalencoder..codecs.txt;*
-   incrementaldecoder         *CodecInfo.incrementaldecoder..codecs.txt;*
+   incrementalencoder          *CodecInfo.incrementalencoder..codecs.txt*
+   incrementaldecoder          *CodecInfo.incrementaldecoder..codecs.txt*
 
       Incremental encoder and decoder classes or factory functions.
       These have to provide the interface defined by the base classes
       "IncrementalEncoder" and "IncrementalDecoder", respectively.
       Incremental codecs can maintain state.
 
-   streamwriter                     *CodecInfo.streamwriter..codecs.txt;*
-   streamreader                     *CodecInfo.streamreader..codecs.txt;*
+   streamwriter                      *CodecInfo.streamwriter..codecs.txt*
+   streamreader                      *CodecInfo.streamreader..codecs.txt*
 
       Stream writer and reader classes or factory functions. These
       have to provide the interface defined by the base classes
@@ -94,21 +94,21 @@ To simplify access to the various codec components, the module
 provides these additional functions which use "lookup()" for the codec
 lookup:
 
-codecs.getencoder(encoding)                *getencoder()..codecs.txt;*
+codecs.getencoder(encoding)                 *getencoder()..codecs.txt*
 
    Look up the codec for the given encoding and return its encoder
    function.
 
    Raises a "LookupError" in case the encoding cannot be found.
 
-codecs.getdecoder(encoding)                *getdecoder()..codecs.txt;*
+codecs.getdecoder(encoding)                 *getdecoder()..codecs.txt*
 
    Look up the codec for the given encoding and return its decoder
    function.
 
    Raises a "LookupError" in case the encoding cannot be found.
 
-                                *getincrementalencoder()..codecs.txt;*
+                                 *getincrementalencoder()..codecs.txt*
 codecs.getincrementalencoder(encoding)
 
    Look up the codec for the given encoding and return its incremental
@@ -117,7 +117,7 @@ codecs.getincrementalencoder(encoding)
    Raises a "LookupError" in case the encoding cannot be found or the
    codec doesn’t support an incremental encoder.
 
-                                *getincrementaldecoder()..codecs.txt;*
+                                 *getincrementaldecoder()..codecs.txt*
 codecs.getincrementaldecoder(encoding)
 
    Look up the codec for the given encoding and return its incremental
@@ -126,14 +126,14 @@ codecs.getincrementaldecoder(encoding)
    Raises a "LookupError" in case the encoding cannot be found or the
    codec doesn’t support an incremental decoder.
 
-codecs.getreader(encoding)                  *getreader()..codecs.txt;*
+codecs.getreader(encoding)                   *getreader()..codecs.txt*
 
    Look up the codec for the given encoding and return its
    "StreamReader" class or factory function.
 
    Raises a "LookupError" in case the encoding cannot be found.
 
-codecs.getwriter(encoding)                  *getwriter()..codecs.txt;*
+codecs.getwriter(encoding)                   *getwriter()..codecs.txt*
 
    Look up the codec for the given encoding and return its
    "StreamWriter" class or factory function.
@@ -143,7 +143,7 @@ codecs.getwriter(encoding)                  *getwriter()..codecs.txt;*
 Custom codecs are made available by registering a suitable codec
 search function:
 
-codecs.register(search_function)             *register()..codecs.txt;*
+codecs.register(search_function)              *register()..codecs.txt*
 
    Register a codec search function. Search functions are expected to
    take one argument, being the encoding name in all lower case
@@ -154,7 +154,7 @@ codecs.register(search_function)             *register()..codecs.txt;*
    Changed in version 3.9: Hyphens and spaces are converted to
    underscore.
 
-codecs.unregister(search_function)         *unregister()..codecs.txt;*
+codecs.unregister(search_function)          *unregister()..codecs.txt*
 
    Unregister a codec search function and clear the registry’s cache.
    If the search function is not registered, do nothing.
@@ -166,7 +166,7 @@ recommended approach for working with encoded text files, this module
 provides additional utility functions and classes that allow the use
 of a wider range of codecs when working with binary files:
 
-                                                 *open()..codecs.txt;*
+                                                  *open()..codecs.txt*
 codecs.open(filename, mode='r', encoding=None, errors='strict', buffering=-1)
 
    Open an encoded file using the given _mode_ and return an instance
@@ -197,7 +197,7 @@ codecs.open(filename, mode='r', encoding=None, errors='strict', buffering=-1)
 
    Changed in version 3.11: The "'U'" mode has been removed.
 
-                                          *EncodedFile()..codecs.txt;*
+                                           *EncodedFile()..codecs.txt*
 codecs.EncodedFile(file, data_encoding, file_encoding=None, errors='strict')
 
    Return a "StreamRecoder" instance, a wrapped version of _file_
@@ -216,7 +216,7 @@ codecs.EncodedFile(file, data_encoding, file_encoding=None, errors='strict')
    "'strict'", which causes "ValueError" to be raised in case an
    encoding error occurs.
 
-                                           *iterencode()..codecs.txt;*
+                                            *iterencode()..codecs.txt*
 codecs.iterencode(iterator, encoding, errors='strict', **kwargs)
 
    Uses an incremental encoder to iteratively encode the input
@@ -228,7 +228,7 @@ codecs.iterencode(iterator, encoding, errors='strict', **kwargs)
    encode. Therefore it does not support bytes-to-bytes encoders such
    as "base64_codec".
 
-                                           *iterdecode()..codecs.txt;*
+                                            *iterdecode()..codecs.txt*
 codecs.iterdecode(iterator, encoding, errors='strict', **kwargs)
 
    Uses an incremental decoder to iteratively decode the input
@@ -244,16 +244,16 @@ codecs.iterdecode(iterator, encoding, errors='strict', **kwargs)
 The module also provides the following constants which are useful for
 reading and writing to platform dependent files:
 
-codecs.BOM                                          *BOM..codecs.txt;*
-codecs.BOM_BE                                    *BOM_BE..codecs.txt;*
-codecs.BOM_LE                                    *BOM_LE..codecs.txt;*
-codecs.BOM_UTF8                                *BOM_UTF8..codecs.txt;*
-codecs.BOM_UTF16                              *BOM_UTF16..codecs.txt;*
-codecs.BOM_UTF16_BE                        *BOM_UTF16_BE..codecs.txt;*
-codecs.BOM_UTF16_LE                        *BOM_UTF16_LE..codecs.txt;*
-codecs.BOM_UTF32                              *BOM_UTF32..codecs.txt;*
-codecs.BOM_UTF32_BE                        *BOM_UTF32_BE..codecs.txt;*
-codecs.BOM_UTF32_LE                        *BOM_UTF32_LE..codecs.txt;*
+codecs.BOM                                           *BOM..codecs.txt*
+codecs.BOM_BE                                     *BOM_BE..codecs.txt*
+codecs.BOM_LE                                     *BOM_LE..codecs.txt*
+codecs.BOM_UTF8                                 *BOM_UTF8..codecs.txt*
+codecs.BOM_UTF16                               *BOM_UTF16..codecs.txt*
+codecs.BOM_UTF16_BE                         *BOM_UTF16_BE..codecs.txt*
+codecs.BOM_UTF16_LE                         *BOM_UTF16_LE..codecs.txt*
+codecs.BOM_UTF32                               *BOM_UTF32..codecs.txt*
+codecs.BOM_UTF32_BE                         *BOM_UTF32_BE..codecs.txt*
+codecs.BOM_UTF32_LE                         *BOM_UTF32_LE..codecs.txt*
 
    These constants define various byte sequences, being Unicode byte
    order marks (BOMs) for several encodings. They are used in UTF-16
@@ -368,7 +368,7 @@ works with decoding and translating.
 The set of allowed values can be extended by registering a new named
 error handler:
 
-                                       *register_error()..codecs.txt;*
+                                        *register_error()..codecs.txt*
 codecs.register_error(name, error_handler)
 
    Register the error handling function _error_handler_ under the name
@@ -397,7 +397,7 @@ codecs.register_error(name, error_handler)
 Previously registered error handlers (including the standard error
 handlers) can be looked up by name:
 
-codecs.lookup_error(name)                *lookup_error()..codecs.txt;*
+codecs.lookup_error(name)                 *lookup_error()..codecs.txt*
 
    Return the error handler previously registered under the name
    _name_.
@@ -407,27 +407,27 @@ codecs.lookup_error(name)                *lookup_error()..codecs.txt;*
 The following standard error handlers are also made available as
 module level functions:
 
-codecs.strict_errors(exception)         *strict_errors()..codecs.txt;*
+codecs.strict_errors(exception)          *strict_errors()..codecs.txt*
 
    Implements the "'strict'" error handling.
 
    Each encoding or decoding error raises a "UnicodeError".
 
-codecs.ignore_errors(exception)         *ignore_errors()..codecs.txt;*
+codecs.ignore_errors(exception)          *ignore_errors()..codecs.txt*
 
    Implements the "'ignore'" error handling.
 
    Malformed data is ignored; encoding or decoding is continued
    without further notice.
 
-codecs.replace_errors(exception)       *replace_errors()..codecs.txt;*
+codecs.replace_errors(exception)        *replace_errors()..codecs.txt*
 
    Implements the "'replace'" error handling.
 
    Substitutes "?" (ASCII character) for encoding errors or "�"
    (U+FFFD, the official REPLACEMENT CHARACTER) for decoding errors.
 
-                              *backslashreplace_errors()..codecs.txt;*
+                               *backslashreplace_errors()..codecs.txt*
 codecs.backslashreplace_errors(exception)
 
    Implements the "'backslashreplace'" error handling.
@@ -439,7 +439,7 @@ codecs.backslashreplace_errors(exception)
 
    Changed in version 3.5: Works with decoding and translating.
 
-                             *xmlcharrefreplace_errors()..codecs.txt;*
+                              *xmlcharrefreplace_errors()..codecs.txt*
 codecs.xmlcharrefreplace_errors(exception)
 
    Implements the "'xmlcharrefreplace'" error handling (for encoding
@@ -449,7 +449,7 @@ codecs.xmlcharrefreplace_errors(exception)
    numeric character reference, which is a decimal form of Unicode
    code point with format "&#num;" .
 
-                                   *namereplace_errors()..codecs.txt;*
+                                    *namereplace_errors()..codecs.txt*
 codecs.namereplace_errors(exception)
 
    Implements the "'namereplace'" error handling (for encoding within
@@ -470,7 +470,7 @@ Stateless Encoding and Decoding
 The base "Codec" class defines these methods which also define the
 function interfaces of the stateless encoder and decoder:
 
-Codec.encode(input, errors='strict')     *Codec.encode()..codecs.txt;*
+Codec.encode(input, errors='strict')      *Codec.encode()..codecs.txt*
 
    Encodes the object _input_ and returns a tuple (output object,
    length consumed). For instance, _text encoding_ converts a string
@@ -487,7 +487,7 @@ Codec.encode(input, errors='strict')     *Codec.encode()..codecs.txt;*
    The encoder must be able to handle zero length input and return an
    empty object of the output object type in this situation.
 
-Codec.decode(input, errors='strict')     *Codec.decode()..codecs.txt;*
+Codec.decode(input, errors='strict')      *Codec.decode()..codecs.txt*
 
    Decodes the object _input_ and returns a tuple (output object,
    length consumed). For instance, for a _text encoding_, decoding
@@ -533,7 +533,7 @@ multiple steps. It defines the following methods which every
 incremental encoder must define in order to be compatible with the
 Python codec registry.
 
-                                     *IncrementalEncoder..codecs.txt;*
+                                      *IncrementalEncoder..codecs.txt*
 class codecs.IncrementalEncoder(errors='strict')
 
    Constructor for an "IncrementalEncoder" instance.
@@ -551,7 +551,7 @@ class codecs.IncrementalEncoder(errors='strict')
    between different error handling strategies during the lifetime of
    the "IncrementalEncoder" object.
 
-                            *IncrementalEncoder.encode()..codecs.txt;*
+                             *IncrementalEncoder.encode()..codecs.txt*
    encode(object, final=False)
 
       Encodes _object_ (taking the current state of the encoder into
@@ -559,14 +559,14 @@ class codecs.IncrementalEncoder(errors='strict')
       the last call to "encode()" _final_ must be true (the default is
       false).
 
-   reset()                      *IncrementalEncoder.reset()..codecs.txt;*
+   reset()                       *IncrementalEncoder.reset()..codecs.txt*
 
       Reset the encoder to the initial state. The output is discarded:
       call ".encode(object, final=True)", passing an empty byte or
       text string if necessary, to reset the encoder and to get the
       output.
 
-   getstate()                *IncrementalEncoder.getstate()..codecs.txt;*
+   getstate()                 *IncrementalEncoder.getstate()..codecs.txt*
 
       Return the current state of the encoder which must be an
       integer. The implementation should make sure that "0" is the
@@ -575,7 +575,7 @@ class codecs.IncrementalEncoder(errors='strict')
       the state and encoding the bytes of the resulting string into an
       integer.)
 
-   setstate(state)           *IncrementalEncoder.setstate()..codecs.txt;*
+   setstate(state)            *IncrementalEncoder.setstate()..codecs.txt*
 
       Set the state of the encoder to _state_. _state_ must be an
       encoder state returned by "getstate()".
@@ -589,7 +589,7 @@ multiple steps. It defines the following methods which every
 incremental decoder must define in order to be compatible with the
 Python codec registry.
 
-                                     *IncrementalDecoder..codecs.txt;*
+                                      *IncrementalDecoder..codecs.txt*
 class codecs.IncrementalDecoder(errors='strict')
 
    Constructor for an "IncrementalDecoder" instance.
@@ -607,7 +607,7 @@ class codecs.IncrementalDecoder(errors='strict')
    between different error handling strategies during the lifetime of
    the "IncrementalDecoder" object.
 
-                            *IncrementalDecoder.decode()..codecs.txt;*
+                             *IncrementalDecoder.decode()..codecs.txt*
    decode(object, final=False)
 
       Decodes _object_ (taking the current state of the decoder into
@@ -619,11 +619,11 @@ class codecs.IncrementalDecoder(errors='strict')
       input) it must initiate error handling just like in the
       stateless case (which might raise an exception).
 
-   reset()                      *IncrementalDecoder.reset()..codecs.txt;*
+   reset()                       *IncrementalDecoder.reset()..codecs.txt*
 
       Reset the decoder to the initial state.
 
-   getstate()                *IncrementalDecoder.getstate()..codecs.txt;*
+   getstate()                 *IncrementalDecoder.getstate()..codecs.txt*
 
       Return the current state of the decoder. This must be a tuple
       with two items, the first must be the buffer containing the
@@ -639,7 +639,7 @@ class codecs.IncrementalDecoder(errors='strict')
       marshaling/pickling the info and encoding the bytes of the
       resulting string into an integer.)
 
-   setstate(state)           *IncrementalDecoder.setstate()..codecs.txt;*
+   setstate(state)            *IncrementalDecoder.setstate()..codecs.txt*
 
       Set the state of the decoder to _state_. _state_ must be a
       decoder state returned by "getstate()".
@@ -660,7 +660,7 @@ The "StreamWriter" class is a subclass of "Codec" and defines the
 following methods which every stream writer must define in order to be
 compatible with the Python codec registry.
 
-                                           *StreamWriter..codecs.txt;*
+                                            *StreamWriter..codecs.txt*
 class codecs.StreamWriter(stream, errors='strict')
 
    Constructor for a "StreamWriter" instance.
@@ -682,18 +682,18 @@ class codecs.StreamWriter(stream, errors='strict')
    between different error handling strategies during the lifetime of
    the "StreamWriter" object.
 
-   write(object)                      *StreamWriter.write()..codecs.txt;*
+   write(object)                       *StreamWriter.write()..codecs.txt*
 
       Writes the object’s contents encoded to the stream.
 
-   writelines(list)              *StreamWriter.writelines()..codecs.txt;*
+   writelines(list)               *StreamWriter.writelines()..codecs.txt*
 
       Writes the concatenated iterable of strings to the stream
       (possibly by reusing the "write()" method). Infinite or very
       large iterables are not supported. The standard bytes-to-bytes
       codecs do not support this method.
 
-   reset()                            *StreamWriter.reset()..codecs.txt;*
+   reset()                             *StreamWriter.reset()..codecs.txt*
 
       Resets the codec buffers used for keeping internal state.
 
@@ -712,7 +712,7 @@ The "StreamReader" class is a subclass of "Codec" and defines the
 following methods which every stream reader must define in order to be
 compatible with the Python codec registry.
 
-                                           *StreamReader..codecs.txt;*
+                                            *StreamReader..codecs.txt*
 class codecs.StreamReader(stream, errors='strict')
 
    Constructor for a "StreamReader" instance.
@@ -737,7 +737,7 @@ class codecs.StreamReader(stream, errors='strict')
    The set of allowed values for the _errors_ argument can be extended
    with "register_error()".
 
-                                    *StreamReader.read()..codecs.txt;*
+                                     *StreamReader.read()..codecs.txt*
    read(size=-1, chars=-1, firstline=False)
 
       Decodes data from the stream and returns the resulting object.
@@ -763,7 +763,7 @@ class codecs.StreamReader(stream, errors='strict')
       endings or state markers are available on the stream, these
       should be read too.
 
-                                *StreamReader.readline()..codecs.txt;*
+                                 *StreamReader.readline()..codecs.txt*
    readline(size=None, keepends=True)
 
       Read one line from the input stream and return the decoded data.
@@ -774,7 +774,7 @@ class codecs.StreamReader(stream, errors='strict')
       If _keepends_ is false line-endings will be stripped from the
       lines returned.
 
-                               *StreamReader.readlines()..codecs.txt;*
+                                *StreamReader.readlines()..codecs.txt*
    readlines(sizehint=None, keepends=True)
 
       Read all lines available on the input stream and return them as
@@ -786,7 +786,7 @@ class codecs.StreamReader(stream, errors='strict')
       _sizehint_, if given, is passed as the _size_ argument to the
       stream’s "read()" method.
 
-   reset()                            *StreamReader.reset()..codecs.txt;*
+   reset()                             *StreamReader.reset()..codecs.txt*
 
       Resets the codec buffers used for keeping internal state.
 
@@ -807,7 +807,7 @@ streams which work in both read and write modes.
 The design is such that one can use the factory functions returned by
 the "lookup()" function to construct the instance.
 
-                                     *StreamReaderWriter..codecs.txt;*
+                                      *StreamReaderWriter..codecs.txt*
 class codecs.StreamReaderWriter(stream, Reader, Writer, errors='strict')
 
    Creates a "StreamReaderWriter" instance. _stream_ must be a file-
@@ -831,7 +831,7 @@ environments.
 The design is such that one can use the factory functions returned by
 the "lookup()" function to construct the instance.
 
-                                          *StreamRecoder..codecs.txt;*
+                                           *StreamRecoder..codecs.txt*
 class codecs.StreamRecoder(stream, encode, decode, Reader, Writer, errors='strict')
 
    Creates a "StreamRecoder" instance which implements a two-way
@@ -1414,17 +1414,17 @@ which performs certain normalizations on host names, to achieve case-
 insensitivity of international domain names, and to unify similar
 characters. The nameprep functions can be used directly if desired.
 
-encodings.idna.nameprep(label)               *nameprep()..codecs.txt;*
+encodings.idna.nameprep(label)                *nameprep()..codecs.txt*
 
    Return the nameprepped version of _label_. The implementation
    currently assumes query strings, so "AllowUnassigned" is true.
 
-encodings.idna.ToASCII(label)                 *ToASCII()..codecs.txt;*
+encodings.idna.ToASCII(label)                  *ToASCII()..codecs.txt*
 
    Convert a label to ASCII, as specified in **RFC 3490**.
    "UseSTD3ASCIIRules" is assumed to be false.
 
-encodings.idna.ToUnicode(label)             *ToUnicode()..codecs.txt;*
+encodings.idna.ToUnicode(label)              *ToUnicode()..codecs.txt*
 
    Convert a label to Unicode, as specified in **RFC 3490**.
 

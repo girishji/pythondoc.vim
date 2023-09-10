@@ -1,4 +1,4 @@
-*stdtypes.txt;*                               Last change: 2023 Sep 09
+*stdtypes.txt;*                               Last change: 2023 Sep 10
 
 Built-in Types
 **************
@@ -314,7 +314,7 @@ Additional Methods on Integer Types
 The int type implements the "numbers.Integral" _abstract base class_.
 In addition, it provides a few more methods:
 
-int.bit_length()                     *int.bit_length()..stdtypes.txt;*
+int.bit_length()                      *int.bit_length()..stdtypes.txt*
 
    Return the number of bits necessary to represent an integer in
    binary, excluding the sign and leading zeros:
@@ -340,7 +340,7 @@ int.bit_length()                     *int.bit_length()..stdtypes.txt;*
 <
    New in version 3.1.
 
-int.bit_count()                       *int.bit_count()..stdtypes.txt;*
+int.bit_count()                        *int.bit_count()..stdtypes.txt*
 
    Return the number of ones in the binary representation of the
    absolute value of the integer. This is also known as the population
@@ -361,7 +361,7 @@ int.bit_count()                       *int.bit_count()..stdtypes.txt;*
 <
    New in version 3.10.
 
-                                       *int.to_bytes()..stdtypes.txt;*
+                                        *int.to_bytes()..stdtypes.txt*
 int.to_bytes(length=1, byteorder='big', *, signed=False)
 
    Return an array of bytes representing an integer.
@@ -417,7 +417,7 @@ int.to_bytes(length=1, byteorder='big', *, signed=False)
    Changed in version 3.11: Added default argument values for "length"
    and "byteorder".
 
-                                     *int.from_bytes()..stdtypes.txt;*
+                                      *int.from_bytes()..stdtypes.txt*
 classmethod int.from_bytes(bytes, byteorder='big', *, signed=False)
 
    Return the integer represented by the given array of bytes.
@@ -467,7 +467,7 @@ classmethod int.from_bytes(bytes, byteorder='big', *, signed=False)
    Changed in version 3.11: Added default argument value for
    "byteorder".
 
-int.as_integer_ratio()         *int.as_integer_ratio()..stdtypes.txt;*
+int.as_integer_ratio()          *int.as_integer_ratio()..stdtypes.txt*
 
    Return a pair of integers whose ratio is equal to the original
    integer and has a positive denominator.  The integer ratio of
@@ -476,7 +476,7 @@ int.as_integer_ratio()         *int.as_integer_ratio()..stdtypes.txt;*
 
    New in version 3.8.
 
-int.is_integer()                     *int.is_integer()..stdtypes.txt;*
+int.is_integer()                      *int.is_integer()..stdtypes.txt*
 
    Returns "True". Exists for duck type compatibility with
    "float.is_integer()".
@@ -490,14 +490,14 @@ Additional Methods on Float
 The float type implements the "numbers.Real" _abstract base class_.
 float also has the following additional methods.
 
-float.as_integer_ratio()     *float.as_integer_ratio()..stdtypes.txt;*
+float.as_integer_ratio()      *float.as_integer_ratio()..stdtypes.txt*
 
    Return a pair of integers whose ratio is exactly equal to the
    original float. The ratio is in lowest terms and has a positive
    denominator.  Raises "OverflowError" on infinities and a
    "ValueError" on NaNs.
 
-float.is_integer()                 *float.is_integer()..stdtypes.txt;*
+float.is_integer()                  *float.is_integer()..stdtypes.txt*
 
    Return "True" if the float instance is finite with integral value,
    and "False" otherwise:
@@ -514,13 +514,13 @@ error.  In contrast, hexadecimal strings allow exact representation
 and specification of floating-point numbers.  This can be useful when
 debugging, and in numerical work.
 
-float.hex()                               *float.hex()..stdtypes.txt;*
+float.hex()                                *float.hex()..stdtypes.txt*
 
    Return a representation of a floating-point number as a hexadecimal
    string.  For finite floating-point numbers, this representation
    will always include a leading "0x" and a trailing "p" and exponent.
 
-classmethod float.fromhex(s)          *float.fromhex()..stdtypes.txt;*
+classmethod float.fromhex(s)           *float.fromhex()..stdtypes.txt*
 
    Class method to return the float represented by a hexadecimal
    string _s_.  The string _s_ may have leading and trailing
@@ -694,7 +694,7 @@ more detail, always support the iteration methods.
 One method needs to be defined for container objects to provide
 _iterable_ support:
 
-container.__iter__()             *container.__iter__()..stdtypes.txt;*
+container.__iter__()              *container.__iter__()..stdtypes.txt*
 
    Return an _iterator_ object.  The object is required to support the
    iterator protocol described below.  If a container supports
@@ -708,14 +708,14 @@ container.__iter__()             *container.__iter__()..stdtypes.txt;*
 The iterator objects themselves are required to support the following
 two methods, which together form the _iterator protocol_:
 
-iterator.__iter__()               *iterator.__iter__()..stdtypes.txt;*
+iterator.__iter__()                *iterator.__iter__()..stdtypes.txt*
 
    Return the _iterator_ object itself.  This is required to allow
    both containers and iterators to be used with the "for" and "in"
    statements.  This method corresponds to the "tp_iter" slot of the
    type structure for Python objects in the Python/C API.
 
-iterator.__next__()               *iterator.__next__()..stdtypes.txt;*
+iterator.__next__()                *iterator.__next__()..stdtypes.txt*
 
    Return the next item from the _iterator_.  If there are no further
    items, raise the "StopIteration" exception.  This method
@@ -1018,7 +1018,7 @@ Lists are mutable sequences, typically used to store collections of
 homogeneous items (where the precise degree of similarity will vary by
 application).
 
-class list([iterable])                           *list..stdtypes.txt;*
+class list([iterable])                            *list..stdtypes.txt*
 
    Lists may be constructed in several ways:
 
@@ -1046,7 +1046,7 @@ class list([iterable])                           *list..stdtypes.txt;*
    Lists implement all of the common and mutable sequence operations.
    Lists also provide the following additional method:
 
-   sort(*, key=None, reverse=False)          *list.sort()..stdtypes.txt;*
+   sort(*, key=None, reverse=False)           *list.sort()..stdtypes.txt*
 
       This method sorts the list in place, using only "<" comparisons
       between items. Exceptions are not suppressed - if any comparison
@@ -1099,7 +1099,7 @@ built-in). Tuples are also used for cases where an immutable sequence
 of homogeneous data is needed (such as allowing storage in a "set" or
 "dict" instance).
 
-class tuple([iterable])                         *tuple..stdtypes.txt;*
+class tuple([iterable])                          *tuple..stdtypes.txt*
 
    Tuples may be constructed in a number of ways:
 
@@ -1139,7 +1139,7 @@ Ranges
 The "range" type represents an immutable sequence of numbers and is
 commonly used for looping a specific number of times in "for" loops.
 
-class range(stop)                               *range..stdtypes.txt;*
+class range(stop)                                *range..stdtypes.txt*
 class range(start, stop[, step])
 
    The arguments to the range constructor must be integers (either
@@ -1187,16 +1187,16 @@ class range(start, stop[, step])
    can only represent sequences that follow a strict pattern and
    repetition and concatenation will usually violate that pattern).
 
-   start                                     *range.start..stdtypes.txt;*
+   start                                      *range.start..stdtypes.txt*
 
       The value of the _start_ parameter (or "0" if the parameter was
       not supplied)
 
-   stop                                       *range.stop..stdtypes.txt;*
+   stop                                        *range.stop..stdtypes.txt*
 
       The value of the _stop_ parameter
 
-   step                                       *range.step..stdtypes.txt;*
+   step                                        *range.step..stdtypes.txt*
 
       The value of the _step_ parameter (or "1" if the parameter was
       not supplied)
@@ -1292,7 +1292,7 @@ series, the "u" prefix is once again permitted on string literals. It
 has no effect on the meaning of string literals and cannot be combined
 with the "r" prefix.
 
-class str(object='')                              *str..stdtypes.txt;*
+class str(object='')                               *str..stdtypes.txt*
 class str(object=b'', encoding='utf-8', errors='strict')
 
    Return a string version of _object_.  If _object_ is not provided,
@@ -1346,7 +1346,7 @@ The Text Processing Services section of the standard library covers a
 number of other modules that provide various text related utilities
 (including regular expression support in the "re" module).
 
-str.capitalize()                     *str.capitalize()..stdtypes.txt;*
+str.capitalize()                      *str.capitalize()..stdtypes.txt*
 
    Return a copy of the string with its first character capitalized
    and the rest lowercased.
@@ -1356,7 +1356,7 @@ str.capitalize()                     *str.capitalize()..stdtypes.txt;*
    digraphs will only have their first letter capitalized, instead of
    the full character.
 
-str.casefold()                         *str.casefold()..stdtypes.txt;*
+str.casefold()                          *str.casefold()..stdtypes.txt*
 
    Return a casefolded copy of the string. Casefolded strings may be
    used for caseless matching.
@@ -1372,14 +1372,14 @@ str.casefold()                         *str.casefold()..stdtypes.txt;*
 
    New in version 3.3.
 
-str.center(width[, fillchar])            *str.center()..stdtypes.txt;*
+str.center(width[, fillchar])             *str.center()..stdtypes.txt*
 
    Return centered in a string of length _width_. Padding is done
    using the specified _fillchar_ (default is an ASCII space). The
    original string is returned if _width_ is less than or equal to
    "len(s)".
 
-str.count(sub[, start[, end]])            *str.count()..stdtypes.txt;*
+str.count(sub[, start[, end]])             *str.count()..stdtypes.txt*
 
    Return the number of non-overlapping occurrences of substring _sub_
    in the range [_start_, _end_].  Optional arguments _start_ and
@@ -1388,7 +1388,7 @@ str.count(sub[, start[, end]])            *str.count()..stdtypes.txt;*
    If _sub_ is empty, returns the number of empty strings between
    characters which is the length of the string plus one.
 
-                                         *str.encode()..stdtypes.txt;*
+                                          *str.encode()..stdtypes.txt*
 str.encode(encoding='utf-8', errors='strict')
 
    Return the string encoded to "bytes".
@@ -1411,14 +1411,14 @@ str.encode(encoding='utf-8', errors='strict')
    Changed in version 3.9: The value of the _errors_ argument is now
    checked in Python Development Mode and in debug mode.
 
-str.endswith(suffix[, start[, end]])   *str.endswith()..stdtypes.txt;*
+str.endswith(suffix[, start[, end]])    *str.endswith()..stdtypes.txt*
 
    Return "True" if the string ends with the specified _suffix_,
    otherwise return "False".  _suffix_ can also be a tuple of suffixes
    to look for.  With optional _start_, test beginning at that
    position.  With optional _end_, stop comparing at that position.
 
-str.expandtabs(tabsize=8)            *str.expandtabs()..stdtypes.txt;*
+str.expandtabs(tabsize=8)             *str.expandtabs()..stdtypes.txt*
 
    Return a copy of the string where all tab characters are replaced
    by one or more spaces, depending on the current column and the
@@ -1439,7 +1439,7 @@ str.expandtabs(tabsize=8)            *str.expandtabs()..stdtypes.txt;*
    >>> '01\t012\t0123\t01234'.expandtabs(4)
    '01  012 0123    01234'
 
-str.find(sub[, start[, end]])              *str.find()..stdtypes.txt;*
+str.find(sub[, start[, end]])               *str.find()..stdtypes.txt*
 
    Return the lowest index in the string where substring _sub_ is
    found within the slice "s[start:end]".  Optional arguments _start_
@@ -1456,7 +1456,7 @@ str.find(sub[, start[, end]])              *str.find()..stdtypes.txt;*
         >>> 'Py' in 'Python'
         True
 <
-str.format(*args, **kwargs)              *str.format()..stdtypes.txt;*
+str.format(*args, **kwargs)               *str.format()..stdtypes.txt*
 
    Perform a string formatting operation.  The string on which this
    method is called can contain literal text or replacement fields
@@ -1487,7 +1487,7 @@ str.format(*args, **kwargs)              *str.format()..stdtypes.txt;*
    the function sets temporarily the "LC_CTYPE" locale to the
    "LC_NUMERIC" locale in some cases.
 
-str.format_map(mapping)              *str.format_map()..stdtypes.txt;*
+str.format_map(mapping)               *str.format_map()..stdtypes.txt*
 
    Similar to "str.format(**mapping)", except that "mapping" is used
    directly and not copied to a "dict".  This is useful if for example
@@ -1502,19 +1502,19 @@ str.format_map(mapping)              *str.format_map()..stdtypes.txt;*
 
    New in version 3.2.
 
-str.index(sub[, start[, end]])            *str.index()..stdtypes.txt;*
+str.index(sub[, start[, end]])             *str.index()..stdtypes.txt*
 
    Like "find()", but raise "ValueError" when the substring is not
    found.
 
-str.isalnum()                           *str.isalnum()..stdtypes.txt;*
+str.isalnum()                            *str.isalnum()..stdtypes.txt*
 
    Return "True" if all characters in the string are alphanumeric and
    there is at least one character, "False" otherwise.  A character
    "c" is alphanumeric if one of the following returns "True":
    "c.isalpha()", "c.isdecimal()", "c.isdigit()", or "c.isnumeric()".
 
-str.isalpha()                           *str.isalpha()..stdtypes.txt;*
+str.isalpha()                            *str.isalpha()..stdtypes.txt*
 
    Return "True" if all characters in the string are alphabetic and
    there is at least one character, "False" otherwise.  Alphabetic
@@ -1524,7 +1524,7 @@ str.isalpha()                           *str.isalpha()..stdtypes.txt;*
    different from the Alphabetic property defined in the section 4.10
    ‘Letters, Alphabetic, and Ideographic’ of the Unicode Standard.
 
-str.isascii()                           *str.isascii()..stdtypes.txt;*
+str.isascii()                            *str.isascii()..stdtypes.txt*
 
    Return "True" if the string is empty or all characters in the
    string are ASCII, "False" otherwise. ASCII characters have code
@@ -1532,7 +1532,7 @@ str.isascii()                           *str.isascii()..stdtypes.txt;*
 
    New in version 3.7.
 
-str.isdecimal()                       *str.isdecimal()..stdtypes.txt;*
+str.isdecimal()                        *str.isdecimal()..stdtypes.txt*
 
    Return "True" if all characters in the string are decimal
    characters and there is at least one character, "False" otherwise.
@@ -1540,7 +1540,7 @@ str.isdecimal()                       *str.isdecimal()..stdtypes.txt;*
    base 10, e.g. U+0660, ARABIC-INDIC DIGIT ZERO.  Formally a decimal
    character is a character in the Unicode General Category “Nd”.
 
-str.isdigit()                           *str.isdigit()..stdtypes.txt;*
+str.isdigit()                            *str.isdigit()..stdtypes.txt*
 
    Return "True" if all characters in the string are digits and there
    is at least one character, "False" otherwise.  Digits include
@@ -1550,7 +1550,7 @@ str.isdigit()                           *str.isdigit()..stdtypes.txt;*
    numbers.  Formally, a digit is a character that has the property
    value Numeric_Type=Digit or Numeric_Type=Decimal.
 
-str.isidentifier()                 *str.isidentifier()..stdtypes.txt;*
+str.isidentifier()                  *str.isidentifier()..stdtypes.txt*
 
    Return "True" if the string is a valid identifier according to the
    language definition, section Identifiers and keywords.
@@ -1567,13 +1567,13 @@ str.isidentifier()                 *str.isidentifier()..stdtypes.txt;*
       >>> 'def'.isidentifier(), iskeyword('def')
       (True, True)
 <
-str.islower()                           *str.islower()..stdtypes.txt;*
+str.islower()                            *str.islower()..stdtypes.txt*
 
    Return "True" if all cased characters [4] in the string are
    lowercase and there is at least one cased character, "False"
    otherwise.
 
-str.isnumeric()                       *str.isnumeric()..stdtypes.txt;*
+str.isnumeric()                        *str.isnumeric()..stdtypes.txt*
 
    Return "True" if all characters in the string are numeric
    characters, and there is at least one character, "False" otherwise.
@@ -1583,7 +1583,7 @@ str.isnumeric()                       *str.isnumeric()..stdtypes.txt;*
    the property value Numeric_Type=Digit, Numeric_Type=Decimal or
    Numeric_Type=Numeric.
 
-str.isprintable()                   *str.isprintable()..stdtypes.txt;*
+str.isprintable()                    *str.isprintable()..stdtypes.txt*
 
    Return "True" if all characters in the string are printable or the
    string is empty, "False" otherwise.  Nonprintable characters are
@@ -1594,7 +1594,7 @@ str.isprintable()                   *str.isprintable()..stdtypes.txt;*
    invoked on a string.  It has no bearing on the handling of strings
    written to "sys.stdout" or "sys.stderr".)
 
-str.isspace()                           *str.isspace()..stdtypes.txt;*
+str.isspace()                            *str.isspace()..stdtypes.txt*
 
    Return "True" if there are only whitespace characters in the string
    and there is at least one character, "False" otherwise.
@@ -1604,14 +1604,14 @@ str.isspace()                           *str.isspace()..stdtypes.txt;*
    (“Separator, space”), or its bidirectional class is one of "WS",
    "B", or "S".
 
-str.istitle()                           *str.istitle()..stdtypes.txt;*
+str.istitle()                            *str.istitle()..stdtypes.txt*
 
    Return "True" if the string is a titlecased string and there is at
    least one character, for example uppercase characters may only
    follow uncased characters and lowercase characters only cased ones.
    Return "False" otherwise.
 
-str.isupper()                           *str.isupper()..stdtypes.txt;*
+str.isupper()                            *str.isupper()..stdtypes.txt*
 
    Return "True" if all cased characters [4] in the string are
    uppercase and there is at least one cased character, "False"
@@ -1626,21 +1626,21 @@ str.isupper()                           *str.isupper()..stdtypes.txt;*
    >>> ' '.isupper()
    False
 
-str.join(iterable)                         *str.join()..stdtypes.txt;*
+str.join(iterable)                          *str.join()..stdtypes.txt*
 
    Return a string which is the concatenation of the strings in
    _iterable_. A "TypeError" will be raised if there are any non-
    string values in _iterable_, including "bytes" objects.  The
    separator between elements is the string providing this method.
 
-str.ljust(width[, fillchar])              *str.ljust()..stdtypes.txt;*
+str.ljust(width[, fillchar])               *str.ljust()..stdtypes.txt*
 
    Return the string left justified in a string of length _width_.
    Padding is done using the specified _fillchar_ (default is an ASCII
    space). The original string is returned if _width_ is less than or
    equal to "len(s)".
 
-str.lower()                               *str.lower()..stdtypes.txt;*
+str.lower()                                *str.lower()..stdtypes.txt*
 
    Return a copy of the string with all the cased characters [4]
    converted to lowercase.
@@ -1648,7 +1648,7 @@ str.lower()                               *str.lower()..stdtypes.txt;*
    The lowercasing algorithm used is described in section 3.13
    ‘Default Case Folding’ of the Unicode Standard.
 
-str.lstrip([chars])                      *str.lstrip()..stdtypes.txt;*
+str.lstrip([chars])                       *str.lstrip()..stdtypes.txt*
 
    Return a copy of the string with leading characters removed.  The
    _chars_ argument is a string specifying the set of characters to be
@@ -1669,7 +1669,7 @@ str.lstrip([chars])                      *str.lstrip()..stdtypes.txt;*
       >>> 'Arthur: three!'.removeprefix('Arthur: ')
       'three!'
 <
-static str.maketrans(x[, y[, z]])     *str.maketrans()..stdtypes.txt;*
+static str.maketrans(x[, y[, z]])      *str.maketrans()..stdtypes.txt*
 
    This static method returns a translation table usable for
    "str.translate()".
@@ -1685,7 +1685,7 @@ static str.maketrans(x[, y[, z]])     *str.maketrans()..stdtypes.txt;*
    argument, it must be a string, whose characters will be mapped to
    "None" in the result.
 
-str.partition(sep)                    *str.partition()..stdtypes.txt;*
+str.partition(sep)                     *str.partition()..stdtypes.txt*
 
    Split the string at the first occurrence of _sep_, and return a
    3-tuple containing the part before the separator, the separator
@@ -1693,7 +1693,7 @@ str.partition(sep)                    *str.partition()..stdtypes.txt;*
    found, return a 3-tuple containing the string itself, followed by
    two empty strings.
 
-str.removeprefix(prefix, /)        *str.removeprefix()..stdtypes.txt;*
+str.removeprefix(prefix, /)         *str.removeprefix()..stdtypes.txt*
 
    If the string starts with the _prefix_ string, return
    "string[len(prefix):]". Otherwise, return a copy of the original
@@ -1706,7 +1706,7 @@ str.removeprefix(prefix, /)        *str.removeprefix()..stdtypes.txt;*
 <
    New in version 3.9.
 
-str.removesuffix(suffix, /)        *str.removesuffix()..stdtypes.txt;*
+str.removesuffix(suffix, /)         *str.removesuffix()..stdtypes.txt*
 
    If the string ends with the _suffix_ string and that _suffix_ is
    not empty, return "string[:-len(suffix)]". Otherwise, return a copy
@@ -1719,7 +1719,7 @@ str.removesuffix(suffix, /)        *str.removesuffix()..stdtypes.txt;*
 <
    New in version 3.9.
 
-str.replace(old, new, count=-1)         *str.replace()..stdtypes.txt;*
+str.replace(old, new, count=-1)          *str.replace()..stdtypes.txt*
 
    Return a copy of the string with all occurrences of substring _old_
    replaced by _new_.  If _count_ is given, only the first _count_
@@ -1729,26 +1729,26 @@ str.replace(old, new, count=-1)         *str.replace()..stdtypes.txt;*
    Changed in version 3.13: _count_ is now supported as a keyword
    argument.
 
-str.rfind(sub[, start[, end]])            *str.rfind()..stdtypes.txt;*
+str.rfind(sub[, start[, end]])             *str.rfind()..stdtypes.txt*
 
    Return the highest index in the string where substring _sub_ is
    found, such that _sub_ is contained within "s[start:end]".
    Optional arguments _start_ and _end_ are interpreted as in slice
    notation.  Return "-1" on failure.
 
-str.rindex(sub[, start[, end]])          *str.rindex()..stdtypes.txt;*
+str.rindex(sub[, start[, end]])           *str.rindex()..stdtypes.txt*
 
    Like "rfind()" but raises "ValueError" when the substring _sub_ is
    not found.
 
-str.rjust(width[, fillchar])              *str.rjust()..stdtypes.txt;*
+str.rjust(width[, fillchar])               *str.rjust()..stdtypes.txt*
 
    Return the string right justified in a string of length _width_.
    Padding is done using the specified _fillchar_ (default is an ASCII
    space). The original string is returned if _width_ is less than or
    equal to "len(s)".
 
-str.rpartition(sep)                  *str.rpartition()..stdtypes.txt;*
+str.rpartition(sep)                   *str.rpartition()..stdtypes.txt*
 
    Split the string at the last occurrence of _sep_, and return a
    3-tuple containing the part before the separator, the separator
@@ -1756,7 +1756,7 @@ str.rpartition(sep)                  *str.rpartition()..stdtypes.txt;*
    found, return a 3-tuple containing two empty strings, followed by
    the string itself.
 
-str.rsplit(sep=None, maxsplit=-1)        *str.rsplit()..stdtypes.txt;*
+str.rsplit(sep=None, maxsplit=-1)         *str.rsplit()..stdtypes.txt*
 
    Return a list of the words in the string, using _sep_ as the
    delimiter string. If _maxsplit_ is given, at most _maxsplit_ splits
@@ -1765,7 +1765,7 @@ str.rsplit(sep=None, maxsplit=-1)        *str.rsplit()..stdtypes.txt;*
    from the right, "rsplit()" behaves like "split()" which is
    described in detail below.
 
-str.rstrip([chars])                      *str.rstrip()..stdtypes.txt;*
+str.rstrip([chars])                       *str.rstrip()..stdtypes.txt*
 
    Return a copy of the string with trailing characters removed.  The
    _chars_ argument is a string specifying the set of characters to be
@@ -1786,7 +1786,7 @@ str.rstrip([chars])                      *str.rstrip()..stdtypes.txt;*
       >>> 'Monty Python'.removesuffix(' Python')
       'Monty'
 <
-str.split(sep=None, maxsplit=-1)          *str.split()..stdtypes.txt;*
+str.split(sep=None, maxsplit=-1)           *str.split()..stdtypes.txt*
 
    Return a list of the words in the string, using _sep_ as the
    delimiter string.  If _maxsplit_ is given, at most _maxsplit_
@@ -1826,7 +1826,7 @@ str.split(sep=None, maxsplit=-1)          *str.split()..stdtypes.txt;*
       >>> '   1   2   3   '.split()
       ['1', '2', '3']
 <
-str.splitlines(keepends=False)       *str.splitlines()..stdtypes.txt;*
+str.splitlines(keepends=False)        *str.splitlines()..stdtypes.txt*
 
    Return a list of the lines in the string, breaking at line
    boundaries.  Line breaks are not included in the resulting list
@@ -1888,7 +1888,7 @@ str.splitlines(keepends=False)       *str.splitlines()..stdtypes.txt;*
       ['Two lines', '']
 <
 
-                                     *str.startswith()..stdtypes.txt;*
+                                      *str.startswith()..stdtypes.txt*
 str.startswith(prefix[, start[, end]])
 
    Return "True" if string starts with the _prefix_, otherwise return
@@ -1896,7 +1896,7 @@ str.startswith(prefix[, start[, end]])
    With optional _start_, test string beginning at that position.
    With optional _end_, stop comparing string at that position.
 
-str.strip([chars])                        *str.strip()..stdtypes.txt;*
+str.strip([chars])                         *str.strip()..stdtypes.txt*
 
    Return a copy of the string with the leading and trailing
    characters removed. The _chars_ argument is a string specifying the
@@ -1920,13 +1920,13 @@ str.strip([chars])                        *str.strip()..stdtypes.txt;*
       >>> comment_string.strip('.#! ')
       'Section 3.2.1 Issue #32'
 <
-str.swapcase()                         *str.swapcase()..stdtypes.txt;*
+str.swapcase()                          *str.swapcase()..stdtypes.txt*
 
    Return a copy of the string with uppercase characters converted to
    lowercase and vice versa. Note that it is not necessarily true that
    "s.swapcase().swapcase() == s".
 
-str.title()                               *str.title()..stdtypes.txt;*
+str.title()                                *str.title()..stdtypes.txt*
 
    Return a titlecased version of the string where words start with an
    uppercase character and the remaining characters are lowercase.
@@ -1960,7 +1960,7 @@ str.title()                               *str.title()..stdtypes.txt;*
       >>> titlecase("they're bill's friends.")
       "They're Bill's Friends."
 <
-str.translate(table)                  *str.translate()..stdtypes.txt;*
+str.translate(table)                   *str.translate()..stdtypes.txt*
 
    Return a copy of the string in which each character has been mapped
    through the given translation table.  The table must be an object
@@ -1977,7 +1977,7 @@ str.translate(table)                  *str.translate()..stdtypes.txt;*
    See also the "codecs" module for a more flexible approach to custom
    character mappings.
 
-str.upper()                               *str.upper()..stdtypes.txt;*
+str.upper()                                *str.upper()..stdtypes.txt*
 
    Return a copy of the string with all the cased characters [4]
    converted to uppercase.  Note that "s.upper().isupper()" might be
@@ -1988,7 +1988,7 @@ str.upper()                               *str.upper()..stdtypes.txt;*
    The uppercasing algorithm used is described in section 3.13
    ‘Default Case Folding’ of the Unicode Standard.
 
-str.zfill(width)                          *str.zfill()..stdtypes.txt;*
+str.zfill(width)                           *str.zfill()..stdtypes.txt*
 
    Return a copy of the string left filled with ASCII "'0'" digits to
    make a string of length _width_. A leading sign prefix
@@ -2190,7 +2190,7 @@ objects offer several methods that are only valid when working with
 ASCII compatible data and are closely related to string objects in a
 variety of other ways.
 
-class bytes([source[, encoding[, errors]]])     *bytes..stdtypes.txt;*
+class bytes([source[, encoding[, errors]]])      *bytes..stdtypes.txt*
 
    Firstly, the syntax for bytes literals is largely the same as that
    for string literals, except that a "b" prefix is added:
@@ -2239,7 +2239,7 @@ class bytes([source[, encoding[, errors]]])     *bytes..stdtypes.txt;*
    binary data. Accordingly, the bytes type has an additional class
    method to read data in that format:
 
-   classmethod fromhex(string)           *bytes.fromhex()..stdtypes.txt;*
+   classmethod fromhex(string)            *bytes.fromhex()..stdtypes.txt*
 
       This "bytes" class method returns a bytes object, decoding the
       given string object.  The string must contain two hexadecimal
@@ -2254,7 +2254,7 @@ class bytes([source[, encoding[, errors]]])     *bytes..stdtypes.txt;*
    A reverse conversion function exists to transform a bytes object
    into its hexadecimal representation.
 
-   hex([sep[, bytes_per_sep]])               *bytes.hex()..stdtypes.txt;*
+   hex([sep[, bytes_per_sep]])                *bytes.hex()..stdtypes.txt*
 
       Return a string object containing two hexadecimal digits for
       each byte in the instance.
@@ -2299,7 +2299,7 @@ Bytearray Objects
 
 "bytearray" objects are a mutable counterpart to "bytes" objects.
 
-                                            *bytearray..stdtypes.txt;*
+                                             *bytearray..stdtypes.txt*
 class bytearray([source[, encoding[, errors]]])
 
    There is no dedicated literal syntax for bytearray objects, instead
@@ -2326,7 +2326,7 @@ class bytearray([source[, encoding[, errors]]])
    binary data. Accordingly, the bytearray type has an additional
    class method to read data in that format:
 
-   classmethod fromhex(string)       *bytearray.fromhex()..stdtypes.txt;*
+   classmethod fromhex(string)        *bytearray.fromhex()..stdtypes.txt*
 
       This "bytearray" class method returns bytearray object, decoding
       the given string object.  The string must contain two
@@ -2342,7 +2342,7 @@ class bytearray([source[, encoding[, errors]]])
    A reverse conversion function exists to transform a bytearray
    object into its hexadecimal representation.
 
-   hex([sep[, bytes_per_sep]])           *bytearray.hex()..stdtypes.txt;*
+   hex([sep[, bytes_per_sep]])            *bytearray.hex()..stdtypes.txt*
 
       Return a string object containing two hexadecimal digits for
       each byte in the instance.
@@ -2406,9 +2406,9 @@ Note:
 The following methods on bytes and bytearray objects can be used with
 arbitrary binary data.
 
-bytes.count(sub[, start[, end]])        *bytes.count()..stdtypes.txt;*
+bytes.count(sub[, start[, end]])         *bytes.count()..stdtypes.txt*
 
-                                    *bytearray.count()..stdtypes.txt;*
+                                     *bytearray.count()..stdtypes.txt*
 bytearray.count(sub[, start[, end]])
 
    Return the number of non-overlapping occurrences of subsequence
@@ -2424,9 +2424,9 @@ bytearray.count(sub[, start[, end]])
    Changed in version 3.3: Also accept an integer in the range 0 to
    255 as the subsequence.
 
-bytes.removeprefix(prefix, /)    *bytes.removeprefix()..stdtypes.txt;*
+bytes.removeprefix(prefix, /)     *bytes.removeprefix()..stdtypes.txt*
 
-                             *bytearray.removeprefix()..stdtypes.txt;*
+                              *bytearray.removeprefix()..stdtypes.txt*
 bytearray.removeprefix(prefix, /)
 
    If the binary data starts with the _prefix_ string, return
@@ -2447,9 +2447,9 @@ bytearray.removeprefix(prefix, /)
 
    New in version 3.9.
 
-bytes.removesuffix(suffix, /)    *bytes.removesuffix()..stdtypes.txt;*
+bytes.removesuffix(suffix, /)     *bytes.removesuffix()..stdtypes.txt*
 
-                             *bytearray.removesuffix()..stdtypes.txt;*
+                              *bytearray.removesuffix()..stdtypes.txt*
 bytearray.removesuffix(suffix, /)
 
    If the binary data ends with the _suffix_ string and that _suffix_
@@ -2470,10 +2470,10 @@ bytearray.removesuffix(suffix, /)
 
    New in version 3.9.
 
-                                       *bytes.decode()..stdtypes.txt;*
+                                        *bytes.decode()..stdtypes.txt*
 bytes.decode(encoding='utf-8', errors='strict')
 
-                                   *bytearray.decode()..stdtypes.txt;*
+                                    *bytearray.decode()..stdtypes.txt*
 bytearray.decode(encoding='utf-8', errors='strict')
 
    Return the bytes decoded to a "str".
@@ -2501,10 +2501,10 @@ bytearray.decode(encoding='utf-8', errors='strict')
    Changed in version 3.9: The value of the _errors_ argument is now
    checked in Python Development Mode and in debug mode.
 
-                                     *bytes.endswith()..stdtypes.txt;*
+                                      *bytes.endswith()..stdtypes.txt*
 bytes.endswith(suffix[, start[, end]])
 
-                                 *bytearray.endswith()..stdtypes.txt;*
+                                  *bytearray.endswith()..stdtypes.txt*
 bytearray.endswith(suffix[, start[, end]])
 
    Return "True" if the binary data ends with the specified _suffix_,
@@ -2514,10 +2514,8 @@ bytearray.endswith(suffix[, start[, end]])
 
    The suffix(es) to search for may be any _bytes-like object_.
 
-bytes.find(sub[, start[, end]])          *bytes.find()..stdtypes.txt;*
-
-                                     *bytearray.find()..stdtypes.txt;*
-bytearray.find(sub[, start[, end]])
+bytes.find(sub[, start[, end]])           *bytes.find()..stdtypes.txt*
+bytearray.find(sub[, start[, end]])   *bytearray.find()..stdtypes.txt*
 
    Return the lowest index in the data where the subsequence _sub_ is
    found, such that _sub_ is contained in the slice "s[start:end]".
@@ -2540,9 +2538,9 @@ bytearray.find(sub[, start[, end]])
    Changed in version 3.3: Also accept an integer in the range 0 to
    255 as the subsequence.
 
-bytes.index(sub[, start[, end]])        *bytes.index()..stdtypes.txt;*
+bytes.index(sub[, start[, end]])         *bytes.index()..stdtypes.txt*
 
-                                    *bytearray.index()..stdtypes.txt;*
+                                     *bytearray.index()..stdtypes.txt*
 bytearray.index(sub[, start[, end]])
 
    Like "find()", but raise "ValueError" when the subsequence is not
@@ -2554,8 +2552,8 @@ bytearray.index(sub[, start[, end]])
    Changed in version 3.3: Also accept an integer in the range 0 to
    255 as the subsequence.
 
-bytes.join(iterable)                     *bytes.join()..stdtypes.txt;*
-bytearray.join(iterable)             *bytearray.join()..stdtypes.txt;*
+bytes.join(iterable)                      *bytes.join()..stdtypes.txt*
+bytearray.join(iterable)              *bytearray.join()..stdtypes.txt*
 
    Return a bytes or bytearray object which is the concatenation of
    the binary data sequences in _iterable_.  A "TypeError" will be
@@ -2564,9 +2562,9 @@ bytearray.join(iterable)             *bytearray.join()..stdtypes.txt;*
    elements is the contents of the bytes or bytearray object providing
    this method.
 
-static bytes.maketrans(from, to)    *bytes.maketrans()..stdtypes.txt;*
+static bytes.maketrans(from, to)     *bytes.maketrans()..stdtypes.txt*
 
-                                *bytearray.maketrans()..stdtypes.txt;*
+                                 *bytearray.maketrans()..stdtypes.txt*
 static bytearray.maketrans(from, to)
 
    This static method returns a translation table usable for
@@ -2576,8 +2574,8 @@ static bytearray.maketrans(from, to)
 
    New in version 3.1.
 
-bytes.partition(sep)                *bytes.partition()..stdtypes.txt;*
-bytearray.partition(sep)        *bytearray.partition()..stdtypes.txt;*
+bytes.partition(sep)                 *bytes.partition()..stdtypes.txt*
+bytearray.partition(sep)         *bytearray.partition()..stdtypes.txt*
 
    Split the sequence at the first occurrence of _sep_, and return a
    3-tuple containing the part before the separator, the separator
@@ -2588,9 +2586,9 @@ bytearray.partition(sep)        *bytearray.partition()..stdtypes.txt;*
 
    The separator to search for may be any _bytes-like object_.
 
-bytes.replace(old, new[, count])      *bytes.replace()..stdtypes.txt;*
+bytes.replace(old, new[, count])       *bytes.replace()..stdtypes.txt*
 
-                                  *bytearray.replace()..stdtypes.txt;*
+                                   *bytearray.replace()..stdtypes.txt*
 bytearray.replace(old, new[, count])
 
    Return a copy of the sequence with all occurrences of subsequence
@@ -2605,9 +2603,9 @@ bytearray.replace(old, new[, count])
      The bytearray version of this method does _not_ operate in place
      - it always produces a new object, even if no changes were made.
 
-bytes.rfind(sub[, start[, end]])        *bytes.rfind()..stdtypes.txt;*
+bytes.rfind(sub[, start[, end]])         *bytes.rfind()..stdtypes.txt*
 
-                                    *bytearray.rfind()..stdtypes.txt;*
+                                     *bytearray.rfind()..stdtypes.txt*
 bytearray.rfind(sub[, start[, end]])
 
    Return the highest index in the sequence where the subsequence
@@ -2621,9 +2619,9 @@ bytearray.rfind(sub[, start[, end]])
    Changed in version 3.3: Also accept an integer in the range 0 to
    255 as the subsequence.
 
-bytes.rindex(sub[, start[, end]])      *bytes.rindex()..stdtypes.txt;*
+bytes.rindex(sub[, start[, end]])       *bytes.rindex()..stdtypes.txt*
 
-                                   *bytearray.rindex()..stdtypes.txt;*
+                                    *bytearray.rindex()..stdtypes.txt*
 bytearray.rindex(sub[, start[, end]])
 
    Like "rfind()" but raises "ValueError" when the subsequence _sub_
@@ -2635,8 +2633,8 @@ bytearray.rindex(sub[, start[, end]])
    Changed in version 3.3: Also accept an integer in the range 0 to
    255 as the subsequence.
 
-bytes.rpartition(sep)              *bytes.rpartition()..stdtypes.txt;*
-bytearray.rpartition(sep)      *bytearray.rpartition()..stdtypes.txt;*
+bytes.rpartition(sep)               *bytes.rpartition()..stdtypes.txt*
+bytearray.rpartition(sep)       *bytearray.rpartition()..stdtypes.txt*
 
    Split the sequence at the last occurrence of _sep_, and return a
    3-tuple containing the part before the separator, the separator
@@ -2647,10 +2645,10 @@ bytearray.rpartition(sep)      *bytearray.rpartition()..stdtypes.txt;*
 
    The separator to search for may be any _bytes-like object_.
 
-                                   *bytes.startswith()..stdtypes.txt;*
+                                    *bytes.startswith()..stdtypes.txt*
 bytes.startswith(prefix[, start[, end]])
 
-                               *bytearray.startswith()..stdtypes.txt;*
+                                *bytearray.startswith()..stdtypes.txt*
 bytearray.startswith(prefix[, start[, end]])
 
    Return "True" if the binary data starts with the specified
@@ -2661,10 +2659,10 @@ bytearray.startswith(prefix[, start[, end]])
 
    The prefix(es) to search for may be any _bytes-like object_.
 
-                                    *bytes.translate()..stdtypes.txt;*
+                                     *bytes.translate()..stdtypes.txt*
 bytes.translate(table, /, delete=b'')
 
-                                *bytearray.translate()..stdtypes.txt;*
+                                 *bytearray.translate()..stdtypes.txt*
 bytearray.translate(table, /, delete=b'')
 
    Return a copy of the bytes or bytearray object where all bytes
@@ -2690,9 +2688,9 @@ can still be used with arbitrary binary data by passing appropriate
 arguments. Note that all of the bytearray methods in this section do
 _not_ operate in place, and instead produce new objects.
 
-bytes.center(width[, fillbyte])        *bytes.center()..stdtypes.txt;*
+bytes.center(width[, fillbyte])         *bytes.center()..stdtypes.txt*
 
-                                   *bytearray.center()..stdtypes.txt;*
+                                    *bytearray.center()..stdtypes.txt*
 bytearray.center(width[, fillbyte])
 
    Return a copy of the object centered in a sequence of length
@@ -2705,10 +2703,8 @@ bytearray.center(width[, fillbyte])
      The bytearray version of this method does _not_ operate in place
      - it always produces a new object, even if no changes were made.
 
-bytes.ljust(width[, fillbyte])          *bytes.ljust()..stdtypes.txt;*
-
-                                    *bytearray.ljust()..stdtypes.txt;*
-bytearray.ljust(width[, fillbyte])
+bytes.ljust(width[, fillbyte])           *bytes.ljust()..stdtypes.txt*
+bytearray.ljust(width[, fillbyte])   *bytearray.ljust()..stdtypes.txt*
 
    Return a copy of the object left justified in a sequence of length
    _width_. Padding is done using the specified _fillbyte_ (default is
@@ -2720,8 +2716,8 @@ bytearray.ljust(width[, fillbyte])
      The bytearray version of this method does _not_ operate in place
      - it always produces a new object, even if no changes were made.
 
-bytes.lstrip([chars])                  *bytes.lstrip()..stdtypes.txt;*
-bytearray.lstrip([chars])          *bytearray.lstrip()..stdtypes.txt;*
+bytes.lstrip([chars])                   *bytes.lstrip()..stdtypes.txt*
+bytearray.lstrip([chars])           *bytearray.lstrip()..stdtypes.txt*
 
    Return a copy of the sequence with specified leading bytes removed.
    The _chars_ argument is a binary sequence specifying the set of
@@ -2751,10 +2747,8 @@ bytearray.lstrip([chars])          *bytearray.lstrip()..stdtypes.txt;*
      The bytearray version of this method does _not_ operate in place
      - it always produces a new object, even if no changes were made.
 
-bytes.rjust(width[, fillbyte])          *bytes.rjust()..stdtypes.txt;*
-
-                                    *bytearray.rjust()..stdtypes.txt;*
-bytearray.rjust(width[, fillbyte])
+bytes.rjust(width[, fillbyte])           *bytes.rjust()..stdtypes.txt*
+bytearray.rjust(width[, fillbyte])   *bytearray.rjust()..stdtypes.txt*
 
    Return a copy of the object right justified in a sequence of length
    _width_. Padding is done using the specified _fillbyte_ (default is
@@ -2766,9 +2760,9 @@ bytearray.rjust(width[, fillbyte])
      The bytearray version of this method does _not_ operate in place
      - it always produces a new object, even if no changes were made.
 
-bytes.rsplit(sep=None, maxsplit=-1)    *bytes.rsplit()..stdtypes.txt;*
+bytes.rsplit(sep=None, maxsplit=-1)     *bytes.rsplit()..stdtypes.txt*
 
-                                   *bytearray.rsplit()..stdtypes.txt;*
+                                    *bytearray.rsplit()..stdtypes.txt*
 bytearray.rsplit(sep=None, maxsplit=-1)
 
    Split the binary sequence into subsequences of the same type, using
@@ -2779,8 +2773,8 @@ bytearray.rsplit(sep=None, maxsplit=-1)
    "rsplit()" behaves like "split()" which is described in detail
    below.
 
-bytes.rstrip([chars])                  *bytes.rstrip()..stdtypes.txt;*
-bytearray.rstrip([chars])          *bytearray.rstrip()..stdtypes.txt;*
+bytes.rstrip([chars])                   *bytes.rstrip()..stdtypes.txt*
+bytearray.rstrip([chars])           *bytearray.rstrip()..stdtypes.txt*
 
    Return a copy of the sequence with specified trailing bytes
    removed.  The _chars_ argument is a binary sequence specifying the
@@ -2810,9 +2804,9 @@ bytearray.rstrip([chars])          *bytearray.rstrip()..stdtypes.txt;*
      The bytearray version of this method does _not_ operate in place
      - it always produces a new object, even if no changes were made.
 
-bytes.split(sep=None, maxsplit=-1)      *bytes.split()..stdtypes.txt;*
+bytes.split(sep=None, maxsplit=-1)       *bytes.split()..stdtypes.txt*
 
-                                    *bytearray.split()..stdtypes.txt;*
+                                     *bytearray.split()..stdtypes.txt*
 bytearray.split(sep=None, maxsplit=-1)
 
    Split the binary sequence into subsequences of the same type, using
@@ -2857,8 +2851,8 @@ bytearray.split(sep=None, maxsplit=-1)
       >>> b'   1   2   3   '.split()
       [b'1', b'2', b'3']
 <
-bytes.strip([chars])                    *bytes.strip()..stdtypes.txt;*
-bytearray.strip([chars])            *bytearray.strip()..stdtypes.txt;*
+bytes.strip([chars])                     *bytes.strip()..stdtypes.txt*
+bytearray.strip([chars])             *bytearray.strip()..stdtypes.txt*
 
    Return a copy of the sequence with specified leading and trailing
    bytes removed. The _chars_ argument is a binary sequence specifying
@@ -2886,8 +2880,8 @@ ASCII compatible binary formats and should not be applied to arbitrary
 binary data. Note that all of the bytearray methods in this section do
 _not_ operate in place, and instead produce new objects.
 
-bytes.capitalize()                 *bytes.capitalize()..stdtypes.txt;*
-bytearray.capitalize()         *bytearray.capitalize()..stdtypes.txt;*
+bytes.capitalize()                  *bytes.capitalize()..stdtypes.txt*
+bytearray.capitalize()          *bytearray.capitalize()..stdtypes.txt*
 
    Return a copy of the sequence with each byte interpreted as an
    ASCII character, and the first byte capitalized and the rest
@@ -2898,9 +2892,9 @@ bytearray.capitalize()         *bytearray.capitalize()..stdtypes.txt;*
      The bytearray version of this method does _not_ operate in place
      - it always produces a new object, even if no changes were made.
 
-bytes.expandtabs(tabsize=8)        *bytes.expandtabs()..stdtypes.txt;*
+bytes.expandtabs(tabsize=8)         *bytes.expandtabs()..stdtypes.txt*
 
-                               *bytearray.expandtabs()..stdtypes.txt;*
+                                *bytearray.expandtabs()..stdtypes.txt*
 bytearray.expandtabs(tabsize=8)
 
    Return a copy of the sequence where all ASCII tab characters are
@@ -2927,8 +2921,8 @@ bytearray.expandtabs(tabsize=8)
      The bytearray version of this method does _not_ operate in place
      - it always produces a new object, even if no changes were made.
 
-bytes.isalnum()                       *bytes.isalnum()..stdtypes.txt;*
-bytearray.isalnum()               *bytearray.isalnum()..stdtypes.txt;*
+bytes.isalnum()                        *bytes.isalnum()..stdtypes.txt*
+bytearray.isalnum()                *bytearray.isalnum()..stdtypes.txt*
 
    Return "True" if all bytes in the sequence are alphabetical ASCII
    characters or ASCII decimal digits and the sequence is not empty,
@@ -2945,8 +2939,8 @@ bytearray.isalnum()               *bytearray.isalnum()..stdtypes.txt;*
       >>> b'ABC abc1'.isalnum()
       False
 <
-bytes.isalpha()                       *bytes.isalpha()..stdtypes.txt;*
-bytearray.isalpha()               *bytearray.isalpha()..stdtypes.txt;*
+bytes.isalpha()                        *bytes.isalpha()..stdtypes.txt*
+bytearray.isalpha()                *bytearray.isalpha()..stdtypes.txt*
 
    Return "True" if all bytes in the sequence are alphabetic ASCII
    characters and the sequence is not empty, "False" otherwise.
@@ -2960,16 +2954,16 @@ bytearray.isalpha()               *bytearray.isalpha()..stdtypes.txt;*
       >>> b'ABCabc1'.isalpha()
       False
 <
-bytes.isascii()                       *bytes.isascii()..stdtypes.txt;*
-bytearray.isascii()               *bytearray.isascii()..stdtypes.txt;*
+bytes.isascii()                        *bytes.isascii()..stdtypes.txt*
+bytearray.isascii()                *bytearray.isascii()..stdtypes.txt*
 
    Return "True" if the sequence is empty or all bytes in the sequence
    are ASCII, "False" otherwise. ASCII bytes are in the range 0-0x7F.
 
    New in version 3.7.
 
-bytes.isdigit()                       *bytes.isdigit()..stdtypes.txt;*
-bytearray.isdigit()               *bytearray.isdigit()..stdtypes.txt;*
+bytes.isdigit()                        *bytes.isdigit()..stdtypes.txt*
+bytearray.isdigit()                *bytearray.isdigit()..stdtypes.txt*
 
    Return "True" if all bytes in the sequence are ASCII decimal digits
    and the sequence is not empty, "False" otherwise. ASCII decimal
@@ -2982,8 +2976,8 @@ bytearray.isdigit()               *bytearray.isdigit()..stdtypes.txt;*
       >>> b'1.23'.isdigit()
       False
 <
-bytes.islower()                       *bytes.islower()..stdtypes.txt;*
-bytearray.islower()               *bytearray.islower()..stdtypes.txt;*
+bytes.islower()                        *bytes.islower()..stdtypes.txt*
+bytearray.islower()                *bytearray.islower()..stdtypes.txt*
 
    Return "True" if there is at least one lowercase ASCII character in
    the sequence and no uppercase ASCII characters, "False" otherwise.
@@ -2999,16 +2993,16 @@ bytearray.islower()               *bytearray.islower()..stdtypes.txt;*
    "b'abcdefghijklmnopqrstuvwxyz'". Uppercase ASCII characters are
    those byte values in the sequence "b'ABCDEFGHIJKLMNOPQRSTUVWXYZ'".
 
-bytes.isspace()                       *bytes.isspace()..stdtypes.txt;*
-bytearray.isspace()               *bytearray.isspace()..stdtypes.txt;*
+bytes.isspace()                        *bytes.isspace()..stdtypes.txt*
+bytearray.isspace()                *bytearray.isspace()..stdtypes.txt*
 
    Return "True" if all bytes in the sequence are ASCII whitespace and
    the sequence is not empty, "False" otherwise.  ASCII whitespace
    characters are those byte values in the sequence "b' \t\n\r\x0b\f'"
    (space, tab, newline, carriage return, vertical tab, form feed).
 
-bytes.istitle()                       *bytes.istitle()..stdtypes.txt;*
-bytearray.istitle()               *bytearray.istitle()..stdtypes.txt;*
+bytes.istitle()                        *bytes.istitle()..stdtypes.txt*
+bytearray.istitle()                *bytearray.istitle()..stdtypes.txt*
 
    Return "True" if the sequence is ASCII titlecase and the sequence
    is not empty, "False" otherwise. See "bytes.title()" for more
@@ -3021,8 +3015,8 @@ bytearray.istitle()               *bytearray.istitle()..stdtypes.txt;*
       >>> b'Hello world'.istitle()
       False
 <
-bytes.isupper()                       *bytes.isupper()..stdtypes.txt;*
-bytearray.isupper()               *bytearray.isupper()..stdtypes.txt;*
+bytes.isupper()                        *bytes.isupper()..stdtypes.txt*
+bytearray.isupper()                *bytearray.isupper()..stdtypes.txt*
 
    Return "True" if there is at least one uppercase alphabetic ASCII
    character in the sequence and no lowercase ASCII characters,
@@ -3039,8 +3033,8 @@ bytearray.isupper()               *bytearray.isupper()..stdtypes.txt;*
    "b'abcdefghijklmnopqrstuvwxyz'". Uppercase ASCII characters are
    those byte values in the sequence "b'ABCDEFGHIJKLMNOPQRSTUVWXYZ'".
 
-bytes.lower()                           *bytes.lower()..stdtypes.txt;*
-bytearray.lower()                   *bytearray.lower()..stdtypes.txt;*
+bytes.lower()                            *bytes.lower()..stdtypes.txt*
+bytearray.lower()                    *bytearray.lower()..stdtypes.txt*
 
    Return a copy of the sequence with all the uppercase ASCII
    characters converted to their corresponding lowercase counterpart.
@@ -3059,9 +3053,9 @@ bytearray.lower()                   *bytearray.lower()..stdtypes.txt;*
      The bytearray version of this method does _not_ operate in place
      - it always produces a new object, even if no changes were made.
 
-bytes.splitlines(keepends=False)   *bytes.splitlines()..stdtypes.txt;*
+bytes.splitlines(keepends=False)    *bytes.splitlines()..stdtypes.txt*
 
-                               *bytearray.splitlines()..stdtypes.txt;*
+                                *bytearray.splitlines()..stdtypes.txt*
 bytearray.splitlines(keepends=False)
 
    Return a list of the lines in the binary sequence, breaking at
@@ -3085,8 +3079,8 @@ bytearray.splitlines(keepends=False)
       >>> b"".splitlines(), b"One line\n".splitlines()
       ([], [b'One line'])
 <
-bytes.swapcase()                     *bytes.swapcase()..stdtypes.txt;*
-bytearray.swapcase()             *bytearray.swapcase()..stdtypes.txt;*
+bytes.swapcase()                      *bytes.swapcase()..stdtypes.txt*
+bytearray.swapcase()              *bytearray.swapcase()..stdtypes.txt*
 
    Return a copy of the sequence with all the lowercase ASCII
    characters converted to their corresponding uppercase counterpart
@@ -3111,8 +3105,8 @@ bytearray.swapcase()             *bytearray.swapcase()..stdtypes.txt;*
      The bytearray version of this method does _not_ operate in place
      - it always produces a new object, even if no changes were made.
 
-bytes.title()                           *bytes.title()..stdtypes.txt;*
-bytearray.title()                   *bytearray.title()..stdtypes.txt;*
+bytes.title()                            *bytes.title()..stdtypes.txt*
+bytearray.title()                    *bytearray.title()..stdtypes.txt*
 
    Return a titlecased version of the binary sequence where words
    start with an uppercase ASCII character and the remaining
@@ -3155,8 +3149,8 @@ bytearray.title()                   *bytearray.title()..stdtypes.txt;*
      The bytearray version of this method does _not_ operate in place
      - it always produces a new object, even if no changes were made.
 
-bytes.upper()                           *bytes.upper()..stdtypes.txt;*
-bytearray.upper()                   *bytearray.upper()..stdtypes.txt;*
+bytes.upper()                            *bytes.upper()..stdtypes.txt*
+bytearray.upper()                    *bytearray.upper()..stdtypes.txt*
 
    Return a copy of the sequence with all the lowercase ASCII
    characters converted to their corresponding uppercase counterpart.
@@ -3175,8 +3169,8 @@ bytearray.upper()                   *bytearray.upper()..stdtypes.txt;*
      The bytearray version of this method does _not_ operate in place
      - it always produces a new object, even if no changes were made.
 
-bytes.zfill(width)                      *bytes.zfill()..stdtypes.txt;*
-bytearray.zfill(width)              *bytearray.zfill()..stdtypes.txt;*
+bytes.zfill(width)                       *bytes.zfill()..stdtypes.txt*
+bytearray.zfill(width)               *bytearray.zfill()..stdtypes.txt*
 
    Return a copy of the sequence left filled with ASCII "b'0'" digits
    to make a sequence of length _width_. A leading sign prefix
@@ -3380,7 +3374,7 @@ Memory Views
 "memoryview" objects allow Python code to access the internal data of
 an object that supports the buffer protocol without copying.
 
-class memoryview(object)                   *memoryview..stdtypes.txt;*
+class memoryview(object)                    *memoryview..stdtypes.txt*
 
    Create a "memoryview" that references _object_.  _object_ must
    support the buffer protocol.  Built-in objects that support the
@@ -3480,7 +3474,7 @@ class memoryview(object)                   *memoryview..stdtypes.txt;*
 
    "memoryview" has several methods:
 
-   __eq__(exporter)                  *memoryview.__eq__()..stdtypes.txt;*
+   __eq__(exporter)                   *memoryview.__eq__()..stdtypes.txt*
 
       A memoryview and a **PEP 3118** exporter are equal if their
       shapes are equivalent and if all corresponding values are equal
@@ -3529,7 +3523,7 @@ class memoryview(object)                   *memoryview..stdtypes.txt;*
       memory disregarding the item format and the logical array
       structure.
 
-   tobytes(order='C')               *memoryview.tobytes()..stdtypes.txt;*
+   tobytes(order='C')                *memoryview.tobytes()..stdtypes.txt*
 
       Return the data in the buffer as a bytestring.  This is
       equivalent to calling the "bytes" constructor on the memoryview.
@@ -3553,7 +3547,7 @@ class memoryview(object)                   *memoryview..stdtypes.txt;*
       data is converted to C first. _order=None_ is the same as
       _order=’C’_.
 
-   hex([sep[, bytes_per_sep]])          *memoryview.hex()..stdtypes.txt;*
+   hex([sep[, bytes_per_sep]])           *memoryview.hex()..stdtypes.txt*
 
       Return a string object containing two hexadecimal digits for
       each byte in the buffer.
@@ -3569,7 +3563,7 @@ class memoryview(object)                   *memoryview..stdtypes.txt;*
       _bytes_per_sep_ parameters to insert separators between bytes in
       the hex output.
 
-   tolist()                          *memoryview.tolist()..stdtypes.txt;*
+   tolist()                           *memoryview.tolist()..stdtypes.txt*
 
       Return the data in the buffer as a list of elements.
 >
@@ -3585,7 +3579,7 @@ class memoryview(object)                   *memoryview..stdtypes.txt;*
       character native formats in "struct" module syntax as well as
       multi-dimensional representations.
 
-   toreadonly()                  *memoryview.toreadonly()..stdtypes.txt;*
+   toreadonly()                   *memoryview.toreadonly()..stdtypes.txt*
 
       Return a readonly version of the memoryview object.  The
       original memoryview object is unchanged.
@@ -3604,7 +3598,7 @@ class memoryview(object)                   *memoryview..stdtypes.txt;*
 <
       New in version 3.8.
 
-   release()                        *memoryview.release()..stdtypes.txt;*
+   release()                         *memoryview.release()..stdtypes.txt*
 
       Release the underlying buffer exposed by the memoryview object.
       Many objects take special actions when a view is held on them
@@ -3638,7 +3632,7 @@ class memoryview(object)                   *memoryview..stdtypes.txt;*
 <
       New in version 3.2.
 
-   cast(format[, shape])               *memoryview.cast()..stdtypes.txt;*
+   cast(format[, shape])                *memoryview.cast()..stdtypes.txt*
 
       Cast a memoryview to a new format or shape. _shape_ defaults to
       "[byte_length//new_itemsize]", which means that the result view
@@ -3733,7 +3727,7 @@ class memoryview(object)                   *memoryview..stdtypes.txt;*
 
    There are also several readonly attributes available:
 
-   obj                                    *memoryview.obj..stdtypes.txt;*
+   obj                                     *memoryview.obj..stdtypes.txt*
 
       The underlying object of the memoryview:
 >
@@ -3744,7 +3738,7 @@ class memoryview(object)                   *memoryview..stdtypes.txt;*
 <
       New in version 3.3.
 
-   nbytes                              *memoryview.nbytes..stdtypes.txt;*
+   nbytes                               *memoryview.nbytes..stdtypes.txt*
 
       "nbytes == product(shape) * itemsize == len(m.tobytes())". This
       is the amount of space in bytes that the array would use in a
@@ -3781,11 +3775,11 @@ class memoryview(object)                   *memoryview..stdtypes.txt;*
 <
       New in version 3.3.
 
-   readonly                          *memoryview.readonly..stdtypes.txt;*
+   readonly                           *memoryview.readonly..stdtypes.txt*
 
       A bool indicating whether the memory is read only.
 
-   format                              *memoryview.format..stdtypes.txt;*
+   format                               *memoryview.format..stdtypes.txt*
 
       A string containing the format (in "struct" module style) for
       each element in the view. A memoryview can be created from
@@ -3796,7 +3790,7 @@ class memoryview(object)                   *memoryview..stdtypes.txt;*
       the struct module syntax. This means that "memoryview(b'abc')[0]
       == b'abc'[0] == 97".
 
-   itemsize                          *memoryview.itemsize..stdtypes.txt;*
+   itemsize                           *memoryview.itemsize..stdtypes.txt*
 
       The size in bytes of each element of the memoryview:
 >
@@ -3809,12 +3803,12 @@ class memoryview(object)                   *memoryview..stdtypes.txt;*
          >>> struct.calcsize('H') == m.itemsize
          True
 <
-   ndim                                  *memoryview.ndim..stdtypes.txt;*
+   ndim                                   *memoryview.ndim..stdtypes.txt*
 
       An integer indicating how many dimensions of a multi-dimensional
       array the memory represents.
 
-   shape                                *memoryview.shape..stdtypes.txt;*
+   shape                                 *memoryview.shape..stdtypes.txt*
 
       A tuple of integers the length of "ndim" giving the shape of the
       memory as an N-dimensional array.
@@ -3822,7 +3816,7 @@ class memoryview(object)                   *memoryview..stdtypes.txt;*
       Changed in version 3.3: An empty tuple instead of "None" when
       ndim = 0.
 
-   strides                            *memoryview.strides..stdtypes.txt;*
+   strides                             *memoryview.strides..stdtypes.txt*
 
       A tuple of integers the length of "ndim" giving the size in
       bytes to access each element for each dimension of the array.
@@ -3830,24 +3824,24 @@ class memoryview(object)                   *memoryview..stdtypes.txt;*
       Changed in version 3.3: An empty tuple instead of "None" when
       ndim = 0.
 
-   suboffsets                      *memoryview.suboffsets..stdtypes.txt;*
+   suboffsets                       *memoryview.suboffsets..stdtypes.txt*
 
       Used internally for PIL-style arrays. The value is informational
       only.
 
-   c_contiguous                  *memoryview.c_contiguous..stdtypes.txt;*
+   c_contiguous                   *memoryview.c_contiguous..stdtypes.txt*
 
       A bool indicating whether the memory is C-_contiguous_.
 
       New in version 3.3.
 
-   f_contiguous                  *memoryview.f_contiguous..stdtypes.txt;*
+   f_contiguous                   *memoryview.f_contiguous..stdtypes.txt*
 
       A bool indicating whether the memory is Fortran _contiguous_.
 
       New in version 3.3.
 
-   contiguous                      *memoryview.contiguous..stdtypes.txt;*
+   contiguous                       *memoryview.contiguous..stdtypes.txt*
 
       A bool indicating whether the memory is _contiguous_.
 
@@ -3883,8 +3877,8 @@ separated list of elements within braces, for example: "{'jack',
 
 The constructors for both classes work the same:
 
-class set([iterable])                             *set..stdtypes.txt;*
-class frozenset([iterable])                 *frozenset..stdtypes.txt;*
+class set([iterable])                              *set..stdtypes.txt*
+class frozenset([iterable])                  *frozenset..stdtypes.txt*
 
    Return a new set or frozenset object whose elements are taken from
    _iterable_.  The elements of a set must be _hashable_.  To
@@ -3917,13 +3911,13 @@ class frozenset([iterable])                 *frozenset..stdtypes.txt;*
 
       Test _x_ for non-membership in _s_.
 
-   isdisjoint(other)              *frozenset.isdisjoint()..stdtypes.txt;*
+   isdisjoint(other)               *frozenset.isdisjoint()..stdtypes.txt*
 
       Return "True" if the set has no elements in common with _other_.
       Sets are disjoint if and only if their intersection is the empty
       set.
 
-   issubset(other)                  *frozenset.issubset()..stdtypes.txt;*
+   issubset(other)                   *frozenset.issubset()..stdtypes.txt*
    set <= other
 
       Test whether every element in the set is in _other_.
@@ -3933,7 +3927,7 @@ class frozenset([iterable])                 *frozenset..stdtypes.txt;*
       Test whether the set is a proper subset of _other_, that is,
       "set <= other and set != other".
 
-   issuperset(other)              *frozenset.issuperset()..stdtypes.txt;*
+   issuperset(other)               *frozenset.issuperset()..stdtypes.txt*
    set >= other
 
       Test whether every element in _other_ is in the set.
@@ -3943,30 +3937,30 @@ class frozenset([iterable])                 *frozenset..stdtypes.txt;*
       Test whether the set is a proper superset of _other_, that is,
       "set >= other and set != other".
 
-   union(*others)                      *frozenset.union()..stdtypes.txt;*
+   union(*others)                       *frozenset.union()..stdtypes.txt*
    set | other | ...
 
       Return a new set with elements from the set and all others.
 
-   intersection(*others)        *frozenset.intersection()..stdtypes.txt;*
+   intersection(*others)         *frozenset.intersection()..stdtypes.txt*
    set & other & ...
 
       Return a new set with elements common to the set and all others.
 
-   difference(*others)            *frozenset.difference()..stdtypes.txt;*
+   difference(*others)             *frozenset.difference()..stdtypes.txt*
    set - other - ...
 
       Return a new set with elements in the set that are not in the
       others.
 
-                     *frozenset.symmetric_difference()..stdtypes.txt;*
+                      *frozenset.symmetric_difference()..stdtypes.txt*
    symmetric_difference(other)
    set ^ other
 
       Return a new set with elements in either the set or _other_ but
       not both.
 
-   copy()                               *frozenset.copy()..stdtypes.txt;*
+   copy()                                *frozenset.copy()..stdtypes.txt*
 
       Return a shallow copy of the set.
 
@@ -4007,50 +4001,50 @@ class frozenset([iterable])                 *frozenset..stdtypes.txt;*
    The following table lists operations available for "set" that do
    not apply to immutable instances of "frozenset":
 
-   update(*others)                    *frozenset.update()..stdtypes.txt;*
+   update(*others)                     *frozenset.update()..stdtypes.txt*
    set |= other | ...
 
       Update the set, adding elements from all others.
 
-                      *frozenset.intersection_update()..stdtypes.txt;*
+                       *frozenset.intersection_update()..stdtypes.txt*
    intersection_update(*others)
    set &= other & ...
 
       Update the set, keeping only elements found in it and all
       others.
 
-                        *frozenset.difference_update()..stdtypes.txt;*
+                         *frozenset.difference_update()..stdtypes.txt*
    difference_update(*others)
    set -= other | ...
 
       Update the set, removing elements found in others.
 
-              *frozenset.symmetric_difference_update()..stdtypes.txt;*
+               *frozenset.symmetric_difference_update()..stdtypes.txt*
    symmetric_difference_update(other)
    set ^= other
 
       Update the set, keeping only elements found in either set, but
       not in both.
 
-   add(elem)                             *frozenset.add()..stdtypes.txt;*
+   add(elem)                              *frozenset.add()..stdtypes.txt*
 
       Add element _elem_ to the set.
 
-   remove(elem)                       *frozenset.remove()..stdtypes.txt;*
+   remove(elem)                        *frozenset.remove()..stdtypes.txt*
 
       Remove element _elem_ from the set.  Raises "KeyError" if _elem_
       is not contained in the set.
 
-   discard(elem)                     *frozenset.discard()..stdtypes.txt;*
+   discard(elem)                      *frozenset.discard()..stdtypes.txt*
 
       Remove element _elem_ from the set if it is present.
 
-   pop()                                 *frozenset.pop()..stdtypes.txt;*
+   pop()                                  *frozenset.pop()..stdtypes.txt*
 
       Remove and return an arbitrary element from the set.  Raises
       "KeyError" if the set is empty.
 
-   clear()                             *frozenset.clear()..stdtypes.txt;*
+   clear()                              *frozenset.clear()..stdtypes.txt*
 
       Remove all elements from the set.
 
@@ -4079,7 +4073,7 @@ identity) may not be used as keys. Values that compare equal (such as
 "1", "1.0", and "True") can be used interchangeably to index the same
 dictionary entry.
 
-class dict(**kwargs)                             *dict..stdtypes.txt;*
+class dict(**kwargs)                              *dict..stdtypes.txt*
 class dict(mapping, **kwargs)
 class dict(iterable, **kwargs)
 
@@ -4191,15 +4185,15 @@ class dict(iterable, **kwargs)
       Return an iterator over the keys of the dictionary.  This is a
       shortcut for "iter(d.keys())".
 
-   clear()                                  *dict.clear()..stdtypes.txt;*
+   clear()                                   *dict.clear()..stdtypes.txt*
 
       Remove all items from the dictionary.
 
-   copy()                                    *dict.copy()..stdtypes.txt;*
+   copy()                                     *dict.copy()..stdtypes.txt*
 
       Return a shallow copy of the dictionary.
 
-                                      *dict.fromkeys()..stdtypes.txt;*
+                                       *dict.fromkeys()..stdtypes.txt*
    classmethod fromkeys(iterable[, value])
 
       Create a new dictionary with keys from _iterable_ and values set
@@ -4211,29 +4205,29 @@ class dict(iterable, **kwargs)
       to be a mutable object such as an empty list.  To get distinct
       values, use a dict comprehension instead.
 
-   get(key[, default])                        *dict.get()..stdtypes.txt;*
+   get(key[, default])                         *dict.get()..stdtypes.txt*
 
       Return the value for _key_ if _key_ is in the dictionary, else
       _default_. If _default_ is not given, it defaults to "None", so
       that this method never raises a "KeyError".
 
-   items()                                  *dict.items()..stdtypes.txt;*
+   items()                                   *dict.items()..stdtypes.txt*
 
       Return a new view of the dictionary’s items ("(key, value)"
       pairs). See the documentation of view objects.
 
-   keys()                                    *dict.keys()..stdtypes.txt;*
+   keys()                                     *dict.keys()..stdtypes.txt*
 
       Return a new view of the dictionary’s keys.  See the
       documentation of view objects.
 
-   pop(key[, default])                        *dict.pop()..stdtypes.txt;*
+   pop(key[, default])                         *dict.pop()..stdtypes.txt*
 
       If _key_ is in the dictionary, remove it and return its value,
       else return _default_.  If _default_ is not given and _key_ is
       not in the dictionary, a "KeyError" is raised.
 
-   popitem()                              *dict.popitem()..stdtypes.txt;*
+   popitem()                               *dict.popitem()..stdtypes.txt*
 
       Remove and return a "(key, value)" pair from the dictionary.
       Pairs are returned in LIFO (last-in, first-out) order.
@@ -4252,13 +4246,13 @@ class dict(iterable, **kwargs)
 
       New in version 3.8.
 
-   setdefault(key[, default])          *dict.setdefault()..stdtypes.txt;*
+   setdefault(key[, default])           *dict.setdefault()..stdtypes.txt*
 
       If _key_ is in the dictionary, return its value.  If not, insert
       _key_ with a value of _default_ and return _default_.  _default_
       defaults to "None".
 
-   update([other])                         *dict.update()..stdtypes.txt;*
+   update([other])                          *dict.update()..stdtypes.txt*
 
       Update the dictionary with the key/value pairs from _other_,
       overwriting existing keys.  Return "None".
@@ -4269,7 +4263,7 @@ class dict(iterable, **kwargs)
       is then updated with those key/value pairs: "d.update(red=1,
       blue=2)".
 
-   values()                                *dict.values()..stdtypes.txt;*
+   values()                                 *dict.values()..stdtypes.txt*
 
       Return a new view of the dictionary’s values.  See the
       documentation of view objects.
@@ -4458,7 +4452,7 @@ methods that allow user-defined classes to define a runtime context
 that is entered before the statement body is executed and exited when
 the statement ends:
 
-                           *contextmanager.__enter__()..stdtypes.txt;*
+                            *contextmanager.__enter__()..stdtypes.txt*
 contextmanager.__enter__()
 
    Enter the runtime context and return either this object or another
@@ -4478,7 +4472,7 @@ contextmanager.__enter__()
    the current decimal context in the body of the "with" statement
    without affecting code outside the "with" statement.
 
-                            *contextmanager.__exit__()..stdtypes.txt;*
+                             *contextmanager.__exit__()..stdtypes.txt*
 contextmanager.__exit__(exc_type, exc_val, exc_tb)
 
    Exit the runtime context and return a Boolean flag indicating if
@@ -4765,14 +4759,14 @@ Special Attributes of "GenericAlias" objects
 
 All parameterized generics implement special read-only attributes.
 
-genericalias.__origin__       *genericalias.__origin__..stdtypes.txt;*
+genericalias.__origin__        *genericalias.__origin__..stdtypes.txt*
 
    This attribute points at the non-parameterized generic class:
 >
       >>> list[int].__origin__
       <class 'list'>
 <
-genericalias.__args__           *genericalias.__args__..stdtypes.txt;*
+genericalias.__args__            *genericalias.__args__..stdtypes.txt*
 
    This attribute is a "tuple" (possibly of length 1) of generic types
    passed to the original "__class_getitem__()" of the generic class:
@@ -4781,7 +4775,7 @@ genericalias.__args__           *genericalias.__args__..stdtypes.txt;*
       (<class 'str'>, list[int])
 <
 
-                          *genericalias.__parameters__..stdtypes.txt;*
+                           *genericalias.__parameters__..stdtypes.txt*
 genericalias.__parameters__
 
    This attribute is a lazily computed tuple (possibly empty) of
@@ -4800,7 +4794,7 @@ genericalias.__parameters__
      "typing.ParamSpec" is intended primarily for static type
      checking.
 
-genericalias.__unpacked__   *genericalias.__unpacked__..stdtypes.txt;*
+genericalias.__unpacked__    *genericalias.__unpacked__..stdtypes.txt*
 
    A boolean that is true if the alias has been unpacked using the "*"
    operator (see "TypeVarTuple").
@@ -5102,32 +5096,32 @@ The implementation adds a few special read-only attributes to several
 object types, where they are relevant.  Some of these are not reported
 by the "dir()" built-in function.
 
-object.__dict__                       *object.__dict__..stdtypes.txt;*
+object.__dict__                        *object.__dict__..stdtypes.txt*
 
    A dictionary or other mapping object used to store an object’s
    (writable) attributes.
 
-instance.__class__                 *instance.__class__..stdtypes.txt;*
+instance.__class__                  *instance.__class__..stdtypes.txt*
 
    The class to which a class instance belongs.
 
-class.__bases__                       *class.__bases__..stdtypes.txt;*
+class.__bases__                        *class.__bases__..stdtypes.txt*
 
    The tuple of base classes of a class object.
 
-definition.__name__               *definition.__name__..stdtypes.txt;*
+definition.__name__                *definition.__name__..stdtypes.txt*
 
    The name of the class, function, method, descriptor, or generator
    instance.
 
-definition.__qualname__       *definition.__qualname__..stdtypes.txt;*
+definition.__qualname__        *definition.__qualname__..stdtypes.txt*
 
    The _qualified name_ of the class, function, method, descriptor, or
    generator instance.
 
    New in version 3.3.
 
-                           *definition.__type_params__..stdtypes.txt;*
+                            *definition.__type_params__..stdtypes.txt*
 definition.__type_params__
 
    The type parameters of generic classes, functions, and type
@@ -5135,18 +5129,18 @@ definition.__type_params__
 
    New in version 3.12.
 
-class.__mro__                           *class.__mro__..stdtypes.txt;*
+class.__mro__                            *class.__mro__..stdtypes.txt*
 
    This attribute is a tuple of classes that are considered when
    looking for base classes during method resolution.
 
-class.mro()                               *class.mro()..stdtypes.txt;*
+class.mro()                                *class.mro()..stdtypes.txt*
 
    This method can be overridden by a metaclass to customize the
    method resolution order for its instances.  It is called at class
    instantiation, and its result is stored in "__mro__".
 
-class.__subclasses__()         *class.__subclasses__()..stdtypes.txt;*
+class.__subclasses__()          *class.__subclasses__()..stdtypes.txt*
 
    Each class keeps a list of weak references to its immediate
    subclasses.  This method returns a list of all those references

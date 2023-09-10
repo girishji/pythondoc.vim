@@ -1,4 +1,4 @@
-*bisect.txt;*                                 Last change: 2023 Sep 09
+*bisect.txt;*                                 Last change: 2023 Sep 10
 
 "bisect" — Array bisection algorithm
 ************************************
@@ -22,7 +22,7 @@ an insertion point between values in an array.
 
 The following functions are provided:
 
-                                          *bisect_left()..bisect.txt;*
+                                           *bisect_left()..bisect.txt*
 bisect.bisect_left(a, x, lo=0, hi=len(a), *, key=None)
 
    Locate the insertion point for _x_ in _a_ to maintain sorted order.
@@ -48,10 +48,10 @@ bisect.bisect_left(a, x, lo=0, hi=len(a), *, key=None)
 
    Changed in version 3.10: Added the _key_ parameter.
 
-                                         *bisect_right()..bisect.txt;*
+                                          *bisect_right()..bisect.txt*
 bisect.bisect_right(a, x, lo=0, hi=len(a), *, key=None)
 
-                                               *bisect()..bisect.txt;*
+                                                *bisect()..bisect.txt*
 bisect.bisect(a, x, lo=0, hi=len(a), *, key=None)
 
    Similar to "bisect_left()", but returns an insertion point which
@@ -64,7 +64,7 @@ bisect.bisect(a, x, lo=0, hi=len(a), *, key=None)
 
    Changed in version 3.10: Added the _key_ parameter.
 
-                                          *insort_left()..bisect.txt;*
+                                           *insort_left()..bisect.txt*
 bisect.insort_left(a, x, lo=0, hi=len(a), *, key=None)
 
    Insert _x_ in _a_ in sorted order.
@@ -82,10 +82,10 @@ bisect.insort_left(a, x, lo=0, hi=len(a), *, key=None)
 
    Changed in version 3.10: Added the _key_ parameter.
 
-                                         *insort_right()..bisect.txt;*
+                                          *insort_right()..bisect.txt*
 bisect.insort_right(a, x, lo=0, hi=len(a), *, key=None)
 
-                                               *insort()..bisect.txt;*
+                                                *insort()..bisect.txt*
 bisect.insort(a, x, lo=0, hi=len(a), *, key=None)
 
    Similar to "insort_left()", but inserting _x_ in _a_ after any

@@ -1,4 +1,4 @@
-*sysconfig.txt;*                              Last change: 2023 Sep 09
+*sysconfig.txt;*                              Last change: 2023 Sep 10
 
 "sysconfig" — Provide access to Python’s configuration information
 ******************************************************************
@@ -26,7 +26,7 @@ that can be accessed using "get_config_vars()" or "get_config_var()".
 
 Notice that on Windows, it’s a much smaller set.
 
-sysconfig.get_config_vars(*args)   *get_config_vars()..sysconfig.txt;*
+sysconfig.get_config_vars(*args)    *get_config_vars()..sysconfig.txt*
 
    With no arguments, return a dictionary of all configuration
    variables relevant for the current platform.
@@ -36,7 +36,7 @@ sysconfig.get_config_vars(*args)   *get_config_vars()..sysconfig.txt;*
 
    For each argument, if the value is not found, return "None".
 
-sysconfig.get_config_var(name)      *get_config_var()..sysconfig.txt;*
+sysconfig.get_config_var(name)       *get_config_var()..sysconfig.txt*
 
    Return the value of a single variable _name_. Equivalent to
    "get_config_vars().get(name)".
@@ -121,13 +121,12 @@ a unique identifier.  Python currently uses eight paths:
 
 "sysconfig" provides some functions to determine these paths.
 
-sysconfig.get_scheme_names()      *get_scheme_names()..sysconfig.txt;*
+sysconfig.get_scheme_names()       *get_scheme_names()..sysconfig.txt*
 
    Return a tuple containing all schemes currently supported in
    "sysconfig".
 
-                                *get_default_scheme()..sysconfig.txt;*
-sysconfig.get_default_scheme()
+sysconfig.get_default_scheme()   *get_default_scheme()..sysconfig.txt*
 
    Return the default scheme name for the current platform.
 
@@ -137,7 +136,7 @@ sysconfig.get_default_scheme()
    Changed in version 3.11: When Python runs from a virtual
    environment, the _venv_ scheme is returned.
 
-                              *get_preferred_scheme()..sysconfig.txt;*
+                               *get_preferred_scheme()..sysconfig.txt*
 sysconfig.get_preferred_scheme(key)
 
    Return a preferred scheme name for an installation layout specified
@@ -154,7 +153,7 @@ sysconfig.get_preferred_scheme(key)
    Changed in version 3.11: When Python runs from a virtual
    environment and "key="prefix"", the _venv_ scheme is returned.
 
-                            *_get_preferred_schemes()..sysconfig.txt;*
+                             *_get_preferred_schemes()..sysconfig.txt*
 sysconfig._get_preferred_schemes()
 
    Return a dict containing preferred scheme names on the current
@@ -170,12 +169,12 @@ sysconfig._get_preferred_schemes()
 
    New in version 3.10.
 
-sysconfig.get_path_names()          *get_path_names()..sysconfig.txt;*
+sysconfig.get_path_names()           *get_path_names()..sysconfig.txt*
 
    Return a tuple containing all path names currently supported in
    "sysconfig".
 
-                                          *get_path()..sysconfig.txt;*
+                                           *get_path()..sysconfig.txt*
 sysconfig.get_path(name[, scheme[, vars[, expand]]])
 
    Return an installation path corresponding to the path _name_, from
@@ -204,7 +203,7 @@ sysconfig.get_path(name[, scheme[, vars[, expand]]])
 
    If _name_ is not found, raise a "KeyError".
 
-                                         *get_paths()..sysconfig.txt;*
+                                          *get_paths()..sysconfig.txt*
 sysconfig.get_paths([scheme[, vars[, expand]]])
 
    Return a dictionary containing all installation paths corresponding
@@ -225,13 +224,12 @@ sysconfig.get_paths([scheme[, vars[, expand]]])
 Other functions
 ===============
 
-                                *get_python_version()..sysconfig.txt;*
-sysconfig.get_python_version()
+sysconfig.get_python_version()   *get_python_version()..sysconfig.txt*
 
    Return the "MAJOR.MINOR" Python version number as a string.
    Similar to "'%d.%d' % sys.version_info[:2]".
 
-sysconfig.get_platform()              *get_platform()..sysconfig.txt;*
+sysconfig.get_platform()               *get_platform()..sysconfig.txt*
 
    Return a string that identifies the current platform.
 
@@ -270,14 +268,14 @@ sysconfig.get_platform()              *get_platform()..sysconfig.txt;*
    For other non-POSIX platforms, currently just returns
    "sys.platform".
 
-sysconfig.is_python_build()        *is_python_build()..sysconfig.txt;*
+sysconfig.is_python_build()         *is_python_build()..sysconfig.txt*
 
    Return "True" if the running Python interpreter was built from
    source and is being run from its built location, and not from a
    location resulting from e.g. running "make install" or installing
    via a binary installer.
 
-                                    *parse_config_h()..sysconfig.txt;*
+                                     *parse_config_h()..sysconfig.txt*
 sysconfig.parse_config_h(fp[, vars])
 
    Parse a "config.h"-style file.
@@ -289,12 +287,12 @@ sysconfig.parse_config_h(fp[, vars])
    instead of a new dictionary, and updated with the values read in
    the file.
 
-                             *get_config_h_filename()..sysconfig.txt;*
+                              *get_config_h_filename()..sysconfig.txt*
 sysconfig.get_config_h_filename()
 
    Return the path of "pyconfig.h".
 
-                             *get_makefile_filename()..sysconfig.txt;*
+                              *get_makefile_filename()..sysconfig.txt*
 sysconfig.get_makefile_filename()
 
    Return the path of "Makefile".

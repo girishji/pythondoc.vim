@@ -1,4 +1,4 @@
-*math.txt;*                                   Last change: 2023 Sep 09
+*math.txt;*                                   Last change: 2023 Sep 10
 
 "math" — Mathematical functions
 *******************************
@@ -25,13 +25,13 @@ explicitly noted otherwise, all return values are floats.
 Number-theoretic and representation functions
 =============================================
 
-math.ceil(x)                                       *ceil()..math.txt;*
+math.ceil(x)                                        *ceil()..math.txt*
 
    Return the ceiling of _x_, the smallest integer greater than or
    equal to _x_. If _x_ is not a float, delegates to "x.__ceil__",
    which should return an "Integral" value.
 
-math.comb(n, k)                                    *comb()..math.txt;*
+math.comb(n, k)                                     *comb()..math.txt*
 
    Return the number of ways to choose _k_ items from _n_ items
    without repetition and without order.
@@ -47,17 +47,17 @@ math.comb(n, k)                                    *comb()..math.txt;*
 
    New in version 3.8.
 
-math.copysign(x, y)                            *copysign()..math.txt;*
+math.copysign(x, y)                             *copysign()..math.txt*
 
    Return a float with the magnitude (absolute value) of _x_ but the
    sign of _y_.  On platforms that support signed zeros,
    "copysign(1.0, -0.0)" returns _-1.0_.
 
-math.fabs(x)                                       *fabs()..math.txt;*
+math.fabs(x)                                        *fabs()..math.txt*
 
    Return the absolute value of _x_.
 
-math.factorial(n)                             *factorial()..math.txt;*
+math.factorial(n)                              *factorial()..math.txt*
 
    Return _n_ factorial as an integer.  Raises "ValueError" if _n_ is
    not integral or is negative.
@@ -65,13 +65,13 @@ math.factorial(n)                             *factorial()..math.txt;*
    Changed in version 3.10: Floats with integral values (like "5.0")
    are no longer accepted.
 
-math.floor(x)                                     *floor()..math.txt;*
+math.floor(x)                                      *floor()..math.txt*
 
    Return the floor of _x_, the largest integer less than or equal to
    _x_.  If _x_ is not a float, delegates to "x.__floor__", which
    should return an "Integral" value.
 
-math.fmod(x, y)                                    *fmod()..math.txt;*
+math.fmod(x, y)                                     *fmod()..math.txt*
 
    Return "fmod(x, y)", as defined by the platform C library. Note
    that the Python expression "x % y" may not return the same result.
@@ -87,7 +87,7 @@ math.fmod(x, y)                                    *fmod()..math.txt;*
    generally preferred when working with floats, while Python’s "x %
    y" is preferred when working with integers.
 
-math.frexp(x)                                     *frexp()..math.txt;*
+math.frexp(x)                                      *frexp()..math.txt*
 
    Return the mantissa and exponent of _x_ as the pair "(m, e)".  _m_
    is a float and _e_ is an integer such that "x == m * 2**e" exactly.
@@ -95,7 +95,7 @@ math.frexp(x)                                     *frexp()..math.txt;*
    This is used to “pick apart” the internal representation of a float
    in a portable way.
 
-math.fsum(iterable)                                *fsum()..math.txt;*
+math.fsum(iterable)                                 *fsum()..math.txt*
 
    Return an accurate floating point sum of values in the iterable.
    Avoids loss of precision by tracking multiple intermediate partial
@@ -110,7 +110,7 @@ math.fsum(iterable)                                *fsum()..math.txt;*
    For further discussion and two alternative approaches, see the ASPN
    cookbook recipes for accurate floating point summation.
 
-math.gcd(*integers)                                 *gcd()..math.txt;*
+math.gcd(*integers)                                  *gcd()..math.txt*
 
    Return the greatest common divisor of the specified integer
    arguments. If any of the arguments is nonzero, then the returned
@@ -123,7 +123,7 @@ math.gcd(*integers)                                 *gcd()..math.txt;*
    Changed in version 3.9: Added support for an arbitrary number of
    arguments. Formerly, only two arguments were supported.
 
-                                                *isclose()..math.txt;*
+                                                 *isclose()..math.txt*
 math.isclose(a, b, *, rel_tol=1e-09, abs_tol=0.0)
 
    Return "True" if the values _a_ and _b_ are close to each other and
@@ -154,24 +154,24 @@ math.isclose(a, b, *, rel_tol=1e-09, abs_tol=0.0)
 
    See also: **PEP 485** – A function for testing approximate equality
 
-math.isfinite(x)                               *isfinite()..math.txt;*
+math.isfinite(x)                                *isfinite()..math.txt*
 
    Return "True" if _x_ is neither an infinity nor a NaN, and "False"
    otherwise.  (Note that "0.0" _is_ considered finite.)
 
    New in version 3.2.
 
-math.isinf(x)                                     *isinf()..math.txt;*
+math.isinf(x)                                      *isinf()..math.txt*
 
    Return "True" if _x_ is a positive or negative infinity, and
    "False" otherwise.
 
-math.isnan(x)                                     *isnan()..math.txt;*
+math.isnan(x)                                      *isnan()..math.txt*
 
    Return "True" if _x_ is a NaN (not a number), and "False"
    otherwise.
 
-math.isqrt(n)                                     *isqrt()..math.txt;*
+math.isqrt(n)                                      *isqrt()..math.txt*
 
    Return the integer square root of the nonnegative integer _n_. This
    is the floor of the exact square root of _n_, or equivalently the
@@ -184,7 +184,7 @@ math.isqrt(n)                                     *isqrt()..math.txt;*
 
    New in version 3.8.
 
-math.lcm(*integers)                                 *lcm()..math.txt;*
+math.lcm(*integers)                                  *lcm()..math.txt*
 
    Return the least common multiple of the specified integer
    arguments. If all arguments are nonzero, then the returned value is
@@ -194,17 +194,17 @@ math.lcm(*integers)                                 *lcm()..math.txt;*
 
    New in version 3.9.
 
-math.ldexp(x, i)                                  *ldexp()..math.txt;*
+math.ldexp(x, i)                                   *ldexp()..math.txt*
 
    Return "x * (2**i)".  This is essentially the inverse of function
    "frexp()".
 
-math.modf(x)                                       *modf()..math.txt;*
+math.modf(x)                                        *modf()..math.txt*
 
    Return the fractional and integer parts of _x_.  Both results carry
    the sign of _x_ and are floats.
 
-math.nextafter(x, y, steps=1)                 *nextafter()..math.txt;*
+math.nextafter(x, y, steps=1)                  *nextafter()..math.txt*
 
    Return the floating-point value _steps_ steps after _x_ towards
    _y_.
@@ -228,7 +228,7 @@ math.nextafter(x, y, steps=1)                 *nextafter()..math.txt;*
 
    New in version 3.9.
 
-math.perm(n, k=None)                               *perm()..math.txt;*
+math.perm(n, k=None)                                *perm()..math.txt*
 
    Return the number of ways to choose _k_ items from _n_ items
    without repetition and with order.
@@ -244,7 +244,7 @@ math.perm(n, k=None)                               *perm()..math.txt;*
 
    New in version 3.8.
 
-math.prod(iterable, *, start=1)                    *prod()..math.txt;*
+math.prod(iterable, *, start=1)                     *prod()..math.txt*
 
    Calculate the product of all the elements in the input _iterable_.
    The default _start_ value for the product is "1".
@@ -255,7 +255,7 @@ math.prod(iterable, *, start=1)                    *prod()..math.txt;*
 
    New in version 3.8.
 
-math.remainder(x, y)                          *remainder()..math.txt;*
+math.remainder(x, y)                           *remainder()..math.txt*
 
    Return the IEEE 754-style remainder of _x_ with respect to _y_.
    For finite _x_ and finite nonzero _y_, this is the difference "x -
@@ -277,7 +277,7 @@ math.remainder(x, y)                          *remainder()..math.txt;*
 
    New in version 3.7.
 
-math.sumprod(p, q)                              *sumprod()..math.txt;*
+math.sumprod(p, q)                               *sumprod()..math.txt*
 
    Return the sum of products of values from two iterables _p_ and
    _q_.
@@ -293,7 +293,7 @@ math.sumprod(p, q)                              *sumprod()..math.txt;*
 
    New in version 3.12.
 
-math.trunc(x)                                     *trunc()..math.txt;*
+math.trunc(x)                                      *trunc()..math.txt*
 
    Return _x_ with the fractional part removed, leaving the integer
    part.  This rounds toward 0: "trunc()" is equivalent to "floor()"
@@ -301,7 +301,7 @@ math.trunc(x)                                     *trunc()..math.txt;*
    _x_ is not a float, delegates to "x.__trunc__", which should return
    an "Integral" value.
 
-math.ulp(x)                                         *ulp()..math.txt;*
+math.ulp(x)                                          *ulp()..math.txt*
 
    Return the value of the least significant bit of the float _x_:
 
@@ -344,25 +344,25 @@ float _x_ with "abs(x) >= 2**52" necessarily has no fractional bits.
 Power and logarithmic functions
 ===============================
 
-math.cbrt(x)                                       *cbrt()..math.txt;*
+math.cbrt(x)                                        *cbrt()..math.txt*
 
    Return the cube root of _x_.
 
    New in version 3.11.
 
-math.exp(x)                                         *exp()..math.txt;*
+math.exp(x)                                          *exp()..math.txt*
 
    Return _e_ raised to the power _x_, where _e_ = 2.718281… is the
    base of natural logarithms.  This is usually more accurate than
    "math.e ** x" or "pow(math.e, x)".
 
-math.exp2(x)                                       *exp2()..math.txt;*
+math.exp2(x)                                        *exp2()..math.txt*
 
    Return _2_ raised to the power _x_.
 
    New in version 3.11.
 
-math.expm1(x)                                     *expm1()..math.txt;*
+math.expm1(x)                                      *expm1()..math.txt*
 
    Return _e_ raised to the power _x_, minus 1.  Here _e_ is the base
    of natural logarithms.  For small floats _x_, the subtraction in
@@ -378,7 +378,7 @@ math.expm1(x)                                     *expm1()..math.txt;*
 
    New in version 3.2.
 
-math.log(x[, base])                                 *log()..math.txt;*
+math.log(x[, base])                                  *log()..math.txt*
 
    With one argument, return the natural logarithm of _x_ (to base
    _e_).
@@ -386,12 +386,12 @@ math.log(x[, base])                                 *log()..math.txt;*
    With two arguments, return the logarithm of _x_ to the given
    _base_, calculated as "log(x)/log(base)".
 
-math.log1p(x)                                     *log1p()..math.txt;*
+math.log1p(x)                                      *log1p()..math.txt*
 
    Return the natural logarithm of _1+x_ (base _e_). The result is
    calculated in a way which is accurate for _x_ near zero.
 
-math.log2(x)                                       *log2()..math.txt;*
+math.log2(x)                                        *log2()..math.txt*
 
    Return the base-2 logarithm of _x_. This is usually more accurate
    than "log(x, 2)".
@@ -404,12 +404,12 @@ math.log2(x)                                       *log2()..math.txt;*
      represent an integer in binary, excluding the sign and leading
      zeros.
 
-math.log10(x)                                     *log10()..math.txt;*
+math.log10(x)                                      *log10()..math.txt*
 
    Return the base-10 logarithm of _x_.  This is usually more accurate
    than "log(x, 10)".
 
-math.pow(x, y)                                      *pow()..math.txt;*
+math.pow(x, y)                                       *pow()..math.txt*
 
    Return "x" raised to the power "y".  Exceptional cases follow the
    IEEE 754 standard as far as possible.  In particular, "pow(1.0, x)"
@@ -426,7 +426,7 @@ math.pow(x, y)                                      *pow()..math.txt;*
    "pow(-0.0, -inf)" were changed to return "inf" instead of raising
    "ValueError", for consistency with IEEE 754.
 
-math.sqrt(x)                                       *sqrt()..math.txt;*
+math.sqrt(x)                                        *sqrt()..math.txt*
 
    Return the square root of _x_.
 
@@ -434,22 +434,22 @@ math.sqrt(x)                                       *sqrt()..math.txt;*
 Trigonometric functions
 =======================
 
-math.acos(x)                                       *acos()..math.txt;*
+math.acos(x)                                        *acos()..math.txt*
 
    Return the arc cosine of _x_, in radians. The result is between "0"
    and "pi".
 
-math.asin(x)                                       *asin()..math.txt;*
+math.asin(x)                                        *asin()..math.txt*
 
    Return the arc sine of _x_, in radians. The result is between
    "-pi/2" and "pi/2".
 
-math.atan(x)                                       *atan()..math.txt;*
+math.atan(x)                                        *atan()..math.txt*
 
    Return the arc tangent of _x_, in radians. The result is between
    "-pi/2" and "pi/2".
 
-math.atan2(y, x)                                  *atan2()..math.txt;*
+math.atan2(y, x)                                   *atan2()..math.txt*
 
    Return "atan(y / x)", in radians. The result is between "-pi" and
    "pi". The vector in the plane from the origin to point "(x, y)"
@@ -458,11 +458,11 @@ math.atan2(y, x)                                  *atan2()..math.txt;*
    the correct quadrant for the angle. For example, "atan(1)" and
    "atan2(1, 1)" are both "pi/4", but "atan2(-1, -1)" is "-3*pi/4".
 
-math.cos(x)                                         *cos()..math.txt;*
+math.cos(x)                                          *cos()..math.txt*
 
    Return the cosine of _x_ radians.
 
-math.dist(p, q)                                    *dist()..math.txt;*
+math.dist(p, q)                                     *dist()..math.txt*
 
    Return the Euclidean distance between two points _p_ and _q_, each
    given as a sequence (or iterable) of coordinates.  The two points
@@ -474,7 +474,7 @@ math.dist(p, q)                                    *dist()..math.txt;*
 <
    New in version 3.8.
 
-math.hypot(*coordinates)                          *hypot()..math.txt;*
+math.hypot(*coordinates)                           *hypot()..math.txt*
 
    Return the Euclidean norm, "sqrt(sum(x**2 for x in coordinates))".
    This is the length of the vector from the origin to the point given
@@ -492,11 +492,11 @@ math.hypot(*coordinates)                          *hypot()..math.txt;*
    typically, the result is almost always correctly rounded to within
    1/2 ulp.
 
-math.sin(x)                                         *sin()..math.txt;*
+math.sin(x)                                          *sin()..math.txt*
 
    Return the sine of _x_ radians.
 
-math.tan(x)                                         *tan()..math.txt;*
+math.tan(x)                                          *tan()..math.txt*
 
    Return the tangent of _x_ radians.
 
@@ -504,11 +504,11 @@ math.tan(x)                                         *tan()..math.txt;*
 Angular conversion
 ==================
 
-math.degrees(x)                                 *degrees()..math.txt;*
+math.degrees(x)                                  *degrees()..math.txt*
 
    Convert angle _x_ from radians to degrees.
 
-math.radians(x)                                 *radians()..math.txt;*
+math.radians(x)                                  *radians()..math.txt*
 
    Convert angle _x_ from degrees to radians.
 
@@ -519,27 +519,27 @@ Hyperbolic functions
 Hyperbolic functions are analogs of trigonometric functions that are
 based on hyperbolas instead of circles.
 
-math.acosh(x)                                     *acosh()..math.txt;*
+math.acosh(x)                                      *acosh()..math.txt*
 
    Return the inverse hyperbolic cosine of _x_.
 
-math.asinh(x)                                     *asinh()..math.txt;*
+math.asinh(x)                                      *asinh()..math.txt*
 
    Return the inverse hyperbolic sine of _x_.
 
-math.atanh(x)                                     *atanh()..math.txt;*
+math.atanh(x)                                      *atanh()..math.txt*
 
    Return the inverse hyperbolic tangent of _x_.
 
-math.cosh(x)                                       *cosh()..math.txt;*
+math.cosh(x)                                        *cosh()..math.txt*
 
    Return the hyperbolic cosine of _x_.
 
-math.sinh(x)                                       *sinh()..math.txt;*
+math.sinh(x)                                        *sinh()..math.txt*
 
    Return the hyperbolic sine of _x_.
 
-math.tanh(x)                                       *tanh()..math.txt;*
+math.tanh(x)                                        *tanh()..math.txt*
 
    Return the hyperbolic tangent of _x_.
 
@@ -547,7 +547,7 @@ math.tanh(x)                                       *tanh()..math.txt;*
 Special functions
 =================
 
-math.erf(x)                                         *erf()..math.txt;*
+math.erf(x)                                          *erf()..math.txt*
 
    Return the error function at _x_.
 
@@ -560,7 +560,7 @@ math.erf(x)                                         *erf()..math.txt;*
 <
    New in version 3.2.
 
-math.erfc(x)                                       *erfc()..math.txt;*
+math.erfc(x)                                        *erfc()..math.txt*
 
    Return the complementary error function at _x_.  The complementary
    error function is defined as "1.0 - erf(x)".  It is used for large
@@ -569,13 +569,13 @@ math.erfc(x)                                       *erfc()..math.txt;*
 
    New in version 3.2.
 
-math.gamma(x)                                     *gamma()..math.txt;*
+math.gamma(x)                                      *gamma()..math.txt*
 
    Return the Gamma function at _x_.
 
    New in version 3.2.
 
-math.lgamma(x)                                   *lgamma()..math.txt;*
+math.lgamma(x)                                    *lgamma()..math.txt*
 
    Return the natural logarithm of the absolute value of the Gamma
    function at _x_.
@@ -586,15 +586,15 @@ math.lgamma(x)                                   *lgamma()..math.txt;*
 Constants
 =========
 
-math.pi                                                *pi..math.txt;*
+math.pi                                                 *pi..math.txt*
 
    The mathematical constant _π_ = 3.141592…, to available precision.
 
-math.e                                                  *e..math.txt;*
+math.e                                                   *e..math.txt*
 
    The mathematical constant _e_ = 2.718281…, to available precision.
 
-math.tau                                              *tau..math.txt;*
+math.tau                                               *tau..math.txt*
 
    The mathematical constant _τ_ = 6.283185…, to available precision.
    Tau is a circle constant equal to 2_π_, the ratio of a circle’s
@@ -604,14 +604,14 @@ math.tau                                              *tau..math.txt;*
 
    New in version 3.6.
 
-math.inf                                              *inf..math.txt;*
+math.inf                                               *inf..math.txt*
 
    A floating-point positive infinity.  (For negative infinity, use
    "-math.inf".)  Equivalent to the output of "float('inf')".
 
    New in version 3.5.
 
-math.nan                                              *nan..math.txt;*
+math.nan                                               *nan..math.txt*
 
    A floating-point “not a number” (NaN) value. Equivalent to the
    output of "float('nan')". Due to the requirements of the IEEE-754

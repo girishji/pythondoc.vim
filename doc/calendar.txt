@@ -1,4 +1,4 @@
-*calendar.txt;*                               Last change: 2023 Sep 09
+*calendar.txt;*                               Last change: 2023 Sep 10
 
 "calendar" — General calendar-related functions
 ***********************************************
@@ -24,7 +24,7 @@ where it’s the base calendar for all computations.  Zero and negative
 years are interpreted as prescribed by the ISO 8601 standard.  Year 0
 is 1 BC, year -1 is 2 BC, and so on.
 
-class calendar.Calendar(firstweekday=0)      *Calendar..calendar.txt;*
+class calendar.Calendar(firstweekday=0)       *Calendar..calendar.txt*
 
    Creates a "Calendar" object. _firstweekday_ is an integer
    specifying the first day of the week. "MONDAY" is "0" (the
@@ -36,13 +36,13 @@ class calendar.Calendar(firstweekday=0)      *Calendar..calendar.txt;*
 
    "Calendar" instances have the following methods:
 
-   iterweekdays()                *Calendar.iterweekdays()..calendar.txt;*
+   iterweekdays()                 *Calendar.iterweekdays()..calendar.txt*
 
       Return an iterator for the week day numbers that will be used
       for one week.  The first value from the iterator will be the
       same as the value of the "firstweekday" property.
 
-                            *Calendar.itermonthdates()..calendar.txt;*
+                             *Calendar.itermonthdates()..calendar.txt*
    itermonthdates(year, month)
 
       Return an iterator for the month _month_ (1–12) in the year
@@ -51,7 +51,7 @@ class calendar.Calendar(firstweekday=0)      *Calendar..calendar.txt;*
       month or after the end of the month that are required to get a
       complete week.
 
-   itermonthdays(year, month)   *Calendar.itermonthdays()..calendar.txt;*
+   itermonthdays(year, month)    *Calendar.itermonthdays()..calendar.txt*
 
       Return an iterator for the month _month_ in the year _year_
       similar to "itermonthdates()", but not restricted by the
@@ -59,7 +59,7 @@ class calendar.Calendar(firstweekday=0)      *Calendar..calendar.txt;*
       month numbers.  For the days outside of the specified month, the
       day number is "0".
 
-                            *Calendar.itermonthdays2()..calendar.txt;*
+                             *Calendar.itermonthdays2()..calendar.txt*
    itermonthdays2(year, month)
 
       Return an iterator for the month _month_ in the year _year_
@@ -67,7 +67,7 @@ class calendar.Calendar(firstweekday=0)      *Calendar..calendar.txt;*
       "datetime.date" range. Days returned will be tuples consisting
       of a day of the month number and a week day number.
 
-                            *Calendar.itermonthdays3()..calendar.txt;*
+                             *Calendar.itermonthdays3()..calendar.txt*
    itermonthdays3(year, month)
 
       Return an iterator for the month _month_ in the year _year_
@@ -77,7 +77,7 @@ class calendar.Calendar(firstweekday=0)      *Calendar..calendar.txt;*
 
       New in version 3.7.
 
-                            *Calendar.itermonthdays4()..calendar.txt;*
+                             *Calendar.itermonthdays4()..calendar.txt*
    itermonthdays4(year, month)
 
       Return an iterator for the month _month_ in the year _year_
@@ -88,26 +88,26 @@ class calendar.Calendar(firstweekday=0)      *Calendar..calendar.txt;*
 
       New in version 3.7.
 
-                        *Calendar.monthdatescalendar()..calendar.txt;*
+                         *Calendar.monthdatescalendar()..calendar.txt*
    monthdatescalendar(year, month)
 
       Return a list of the weeks in the month _month_ of the _year_ as
       full weeks.  Weeks are lists of seven "datetime.date" objects.
 
-                        *Calendar.monthdays2calendar()..calendar.txt;*
+                         *Calendar.monthdays2calendar()..calendar.txt*
    monthdays2calendar(year, month)
 
       Return a list of the weeks in the month _month_ of the _year_ as
       full weeks.  Weeks are lists of seven tuples of day numbers and
       weekday numbers.
 
-                         *Calendar.monthdayscalendar()..calendar.txt;*
+                          *Calendar.monthdayscalendar()..calendar.txt*
    monthdayscalendar(year, month)
 
       Return a list of the weeks in the month _month_ of the _year_ as
       full weeks.  Weeks are lists of seven day numbers.
 
-                         *Calendar.yeardatescalendar()..calendar.txt;*
+                          *Calendar.yeardatescalendar()..calendar.txt*
    yeardatescalendar(year, width=3)
 
       Return the data for the specified year ready for formatting. The
@@ -116,7 +116,7 @@ class calendar.Calendar(firstweekday=0)      *Calendar..calendar.txt;*
       4 and 6 weeks and each week contains 1–7 days. Days are
       "datetime.date" objects.
 
-                         *Calendar.yeardays2calendar()..calendar.txt;*
+                          *Calendar.yeardays2calendar()..calendar.txt*
    yeardays2calendar(year, width=3)
 
       Return the data for the specified year ready for formatting
@@ -124,21 +124,21 @@ class calendar.Calendar(firstweekday=0)      *Calendar..calendar.txt;*
       are tuples of day numbers and weekday numbers. Day numbers
       outside this month are zero.
 
-                          *Calendar.yeardayscalendar()..calendar.txt;*
+                           *Calendar.yeardayscalendar()..calendar.txt*
    yeardayscalendar(year, width=3)
 
       Return the data for the specified year ready for formatting
       (similar to "yeardatescalendar()"). Entries in the week lists
       are day numbers. Day numbers outside this month are zero.
 
-                                         *TextCalendar..calendar.txt;*
+                                          *TextCalendar..calendar.txt*
 class calendar.TextCalendar(firstweekday=0)
 
    This class can be used to generate plain text calendars.
 
    "TextCalendar" instances have the following methods:
 
-                           *TextCalendar.formatmonth()..calendar.txt;*
+                            *TextCalendar.formatmonth()..calendar.txt*
    formatmonth(theyear, themonth, w=0, l=0)
 
       Return a month’s calendar in a multi-line string. If _w_ is
@@ -147,12 +147,12 @@ class calendar.TextCalendar(firstweekday=0)
       each week will use. Depends on the first weekday as specified in
       the constructor or set by the "setfirstweekday()" method.
 
-                               *TextCalendar.prmonth()..calendar.txt;*
+                                *TextCalendar.prmonth()..calendar.txt*
    prmonth(theyear, themonth, w=0, l=0)
 
       Print a month’s calendar as returned by "formatmonth()".
 
-                            *TextCalendar.formatyear()..calendar.txt;*
+                             *TextCalendar.formatyear()..calendar.txt*
    formatyear(theyear, w=2, l=1, c=6, m=3)
 
       Return a _m_-column calendar for an entire year as a multi-line
@@ -163,33 +163,33 @@ class calendar.TextCalendar(firstweekday=0)
       The earliest year for which a calendar can be generated is
       platform-dependent.
 
-                                *TextCalendar.pryear()..calendar.txt;*
+                                 *TextCalendar.pryear()..calendar.txt*
    pryear(theyear, w=2, l=1, c=6, m=3)
 
       Print the calendar for an entire year as returned by
       "formatyear()".
 
-                                         *HTMLCalendar..calendar.txt;*
+                                          *HTMLCalendar..calendar.txt*
 class calendar.HTMLCalendar(firstweekday=0)
 
    This class can be used to generate HTML calendars.
 
    "HTMLCalendar" instances have the following methods:
 
-                           *HTMLCalendar.formatmonth()..calendar.txt;*
+                            *HTMLCalendar.formatmonth()..calendar.txt*
    formatmonth(theyear, themonth, withyear=True)
 
       Return a month’s calendar as an HTML table. If _withyear_ is
       true the year will be included in the header, otherwise just the
       month name will be used.
 
-                            *HTMLCalendar.formatyear()..calendar.txt;*
+                             *HTMLCalendar.formatyear()..calendar.txt*
    formatyear(theyear, width=3)
 
       Return a year’s calendar as an HTML table. _width_ (defaulting
       to 3) specifies the number of months per row.
 
-                        *HTMLCalendar.formatyearpage()..calendar.txt;*
+                         *HTMLCalendar.formatyearpage()..calendar.txt*
    formatyearpage(theyear, width=3, css='calendar.css', encoding=None)
 
       Return a year’s calendar as a complete HTML page. _width_
@@ -202,7 +202,7 @@ class calendar.HTMLCalendar(firstweekday=0)
    "HTMLCalendar" has the following attributes you can override to
    customize the CSS classes used by the calendar:
 
-   cssclasses                    *HTMLCalendar.cssclasses..calendar.txt;*
+   cssclasses                     *HTMLCalendar.cssclasses..calendar.txt*
 
       A list of CSS classes used for each weekday. The default class
       list is:
@@ -215,14 +215,14 @@ class calendar.HTMLCalendar(firstweekday=0)
 <
       Note that the length of this list must be seven items.
 
-   cssclass_noday            *HTMLCalendar.cssclass_noday..calendar.txt;*
+   cssclass_noday             *HTMLCalendar.cssclass_noday..calendar.txt*
 
       The CSS class for a weekday occurring in the previous or coming
       month.
 
       New in version 3.7.
 
-                 *HTMLCalendar.cssclasses_weekday_head..calendar.txt;*
+                  *HTMLCalendar.cssclasses_weekday_head..calendar.txt*
    cssclasses_weekday_head
 
       A list of CSS classes used for weekday names in the header row.
@@ -230,29 +230,28 @@ class calendar.HTMLCalendar(firstweekday=0)
 
       New in version 3.7.
 
-                     *HTMLCalendar.cssclass_month_head..calendar.txt;*
-   cssclass_month_head
+   cssclass_month_head   *HTMLCalendar.cssclass_month_head..calendar.txt*
 
       The month’s head CSS class (used by "formatmonthname()"). The
       default value is ""month"".
 
       New in version 3.7.
 
-   cssclass_month            *HTMLCalendar.cssclass_month..calendar.txt;*
+   cssclass_month             *HTMLCalendar.cssclass_month..calendar.txt*
 
       The CSS class for the whole month’s table (used by
       "formatmonth()"). The default value is ""month"".
 
       New in version 3.7.
 
-   cssclass_year              *HTMLCalendar.cssclass_year..calendar.txt;*
+   cssclass_year               *HTMLCalendar.cssclass_year..calendar.txt*
 
       The CSS class for the whole year’s table of tables (used by
       "formatyear()"). The default value is ""year"".
 
       New in version 3.7.
 
-   cssclass_year_head    *HTMLCalendar.cssclass_year_head..calendar.txt;*
+   cssclass_year_head     *HTMLCalendar.cssclass_year_head..calendar.txt*
 
       The CSS class for the table head for the whole year (used by
       "formatyear()"). The default value is ""year"".
@@ -276,14 +275,14 @@ class calendar.HTMLCalendar(firstweekday=0)
           cssclass_year = "text-italic lead"
 <
 
-                                   *LocaleTextCalendar..calendar.txt;*
+                                    *LocaleTextCalendar..calendar.txt*
 class calendar.LocaleTextCalendar(firstweekday=0, locale=None)
 
    This subclass of "TextCalendar" can be passed a locale name in the
    constructor and will return month and weekday names in the
    specified locale.
 
-                                   *LocaleHTMLCalendar..calendar.txt;*
+                                    *LocaleHTMLCalendar..calendar.txt*
 class calendar.LocaleHTMLCalendar(firstweekday=0, locale=None)
 
    This subclass of "HTMLCalendar" can be passed a locale name in the
@@ -300,7 +299,7 @@ Note:
 For simple text calendars this module provides the following
 functions.
 
-calendar.setfirstweekday(weekday)   *setfirstweekday()..calendar.txt;*
+calendar.setfirstweekday(weekday)    *setfirstweekday()..calendar.txt*
 
    Sets the weekday ("0" is Monday, "6" is Sunday) to start each week.
    The values "MONDAY", "TUESDAY", "WEDNESDAY", "THURSDAY", "FRIDAY",
@@ -310,65 +309,65 @@ calendar.setfirstweekday(weekday)   *setfirstweekday()..calendar.txt;*
       import calendar
       calendar.setfirstweekday(calendar.SUNDAY)
 <
-calendar.firstweekday()                *firstweekday()..calendar.txt;*
+calendar.firstweekday()                 *firstweekday()..calendar.txt*
 
    Returns the current setting for the weekday to start each week.
 
-calendar.isleap(year)                        *isleap()..calendar.txt;*
+calendar.isleap(year)                         *isleap()..calendar.txt*
 
    Returns "True" if _year_ is a leap year, otherwise "False".
 
-calendar.leapdays(y1, y2)                  *leapdays()..calendar.txt;*
+calendar.leapdays(y1, y2)                   *leapdays()..calendar.txt*
 
    Returns the number of leap years in the range from _y1_ to _y2_
    (exclusive), where _y1_ and _y2_ are years.
 
    This function works for ranges spanning a century change.
 
-calendar.weekday(year, month, day)          *weekday()..calendar.txt;*
+calendar.weekday(year, month, day)           *weekday()..calendar.txt*
 
    Returns the day of the week ("0" is Monday) for _year_ ("1970"–…),
    _month_ ("1"–"12"), _day_ ("1"–"31").
 
-calendar.weekheader(n)                   *weekheader()..calendar.txt;*
+calendar.weekheader(n)                    *weekheader()..calendar.txt*
 
    Return a header containing abbreviated weekday names. _n_ specifies
    the width in characters for one weekday.
 
-calendar.monthrange(year, month)         *monthrange()..calendar.txt;*
+calendar.monthrange(year, month)          *monthrange()..calendar.txt*
 
    Returns weekday of first day of the month and number of days in
    month,  for the specified _year_ and _month_.
 
-calendar.monthcalendar(year, month)   *monthcalendar()..calendar.txt;*
+calendar.monthcalendar(year, month)    *monthcalendar()..calendar.txt*
 
    Returns a matrix representing a month’s calendar.  Each row
    represents a week; days outside of the month are represented by
    zeros. Each week begins with Monday unless set by
    "setfirstweekday()".
 
-                                            *prmonth()..calendar.txt;*
+                                             *prmonth()..calendar.txt*
 calendar.prmonth(theyear, themonth, w=0, l=0)
 
    Prints a month’s calendar as returned by "month()".
 
-calendar.month(theyear, themonth, w=0, l=0)   *month()..calendar.txt;*
+calendar.month(theyear, themonth, w=0, l=0)    *month()..calendar.txt*
 
    Returns a month’s calendar in a multi-line string using the
    "formatmonth()" of the "TextCalendar" class.
 
-calendar.prcal(year, w=0, l=0, c=6, m=3)      *prcal()..calendar.txt;*
+calendar.prcal(year, w=0, l=0, c=6, m=3)       *prcal()..calendar.txt*
 
    Prints the calendar for an entire year as returned by
    "calendar()".
 
-                                           *calendar()..calendar.txt;*
+                                            *calendar()..calendar.txt*
 calendar.calendar(year, w=2, l=1, c=6, m=3)
 
    Returns a 3-column calendar for an entire year as a multi-line
    string using the "formatyear()" of the "TextCalendar" class.
 
-calendar.timegm(tuple)                       *timegm()..calendar.txt;*
+calendar.timegm(tuple)                        *timegm()..calendar.txt*
 
    An unrelated but handy function that takes a time tuple such as
    returned by the "gmtime()" function in the "time" module, and
@@ -378,30 +377,30 @@ calendar.timegm(tuple)                       *timegm()..calendar.txt;*
 
 The "calendar" module exports the following data attributes:
 
-calendar.day_name                            *day_name..calendar.txt;*
+calendar.day_name                             *day_name..calendar.txt*
 
    An array that represents the days of the week in the current
    locale.
 
-calendar.day_abbr                            *day_abbr..calendar.txt;*
+calendar.day_abbr                             *day_abbr..calendar.txt*
 
    An array that represents the abbreviated days of the week in the
    current locale.
 
-calendar.MONDAY                                *MONDAY..calendar.txt;*
-calendar.TUESDAY                              *TUESDAY..calendar.txt;*
-calendar.WEDNESDAY                          *WEDNESDAY..calendar.txt;*
-calendar.THURSDAY                            *THURSDAY..calendar.txt;*
-calendar.FRIDAY                                *FRIDAY..calendar.txt;*
-calendar.SATURDAY                            *SATURDAY..calendar.txt;*
-calendar.SUNDAY                                *SUNDAY..calendar.txt;*
+calendar.MONDAY                                 *MONDAY..calendar.txt*
+calendar.TUESDAY                               *TUESDAY..calendar.txt*
+calendar.WEDNESDAY                           *WEDNESDAY..calendar.txt*
+calendar.THURSDAY                             *THURSDAY..calendar.txt*
+calendar.FRIDAY                                 *FRIDAY..calendar.txt*
+calendar.SATURDAY                             *SATURDAY..calendar.txt*
+calendar.SUNDAY                                 *SUNDAY..calendar.txt*
 
    Aliases for the days of the week, where "MONDAY" is "0" and
    "SUNDAY" is "6".
 
    New in version 3.12.
 
-class calendar.Day                                *Day..calendar.txt;*
+class calendar.Day                                 *Day..calendar.txt*
 
    Enumeration defining days of the week as integer constants. The
    members of this enumeration are exported to the module scope as
@@ -409,39 +408,39 @@ class calendar.Day                                *Day..calendar.txt;*
 
    New in version 3.12.
 
-calendar.month_name                        *month_name..calendar.txt;*
+calendar.month_name                         *month_name..calendar.txt*
 
    An array that represents the months of the year in the current
    locale.  This follows normal convention of January being month
    number 1, so it has a length of 13 and  "month_name[0]" is the
    empty string.
 
-calendar.month_abbr                        *month_abbr..calendar.txt;*
+calendar.month_abbr                         *month_abbr..calendar.txt*
 
    An array that represents the abbreviated months of the year in the
    current locale.  This follows normal convention of January being
    month number 1, so it has a length of 13 and  "month_abbr[0]" is
    the empty string.
 
-calendar.JANUARY                              *JANUARY..calendar.txt;*
-calendar.FEBRUARY                            *FEBRUARY..calendar.txt;*
-calendar.MARCH                                  *MARCH..calendar.txt;*
-calendar.APRIL                                  *APRIL..calendar.txt;*
-calendar.MAY                                      *MAY..calendar.txt;*
-calendar.JUNE                                    *JUNE..calendar.txt;*
-calendar.JULY                                    *JULY..calendar.txt;*
-calendar.AUGUST                                *AUGUST..calendar.txt;*
-calendar.SEPTEMBER                          *SEPTEMBER..calendar.txt;*
-calendar.OCTOBER                              *OCTOBER..calendar.txt;*
-calendar.NOVEMBER                            *NOVEMBER..calendar.txt;*
-calendar.DECEMBER                            *DECEMBER..calendar.txt;*
+calendar.JANUARY                               *JANUARY..calendar.txt*
+calendar.FEBRUARY                             *FEBRUARY..calendar.txt*
+calendar.MARCH                                   *MARCH..calendar.txt*
+calendar.APRIL                                   *APRIL..calendar.txt*
+calendar.MAY                                       *MAY..calendar.txt*
+calendar.JUNE                                     *JUNE..calendar.txt*
+calendar.JULY                                     *JULY..calendar.txt*
+calendar.AUGUST                                 *AUGUST..calendar.txt*
+calendar.SEPTEMBER                           *SEPTEMBER..calendar.txt*
+calendar.OCTOBER                               *OCTOBER..calendar.txt*
+calendar.NOVEMBER                             *NOVEMBER..calendar.txt*
+calendar.DECEMBER                             *DECEMBER..calendar.txt*
 
    Aliases for the months of the year, where "JANUARY" is "1" and
    "DECEMBER" is "12".
 
    New in version 3.12.
 
-class calendar.Month                            *Month..calendar.txt;*
+class calendar.Month                             *Month..calendar.txt*
 
    Enumeration defining months of the year as integer constants. The
    members of this enumeration are exported to the module scope as
@@ -451,23 +450,23 @@ class calendar.Month                            *Month..calendar.txt;*
 
 The "calendar" module defines the following exceptions:
 
-                                    *IllegalMonthError..calendar.txt;*
+                                     *IllegalMonthError..calendar.txt*
 exception calendar.IllegalMonthError(month)
 
    A subclass of "ValueError", raised when the given month number is
    outside of the range 1-12 (inclusive).
 
-   month                         *IllegalMonthError.month..calendar.txt;*
+   month                          *IllegalMonthError.month..calendar.txt*
 
       The invalid month number.
 
-                                  *IllegalWeekdayError..calendar.txt;*
+                                   *IllegalWeekdayError..calendar.txt*
 exception calendar.IllegalWeekdayError(weekday)
 
    A subclass of "ValueError", raised when the given weekday number is
    outside of the range 0-6 (inclusive).
 
-   weekday                   *IllegalWeekdayError.weekday..calendar.txt;*
+   weekday                    *IllegalWeekdayError.weekday..calendar.txt*
 
       The invalid weekday number.
 

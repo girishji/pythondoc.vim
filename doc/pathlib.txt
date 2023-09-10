@@ -1,4 +1,4 @@
-*pathlib.txt;*                                Last change: 2023 Sep 09
+*pathlib.txt;*                                Last change: 2023 Sep 10
 
 "pathlib" — Object-oriented filesystem paths
 ********************************************
@@ -89,7 +89,7 @@ Opening a file:
 Exceptions
 ==========
 
-                                  *UnsupportedOperation..pathlib.txt;*
+                                   *UnsupportedOperation..pathlib.txt*
 exception pathlib.UnsupportedOperation
 
    An exception inheriting "NotImplementedError" that is raised when
@@ -105,7 +105,7 @@ Pure path objects provide path-handling operations which don’t
 actually access a filesystem.  There are three ways to access these
 classes, which we also call _flavours_:
 
-class pathlib.PurePath(*pathsegments)         *PurePath..pathlib.txt;*
+class pathlib.PurePath(*pathsegments)          *PurePath..pathlib.txt*
 
    A generic class that represents the system’s path flavour
    (instantiating it creates either a "PurePosixPath" or a
@@ -167,7 +167,7 @@ class pathlib.PurePath(*pathsegments)         *PurePath..pathlib.txt;*
    Changed in version 3.6: Added support for the "os.PathLike"
    interface.
 
-                                         *PurePosixPath..pathlib.txt;*
+                                          *PurePosixPath..pathlib.txt*
 class pathlib.PurePosixPath(*pathsegments)
 
    A subclass of "PurePath", this path flavour represents non-Windows
@@ -178,7 +178,7 @@ class pathlib.PurePosixPath(*pathsegments)
 <
    _pathsegments_ is specified similarly to "PurePath".
 
-                                       *PureWindowsPath..pathlib.txt;*
+                                        *PureWindowsPath..pathlib.txt*
 class pathlib.PureWindowsPath(*pathsegments)
 
    A subclass of "PurePath", this path flavour represents Windows
@@ -280,7 +280,7 @@ Accessing individual parts
 To access the individual “parts” (components) of a path, use the
 following property:
 
-PurePath.parts                          *PurePath.parts..pathlib.txt;*
+PurePath.parts                           *PurePath.parts..pathlib.txt*
 
    A tuple giving access to the path’s various components:
 >
@@ -300,14 +300,14 @@ Methods and properties
 
 Pure paths provide the following methods and properties:
 
-PurePath.pathmod                      *PurePath.pathmod..pathlib.txt;*
+PurePath.pathmod                       *PurePath.pathmod..pathlib.txt*
 
    The implementation of the "os.path" module used for low-level path
    operations: either "posixpath" or "ntpath".
 
    New in version 3.13.
 
-PurePath.drive                          *PurePath.drive..pathlib.txt;*
+PurePath.drive                           *PurePath.drive..pathlib.txt*
 
    A string representing the drive letter or name, if any:
 >
@@ -323,7 +323,7 @@ PurePath.drive                          *PurePath.drive..pathlib.txt;*
       >>> PureWindowsPath('//host/share/foo.txt').drive
       '\\\\host\\share'
 <
-PurePath.root                            *PurePath.root..pathlib.txt;*
+PurePath.root                             *PurePath.root..pathlib.txt*
 
    A string representing the (local or global) root, if any:
 >
@@ -357,7 +357,7 @@ PurePath.root                            *PurePath.root..pathlib.txt;*
      implementation-defined manner, although more than two leading
      slashes shall be treated as a single slash.”_
 
-PurePath.anchor                        *PurePath.anchor..pathlib.txt;*
+PurePath.anchor                         *PurePath.anchor..pathlib.txt*
 
    The concatenation of the drive and root:
 >
@@ -370,7 +370,7 @@ PurePath.anchor                        *PurePath.anchor..pathlib.txt;*
       >>> PureWindowsPath('//host/share').anchor
       '\\\\host\\share\\'
 <
-PurePath.parents                      *PurePath.parents..pathlib.txt;*
+PurePath.parents                       *PurePath.parents..pathlib.txt*
 
    An immutable sequence providing access to the logical ancestors of
    the path:
@@ -386,7 +386,7 @@ PurePath.parents                      *PurePath.parents..pathlib.txt;*
    Changed in version 3.10: The parents sequence now supports _slices_
    and negative index values.
 
-PurePath.parent                        *PurePath.parent..pathlib.txt;*
+PurePath.parent                         *PurePath.parent..pathlib.txt*
 
    The logical parent of the path:
 >
@@ -417,7 +417,7 @@ PurePath.parent                        *PurePath.parent..pathlib.txt;*
      recommended to first call "Path.resolve()" so as to resolve
      symlinks and eliminate "".."" components.
 
-PurePath.name                            *PurePath.name..pathlib.txt;*
+PurePath.name                             *PurePath.name..pathlib.txt*
 
    A string representing the final path component, excluding the drive
    and root, if any:
@@ -432,7 +432,7 @@ PurePath.name                            *PurePath.name..pathlib.txt;*
       >>> PureWindowsPath('//some/share').name
       ''
 <
-PurePath.suffix                        *PurePath.suffix..pathlib.txt;*
+PurePath.suffix                         *PurePath.suffix..pathlib.txt*
 
    The last dot-separated portion of the final component, if any:
 >
@@ -445,7 +445,7 @@ PurePath.suffix                        *PurePath.suffix..pathlib.txt;*
 <
    This is commonly called the file extension.
 
-PurePath.suffixes                    *PurePath.suffixes..pathlib.txt;*
+PurePath.suffixes                     *PurePath.suffixes..pathlib.txt*
 
    A list of the path’s suffixes, often called file extensions:
 >
@@ -456,7 +456,7 @@ PurePath.suffixes                    *PurePath.suffixes..pathlib.txt;*
       >>> PurePosixPath('my/library').suffixes
       []
 <
-PurePath.stem                            *PurePath.stem..pathlib.txt;*
+PurePath.stem                             *PurePath.stem..pathlib.txt*
 
    The final path component, without its suffix:
 >
@@ -467,7 +467,7 @@ PurePath.stem                            *PurePath.stem..pathlib.txt;*
       >>> PurePosixPath('my/library').stem
       'library'
 <
-PurePath.as_posix()                *PurePath.as_posix()..pathlib.txt;*
+PurePath.as_posix()                 *PurePath.as_posix()..pathlib.txt*
 
    Return a string representation of the path with forward slashes
    ("/"):
@@ -478,7 +478,7 @@ PurePath.as_posix()                *PurePath.as_posix()..pathlib.txt;*
       >>> p.as_posix()
       'c:/windows'
 <
-PurePath.as_uri()                    *PurePath.as_uri()..pathlib.txt;*
+PurePath.as_uri()                     *PurePath.as_uri()..pathlib.txt*
 
    Represent the path as a "file" URI.  "ValueError" is raised if the
    path isn’t absolute.
@@ -490,7 +490,7 @@ PurePath.as_uri()                    *PurePath.as_uri()..pathlib.txt;*
    >>> p.as_uri()
    'file:///c:/Windows'
 
-PurePath.is_absolute()          *PurePath.is_absolute()..pathlib.txt;*
+PurePath.is_absolute()           *PurePath.is_absolute()..pathlib.txt*
 
    Return whether the path is absolute or not.  A path is considered
    absolute if it has both a root and (if the flavour allows) a drive:
@@ -510,7 +510,7 @@ PurePath.is_absolute()          *PurePath.is_absolute()..pathlib.txt;*
       True
 <
 
-                             *PurePath.is_relative_to()..pathlib.txt;*
+                              *PurePath.is_relative_to()..pathlib.txt*
 PurePath.is_relative_to(other)
 
    Return whether or not this path is relative to the _other_ path.
@@ -527,7 +527,7 @@ PurePath.is_relative_to(other)
    Passing additional arguments is deprecated; if supplied, they are
    joined with _other_.
 
-PurePath.is_reserved()          *PurePath.is_reserved()..pathlib.txt;*
+PurePath.is_reserved()           *PurePath.is_reserved()..pathlib.txt*
 
    With "PureWindowsPath", return "True" if the path is considered
    reserved under Windows, "False" otherwise.  With "PurePosixPath",
@@ -541,7 +541,7 @@ PurePath.is_reserved()          *PurePath.is_reserved()..pathlib.txt;*
    File system calls on reserved paths can fail mysteriously or have
    unintended effects.
 
-PurePath.joinpath(*pathsegments)   *PurePath.joinpath()..pathlib.txt;*
+PurePath.joinpath(*pathsegments)    *PurePath.joinpath()..pathlib.txt*
 
    Calling this method is equivalent to combining the path with each
    of the given _pathsegments_ in turn:
@@ -556,7 +556,7 @@ PurePath.joinpath(*pathsegments)   *PurePath.joinpath()..pathlib.txt;*
       PureWindowsPath('c:/Program Files')
 <
 
-                                      *PurePath.match()..pathlib.txt;*
+                                       *PurePath.match()..pathlib.txt*
 PurePath.match(pattern, *, case_sensitive=None)
 
    Match this path against the provided glob-style pattern.  Return
@@ -603,7 +603,7 @@ PurePath.match(pattern, *, case_sensitive=None)
    was added. In previous versions, it acted like the non-recursive
    wildcard “"*"”.
 
-                                *PurePath.relative_to()..pathlib.txt;*
+                                 *PurePath.relative_to()..pathlib.txt*
 PurePath.relative_to(other, walk_up=False)
 
    Compute a version of this path relative to the path represented by
@@ -650,7 +650,7 @@ PurePath.relative_to(other, walk_up=False)
    Passing additional positional arguments is deprecated; if supplied,
    they are joined with _other_.
 
-PurePath.with_name(name)          *PurePath.with_name()..pathlib.txt;*
+PurePath.with_name(name)           *PurePath.with_name()..pathlib.txt*
 
    Return a new path with the "name" changed.  If the original path
    doesn’t have a name, ValueError is raised:
@@ -666,7 +666,7 @@ PurePath.with_name(name)          *PurePath.with_name()..pathlib.txt;*
           raise ValueError("%r has an empty name" % (self,))
       ValueError: PureWindowsPath('c:/') has an empty name
 <
-PurePath.with_stem(stem)          *PurePath.with_stem()..pathlib.txt;*
+PurePath.with_stem(stem)           *PurePath.with_stem()..pathlib.txt*
 
    Return a new path with the "stem" changed.  If the original path
    doesn’t have a name, ValueError is raised:
@@ -689,7 +689,7 @@ PurePath.with_stem(stem)          *PurePath.with_stem()..pathlib.txt;*
 <
    New in version 3.9.
 
-PurePath.with_suffix(suffix)    *PurePath.with_suffix()..pathlib.txt;*
+PurePath.with_suffix(suffix)     *PurePath.with_suffix()..pathlib.txt*
 
    Return a new path with the "suffix" changed.  If the original path
    doesn’t have a suffix, the new _suffix_ is appended instead.  If
@@ -706,7 +706,7 @@ PurePath.with_suffix(suffix)    *PurePath.with_suffix()..pathlib.txt;*
       PureWindowsPath('README')
 <
 
-                              *PurePath.with_segments()..pathlib.txt;*
+                               *PurePath.with_segments()..pathlib.txt*
 PurePath.with_segments(*pathsegments)
 
    Create a new path object of the same type by combining the given
@@ -740,7 +740,7 @@ to operations provided by the latter, they also provide methods to do
 system calls on path objects.  There are three ways to instantiate
 concrete paths:
 
-class pathlib.Path(*pathsegments)                 *Path..pathlib.txt;*
+class pathlib.Path(*pathsegments)                  *Path..pathlib.txt*
 
    A subclass of "PurePath", this class represents concrete paths of
    the system’s path flavour (instantiating it creates either a
@@ -751,7 +751,7 @@ class pathlib.Path(*pathsegments)                 *Path..pathlib.txt;*
 <
    _pathsegments_ is specified similarly to "PurePath".
 
-class pathlib.PosixPath(*pathsegments)       *PosixPath..pathlib.txt;*
+class pathlib.PosixPath(*pathsegments)        *PosixPath..pathlib.txt*
 
    A subclass of "Path" and "PurePosixPath", this class represents
    concrete non-Windows filesystem paths:
@@ -764,7 +764,7 @@ class pathlib.PosixPath(*pathsegments)       *PosixPath..pathlib.txt;*
    Changed in version 3.13: Raises "UnsupportedOperation" on Windows.
    In previous versions, "NotImplementedError" was raised instead.
 
-class pathlib.WindowsPath(*pathsegments)   *WindowsPath..pathlib.txt;*
+class pathlib.WindowsPath(*pathsegments)    *WindowsPath..pathlib.txt*
 
    A subclass of "Path" and "PureWindowsPath", this class represents
    concrete Windows filesystem paths:
@@ -810,7 +810,7 @@ Changed in version 3.8: "exists()", "is_dir()", "is_file()",
 exception for paths that contain characters unrepresentable at the OS
 level.
 
-classmethod Path.cwd()                      *Path.cwd()..pathlib.txt;*
+classmethod Path.cwd()                       *Path.cwd()..pathlib.txt*
 
    Return a new path object representing the current directory (as
    returned by "os.getcwd()"):
@@ -818,7 +818,7 @@ classmethod Path.cwd()                      *Path.cwd()..pathlib.txt;*
       >>> Path.cwd()
       PosixPath('/home/antoine/pathlib')
 <
-classmethod Path.home()                    *Path.home()..pathlib.txt;*
+classmethod Path.home()                     *Path.home()..pathlib.txt*
 
    Return a new path object representing the user’s home directory (as
    returned by "os.path.expanduser()" with "~" construct). If the home
@@ -829,7 +829,7 @@ classmethod Path.home()                    *Path.home()..pathlib.txt;*
 <
    New in version 3.5.
 
-Path.stat(*, follow_symlinks=True)         *Path.stat()..pathlib.txt;*
+Path.stat(*, follow_symlinks=True)          *Path.stat()..pathlib.txt*
 
    Return a "os.stat_result" object containing information about this
    path, like "os.stat()". The result is looked up at each call to
@@ -846,7 +846,7 @@ Path.stat(*, follow_symlinks=True)         *Path.stat()..pathlib.txt;*
 <
    Changed in version 3.10: The _follow_symlinks_ parameter was added.
 
-                                          *Path.chmod()..pathlib.txt;*
+                                           *Path.chmod()..pathlib.txt*
 Path.chmod(mode, *, follow_symlinks=True)
 
    Change the file mode and permissions, like "os.chmod()".
@@ -864,7 +864,7 @@ Path.chmod(mode, *, follow_symlinks=True)
 <
    Changed in version 3.10: The _follow_symlinks_ parameter was added.
 
-Path.exists(*, follow_symlinks=True)     *Path.exists()..pathlib.txt;*
+Path.exists(*, follow_symlinks=True)      *Path.exists()..pathlib.txt*
 
    Return "True" if the path points to an existing file or directory.
 
@@ -882,7 +882,7 @@ Path.exists(*, follow_symlinks=True)     *Path.exists()..pathlib.txt;*
 <
    Changed in version 3.12: The _follow_symlinks_ parameter was added.
 
-Path.expanduser()                    *Path.expanduser()..pathlib.txt;*
+Path.expanduser()                     *Path.expanduser()..pathlib.txt*
 
    Return a new path with expanded "~" and "~user" constructs, as
    returned by "os.path.expanduser()". If a home directory can’t be
@@ -894,7 +894,7 @@ Path.expanduser()                    *Path.expanduser()..pathlib.txt;*
 <
    New in version 3.5.
 
-                                           *Path.glob()..pathlib.txt;*
+                                            *Path.glob()..pathlib.txt*
 Path.glob(pattern, *, case_sensitive=None, follow_symlinks=None)
 
    Glob the given relative _pattern_ in the directory represented by
@@ -952,7 +952,7 @@ Path.glob(pattern, *, case_sensitive=None, follow_symlinks=None)
    will match both files and directories. Add a trailing slash to
    match only directories.
 
-Path.group()                              *Path.group()..pathlib.txt;*
+Path.group()                               *Path.group()..pathlib.txt*
 
    Return the name of the group owning the file.  "KeyError" is raised
    if the file’s gid isn’t found in the system database.
@@ -961,7 +961,7 @@ Path.group()                              *Path.group()..pathlib.txt;*
    module is not available. In previous versions,
    "NotImplementedError" was raised.
 
-Path.is_dir(*, follow_symlinks=True)     *Path.is_dir()..pathlib.txt;*
+Path.is_dir(*, follow_symlinks=True)      *Path.is_dir()..pathlib.txt*
 
    Return "True" if the path points to a directory, "False" if it
    points to another kind of file.
@@ -974,7 +974,7 @@ Path.is_dir(*, follow_symlinks=True)     *Path.is_dir()..pathlib.txt;*
 
    Changed in version 3.13: The _follow_symlinks_ parameter was added.
 
-Path.is_file(*, follow_symlinks=True)   *Path.is_file()..pathlib.txt;*
+Path.is_file(*, follow_symlinks=True)    *Path.is_file()..pathlib.txt*
 
    Return "True" if the path points to a regular file, "False" if it
    points to another kind of file.
@@ -987,14 +987,14 @@ Path.is_file(*, follow_symlinks=True)   *Path.is_file()..pathlib.txt;*
 
    Changed in version 3.13: The _follow_symlinks_ parameter was added.
 
-Path.is_junction()                  *Path.is_junction()..pathlib.txt;*
+Path.is_junction()                   *Path.is_junction()..pathlib.txt*
 
    Return "True" if the path points to a junction, and "False" for any
    other type of file. Currently only Windows supports junctions.
 
    New in version 3.12.
 
-Path.is_mount()                        *Path.is_mount()..pathlib.txt;*
+Path.is_mount()                         *Path.is_mount()..pathlib.txt*
 
    Return "True" if the path is a _mount point_: a point in a file
    system where a different file system has been mounted.  On POSIX,
@@ -1009,7 +1009,7 @@ Path.is_mount()                        *Path.is_mount()..pathlib.txt;*
 
    Changed in version 3.12: Windows support was added.
 
-Path.is_symlink()                    *Path.is_symlink()..pathlib.txt;*
+Path.is_symlink()                     *Path.is_symlink()..pathlib.txt*
 
    Return "True" if the path points to a symbolic link, "False"
    otherwise.
@@ -1017,7 +1017,7 @@ Path.is_symlink()                    *Path.is_symlink()..pathlib.txt;*
    "False" is also returned if the path doesn’t exist; other errors
    (such as permission errors) are propagated.
 
-Path.is_socket()                      *Path.is_socket()..pathlib.txt;*
+Path.is_socket()                       *Path.is_socket()..pathlib.txt*
 
    Return "True" if the path points to a Unix socket (or a symbolic
    link pointing to a Unix socket), "False" if it points to another
@@ -1026,7 +1026,7 @@ Path.is_socket()                      *Path.is_socket()..pathlib.txt;*
    "False" is also returned if the path doesn’t exist or is a broken
    symlink; other errors (such as permission errors) are propagated.
 
-Path.is_fifo()                          *Path.is_fifo()..pathlib.txt;*
+Path.is_fifo()                           *Path.is_fifo()..pathlib.txt*
 
    Return "True" if the path points to a FIFO (or a symbolic link
    pointing to a FIFO), "False" if it points to another kind of file.
@@ -1034,7 +1034,7 @@ Path.is_fifo()                          *Path.is_fifo()..pathlib.txt;*
    "False" is also returned if the path doesn’t exist or is a broken
    symlink; other errors (such as permission errors) are propagated.
 
-Path.is_block_device()          *Path.is_block_device()..pathlib.txt;*
+Path.is_block_device()           *Path.is_block_device()..pathlib.txt*
 
    Return "True" if the path points to a block device (or a symbolic
    link pointing to a block device), "False" if it points to another
@@ -1043,7 +1043,7 @@ Path.is_block_device()          *Path.is_block_device()..pathlib.txt;*
    "False" is also returned if the path doesn’t exist or is a broken
    symlink; other errors (such as permission errors) are propagated.
 
-Path.is_char_device()            *Path.is_char_device()..pathlib.txt;*
+Path.is_char_device()             *Path.is_char_device()..pathlib.txt*
 
    Return "True" if the path points to a character device (or a
    symbolic link pointing to a character device), "False" if it points
@@ -1052,7 +1052,7 @@ Path.is_char_device()            *Path.is_char_device()..pathlib.txt;*
    "False" is also returned if the path doesn’t exist or is a broken
    symlink; other errors (such as permission errors) are propagated.
 
-Path.iterdir()                          *Path.iterdir()..pathlib.txt;*
+Path.iterdir()                           *Path.iterdir()..pathlib.txt*
 
    When the path points to a directory, yield path objects of the
    directory contents:
@@ -1073,7 +1073,7 @@ Path.iterdir()                          *Path.iterdir()..pathlib.txt;*
    from or added to the directory after creating the iterator, whether
    a path object for that file be included is unspecified.
 
-                                           *Path.walk()..pathlib.txt;*
+                                            *Path.walk()..pathlib.txt*
 Path.walk(top_down=True, on_error=None, follow_symlinks=False)
 
    Generate the file names in a directory tree by walking the tree
@@ -1175,17 +1175,17 @@ Path.walk(top_down=True, on_error=None, follow_symlinks=False)
 <
    New in version 3.12.
 
-Path.lchmod(mode)                        *Path.lchmod()..pathlib.txt;*
+Path.lchmod(mode)                         *Path.lchmod()..pathlib.txt*
 
    Like "Path.chmod()" but, if the path points to a symbolic link, the
    symbolic link’s mode is changed rather than its target’s.
 
-Path.lstat()                              *Path.lstat()..pathlib.txt;*
+Path.lstat()                               *Path.lstat()..pathlib.txt*
 
    Like "Path.stat()" but, if the path points to a symbolic link,
    return the symbolic link’s information rather than its target’s.
 
-                                          *Path.mkdir()..pathlib.txt;*
+                                           *Path.mkdir()..pathlib.txt*
 Path.mkdir(mode=0o777, parents=False, exist_ok=False)
 
    Create a new directory at this given path.  If _mode_ is given, it
@@ -1210,7 +1210,7 @@ Path.mkdir(mode=0o777, parents=False, exist_ok=False)
 
    Changed in version 3.5: The _exist_ok_ parameter was added.
 
-                                           *Path.open()..pathlib.txt;*
+                                            *Path.open()..pathlib.txt*
 Path.open(mode='r', buffering=-1, encoding=None, errors=None, newline=None)
 
    Open the file pointed to by the path, like the built-in "open()"
@@ -1222,7 +1222,7 @@ Path.open(mode='r', buffering=-1, encoding=None, errors=None, newline=None)
       ...
       '#!/usr/bin/env python3\n'
 <
-Path.owner()                              *Path.owner()..pathlib.txt;*
+Path.owner()                               *Path.owner()..pathlib.txt*
 
    Return the name of the user owning the file.  "KeyError" is raised
    if the file’s uid isn’t found in the system database.
@@ -1231,7 +1231,7 @@ Path.owner()                              *Path.owner()..pathlib.txt;*
    module is not available. In previous versions,
    "NotImplementedError" was raised.
 
-Path.read_bytes()                    *Path.read_bytes()..pathlib.txt;*
+Path.read_bytes()                     *Path.read_bytes()..pathlib.txt*
 
    Return the binary contents of the pointed-to file as a bytes
    object:
@@ -1244,7 +1244,7 @@ Path.read_bytes()                    *Path.read_bytes()..pathlib.txt;*
 <
    New in version 3.5.
 
-                                      *Path.read_text()..pathlib.txt;*
+                                       *Path.read_text()..pathlib.txt*
 Path.read_text(encoding=None, errors=None)
 
    Return the decoded contents of the pointed-to file as a string:
@@ -1260,7 +1260,7 @@ Path.read_text(encoding=None, errors=None)
 
    New in version 3.5.
 
-Path.readlink()                        *Path.readlink()..pathlib.txt;*
+Path.readlink()                         *Path.readlink()..pathlib.txt*
 
    Return the path to which the symbolic link points (as returned by
    "os.readlink()"):
@@ -1276,7 +1276,7 @@ Path.readlink()                        *Path.readlink()..pathlib.txt;*
    "os.readlink()" is not available. In previous versions,
    "NotImplementedError" was raised.
 
-Path.rename(target)                      *Path.rename()..pathlib.txt;*
+Path.rename(target)                       *Path.rename()..pathlib.txt*
 
    Rename this file or directory to the given _target_, and return a
    new Path instance pointing to _target_.  On Unix, if _target_
@@ -1303,7 +1303,7 @@ Path.rename(target)                      *Path.rename()..pathlib.txt;*
    Changed in version 3.8: Added return value, return the new Path
    instance.
 
-Path.replace(target)                    *Path.replace()..pathlib.txt;*
+Path.replace(target)                     *Path.replace()..pathlib.txt*
 
    Rename this file or directory to the given _target_, and return a
    new Path instance pointing to _target_.  If _target_ points to an
@@ -1317,7 +1317,7 @@ Path.replace(target)                    *Path.replace()..pathlib.txt;*
    Changed in version 3.8: Added return value, return the new Path
    instance.
 
-Path.absolute()                        *Path.absolute()..pathlib.txt;*
+Path.absolute()                         *Path.absolute()..pathlib.txt*
 
    Make the path absolute, without normalization or resolving
    symlinks. Returns a new path object:
@@ -1328,7 +1328,7 @@ Path.absolute()                        *Path.absolute()..pathlib.txt;*
       >>> p.absolute()
       PosixPath('/home/antoine/pathlib/tests')
 <
-Path.resolve(strict=False)              *Path.resolve()..pathlib.txt;*
+Path.resolve(strict=False)               *Path.resolve()..pathlib.txt*
 
    Make the path absolute, resolving any symlinks.  A new path object
    is returned:
@@ -1355,7 +1355,7 @@ Path.resolve(strict=False)              *Path.resolve()..pathlib.txt;*
    Changed in version 3.6: The _strict_ parameter was added (pre-3.6
    behavior is strict).
 
-                                          *Path.rglob()..pathlib.txt;*
+                                           *Path.rglob()..pathlib.txt*
 Path.rglob(pattern, *, case_sensitive=None, follow_symlinks=None)
 
    Glob the given relative _pattern_ recursively.  This is like
@@ -1390,11 +1390,11 @@ Path.rglob(pattern, *, case_sensitive=None, follow_symlinks=None)
 
    Changed in version 3.13: The _follow_symlinks_ parameter was added.
 
-Path.rmdir()                              *Path.rmdir()..pathlib.txt;*
+Path.rmdir()                               *Path.rmdir()..pathlib.txt*
 
    Remove this directory.  The directory must be empty.
 
-Path.samefile(other_path)              *Path.samefile()..pathlib.txt;*
+Path.samefile(other_path)               *Path.samefile()..pathlib.txt*
 
    Return whether this path points to the same file as _other_path_,
    which can be either a Path object, or a string.  The semantics are
@@ -1412,7 +1412,7 @@ Path.samefile(other_path)              *Path.samefile()..pathlib.txt;*
 <
    New in version 3.5.
 
-                                     *Path.symlink_to()..pathlib.txt;*
+                                      *Path.symlink_to()..pathlib.txt*
 Path.symlink_to(target, target_is_directory=False)
 
    Make this path a symbolic link to _target_.  Under Windows,
@@ -1438,7 +1438,7 @@ Path.symlink_to(target, target_is_directory=False)
    "os.symlink()" is not available. In previous versions,
    "NotImplementedError" was raised.
 
-Path.hardlink_to(target)            *Path.hardlink_to()..pathlib.txt;*
+Path.hardlink_to(target)             *Path.hardlink_to()..pathlib.txt*
 
    Make this path a hard link to the same file as _target_.
 
@@ -1453,7 +1453,7 @@ Path.hardlink_to(target)            *Path.hardlink_to()..pathlib.txt;*
    "os.link()" is not available. In previous versions,
    "NotImplementedError" was raised.
 
-Path.touch(mode=0o666, exist_ok=True)     *Path.touch()..pathlib.txt;*
+Path.touch(mode=0o666, exist_ok=True)      *Path.touch()..pathlib.txt*
 
    Create a file at this given path.  If _mode_ is given, it is
    combined with the process’ "umask" value to determine the file mode
@@ -1462,7 +1462,7 @@ Path.touch(mode=0o666, exist_ok=True)     *Path.touch()..pathlib.txt;*
    updated to the current time), otherwise "FileExistsError" is
    raised.
 
-Path.unlink(missing_ok=False)            *Path.unlink()..pathlib.txt;*
+Path.unlink(missing_ok=False)             *Path.unlink()..pathlib.txt*
 
    Remove this file or symbolic link.  If the path points to a
    directory, use "Path.rmdir()" instead.
@@ -1475,7 +1475,7 @@ Path.unlink(missing_ok=False)            *Path.unlink()..pathlib.txt;*
 
    Changed in version 3.8: The _missing_ok_ parameter was added.
 
-Path.write_bytes(data)              *Path.write_bytes()..pathlib.txt;*
+Path.write_bytes(data)               *Path.write_bytes()..pathlib.txt*
 
    Open the file pointed to in bytes mode, write _data_ to it, and
    close the file:
@@ -1490,7 +1490,7 @@ Path.write_bytes(data)              *Path.write_bytes()..pathlib.txt;*
 
    New in version 3.5.
 
-                                     *Path.write_text()..pathlib.txt;*
+                                      *Path.write_text()..pathlib.txt*
 Path.write_text(data, encoding=None, errors=None, newline=None)
 
    Open the file pointed to in text mode, write _data_ to it, and

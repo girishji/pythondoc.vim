@@ -1,4 +1,4 @@
-*i18n.txt;*                                   Last change: 2023 Sep 09
+*i18n.txt;*                                   Last change: 2023 Sep 10
 
 Internationalization
 ********************

@@ -1,4 +1,4 @@
-*collectionsabc.txt;*                         Last change: 2023 Sep 09
+*collections.abc.txt;*                        Last change: 2023 Sep 10
 
 "collections.abc" — Abstract Base Classes for Containers
 ********************************************************
@@ -181,23 +181,23 @@ The collections module offers the following _ABCs_:
 Collections Abstract Base Classes – Detailed Descriptions
 =========================================================
 
-class collections.abc.Container       *Container..collectionsabc.txt;*
+class collections.abc.Container       *Container..collections.abc.txt*
 
    ABC for classes that provide the "__contains__()" method.
 
-class collections.abc.Hashable         *Hashable..collectionsabc.txt;*
+class collections.abc.Hashable         *Hashable..collections.abc.txt*
 
    ABC for classes that provide the "__hash__()" method.
 
-class collections.abc.Sized               *Sized..collectionsabc.txt;*
+class collections.abc.Sized               *Sized..collections.abc.txt*
 
    ABC for classes that provide the "__len__()" method.
 
-class collections.abc.Callable         *Callable..collectionsabc.txt;*
+class collections.abc.Callable         *Callable..collections.abc.txt*
 
    ABC for classes that provide the "__call__()" method.
 
-class collections.abc.Iterable         *Iterable..collectionsabc.txt;*
+class collections.abc.Iterable         *Iterable..collections.abc.txt*
 
    ABC for classes that provide the "__iter__()" method.
 
@@ -207,25 +207,25 @@ class collections.abc.Iterable         *Iterable..collectionsabc.txt;*
    method. The only reliable way to determine whether an object is
    _iterable_ is to call "iter(obj)".
 
-class collections.abc.Collection     *Collection..collectionsabc.txt;*
+class collections.abc.Collection     *Collection..collections.abc.txt*
 
    ABC for sized iterable container classes.
 
    New in version 3.6.
 
-class collections.abc.Iterator         *Iterator..collectionsabc.txt;*
+class collections.abc.Iterator         *Iterator..collections.abc.txt*
 
    ABC for classes that provide the "__iter__()" and "__next__()"
    methods.  See also the definition of _iterator_.
 
-class collections.abc.Reversible     *Reversible..collectionsabc.txt;*
+class collections.abc.Reversible     *Reversible..collections.abc.txt*
 
    ABC for iterable classes that also provide the "__reversed__()"
    method.
 
    New in version 3.6.
 
-class collections.abc.Generator       *Generator..collectionsabc.txt;*
+class collections.abc.Generator       *Generator..collections.abc.txt*
 
    ABC for generator classes that implement the protocol defined in
    **PEP 342** that extends iterators with the "send()", "throw()" and
@@ -233,11 +233,11 @@ class collections.abc.Generator       *Generator..collectionsabc.txt;*
 
    New in version 3.5.
 
-class collections.abc.Sequence         *Sequence..collectionsabc.txt;*
+class collections.abc.Sequence         *Sequence..collections.abc.txt*
 
-                                *MutableSequence..collectionsabc.txt;*
+                                *MutableSequence..collections.abc.txt*
 class collections.abc.MutableSequence
-class collections.abc.ByteString     *ByteString..collectionsabc.txt;*
+class collections.abc.ByteString     *ByteString..collections.abc.txt*
 
    ABCs for read-only and mutable _sequences_.
 
@@ -258,26 +258,26 @@ class collections.abc.ByteString     *ByteString..collectionsabc.txt;*
    union, like "bytes | bytearray", or "collections.abc.Buffer". For
    use as an ABC, prefer "Sequence" or "collections.abc.Buffer".
 
-class collections.abc.Set                   *Set..collectionsabc.txt;*
-class collections.abc.MutableSet     *MutableSet..collectionsabc.txt;*
+class collections.abc.Set                   *Set..collections.abc.txt*
+class collections.abc.MutableSet     *MutableSet..collections.abc.txt*
 
    ABCs for read-only and mutable sets.
 
-class collections.abc.Mapping           *Mapping..collectionsabc.txt;*
+class collections.abc.Mapping           *Mapping..collections.abc.txt*
 
-                                 *MutableMapping..collectionsabc.txt;*
+                                 *MutableMapping..collections.abc.txt*
 class collections.abc.MutableMapping
 
    ABCs for read-only and mutable _mappings_.
 
-class collections.abc.MappingView   *MappingView..collectionsabc.txt;*
-class collections.abc.ItemsView       *ItemsView..collectionsabc.txt;*
-class collections.abc.KeysView         *KeysView..collectionsabc.txt;*
-class collections.abc.ValuesView     *ValuesView..collectionsabc.txt;*
+class collections.abc.MappingView   *MappingView..collections.abc.txt*
+class collections.abc.ItemsView       *ItemsView..collections.abc.txt*
+class collections.abc.KeysView         *KeysView..collections.abc.txt*
+class collections.abc.ValuesView     *ValuesView..collections.abc.txt*
 
    ABCs for mapping, items, keys, and values _views_.
 
-class collections.abc.Awaitable       *Awaitable..collectionsabc.txt;*
+class collections.abc.Awaitable       *Awaitable..collections.abc.txt*
 
    ABC for _awaitable_ objects, which can be used in "await"
    expressions.  Custom implementations must provide the "__await__()"
@@ -296,7 +296,7 @@ class collections.abc.Awaitable       *Awaitable..collectionsabc.txt;*
 
    New in version 3.5.
 
-class collections.abc.Coroutine       *Coroutine..collectionsabc.txt;*
+class collections.abc.Coroutine       *Coroutine..collections.abc.txt*
 
    ABC for coroutine compatible classes.  These implement the
    following methods, defined in Coroutine Objects: "send()",
@@ -314,7 +314,7 @@ class collections.abc.Coroutine       *Coroutine..collectionsabc.txt;*
 
    New in version 3.5.
 
-                                  *AsyncIterable..collectionsabc.txt;*
+                                  *AsyncIterable..collections.abc.txt*
 class collections.abc.AsyncIterable
 
    ABC for classes that provide "__aiter__" method.  See also the
@@ -322,7 +322,7 @@ class collections.abc.AsyncIterable
 
    New in version 3.5.
 
-                                  *AsyncIterator..collectionsabc.txt;*
+                                  *AsyncIterator..collections.abc.txt*
 class collections.abc.AsyncIterator
 
    ABC for classes that provide "__aiter__" and "__anext__" methods.
@@ -330,7 +330,7 @@ class collections.abc.AsyncIterator
 
    New in version 3.5.
 
-                                 *AsyncGenerator..collectionsabc.txt;*
+                                 *AsyncGenerator..collections.abc.txt*
 class collections.abc.AsyncGenerator
 
    ABC for asynchronous generator classes that implement the protocol
@@ -338,7 +338,7 @@ class collections.abc.AsyncGenerator
 
    New in version 3.6.
 
-class collections.abc.Buffer             *Buffer..collectionsabc.txt;*
+class collections.abc.Buffer             *Buffer..collections.abc.txt*
 
    ABC for classes that provide the "__buffer__()" method,
    implementing the buffer protocol. See **PEP 688**.

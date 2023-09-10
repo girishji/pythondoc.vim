@@ -1,4 +1,4 @@
-*importlib.txt;*                              Last change: 2023 Sep 09
+*importlib.txt;*                              Last change: 2023 Sep 10
 
 "importlib" — The implementation of "import"
 ********************************************
@@ -91,7 +91,7 @@ See also:
 Functions
 =========
 
-                                        *__import__()..importlib.txt;*
+                                         *__import__()..importlib.txt*
 importlib.__import__(name, globals=None, locals=None, fromlist=(), level=0)
 
    An implementation of the built-in "__import__()" function.
@@ -101,7 +101,7 @@ importlib.__import__(name, globals=None, locals=None, fromlist=(), level=0)
      Programmatic importing of modules should use "import_module()"
      instead of this function.
 
-                                     *import_module()..importlib.txt;*
+                                      *import_module()..importlib.txt*
 importlib.import_module(name, package=None)
 
    Import a module. The _name_ argument specifies what module to
@@ -126,7 +126,7 @@ importlib.import_module(name, package=None)
 
    Changed in version 3.3: Parent packages are automatically imported.
 
-importlib.invalidate_caches()    *invalidate_caches()..importlib.txt;*
+importlib.invalidate_caches()     *invalidate_caches()..importlib.txt*
 
    Invalidate the internal caches of finders stored at
    "sys.meta_path". If a finder implements "invalidate_caches()" then
@@ -141,7 +141,7 @@ importlib.invalidate_caches()    *invalidate_caches()..importlib.txt;*
    different "sys.path" location after the same namespace was already
    imported are noticed.
 
-importlib.reload(module)                    *reload()..importlib.txt;*
+importlib.reload(module)                     *reload()..importlib.txt*
 
    Reload a previously imported _module_.  The argument must be a
    module object, so it must have been successfully imported before.
@@ -232,7 +232,7 @@ ABC hierarchy:
                                     +-- FileLoader
                                     +-- SourceLoader
 <
-class importlib.abc.MetaPathFinder    *MetaPathFinder..importlib.txt;*
+class importlib.abc.MetaPathFinder     *MetaPathFinder..importlib.txt*
 
    An abstract base class representing a _meta path finder_.
 
@@ -240,7 +240,7 @@ class importlib.abc.MetaPathFinder    *MetaPathFinder..importlib.txt;*
 
    Changed in version 3.10: No longer a subclass of "Finder".
 
-                          *MetaPathFinder.find_spec()..importlib.txt;*
+                           *MetaPathFinder.find_spec()..importlib.txt*
    find_spec(fullname, path, target=None)
 
       An abstract method for finding a _spec_ for the specified
@@ -255,7 +255,7 @@ class importlib.abc.MetaPathFinder    *MetaPathFinder..importlib.txt;*
 
       New in version 3.4.
 
-                  *MetaPathFinder.invalidate_caches()..importlib.txt;*
+                   *MetaPathFinder.invalidate_caches()..importlib.txt*
    invalidate_caches()
 
       An optional method which, when called, should invalidate any
@@ -266,8 +266,7 @@ class importlib.abc.MetaPathFinder    *MetaPathFinder..importlib.txt;*
       Changed in version 3.4: Returns "None" when called instead of
       "NotImplemented".
 
-                                     *PathEntryFinder..importlib.txt;*
-class importlib.abc.PathEntryFinder
+class importlib.abc.PathEntryFinder   *PathEntryFinder..importlib.txt*
 
    An abstract base class representing a _path entry finder_.  Though
    it bears some similarities to "MetaPathFinder", "PathEntryFinder"
@@ -278,7 +277,7 @@ class importlib.abc.PathEntryFinder
 
    Changed in version 3.10: No longer a subclass of "Finder".
 
-                         *PathEntryFinder.find_spec()..importlib.txt;*
+                          *PathEntryFinder.find_spec()..importlib.txt*
    find_spec(fullname, target=None)
 
       An abstract method for finding a _spec_ for the specified
@@ -291,7 +290,7 @@ class importlib.abc.PathEntryFinder
 
       New in version 3.4.
 
-                 *PathEntryFinder.invalidate_caches()..importlib.txt;*
+                  *PathEntryFinder.invalidate_caches()..importlib.txt*
    invalidate_caches()
 
       An optional method which, when called, should invalidate any
@@ -299,7 +298,7 @@ class importlib.abc.PathEntryFinder
       "importlib.machinery.PathFinder.invalidate_caches()" when
       invalidating the caches of all cached finders.
 
-class importlib.abc.Loader                    *Loader..importlib.txt;*
+class importlib.abc.Loader                     *Loader..importlib.txt*
 
    An abstract base class for a _loader_. See **PEP 302** for the
    exact definition for a loader.
@@ -311,7 +310,7 @@ class importlib.abc.Loader                    *Loader..importlib.txt;*
    Changed in version 3.7: Introduced the optional
    "get_resource_reader()" method.
 
-   create_module(spec)           *Loader.create_module()..importlib.txt;*
+   create_module(spec)            *Loader.create_module()..importlib.txt*
 
       A method that returns the module object to use when importing a
       module.  This method may return "None", indicating that default
@@ -322,7 +321,7 @@ class importlib.abc.Loader                    *Loader..importlib.txt;*
       Changed in version 3.6: This method is no longer optional when
       "exec_module()" is defined.
 
-   exec_module(module)             *Loader.exec_module()..importlib.txt;*
+   exec_module(module)              *Loader.exec_module()..importlib.txt*
 
       An abstract method that executes the module in its own namespace
       when a module is imported or reloaded.  The module should
@@ -333,7 +332,7 @@ class importlib.abc.Loader                    *Loader..importlib.txt;*
 
       Changed in version 3.6: "create_module()" must also be defined.
 
-   load_module(fullname)           *Loader.load_module()..importlib.txt;*
+   load_module(fullname)            *Loader.load_module()..importlib.txt*
 
       A legacy method for loading a module.  If the module cannot be
       loaded, "ImportError" is raised, otherwise the loaded module is
@@ -395,7 +394,7 @@ class importlib.abc.Loader                    *Loader..importlib.txt;*
       machinery takes care of all the other responsibilities of
       "load_module()" when "exec_module()" is implemented.
 
-class importlib.abc.ResourceLoader    *ResourceLoader..importlib.txt;*
+class importlib.abc.ResourceLoader     *ResourceLoader..importlib.txt*
 
    An abstract base class for a _loader_ which implements the optional
    **PEP 302** protocol for loading arbitrary resources from the
@@ -405,7 +404,7 @@ class importlib.abc.ResourceLoader    *ResourceLoader..importlib.txt;*
    supporting resource loading through
    "importlib.resources.abc.ResourceReader".
 
-                           *ResourceLoader.get_data()..importlib.txt;*
+                            *ResourceLoader.get_data()..importlib.txt*
    abstractmethod get_data(path)
 
       An abstract method to return the bytes for the data located at
@@ -419,12 +418,12 @@ class importlib.abc.ResourceLoader    *ResourceLoader..importlib.txt;*
       Changed in version 3.4: Raises "OSError" instead of
       "NotImplementedError".
 
-class importlib.abc.InspectLoader      *InspectLoader..importlib.txt;*
+class importlib.abc.InspectLoader       *InspectLoader..importlib.txt*
 
    An abstract base class for a _loader_ which implements the optional
    **PEP 302** protocol for loaders that inspect modules.
 
-   get_code(fullname)          *InspectLoader.get_code()..importlib.txt;*
+   get_code(fullname)           *InspectLoader.get_code()..importlib.txt*
 
       Return the code object for a module, or "None" if the module
       does not have a code object (as would be the case, for example,
@@ -439,7 +438,7 @@ class importlib.abc.InspectLoader      *InspectLoader..importlib.txt;*
       Changed in version 3.4: No longer abstract and a concrete
       implementation is provided.
 
-                          *InspectLoader.get_source()..importlib.txt;*
+                           *InspectLoader.get_source()..importlib.txt*
    abstractmethod get_source(fullname)
 
       An abstract method to return the source of a module. It is
@@ -452,7 +451,7 @@ class importlib.abc.InspectLoader      *InspectLoader..importlib.txt;*
       Changed in version 3.4: Raises "ImportError" instead of
       "NotImplementedError".
 
-   is_package(fullname)      *InspectLoader.is_package()..importlib.txt;*
+   is_package(fullname)       *InspectLoader.is_package()..importlib.txt*
 
       An optional method to return a true value if the module is a
       package, a false value otherwise. "ImportError" is raised if the
@@ -461,7 +460,7 @@ class importlib.abc.InspectLoader      *InspectLoader..importlib.txt;*
       Changed in version 3.4: Raises "ImportError" instead of
       "NotImplementedError".
 
-                      *InspectLoader.source_to_code()..importlib.txt;*
+                       *InspectLoader.source_to_code()..importlib.txt*
    static source_to_code(data, path='<string>')
 
       Create a code object from Python source.
@@ -478,26 +477,25 @@ class importlib.abc.InspectLoader      *InspectLoader..importlib.txt;*
 
       Changed in version 3.5: Made the method static.
 
-   exec_module(module)      *InspectLoader.exec_module()..importlib.txt;*
+   exec_module(module)       *InspectLoader.exec_module()..importlib.txt*
 
       Implementation of "Loader.exec_module()".
 
       New in version 3.4.
 
-   load_module(fullname)    *InspectLoader.load_module()..importlib.txt;*
+   load_module(fullname)     *InspectLoader.load_module()..importlib.txt*
 
       Implementation of "Loader.load_module()".
 
       Deprecated since version 3.4: use "exec_module()" instead.
 
-                                     *ExecutionLoader..importlib.txt;*
-class importlib.abc.ExecutionLoader
+class importlib.abc.ExecutionLoader   *ExecutionLoader..importlib.txt*
 
    An abstract base class which inherits from "InspectLoader" that,
    when implemented, helps a module to be executed as a script. The
    ABC represents an optional **PEP 302** protocol.
 
-                      *ExecutionLoader.get_filename()..importlib.txt;*
+                       *ExecutionLoader.get_filename()..importlib.txt*
    abstractmethod get_filename(fullname)
 
       An abstract method that is to return the value of "__file__" for
@@ -511,7 +509,7 @@ class importlib.abc.ExecutionLoader
       Changed in version 3.4: Raises "ImportError" instead of
       "NotImplementedError".
 
-                                          *FileLoader..importlib.txt;*
+                                           *FileLoader..importlib.txt*
 class importlib.abc.FileLoader(fullname, path)
 
    An abstract base class which inherits from "ResourceLoader" and
@@ -524,32 +522,31 @@ class importlib.abc.FileLoader(fullname, path)
 
    New in version 3.3.
 
-   name                                 *FileLoader.name..importlib.txt;*
+   name                                  *FileLoader.name..importlib.txt*
 
       The name of the module the loader can handle.
 
-   path                                 *FileLoader.path..importlib.txt;*
+   path                                  *FileLoader.path..importlib.txt*
 
       Path to the file of the module.
 
-   load_module(fullname)       *FileLoader.load_module()..importlib.txt;*
+   load_module(fullname)        *FileLoader.load_module()..importlib.txt*
 
       Calls super’s "load_module()".
 
       Deprecated since version 3.4: Use "Loader.exec_module()"
       instead.
 
-                           *FileLoader.get_filename()..importlib.txt;*
+                            *FileLoader.get_filename()..importlib.txt*
    abstractmethod get_filename(fullname)
 
       Returns "path".
 
-                               *FileLoader.get_data()..importlib.txt;*
-   abstractmethod get_data(path)
+   abstractmethod get_data(path)   *FileLoader.get_data()..importlib.txt*
 
       Reads _path_ as a binary file and returns the bytes from it.
 
-class importlib.abc.SourceLoader        *SourceLoader..importlib.txt;*
+class importlib.abc.SourceLoader         *SourceLoader..importlib.txt*
 
    An abstract base class for implementing source (and optionally
    bytecode) file loading. The class inherits from both
@@ -572,7 +569,7 @@ class importlib.abc.SourceLoader        *SourceLoader..importlib.txt;*
    parsing step of Python’s compiler, and so no bytecode-specific API
    is exposed.
 
-   path_stats(path)           *SourceLoader.path_stats()..importlib.txt;*
+   path_stats(path)            *SourceLoader.path_stats()..importlib.txt*
 
       Optional abstract method which returns a "dict" containing
       metadata about the specified path.  Supported dictionary keys
@@ -592,7 +589,7 @@ class importlib.abc.SourceLoader        *SourceLoader..importlib.txt;*
       Changed in version 3.4: Raise "OSError" instead of
       "NotImplementedError".
 
-   path_mtime(path)           *SourceLoader.path_mtime()..importlib.txt;*
+   path_mtime(path)            *SourceLoader.path_mtime()..importlib.txt*
 
       Optional abstract method which returns the modification time for
       the specified path.
@@ -605,7 +602,7 @@ class importlib.abc.SourceLoader        *SourceLoader..importlib.txt;*
       Changed in version 3.4: Raise "OSError" instead of
       "NotImplementedError".
 
-   set_data(path, data)         *SourceLoader.set_data()..importlib.txt;*
+   set_data(path, data)          *SourceLoader.set_data()..importlib.txt*
 
       Optional abstract method which writes the specified bytes to a
       file path. Any intermediate directories which do not exist are
@@ -618,27 +615,27 @@ class importlib.abc.SourceLoader        *SourceLoader..importlib.txt;*
       Changed in version 3.4: No longer raises "NotImplementedError"
       when called.
 
-   get_code(fullname)           *SourceLoader.get_code()..importlib.txt;*
+   get_code(fullname)            *SourceLoader.get_code()..importlib.txt*
 
       Concrete implementation of "InspectLoader.get_code()".
 
-   exec_module(module)       *SourceLoader.exec_module()..importlib.txt;*
+   exec_module(module)        *SourceLoader.exec_module()..importlib.txt*
 
       Concrete implementation of "Loader.exec_module()".
 
       New in version 3.4.
 
-   load_module(fullname)     *SourceLoader.load_module()..importlib.txt;*
+   load_module(fullname)      *SourceLoader.load_module()..importlib.txt*
 
       Concrete implementation of "Loader.load_module()".
 
       Deprecated since version 3.4: Use "exec_module()" instead.
 
-   get_source(fullname)       *SourceLoader.get_source()..importlib.txt;*
+   get_source(fullname)        *SourceLoader.get_source()..importlib.txt*
 
       Concrete implementation of "InspectLoader.get_source()".
 
-   is_package(fullname)       *SourceLoader.is_package()..importlib.txt;*
+   is_package(fullname)        *SourceLoader.is_package()..importlib.txt*
 
       Concrete implementation of "InspectLoader.is_package()". A
       module is determined to be a package if its file path (as
@@ -657,15 +654,14 @@ class importlib.abc.SourceLoader        *SourceLoader..importlib.txt;*
 This module contains the various objects that help "import" find and
 load modules.
 
-                                     *SOURCE_SUFFIXES..importlib.txt;*
-importlib.machinery.SOURCE_SUFFIXES
+importlib.machinery.SOURCE_SUFFIXES   *SOURCE_SUFFIXES..importlib.txt*
 
    A list of strings representing the recognized file suffixes for
    source modules.
 
    New in version 3.3.
 
-                             *DEBUG_BYTECODE_SUFFIXES..importlib.txt;*
+                              *DEBUG_BYTECODE_SUFFIXES..importlib.txt*
 importlib.machinery.DEBUG_BYTECODE_SUFFIXES
 
    A list of strings representing the file suffixes for non-optimized
@@ -675,7 +671,7 @@ importlib.machinery.DEBUG_BYTECODE_SUFFIXES
 
    Deprecated since version 3.5: Use "BYTECODE_SUFFIXES" instead.
 
-                         *OPTIMIZED_BYTECODE_SUFFIXES..importlib.txt;*
+                          *OPTIMIZED_BYTECODE_SUFFIXES..importlib.txt*
 importlib.machinery.OPTIMIZED_BYTECODE_SUFFIXES
 
    A list of strings representing the file suffixes for optimized
@@ -685,7 +681,7 @@ importlib.machinery.OPTIMIZED_BYTECODE_SUFFIXES
 
    Deprecated since version 3.5: Use "BYTECODE_SUFFIXES" instead.
 
-                                   *BYTECODE_SUFFIXES..importlib.txt;*
+                                    *BYTECODE_SUFFIXES..importlib.txt*
 importlib.machinery.BYTECODE_SUFFIXES
 
    A list of strings representing the recognized file suffixes for
@@ -696,7 +692,7 @@ importlib.machinery.BYTECODE_SUFFIXES
    Changed in version 3.5: The value is no longer dependent on
    "__debug__".
 
-                                  *EXTENSION_SUFFIXES..importlib.txt;*
+                                   *EXTENSION_SUFFIXES..importlib.txt*
 importlib.machinery.EXTENSION_SUFFIXES
 
    A list of strings representing the recognized file suffixes for
@@ -704,7 +700,7 @@ importlib.machinery.EXTENSION_SUFFIXES
 
    New in version 3.3.
 
-importlib.machinery.all_suffixes()    *all_suffixes()..importlib.txt;*
+importlib.machinery.all_suffixes()     *all_suffixes()..importlib.txt*
 
    Returns a combined list of strings representing all file suffixes
    for modules recognized by the standard import machinery. This is a
@@ -714,7 +710,7 @@ importlib.machinery.all_suffixes()    *all_suffixes()..importlib.txt;*
 
    New in version 3.3.
 
-                                     *BuiltinImporter..importlib.txt;*
+                                      *BuiltinImporter..importlib.txt*
 class importlib.machinery.BuiltinImporter
 
    An _importer_ for built-in modules. All known built-in modules are
@@ -729,7 +725,7 @@ class importlib.machinery.BuiltinImporter
    importer now implements "Loader.create_module()" and
    "Loader.exec_module()"
 
-                                      *FrozenImporter..importlib.txt;*
+                                       *FrozenImporter..importlib.txt*
 class importlib.machinery.FrozenImporter
 
    An _importer_ for frozen modules. This class implements the
@@ -742,7 +738,7 @@ class importlib.machinery.FrozenImporter
    Changed in version 3.4: Gained "create_module()" and
    "exec_module()" methods.
 
-                               *WindowsRegistryFinder..importlib.txt;*
+                                *WindowsRegistryFinder..importlib.txt*
 class importlib.machinery.WindowsRegistryFinder
 
    _Finder_ for modules declared in the Windows registry.  This class
@@ -756,7 +752,7 @@ class importlib.machinery.WindowsRegistryFinder
    Deprecated since version 3.6: Use "site" configuration instead.
    Future versions of Python may not enable this finder by default.
 
-class importlib.machinery.PathFinder      *PathFinder..importlib.txt;*
+class importlib.machinery.PathFinder       *PathFinder..importlib.txt*
 
    A _Finder_ for "sys.path" and package "__path__" attributes. This
    class implements the "importlib.abc.MetaPathFinder" ABC.
@@ -764,7 +760,7 @@ class importlib.machinery.PathFinder      *PathFinder..importlib.txt;*
    Only class methods are defined by this class to alleviate the need
    for instantiation.
 
-                              *PathFinder.find_spec()..importlib.txt;*
+                               *PathFinder.find_spec()..importlib.txt*
    classmethod find_spec(fullname, path=None, target=None)
 
       Class method that attempts to find a _spec_ for the module
@@ -784,7 +780,7 @@ class importlib.machinery.PathFinder      *PathFinder..importlib.txt;*
       represented by an empty string – is no longer valid then "None"
       is returned but no value is cached in "sys.path_importer_cache".
 
-                      *PathFinder.invalidate_caches()..importlib.txt;*
+                       *PathFinder.invalidate_caches()..importlib.txt*
    classmethod invalidate_caches()
 
       Calls "importlib.abc.PathEntryFinder.invalidate_caches()" on all
@@ -798,7 +794,7 @@ class importlib.machinery.PathFinder      *PathFinder..importlib.txt;*
    Changed in version 3.4: Calls objects in "sys.path_hooks" with the
    current working directory for "''" (i.e. the empty string).
 
-                                          *FileFinder..importlib.txt;*
+                                           *FileFinder..importlib.txt*
 class importlib.machinery.FileFinder(path, *loader_details)
 
    A concrete implementation of "importlib.abc.PathEntryFinder" which
@@ -825,22 +821,22 @@ class importlib.machinery.FileFinder(path, *loader_details)
 
    New in version 3.3.
 
-   path                                 *FileFinder.path..importlib.txt;*
+   path                                  *FileFinder.path..importlib.txt*
 
       The path the finder will search in.
 
-                              *FileFinder.find_spec()..importlib.txt;*
+                               *FileFinder.find_spec()..importlib.txt*
    find_spec(fullname, target=None)
 
       Attempt to find the spec to handle _fullname_ within "path".
 
       New in version 3.4.
 
-   invalidate_caches()   *FileFinder.invalidate_caches()..importlib.txt;*
+   invalidate_caches()    *FileFinder.invalidate_caches()..importlib.txt*
 
       Clear out the internal cache.
 
-                              *FileFinder.path_hook()..importlib.txt;*
+                               *FileFinder.path_hook()..importlib.txt*
    classmethod path_hook(*loader_details)
 
       A class method which returns a closure for use on
@@ -851,7 +847,7 @@ class importlib.machinery.FileFinder(path, *loader_details)
       If the argument to the closure is not an existing directory,
       "ImportError" is raised.
 
-                                    *SourceFileLoader..importlib.txt;*
+                                     *SourceFileLoader..importlib.txt*
 class importlib.machinery.SourceFileLoader(fullname, path)
 
    A concrete implementation of "importlib.abc.SourceLoader" by
@@ -860,29 +856,29 @@ class importlib.machinery.SourceFileLoader(fullname, path)
 
    New in version 3.3.
 
-   name                           *SourceFileLoader.name..importlib.txt;*
+   name                            *SourceFileLoader.name..importlib.txt*
 
       The name of the module that this loader will handle.
 
-   path                           *SourceFileLoader.path..importlib.txt;*
+   path                            *SourceFileLoader.path..importlib.txt*
 
       The path to the source file.
 
-   is_package(fullname)   *SourceFileLoader.is_package()..importlib.txt;*
+   is_package(fullname)    *SourceFileLoader.is_package()..importlib.txt*
 
       Return "True" if "path" appears to be for a package.
 
-   path_stats(path)       *SourceFileLoader.path_stats()..importlib.txt;*
+   path_stats(path)        *SourceFileLoader.path_stats()..importlib.txt*
 
       Concrete implementation of
       "importlib.abc.SourceLoader.path_stats()".
 
-   set_data(path, data)     *SourceFileLoader.set_data()..importlib.txt;*
+   set_data(path, data)      *SourceFileLoader.set_data()..importlib.txt*
 
       Concrete implementation of
       "importlib.abc.SourceLoader.set_data()".
 
-                      *SourceFileLoader.load_module()..importlib.txt;*
+                       *SourceFileLoader.load_module()..importlib.txt*
    load_module(name=None)
 
       Concrete implementation of "importlib.abc.Loader.load_module()"
@@ -891,7 +887,7 @@ class importlib.machinery.SourceFileLoader(fullname, path)
       Deprecated since version 3.6: Use
       "importlib.abc.Loader.exec_module()" instead.
 
-                                *SourcelessFileLoader..importlib.txt;*
+                                 *SourcelessFileLoader..importlib.txt*
 class importlib.machinery.SourcelessFileLoader(fullname, path)
 
    A concrete implementation of "importlib.abc.FileLoader" which can
@@ -904,30 +900,30 @@ class importlib.machinery.SourcelessFileLoader(fullname, path)
 
    New in version 3.3.
 
-   name                       *SourcelessFileLoader.name..importlib.txt;*
+   name                        *SourcelessFileLoader.name..importlib.txt*
 
       The name of the module the loader will handle.
 
-   path                       *SourcelessFileLoader.path..importlib.txt;*
+   path                        *SourcelessFileLoader.path..importlib.txt*
 
       The path to the bytecode file.
 
-                   *SourcelessFileLoader.is_package()..importlib.txt;*
+                    *SourcelessFileLoader.is_package()..importlib.txt*
    is_package(fullname)
 
       Determines if the module is a package based on "path".
 
-   get_code(fullname)   *SourcelessFileLoader.get_code()..importlib.txt;*
+   get_code(fullname)    *SourcelessFileLoader.get_code()..importlib.txt*
 
       Returns the code object for "name" created from "path".
 
-                   *SourcelessFileLoader.get_source()..importlib.txt;*
+                    *SourcelessFileLoader.get_source()..importlib.txt*
    get_source(fullname)
 
       Returns "None" as bytecode files have no source when this loader
       is used.
 
-                  *SourcelessFileLoader.load_module()..importlib.txt;*
+                   *SourcelessFileLoader.load_module()..importlib.txt*
    load_module(name=None)
 
    Concrete implementation of "importlib.abc.Loader.load_module()"
@@ -936,7 +932,7 @@ class importlib.machinery.SourcelessFileLoader(fullname, path)
    Deprecated since version 3.6: Use
    "importlib.abc.Loader.exec_module()" instead.
 
-                                 *ExtensionFileLoader..importlib.txt;*
+                                  *ExtensionFileLoader..importlib.txt*
 class importlib.machinery.ExtensionFileLoader(fullname, path)
 
    A concrete implementation of "importlib.abc.ExecutionLoader" for
@@ -955,15 +951,15 @@ class importlib.machinery.ExtensionFileLoader(fullname, path)
    Changed in version 3.12: Multi-phase init is now required for use
    in subinterpreters.
 
-   name                        *ExtensionFileLoader.name..importlib.txt;*
+   name                         *ExtensionFileLoader.name..importlib.txt*
 
       Name of the module the loader supports.
 
-   path                        *ExtensionFileLoader.path..importlib.txt;*
+   path                         *ExtensionFileLoader.path..importlib.txt*
 
       Path to the extension module.
 
-                 *ExtensionFileLoader.create_module()..importlib.txt;*
+                  *ExtensionFileLoader.create_module()..importlib.txt*
    create_module(spec)
 
       Creates the module object from the given specification in
@@ -971,7 +967,7 @@ class importlib.machinery.ExtensionFileLoader(fullname, path)
 
       New in version 3.5.
 
-                   *ExtensionFileLoader.exec_module()..importlib.txt;*
+                    *ExtensionFileLoader.exec_module()..importlib.txt*
    exec_module(module)
 
       Initializes the given module object in accordance with **PEP
@@ -979,22 +975,22 @@ class importlib.machinery.ExtensionFileLoader(fullname, path)
 
       New in version 3.5.
 
-                    *ExtensionFileLoader.is_package()..importlib.txt;*
+                     *ExtensionFileLoader.is_package()..importlib.txt*
    is_package(fullname)
 
       Returns "True" if the file path points to a package’s "__init__"
       module based on "EXTENSION_SUFFIXES".
 
-   get_code(fullname)    *ExtensionFileLoader.get_code()..importlib.txt;*
+   get_code(fullname)     *ExtensionFileLoader.get_code()..importlib.txt*
 
       Returns "None" as extension modules lack a code object.
 
-                    *ExtensionFileLoader.get_source()..importlib.txt;*
+                     *ExtensionFileLoader.get_source()..importlib.txt*
    get_source(fullname)
 
       Returns "None" as extension modules do not have source code.
 
-                  *ExtensionFileLoader.get_filename()..importlib.txt;*
+                   *ExtensionFileLoader.get_filename()..importlib.txt*
    get_filename(fullname)
 
       Returns "path".
@@ -1018,7 +1014,7 @@ NamespaceLoader(name, path, path_finder):
 <
    New in version 3.11.
 
-                                          *ModuleSpec..importlib.txt;*
+                                           *ModuleSpec..importlib.txt*
 class importlib.machinery.ModuleSpec(name, loader, *, origin=None, loader_state=None, is_package=None)
 
    A specification for a module’s import-system-related state.  This
@@ -1034,21 +1030,21 @@ class importlib.machinery.ModuleSpec(name, loader, *, origin=None, loader_state=
 
    New in version 3.4.
 
-   name                                 *ModuleSpec.name..importlib.txt;*
+   name                                  *ModuleSpec.name..importlib.txt*
 
    ("__name__")
 
    The module’s fully qualified name. The _finder_ should always set
    this attribute to a non-empty string.
 
-   loader                             *ModuleSpec.loader..importlib.txt;*
+   loader                              *ModuleSpec.loader..importlib.txt*
 
    ("__loader__")
 
    The _loader_ used to load the module. The _finder_ should always
    set this attribute.
 
-   origin                             *ModuleSpec.origin..importlib.txt;*
+   origin                              *ModuleSpec.origin..importlib.txt*
 
    ("__file__")
 
@@ -1058,7 +1054,7 @@ class importlib.machinery.ModuleSpec(name, loader, *, origin=None, loader_state=
    for the _loader_ to use.  In the uncommon case that there is not
    one (like for namespace packages), it should be set to "None".
 
-               *ModuleSpec.submodule_search_locations..importlib.txt;*
+                *ModuleSpec.submodule_search_locations..importlib.txt*
    submodule_search_locations
 
    ("__path__")
@@ -1070,13 +1066,13 @@ class importlib.machinery.ModuleSpec(name, loader, *, origin=None, loader_state=
    "None" for non-package modules.  It is set automatically later to a
    special object for namespace packages.
 
-   loader_state                 *ModuleSpec.loader_state..importlib.txt;*
+   loader_state                  *ModuleSpec.loader_state..importlib.txt*
 
    The _finder_ may set this attribute to an object containing
    additional, module-specific data to use when loading the module.
    Otherwise it should be set to "None".
 
-   cached                             *ModuleSpec.cached..importlib.txt;*
+   cached                              *ModuleSpec.cached..importlib.txt*
 
    ("__cached__")
 
@@ -1084,7 +1080,7 @@ class importlib.machinery.ModuleSpec(name, loader, *, origin=None, loader_state=
    _finder_ should always set this attribute but it may be "None" for
    modules that do not need compiled code stored.
 
-   parent                             *ModuleSpec.parent..importlib.txt;*
+   parent                              *ModuleSpec.parent..importlib.txt*
 
    ("__package__")
 
@@ -1092,7 +1088,7 @@ class importlib.machinery.ModuleSpec(name, loader, *, origin=None, loader_state=
    in (or the empty string for a top-level module). If the module is a
    package then this is the same as "name".
 
-   has_location                 *ModuleSpec.has_location..importlib.txt;*
+   has_location                  *ModuleSpec.has_location..importlib.txt*
 
    "True" if the spec’s "origin" refers to a loadable location,
       "False" otherwise.  This value impacts how "origin" is
@@ -1109,7 +1105,7 @@ class importlib.machinery.ModuleSpec(name, loader, *, origin=None, loader_state=
 This module contains the various objects that help in the construction
 of an _importer_.
 
-importlib.util.MAGIC_NUMBER             *MAGIC_NUMBER..importlib.txt;*
+importlib.util.MAGIC_NUMBER              *MAGIC_NUMBER..importlib.txt*
 
    The bytes which represent the bytecode version number. If you need
    help with loading/writing bytecode then consider
@@ -1117,7 +1113,7 @@ importlib.util.MAGIC_NUMBER             *MAGIC_NUMBER..importlib.txt;*
 
    New in version 3.4.
 
-                                 *cache_from_source()..importlib.txt;*
+                                  *cache_from_source()..importlib.txt*
 importlib.util.cache_from_source(path, debug_override=None, *, optimization=None)
 
    Return the **PEP 3147**/**PEP 488** path to the byte-compiled file
@@ -1154,7 +1150,7 @@ importlib.util.cache_from_source(path, debug_override=None, *, optimization=None
 
    Changed in version 3.6: Accepts a _path-like object_.
 
-                                 *source_from_cache()..importlib.txt;*
+                                  *source_from_cache()..importlib.txt*
 importlib.util.source_from_cache(path)
 
    Given the _path_ to a **PEP 3147** file name, return the associated
@@ -1169,7 +1165,7 @@ importlib.util.source_from_cache(path)
 
    Changed in version 3.6: Accepts a _path-like object_.
 
-                                     *decode_source()..importlib.txt;*
+                                      *decode_source()..importlib.txt*
 importlib.util.decode_source(source_bytes)
 
    Decode the given bytes representing source code and return it as a
@@ -1178,7 +1174,7 @@ importlib.util.decode_source(source_bytes)
 
    New in version 3.4.
 
-                                      *resolve_name()..importlib.txt;*
+                                       *resolve_name()..importlib.txt*
 importlib.util.resolve_name(name, package)
 
    Resolve a relative module name to an absolute one.
@@ -1200,7 +1196,7 @@ importlib.util.resolve_name(name, package)
    statements, raise "ImportError" instead of "ValueError" for invalid
    relative import attempts.
 
-                                         *find_spec()..importlib.txt;*
+                                          *find_spec()..importlib.txt*
 importlib.util.find_spec(name, package=None)
 
    Find the _spec_ for a module, optionally relative to the specified
@@ -1221,7 +1217,7 @@ importlib.util.find_spec(name, package=None)
    "AttributeError" if **package** is in fact not a package (i.e.
    lacks a "__path__" attribute).
 
-                                  *module_from_spec()..importlib.txt;*
+                                   *module_from_spec()..importlib.txt*
 importlib.util.module_from_spec(spec)
 
    Create a new module based on **spec** and
@@ -1238,7 +1234,7 @@ importlib.util.module_from_spec(spec)
 
    New in version 3.5.
 
-                                  *spec_from_loader()..importlib.txt;*
+                                   *spec_from_loader()..importlib.txt*
 importlib.util.spec_from_loader(name, loader, *, origin=None, is_package=None)
 
    A factory function for creating a "ModuleSpec" instance based on a
@@ -1249,7 +1245,7 @@ importlib.util.spec_from_loader(name, loader, *, origin=None, is_package=None)
 
    New in version 3.4.
 
-                           *spec_from_file_location()..importlib.txt;*
+                            *spec_from_file_location()..importlib.txt*
 importlib.util.spec_from_file_location(name, location, *, loader=None, submodule_search_locations=None)
 
    A factory function for creating a "ModuleSpec" instance based on
@@ -1261,7 +1257,7 @@ importlib.util.spec_from_file_location(name, location, *, loader=None, submodule
 
    Changed in version 3.6: Accepts a _path-like object_.
 
-                                       *source_hash()..importlib.txt;*
+                                        *source_hash()..importlib.txt*
 importlib.util.source_hash(source_bytes)
 
    Return the hash of _source_bytes_ as bytes. A hash-based ".pyc"
@@ -1270,7 +1266,7 @@ importlib.util.source_hash(source_bytes)
 
    New in version 3.7.
 
-       *_incompatible_extension_module_restrictions()..importlib.txt;*
+        *_incompatible_extension_module_restrictions()..importlib.txt*
 importlib.util._incompatible_extension_module_restrictions(*, disable_check)
 
    A context manager that can temporarily skip the compatibility check
@@ -1296,7 +1292,7 @@ importlib.util._incompatible_extension_module_restrictions(*, disable_check)
 
    New in version 3.12.
 
-class importlib.util.LazyLoader(loader)   *LazyLoader..importlib.txt;*
+class importlib.util.LazyLoader(loader)    *LazyLoader..importlib.txt*
 
    A class which postpones the execution of the loader of a module
    until the module has an attribute accessed.
@@ -1326,7 +1322,7 @@ class importlib.util.LazyLoader(loader)   *LazyLoader..importlib.txt;*
    the compatibility warning for "importlib.machinery.BuiltinImporter"
    and "importlib.machinery.ExtensionFileLoader".
 
-   classmethod factory(loader)     *LazyLoader.factory()..importlib.txt;*
+   classmethod factory(loader)      *LazyLoader.factory()..importlib.txt*
 
       A class method which returns a callable that creates a lazy
       loader. This is meant to be used in situations where the loader

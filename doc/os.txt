@@ -1,4 +1,4 @@
-*os.txt;*                                     Last change: 2023 Sep 09
+*os.txt;*                                     Last change: 2023 Sep 10
 
 "os" — Miscellaneous operating system interfaces
 ************************************************
@@ -48,11 +48,11 @@ Note:
   other arguments that have the correct type, but are not accepted by
   the operating system.
 
-exception os.error                                    *error..os.txt;*
+exception os.error                                     *error..os.txt*
 
    An alias for the built-in "OSError" exception.
 
-os.name                                                *name..os.txt;*
+os.name                                                 *name..os.txt*
 
    The name of the operating system dependent module imported.  The
    following names have currently been registered: "'posix'", "'nt'",
@@ -166,14 +166,14 @@ Process Parameters
 These functions and data items provide information and operate on the
 current process and user.
 
-os.ctermid()                                      *ctermid()..os.txt;*
+os.ctermid()                                       *ctermid()..os.txt*
 
    Return the filename corresponding to the controlling terminal of
    the process.
 
    Availability: Unix, not Emscripten, not WASI.
 
-os.environ                                          *environ..os.txt;*
+os.environ                                           *environ..os.txt*
 
    A _mapping_ object where keys and values are strings that represent
    the process environment.  For example, "environ['HOME']" is the
@@ -218,7 +218,7 @@ os.environ                                          *environ..os.txt;*
    Changed in version 3.9: Updated to support **PEP 584**’s merge
    ("|") and update ("|=") operators.
 
-os.environb                                        *environb..os.txt;*
+os.environb                                         *environb..os.txt*
 
    Bytes version of "environ": a _mapping_ object where both keys and
    values are "bytes" objects representing the process environment.
@@ -232,13 +232,13 @@ os.environb                                        *environb..os.txt;*
    Changed in version 3.9: Updated to support **PEP 584**’s merge
    ("|") and update ("|=") operators.
 
-os.chdir(path)                                      *chdir()..os.txt;*
-os.fchdir(fd)                                      *fchdir()..os.txt;*
-os.getcwd()                                        *getcwd()..os.txt;*
+os.chdir(path)                                       *chdir()..os.txt*
+os.fchdir(fd)                                       *fchdir()..os.txt*
+os.getcwd()                                         *getcwd()..os.txt*
 
    These functions are described in Files and Directories.
 
-os.fsencode(filename)                            *fsencode()..os.txt;*
+os.fsencode(filename)                             *fsencode()..os.txt*
 
    Encode _path-like_ _filename_ to the _filesystem encoding and error
    handler_; return "bytes" unchanged.
@@ -250,7 +250,7 @@ os.fsencode(filename)                            *fsencode()..os.txt;*
    Changed in version 3.6: Support added to accept objects
    implementing the "os.PathLike" interface.
 
-os.fsdecode(filename)                            *fsdecode()..os.txt;*
+os.fsdecode(filename)                             *fsdecode()..os.txt*
 
    Decode the _path-like_ _filename_ from the _filesystem encoding and
    error handler_; return "str" unchanged.
@@ -262,7 +262,7 @@ os.fsdecode(filename)                            *fsdecode()..os.txt;*
    Changed in version 3.6: Support added to accept objects
    implementing the "os.PathLike" interface.
 
-os.fspath(path)                                    *fspath()..os.txt;*
+os.fspath(path)                                     *fspath()..os.txt*
 
    Return the file system representation of the path.
 
@@ -273,21 +273,21 @@ os.fspath(path)                                    *fspath()..os.txt;*
 
    New in version 3.6.
 
-class os.PathLike                                  *PathLike..os.txt;*
+class os.PathLike                                   *PathLike..os.txt*
 
    An _abstract base class_ for objects representing a file system
    path, e.g. "pathlib.PurePath".
 
    New in version 3.6.
 
-   abstractmethod __fspath__()           *PathLike.__fspath__()..os.txt;*
+   abstractmethod __fspath__()            *PathLike.__fspath__()..os.txt*
 
       Return the file system path representation of the object.
 
       The method should only return a "str" or "bytes" object, with
       the preference being for "str".
 
-os.getenv(key, default=None)                       *getenv()..os.txt;*
+os.getenv(key, default=None)                        *getenv()..os.txt*
 
    Return the value of the environment variable _key_ as a string if
    it exists, or _default_ if it doesn’t. _key_ is a string. Note that
@@ -302,7 +302,7 @@ os.getenv(key, default=None)                       *getenv()..os.txt;*
 
    Availability: Unix, Windows.
 
-os.getenvb(key, default=None)                     *getenvb()..os.txt;*
+os.getenvb(key, default=None)                      *getenvb()..os.txt*
 
    Return the value of the environment variable _key_ as bytes if it
    exists, or _default_ if it doesn’t. _key_ must be bytes. Note that
@@ -317,7 +317,7 @@ os.getenvb(key, default=None)                     *getenvb()..os.txt;*
 
    New in version 3.2.
 
-os.get_exec_path(env=None)                  *get_exec_path()..os.txt;*
+os.get_exec_path(env=None)                   *get_exec_path()..os.txt*
 
    Returns the list of directories that will be searched for a named
    executable, similar to a shell, when launching a process. _env_,
@@ -327,7 +327,7 @@ os.get_exec_path(env=None)                  *get_exec_path()..os.txt;*
 
    New in version 3.2.
 
-os.getegid()                                      *getegid()..os.txt;*
+os.getegid()                                       *getegid()..os.txt*
 
    Return the effective group id of the current process.  This
    corresponds to the “set id” bit on the file being executed in the
@@ -335,13 +335,13 @@ os.getegid()                                      *getegid()..os.txt;*
 
    Availability: Unix, not Emscripten, not WASI.
 
-os.geteuid()                                      *geteuid()..os.txt;*
+os.geteuid()                                       *geteuid()..os.txt*
 
    Return the current process’s effective user id.
 
    Availability: Unix, not Emscripten, not WASI.
 
-os.getgid()                                        *getgid()..os.txt;*
+os.getgid()                                         *getgid()..os.txt*
 
    Return the real group id of the current process.
 
@@ -350,7 +350,7 @@ os.getgid()                                        *getgid()..os.txt;*
    The function is a stub on Emscripten and WASI, see WebAssembly
    platforms for more information.
 
-os.getgrouplist(user, group, /)              *getgrouplist()..os.txt;*
+os.getgrouplist(user, group, /)               *getgrouplist()..os.txt*
 
    Return list of group ids that _user_ belongs to. If _group_ is not
    in the list, it is included; typically, _group_ is specified as the
@@ -361,7 +361,7 @@ os.getgrouplist(user, group, /)              *getgrouplist()..os.txt;*
 
    New in version 3.3.
 
-os.getgroups()                                  *getgroups()..os.txt;*
+os.getgroups()                                   *getgroups()..os.txt*
 
    Return list of supplemental group ids associated with the current
    process.
@@ -385,7 +385,7 @@ os.getgroups()                                  *getgroups()..os.txt;*
      "MACOSX_DEPLOYMENT_TARGET", can be obtained with
      "sysconfig.get_config_var()".
 
-os.getlogin()                                    *getlogin()..os.txt;*
+os.getlogin()                                     *getlogin()..os.txt*
 
    Return the name of the user logged in on the controlling terminal
    of the process.  For most purposes, it is more useful to use
@@ -396,7 +396,7 @@ os.getlogin()                                    *getlogin()..os.txt;*
 
    Availability: Unix, Windows, not Emscripten, not WASI.
 
-os.getpgid(pid)                                   *getpgid()..os.txt;*
+os.getpgid(pid)                                    *getpgid()..os.txt*
 
    Return the process group id of the process with process id _pid_.
    If _pid_ is 0, the process group id of the current process is
@@ -404,20 +404,20 @@ os.getpgid(pid)                                   *getpgid()..os.txt;*
 
    Availability: Unix, not Emscripten, not WASI.
 
-os.getpgrp()                                      *getpgrp()..os.txt;*
+os.getpgrp()                                       *getpgrp()..os.txt*
 
    Return the id of the current process group.
 
    Availability: Unix, not Emscripten, not WASI.
 
-os.getpid()                                        *getpid()..os.txt;*
+os.getpid()                                         *getpid()..os.txt*
 
    Return the current process id.
 
    The function is a stub on Emscripten and WASI, see WebAssembly
    platforms for more information.
 
-os.getppid()                                      *getppid()..os.txt;*
+os.getppid()                                       *getppid()..os.txt*
 
    Return the parent’s process id.  When the parent process has
    exited, on Unix the id returned is the one of the init process (1),
@@ -428,7 +428,7 @@ os.getppid()                                      *getppid()..os.txt;*
 
    Changed in version 3.2: Added support for Windows.
 
-os.getpriority(which, who)                    *getpriority()..os.txt;*
+os.getpriority(which, who)                     *getpriority()..os.txt*
 
    Get program scheduling priority.  The value _which_ is one of
    "PRIO_PROCESS", "PRIO_PGRP", or "PRIO_USER", and _who_ is
@@ -442,9 +442,9 @@ os.getpriority(which, who)                    *getpriority()..os.txt;*
 
    New in version 3.3.
 
-os.PRIO_PROCESS                                *PRIO_PROCESS..os.txt;*
-os.PRIO_PGRP                                      *PRIO_PGRP..os.txt;*
-os.PRIO_USER                                      *PRIO_USER..os.txt;*
+os.PRIO_PROCESS                                 *PRIO_PROCESS..os.txt*
+os.PRIO_PGRP                                       *PRIO_PGRP..os.txt*
+os.PRIO_USER                                       *PRIO_USER..os.txt*
 
    Parameters for the "getpriority()" and "setpriority()" functions.
 
@@ -452,10 +452,10 @@ os.PRIO_USER                                      *PRIO_USER..os.txt;*
 
    New in version 3.3.
 
-os.PRIO_DARWIN_THREAD                    *PRIO_DARWIN_THREAD..os.txt;*
-os.PRIO_DARWIN_PROCESS                  *PRIO_DARWIN_PROCESS..os.txt;*
-os.PRIO_DARWIN_BG                            *PRIO_DARWIN_BG..os.txt;*
-os.PRIO_DARWIN_NONUI                      *PRIO_DARWIN_NONUI..os.txt;*
+os.PRIO_DARWIN_THREAD                     *PRIO_DARWIN_THREAD..os.txt*
+os.PRIO_DARWIN_PROCESS                   *PRIO_DARWIN_PROCESS..os.txt*
+os.PRIO_DARWIN_BG                             *PRIO_DARWIN_BG..os.txt*
+os.PRIO_DARWIN_NONUI                       *PRIO_DARWIN_NONUI..os.txt*
 
    Parameters for the "getpriority()" and "setpriority()" functions.
 
@@ -463,7 +463,7 @@ os.PRIO_DARWIN_NONUI                      *PRIO_DARWIN_NONUI..os.txt;*
 
    New in version 3.12.
 
-os.getresuid()                                  *getresuid()..os.txt;*
+os.getresuid()                                   *getresuid()..os.txt*
 
    Return a tuple (ruid, euid, suid) denoting the current process’s
    real, effective, and saved user ids.
@@ -472,7 +472,7 @@ os.getresuid()                                  *getresuid()..os.txt;*
 
    New in version 3.2.
 
-os.getresgid()                                  *getresgid()..os.txt;*
+os.getresgid()                                   *getresgid()..os.txt*
 
    Return a tuple (rgid, egid, sgid) denoting the current process’s
    real, effective, and saved group ids.
@@ -481,7 +481,7 @@ os.getresgid()                                  *getresgid()..os.txt;*
 
    New in version 3.2.
 
-os.getuid()                                        *getuid()..os.txt;*
+os.getuid()                                         *getuid()..os.txt*
 
    Return the current process’s real user id.
 
@@ -490,7 +490,7 @@ os.getuid()                                        *getuid()..os.txt;*
    The function is a stub on Emscripten and WASI, see WebAssembly
    platforms for more information.
 
-os.initgroups(username, gid, /)                *initgroups()..os.txt;*
+os.initgroups(username, gid, /)                 *initgroups()..os.txt*
 
    Call the system initgroups() to initialize the group access list
    with all of the groups of which the specified username is a member,
@@ -500,7 +500,7 @@ os.initgroups(username, gid, /)                *initgroups()..os.txt;*
 
    New in version 3.2.
 
-os.putenv(key, value, /)                           *putenv()..os.txt;*
+os.putenv(key, value, /)                            *putenv()..os.txt*
 
    Set the environment variable named _key_ to the string _value_.
    Such changes to the environment affect subprocesses started with
@@ -523,25 +523,25 @@ os.putenv(key, value, /)                           *putenv()..os.txt;*
 
    Changed in version 3.9: The function is now always available.
 
-os.setegid(egid, /)                               *setegid()..os.txt;*
+os.setegid(egid, /)                                *setegid()..os.txt*
 
    Set the current process’s effective group id.
 
    Availability: Unix, not Emscripten, not WASI.
 
-os.seteuid(euid, /)                               *seteuid()..os.txt;*
+os.seteuid(euid, /)                                *seteuid()..os.txt*
 
    Set the current process’s effective user id.
 
    Availability: Unix, not Emscripten, not WASI.
 
-os.setgid(gid, /)                                  *setgid()..os.txt;*
+os.setgid(gid, /)                                   *setgid()..os.txt*
 
    Set the current process’ group id.
 
    Availability: Unix, not Emscripten, not WASI.
 
-os.setgroups(groups, /)                         *setgroups()..os.txt;*
+os.setgroups(groups, /)                          *setgroups()..os.txt*
 
    Set the list of supplemental group ids associated with the current
    process to _groups_. _groups_ must be a sequence, and each element
@@ -557,7 +557,7 @@ os.setgroups(groups, /)                         *setgroups()..os.txt;*
      the documentation for "getgroups()" for cases where it may not
      return the same group list set by calling setgroups().
 
-os.setns(fd, nstype=0)                              *setns()..os.txt;*
+os.setns(fd, nstype=0)                               *setns()..os.txt*
 
    Reassociate the current thread with a Linux namespace. See the
    _setns(2)_ and _namespaces(7)_ man pages for more details.
@@ -592,7 +592,7 @@ os.setns(fd, nstype=0)                              *setns()..os.txt;*
 
    See also: The "unshare()" function.
 
-os.setpgrp()                                      *setpgrp()..os.txt;*
+os.setpgrp()                                       *setpgrp()..os.txt*
 
    Call the system call "setpgrp()" or "setpgrp(0, 0)" depending on
    which version is implemented (if any).  See the Unix manual for the
@@ -600,7 +600,7 @@ os.setpgrp()                                      *setpgrp()..os.txt;*
 
    Availability: Unix, not Emscripten, not WASI.
 
-os.setpgid(pid, pgrp, /)                          *setpgid()..os.txt;*
+os.setpgid(pid, pgrp, /)                           *setpgid()..os.txt*
 
    Call the system call "setpgid()" to set the process group id of the
    process with id _pid_ to the process group with id _pgrp_.  See the
@@ -608,7 +608,7 @@ os.setpgid(pid, pgrp, /)                          *setpgid()..os.txt;*
 
    Availability: Unix, not Emscripten, not WASI.
 
-os.setpriority(which, who, priority)          *setpriority()..os.txt;*
+os.setpriority(which, who, priority)           *setpriority()..os.txt*
 
    Set program scheduling priority. The value _which_ is one of
    "PRIO_PROCESS", "PRIO_PGRP", or "PRIO_USER", and _who_ is
@@ -624,13 +624,13 @@ os.setpriority(which, who, priority)          *setpriority()..os.txt;*
 
    New in version 3.3.
 
-os.setregid(rgid, egid, /)                       *setregid()..os.txt;*
+os.setregid(rgid, egid, /)                        *setregid()..os.txt*
 
    Set the current process’s real and effective group ids.
 
    Availability: Unix, not Emscripten, not WASI.
 
-os.setresgid(rgid, egid, sgid, /)               *setresgid()..os.txt;*
+os.setresgid(rgid, egid, sgid, /)                *setresgid()..os.txt*
 
    Set the current process’s real, effective, and saved group ids.
 
@@ -638,7 +638,7 @@ os.setresgid(rgid, egid, sgid, /)               *setresgid()..os.txt;*
 
    New in version 3.2.
 
-os.setresuid(ruid, euid, suid, /)               *setresuid()..os.txt;*
+os.setresuid(ruid, euid, suid, /)                *setresuid()..os.txt*
 
    Set the current process’s real, effective, and saved user ids.
 
@@ -646,53 +646,53 @@ os.setresuid(ruid, euid, suid, /)               *setresuid()..os.txt;*
 
    New in version 3.2.
 
-os.setreuid(ruid, euid, /)                       *setreuid()..os.txt;*
+os.setreuid(ruid, euid, /)                        *setreuid()..os.txt*
 
    Set the current process’s real and effective user ids.
 
    Availability: Unix, not Emscripten, not WASI.
 
-os.getsid(pid, /)                                  *getsid()..os.txt;*
+os.getsid(pid, /)                                   *getsid()..os.txt*
 
    Call the system call "getsid()".  See the Unix manual for the
    semantics.
 
    Availability: Unix, not Emscripten, not WASI.
 
-os.setsid()                                        *setsid()..os.txt;*
+os.setsid()                                         *setsid()..os.txt*
 
    Call the system call "setsid()".  See the Unix manual for the
    semantics.
 
    Availability: Unix, not Emscripten, not WASI.
 
-os.setuid(uid, /)                                  *setuid()..os.txt;*
+os.setuid(uid, /)                                   *setuid()..os.txt*
 
    Set the current process’s user id.
 
    Availability: Unix, not Emscripten, not WASI.
 
-os.strerror(code, /)                             *strerror()..os.txt;*
+os.strerror(code, /)                              *strerror()..os.txt*
 
    Return the error message corresponding to the error code in _code_.
    On platforms where "strerror()" returns "NULL" when given an
    unknown error number, "ValueError" is raised.
 
-os.supports_bytes_environ            *supports_bytes_environ..os.txt;*
+os.supports_bytes_environ             *supports_bytes_environ..os.txt*
 
    "True" if the native OS type of the environment is bytes (eg.
    "False" on Windows).
 
    New in version 3.2.
 
-os.umask(mask, /)                                   *umask()..os.txt;*
+os.umask(mask, /)                                    *umask()..os.txt*
 
    Set the current numeric umask and return the previous umask.
 
    The function is a stub on Emscripten and WASI, see WebAssembly
    platforms for more information.
 
-os.uname()                                          *uname()..os.txt;*
+os.uname()                                           *uname()..os.txt*
 
    Returns information identifying the current operating system. The
    return value is an object with five attributes:
@@ -721,7 +721,7 @@ os.uname()                                          *uname()..os.txt;*
    Changed in version 3.3: Return type changed from a tuple to a
    tuple-like object with named attributes.
 
-os.unsetenv(key, /)                              *unsetenv()..os.txt;*
+os.unsetenv(key, /)                               *unsetenv()..os.txt*
 
    Unset (delete) the environment variable named _key_. Such changes
    to the environment affect subprocesses started with "os.system()",
@@ -737,7 +737,7 @@ os.unsetenv(key, /)                              *unsetenv()..os.txt;*
    Changed in version 3.9: The function is now always available and is
    also available on Windows.
 
-os.unshare(flags)                                 *unshare()..os.txt;*
+os.unshare(flags)                                  *unshare()..os.txt*
 
    Disassociate parts of the process execution context, and move them
    into a newly created namespace. See the _unshare(2)_ man page for
@@ -758,20 +758,20 @@ Flags to the "unshare()" function, if the implementation supports
 them. See _unshare(2)_ in the Linux manual for their exact effect and
 availability.
 
-os.CLONE_FILES                                  *CLONE_FILES..os.txt;*
-os.CLONE_FS                                        *CLONE_FS..os.txt;*
-os.CLONE_NEWCGROUP                          *CLONE_NEWCGROUP..os.txt;*
-os.CLONE_NEWIPC                                *CLONE_NEWIPC..os.txt;*
-os.CLONE_NEWNET                                *CLONE_NEWNET..os.txt;*
-os.CLONE_NEWNS                                  *CLONE_NEWNS..os.txt;*
-os.CLONE_NEWPID                                *CLONE_NEWPID..os.txt;*
-os.CLONE_NEWTIME                              *CLONE_NEWTIME..os.txt;*
-os.CLONE_NEWUSER                              *CLONE_NEWUSER..os.txt;*
-os.CLONE_NEWUTS                                *CLONE_NEWUTS..os.txt;*
-os.CLONE_SIGHAND                              *CLONE_SIGHAND..os.txt;*
-os.CLONE_SYSVSEM                              *CLONE_SYSVSEM..os.txt;*
-os.CLONE_THREAD                                *CLONE_THREAD..os.txt;*
-os.CLONE_VM                                        *CLONE_VM..os.txt;*
+os.CLONE_FILES                                   *CLONE_FILES..os.txt*
+os.CLONE_FS                                         *CLONE_FS..os.txt*
+os.CLONE_NEWCGROUP                           *CLONE_NEWCGROUP..os.txt*
+os.CLONE_NEWIPC                                 *CLONE_NEWIPC..os.txt*
+os.CLONE_NEWNET                                 *CLONE_NEWNET..os.txt*
+os.CLONE_NEWNS                                   *CLONE_NEWNS..os.txt*
+os.CLONE_NEWPID                                 *CLONE_NEWPID..os.txt*
+os.CLONE_NEWTIME                               *CLONE_NEWTIME..os.txt*
+os.CLONE_NEWUSER                               *CLONE_NEWUSER..os.txt*
+os.CLONE_NEWUTS                                 *CLONE_NEWUTS..os.txt*
+os.CLONE_SIGHAND                               *CLONE_SIGHAND..os.txt*
+os.CLONE_SYSVSEM                               *CLONE_SYSVSEM..os.txt*
+os.CLONE_THREAD                                 *CLONE_THREAD..os.txt*
+os.CLONE_VM                                         *CLONE_VM..os.txt*
 
 
 File Object Creation
@@ -780,7 +780,7 @@ File Object Creation
 These functions create new _file objects_.  (See also "open()" for
 opening file descriptors.)
 
-os.fdopen(fd, *args, **kwargs)                     *fdopen()..os.txt;*
+os.fdopen(fd, *args, **kwargs)                      *fdopen()..os.txt*
 
    Return an open file object connected to the file descriptor _fd_.
    This is an alias of the "open()" built-in function and accepts the
@@ -807,7 +807,7 @@ associated with a _file object_ when required.  Note that using the
 file descriptor directly will bypass the file object methods, ignoring
 aspects such as internal buffering of data.
 
-os.close(fd)                                        *close()..os.txt;*
+os.close(fd)                                         *close()..os.txt*
 
    Close file descriptor _fd_.
 
@@ -818,7 +818,7 @@ os.close(fd)                                        *close()..os.txt;*
      close a “file object” returned by the built-in function "open()"
      or by "popen()" or "fdopen()", use its "close()" method.
 
-os.closerange(fd_low, fd_high, /)              *closerange()..os.txt;*
+os.closerange(fd_low, fd_high, /)               *closerange()..os.txt*
 
    Close all file descriptors from _fd_low_ (inclusive) to _fd_high_
    (exclusive), ignoring errors. Equivalent to (but much faster than):
@@ -830,7 +830,7 @@ os.closerange(fd_low, fd_high, /)              *closerange()..os.txt;*
               pass
 <
 
-                                          *copy_file_range()..os.txt;*
+                                           *copy_file_range()..os.txt*
 os.copy_file_range(src, dst, count, offset_src=None, offset_dst=None)
 
    Copy _count_ bytes from file descriptor _src_, starting from offset
@@ -867,7 +867,7 @@ os.copy_file_range(src, dst, count, offset_src=None, offset_dst=None)
 
    New in version 3.8.
 
-os.device_encoding(fd)                    *device_encoding()..os.txt;*
+os.device_encoding(fd)                     *device_encoding()..os.txt*
 
    Return a string describing the encoding of the device associated
    with _fd_ if it is connected to a terminal; else return "None".
@@ -878,7 +878,7 @@ os.device_encoding(fd)                    *device_encoding()..os.txt;*
    Changed in version 3.10: On Unix, the function now implements the
    Python UTF-8 Mode.
 
-os.dup(fd, /)                                         *dup()..os.txt;*
+os.dup(fd, /)                                          *dup()..os.txt*
 
    Return a duplicate of file descriptor _fd_. The new file descriptor
    is non-inheritable.
@@ -891,7 +891,7 @@ os.dup(fd, /)                                         *dup()..os.txt;*
    Changed in version 3.4: The new file descriptor is now non-
    inheritable.
 
-os.dup2(fd, fd2, inheritable=True)                   *dup2()..os.txt;*
+os.dup2(fd, fd2, inheritable=True)                    *dup2()..os.txt*
 
    Duplicate file descriptor _fd_ to _fd2_, closing the latter first
    if necessary. Return _fd2_. The new file descriptor is inheritable
@@ -904,7 +904,7 @@ os.dup2(fd, fd2, inheritable=True)                   *dup2()..os.txt;*
    Changed in version 3.7: Return _fd2_ on success. Previously, "None"
    was always returned.
 
-os.fchmod(fd, mode)                                *fchmod()..os.txt;*
+os.fchmod(fd, mode)                                 *fchmod()..os.txt*
 
    Change the mode of the file given by _fd_ to the numeric _mode_.
    See the docs for "chmod()" for possible values of _mode_.  As of
@@ -918,7 +918,7 @@ os.fchmod(fd, mode)                                *fchmod()..os.txt;*
    The function is limited on Emscripten and WASI, see WebAssembly
    platforms for more information.
 
-os.fchown(fd, uid, gid)                            *fchown()..os.txt;*
+os.fchown(fd, uid, gid)                             *fchown()..os.txt*
 
    Change the owner and group id of the file given by _fd_ to the
    numeric _uid_ and _gid_.  To leave one of the ids unchanged, set it
@@ -933,7 +933,7 @@ os.fchown(fd, uid, gid)                            *fchown()..os.txt;*
    The function is limited on Emscripten and WASI, see WebAssembly
    platforms for more information.
 
-os.fdatasync(fd)                                *fdatasync()..os.txt;*
+os.fdatasync(fd)                                 *fdatasync()..os.txt*
 
    Force write of file with filedescriptor _fd_ to disk. Does not
    force update of metadata.
@@ -944,7 +944,7 @@ os.fdatasync(fd)                                *fdatasync()..os.txt;*
 
      This function is not available on MacOS.
 
-os.fpathconf(fd, name, /)                       *fpathconf()..os.txt;*
+os.fpathconf(fd, name, /)                        *fpathconf()..os.txt*
 
    Return system configuration information relevant to an open file.
    _name_ specifies the configuration value to retrieve; it may be a
@@ -965,7 +965,7 @@ os.fpathconf(fd, name, /)                       *fpathconf()..os.txt;*
 
    Availability: Unix.
 
-os.fstat(fd)                                        *fstat()..os.txt;*
+os.fstat(fd)                                         *fstat()..os.txt*
 
    Get the status of the file descriptor _fd_. Return a "stat_result"
    object.
@@ -974,7 +974,7 @@ os.fstat(fd)                                        *fstat()..os.txt;*
 
    See also: The "stat()" function.
 
-os.fstatvfs(fd, /)                               *fstatvfs()..os.txt;*
+os.fstatvfs(fd, /)                                *fstatvfs()..os.txt*
 
    Return information about the filesystem containing the file
    associated with file descriptor _fd_, like "statvfs()".  As of
@@ -982,7 +982,7 @@ os.fstatvfs(fd, /)                               *fstatvfs()..os.txt;*
 
    Availability: Unix.
 
-os.fsync(fd)                                        *fsync()..os.txt;*
+os.fsync(fd)                                         *fsync()..os.txt*
 
    Force write of file with filedescriptor _fd_ to disk.  On Unix,
    this calls the native "fsync()" function; on Windows, the MS
@@ -994,7 +994,7 @@ os.fsync(fd)                                        *fsync()..os.txt;*
 
    Availability: Unix, Windows.
 
-os.ftruncate(fd, length, /)                     *ftruncate()..os.txt;*
+os.ftruncate(fd, length, /)                      *ftruncate()..os.txt*
 
    Truncate the file corresponding to file descriptor _fd_, so that it
    is at most _length_ bytes in size.  As of Python 3.3, this is
@@ -1007,7 +1007,7 @@ os.ftruncate(fd, length, /)                     *ftruncate()..os.txt;*
 
    Changed in version 3.5: Added support for Windows
 
-os.get_blocking(fd, /)                       *get_blocking()..os.txt;*
+os.get_blocking(fd, /)                        *get_blocking()..os.txt*
 
    Get the blocking mode of the file descriptor: "False" if the
    "O_NONBLOCK" flag is set, "True" if the flag is cleared.
@@ -1025,12 +1025,12 @@ os.get_blocking(fd, /)                       *get_blocking()..os.txt;*
 
    Changed in version 3.12: Added support for pipes on Windows.
 
-os.isatty(fd, /)                                   *isatty()..os.txt;*
+os.isatty(fd, /)                                    *isatty()..os.txt*
 
    Return "True" if the file descriptor _fd_ is open and connected to
    a tty(-like) device, else "False".
 
-os.lockf(fd, cmd, len, /)                           *lockf()..os.txt;*
+os.lockf(fd, cmd, len, /)                            *lockf()..os.txt*
 
    Apply, test or remove a POSIX lock on an open file descriptor. _fd_
    is an open file descriptor. _cmd_ specifies the command to use -
@@ -1044,10 +1044,10 @@ os.lockf(fd, cmd, len, /)                           *lockf()..os.txt;*
 
    New in version 3.3.
 
-os.F_LOCK                                            *F_LOCK..os.txt;*
-os.F_TLOCK                                          *F_TLOCK..os.txt;*
-os.F_ULOCK                                          *F_ULOCK..os.txt;*
-os.F_TEST                                            *F_TEST..os.txt;*
+os.F_LOCK                                             *F_LOCK..os.txt*
+os.F_TLOCK                                           *F_TLOCK..os.txt*
+os.F_ULOCK                                           *F_ULOCK..os.txt*
+os.F_TEST                                             *F_TEST..os.txt*
 
    Flags that specify what action "lockf()" will take.
 
@@ -1055,7 +1055,7 @@ os.F_TEST                                            *F_TEST..os.txt;*
 
    New in version 3.3.
 
-os.login_tty(fd, /)                             *login_tty()..os.txt;*
+os.login_tty(fd, /)                              *login_tty()..os.txt*
 
    Prepare the tty of which fd is a file descriptor for a new login
    session. Make the calling process a session leader; make the tty
@@ -1066,7 +1066,7 @@ os.login_tty(fd, /)                             *login_tty()..os.txt;*
 
    New in version 3.11.
 
-os.lseek(fd, pos, whence, /)                        *lseek()..os.txt;*
+os.lseek(fd, pos, whence, /)                         *lseek()..os.txt*
 
    Set the current position of file descriptor _fd_ to position _pos_,
    modified by _whence_, and return the new position in bytes relative
@@ -1088,9 +1088,9 @@ os.lseek(fd, pos, whence, /)                        *lseek()..os.txt;*
    Changed in version 3.3: Add support for "SEEK_HOLE" and
    "SEEK_DATA".
 
-os.SEEK_SET                                        *SEEK_SET..os.txt;*
-os.SEEK_CUR                                        *SEEK_CUR..os.txt;*
-os.SEEK_END                                        *SEEK_END..os.txt;*
+os.SEEK_SET                                         *SEEK_SET..os.txt*
+os.SEEK_CUR                                         *SEEK_CUR..os.txt*
+os.SEEK_END                                         *SEEK_END..os.txt*
 
    Parameters to the "lseek()" function and the "seek()" method on
    _file-like objects_, for whence to adjust the file position
@@ -1107,8 +1107,8 @@ os.SEEK_END                                        *SEEK_END..os.txt;*
 
    Their values are 0, 1, and 2, respectively.
 
-os.SEEK_HOLE                                      *SEEK_HOLE..os.txt;*
-os.SEEK_DATA                                      *SEEK_DATA..os.txt;*
+os.SEEK_HOLE                                       *SEEK_HOLE..os.txt*
+os.SEEK_DATA                                       *SEEK_DATA..os.txt*
 
    Parameters to the "lseek()" function and the "seek()" method on
    _file-like objects_, for seeking file data and holes on sparsely
@@ -1132,7 +1132,7 @@ os.SEEK_DATA                                      *SEEK_DATA..os.txt;*
 
    New in version 3.3.
 
-os.open(path, flags, mode=0o777, *, dir_fd=None)     *open()..os.txt;*
+os.open(path, flags, mode=0o777, *, dir_fd=None)      *open()..os.txt*
 
    Open the file _path_ and set various flags according to _flags_ and
    possibly its mode according to _mode_.  When computing _mode_, the
@@ -1176,57 +1176,57 @@ The following constants are options for the _flags_ parameter to the
 descriptions of their availability and use, consult the _open(2)_
 manual page on Unix or the MSDN on Windows.
 
-os.O_RDONLY                                        *O_RDONLY..os.txt;*
-os.O_WRONLY                                        *O_WRONLY..os.txt;*
-os.O_RDWR                                            *O_RDWR..os.txt;*
-os.O_APPEND                                        *O_APPEND..os.txt;*
-os.O_CREAT                                          *O_CREAT..os.txt;*
-os.O_EXCL                                            *O_EXCL..os.txt;*
-os.O_TRUNC                                          *O_TRUNC..os.txt;*
+os.O_RDONLY                                         *O_RDONLY..os.txt*
+os.O_WRONLY                                         *O_WRONLY..os.txt*
+os.O_RDWR                                             *O_RDWR..os.txt*
+os.O_APPEND                                         *O_APPEND..os.txt*
+os.O_CREAT                                           *O_CREAT..os.txt*
+os.O_EXCL                                             *O_EXCL..os.txt*
+os.O_TRUNC                                           *O_TRUNC..os.txt*
 
    The above constants are available on Unix and Windows.
 
-os.O_DSYNC                                          *O_DSYNC..os.txt;*
-os.O_RSYNC                                          *O_RSYNC..os.txt;*
-os.O_SYNC                                            *O_SYNC..os.txt;*
-os.O_NDELAY                                        *O_NDELAY..os.txt;*
-os.O_NONBLOCK                                    *O_NONBLOCK..os.txt;*
-os.O_NOCTTY                                        *O_NOCTTY..os.txt;*
-os.O_CLOEXEC                                      *O_CLOEXEC..os.txt;*
+os.O_DSYNC                                           *O_DSYNC..os.txt*
+os.O_RSYNC                                           *O_RSYNC..os.txt*
+os.O_SYNC                                             *O_SYNC..os.txt*
+os.O_NDELAY                                         *O_NDELAY..os.txt*
+os.O_NONBLOCK                                     *O_NONBLOCK..os.txt*
+os.O_NOCTTY                                         *O_NOCTTY..os.txt*
+os.O_CLOEXEC                                       *O_CLOEXEC..os.txt*
 
    The above constants are only available on Unix.
 
    Changed in version 3.3: Add "O_CLOEXEC" constant.
 
-os.O_BINARY                                        *O_BINARY..os.txt;*
-os.O_NOINHERIT                                  *O_NOINHERIT..os.txt;*
-os.O_SHORT_LIVED                              *O_SHORT_LIVED..os.txt;*
-os.O_TEMPORARY                                  *O_TEMPORARY..os.txt;*
-os.O_RANDOM                                        *O_RANDOM..os.txt;*
-os.O_SEQUENTIAL                                *O_SEQUENTIAL..os.txt;*
-os.O_TEXT                                            *O_TEXT..os.txt;*
+os.O_BINARY                                         *O_BINARY..os.txt*
+os.O_NOINHERIT                                   *O_NOINHERIT..os.txt*
+os.O_SHORT_LIVED                               *O_SHORT_LIVED..os.txt*
+os.O_TEMPORARY                                   *O_TEMPORARY..os.txt*
+os.O_RANDOM                                         *O_RANDOM..os.txt*
+os.O_SEQUENTIAL                                 *O_SEQUENTIAL..os.txt*
+os.O_TEXT                                             *O_TEXT..os.txt*
 
    The above constants are only available on Windows.
 
-os.O_EVTONLY                                      *O_EVTONLY..os.txt;*
-os.O_FSYNC                                          *O_FSYNC..os.txt;*
-os.O_SYMLINK                                      *O_SYMLINK..os.txt;*
-os.O_NOFOLLOW_ANY                            *O_NOFOLLOW_ANY..os.txt;*
+os.O_EVTONLY                                       *O_EVTONLY..os.txt*
+os.O_FSYNC                                           *O_FSYNC..os.txt*
+os.O_SYMLINK                                       *O_SYMLINK..os.txt*
+os.O_NOFOLLOW_ANY                             *O_NOFOLLOW_ANY..os.txt*
 
    The above constants are only available on macOS.
 
    Changed in version 3.10: Add "O_EVTONLY", "O_FSYNC", "O_SYMLINK"
    and "O_NOFOLLOW_ANY" constants.
 
-os.O_ASYNC                                          *O_ASYNC..os.txt;*
-os.O_DIRECT                                        *O_DIRECT..os.txt;*
-os.O_DIRECTORY                                  *O_DIRECTORY..os.txt;*
-os.O_NOFOLLOW                                    *O_NOFOLLOW..os.txt;*
-os.O_NOATIME                                      *O_NOATIME..os.txt;*
-os.O_PATH                                            *O_PATH..os.txt;*
-os.O_TMPFILE                                      *O_TMPFILE..os.txt;*
-os.O_SHLOCK                                        *O_SHLOCK..os.txt;*
-os.O_EXLOCK                                        *O_EXLOCK..os.txt;*
+os.O_ASYNC                                           *O_ASYNC..os.txt*
+os.O_DIRECT                                         *O_DIRECT..os.txt*
+os.O_DIRECTORY                                   *O_DIRECTORY..os.txt*
+os.O_NOFOLLOW                                     *O_NOFOLLOW..os.txt*
+os.O_NOATIME                                       *O_NOATIME..os.txt*
+os.O_PATH                                             *O_PATH..os.txt*
+os.O_TMPFILE                                       *O_TMPFILE..os.txt*
+os.O_SHLOCK                                         *O_SHLOCK..os.txt*
+os.O_EXLOCK                                         *O_EXLOCK..os.txt*
 
    The above constants are extensions and not present if they are not
    defined by the C library.
@@ -1234,7 +1234,7 @@ os.O_EXLOCK                                        *O_EXLOCK..os.txt;*
    Changed in version 3.4: Add "O_PATH" on systems that support it.
    Add "O_TMPFILE", only available on Linux Kernel 3.11   or newer.
 
-os.openpty()                                      *openpty()..os.txt;*
+os.openpty()                                       *openpty()..os.txt*
 
    Open a new pseudo-terminal pair. Return a pair of file descriptors
    "(master, slave)" for the pty and the tty, respectively. The new
@@ -1246,7 +1246,7 @@ os.openpty()                                      *openpty()..os.txt;*
    Changed in version 3.4: The new file descriptors are now non-
    inheritable.
 
-os.pipe()                                            *pipe()..os.txt;*
+os.pipe()                                             *pipe()..os.txt*
 
    Create a pipe.  Return a pair of file descriptors "(r, w)" usable
    for reading and writing, respectively. The new file descriptor is
@@ -1257,7 +1257,7 @@ os.pipe()                                            *pipe()..os.txt;*
    Changed in version 3.4: The new file descriptors are now non-
    inheritable.
 
-os.pipe2(flags, /)                                  *pipe2()..os.txt;*
+os.pipe2(flags, /)                                   *pipe2()..os.txt*
 
    Create a pipe with _flags_ set atomically. _flags_ can be
    constructed by ORing together one or more of these values:
@@ -1268,7 +1268,7 @@ os.pipe2(flags, /)                                  *pipe2()..os.txt;*
 
    New in version 3.3.
 
-os.posix_fallocate(fd, offset, len, /)    *posix_fallocate()..os.txt;*
+os.posix_fallocate(fd, offset, len, /)     *posix_fallocate()..os.txt*
 
    Ensures that enough disk space is allocated for the file specified
    by _fd_ starting from _offset_ and continuing for _len_ bytes.
@@ -1277,7 +1277,7 @@ os.posix_fallocate(fd, offset, len, /)    *posix_fallocate()..os.txt;*
 
    New in version 3.3.
 
-                                            *posix_fadvise()..os.txt;*
+                                             *posix_fadvise()..os.txt*
 os.posix_fadvise(fd, offset, len, advice, /)
 
    Announces an intention to access data in a specific pattern thus
@@ -1291,12 +1291,12 @@ os.posix_fadvise(fd, offset, len, advice, /)
 
    New in version 3.3.
 
-os.POSIX_FADV_NORMAL                      *POSIX_FADV_NORMAL..os.txt;*
-os.POSIX_FADV_SEQUENTIAL              *POSIX_FADV_SEQUENTIAL..os.txt;*
-os.POSIX_FADV_RANDOM                      *POSIX_FADV_RANDOM..os.txt;*
-os.POSIX_FADV_NOREUSE                    *POSIX_FADV_NOREUSE..os.txt;*
-os.POSIX_FADV_WILLNEED                  *POSIX_FADV_WILLNEED..os.txt;*
-os.POSIX_FADV_DONTNEED                  *POSIX_FADV_DONTNEED..os.txt;*
+os.POSIX_FADV_NORMAL                       *POSIX_FADV_NORMAL..os.txt*
+os.POSIX_FADV_SEQUENTIAL               *POSIX_FADV_SEQUENTIAL..os.txt*
+os.POSIX_FADV_RANDOM                       *POSIX_FADV_RANDOM..os.txt*
+os.POSIX_FADV_NOREUSE                     *POSIX_FADV_NOREUSE..os.txt*
+os.POSIX_FADV_WILLNEED                   *POSIX_FADV_WILLNEED..os.txt*
+os.POSIX_FADV_DONTNEED                   *POSIX_FADV_DONTNEED..os.txt*
 
    Flags that can be used in _advice_ in "posix_fadvise()" that
    specify the access pattern that is likely to be used.
@@ -1305,7 +1305,7 @@ os.POSIX_FADV_DONTNEED                  *POSIX_FADV_DONTNEED..os.txt;*
 
    New in version 3.3.
 
-os.pread(fd, n, offset, /)                          *pread()..os.txt;*
+os.pread(fd, n, offset, /)                           *pread()..os.txt*
 
    Read at most _n_ bytes from file descriptor _fd_ at a position of
    _offset_, leaving the file offset unchanged.
@@ -1318,7 +1318,7 @@ os.pread(fd, n, offset, /)                          *pread()..os.txt;*
 
    New in version 3.3.
 
-os.preadv(fd, buffers, offset, flags=0, /)         *preadv()..os.txt;*
+os.preadv(fd, buffers, offset, flags=0, /)          *preadv()..os.txt*
 
    Read from a file descriptor _fd_ at a position of _offset_ into
    mutable _bytes-like objects_ _buffers_, leaving the file offset
@@ -1348,7 +1348,7 @@ os.preadv(fd, buffers, offset, flags=0, /)         *preadv()..os.txt;*
 
    New in version 3.7.
 
-os.RWF_NOWAIT                                    *RWF_NOWAIT..os.txt;*
+os.RWF_NOWAIT                                     *RWF_NOWAIT..os.txt*
 
    Do not wait for data which is not immediately available. If this
    flag is specified, the system call will return instantly if it
@@ -1363,7 +1363,7 @@ os.RWF_NOWAIT                                    *RWF_NOWAIT..os.txt;*
 
    New in version 3.7.
 
-os.RWF_HIPRI                                      *RWF_HIPRI..os.txt;*
+os.RWF_HIPRI                                       *RWF_HIPRI..os.txt*
 
    High priority read/write. Allows block-based filesystems to use
    polling of the device, which provides lower latency, but may use
@@ -1376,7 +1376,7 @@ os.RWF_HIPRI                                      *RWF_HIPRI..os.txt;*
 
    New in version 3.7.
 
-os.pwrite(fd, str, offset, /)                      *pwrite()..os.txt;*
+os.pwrite(fd, str, offset, /)                       *pwrite()..os.txt*
 
    Write the bytestring in _str_ to file descriptor _fd_ at position
    of _offset_, leaving the file offset unchanged.
@@ -1387,7 +1387,7 @@ os.pwrite(fd, str, offset, /)                      *pwrite()..os.txt;*
 
    New in version 3.3.
 
-os.pwritev(fd, buffers, offset, flags=0, /)       *pwritev()..os.txt;*
+os.pwritev(fd, buffers, offset, flags=0, /)        *pwritev()..os.txt*
 
    Write the _buffers_ contents to file descriptor _fd_ at a offset
    _offset_, leaving the file offset unchanged.  _buffers_ must be a
@@ -1418,7 +1418,7 @@ os.pwritev(fd, buffers, offset, flags=0, /)       *pwritev()..os.txt;*
 
    New in version 3.7.
 
-os.RWF_DSYNC                                      *RWF_DSYNC..os.txt;*
+os.RWF_DSYNC                                       *RWF_DSYNC..os.txt*
 
    Provide a per-write equivalent of the "O_DSYNC" "os.open()" flag.
    This flag effect applies only to the data range written by the
@@ -1428,7 +1428,7 @@ os.RWF_DSYNC                                      *RWF_DSYNC..os.txt;*
 
    New in version 3.7.
 
-os.RWF_SYNC                                        *RWF_SYNC..os.txt;*
+os.RWF_SYNC                                         *RWF_SYNC..os.txt*
 
    Provide a per-write equivalent of the "O_SYNC" "os.open()" flag.
    This flag effect applies only to the data range written by the
@@ -1438,7 +1438,7 @@ os.RWF_SYNC                                        *RWF_SYNC..os.txt;*
 
    New in version 3.7.
 
-os.RWF_APPEND                                    *RWF_APPEND..os.txt;*
+os.RWF_APPEND                                     *RWF_APPEND..os.txt*
 
    Provide a per-write equivalent of the "O_APPEND" "os.open()" flag.
    This flag is meaningful only for "os.pwritev()", and its effect
@@ -1451,7 +1451,7 @@ os.RWF_APPEND                                    *RWF_APPEND..os.txt;*
 
    New in version 3.10.
 
-os.read(fd, n, /)                                    *read()..os.txt;*
+os.read(fd, n, /)                                     *read()..os.txt*
 
    Read at most _n_ bytes from file descriptor _fd_.
 
@@ -1472,7 +1472,7 @@ os.read(fd, n, /)                                    *read()..os.txt;*
    retries the system call instead of raising an "InterruptedError"
    exception (see **PEP 475** for the rationale).
 
-os.sendfile(out_fd, in_fd, offset, count)        *sendfile()..os.txt;*
+os.sendfile(out_fd, in_fd, offset, count)         *sendfile()..os.txt*
 os.sendfile(out_fd, in_fd, offset, count, headers=(), trailers=(), flags=0)
 
    Copy _count_ bytes from file descriptor _in_fd_ to file descriptor
@@ -1512,9 +1512,9 @@ os.sendfile(out_fd, in_fd, offset, count, headers=(), trailers=(), flags=0)
    Changed in version 3.9: Parameters _out_ and _in_ was renamed to
    _out_fd_ and _in_fd_.
 
-os.SF_NODISKIO                                  *SF_NODISKIO..os.txt;*
-os.SF_MNOWAIT                                    *SF_MNOWAIT..os.txt;*
-os.SF_SYNC                                          *SF_SYNC..os.txt;*
+os.SF_NODISKIO                                   *SF_NODISKIO..os.txt*
+os.SF_MNOWAIT                                     *SF_MNOWAIT..os.txt*
+os.SF_SYNC                                           *SF_SYNC..os.txt*
 
    Parameters to the "sendfile()" function, if the implementation
    supports them.
@@ -1523,7 +1523,7 @@ os.SF_SYNC                                          *SF_SYNC..os.txt;*
 
    New in version 3.3.
 
-os.SF_NOCACHE                                    *SF_NOCACHE..os.txt;*
+os.SF_NOCACHE                                     *SF_NOCACHE..os.txt*
 
    Parameter to the "sendfile()" function, if the implementation
    supports it. The data won’t be cached in the virtual memory and
@@ -1533,7 +1533,7 @@ os.SF_NOCACHE                                    *SF_NOCACHE..os.txt;*
 
    New in version 3.11.
 
-os.set_blocking(fd, blocking, /)             *set_blocking()..os.txt;*
+os.set_blocking(fd, blocking, /)              *set_blocking()..os.txt*
 
    Set the blocking mode of the specified file descriptor. Set the
    "O_NONBLOCK" flag if blocking is "False", clear the flag otherwise.
@@ -1551,7 +1551,7 @@ os.set_blocking(fd, blocking, /)             *set_blocking()..os.txt;*
 
    Changed in version 3.12: Added support for pipes on Windows.
 
-                                                   *splice()..os.txt;*
+                                                    *splice()..os.txt*
 os.splice(src, dst, count, offset_src=None, offset_dst=None)
 
    Transfer _count_ bytes from file descriptor _src_, starting from
@@ -1578,13 +1578,13 @@ os.splice(src, dst, count, offset_src=None, offset_dst=None)
 
    New in version 3.10.
 
-os.SPLICE_F_MOVE                              *SPLICE_F_MOVE..os.txt;*
-os.SPLICE_F_NONBLOCK                      *SPLICE_F_NONBLOCK..os.txt;*
-os.SPLICE_F_MORE                              *SPLICE_F_MORE..os.txt;*
+os.SPLICE_F_MOVE                               *SPLICE_F_MOVE..os.txt*
+os.SPLICE_F_NONBLOCK                       *SPLICE_F_NONBLOCK..os.txt*
+os.SPLICE_F_MORE                               *SPLICE_F_MORE..os.txt*
 
    New in version 3.10.
 
-os.readv(fd, buffers, /)                            *readv()..os.txt;*
+os.readv(fd, buffers, /)                             *readv()..os.txt*
 
    Read from a file descriptor _fd_ into a number of mutable _bytes-
    like objects_ _buffers_. Transfer data into each buffer until it is
@@ -1601,21 +1601,21 @@ os.readv(fd, buffers, /)                            *readv()..os.txt;*
 
    New in version 3.3.
 
-os.tcgetpgrp(fd, /)                             *tcgetpgrp()..os.txt;*
+os.tcgetpgrp(fd, /)                              *tcgetpgrp()..os.txt*
 
    Return the process group associated with the terminal given by _fd_
    (an open file descriptor as returned by "os.open()").
 
    Availability: Unix, not WASI.
 
-os.tcsetpgrp(fd, pg, /)                         *tcsetpgrp()..os.txt;*
+os.tcsetpgrp(fd, pg, /)                          *tcsetpgrp()..os.txt*
 
    Set the process group associated with the terminal given by _fd_
    (an open file descriptor as returned by "os.open()") to _pg_.
 
    Availability: Unix, not WASI.
 
-os.ttyname(fd, /)                                 *ttyname()..os.txt;*
+os.ttyname(fd, /)                                  *ttyname()..os.txt*
 
    Return a string which specifies the terminal device associated with
    file descriptor _fd_.  If _fd_ is not associated with a terminal
@@ -1623,7 +1623,7 @@ os.ttyname(fd, /)                                 *ttyname()..os.txt;*
 
    Availability: Unix.
 
-os.write(fd, str, /)                                *write()..os.txt;*
+os.write(fd, str, /)                                 *write()..os.txt*
 
    Write the bytestring in _str_ to file descriptor _fd_.
 
@@ -1642,7 +1642,7 @@ os.write(fd, str, /)                                *write()..os.txt;*
    retries the system call instead of raising an "InterruptedError"
    exception (see **PEP 475** for the rationale).
 
-os.writev(fd, buffers, /)                          *writev()..os.txt;*
+os.writev(fd, buffers, /)                           *writev()..os.txt*
 
    Write the contents of _buffers_ to file descriptor _fd_. _buffers_
    must be a sequence of _bytes-like objects_. Buffers are processed
@@ -1664,7 +1664,7 @@ Querying the size of a terminal
 
 New in version 3.3.
 
-                                        *get_terminal_size()..os.txt;*
+                                         *get_terminal_size()..os.txt*
 os.get_terminal_size(fd=STDOUT_FILENO, /)
 
    Return the size of the terminal window as "(columns, lines)", tuple
@@ -1682,16 +1682,16 @@ os.get_terminal_size(fd=STDOUT_FILENO, /)
 
    Availability: Unix, Windows.
 
-class os.terminal_size                        *terminal_size..os.txt;*
+class os.terminal_size                         *terminal_size..os.txt*
 
    A subclass of tuple, holding "(columns, lines)" of the terminal
    window size.
 
-   columns                               *terminal_size.columns..os.txt;*
+   columns                                *terminal_size.columns..os.txt*
 
       Width of the terminal window in characters.
 
-   lines                                   *terminal_size.lines..os.txt;*
+   lines                                    *terminal_size.lines..os.txt*
 
       Height of the terminal window in characters.
 
@@ -1721,23 +1721,23 @@ handles are only inherited if the _close_fds_ parameter is "False".
 On WebAssembly platforms "wasm32-emscripten" and "wasm32-wasi", the
 file descriptor cannot be modified.
 
-os.get_inheritable(fd, /)                 *get_inheritable()..os.txt;*
+os.get_inheritable(fd, /)                  *get_inheritable()..os.txt*
 
    Get the “inheritable” flag of the specified file descriptor (a
    boolean).
 
-os.set_inheritable(fd, inheritable, /)    *set_inheritable()..os.txt;*
+os.set_inheritable(fd, inheritable, /)     *set_inheritable()..os.txt*
 
    Set the “inheritable” flag of the specified file descriptor.
 
-                                   *get_handle_inheritable()..os.txt;*
+                                    *get_handle_inheritable()..os.txt*
 os.get_handle_inheritable(handle, /)
 
    Get the “inheritable” flag of the specified handle (a boolean).
 
    Availability: Windows.
 
-                                   *set_handle_inheritable()..os.txt;*
+                                    *set_handle_inheritable()..os.txt*
 os.set_handle_inheritable(handle, inheritable, /)
 
    Set the “inheritable” flag of the specified handle.
@@ -1791,7 +1791,7 @@ these features:
   "os.supports_follow_symlinks". If it’s unavailable, using it will
   raise a "NotImplementedError".
 
-                                                   *access()..os.txt;*
+                                                    *access()..os.txt*
 os.access(path, mode, *, dir_fd=None, effective_ids=False, follow_symlinks=True)
 
    Use the real uid/gid to test for access to _path_.  Note that most
@@ -1850,10 +1850,10 @@ os.access(path, mode, *, dir_fd=None, effective_ids=False, follow_symlinks=True)
 
    Changed in version 3.6: Accepts a _path-like object_.
 
-os.F_OK                                                *F_OK..os.txt;*
-os.R_OK                                                *R_OK..os.txt;*
-os.W_OK                                                *W_OK..os.txt;*
-os.X_OK                                                *X_OK..os.txt;*
+os.F_OK                                                 *F_OK..os.txt*
+os.R_OK                                                 *R_OK..os.txt*
+os.W_OK                                                 *W_OK..os.txt*
+os.X_OK                                                 *X_OK..os.txt*
 
    Values to pass as the _mode_ parameter of "access()" to test the
    existence, readability, writability and executability of _path_,
@@ -1876,8 +1876,7 @@ os.chdir(path)
 
    Changed in version 3.6: Accepts a _path-like object_.
 
-                                                  *chflags()..os.txt;*
-os.chflags(path, flags, *, follow_symlinks=True)
+os.chflags(path, flags, *, follow_symlinks=True)   *chflags()..os.txt*
 
    Set the flags of _path_ to the numeric _flags_. _flags_ may take a
    combination (bitwise OR) of the following values (as defined in the
@@ -1918,7 +1917,7 @@ os.chflags(path, flags, *, follow_symlinks=True)
 
    Changed in version 3.6: Accepts a _path-like object_.
 
-                                                    *chmod()..os.txt;*
+                                                     *chmod()..os.txt*
 os.chmod(path, mode, *, dir_fd=None, follow_symlinks=True)
 
    Change the mode of _path_ to the numeric _mode_. _mode_ may take
@@ -1982,7 +1981,7 @@ os.chmod(path, mode, *, dir_fd=None, follow_symlinks=True)
 
    Changed in version 3.6: Accepts a _path-like object_.
 
-                                                    *chown()..os.txt;*
+                                                     *chown()..os.txt*
 os.chown(path, uid, gid, *, dir_fd=None, follow_symlinks=True)
 
    Change the owner and group id of _path_ to the numeric _uid_ and
@@ -2007,7 +2006,7 @@ os.chown(path, uid, gid, *, dir_fd=None, follow_symlinks=True)
 
    Changed in version 3.6: Supports a _path-like object_.
 
-os.chroot(path)                                    *chroot()..os.txt;*
+os.chroot(path)                                     *chroot()..os.txt*
 
    Change the root directory of the current process to _path_.
 
@@ -2030,7 +2029,7 @@ os.getcwd()
 
    Return a string representing the current working directory.
 
-os.getcwdb()                                      *getcwdb()..os.txt;*
+os.getcwdb()                                       *getcwdb()..os.txt*
 
    Return a bytestring representing the current working directory.
 
@@ -2038,7 +2037,7 @@ os.getcwdb()                                      *getcwdb()..os.txt;*
    Windows, rather than the ANSI code page: see **PEP 529** for the
    rationale. The function is no longer deprecated on Windows.
 
-os.lchflags(path, flags)                         *lchflags()..os.txt;*
+os.lchflags(path, flags)                          *lchflags()..os.txt*
 
    Set the flags of _path_ to the numeric _flags_, like "chflags()",
    but do not follow symbolic links.  As of Python 3.3, this is
@@ -2051,7 +2050,7 @@ os.lchflags(path, flags)                         *lchflags()..os.txt;*
 
    Changed in version 3.6: Accepts a _path-like object_.
 
-os.lchmod(path, mode)                              *lchmod()..os.txt;*
+os.lchmod(path, mode)                               *lchmod()..os.txt*
 
    Change the mode of _path_ to the numeric _mode_. If path is a
    symlink, this affects the symlink rather than the target.  See the
@@ -2066,7 +2065,7 @@ os.lchmod(path, mode)                              *lchmod()..os.txt;*
 
    Changed in version 3.6: Accepts a _path-like object_.
 
-os.lchown(path, uid, gid)                          *lchown()..os.txt;*
+os.lchown(path, uid, gid)                           *lchown()..os.txt*
 
    Change the owner and group id of _path_ to the numeric _uid_ and
    _gid_.  This function will not follow symbolic links.  As of Python
@@ -2080,7 +2079,7 @@ os.lchown(path, uid, gid)                          *lchown()..os.txt;*
 
    Changed in version 3.6: Accepts a _path-like object_.
 
-                                                     *link()..os.txt;*
+                                                      *link()..os.txt*
 os.link(src, dst, *, src_dir_fd=None, dst_dir_fd=None, follow_symlinks=True)
 
    Create a hard link pointing to _src_ named _dst_.
@@ -2102,7 +2101,7 @@ os.link(src, dst, *, src_dir_fd=None, dst_dir_fd=None, follow_symlinks=True)
    Changed in version 3.6: Accepts a _path-like object_ for _src_ and
    _dst_.
 
-os.listdir(path='.')                              *listdir()..os.txt;*
+os.listdir(path='.')                               *listdir()..os.txt*
 
    Return a list containing the names of the entries in the directory
    given by _path_.  The list is in arbitrary order, and does not
@@ -2138,7 +2137,7 @@ os.listdir(path='.')                              *listdir()..os.txt;*
 
    Changed in version 3.6: Accepts a _path-like object_.
 
-os.listdrives()                                *listdrives()..os.txt;*
+os.listdrives()                                 *listdrives()..os.txt*
 
    Return a list containing the names of drives on a Windows system.
 
@@ -2155,7 +2154,7 @@ os.listdrives()                                *listdrives()..os.txt;*
 
    New in version 3.12.
 
-os.listmounts(volume)                          *listmounts()..os.txt;*
+os.listmounts(volume)                           *listmounts()..os.txt*
 
    Return a list containing the mount points for a volume on a Windows
    system.
@@ -2178,7 +2177,7 @@ os.listmounts(volume)                          *listmounts()..os.txt;*
 
    New in version 3.12.
 
-os.listvolumes()                              *listvolumes()..os.txt;*
+os.listvolumes()                               *listvolumes()..os.txt*
 
    Return a list containing the volumes in the system.
 
@@ -2197,7 +2196,7 @@ os.listvolumes()                              *listvolumes()..os.txt;*
 
    New in version 3.12.
 
-os.lstat(path, *, dir_fd=None)                      *lstat()..os.txt;*
+os.lstat(path, *, dir_fd=None)                       *lstat()..os.txt*
 
    Perform the equivalent of an "lstat()" system call on the given
    path. Similar to "stat()", but does not follow symbolic links.
@@ -2226,7 +2225,7 @@ os.lstat(path, *, dir_fd=None)                      *lstat()..os.txt;*
    and directory junctions. Other kinds of reparse points are resolved
    by the operating system as for "stat()".
 
-os.mkdir(path, mode=0o777, *, dir_fd=None)          *mkdir()..os.txt;*
+os.mkdir(path, mode=0o777, *, dir_fd=None)           *mkdir()..os.txt*
 
    Create a directory named _path_ with numeric mode _mode_.
 
@@ -2254,7 +2253,7 @@ os.mkdir(path, mode=0o777, *, dir_fd=None)          *mkdir()..os.txt;*
 
    Changed in version 3.6: Accepts a _path-like object_.
 
-os.makedirs(name, mode=0o777, exist_ok=False)    *makedirs()..os.txt;*
+os.makedirs(name, mode=0o777, exist_ok=False)     *makedirs()..os.txt*
 
    Recursive directory creation function.  Like "mkdir()", but makes
    all intermediate-level directories needed to contain the leaf
@@ -2294,7 +2293,7 @@ os.makedirs(name, mode=0o777, exist_ok=False)    *makedirs()..os.txt;*
    file permission bits of newly created intermediate-level
    directories.
 
-os.mkfifo(path, mode=0o666, *, dir_fd=None)        *mkfifo()..os.txt;*
+os.mkfifo(path, mode=0o666, *, dir_fd=None)         *mkfifo()..os.txt*
 
    Create a FIFO (a named pipe) named _path_ with numeric mode _mode_.
    The current umask value is first masked out from the mode.
@@ -2315,7 +2314,7 @@ os.mkfifo(path, mode=0o666, *, dir_fd=None)        *mkfifo()..os.txt;*
 
    Changed in version 3.6: Accepts a _path-like object_.
 
-                                                    *mknod()..os.txt;*
+                                                     *mknod()..os.txt*
 os.mknod(path, mode=0o600, device=0, *, dir_fd=None)
 
    Create a filesystem node (file, device special file or named pipe)
@@ -2335,22 +2334,22 @@ os.mknod(path, mode=0o600, device=0, *, dir_fd=None)
 
    Changed in version 3.6: Accepts a _path-like object_.
 
-os.major(device, /)                                 *major()..os.txt;*
+os.major(device, /)                                  *major()..os.txt*
 
    Extract the device major number from a raw device number (usually
    the "st_dev" or "st_rdev" field from "stat").
 
-os.minor(device, /)                                 *minor()..os.txt;*
+os.minor(device, /)                                  *minor()..os.txt*
 
    Extract the device minor number from a raw device number (usually
    the "st_dev" or "st_rdev" field from "stat").
 
-os.makedev(major, minor, /)                       *makedev()..os.txt;*
+os.makedev(major, minor, /)                        *makedev()..os.txt*
 
    Compose a raw device number from the major and minor device
    numbers.
 
-os.pathconf(path, name)                          *pathconf()..os.txt;*
+os.pathconf(path, name)                           *pathconf()..os.txt*
 
    Return system configuration information relevant to a named file.
    _name_ specifies the configuration value to retrieve; it may be a
@@ -2373,7 +2372,7 @@ os.pathconf(path, name)                          *pathconf()..os.txt;*
 
    Changed in version 3.6: Accepts a _path-like object_.
 
-os.pathconf_names                            *pathconf_names..os.txt;*
+os.pathconf_names                             *pathconf_names..os.txt*
 
    Dictionary mapping names accepted by "pathconf()" and "fpathconf()"
    to the integer values defined for those names by the host operating
@@ -2382,7 +2381,7 @@ os.pathconf_names                            *pathconf_names..os.txt;*
 
    Availability: Unix.
 
-os.readlink(path, *, dir_fd=None)                *readlink()..os.txt;*
+os.readlink(path, *, dir_fd=None)                 *readlink()..os.txt*
 
    Return a string representing the path to which the symbolic link
    points.  The result may be either an absolute or relative pathname;
@@ -2417,7 +2416,7 @@ os.readlink(path, *, dir_fd=None)                *readlink()..os.txt;*
    "\\?\" prefix) rather than the optional “print name” field that was
    previously returned.
 
-os.remove(path, *, dir_fd=None)                    *remove()..os.txt;*
+os.remove(path, *, dir_fd=None)                     *remove()..os.txt*
 
    Remove (delete) the file _path_.  If _path_ is a directory, an
    "OSError" is raised.  Use "rmdir()" to remove directories. If the
@@ -2439,7 +2438,7 @@ os.remove(path, *, dir_fd=None)                    *remove()..os.txt;*
 
    Changed in version 3.6: Accepts a _path-like object_.
 
-os.removedirs(name)                            *removedirs()..os.txt;*
+os.removedirs(name)                             *removedirs()..os.txt*
 
    Remove directories recursively.  Works like "rmdir()" except that,
    if the leaf directory is successfully removed, "removedirs()"
@@ -2456,7 +2455,7 @@ os.removedirs(name)                            *removedirs()..os.txt;*
 
    Changed in version 3.6: Accepts a _path-like object_.
 
-                                                   *rename()..os.txt;*
+                                                    *rename()..os.txt*
 os.rename(src, dst, *, src_dir_fd=None, dst_dir_fd=None)
 
    Rename the file or directory _src_ to _dst_. If _dst_ exists, the
@@ -2492,7 +2491,7 @@ os.rename(src, dst, *, src_dir_fd=None, dst_dir_fd=None)
    Changed in version 3.6: Accepts a _path-like object_ for _src_ and
    _dst_.
 
-os.renames(old, new)                              *renames()..os.txt;*
+os.renames(old, new)                               *renames()..os.txt*
 
    Recursive directory or file renaming function. Works like
    "rename()", except creation of any intermediate directories needed
@@ -2511,7 +2510,7 @@ os.renames(old, new)                              *renames()..os.txt;*
    Changed in version 3.6: Accepts a _path-like object_ for _old_ and
    _new_.
 
-                                                  *replace()..os.txt;*
+                                                   *replace()..os.txt*
 os.replace(src, dst, *, src_dir_fd=None, dst_dir_fd=None)
 
    Rename the file or directory _src_ to _dst_.  If _dst_ is a non-
@@ -2532,7 +2531,7 @@ os.replace(src, dst, *, src_dir_fd=None, dst_dir_fd=None)
    Changed in version 3.6: Accepts a _path-like object_ for _src_ and
    _dst_.
 
-os.rmdir(path, *, dir_fd=None)                      *rmdir()..os.txt;*
+os.rmdir(path, *, dir_fd=None)                       *rmdir()..os.txt*
 
    Remove (delete) the directory _path_.  If the directory does not
    exist or is not empty, a "FileNotFoundError" or an "OSError" is
@@ -2548,7 +2547,7 @@ os.rmdir(path, *, dir_fd=None)                      *rmdir()..os.txt;*
 
    Changed in version 3.6: Accepts a _path-like object_.
 
-os.scandir(path='.')                              *scandir()..os.txt;*
+os.scandir(path='.')                               *scandir()..os.txt*
 
    Return an iterator of "os.DirEntry" objects corresponding to the
    entries in the directory given by _path_. The entries are yielded
@@ -2579,7 +2578,7 @@ os.scandir(path='.')                              *scandir()..os.txt;*
    The "scandir()" iterator supports the _context manager_ protocol
    and has the following method:
 
-   scandir.close()                             *scandir.close()..os.txt;*
+   scandir.close()                              *scandir.close()..os.txt*
 
       Close the iterator and free acquired resources.
 
@@ -2616,7 +2615,7 @@ os.scandir(path='.')                              *scandir()..os.txt;*
 
    Changed in version 3.7: Added support for file descriptors on Unix.
 
-class os.DirEntry                                  *DirEntry..os.txt;*
+class os.DirEntry                                   *DirEntry..os.txt*
 
    Object yielded by "scandir()" to expose the file path and other
    file attributes of a directory entry.
@@ -2641,7 +2640,7 @@ class os.DirEntry                                  *DirEntry..os.txt;*
 
    Attributes and methods on a "os.DirEntry" instance are as follows:
 
-   name                                          *DirEntry.name..os.txt;*
+   name                                           *DirEntry.name..os.txt*
 
       The entry’s base filename, relative to the "scandir()" _path_
       argument.
@@ -2650,7 +2649,7 @@ class os.DirEntry                                  *DirEntry..os.txt;*
       argument is of type "bytes" and "str" otherwise.  Use
       "fsdecode()" to decode byte filenames.
 
-   path                                          *DirEntry.path..os.txt;*
+   path                                           *DirEntry.path..os.txt*
 
       The entry’s full path name: equivalent to
       "os.path.join(scandir_path, entry.name)" where _scandir_path_ is
@@ -2663,7 +2662,7 @@ class os.DirEntry                                  *DirEntry..os.txt;*
       argument is of type "bytes" and "str" otherwise.  Use
       "fsdecode()" to decode byte filenames.
 
-   inode()                                    *DirEntry.inode()..os.txt;*
+   inode()                                     *DirEntry.inode()..os.txt*
 
       Return the inode number of the entry.
 
@@ -2674,7 +2673,7 @@ class os.DirEntry                                  *DirEntry..os.txt;*
       On the first, uncached call, a system call is required on
       Windows but not on Unix.
 
-   is_dir(*, follow_symlinks=True)           *DirEntry.is_dir()..os.txt;*
+   is_dir(*, follow_symlinks=True)            *DirEntry.is_dir()..os.txt*
 
       Return "True" if this entry is a directory or a symbolic link
       pointing to a directory; return "False" if the entry is or
@@ -2702,7 +2701,7 @@ class os.DirEntry                                  *DirEntry..os.txt;*
       This method can raise "OSError", such as "PermissionError", but
       "FileNotFoundError" is caught and not raised.
 
-   is_file(*, follow_symlinks=True)         *DirEntry.is_file()..os.txt;*
+   is_file(*, follow_symlinks=True)          *DirEntry.is_file()..os.txt*
 
       Return "True" if this entry is a file or a symbolic link
       pointing to a file; return "False" if the entry is or points to
@@ -2717,7 +2716,7 @@ class os.DirEntry                                  *DirEntry..os.txt;*
       The result is cached on the "os.DirEntry" object. Caching,
       system calls made, and exceptions raised are as per "is_dir()".
 
-   is_symlink()                          *DirEntry.is_symlink()..os.txt;*
+   is_symlink()                           *DirEntry.is_symlink()..os.txt*
 
       Return "True" if this entry is a symbolic link (even if broken);
       return "False" if the entry points to a directory or any kind of
@@ -2734,7 +2733,7 @@ class os.DirEntry                                  *DirEntry..os.txt;*
       This method can raise "OSError", such as "PermissionError", but
       "FileNotFoundError" is caught and not raised.
 
-   is_junction()                        *DirEntry.is_junction()..os.txt;*
+   is_junction()                         *DirEntry.is_junction()..os.txt*
 
       Return "True" if this entry is a junction (even if broken);
       return "False" if the entry points to a regular directory, any
@@ -2745,7 +2744,7 @@ class os.DirEntry                                  *DirEntry..os.txt;*
 
       New in version 3.12.
 
-   stat(*, follow_symlinks=True)               *DirEntry.stat()..os.txt;*
+   stat(*, follow_symlinks=True)                *DirEntry.stat()..os.txt*
 
       Return a "stat_result" object for this entry. This method
       follows symbolic links by default; to stat a symbolic link add
@@ -2779,8 +2778,7 @@ class os.DirEntry                                  *DirEntry..os.txt;*
    available as "st_birthtime", and in the future "st_ctime" may be
    changed to return zero or the metadata change time, if available.
 
-                                                     *stat()..os.txt;*
-os.stat(path, *, dir_fd=None, follow_symlinks=True)
+os.stat(path, *, dir_fd=None, follow_symlinks=True)   *stat()..os.txt*
 
    Get the status of a file or a file descriptor. Perform the
    equivalent of a "stat()" system call on the given path. _path_ may
@@ -2832,7 +2830,7 @@ os.stat(path, *, dir_fd=None, follow_symlinks=True)
    for the original path as if "follow_symlinks=False" had been
    specified instead of raising an error.
 
-class os.stat_result                            *stat_result..os.txt;*
+class os.stat_result                             *stat_result..os.txt*
 
    Object whose attributes correspond roughly to the members of the
    "stat" structure. It is used for the result of "os.stat()",
@@ -2840,11 +2838,11 @@ class os.stat_result                            *stat_result..os.txt;*
 
    Attributes:
 
-   st_mode                                 *stat_result.st_mode..os.txt;*
+   st_mode                                  *stat_result.st_mode..os.txt*
 
       File mode: file type and file mode bits (permissions).
 
-   st_ino                                   *stat_result.st_ino..os.txt;*
+   st_ino                                    *stat_result.st_ino..os.txt*
 
       Platform dependent, but if non-zero, uniquely identifies the
       file for a given value of "st_dev". Typically:
@@ -2853,23 +2851,23 @@ class os.stat_result                            *stat_result..os.txt;*
 
       * the file index on Windows
 
-   st_dev                                   *stat_result.st_dev..os.txt;*
+   st_dev                                    *stat_result.st_dev..os.txt*
 
       Identifier of the device on which this file resides.
 
-   st_nlink                               *stat_result.st_nlink..os.txt;*
+   st_nlink                                *stat_result.st_nlink..os.txt*
 
       Number of hard links.
 
-   st_uid                                   *stat_result.st_uid..os.txt;*
+   st_uid                                    *stat_result.st_uid..os.txt*
 
       User identifier of the file owner.
 
-   st_gid                                   *stat_result.st_gid..os.txt;*
+   st_gid                                    *stat_result.st_gid..os.txt*
 
       Group identifier of the file owner.
 
-   st_size                                 *stat_result.st_size..os.txt;*
+   st_size                                  *stat_result.st_size..os.txt*
 
       Size of the file in bytes, if it is a regular file or a symbolic
       link. The size of a symbolic link is the length of the pathname
@@ -2877,15 +2875,15 @@ class os.stat_result                            *stat_result..os.txt;*
 
    Timestamps:
 
-   st_atime                               *stat_result.st_atime..os.txt;*
+   st_atime                                *stat_result.st_atime..os.txt*
 
       Time of most recent access expressed in seconds.
 
-   st_mtime                               *stat_result.st_mtime..os.txt;*
+   st_mtime                                *stat_result.st_mtime..os.txt*
 
       Time of most recent content modification expressed in seconds.
 
-   st_ctime                               *stat_result.st_ctime..os.txt;*
+   st_ctime                                *stat_result.st_ctime..os.txt*
 
       Time of most recent metadata change expressed in seconds.
 
@@ -2894,17 +2892,17 @@ class os.stat_result                            *stat_result..os.txt;*
       "st_ctime" will contain the time of the most recent metadata
       change, as for other platforms.
 
-   st_atime_ns                         *stat_result.st_atime_ns..os.txt;*
+   st_atime_ns                          *stat_result.st_atime_ns..os.txt*
 
       Time of most recent access expressed in nanoseconds as an
       integer.
 
-   st_mtime_ns                         *stat_result.st_mtime_ns..os.txt;*
+   st_mtime_ns                          *stat_result.st_mtime_ns..os.txt*
 
       Time of most recent content modification expressed in
       nanoseconds as an integer.
 
-   st_ctime_ns                         *stat_result.st_ctime_ns..os.txt;*
+   st_ctime_ns                          *stat_result.st_ctime_ns..os.txt*
 
       Time of most recent metadata change expressed in nanoseconds as
       an integer.
@@ -2914,7 +2912,7 @@ class os.stat_result                            *stat_result..os.txt;*
       "st_ctime" will contain the time of the most recent metadata
       change, as for other platforms.
 
-   st_birthtime                       *stat_result.st_birthtime..os.txt;*
+   st_birthtime                        *stat_result.st_birthtime..os.txt*
 
       Time of file creation expressed in seconds. This attribute is
       not always available, and may raise "AttributeError".
@@ -2922,7 +2920,7 @@ class os.stat_result                            *stat_result..os.txt;*
       Changed in version 3.12: "st_birthtime" is now available on
       Windows.
 
-   st_birthtime_ns                 *stat_result.st_birthtime_ns..os.txt;*
+   st_birthtime_ns                  *stat_result.st_birthtime_ns..os.txt*
 
       Time of file creation expressed in nanoseconds as an integer.
       This attribute is not always available, and may raise
@@ -2950,22 +2948,22 @@ class os.stat_result                            *stat_result..os.txt;*
    On some Unix systems (such as Linux), the following attributes may
    also be available:
 
-   st_blocks                             *stat_result.st_blocks..os.txt;*
+   st_blocks                              *stat_result.st_blocks..os.txt*
 
       Number of 512-byte blocks allocated for file. This may be
       smaller than "st_size"/512 when the file has holes.
 
-   st_blksize                           *stat_result.st_blksize..os.txt;*
+   st_blksize                            *stat_result.st_blksize..os.txt*
 
       “Preferred” blocksize for efficient file system I/O. Writing to
       a file in smaller chunks may cause an inefficient read-modify-
       rewrite.
 
-   st_rdev                                 *stat_result.st_rdev..os.txt;*
+   st_rdev                                  *stat_result.st_rdev..os.txt*
 
       Type of device if an inode device.
 
-   st_flags                               *stat_result.st_flags..os.txt;*
+   st_flags                                *stat_result.st_flags..os.txt*
 
       User defined flags for file.
 
@@ -2973,42 +2971,42 @@ class os.stat_result                            *stat_result..os.txt;*
    may be available (but may be only filled out if root tries to use
    them):
 
-   st_gen                                   *stat_result.st_gen..os.txt;*
+   st_gen                                    *stat_result.st_gen..os.txt*
 
       File generation number.
 
    On Solaris and derivatives, the following attributes may also be
    available:
 
-   st_fstype                             *stat_result.st_fstype..os.txt;*
+   st_fstype                              *stat_result.st_fstype..os.txt*
 
       String that uniquely identifies the type of the filesystem that
       contains the file.
 
    On macOS systems, the following attributes may also be available:
 
-   st_rsize                               *stat_result.st_rsize..os.txt;*
+   st_rsize                                *stat_result.st_rsize..os.txt*
 
       Real size of the file.
 
-   st_creator                           *stat_result.st_creator..os.txt;*
+   st_creator                            *stat_result.st_creator..os.txt*
 
       Creator of the file.
 
-   st_type                                 *stat_result.st_type..os.txt;*
+   st_type                                  *stat_result.st_type..os.txt*
 
       File type.
 
    On Windows systems, the following attributes are also available:
 
-   st_file_attributes           *stat_result.st_file_attributes..os.txt;*
+   st_file_attributes            *stat_result.st_file_attributes..os.txt*
 
       Windows file attributes: "dwFileAttributes" member of the
       "BY_HANDLE_FILE_INFORMATION" structure returned by
       "GetFileInformationByHandle()". See the "FILE_ATTRIBUTE_*
       <stat.FILE_ATTRIBUTE_ARCHIVE>" constants in the "stat" module.
 
-   st_reparse_tag                   *stat_result.st_reparse_tag..os.txt;*
+   st_reparse_tag                    *stat_result.st_reparse_tag..os.txt*
 
       When "st_file_attributes" has the "FILE_ATTRIBUTE_REPARSE_POINT"
       set, this field contains the tag identifying the type of reparse
@@ -3062,7 +3060,7 @@ class os.stat_result                            *stat_result..os.txt;*
 
    New in version 3.12: Added the "st_birthtime" member on Windows.
 
-os.statvfs(path)                                  *statvfs()..os.txt;*
+os.statvfs(path)                                   *statvfs()..os.txt*
 
    Perform a "statvfs()" system call on the given path.  The return
    value is an object whose attributes describe the filesystem on the
@@ -3105,7 +3103,7 @@ os.statvfs(path)                                  *statvfs()..os.txt;*
 
    New in version 3.7: Added "f_fsid".
 
-os.supports_dir_fd                          *supports_dir_fd..os.txt;*
+os.supports_dir_fd                           *supports_dir_fd..os.txt*
 
    A "set" object indicating which functions in the "os" module accept
    an open file descriptor for their _dir_fd_ parameter. Different
@@ -3130,7 +3128,7 @@ os.supports_dir_fd                          *supports_dir_fd..os.txt;*
 
    New in version 3.3.
 
-os.supports_effective_ids            *supports_effective_ids..os.txt;*
+os.supports_effective_ids             *supports_effective_ids..os.txt*
 
    A "set" object indicating whether "os.access()" permits specifying
    "True" for its _effective_ids_ parameter on the local platform.
@@ -3148,7 +3146,7 @@ os.supports_effective_ids            *supports_effective_ids..os.txt;*
 
    New in version 3.3.
 
-os.supports_fd                                  *supports_fd..os.txt;*
+os.supports_fd                                   *supports_fd..os.txt*
 
    A "set" object indicating which functions in the "os" module permit
    specifying their _path_ parameter as an open file descriptor on the
@@ -3167,7 +3165,7 @@ os.supports_fd                                  *supports_fd..os.txt;*
 <
    New in version 3.3.
 
-os.supports_follow_symlinks        *supports_follow_symlinks..os.txt;*
+os.supports_follow_symlinks         *supports_follow_symlinks..os.txt*
 
    A "set" object indicating which functions in the "os" module accept
    "False" for their _follow_symlinks_ parameter on the local
@@ -3190,7 +3188,7 @@ os.supports_follow_symlinks        *supports_follow_symlinks..os.txt;*
 <
    New in version 3.3.
 
-                                                  *symlink()..os.txt;*
+                                                   *symlink()..os.txt*
 os.symlink(src, dst, target_is_directory=False, *, dir_fd=None)
 
    Create a symbolic link pointing to _src_ named _dst_.
@@ -3234,7 +3232,7 @@ os.symlink(src, dst, target_is_directory=False, *, dir_fd=None)
    Changed in version 3.8: Added support for unelevated symlinks on
    Windows with Developer Mode.
 
-os.sync()                                            *sync()..os.txt;*
+os.sync()                                             *sync()..os.txt*
 
    Force write of everything to disk.
 
@@ -3242,7 +3240,7 @@ os.sync()                                            *sync()..os.txt;*
 
    New in version 3.3.
 
-os.truncate(path, length)                        *truncate()..os.txt;*
+os.truncate(path, length)                         *truncate()..os.txt*
 
    Truncate the file corresponding to _path_, so that it is at most
    _length_ bytes in size.
@@ -3260,7 +3258,7 @@ os.truncate(path, length)                        *truncate()..os.txt;*
 
    Changed in version 3.6: Accepts a _path-like object_.
 
-os.unlink(path, *, dir_fd=None)                    *unlink()..os.txt;*
+os.unlink(path, *, dir_fd=None)                     *unlink()..os.txt*
 
    Remove (delete) the file _path_.  This function is semantically
    identical to "remove()"; the "unlink" name is its traditional Unix
@@ -3274,7 +3272,7 @@ os.unlink(path, *, dir_fd=None)                    *unlink()..os.txt;*
 
    Changed in version 3.6: Accepts a _path-like object_.
 
-                                                    *utime()..os.txt;*
+                                                     *utime()..os.txt*
 os.utime(path, times=None, *[, ns], dir_fd=None, follow_symlinks=True)
 
    Set the access and modified times of the file specified by _path_.
@@ -3315,7 +3313,7 @@ os.utime(path, times=None, *[, ns], dir_fd=None, follow_symlinks=True)
 
    Changed in version 3.6: Accepts a _path-like object_.
 
-                                                     *walk()..os.txt;*
+                                                      *walk()..os.txt*
 os.walk(top, topdown=True, onerror=None, followlinks=False)
 
    Generate the file names in a directory tree by walking the tree
@@ -3416,7 +3414,7 @@ os.walk(top, topdown=True, onerror=None, followlinks=False)
 
    Changed in version 3.6: Accepts a _path-like object_.
 
-                                                    *fwalk()..os.txt;*
+                                                     *fwalk()..os.txt*
 os.fwalk(top='.', topdown=True, onerror=None, *, follow_symlinks=False, dir_fd=None)
 
    This behaves exactly like "walk()", except that it yields a 4-tuple
@@ -3476,7 +3474,7 @@ os.fwalk(top='.', topdown=True, onerror=None, *, follow_symlinks=False, dir_fd=N
 
    Changed in version 3.7: Added support for "bytes" paths.
 
-                                             *memfd_create()..os.txt;*
+                                              *memfd_create()..os.txt*
 os.memfd_create(name[, flags=os.MFD_CLOEXEC])
 
    Create an anonymous file and return a file descriptor that refers
@@ -3495,23 +3493,23 @@ os.memfd_create(name[, flags=os.MFD_CLOEXEC])
 
    New in version 3.8.
 
-os.MFD_CLOEXEC                                  *MFD_CLOEXEC..os.txt;*
-os.MFD_ALLOW_SEALING                      *MFD_ALLOW_SEALING..os.txt;*
-os.MFD_HUGETLB                                  *MFD_HUGETLB..os.txt;*
-os.MFD_HUGE_SHIFT                            *MFD_HUGE_SHIFT..os.txt;*
-os.MFD_HUGE_MASK                              *MFD_HUGE_MASK..os.txt;*
-os.MFD_HUGE_64KB                              *MFD_HUGE_64KB..os.txt;*
-os.MFD_HUGE_512KB                            *MFD_HUGE_512KB..os.txt;*
-os.MFD_HUGE_1MB                                *MFD_HUGE_1MB..os.txt;*
-os.MFD_HUGE_2MB                                *MFD_HUGE_2MB..os.txt;*
-os.MFD_HUGE_8MB                                *MFD_HUGE_8MB..os.txt;*
-os.MFD_HUGE_16MB                              *MFD_HUGE_16MB..os.txt;*
-os.MFD_HUGE_32MB                              *MFD_HUGE_32MB..os.txt;*
-os.MFD_HUGE_256MB                            *MFD_HUGE_256MB..os.txt;*
-os.MFD_HUGE_512MB                            *MFD_HUGE_512MB..os.txt;*
-os.MFD_HUGE_1GB                                *MFD_HUGE_1GB..os.txt;*
-os.MFD_HUGE_2GB                                *MFD_HUGE_2GB..os.txt;*
-os.MFD_HUGE_16GB                              *MFD_HUGE_16GB..os.txt;*
+os.MFD_CLOEXEC                                   *MFD_CLOEXEC..os.txt*
+os.MFD_ALLOW_SEALING                       *MFD_ALLOW_SEALING..os.txt*
+os.MFD_HUGETLB                                   *MFD_HUGETLB..os.txt*
+os.MFD_HUGE_SHIFT                             *MFD_HUGE_SHIFT..os.txt*
+os.MFD_HUGE_MASK                               *MFD_HUGE_MASK..os.txt*
+os.MFD_HUGE_64KB                               *MFD_HUGE_64KB..os.txt*
+os.MFD_HUGE_512KB                             *MFD_HUGE_512KB..os.txt*
+os.MFD_HUGE_1MB                                 *MFD_HUGE_1MB..os.txt*
+os.MFD_HUGE_2MB                                 *MFD_HUGE_2MB..os.txt*
+os.MFD_HUGE_8MB                                 *MFD_HUGE_8MB..os.txt*
+os.MFD_HUGE_16MB                               *MFD_HUGE_16MB..os.txt*
+os.MFD_HUGE_32MB                               *MFD_HUGE_32MB..os.txt*
+os.MFD_HUGE_256MB                             *MFD_HUGE_256MB..os.txt*
+os.MFD_HUGE_512MB                             *MFD_HUGE_512MB..os.txt*
+os.MFD_HUGE_1GB                                 *MFD_HUGE_1GB..os.txt*
+os.MFD_HUGE_2GB                                 *MFD_HUGE_2GB..os.txt*
+os.MFD_HUGE_16GB                               *MFD_HUGE_16GB..os.txt*
 
    These flags can be passed to "memfd_create()".
 
@@ -3521,7 +3519,7 @@ os.MFD_HUGE_16GB                              *MFD_HUGE_16GB..os.txt;*
 
    New in version 3.8.
 
-os.eventfd(initval[, flags=os.EFD_CLOEXEC])       *eventfd()..os.txt;*
+os.eventfd(initval[, flags=os.EFD_CLOEXEC])        *eventfd()..os.txt*
 
    Create and return an event file descriptor. The file descriptors
    supports raw "read()" and "write()" with a buffer size of 8,
@@ -3573,7 +3571,7 @@ os.eventfd(initval[, flags=os.EFD_CLOEXEC])       *eventfd()..os.txt;*
 
    New in version 3.10.
 
-os.eventfd_read(fd)                          *eventfd_read()..os.txt;*
+os.eventfd_read(fd)                           *eventfd_read()..os.txt*
 
    Read value from an "eventfd()" file descriptor and return a 64 bit
    unsigned int. The function does not verify that _fd_ is an
@@ -3583,7 +3581,7 @@ os.eventfd_read(fd)                          *eventfd_read()..os.txt;*
 
    New in version 3.10.
 
-os.eventfd_write(fd, value)                 *eventfd_write()..os.txt;*
+os.eventfd_write(fd, value)                  *eventfd_write()..os.txt*
 
    Add value to an "eventfd()" file descriptor. _value_ must be a 64
    bit unsigned int. The function does not verify that _fd_ is an
@@ -3593,7 +3591,7 @@ os.eventfd_write(fd, value)                 *eventfd_write()..os.txt;*
 
    New in version 3.10.
 
-os.EFD_CLOEXEC                                  *EFD_CLOEXEC..os.txt;*
+os.EFD_CLOEXEC                                   *EFD_CLOEXEC..os.txt*
 
    Set close-on-exec flag for new "eventfd()" file descriptor.
 
@@ -3601,7 +3599,7 @@ os.EFD_CLOEXEC                                  *EFD_CLOEXEC..os.txt;*
 
    New in version 3.10.
 
-os.EFD_NONBLOCK                                *EFD_NONBLOCK..os.txt;*
+os.EFD_NONBLOCK                                 *EFD_NONBLOCK..os.txt*
 
    Set "O_NONBLOCK" status flag for new "eventfd()" file descriptor.
 
@@ -3609,7 +3607,7 @@ os.EFD_NONBLOCK                                *EFD_NONBLOCK..os.txt;*
 
    New in version 3.10.
 
-os.EFD_SEMAPHORE                              *EFD_SEMAPHORE..os.txt;*
+os.EFD_SEMAPHORE                               *EFD_SEMAPHORE..os.txt*
 
    Provide semaphore-like semantics for reads from a "eventfd()" file
    descriptor. On read the internal counter is decremented by one.
@@ -3626,7 +3624,7 @@ New in version 3.3.
 
 These functions are all available on Linux only.
 
-                                                 *getxattr()..os.txt;*
+                                                  *getxattr()..os.txt*
 os.getxattr(path, attribute, *, follow_symlinks=True)
 
    Return the value of the extended filesystem attribute _attribute_
@@ -3643,7 +3641,7 @@ os.getxattr(path, attribute, *, follow_symlinks=True)
    Changed in version 3.6: Accepts a _path-like object_ for _path_ and
    _attribute_.
 
-                                                *listxattr()..os.txt;*
+                                                 *listxattr()..os.txt*
 os.listxattr(path=None, *, follow_symlinks=True)
 
    Return a list of the extended filesystem attributes on _path_.  The
@@ -3658,7 +3656,7 @@ os.listxattr(path=None, *, follow_symlinks=True)
 
    Changed in version 3.6: Accepts a _path-like object_.
 
-                                              *removexattr()..os.txt;*
+                                               *removexattr()..os.txt*
 os.removexattr(path, attribute, *, follow_symlinks=True)
 
    Removes the extended filesystem attribute _attribute_ from _path_.
@@ -3675,7 +3673,7 @@ os.removexattr(path, attribute, *, follow_symlinks=True)
    Changed in version 3.6: Accepts a _path-like object_ for _path_ and
    _attribute_.
 
-                                                 *setxattr()..os.txt;*
+                                                  *setxattr()..os.txt*
 os.setxattr(path, attribute, value, flags=0, *, follow_symlinks=True)
 
    Set the extended filesystem attribute _attribute_ on _path_ to
@@ -3702,17 +3700,17 @@ os.setxattr(path, attribute, value, flags=0, *, follow_symlinks=True)
    Changed in version 3.6: Accepts a _path-like object_ for _path_ and
    _attribute_.
 
-os.XATTR_SIZE_MAX                            *XATTR_SIZE_MAX..os.txt;*
+os.XATTR_SIZE_MAX                             *XATTR_SIZE_MAX..os.txt*
 
    The maximum size the value of an extended attribute can be.
    Currently, this is 64 KiB on Linux.
 
-os.XATTR_CREATE                                *XATTR_CREATE..os.txt;*
+os.XATTR_CREATE                                 *XATTR_CREATE..os.txt*
 
    This is a possible value for the flags argument in "setxattr()". It
    indicates the operation must create an attribute.
 
-os.XATTR_REPLACE                              *XATTR_REPLACE..os.txt;*
+os.XATTR_REPLACE                               *XATTR_REPLACE..os.txt*
 
    This is a possible value for the flags argument in "setxattr()". It
    indicates the operation must replace an existing attribute.
@@ -3731,7 +3729,7 @@ programmer, this is the "argv[0]" passed to a program’s "main()".  For
 example, "os.execv('/bin/echo', ['foo', 'bar'])" will only print "bar"
 on standard output; "foo" will seem to be ignored.
 
-os.abort()                                          *abort()..os.txt;*
+os.abort()                                           *abort()..os.txt*
 
    Generate a "SIGABRT" signal to the current process.  On Unix, the
    default behavior is to produce a core dump; on Windows, the process
@@ -3739,7 +3737,7 @@ os.abort()                                          *abort()..os.txt;*
    this function will not call the Python signal handler registered
    for "SIGABRT" with "signal.signal()".
 
-os.add_dll_directory(path)              *add_dll_directory()..os.txt;*
+os.add_dll_directory(path)               *add_dll_directory()..os.txt*
 
    Add a path to the DLL search path.
 
@@ -3767,14 +3765,14 @@ os.add_dll_directory(path)              *add_dll_directory()..os.txt;*
    to ensure consistency. See the porting notes for information on
    updating libraries.
 
-os.execl(path, arg0, arg1, ...)                     *execl()..os.txt;*
-os.execle(path, arg0, arg1, ..., env)              *execle()..os.txt;*
-os.execlp(file, arg0, arg1, ...)                   *execlp()..os.txt;*
-os.execlpe(file, arg0, arg1, ..., env)            *execlpe()..os.txt;*
-os.execv(path, args)                                *execv()..os.txt;*
-os.execve(path, args, env)                         *execve()..os.txt;*
-os.execvp(file, args)                              *execvp()..os.txt;*
-os.execvpe(file, args, env)                       *execvpe()..os.txt;*
+os.execl(path, arg0, arg1, ...)                      *execl()..os.txt*
+os.execle(path, arg0, arg1, ..., env)               *execle()..os.txt*
+os.execlp(file, arg0, arg1, ...)                    *execlp()..os.txt*
+os.execlpe(file, arg0, arg1, ..., env)             *execlpe()..os.txt*
+os.execv(path, args)                                 *execv()..os.txt*
+os.execve(path, args, env)                          *execve()..os.txt*
+os.execvp(file, args)                               *execvp()..os.txt*
+os.execvpe(file, args, env)                        *execvpe()..os.txt*
 
    These functions all execute a new program, replacing the current
    process; they do not return.  On Unix, the new executable is loaded
@@ -3833,7 +3831,7 @@ os.execvpe(file, args, env)                       *execvpe()..os.txt;*
 
    Changed in version 3.6: Accepts a _path-like object_.
 
-os._exit(n)                                         *_exit()..os.txt;*
+os._exit(n)                                          *_exit()..os.txt*
 
    Exit the process with status _n_, without calling cleanup handlers,
    flushing stdio buffers, etc.
@@ -3854,7 +3852,7 @@ Note:
   there is some variation.  These constants are defined where they are
   defined by the underlying platform.
 
-os.EX_OK                                              *EX_OK..os.txt;*
+os.EX_OK                                               *EX_OK..os.txt*
 
    Exit code that means no error occurred. May be taken from the
    defined value of "EXIT_SUCCESS" on some platforms. Generally has a
@@ -3862,79 +3860,79 @@ os.EX_OK                                              *EX_OK..os.txt;*
 
    Availability: Unix, Windows.
 
-os.EX_USAGE                                        *EX_USAGE..os.txt;*
+os.EX_USAGE                                         *EX_USAGE..os.txt*
 
    Exit code that means the command was used incorrectly, such as when
    the wrong number of arguments are given.
 
    Availability: Unix, not Emscripten, not WASI.
 
-os.EX_DATAERR                                    *EX_DATAERR..os.txt;*
+os.EX_DATAERR                                     *EX_DATAERR..os.txt*
 
    Exit code that means the input data was incorrect.
 
    Availability: Unix, not Emscripten, not WASI.
 
-os.EX_NOINPUT                                    *EX_NOINPUT..os.txt;*
+os.EX_NOINPUT                                     *EX_NOINPUT..os.txt*
 
    Exit code that means an input file did not exist or was not
    readable.
 
    Availability: Unix, not Emscripten, not WASI.
 
-os.EX_NOUSER                                      *EX_NOUSER..os.txt;*
+os.EX_NOUSER                                       *EX_NOUSER..os.txt*
 
    Exit code that means a specified user did not exist.
 
    Availability: Unix, not Emscripten, not WASI.
 
-os.EX_NOHOST                                      *EX_NOHOST..os.txt;*
+os.EX_NOHOST                                       *EX_NOHOST..os.txt*
 
    Exit code that means a specified host did not exist.
 
    Availability: Unix, not Emscripten, not WASI.
 
-os.EX_UNAVAILABLE                            *EX_UNAVAILABLE..os.txt;*
+os.EX_UNAVAILABLE                             *EX_UNAVAILABLE..os.txt*
 
    Exit code that means that a required service is unavailable.
 
    Availability: Unix, not Emscripten, not WASI.
 
-os.EX_SOFTWARE                                  *EX_SOFTWARE..os.txt;*
+os.EX_SOFTWARE                                   *EX_SOFTWARE..os.txt*
 
    Exit code that means an internal software error was detected.
 
    Availability: Unix, not Emscripten, not WASI.
 
-os.EX_OSERR                                        *EX_OSERR..os.txt;*
+os.EX_OSERR                                         *EX_OSERR..os.txt*
 
    Exit code that means an operating system error was detected, such
    as the inability to fork or create a pipe.
 
    Availability: Unix, not Emscripten, not WASI.
 
-os.EX_OSFILE                                      *EX_OSFILE..os.txt;*
+os.EX_OSFILE                                       *EX_OSFILE..os.txt*
 
    Exit code that means some system file did not exist, could not be
    opened, or had some other kind of error.
 
    Availability: Unix, not Emscripten, not WASI.
 
-os.EX_CANTCREAT                                *EX_CANTCREAT..os.txt;*
+os.EX_CANTCREAT                                 *EX_CANTCREAT..os.txt*
 
    Exit code that means a user specified output file could not be
    created.
 
    Availability: Unix, not Emscripten, not WASI.
 
-os.EX_IOERR                                        *EX_IOERR..os.txt;*
+os.EX_IOERR                                         *EX_IOERR..os.txt*
 
    Exit code that means that an error occurred while doing I/O on some
    file.
 
    Availability: Unix, not Emscripten, not WASI.
 
-os.EX_TEMPFAIL                                  *EX_TEMPFAIL..os.txt;*
+os.EX_TEMPFAIL                                   *EX_TEMPFAIL..os.txt*
 
    Exit code that means a temporary failure occurred.  This indicates
    something that may not really be an error, such as a network
@@ -3942,34 +3940,34 @@ os.EX_TEMPFAIL                                  *EX_TEMPFAIL..os.txt;*
 
    Availability: Unix, not Emscripten, not WASI.
 
-os.EX_PROTOCOL                                  *EX_PROTOCOL..os.txt;*
+os.EX_PROTOCOL                                   *EX_PROTOCOL..os.txt*
 
    Exit code that means that a protocol exchange was illegal, invalid,
    or not understood.
 
    Availability: Unix, not Emscripten, not WASI.
 
-os.EX_NOPERM                                      *EX_NOPERM..os.txt;*
+os.EX_NOPERM                                       *EX_NOPERM..os.txt*
 
    Exit code that means that there were insufficient permissions to
    perform the operation (but not intended for file system problems).
 
    Availability: Unix, not Emscripten, not WASI.
 
-os.EX_CONFIG                                      *EX_CONFIG..os.txt;*
+os.EX_CONFIG                                       *EX_CONFIG..os.txt*
 
    Exit code that means that some kind of configuration error
    occurred.
 
    Availability: Unix, not Emscripten, not WASI.
 
-os.EX_NOTFOUND                                  *EX_NOTFOUND..os.txt;*
+os.EX_NOTFOUND                                   *EX_NOTFOUND..os.txt*
 
    Exit code that means something like “an entry was not found”.
 
    Availability: Unix, not Emscripten, not WASI.
 
-os.fork()                                            *fork()..os.txt;*
+os.fork()                                             *fork()..os.txt*
 
    Fork a child process.  Return "0" in the child and the child’s
    process id in the parent.  If an error occurs "OSError" is raised.
@@ -3988,7 +3986,7 @@ os.fork()                                            *fork()..os.txt;*
 
    Availability: Unix, not Emscripten, not WASI.
 
-os.forkpty()                                      *forkpty()..os.txt;*
+os.forkpty()                                       *forkpty()..os.txt*
 
    Fork a child process, using a new pseudo-terminal as the child’s
    controlling terminal. Return a pair of "(pid, fd)", where _pid_ is
@@ -4004,7 +4002,7 @@ os.forkpty()                                      *forkpty()..os.txt;*
 
    Availability: Unix, not Emscripten, not WASI.
 
-os.kill(pid, sig, /)                                 *kill()..os.txt;*
+os.kill(pid, sig, /)                                  *kill()..os.txt*
 
    Send signal _sig_ to the process _pid_.  Constants for the specific
    signals available on the host platform are defined in the "signal"
@@ -4026,7 +4024,7 @@ os.kill(pid, sig, /)                                 *kill()..os.txt;*
 
    New in version 3.2: Windows support.
 
-os.killpg(pgid, sig, /)                            *killpg()..os.txt;*
+os.killpg(pgid, sig, /)                             *killpg()..os.txt*
 
    Send the signal _sig_ to the process group _pgid_.
 
@@ -4034,14 +4032,14 @@ os.killpg(pgid, sig, /)                            *killpg()..os.txt;*
 
    Availability: Unix, not Emscripten, not WASI.
 
-os.nice(increment, /)                                *nice()..os.txt;*
+os.nice(increment, /)                                 *nice()..os.txt*
 
    Add _increment_ to the process’s “niceness”.  Return the new
    niceness.
 
    Availability: Unix, not Emscripten, not WASI.
 
-os.pidfd_open(pid, flags=0)                    *pidfd_open()..os.txt;*
+os.pidfd_open(pid, flags=0)                     *pidfd_open()..os.txt*
 
    Return a file descriptor referring to the process _pid_ with
    _flags_ set. This descriptor can be used to perform process
@@ -4053,7 +4051,7 @@ os.pidfd_open(pid, flags=0)                    *pidfd_open()..os.txt;*
 
    New in version 3.9.
 
-   os.PIDFD_NONBLOCK                            *PIDFD_NONBLOCK..os.txt;*
+   os.PIDFD_NONBLOCK                             *PIDFD_NONBLOCK..os.txt*
 
       This flag indicates that the file descriptor will be non-
       blocking. If the process referred to by the file descriptor has
@@ -4065,14 +4063,14 @@ os.pidfd_open(pid, flags=0)                    *pidfd_open()..os.txt;*
 
    New in version 3.12.
 
-os.plock(op, /)                                     *plock()..os.txt;*
+os.plock(op, /)                                      *plock()..os.txt*
 
    Lock program segments into memory.  The value of _op_ (defined in
    "<sys/lock.h>") determines which segments are locked.
 
    Availability: Unix, not Emscripten, not WASI.
 
-os.popen(cmd, mode='r', buffering=-1)               *popen()..os.txt;*
+os.popen(cmd, mode='r', buffering=-1)                *popen()..os.txt*
 
    Open a pipe to or from command _cmd_. The return value is an open
    file object connected to the pipe, which can be read or written
@@ -4109,7 +4107,7 @@ os.popen(cmd, mode='r', buffering=-1)               *popen()..os.txt;*
      Use "subprocess.Popen" or "subprocess.run()" to control options
      like encodings.
 
-                                              *posix_spawn()..os.txt;*
+                                               *posix_spawn()..os.txt*
 os.posix_spawn(path, argv, env, *, file_actions=None, setpgroup=None, resetids=False, setsid=False, setsigmask=(), setsigdef=(), scheduler=None)
 
    Wraps the "posix_spawn()" C library API for use from Python.
@@ -4130,19 +4128,19 @@ os.posix_spawn(path, argv, env, *, file_actions=None, setpgroup=None, resetids=F
    The first item in each tuple must be one of the three type
    indicator listed below describing the remaining tuple elements:
 
-   os.POSIX_SPAWN_OPEN                        *POSIX_SPAWN_OPEN..os.txt;*
+   os.POSIX_SPAWN_OPEN                         *POSIX_SPAWN_OPEN..os.txt*
 
       ("os.POSIX_SPAWN_OPEN", _fd_, _path_, _flags_, _mode_)
 
       Performs "os.dup2(os.open(path, flags, mode), fd)".
 
-   os.POSIX_SPAWN_CLOSE                      *POSIX_SPAWN_CLOSE..os.txt;*
+   os.POSIX_SPAWN_CLOSE                       *POSIX_SPAWN_CLOSE..os.txt*
 
       ("os.POSIX_SPAWN_CLOSE", _fd_)
 
       Performs "os.close(fd)".
 
-   os.POSIX_SPAWN_DUP2                        *POSIX_SPAWN_DUP2..os.txt;*
+   os.POSIX_SPAWN_DUP2                         *POSIX_SPAWN_DUP2..os.txt*
 
       ("os.POSIX_SPAWN_DUP2", _fd_, _new_fd_)
 
@@ -4198,7 +4196,7 @@ os.posix_spawn(path, argv, env, *, file_actions=None, setpgroup=None, resetids=F
 
    Availability: Unix, not Emscripten, not WASI.
 
-                                             *posix_spawnp()..os.txt;*
+                                              *posix_spawnp()..os.txt*
 os.posix_spawnp(path, argv, env, *, file_actions=None, setpgroup=None, resetids=False, setsid=False, setsigmask=(), setsigdef=(), scheduler=None)
 
    Wraps the "posix_spawnp()" C library API for use from Python.
@@ -4216,7 +4214,7 @@ os.posix_spawnp(path, argv, env, *, file_actions=None, setpgroup=None, resetids=
 
    See "posix_spawn()" documentation.
 
-                                         *register_at_fork()..os.txt;*
+                                          *register_at_fork()..os.txt*
 os.register_at_fork(*, before=None, after_in_parent=None, after_in_child=None)
 
    Register callables to be executed when a new child process is
@@ -4250,14 +4248,14 @@ os.register_at_fork(*, before=None, after_in_parent=None, after_in_child=None)
 
    New in version 3.7.
 
-os.spawnl(mode, path, ...)                         *spawnl()..os.txt;*
-os.spawnle(mode, path, ..., env)                  *spawnle()..os.txt;*
-os.spawnlp(mode, file, ...)                       *spawnlp()..os.txt;*
-os.spawnlpe(mode, file, ..., env)                *spawnlpe()..os.txt;*
-os.spawnv(mode, path, args)                        *spawnv()..os.txt;*
-os.spawnve(mode, path, args, env)                 *spawnve()..os.txt;*
-os.spawnvp(mode, file, args)                      *spawnvp()..os.txt;*
-os.spawnvpe(mode, file, args, env)               *spawnvpe()..os.txt;*
+os.spawnl(mode, path, ...)                          *spawnl()..os.txt*
+os.spawnle(mode, path, ..., env)                   *spawnle()..os.txt*
+os.spawnlp(mode, file, ...)                        *spawnlp()..os.txt*
+os.spawnlpe(mode, file, ..., env)                 *spawnlpe()..os.txt*
+os.spawnv(mode, path, args)                         *spawnv()..os.txt*
+os.spawnve(mode, path, args, env)                  *spawnve()..os.txt*
+os.spawnvp(mode, file, args)                       *spawnvp()..os.txt*
+os.spawnvpe(mode, file, args, env)                *spawnvpe()..os.txt*
 
    Execute the program _path_ in a new process.
 
@@ -4328,8 +4326,8 @@ os.spawnvpe(mode, file, args, env)               *spawnvpe()..os.txt;*
 
    Changed in version 3.6: Accepts a _path-like object_.
 
-os.P_NOWAIT                                        *P_NOWAIT..os.txt;*
-os.P_NOWAITO                                      *P_NOWAITO..os.txt;*
+os.P_NOWAIT                                         *P_NOWAIT..os.txt*
+os.P_NOWAITO                                       *P_NOWAITO..os.txt*
 
    Possible values for the _mode_ parameter to the "spawn*" family of
    functions.  If either of these values is given, the "spawn*()"
@@ -4338,7 +4336,7 @@ os.P_NOWAITO                                      *P_NOWAITO..os.txt;*
 
    Availability: Unix, Windows.
 
-os.P_WAIT                                            *P_WAIT..os.txt;*
+os.P_WAIT                                             *P_WAIT..os.txt*
 
    Possible value for the _mode_ parameter to the "spawn*" family of
    functions.  If this is given as _mode_, the "spawn*()" functions
@@ -4348,8 +4346,8 @@ os.P_WAIT                                            *P_WAIT..os.txt;*
 
    Availability: Unix, Windows.
 
-os.P_DETACH                                        *P_DETACH..os.txt;*
-os.P_OVERLAY                                      *P_OVERLAY..os.txt;*
+os.P_DETACH                                         *P_DETACH..os.txt*
+os.P_OVERLAY                                       *P_OVERLAY..os.txt*
 
    Possible values for the _mode_ parameter to the "spawn*" family of
    functions.  These are less portable than those listed above.
@@ -4360,7 +4358,7 @@ os.P_OVERLAY                                      *P_OVERLAY..os.txt;*
 
    Availability: Windows.
 
-                                                *startfile()..os.txt;*
+                                                 *startfile()..os.txt*
 os.startfile(path[, operation][, arguments][, cwd][, show_cmd])
 
    Start a file with its associated application.
@@ -4414,7 +4412,7 @@ os.startfile(path[, operation][, arguments][, cwd][, show_cmd])
    Changed in version 3.10: Added the _arguments_, _cwd_ and
    _show_cmd_ arguments, and the "os.startfile/2" audit event.
 
-os.system(command)                                 *system()..os.txt;*
+os.system(command)                                  *system()..os.txt*
 
    Execute the command (a string) in a subshell.  This is implemented
    by calling the Standard C function "system()", and has the same
@@ -4448,7 +4446,7 @@ os.system(command)                                 *system()..os.txt;*
 
    Availability: Unix, Windows, not Emscripten, not WASI.
 
-os.times()                                          *times()..os.txt;*
+os.times()                                           *times()..os.txt*
 
    Returns the current global process times. The return value is an
    object with five attributes:
@@ -4476,7 +4474,7 @@ os.times()                                          *times()..os.txt;*
    Changed in version 3.3: Return type changed from a tuple to a
    tuple-like object with named attributes.
 
-os.wait()                                            *wait()..os.txt;*
+os.wait()                                             *wait()..os.txt*
 
    Wait for completion of a child process, and return a tuple
    containing its pid and exit status indication: a 16-bit number,
@@ -4498,7 +4496,7 @@ os.wait()                                            *wait()..os.txt;*
      wait for the completion of a specific child process and have more
      options. "waitpid()" is the only one also available on Windows.
 
-os.waitid(idtype, id, options, /)                  *waitid()..os.txt;*
+os.waitid(idtype, id, options, /)                   *waitid()..os.txt*
 
    Wait for the completion of a child process.
 
@@ -4533,7 +4531,7 @@ os.waitid(idtype, id, options, /)                  *waitid()..os.txt;*
 
    New in version 3.3.
 
-os.waitpid(pid, options, /)                       *waitpid()..os.txt;*
+os.waitpid(pid, options, /)                        *waitpid()..os.txt*
 
    The details of this function differ on Unix and Windows.
 
@@ -4576,7 +4574,7 @@ os.waitpid(pid, options, /)                       *waitpid()..os.txt;*
    retries the system call instead of raising an "InterruptedError"
    exception (see **PEP 475** for the rationale).
 
-os.wait3(options)                                   *wait3()..os.txt;*
+os.wait3(options)                                    *wait3()..os.txt*
 
    Similar to "waitpid()", except no process id argument is given and
    a 3-element tuple containing the child’s process id, exit status
@@ -4590,7 +4588,7 @@ os.wait3(options)                                   *wait3()..os.txt;*
 
    Availability: Unix, not Emscripten, not WASI.
 
-os.wait4(pid, options)                              *wait4()..os.txt;*
+os.wait4(pid, options)                               *wait4()..os.txt*
 
    Similar to "waitpid()", except a 3-element tuple, containing the
    child’s process id, exit status indication, and resource usage
@@ -4603,10 +4601,10 @@ os.wait4(pid, options)                              *wait4()..os.txt;*
 
    Availability: Unix, not Emscripten, not WASI.
 
-os.P_PID                                              *P_PID..os.txt;*
-os.P_PGID                                            *P_PGID..os.txt;*
-os.P_ALL                                              *P_ALL..os.txt;*
-os.P_PIDFD                                          *P_PIDFD..os.txt;*
+os.P_PID                                               *P_PID..os.txt*
+os.P_PGID                                             *P_PGID..os.txt*
+os.P_ALL                                               *P_ALL..os.txt*
+os.P_PIDFD                                           *P_PIDFD..os.txt*
 
    These are the possible values for _idtype_ in "waitid()". They
    affect how _id_ is interpreted:
@@ -4630,7 +4628,7 @@ os.P_PIDFD                                          *P_PIDFD..os.txt;*
 
    New in version 3.9: The "P_PIDFD" constant.
 
-os.WCONTINUED                                    *WCONTINUED..os.txt;*
+os.WCONTINUED                                     *WCONTINUED..os.txt*
 
    This _options_ flag for "waitpid()", "wait3()", "wait4()", and
    "waitid()" causes child processes to be reported if they have been
@@ -4638,7 +4636,7 @@ os.WCONTINUED                                    *WCONTINUED..os.txt;*
 
    Availability: Unix, not Emscripten, not WASI.
 
-os.WEXITED                                          *WEXITED..os.txt;*
+os.WEXITED                                           *WEXITED..os.txt*
 
    This _options_ flag for "waitid()" causes child processes that have
    terminated to be reported.
@@ -4650,7 +4648,7 @@ os.WEXITED                                          *WEXITED..os.txt;*
 
    New in version 3.3.
 
-os.WSTOPPED                                        *WSTOPPED..os.txt;*
+os.WSTOPPED                                         *WSTOPPED..os.txt*
 
    This _options_ flag for "waitid()" causes child processes that have
    been stopped by the delivery of a signal to be reported.
@@ -4661,7 +4659,7 @@ os.WSTOPPED                                        *WSTOPPED..os.txt;*
 
    New in version 3.3.
 
-os.WUNTRACED                                      *WUNTRACED..os.txt;*
+os.WUNTRACED                                       *WUNTRACED..os.txt*
 
    This _options_ flag for "waitpid()", "wait3()", and "wait4()"
    causes child processes to also be reported if they have been
@@ -4672,7 +4670,7 @@ os.WUNTRACED                                      *WUNTRACED..os.txt;*
 
    Availability: Unix, not Emscripten, not WASI.
 
-os.WNOHANG                                          *WNOHANG..os.txt;*
+os.WNOHANG                                           *WNOHANG..os.txt*
 
    This _options_ flag causes "waitpid()", "wait3()", "wait4()", and
    "waitid()" to return right away if no child process status is
@@ -4680,7 +4678,7 @@ os.WNOHANG                                          *WNOHANG..os.txt;*
 
    Availability: Unix, not Emscripten, not WASI.
 
-os.WNOWAIT                                          *WNOWAIT..os.txt;*
+os.WNOWAIT                                           *WNOWAIT..os.txt*
 
    This _options_ flag causes "waitid()" to leave the child in a
    waitable state, so that a later "wait*()" call can be used to
@@ -4690,12 +4688,12 @@ os.WNOWAIT                                          *WNOWAIT..os.txt;*
 
    Availability: Unix, not Emscripten, not WASI.
 
-os.CLD_EXITED                                    *CLD_EXITED..os.txt;*
-os.CLD_KILLED                                    *CLD_KILLED..os.txt;*
-os.CLD_DUMPED                                    *CLD_DUMPED..os.txt;*
-os.CLD_TRAPPED                                  *CLD_TRAPPED..os.txt;*
-os.CLD_STOPPED                                  *CLD_STOPPED..os.txt;*
-os.CLD_CONTINUED                              *CLD_CONTINUED..os.txt;*
+os.CLD_EXITED                                     *CLD_EXITED..os.txt*
+os.CLD_KILLED                                     *CLD_KILLED..os.txt*
+os.CLD_DUMPED                                     *CLD_DUMPED..os.txt*
+os.CLD_TRAPPED                                   *CLD_TRAPPED..os.txt*
+os.CLD_STOPPED                                   *CLD_STOPPED..os.txt*
+os.CLD_CONTINUED                               *CLD_CONTINUED..os.txt*
 
    These are the possible values for "si_code" in the result returned
    by "waitid()".
@@ -4707,8 +4705,7 @@ os.CLD_CONTINUED                              *CLD_CONTINUED..os.txt;*
    Changed in version 3.9: Added "CLD_KILLED" and "CLD_STOPPED"
    values.
 
-                                   *waitstatus_to_exitcode()..os.txt;*
-os.waitstatus_to_exitcode(status)
+os.waitstatus_to_exitcode(status)   *waitstatus_to_exitcode()..os.txt*
 
    Convert a wait status to an exit code.
 
@@ -4745,7 +4742,7 @@ The following functions take a process status code as returned by
 "system()", "wait()", or "waitpid()" as a parameter.  They may be used
 to determine the disposition of a process.
 
-os.WCOREDUMP(status, /)                         *WCOREDUMP()..os.txt;*
+os.WCOREDUMP(status, /)                          *WCOREDUMP()..os.txt*
 
    Return "True" if a core dump was generated for the process,
    otherwise return "False".
@@ -4754,7 +4751,7 @@ os.WCOREDUMP(status, /)                         *WCOREDUMP()..os.txt;*
 
    Availability: Unix, not Emscripten, not WASI.
 
-os.WIFCONTINUED(status)                      *WIFCONTINUED()..os.txt;*
+os.WIFCONTINUED(status)                       *WIFCONTINUED()..os.txt*
 
    Return "True" if a stopped child has been resumed by delivery of
    "SIGCONT" (if the process has been continued from a job control
@@ -4764,7 +4761,7 @@ os.WIFCONTINUED(status)                      *WIFCONTINUED()..os.txt;*
 
    Availability: Unix, not Emscripten, not WASI.
 
-os.WIFSTOPPED(status)                          *WIFSTOPPED()..os.txt;*
+os.WIFSTOPPED(status)                           *WIFSTOPPED()..os.txt*
 
    Return "True" if the process was stopped by delivery of a signal,
    otherwise return "False".
@@ -4775,14 +4772,14 @@ os.WIFSTOPPED(status)                          *WIFSTOPPED()..os.txt;*
 
    Availability: Unix, not Emscripten, not WASI.
 
-os.WIFSIGNALED(status)                        *WIFSIGNALED()..os.txt;*
+os.WIFSIGNALED(status)                         *WIFSIGNALED()..os.txt*
 
    Return "True" if the process was terminated by a signal, otherwise
    return "False".
 
    Availability: Unix, not Emscripten, not WASI.
 
-os.WIFEXITED(status)                            *WIFEXITED()..os.txt;*
+os.WIFEXITED(status)                             *WIFEXITED()..os.txt*
 
    Return "True" if the process exited terminated normally, that is,
    by calling "exit()" or "_exit()", or by returning from "main()";
@@ -4790,7 +4787,7 @@ os.WIFEXITED(status)                            *WIFEXITED()..os.txt;*
 
    Availability: Unix, not Emscripten, not WASI.
 
-os.WEXITSTATUS(status)                        *WEXITSTATUS()..os.txt;*
+os.WEXITSTATUS(status)                         *WEXITSTATUS()..os.txt*
 
    Return the process exit status.
 
@@ -4798,7 +4795,7 @@ os.WEXITSTATUS(status)                        *WEXITSTATUS()..os.txt;*
 
    Availability: Unix, not Emscripten, not WASI.
 
-os.WSTOPSIG(status)                              *WSTOPSIG()..os.txt;*
+os.WSTOPSIG(status)                               *WSTOPSIG()..os.txt*
 
    Return the signal which caused the process to stop.
 
@@ -4806,7 +4803,7 @@ os.WSTOPSIG(status)                              *WSTOPSIG()..os.txt;*
 
    Availability: Unix, not Emscripten, not WASI.
 
-os.WTERMSIG(status)                              *WTERMSIG()..os.txt;*
+os.WTERMSIG(status)                               *WTERMSIG()..os.txt*
 
    Return the number of the signal that caused the process to
    terminate.
@@ -4828,38 +4825,38 @@ New in version 3.3.
 The following scheduling policies are exposed if they are supported by
 the operating system.
 
-os.SCHED_OTHER                                  *SCHED_OTHER..os.txt;*
+os.SCHED_OTHER                                   *SCHED_OTHER..os.txt*
 
    The default scheduling policy.
 
-os.SCHED_BATCH                                  *SCHED_BATCH..os.txt;*
+os.SCHED_BATCH                                   *SCHED_BATCH..os.txt*
 
    Scheduling policy for CPU-intensive processes that tries to
    preserve interactivity on the rest of the computer.
 
-os.SCHED_IDLE                                    *SCHED_IDLE..os.txt;*
+os.SCHED_IDLE                                     *SCHED_IDLE..os.txt*
 
    Scheduling policy for extremely low priority background tasks.
 
-os.SCHED_SPORADIC                            *SCHED_SPORADIC..os.txt;*
+os.SCHED_SPORADIC                             *SCHED_SPORADIC..os.txt*
 
    Scheduling policy for sporadic server programs.
 
-os.SCHED_FIFO                                    *SCHED_FIFO..os.txt;*
+os.SCHED_FIFO                                     *SCHED_FIFO..os.txt*
 
    A First In First Out scheduling policy.
 
-os.SCHED_RR                                        *SCHED_RR..os.txt;*
+os.SCHED_RR                                         *SCHED_RR..os.txt*
 
    A round-robin scheduling policy.
 
-os.SCHED_RESET_ON_FORK                  *SCHED_RESET_ON_FORK..os.txt;*
+os.SCHED_RESET_ON_FORK                   *SCHED_RESET_ON_FORK..os.txt*
 
    This flag can be OR’ed with any other scheduling policy. When a
    process with this flag set forks, its child’s scheduling policy and
    priority are reset to the default.
 
-class os.sched_param(sched_priority)            *sched_param..os.txt;*
+class os.sched_param(sched_priority)             *sched_param..os.txt*
 
    This class represents tunable scheduling parameters used in
    "sched_setparam()", "sched_setscheduler()", and "sched_getparam()".
@@ -4867,63 +4864,61 @@ class os.sched_param(sched_priority)            *sched_param..os.txt;*
 
    At the moment, there is only one possible parameter:
 
-   sched_priority                   *sched_param.sched_priority..os.txt;*
+   sched_priority                    *sched_param.sched_priority..os.txt*
 
       The scheduling priority for a scheduling policy.
 
-                                   *sched_get_priority_min()..os.txt;*
-os.sched_get_priority_min(policy)
+os.sched_get_priority_min(policy)   *sched_get_priority_min()..os.txt*
 
    Get the minimum priority value for _policy_. _policy_ is one of the
    scheduling policy constants above.
 
-                                   *sched_get_priority_max()..os.txt;*
-os.sched_get_priority_max(policy)
+os.sched_get_priority_max(policy)   *sched_get_priority_max()..os.txt*
 
    Get the maximum priority value for _policy_. _policy_ is one of the
    scheduling policy constants above.
 
-                                       *sched_setscheduler()..os.txt;*
+                                        *sched_setscheduler()..os.txt*
 os.sched_setscheduler(pid, policy, param, /)
 
    Set the scheduling policy for the process with PID _pid_. A _pid_
    of 0 means the calling process. _policy_ is one of the scheduling
    policy constants above. _param_ is a "sched_param" instance.
 
-os.sched_getscheduler(pid, /)          *sched_getscheduler()..os.txt;*
+os.sched_getscheduler(pid, /)           *sched_getscheduler()..os.txt*
 
    Return the scheduling policy for the process with PID _pid_. A
    _pid_ of 0 means the calling process. The result is one of the
    scheduling policy constants above.
 
-os.sched_setparam(pid, param, /)           *sched_setparam()..os.txt;*
+os.sched_setparam(pid, param, /)            *sched_setparam()..os.txt*
 
    Set the scheduling parameters for the process with PID _pid_. A
    _pid_ of 0 means the calling process. _param_ is a "sched_param"
    instance.
 
-os.sched_getparam(pid, /)                  *sched_getparam()..os.txt;*
+os.sched_getparam(pid, /)                   *sched_getparam()..os.txt*
 
    Return the scheduling parameters as a "sched_param" instance for
    the process with PID _pid_. A _pid_ of 0 means the calling process.
 
-os.sched_rr_get_interval(pid, /)    *sched_rr_get_interval()..os.txt;*
+os.sched_rr_get_interval(pid, /)     *sched_rr_get_interval()..os.txt*
 
    Return the round-robin quantum in seconds for the process with PID
    _pid_. A _pid_ of 0 means the calling process.
 
-os.sched_yield()                              *sched_yield()..os.txt;*
+os.sched_yield()                               *sched_yield()..os.txt*
 
    Voluntarily relinquish the CPU.
 
-os.sched_setaffinity(pid, mask, /)      *sched_setaffinity()..os.txt;*
+os.sched_setaffinity(pid, mask, /)       *sched_setaffinity()..os.txt*
 
    Restrict the process with PID _pid_ (or the current process if
    zero) to a set of CPUs.  _mask_ is an iterable of integers
    representing the set of CPUs to which the process should be
    restricted.
 
-os.sched_getaffinity(pid, /)            *sched_getaffinity()..os.txt;*
+os.sched_getaffinity(pid, /)             *sched_getaffinity()..os.txt*
 
    Return the set of CPUs the process with PID _pid_ (or the current
    process if zero) is restricted to.
@@ -4932,7 +4927,7 @@ os.sched_getaffinity(pid, /)            *sched_getaffinity()..os.txt;*
 Miscellaneous System Information
 ================================
 
-os.confstr(name, /)                               *confstr()..os.txt;*
+os.confstr(name, /)                                *confstr()..os.txt*
 
    Return string-valued system configuration values. _name_ specifies
    the configuration value to retrieve; it may be a string which is
@@ -4953,7 +4948,7 @@ os.confstr(name, /)                               *confstr()..os.txt;*
 
    Availability: Unix.
 
-os.confstr_names                              *confstr_names..os.txt;*
+os.confstr_names                               *confstr_names..os.txt*
 
    Dictionary mapping names accepted by "confstr()" to the integer
    values defined for those names by the host operating system. This
@@ -4961,7 +4956,7 @@ os.confstr_names                              *confstr_names..os.txt;*
 
    Availability: Unix.
 
-os.cpu_count()                                  *cpu_count()..os.txt;*
+os.cpu_count()                                   *cpu_count()..os.txt*
 
    Return the number of CPUs in the system. Returns "None" if
    undetermined.
@@ -4972,7 +4967,7 @@ os.cpu_count()                                  *cpu_count()..os.txt;*
 
    New in version 3.4.
 
-os.getloadavg()                                *getloadavg()..os.txt;*
+os.getloadavg()                                 *getloadavg()..os.txt*
 
    Return the number of processes in the system run queue averaged
    over the last 1, 5, and 15 minutes or raises "OSError" if the load
@@ -4980,7 +4975,7 @@ os.getloadavg()                                *getloadavg()..os.txt;*
 
    Availability: Unix.
 
-os.sysconf(name, /)                               *sysconf()..os.txt;*
+os.sysconf(name, /)                                *sysconf()..os.txt*
 
    Return integer-valued system configuration values. If the
    configuration value specified by _name_ isn’t defined, "-1" is
@@ -4990,7 +4985,7 @@ os.sysconf(name, /)                               *sysconf()..os.txt;*
 
    Availability: Unix.
 
-os.sysconf_names                              *sysconf_names..os.txt;*
+os.sysconf_names                               *sysconf_names..os.txt*
 
    Dictionary mapping names accepted by "sysconf()" to the integer
    values defined for those names by the host operating system. This
@@ -5006,19 +5001,19 @@ operations.  These are defined for all platforms.
 Higher-level operations on pathnames are defined in the "os.path"
 module.
 
-os.curdir                                            *curdir..os.txt;*
+os.curdir                                             *curdir..os.txt*
 
    The constant string used by the operating system to refer to the
    current directory. This is "'.'" for Windows and POSIX. Also
    available via "os.path".
 
-os.pardir                                            *pardir..os.txt;*
+os.pardir                                             *pardir..os.txt*
 
    The constant string used by the operating system to refer to the
    parent directory. This is "'..'" for Windows and POSIX. Also
    available via "os.path".
 
-os.sep                                                  *sep..os.txt;*
+os.sep                                                   *sep..os.txt*
 
    The character used by the operating system to separate pathname
    components. This is "'/'" for POSIX and "'\\'" for Windows.  Note
@@ -5026,31 +5021,31 @@ os.sep                                                  *sep..os.txt;*
    concatenate pathnames — use "os.path.split()" and "os.path.join()"
    — but it is occasionally useful. Also available via "os.path".
 
-os.altsep                                            *altsep..os.txt;*
+os.altsep                                             *altsep..os.txt*
 
    An alternative character used by the operating system to separate
    pathname components, or "None" if only one separator character
    exists.  This is set to "'/'" on Windows systems where "sep" is a
    backslash. Also available via "os.path".
 
-os.extsep                                            *extsep..os.txt;*
+os.extsep                                             *extsep..os.txt*
 
    The character which separates the base filename from the extension;
    for example, the "'.'" in "os.py". Also available via "os.path".
 
-os.pathsep                                          *pathsep..os.txt;*
+os.pathsep                                           *pathsep..os.txt*
 
    The character conventionally used by the operating system to
    separate search path components (as in "PATH"), such as "':'" for
    POSIX or "';'" for Windows. Also available via "os.path".
 
-os.defpath                                          *defpath..os.txt;*
+os.defpath                                           *defpath..os.txt*
 
    The default search path used by "exec*p*" and "spawn*p*" if the
    environment doesn’t have a "'PATH'" key. Also available via
    "os.path".
 
-os.linesep                                          *linesep..os.txt;*
+os.linesep                                           *linesep..os.txt*
 
    The string used to separate (or, rather, terminate) lines on the
    current platform.  This may be a single character, such as "'\n'"
@@ -5059,18 +5054,18 @@ os.linesep                                          *linesep..os.txt;*
    files opened in text mode (the default); use a single "'\n'"
    instead, on all platforms.
 
-os.devnull                                          *devnull..os.txt;*
+os.devnull                                           *devnull..os.txt*
 
    The file path of the null device. For example: "'/dev/null'" for
    POSIX, "'nul'" for Windows.  Also available via "os.path".
 
-os.RTLD_LAZY                                      *RTLD_LAZY..os.txt;*
-os.RTLD_NOW                                        *RTLD_NOW..os.txt;*
-os.RTLD_GLOBAL                                  *RTLD_GLOBAL..os.txt;*
-os.RTLD_LOCAL                                    *RTLD_LOCAL..os.txt;*
-os.RTLD_NODELETE                              *RTLD_NODELETE..os.txt;*
-os.RTLD_NOLOAD                                  *RTLD_NOLOAD..os.txt;*
-os.RTLD_DEEPBIND                              *RTLD_DEEPBIND..os.txt;*
+os.RTLD_LAZY                                       *RTLD_LAZY..os.txt*
+os.RTLD_NOW                                         *RTLD_NOW..os.txt*
+os.RTLD_GLOBAL                                   *RTLD_GLOBAL..os.txt*
+os.RTLD_LOCAL                                     *RTLD_LOCAL..os.txt*
+os.RTLD_NODELETE                               *RTLD_NODELETE..os.txt*
+os.RTLD_NOLOAD                                   *RTLD_NOLOAD..os.txt*
+os.RTLD_DEEPBIND                               *RTLD_DEEPBIND..os.txt*
 
    Flags for use with the "setdlopenflags()" and "getdlopenflags()"
    functions.  See the Unix manual page _dlopen(3)_ for what the
@@ -5082,7 +5077,7 @@ os.RTLD_DEEPBIND                              *RTLD_DEEPBIND..os.txt;*
 Random numbers
 ==============
 
-os.getrandom(size, flags=0)                     *getrandom()..os.txt;*
+os.getrandom(size, flags=0)                      *getrandom()..os.txt*
 
    Get up to _size_ random bytes. The function can return less bytes
    than requested.
@@ -5105,7 +5100,7 @@ os.getrandom(size, flags=0)                     *getrandom()..os.txt;*
 
    New in version 3.6.
 
-os.urandom(size, /)                               *urandom()..os.txt;*
+os.urandom(size, /)                                *urandom()..os.txt*
 
    Return a bytestring of _size_ random bytes suitable for
    cryptographic use.
@@ -5151,7 +5146,7 @@ os.urandom(size, /)                               *urandom()..os.txt;*
    Changed in version 3.11: On Windows, "BCryptGenRandom()" is used
    instead of "CryptGenRandom()" which is deprecated.
 
-os.GRND_NONBLOCK                              *GRND_NONBLOCK..os.txt;*
+os.GRND_NONBLOCK                               *GRND_NONBLOCK..os.txt*
 
    By  default, when reading from "/dev/random", "getrandom()" blocks
    if no random bytes are available, and when reading from
@@ -5164,7 +5159,7 @@ os.GRND_NONBLOCK                              *GRND_NONBLOCK..os.txt;*
 
    New in version 3.6.
 
-os.GRND_RANDOM                                  *GRND_RANDOM..os.txt;*
+os.GRND_RANDOM                                   *GRND_RANDOM..os.txt*
 
    If  this  bit  is  set,  then  random bytes are drawn from the
    "/dev/random" pool instead of the "/dev/urandom" pool.

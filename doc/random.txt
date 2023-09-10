@@ -1,4 +1,4 @@
-*random.txt;*                                 Last change: 2023 Sep 09
+*random.txt;*                                 Last change: 2023 Sep 10
 
 "random" — Generate pseudo-random numbers
 *****************************************
@@ -67,7 +67,7 @@ See also:
 Bookkeeping functions
 =====================
 
-random.seed(a=None, version=2)                   *seed()..random.txt;*
+random.seed(a=None, version=2)                    *seed()..random.txt*
 
    Initialize the random number generator.
 
@@ -91,13 +91,13 @@ random.seed(a=None, version=2)                   *seed()..random.txt;*
    Changed in version 3.11: The _seed_ must be one of the following
    types: _NoneType_, "int", "float", "str", "bytes", or "bytearray".
 
-random.getstate()                            *getstate()..random.txt;*
+random.getstate()                             *getstate()..random.txt*
 
    Return an object capturing the current internal state of the
    generator.  This object can be passed to "setstate()" to restore
    the state.
 
-random.setstate(state)                       *setstate()..random.txt;*
+random.setstate(state)                        *setstate()..random.txt*
 
    _state_ should have been obtained from a previous call to
    "getstate()", and "setstate()" restores the internal state of the
@@ -107,7 +107,7 @@ random.setstate(state)                       *setstate()..random.txt;*
 Functions for bytes
 ===================
 
-random.randbytes(n)                         *randbytes()..random.txt;*
+random.randbytes(n)                          *randbytes()..random.txt*
 
    Generate _n_ random bytes.
 
@@ -120,7 +120,7 @@ random.randbytes(n)                         *randbytes()..random.txt;*
 Functions for integers
 ======================
 
-random.randrange(stop)                      *randrange()..random.txt;*
+random.randrange(stop)                       *randrange()..random.txt*
 random.randrange(start, stop[, step])
 
    Return a randomly selected element from "range(start, stop, step)".
@@ -144,12 +144,12 @@ random.randrange(start, stop[, step])
    is no longer supported. Calls such as "randrange(10.0)" and
    "randrange(Fraction(10, 1))" now raise a "TypeError".
 
-random.randint(a, b)                          *randint()..random.txt;*
+random.randint(a, b)                           *randint()..random.txt*
 
    Return a random integer _N_ such that "a <= N <= b".  Alias for
    "randrange(a, b+1)".
 
-random.getrandbits(k)                     *getrandbits()..random.txt;*
+random.getrandbits(k)                      *getrandbits()..random.txt*
 
    Returns a non-negative Python integer with _k_ random bits. This
    method is supplied with the Mersenne Twister generator and some
@@ -163,12 +163,12 @@ random.getrandbits(k)                     *getrandbits()..random.txt;*
 Functions for sequences
 =======================
 
-random.choice(seq)                             *choice()..random.txt;*
+random.choice(seq)                              *choice()..random.txt*
 
    Return a random element from the non-empty sequence _seq_. If _seq_
    is empty, raises "IndexError".
 
-                                              *choices()..random.txt;*
+                                               *choices()..random.txt*
 random.choices(population, weights=None, *, cum_weights=None, k=1)
 
    Return a _k_ sized list of elements chosen from the _population_
@@ -208,7 +208,7 @@ random.choices(population, weights=None, *, cum_weights=None, k=1)
    Changed in version 3.9: Raises a "ValueError" if all weights are
    zero.
 
-random.shuffle(x)                             *shuffle()..random.txt;*
+random.shuffle(x)                              *shuffle()..random.txt*
 
    Shuffle the sequence _x_ in place.
 
@@ -225,7 +225,7 @@ random.shuffle(x)                             *shuffle()..random.txt;*
    Deprecated since version 3.9, removed in version 3.11: The optional
    parameter _random_.
 
-random.sample(population, k, *, counts=None)   *sample()..random.txt;*
+random.sample(population, k, *, counts=None)    *sample()..random.txt*
 
    Return a _k_ length list of unique elements chosen from the
    population sequence.  Used for random sampling without replacement.
@@ -263,7 +263,7 @@ Discrete distributions
 
 The following function generates a discrete distribution.
 
-random.binomialvariate(n=1, p=0.5)    *binomialvariate()..random.txt;*
+random.binomialvariate(n=1, p=0.5)     *binomialvariate()..random.txt*
 
    Binomial distribution. Return the number of successes for _n_
    independent trials with the probability of success in each trial
@@ -288,12 +288,12 @@ Function parameters are named after the corresponding variables in the
 distribution’s equation, as used in common mathematical practice; most
 of these equations can be found in any statistics text.
 
-random.random()                                *random()..random.txt;*
+random.random()                                 *random()..random.txt*
 
    Return the next random floating point number in the range "0.0 <= X
    < 1.0"
 
-random.uniform(a, b)                          *uniform()..random.txt;*
+random.uniform(a, b)                           *uniform()..random.txt*
 
    Return a random floating point number _N_ such that "a <= N <= b"
    for "a <= b" and "b <= N <= a" for "b < a".
@@ -302,7 +302,7 @@ random.uniform(a, b)                          *uniform()..random.txt;*
    depending on floating-point rounding in the equation "a + (b-a) *
    random()".
 
-random.triangular(low, high, mode)         *triangular()..random.txt;*
+random.triangular(low, high, mode)          *triangular()..random.txt*
 
    Return a random floating point number _N_ such that "low <= N <=
    high" and with the specified _mode_ between those bounds.  The
@@ -310,12 +310,12 @@ random.triangular(low, high, mode)         *triangular()..random.txt;*
    argument defaults to the midpoint between the bounds, giving a
    symmetric distribution.
 
-random.betavariate(alpha, beta)           *betavariate()..random.txt;*
+random.betavariate(alpha, beta)            *betavariate()..random.txt*
 
    Beta distribution.  Conditions on the parameters are "alpha > 0"
    and "beta > 0". Returned values range between 0 and 1.
 
-random.expovariate(lambd=1.0)             *expovariate()..random.txt;*
+random.expovariate(lambd=1.0)              *expovariate()..random.txt*
 
    Exponential distribution.  _lambd_ is 1.0 divided by the desired
    mean.  It should be nonzero.  (The parameter would be called
@@ -325,7 +325,7 @@ random.expovariate(lambd=1.0)             *expovariate()..random.txt;*
 
    Changed in version 3.12: Added the default value for "lambd".
 
-random.gammavariate(alpha, beta)         *gammavariate()..random.txt;*
+random.gammavariate(alpha, beta)          *gammavariate()..random.txt*
 
    Gamma distribution.  (_Not_ the gamma function!)  The shape and
    scale parameters, _alpha_ and _beta_, must have positive values.
@@ -338,7 +338,7 @@ random.gammavariate(alpha, beta)         *gammavariate()..random.txt;*
       pdf(x) =  --------------------------------------
                   math.gamma(alpha) * beta ** alpha
 <
-random.gauss(mu=0.0, sigma=1.0)                 *gauss()..random.txt;*
+random.gauss(mu=0.0, sigma=1.0)                  *gauss()..random.txt*
 
    Normal distribution, also called the Gaussian distribution. _mu_ is
    the mean, and _sigma_ is the standard deviation.  This is slightly
@@ -354,14 +354,14 @@ random.gauss(mu=0.0, sigma=1.0)                 *gauss()..random.txt;*
    Changed in version 3.11: _mu_ and _sigma_ now have default
    arguments.
 
-random.lognormvariate(mu, sigma)       *lognormvariate()..random.txt;*
+random.lognormvariate(mu, sigma)        *lognormvariate()..random.txt*
 
    Log normal distribution.  If you take the natural logarithm of this
    distribution, you’ll get a normal distribution with mean _mu_ and
    standard deviation _sigma_.  _mu_ can have any value, and _sigma_
    must be greater than zero.
 
-                                        *normalvariate()..random.txt;*
+                                         *normalvariate()..random.txt*
 random.normalvariate(mu=0.0, sigma=1.0)
 
    Normal distribution.  _mu_ is the mean, and _sigma_ is the standard
@@ -370,7 +370,7 @@ random.normalvariate(mu=0.0, sigma=1.0)
    Changed in version 3.11: _mu_ and _sigma_ now have default
    arguments.
 
-random.vonmisesvariate(mu, kappa)     *vonmisesvariate()..random.txt;*
+random.vonmisesvariate(mu, kappa)      *vonmisesvariate()..random.txt*
 
    _mu_ is the mean angle, expressed in radians between 0 and 2*_pi_,
    and _kappa_ is the concentration parameter, which must be greater
@@ -378,11 +378,11 @@ random.vonmisesvariate(mu, kappa)     *vonmisesvariate()..random.txt;*
    distribution reduces to a uniform random angle over the range 0 to
    2*_pi_.
 
-random.paretovariate(alpha)             *paretovariate()..random.txt;*
+random.paretovariate(alpha)              *paretovariate()..random.txt*
 
    Pareto distribution.  _alpha_ is the shape parameter.
 
-random.weibullvariate(alpha, beta)     *weibullvariate()..random.txt;*
+random.weibullvariate(alpha, beta)      *weibullvariate()..random.txt*
 
    Weibull distribution.  _alpha_ is the scale parameter and _beta_ is
    the shape parameter.
@@ -391,7 +391,7 @@ random.weibullvariate(alpha, beta)     *weibullvariate()..random.txt;*
 Alternative Generator
 =====================
 
-class random.Random([seed])                      *Random..random.txt;*
+class random.Random([seed])                       *Random..random.txt*
 
    Class that implements the default pseudo-random number generator
    used by the "random" module.
@@ -400,7 +400,7 @@ class random.Random([seed])                      *Random..random.txt;*
    _seed_ could be any hashable object.  Now it is limited to:
    "NoneType", "int", "float", "str", "bytes", or "bytearray".
 
-class random.SystemRandom([seed])          *SystemRandom..random.txt;*
+class random.SystemRandom([seed])           *SystemRandom..random.txt*
 
    Class that uses the "os.urandom()" function for generating random
    numbers from sources provided by the operating system. Not

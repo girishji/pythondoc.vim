@@ -1,4 +1,4 @@
-*webbrowser.txt;*                             Last change: 2023 Sep 09
+*webbrowser.txt;*                             Last change: 2023 Sep 10
 
 "webbrowser" — Convenient web-browser controller
 ************************************************
@@ -47,14 +47,13 @@ more information.
 
 The following exception is defined:
 
-exception webbrowser.Error                    *Error..webbrowser.txt;*
+exception webbrowser.Error                     *Error..webbrowser.txt*
 
    Exception raised when a browser control error occurs.
 
 The following functions are defined:
 
-                                             *open()..webbrowser.txt;*
-webbrowser.open(url, new=0, autoraise=True)
+webbrowser.open(url, new=0, autoraise=True)   *open()..webbrowser.txt*
 
    Display _url_ using the default browser. If _new_ is 0, the _url_
    is opened in the same browser window if possible.  If _new_ is 1, a
@@ -70,23 +69,23 @@ webbrowser.open(url, new=0, autoraise=True)
 
    Raises an auditing event "webbrowser.open" with argument "url".
 
-webbrowser.open_new(url)                 *open_new()..webbrowser.txt;*
+webbrowser.open_new(url)                  *open_new()..webbrowser.txt*
 
    Open _url_ in a new window of the default browser, if possible,
    otherwise, open _url_ in the only browser window.
 
-webbrowser.open_new_tab(url)         *open_new_tab()..webbrowser.txt;*
+webbrowser.open_new_tab(url)          *open_new_tab()..webbrowser.txt*
 
    Open _url_ in a new page (“tab”) of the default browser, if
    possible, otherwise equivalent to "open_new()".
 
-webbrowser.get(using=None)                    *get()..webbrowser.txt;*
+webbrowser.get(using=None)                     *get()..webbrowser.txt*
 
    Return a controller object for the browser type _using_.  If
    _using_ is "None", return a controller for a default browser
    appropriate to the caller’s environment.
 
-                                         *register()..webbrowser.txt;*
+                                          *register()..webbrowser.txt*
 webbrowser.register(name, constructor, instance=None, *, preferred=False)
 
    Register the browser type _name_.  Once a browser type is
@@ -189,24 +188,24 @@ Browser Controller Objects
 Browser controllers provide these methods which parallel three of the
 module-level convenience functions:
 
-controller.name                     *controller.name..webbrowser.txt;*
+controller.name                      *controller.name..webbrowser.txt*
 
    System-dependent name for the browser.
 
-                                  *controller.open()..webbrowser.txt;*
+                                   *controller.open()..webbrowser.txt*
 controller.open(url, new=0, autoraise=True)
 
    Display _url_ using the browser handled by this controller. If
    _new_ is 1, a new browser window is opened if possible. If _new_ is
    2, a new browser page (“tab”) is opened if possible.
 
-controller.open_new(url)      *controller.open_new()..webbrowser.txt;*
+controller.open_new(url)       *controller.open_new()..webbrowser.txt*
 
    Open _url_ in a new window of the browser handled by this
    controller, if possible, otherwise, open _url_ in the only browser
    window.  Alias "open_new()".
 
-                          *controller.open_new_tab()..webbrowser.txt;*
+                           *controller.open_new_tab()..webbrowser.txt*
 controller.open_new_tab(url)
 
    Open _url_ in a new page (“tab”) of the browser handled by this

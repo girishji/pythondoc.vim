@@ -1,4 +1,4 @@
-*tarfile.txt;*                                Last change: 2023 Sep 09
+*tarfile.txt;*                                Last change: 2023 Sep 10
 
 "tarfile" — Read and write tar archive files
 ********************************************
@@ -38,7 +38,7 @@ acknowledge that they are expected and the archive is fully trusted.
 By default, archives are fully trusted, but this default is deprecated
 and slated to change in Python 3.14.
 
-                                                *open()..tarfile.txt;*
+                                                 *open()..tarfile.txt*
 tarfile.open(name=None, mode='r', fileobj=None, bufsize=10240, **kwargs)
 
    Return a "TarFile" object for the pathname _name_. For detailed
@@ -158,12 +158,12 @@ tarfile.open(name=None, mode='r', fileobj=None, bufsize=10240, **kwargs)
    Changed in version 3.12: The _compresslevel_ keyword argument also
    works for streams.
 
-class tarfile.TarFile                          *TarFile..tarfile.txt;*
+class tarfile.TarFile                           *TarFile..tarfile.txt*
 
    Class for reading and writing tar archives. Do not use this class
    directly: use "tarfile.open()" instead. See TarFile Objects.
 
-tarfile.is_tarfile(name)                  *is_tarfile()..tarfile.txt;*
+tarfile.is_tarfile(name)                   *is_tarfile()..tarfile.txt*
 
    Return "True" if _name_ is a tar archive file, that the "tarfile"
    module can read. _name_ may be a "str", file, or file-like object.
@@ -172,64 +172,62 @@ tarfile.is_tarfile(name)                  *is_tarfile()..tarfile.txt;*
 
 The "tarfile" module defines the following exceptions:
 
-exception tarfile.TarError                    *TarError..tarfile.txt;*
+exception tarfile.TarError                     *TarError..tarfile.txt*
 
    Base class for all "tarfile" exceptions.
 
-exception tarfile.ReadError                  *ReadError..tarfile.txt;*
+exception tarfile.ReadError                   *ReadError..tarfile.txt*
 
    Is raised when a tar archive is opened, that either cannot be
    handled by the "tarfile" module or is somehow invalid.
 
-exception tarfile.CompressionError    *CompressionError..tarfile.txt;*
+exception tarfile.CompressionError     *CompressionError..tarfile.txt*
 
    Is raised when a compression method is not supported or when the
    data cannot be decoded properly.
 
-exception tarfile.StreamError              *StreamError..tarfile.txt;*
+exception tarfile.StreamError               *StreamError..tarfile.txt*
 
    Is raised for the limitations that are typical for stream-like
    "TarFile" objects.
 
-exception tarfile.ExtractError            *ExtractError..tarfile.txt;*
+exception tarfile.ExtractError             *ExtractError..tarfile.txt*
 
    Is raised for _non-fatal_ errors when using "TarFile.extract()",
    but only if "TarFile.errorlevel""== 2".
 
-exception tarfile.HeaderError              *HeaderError..tarfile.txt;*
+exception tarfile.HeaderError               *HeaderError..tarfile.txt*
 
    Is raised by "TarInfo.frombuf()" if the buffer it gets is invalid.
 
-exception tarfile.FilterError              *FilterError..tarfile.txt;*
+exception tarfile.FilterError               *FilterError..tarfile.txt*
 
    Base class for members refused by filters.
 
-   tarinfo                            *FilterError.tarinfo..tarfile.txt;*
+   tarinfo                             *FilterError.tarinfo..tarfile.txt*
 
       Information about the member that the filter refused to extract,
       as TarInfo.
 
-                                     *AbsolutePathError..tarfile.txt;*
-exception tarfile.AbsolutePathError
+exception tarfile.AbsolutePathError   *AbsolutePathError..tarfile.txt*
 
    Raised to refuse extracting a member with an absolute path.
 
-                               *OutsideDestinationError..tarfile.txt;*
+                                *OutsideDestinationError..tarfile.txt*
 exception tarfile.OutsideDestinationError
 
    Raised to refuse extracting a member outside the destination
    directory.
 
-exception tarfile.SpecialFileError    *SpecialFileError..tarfile.txt;*
+exception tarfile.SpecialFileError     *SpecialFileError..tarfile.txt*
 
    Raised to refuse extracting a special file (e.g. a device or pipe).
 
-                                     *AbsoluteLinkError..tarfile.txt;*
-exception tarfile.AbsoluteLinkError
+exception tarfile.AbsoluteLinkError   *AbsoluteLinkError..tarfile.txt*
 
    Raised to refuse extracting a symbolic link with an absolute path.
 
-                           *LinkOutsideDestinationError..tarfile.txt;*
+                            *LinkOutsideDestinationError..tarfile.txt*
 exception tarfile.LinkOutsideDestinationError
 
    Raised to refuse extracting a symbolic link pointing outside the
@@ -237,7 +235,7 @@ exception tarfile.LinkOutsideDestinationError
 
 The following constants are available at the module level:
 
-tarfile.ENCODING                              *ENCODING..tarfile.txt;*
+tarfile.ENCODING                               *ENCODING..tarfile.txt*
 
    The default character encoding: "'utf-8'" on Windows, the value
    returned by "sys.getfilesystemencoding()" otherwise.
@@ -246,19 +244,19 @@ Each of the following constants defines a tar archive format that the
 "tarfile" module is able to create. See section Supported tar formats
 for details.
 
-tarfile.USTAR_FORMAT                      *USTAR_FORMAT..tarfile.txt;*
+tarfile.USTAR_FORMAT                       *USTAR_FORMAT..tarfile.txt*
 
    POSIX.1-1988 (ustar) format.
 
-tarfile.GNU_FORMAT                          *GNU_FORMAT..tarfile.txt;*
+tarfile.GNU_FORMAT                           *GNU_FORMAT..tarfile.txt*
 
    GNU tar format.
 
-tarfile.PAX_FORMAT                          *PAX_FORMAT..tarfile.txt;*
+tarfile.PAX_FORMAT                           *PAX_FORMAT..tarfile.txt*
 
    POSIX.1-2001 (pax) format.
 
-tarfile.DEFAULT_FORMAT                  *DEFAULT_FORMAT..tarfile.txt;*
+tarfile.DEFAULT_FORMAT                   *DEFAULT_FORMAT..tarfile.txt*
 
    The default format for creating archives. This is currently
    "PAX_FORMAT".
@@ -367,12 +365,12 @@ class tarfile.TarFile(name=None, mode='r', fileobj=None, format=DEFAULT_FORMAT, 
 
    Changed in version 3.13: Add the _stream_ parameter.
 
-classmethod TarFile.open(...)           *TarFile.open()..tarfile.txt;*
+classmethod TarFile.open(...)            *TarFile.open()..tarfile.txt*
 
    Alternative constructor. The "tarfile.open()" function is actually
    a shortcut to this classmethod.
 
-TarFile.getmember(name)            *TarFile.getmember()..tarfile.txt;*
+TarFile.getmember(name)             *TarFile.getmember()..tarfile.txt*
 
    Return a "TarInfo" object for member _name_. If _name_ can not be
    found in the archive, "KeyError" is raised.
@@ -382,17 +380,17 @@ TarFile.getmember(name)            *TarFile.getmember()..tarfile.txt;*
      If a member occurs more than once in the archive, its last
      occurrence is assumed to be the most up-to-date version.
 
-TarFile.getmembers()              *TarFile.getmembers()..tarfile.txt;*
+TarFile.getmembers()               *TarFile.getmembers()..tarfile.txt*
 
    Return the members of the archive as a list of "TarInfo" objects.
    The list has the same order as the members in the archive.
 
-TarFile.getnames()                  *TarFile.getnames()..tarfile.txt;*
+TarFile.getnames()                   *TarFile.getnames()..tarfile.txt*
 
    Return the members as a list of their names. It has the same order
    as the list returned by "getmembers()".
 
-                                        *TarFile.list()..tarfile.txt;*
+                                         *TarFile.list()..tarfile.txt*
 TarFile.list(verbose=True, *, members=None)
 
    Print a table of contents to "sys.stdout". If _verbose_ is "False",
@@ -402,13 +400,13 @@ TarFile.list(verbose=True, *, members=None)
 
    Changed in version 3.5: Added the _members_ parameter.
 
-TarFile.next()                          *TarFile.next()..tarfile.txt;*
+TarFile.next()                           *TarFile.next()..tarfile.txt*
 
    Return the next member of the archive as a "TarInfo" object, when
    "TarFile" is opened for reading. Return "None" if there is no more
    available.
 
-                                  *TarFile.extractall()..tarfile.txt;*
+                                   *TarFile.extractall()..tarfile.txt*
 TarFile.extractall(path='.', members=None, *, numeric_owner=False, filter=None)
 
    Extract all members from the archive to the current working
@@ -445,7 +443,7 @@ TarFile.extractall(path='.', members=None, *, numeric_owner=False, filter=None)
 
    Changed in version 3.12: Added the _filter_ parameter.
 
-                                     *TarFile.extract()..tarfile.txt;*
+                                      *TarFile.extract()..tarfile.txt*
 TarFile.extract(member, path='', set_attrs=True, *, numeric_owner=False, filter=None)
 
    Extract a member from the archive to the current working directory,
@@ -479,7 +477,7 @@ TarFile.extract(member, path='', set_attrs=True, *, numeric_owner=False, filter=
 
    Changed in version 3.12: Added the _filter_ parameter.
 
-TarFile.extractfile(member)      *TarFile.extractfile()..tarfile.txt;*
+TarFile.extractfile(member)       *TarFile.extractfile()..tarfile.txt*
 
    Extract a member from the archive as a file object. _member_ may be
    a filename or a "TarInfo" object. If _member_ is a regular file or
@@ -489,7 +487,7 @@ TarFile.extractfile(member)      *TarFile.extractfile()..tarfile.txt;*
 
    Changed in version 3.3: Return an "io.BufferedReader" object.
 
-TarFile.errorlevel: int             *TarFile.errorlevel..tarfile.txt;*
+TarFile.errorlevel: int              *TarFile.errorlevel..tarfile.txt*
 
    If _errorlevel_ is "0", errors are ignored when using
    "TarFile.extract()" and "TarFile.extractall()". Nevertheless, they
@@ -507,7 +505,7 @@ TarFile.errorlevel: int             *TarFile.errorlevel..tarfile.txt;*
    Note that when an exception is raised, the archive may be partially
    extracted. It is the user’s responsibility to clean up.
 
-TarFile.extraction_filter    *TarFile.extraction_filter..tarfile.txt;*
+TarFile.extraction_filter     *TarFile.extraction_filter..tarfile.txt*
 
    New in version 3.12.
 
@@ -534,7 +532,7 @@ TarFile.extraction_filter    *TarFile.extraction_filter..tarfile.txt;*
    function needs to be wrapped in "staticmethod()" to prevent
    injection of a "self" argument.
 
-                                         *TarFile.add()..tarfile.txt;*
+                                          *TarFile.add()..tarfile.txt*
 TarFile.add(name, arcname=None, recursive=True, *, filter=None)
 
    Add the file _name_ to the archive. _name_ may be any type of file
@@ -551,7 +549,7 @@ TarFile.add(name, arcname=None, recursive=True, *, filter=None)
 
    Changed in version 3.7: Recursion adds entries in sorted order.
 
-                                     *TarFile.addfile()..tarfile.txt;*
+                                      *TarFile.addfile()..tarfile.txt*
 TarFile.addfile(tarinfo, fileobj=None)
 
    Add the "TarInfo" object _tarinfo_ to the archive. If _fileobj_ is
@@ -559,7 +557,7 @@ TarFile.addfile(tarinfo, fileobj=None)
    read from it and added to the archive.  You can create "TarInfo"
    objects directly, or by using "gettarinfo()".
 
-                                  *TarFile.gettarinfo()..tarfile.txt;*
+                                   *TarFile.gettarinfo()..tarfile.txt*
 TarFile.gettarinfo(name=None, arcname=None, fileobj=None)
 
    Create a "TarInfo" object from the result of "os.stat()" or
@@ -581,12 +579,12 @@ TarFile.gettarinfo(name=None, arcname=None, fileobj=None)
    Changed in version 3.6: The _name_ parameter accepts a _path-like
    object_.
 
-TarFile.close()                        *TarFile.close()..tarfile.txt;*
+TarFile.close()                         *TarFile.close()..tarfile.txt*
 
    Close the "TarFile". In write mode, two finishing zero blocks are
    appended to the archive.
 
-TarFile.pax_headers                *TarFile.pax_headers..tarfile.txt;*
+TarFile.pax_headers                 *TarFile.pax_headers..tarfile.txt*
 
    A dictionary containing key-value pairs of pax global headers.
 
@@ -618,24 +616,24 @@ metadata is unused or unknown. Different "TarInfo" methods handle
 
 * "list()" will print a placeholder string.
 
-class tarfile.TarInfo(name='')                 *TarInfo..tarfile.txt;*
+class tarfile.TarInfo(name='')                  *TarInfo..tarfile.txt*
 
    Create a "TarInfo" object.
 
-                                     *TarInfo.frombuf()..tarfile.txt;*
+                                      *TarInfo.frombuf()..tarfile.txt*
 classmethod TarInfo.frombuf(buf, encoding, errors)
 
    Create and return a "TarInfo" object from string buffer _buf_.
 
    Raises "HeaderError" if the buffer is invalid.
 
-                                 *TarInfo.fromtarfile()..tarfile.txt;*
+                                  *TarInfo.fromtarfile()..tarfile.txt*
 classmethod TarInfo.fromtarfile(tarfile)
 
    Read the next member from the "TarFile" object _tarfile_ and return
    it as a "TarInfo" object.
 
-                                       *TarInfo.tobuf()..tarfile.txt;*
+                                        *TarInfo.tobuf()..tarfile.txt*
 TarInfo.tobuf(format=DEFAULT_FORMAT, encoding=ENCODING, errors='surrogateescape')
 
    Create a string buffer from a "TarInfo" object. For information on
@@ -646,15 +644,15 @@ TarInfo.tobuf(format=DEFAULT_FORMAT, encoding=ENCODING, errors='surrogateescape'
 
 A "TarInfo" object has the following public data attributes:
 
-TarInfo.name: str                         *TarInfo.name..tarfile.txt;*
+TarInfo.name: str                          *TarInfo.name..tarfile.txt*
 
    Name of the archive member.
 
-TarInfo.size: int                         *TarInfo.size..tarfile.txt;*
+TarInfo.size: int                          *TarInfo.size..tarfile.txt*
 
    Size in bytes.
 
-TarInfo.mtime: int | float               *TarInfo.mtime..tarfile.txt;*
+TarInfo.mtime: int | float                *TarInfo.mtime..tarfile.txt*
 
    Time of last modification in seconds since the epoch, as in
    "os.stat_result.st_mtime".
@@ -662,14 +660,14 @@ TarInfo.mtime: int | float               *TarInfo.mtime..tarfile.txt;*
    Changed in version 3.12: Can be set to "None" for "extract()" and
    "extractall()", causing extraction to skip applying this attribute.
 
-TarInfo.mode: int                         *TarInfo.mode..tarfile.txt;*
+TarInfo.mode: int                          *TarInfo.mode..tarfile.txt*
 
    Permission bits, as for "os.chmod()".
 
    Changed in version 3.12: Can be set to "None" for "extract()" and
    "extractall()", causing extraction to skip applying this attribute.
 
-TarInfo.type                              *TarInfo.type..tarfile.txt;*
+TarInfo.type                               *TarInfo.type..tarfile.txt*
 
    File type.  _type_ is usually one of these constants: "REGTYPE",
    "AREGTYPE", "LNKTYPE", "SYMTYPE", "DIRTYPE", "FIFOTYPE",
@@ -677,7 +675,7 @@ TarInfo.type                              *TarInfo.type..tarfile.txt;*
    the type of a "TarInfo" object more conveniently, use the "is*()"
    methods below.
 
-TarInfo.linkname: str                 *TarInfo.linkname..tarfile.txt;*
+TarInfo.linkname: str                  *TarInfo.linkname..tarfile.txt*
 
    Name of the target file name, which is only present in "TarInfo"
    objects of type "LNKTYPE" and "SYMTYPE".
@@ -686,35 +684,35 @@ TarInfo.linkname: str                 *TarInfo.linkname..tarfile.txt;*
    directory that contains the link. For hard links ("LNKTYPE"), the
    _linkname_ is relative to the root of the archive.
 
-TarInfo.uid: int                           *TarInfo.uid..tarfile.txt;*
+TarInfo.uid: int                            *TarInfo.uid..tarfile.txt*
 
    User ID of the user who originally stored this member.
 
    Changed in version 3.12: Can be set to "None" for "extract()" and
    "extractall()", causing extraction to skip applying this attribute.
 
-TarInfo.gid: int                           *TarInfo.gid..tarfile.txt;*
+TarInfo.gid: int                            *TarInfo.gid..tarfile.txt*
 
    Group ID of the user who originally stored this member.
 
    Changed in version 3.12: Can be set to "None" for "extract()" and
    "extractall()", causing extraction to skip applying this attribute.
 
-TarInfo.uname: str                       *TarInfo.uname..tarfile.txt;*
+TarInfo.uname: str                        *TarInfo.uname..tarfile.txt*
 
    User name.
 
    Changed in version 3.12: Can be set to "None" for "extract()" and
    "extractall()", causing extraction to skip applying this attribute.
 
-TarInfo.gname: str                       *TarInfo.gname..tarfile.txt;*
+TarInfo.gname: str                        *TarInfo.gname..tarfile.txt*
 
    Group name.
 
    Changed in version 3.12: Can be set to "None" for "extract()" and
    "extractall()", causing extraction to skip applying this attribute.
 
-TarInfo.pax_headers: dict          *TarInfo.pax_headers..tarfile.txt;*
+TarInfo.pax_headers: dict           *TarInfo.pax_headers..tarfile.txt*
 
    A dictionary containing key-value pairs of an associated pax
    extended header.
@@ -737,39 +735,39 @@ deep=True)
 
 A "TarInfo" object also provides some convenient query methods:
 
-TarInfo.isfile()                      *TarInfo.isfile()..tarfile.txt;*
+TarInfo.isfile()                       *TarInfo.isfile()..tarfile.txt*
 
    Return "True" if the "Tarinfo" object is a regular file.
 
-TarInfo.isreg()                        *TarInfo.isreg()..tarfile.txt;*
+TarInfo.isreg()                         *TarInfo.isreg()..tarfile.txt*
 
    Same as "isfile()".
 
-TarInfo.isdir()                        *TarInfo.isdir()..tarfile.txt;*
+TarInfo.isdir()                         *TarInfo.isdir()..tarfile.txt*
 
    Return "True" if it is a directory.
 
-TarInfo.issym()                        *TarInfo.issym()..tarfile.txt;*
+TarInfo.issym()                         *TarInfo.issym()..tarfile.txt*
 
    Return "True" if it is a symbolic link.
 
-TarInfo.islnk()                        *TarInfo.islnk()..tarfile.txt;*
+TarInfo.islnk()                         *TarInfo.islnk()..tarfile.txt*
 
    Return "True" if it is a hard link.
 
-TarInfo.ischr()                        *TarInfo.ischr()..tarfile.txt;*
+TarInfo.ischr()                         *TarInfo.ischr()..tarfile.txt*
 
    Return "True" if it is a character device.
 
-TarInfo.isblk()                        *TarInfo.isblk()..tarfile.txt;*
+TarInfo.isblk()                         *TarInfo.isblk()..tarfile.txt*
 
    Return "True" if it is a block device.
 
-TarInfo.isfifo()                      *TarInfo.isfifo()..tarfile.txt;*
+TarInfo.isfifo()                       *TarInfo.isfifo()..tarfile.txt*
 
    Return "True" if it is a FIFO.
 
-TarInfo.isdev()                        *TarInfo.isdev()..tarfile.txt;*
+TarInfo.isdev()                         *TarInfo.isdev()..tarfile.txt*
 
    Return "True" if it is one of character device, block device or
    FIFO.
@@ -846,14 +844,14 @@ Default named filters
 The pre-defined, named filters are available as functions, so they can
 be reused in custom filters:
 
-                                *fully_trusted_filter()..tarfile.txt;*
+                                 *fully_trusted_filter()..tarfile.txt*
 tarfile.fully_trusted_filter(member, path)
 
    Return _member_ unchanged.
 
    This implements the "'fully_trusted'" filter.
 
-tarfile.tar_filter(member, path)          *tar_filter()..tarfile.txt;*
+tarfile.tar_filter(member, path)           *tar_filter()..tarfile.txt*
 
    Implements the "'tar'" filter.
 
@@ -872,7 +870,7 @@ tarfile.tar_filter(member, path)          *tar_filter()..tarfile.txt;*
 
    Return the modified "TarInfo" member.
 
-tarfile.data_filter(member, path)        *data_filter()..tarfile.txt;*
+tarfile.data_filter(member, path)         *data_filter()..tarfile.txt*
 
    Implements the "'data'" filter. In addition to what "tar_filter"
    does:

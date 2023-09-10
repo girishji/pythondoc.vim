@@ -1,4 +1,4 @@
-*fractions.txt;*                              Last change: 2023 Sep 09
+*fractions.txt;*                              Last change: 2023 Sep 10
 
 "fractions" — Rational numbers
 ******************************
@@ -13,7 +13,7 @@ arithmetic.
 A Fraction instance can be constructed from a pair of integers, from
 another rational number, or from a string.
 
-                                            *Fraction..fractions.txt;*
+                                             *Fraction..fractions.txt*
 class fractions.Fraction(numerator=0, denominator=1)
 class fractions.Fraction(other_fraction)
 class fractions.Fraction(float)
@@ -100,15 +100,15 @@ class fractions.Fraction(string)
    style formatting, with presentation types ""e"", ""E"", ""f"",
    ""F"", ""g"", ""G"" and ""%""".
 
-   numerator                         *Fraction.numerator..fractions.txt;*
+   numerator                          *Fraction.numerator..fractions.txt*
 
       Numerator of the Fraction in lowest term.
 
-   denominator                     *Fraction.denominator..fractions.txt;*
+   denominator                      *Fraction.denominator..fractions.txt*
 
       Denominator of the Fraction in lowest term.
 
-   as_integer_ratio()       *Fraction.as_integer_ratio()..fractions.txt;*
+   as_integer_ratio()        *Fraction.as_integer_ratio()..fractions.txt*
 
       Return a tuple of two integers, whose ratio is equal to the
       original Fraction.  The ratio is in lowest terms and has a
@@ -116,13 +116,13 @@ class fractions.Fraction(string)
 
       New in version 3.8.
 
-   is_integer()                   *Fraction.is_integer()..fractions.txt;*
+   is_integer()                    *Fraction.is_integer()..fractions.txt*
 
       Return "True" if the Fraction is an integer.
 
       New in version 3.12.
 
-   classmethod from_float(flt)    *Fraction.from_float()..fractions.txt;*
+   classmethod from_float(flt)     *Fraction.from_float()..fractions.txt*
 
       Alternative constructor which only accepts instances of "float"
       or "numbers.Integral". Beware that "Fraction.from_float(0.3)" is
@@ -133,7 +133,7 @@ class fractions.Fraction(string)
         From Python 3.2 onwards, you can also construct a "Fraction"
         instance directly from a "float".
 
-                             *Fraction.from_decimal()..fractions.txt;*
+                              *Fraction.from_decimal()..fractions.txt*
    classmethod from_decimal(dec)
 
       Alternative constructor which only accepts instances of
@@ -144,7 +144,7 @@ class fractions.Fraction(string)
         From Python 3.2 onwards, you can also construct a "Fraction"
         instance directly from a "decimal.Decimal" instance.
 
-                        *Fraction.limit_denominator()..fractions.txt;*
+                         *Fraction.limit_denominator()..fractions.txt*
    limit_denominator(max_denominator=1000000)
 
       Finds and returns the closest "Fraction" to "self" that has
@@ -167,7 +167,7 @@ class fractions.Fraction(string)
       >>> Fraction(1.1).limit_denominator()
       Fraction(11, 10)
 
-   __floor__()                     *Fraction.__floor__()..fractions.txt;*
+   __floor__()                      *Fraction.__floor__()..fractions.txt*
 
       Returns the greatest "int" "<= self".  This method can also be
       accessed through the "math.floor()" function:
@@ -176,12 +176,12 @@ class fractions.Fraction(string)
       >>> floor(Fraction(355, 113))
       3
 
-   __ceil__()                       *Fraction.__ceil__()..fractions.txt;*
+   __ceil__()                        *Fraction.__ceil__()..fractions.txt*
 
       Returns the least "int" ">= self".  This method can also be
       accessed through the "math.ceil()" function.
 
-   __round__()                     *Fraction.__round__()..fractions.txt;*
+   __round__()                      *Fraction.__round__()..fractions.txt*
    __round__(ndigits)
 
       The first version returns the nearest "int" to "self", rounding
@@ -190,7 +190,7 @@ class fractions.Fraction(string)
       is negative), again rounding half toward even.  This method can
       also be accessed through the "round()" function.
 
-   __format__(format_spec, /)     *Fraction.__format__()..fractions.txt;*
+   __format__(format_spec, /)      *Fraction.__format__()..fractions.txt*
 
       Provides support for float-style formatting of "Fraction"
       instances via the "str.format()" method, the "format()" built-in

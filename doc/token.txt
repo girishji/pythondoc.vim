@@ -1,4 +1,4 @@
-*token.txt;*                                  Last change: 2023 Sep 09
+*token.txt;*                                  Last change: 2023 Sep 10
 
 "token" — Constants used with Python parse trees
 ************************************************
@@ -17,255 +17,255 @@ The module also provides a mapping from numeric codes to names and
 some functions.  The functions mirror definitions in the Python C
 header files.
 
-token.tok_name                                  *tok_name..token.txt;*
+token.tok_name                                   *tok_name..token.txt*
 
    Dictionary mapping the numeric values of the constants defined in
    this module back to name strings, allowing more human-readable
    representation of parse trees to be generated.
 
-token.ISTERMINAL(x)                         *ISTERMINAL()..token.txt;*
+token.ISTERMINAL(x)                          *ISTERMINAL()..token.txt*
 
    Return "True" for terminal token values.
 
-token.ISNONTERMINAL(x)                   *ISNONTERMINAL()..token.txt;*
+token.ISNONTERMINAL(x)                    *ISNONTERMINAL()..token.txt*
 
    Return "True" for non-terminal token values.
 
-token.ISEOF(x)                                   *ISEOF()..token.txt;*
+token.ISEOF(x)                                    *ISEOF()..token.txt*
 
    Return "True" if _x_ is the marker indicating the end of input.
 
 The token constants are:
 
-token.ENDMARKER                                *ENDMARKER..token.txt;*
+token.ENDMARKER                                 *ENDMARKER..token.txt*
 
-token.NAME                                          *NAME..token.txt;*
+token.NAME                                           *NAME..token.txt*
 
-token.NUMBER                                      *NUMBER..token.txt;*
+token.NUMBER                                       *NUMBER..token.txt*
 
-token.STRING                                      *STRING..token.txt;*
+token.STRING                                       *STRING..token.txt*
 
-token.NEWLINE                                    *NEWLINE..token.txt;*
+token.NEWLINE                                     *NEWLINE..token.txt*
 
-token.INDENT                                      *INDENT..token.txt;*
+token.INDENT                                       *INDENT..token.txt*
 
-token.DEDENT                                      *DEDENT..token.txt;*
+token.DEDENT                                       *DEDENT..token.txt*
 
-token.LPAR                                          *LPAR..token.txt;*
+token.LPAR                                           *LPAR..token.txt*
 
    Token value for ""("".
 
-token.RPAR                                          *RPAR..token.txt;*
+token.RPAR                                           *RPAR..token.txt*
 
    Token value for "")"".
 
-token.LSQB                                          *LSQB..token.txt;*
+token.LSQB                                           *LSQB..token.txt*
 
    Token value for ""["".
 
-token.RSQB                                          *RSQB..token.txt;*
+token.RSQB                                           *RSQB..token.txt*
 
    Token value for ""]"".
 
-token.COLON                                        *COLON..token.txt;*
+token.COLON                                         *COLON..token.txt*
 
    Token value for "":"".
 
-token.COMMA                                        *COMMA..token.txt;*
+token.COMMA                                         *COMMA..token.txt*
 
    Token value for "","".
 
-token.SEMI                                          *SEMI..token.txt;*
+token.SEMI                                           *SEMI..token.txt*
 
    Token value for "";"".
 
-token.PLUS                                          *PLUS..token.txt;*
+token.PLUS                                           *PLUS..token.txt*
 
    Token value for ""+"".
 
-token.MINUS                                        *MINUS..token.txt;*
+token.MINUS                                         *MINUS..token.txt*
 
    Token value for ""-"".
 
-token.STAR                                          *STAR..token.txt;*
+token.STAR                                           *STAR..token.txt*
 
    Token value for ""*"".
 
-token.SLASH                                        *SLASH..token.txt;*
+token.SLASH                                         *SLASH..token.txt*
 
    Token value for ""/"".
 
-token.VBAR                                          *VBAR..token.txt;*
+token.VBAR                                           *VBAR..token.txt*
 
    Token value for ""|"".
 
-token.AMPER                                        *AMPER..token.txt;*
+token.AMPER                                         *AMPER..token.txt*
 
    Token value for ""&"".
 
-token.LESS                                          *LESS..token.txt;*
+token.LESS                                           *LESS..token.txt*
 
    Token value for ""<"".
 
-token.GREATER                                    *GREATER..token.txt;*
+token.GREATER                                     *GREATER..token.txt*
 
    Token value for "">"".
 
-token.EQUAL                                        *EQUAL..token.txt;*
+token.EQUAL                                         *EQUAL..token.txt*
 
    Token value for ""="".
 
-token.DOT                                            *DOT..token.txt;*
+token.DOT                                             *DOT..token.txt*
 
    Token value for ""."".
 
-token.PERCENT                                    *PERCENT..token.txt;*
+token.PERCENT                                     *PERCENT..token.txt*
 
    Token value for ""%"".
 
-token.LBRACE                                      *LBRACE..token.txt;*
+token.LBRACE                                       *LBRACE..token.txt*
 
    Token value for ""{"".
 
-token.RBRACE                                      *RBRACE..token.txt;*
+token.RBRACE                                       *RBRACE..token.txt*
 
    Token value for ""}"".
 
-token.EQEQUAL                                    *EQEQUAL..token.txt;*
+token.EQEQUAL                                     *EQEQUAL..token.txt*
 
    Token value for ""=="".
 
-token.NOTEQUAL                                  *NOTEQUAL..token.txt;*
+token.NOTEQUAL                                   *NOTEQUAL..token.txt*
 
    Token value for ""!="".
 
-token.LESSEQUAL                                *LESSEQUAL..token.txt;*
+token.LESSEQUAL                                 *LESSEQUAL..token.txt*
 
    Token value for ""<="".
 
-token.GREATEREQUAL                          *GREATEREQUAL..token.txt;*
+token.GREATEREQUAL                           *GREATEREQUAL..token.txt*
 
    Token value for "">="".
 
-token.TILDE                                        *TILDE..token.txt;*
+token.TILDE                                         *TILDE..token.txt*
 
    Token value for ""~"".
 
-token.CIRCUMFLEX                              *CIRCUMFLEX..token.txt;*
+token.CIRCUMFLEX                               *CIRCUMFLEX..token.txt*
 
    Token value for ""^"".
 
-token.LEFTSHIFT                                *LEFTSHIFT..token.txt;*
+token.LEFTSHIFT                                 *LEFTSHIFT..token.txt*
 
    Token value for ""<<"".
 
-token.RIGHTSHIFT                              *RIGHTSHIFT..token.txt;*
+token.RIGHTSHIFT                               *RIGHTSHIFT..token.txt*
 
    Token value for "">>"".
 
-token.DOUBLESTAR                              *DOUBLESTAR..token.txt;*
+token.DOUBLESTAR                               *DOUBLESTAR..token.txt*
 
    Token value for ""**"".
 
-token.PLUSEQUAL                                *PLUSEQUAL..token.txt;*
+token.PLUSEQUAL                                 *PLUSEQUAL..token.txt*
 
    Token value for ""+="".
 
-token.MINEQUAL                                  *MINEQUAL..token.txt;*
+token.MINEQUAL                                   *MINEQUAL..token.txt*
 
    Token value for ""-="".
 
-token.STAREQUAL                                *STAREQUAL..token.txt;*
+token.STAREQUAL                                 *STAREQUAL..token.txt*
 
    Token value for ""*="".
 
-token.SLASHEQUAL                              *SLASHEQUAL..token.txt;*
+token.SLASHEQUAL                               *SLASHEQUAL..token.txt*
 
    Token value for ""/="".
 
-token.PERCENTEQUAL                          *PERCENTEQUAL..token.txt;*
+token.PERCENTEQUAL                           *PERCENTEQUAL..token.txt*
 
    Token value for ""%="".
 
-token.AMPEREQUAL                              *AMPEREQUAL..token.txt;*
+token.AMPEREQUAL                               *AMPEREQUAL..token.txt*
 
    Token value for ""&="".
 
-token.VBAREQUAL                                *VBAREQUAL..token.txt;*
+token.VBAREQUAL                                 *VBAREQUAL..token.txt*
 
    Token value for ""|="".
 
-token.CIRCUMFLEXEQUAL                    *CIRCUMFLEXEQUAL..token.txt;*
+token.CIRCUMFLEXEQUAL                     *CIRCUMFLEXEQUAL..token.txt*
 
    Token value for ""^="".
 
-token.LEFTSHIFTEQUAL                      *LEFTSHIFTEQUAL..token.txt;*
+token.LEFTSHIFTEQUAL                       *LEFTSHIFTEQUAL..token.txt*
 
    Token value for ""<<="".
 
-token.RIGHTSHIFTEQUAL                    *RIGHTSHIFTEQUAL..token.txt;*
+token.RIGHTSHIFTEQUAL                     *RIGHTSHIFTEQUAL..token.txt*
 
    Token value for "">>="".
 
-token.DOUBLESTAREQUAL                    *DOUBLESTAREQUAL..token.txt;*
+token.DOUBLESTAREQUAL                     *DOUBLESTAREQUAL..token.txt*
 
    Token value for ""**="".
 
-token.DOUBLESLASH                            *DOUBLESLASH..token.txt;*
+token.DOUBLESLASH                             *DOUBLESLASH..token.txt*
 
    Token value for ""//"".
 
-token.DOUBLESLASHEQUAL                  *DOUBLESLASHEQUAL..token.txt;*
+token.DOUBLESLASHEQUAL                   *DOUBLESLASHEQUAL..token.txt*
 
    Token value for ""//="".
 
-token.AT                                              *AT..token.txt;*
+token.AT                                               *AT..token.txt*
 
    Token value for ""@"".
 
-token.ATEQUAL                                    *ATEQUAL..token.txt;*
+token.ATEQUAL                                     *ATEQUAL..token.txt*
 
    Token value for ""@="".
 
-token.RARROW                                      *RARROW..token.txt;*
+token.RARROW                                       *RARROW..token.txt*
 
    Token value for ""->"".
 
-token.ELLIPSIS                                  *ELLIPSIS..token.txt;*
+token.ELLIPSIS                                   *ELLIPSIS..token.txt*
 
    Token value for ""..."".
 
-token.COLONEQUAL                              *COLONEQUAL..token.txt;*
+token.COLONEQUAL                               *COLONEQUAL..token.txt*
 
    Token value for "":="".
 
-token.EXCLAMATION                            *EXCLAMATION..token.txt;*
+token.EXCLAMATION                             *EXCLAMATION..token.txt*
 
    Token value for ""!"".
 
-token.OP                                              *OP..token.txt;*
+token.OP                                               *OP..token.txt*
 
-token.TYPE_IGNORE                            *TYPE_IGNORE..token.txt;*
+token.TYPE_IGNORE                             *TYPE_IGNORE..token.txt*
 
-token.TYPE_COMMENT                          *TYPE_COMMENT..token.txt;*
+token.TYPE_COMMENT                           *TYPE_COMMENT..token.txt*
 
-token.SOFT_KEYWORD                          *SOFT_KEYWORD..token.txt;*
+token.SOFT_KEYWORD                           *SOFT_KEYWORD..token.txt*
 
-token.FSTRING_START                        *FSTRING_START..token.txt;*
+token.FSTRING_START                         *FSTRING_START..token.txt*
 
-token.FSTRING_MIDDLE                      *FSTRING_MIDDLE..token.txt;*
+token.FSTRING_MIDDLE                       *FSTRING_MIDDLE..token.txt*
 
-token.FSTRING_END                            *FSTRING_END..token.txt;*
+token.FSTRING_END                             *FSTRING_END..token.txt*
 
-token.COMMENT                                    *COMMENT..token.txt;*
+token.COMMENT                                     *COMMENT..token.txt*
 
-token.NL                                              *NL..token.txt;*
+token.NL                                               *NL..token.txt*
 
-token.ERRORTOKEN                              *ERRORTOKEN..token.txt;*
+token.ERRORTOKEN                               *ERRORTOKEN..token.txt*
 
-token.N_TOKENS                                  *N_TOKENS..token.txt;*
+token.N_TOKENS                                   *N_TOKENS..token.txt*
 
-token.NT_OFFSET                                *NT_OFFSET..token.txt;*
+token.NT_OFFSET                                 *NT_OFFSET..token.txt*
 
 The following token type values aren’t used by the C tokenizer but are
 needed for the "tokenize" module.
@@ -281,7 +281,7 @@ token.NL
    "NL" tokens are generated when a logical line of code is continued
    over multiple physical lines.
 
-token.ENCODING                                  *ENCODING..token.txt;*
+token.ENCODING                                   *ENCODING..token.txt*
 
    Token value that indicates the encoding used to decode the source
    bytes into text. The first token returned by "tokenize.tokenize()"

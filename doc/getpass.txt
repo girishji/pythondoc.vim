@@ -1,4 +1,4 @@
-*getpass.txt;*                                Last change: 2023 Sep 09
+*getpass.txt;*                                Last change: 2023 Sep 10
 
 "getpass" — Portable password input
 ***********************************
@@ -15,7 +15,7 @@ more information.
 
 The "getpass" module provides two functions:
 
-                                             *getpass()..getpass.txt;*
+                                              *getpass()..getpass.txt*
 getpass.getpass(prompt='Password: ', stream=None)
 
    Prompt the user for a password without echoing.  The user is
@@ -35,11 +35,11 @@ getpass.getpass(prompt='Password: ', stream=None)
      the terminal you launched IDLE from rather than the idle window
      itself.
 
-exception getpass.GetPassWarning        *GetPassWarning..getpass.txt;*
+exception getpass.GetPassWarning         *GetPassWarning..getpass.txt*
 
    A "UserWarning" subclass issued when password input may be echoed.
 
-getpass.getuser()                            *getuser()..getpass.txt;*
+getpass.getuser()                             *getuser()..getpass.txt*
 
    Return the “login name” of the user.
 

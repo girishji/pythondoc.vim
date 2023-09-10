@@ -1,4 +1,4 @@
-*asyncio-runner.txt;*                         Last change: 2023 Sep 09
+*asyncio-runner.txt;*                         Last change: 2023 Sep 10
 
 Runners
 *******
@@ -21,7 +21,7 @@ code usage for common wide-spread scenarios.
 Running an asyncio Program
 ==========================
 
-                                          *run()..asyncio-runner.txt;*
+                                           *run()..asyncio-runner.txt*
 asyncio.run(coro, *, debug=None, loop_factory=None)
 
    Execute the _coroutine_ _coro_ and return the result.
@@ -70,7 +70,7 @@ asyncio.run(coro, *, debug=None, loop_factory=None)
 Runner context manager
 ======================
 
-                                         *Runner..asyncio-runner.txt;*
+                                          *Runner..asyncio-runner.txt*
 class asyncio.Runner(*, debug=None, loop_factory=None)
 
    A context manager that simplifies _multiple_ async function calls
@@ -101,7 +101,7 @@ class asyncio.Runner(*, debug=None, loop_factory=None)
 <
    New in version 3.11.
 
-   run(coro, *, context=None)         *Runner.run()..asyncio-runner.txt;*
+   run(coro, *, context=None)          *Runner.run()..asyncio-runner.txt*
 
       Run a _coroutine_ _coro_ in the embedded loop.
 
@@ -114,14 +114,14 @@ class asyncio.Runner(*, debug=None, loop_factory=None)
       This function cannot be called when another asyncio event loop
       is running in the same thread.
 
-   close()                          *Runner.close()..asyncio-runner.txt;*
+   close()                           *Runner.close()..asyncio-runner.txt*
 
       Close the runner.
 
       Finalize asynchronous generators, shutdown default executor,
       close the event loop and release embedded "contextvars.Context".
 
-   get_loop()                    *Runner.get_loop()..asyncio-runner.txt;*
+   get_loop()                     *Runner.get_loop()..asyncio-runner.txt*
 
       Return the event loop associated with the runner instance.
 

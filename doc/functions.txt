@@ -1,4 +1,4 @@
-*functions.txt;*                              Last change: 2023 Sep 09
+*functions.txt;*                              Last change: 2023 Sep 10
 
 Built-in Functions
 ******************
@@ -24,14 +24,14 @@ order.
 |                           | "issubclass()" "iter()" |                         |                           |
 +---------------------------+-------------------------+-------------------------+---------------------------+
 
-abs(x)                                         *abs()..functions.txt;*
+abs(x)                                          *abs()..functions.txt*
 
    Return the absolute value of a number.  The argument may be an
    integer, a floating point number, or an object implementing
    "__abs__()". If the argument is a complex number, its magnitude is
    returned.
 
-aiter(async_iterable)                        *aiter()..functions.txt;*
+aiter(async_iterable)                         *aiter()..functions.txt*
 
    Return an _asynchronous iterator_ for an _asynchronous iterable_.
    Equivalent to calling "x.__aiter__()".
@@ -40,7 +40,7 @@ aiter(async_iterable)                        *aiter()..functions.txt;*
 
    New in version 3.10.
 
-all(iterable)                                  *all()..functions.txt;*
+all(iterable)                                   *all()..functions.txt*
 
    Return "True" if all elements of the _iterable_ are true (or if the
    iterable is empty).  Equivalent to:
@@ -51,7 +51,7 @@ all(iterable)                                  *all()..functions.txt;*
                   return False
           return True
 <
-awaitable anext(async_iterator)              *anext()..functions.txt;*
+awaitable anext(async_iterator)               *anext()..functions.txt*
 awaitable anext(async_iterator, default)
 
    When awaited, return the next item from the given _asynchronous
@@ -67,7 +67,7 @@ awaitable anext(async_iterator, default)
 
    New in version 3.10.
 
-any(iterable)                                  *any()..functions.txt;*
+any(iterable)                                   *any()..functions.txt*
 
    Return "True" if any element of the _iterable_ is true.  If the
    iterable is empty, return "False".  Equivalent to:
@@ -78,7 +78,7 @@ any(iterable)                                  *any()..functions.txt;*
                   return True
           return False
 <
-ascii(object)                                *ascii()..functions.txt;*
+ascii(object)                                 *ascii()..functions.txt*
 
    As "repr()", return a string containing a printable representation
    of an object, but escape the non-ASCII characters in the string
@@ -86,7 +86,7 @@ ascii(object)                                *ascii()..functions.txt;*
    generates a string similar to that returned by "repr()" in Python
    2.
 
-bin(x)                                         *bin()..functions.txt;*
+bin(x)                                          *bin()..functions.txt*
 
    Convert an integer number to a binary string prefixed with “0b”.
    The result is a valid Python expression. If _x_ is not a Python
@@ -108,7 +108,7 @@ bin(x)                                         *bin()..functions.txt;*
 
    See also "format()" for more information.
 
-class bool(x=False)                             *bool..functions.txt;*
+class bool(x=False)                              *bool..functions.txt*
 
    Return a Boolean value, i.e. one of "True" or "False".  _x_ is
    converted using the standard truth testing procedure.  If _x_ is
@@ -119,7 +119,7 @@ class bool(x=False)                             *bool..functions.txt;*
 
    Changed in version 3.7: _x_ is now a positional-only parameter.
 
-breakpoint(*args, **kws)                *breakpoint()..functions.txt;*
+breakpoint(*args, **kws)                 *breakpoint()..functions.txt*
 
    This function drops you into the debugger at the call site.
    Specifically, it calls "sys.breakpointhook()", passing "args" and
@@ -144,7 +144,7 @@ breakpoint(*args, **kws)                *breakpoint()..functions.txt;*
 
    New in version 3.7.
 
-class bytearray(source=b'')                *bytearray..functions.txt;*
+class bytearray(source=b'')                 *bytearray..functions.txt*
 class bytearray(source, encoding)
 class bytearray(source, encoding, errors)
 
@@ -177,7 +177,7 @@ class bytearray(source, encoding, errors)
    See also Binary Sequence Types — bytes, bytearray, memoryview and
    Bytearray Objects.
 
-class bytes(source=b'')                        *bytes..functions.txt;*
+class bytes(source=b'')                         *bytes..functions.txt*
 class bytes(source, encoding)
 class bytes(source, encoding, errors)
 
@@ -195,7 +195,7 @@ class bytes(source, encoding, errors)
    See also Binary Sequence Types — bytes, bytearray, memoryview,
    Bytes Objects, and Bytes and Bytearray Operations.
 
-callable(object)                          *callable()..functions.txt;*
+callable(object)                           *callable()..functions.txt*
 
    Return "True" if the _object_ argument appears callable, "False" if
    not.  If this returns "True", it is still possible that a call
@@ -207,7 +207,7 @@ callable(object)                          *callable()..functions.txt;*
    New in version 3.2: This function was first removed in Python 3.0
    and then brought back in Python 3.2.
 
-chr(i)                                         *chr()..functions.txt;*
+chr(i)                                          *chr()..functions.txt*
 
    Return the string representing a character whose Unicode code point
    is the integer _i_.  For example, "chr(97)" returns the string
@@ -218,7 +218,7 @@ chr(i)                                         *chr()..functions.txt;*
    (0x10FFFF in base 16).  "ValueError" will be raised if _i_ is
    outside that range.
 
-@classmethod                           *classmethod()..functions.txt;*
+@classmethod                            *classmethod()..functions.txt*
 
    Transform a method into a class method.
 
@@ -253,7 +253,7 @@ chr(i)                                         *chr()..functions.txt;*
    Changed in version 3.11: Class methods can no longer wrap other
    _descriptors_ such as "property()".
 
-                                           *compile()..functions.txt;*
+                                            *compile()..functions.txt*
 compile(source, filename, mode, flags=0, dont_inherit=False, optimize=-1)
 
    Compile the _source_ into a code or AST object.  Code objects can
@@ -331,7 +331,7 @@ compile(source, filename, mode, flags=0, dont_inherit=False, optimize=-1)
    passed in flags to enable support for top-level "await", "async
    for", and "async with".
 
-class complex(real=0, imag=0)                *complex..functions.txt;*
+class complex(real=0, imag=0)                 *complex..functions.txt*
 class complex(string)
 
    Return a complex number with the value _real_ + _imag_*1j or
@@ -365,7 +365,7 @@ class complex(string)
    Changed in version 3.8: Falls back to "__index__()" if
    "__complex__()" and "__float__()" are not defined.
 
-delattr(object, name)                      *delattr()..functions.txt;*
+delattr(object, name)                       *delattr()..functions.txt*
 
    This is a relative of "setattr()".  The arguments are an object and
    a string.  The string must be the name of one of the object’s
@@ -374,7 +374,7 @@ delattr(object, name)                      *delattr()..functions.txt;*
    equivalent to "del x.foobar". _name_ need not be a Python
    identifier (see "setattr()").
 
-class dict(**kwarg)                             *dict..functions.txt;*
+class dict(**kwarg)                              *dict..functions.txt*
 class dict(mapping, **kwarg)
 class dict(iterable, **kwarg)
 
@@ -385,7 +385,7 @@ class dict(iterable, **kwarg)
    For other containers see the built-in "list", "set", and "tuple"
    classes, as well as the "collections" module.
 
-dir()                                          *dir()..functions.txt;*
+dir()                                           *dir()..functions.txt*
 dir(object)
 
    Without arguments, return the list of names in the current local
@@ -445,7 +445,7 @@ dir(object)
      releases.  For example, metaclass attributes are not in the
      result list when the argument is a class.
 
-divmod(a, b)                                *divmod()..functions.txt;*
+divmod(a, b)                                 *divmod()..functions.txt*
 
    Take two (non-complex) numbers as arguments and return a pair of
    numbers consisting of their quotient and remainder when using
@@ -457,7 +457,7 @@ divmod(a, b)                                *divmod()..functions.txt;*
    % b" is non-zero it has the same sign as _b_, and "0 <= abs(a % b)
    < abs(b)".
 
-enumerate(iterable, start=0)             *enumerate()..functions.txt;*
+enumerate(iterable, start=0)              *enumerate()..functions.txt*
 
    Return an enumerate object. _iterable_ must be a sequence, an
    _iterator_, or some other object which supports iteration. The
@@ -479,7 +479,7 @@ enumerate(iterable, start=0)             *enumerate()..functions.txt;*
               yield n, elem
               n += 1
 <
-eval(expression, globals=None, locals=None)   *eval()..functions.txt;*
+eval(expression, globals=None, locals=None)    *eval()..functions.txt*
 
    The arguments are a string and optional globals and locals.  If
    provided, _globals_ must be a dictionary.  If provided, _locals_
@@ -527,7 +527,7 @@ eval(expression, globals=None, locals=None)   *eval()..functions.txt;*
    Raises an auditing event "exec" with the code object as the
    argument. Code compilation events may also be raised.
 
-                                              *exec()..functions.txt;*
+                                               *exec()..functions.txt*
 exec(object, globals=None, locals=None, /, *, closure=None)
 
    This function supports dynamic execution of Python code. _object_
@@ -584,7 +584,7 @@ exec(object, globals=None, locals=None, /, *, closure=None)
 
    Changed in version 3.11: Added the _closure_ parameter.
 
-filter(function, iterable)                  *filter()..functions.txt;*
+filter(function, iterable)                   *filter()..functions.txt*
 
    Construct an iterator from those elements of _iterable_ for which
    _function_ is true.  _iterable_ may be either a sequence, a
@@ -600,7 +600,7 @@ filter(function, iterable)                  *filter()..functions.txt;*
    See "itertools.filterfalse()" for the complementary function that
    returns elements of _iterable_ for which _function_ is false.
 
-class float(x=0.0)                             *float..functions.txt;*
+class float(x=0.0)                              *float..functions.txt*
 
    Return a floating point number constructed from a number or string
    _x_.
@@ -663,7 +663,7 @@ class float(x=0.0)                             *float..functions.txt;*
    Changed in version 3.8: Falls back to "__index__()" if
    "__float__()" is not defined.
 
-format(value, format_spec='')               *format()..functions.txt;*
+format(value, format_spec='')                *format()..functions.txt*
 
    Convert a _value_ to a “formatted” representation, as controlled by
    _format_spec_.  The interpretation of _format_spec_ will depend on
@@ -684,7 +684,7 @@ format(value, format_spec='')               *format()..functions.txt;*
    Changed in version 3.4: "object().__format__(format_spec)" raises
    "TypeError" if _format_spec_ is not an empty string.
 
-class frozenset(iterable=set())            *frozenset..functions.txt;*
+class frozenset(iterable=set())             *frozenset..functions.txt*
 
    Return a new "frozenset" object, optionally with elements taken
    from _iterable_.  "frozenset" is a built-in class.  See "frozenset"
@@ -693,7 +693,7 @@ class frozenset(iterable=set())            *frozenset..functions.txt;*
    For other containers see the built-in "set", "list", "tuple", and
    "dict" classes, as well as the "collections" module.
 
-getattr(object, name)                      *getattr()..functions.txt;*
+getattr(object, name)                       *getattr()..functions.txt*
 getattr(object, name, default)
 
    Return the value of the named attribute of _object_.  _name_ must
@@ -711,20 +711,20 @@ getattr(object, name, default)
      leading underscores) name in order to retrieve it with
      "getattr()".
 
-globals()                                  *globals()..functions.txt;*
+globals()                                   *globals()..functions.txt*
 
    Return the dictionary implementing the current module namespace.
    For code within functions, this is set when the function is defined
    and remains the same regardless of where the function is called.
 
-hasattr(object, name)                      *hasattr()..functions.txt;*
+hasattr(object, name)                       *hasattr()..functions.txt*
 
    The arguments are an object and a string.  The result is "True" if
    the string is the name of one of the object’s attributes, "False"
    if not. (This is implemented by calling "getattr(object, name)" and
    seeing whether it raises an "AttributeError" or not.)
 
-hash(object)                                  *hash()..functions.txt;*
+hash(object)                                   *hash()..functions.txt*
 
    Return the hash value of the object (if it has one).  Hash values
    are integers.  They are used to quickly compare dictionary keys
@@ -738,7 +738,7 @@ hash(object)                                  *hash()..functions.txt;*
      truncates the return value based on the bit width of the host
      machine. See "__hash__" for details.
 
-help()                                        *help()..functions.txt;*
+help()                                         *help()..functions.txt*
 help(request)
 
    Invoke the built-in help system.  (This function is intended for
@@ -761,7 +761,7 @@ help(request)
    the reported signatures for callables are now more comprehensive
    and consistent.
 
-hex(x)                                         *hex()..functions.txt;*
+hex(x)                                          *hex()..functions.txt*
 
    Convert an integer number to a lowercase hexadecimal string
    prefixed with “0x”. If _x_ is not a Python "int" object, it has to
@@ -794,7 +794,7 @@ hex(x)                                         *hex()..functions.txt;*
      To obtain a hexadecimal string representation for a float, use
      the "float.hex()" method.
 
-id(object)                                      *id()..functions.txt;*
+id(object)                                       *id()..functions.txt*
 
    Return the “identity” of an object.  This is an integer which is
    guaranteed to be unique and constant for this object during its
@@ -806,7 +806,7 @@ id(object)                                      *id()..functions.txt;*
 
    Raises an auditing event "builtins.id" with argument "id".
 
-input()                                      *input()..functions.txt;*
+input()                                       *input()..functions.txt*
 input(prompt)
 
    If the _prompt_ argument is present, it is written to standard
@@ -829,7 +829,7 @@ input(prompt)
    Raises an auditing event "builtins.input/result" with the result
    after successfully reading input.
 
-class int(x=0)                                   *int..functions.txt;*
+class int(x=0)                                    *int..functions.txt*
 class int(x, base=10)
 
    Return an integer object constructed from a number or string _x_,
@@ -884,7 +884,7 @@ class int(x, base=10)
    into a string would exceed the limit. See the integer string
    conversion length limitation documentation.
 
-isinstance(object, classinfo)           *isinstance()..functions.txt;*
+isinstance(object, classinfo)            *isinstance()..functions.txt*
 
    Return "True" if the _object_ argument is an instance of the
    _classinfo_ argument, or of a (direct, indirect, or _virtual_)
@@ -898,7 +898,7 @@ isinstance(object, classinfo)           *isinstance()..functions.txt;*
 
    Changed in version 3.10: _classinfo_ can be a Union Type.
 
-issubclass(class, classinfo)            *issubclass()..functions.txt;*
+issubclass(class, classinfo)             *issubclass()..functions.txt*
 
    Return "True" if _class_ is a subclass (direct, indirect, or
    _virtual_) of _classinfo_.  A class is considered a subclass of
@@ -909,7 +909,7 @@ issubclass(class, classinfo)            *issubclass()..functions.txt;*
 
    Changed in version 3.10: _classinfo_ can be a Union Type.
 
-iter(object)                                  *iter()..functions.txt;*
+iter(object)                                   *iter()..functions.txt*
 iter(object, sentinel)
 
    Return an _iterator_ object.  The first argument is interpreted
@@ -937,7 +937,7 @@ iter(object, sentinel)
           for block in iter(partial(f.read, 64), b''):
               process_block(block)
 <
-len(s)                                         *len()..functions.txt;*
+len(s)                                          *len()..functions.txt*
 
    Return the length (the number of items) of an object.  The argument
    may be a sequence (such as a string, bytes, tuple, list, or range)
@@ -946,14 +946,14 @@ len(s)                                         *len()..functions.txt;*
    **CPython implementation detail:** "len" raises "OverflowError" on
    lengths larger than "sys.maxsize", such as "range(2 ** 100)".
 
-class list                                      *list..functions.txt;*
+class list                                       *list..functions.txt*
 class list(iterable)
 
    Rather than being a function, "list" is actually a mutable sequence
    type, as documented in Lists and Sequence Types — list, tuple,
    range.
 
-locals()                                    *locals()..functions.txt;*
+locals()                                     *locals()..functions.txt*
 
    Update and return a dictionary representing the current local
    symbol table. Free variables are returned by "locals()" when it is
@@ -967,7 +967,7 @@ locals()                                    *locals()..functions.txt;*
      may not affect the values of local and free variables used by the
      interpreter.
 
-map(function, iterable, *iterables)            *map()..functions.txt;*
+map(function, iterable, *iterables)             *map()..functions.txt*
 
    Return an iterator that applies _function_ to every item of
    _iterable_, yielding the results.  If additional _iterables_
@@ -977,7 +977,7 @@ map(function, iterable, *iterables)            *map()..functions.txt;*
    is exhausted.  For cases where the function inputs are already
    arranged into argument tuples, see "itertools.starmap()".
 
-max(iterable, *, key=None)                     *max()..functions.txt;*
+max(iterable, *, key=None)                      *max()..functions.txt*
 max(iterable, *, default, key=None)
 max(arg1, arg2, *args, key=None)
 
@@ -1004,12 +1004,12 @@ max(arg1, arg2, *args, key=None)
 
    Changed in version 3.8: The _key_ can be "None".
 
-class memoryview(object)                  *memoryview..functions.txt;*
+class memoryview(object)                   *memoryview..functions.txt*
 
    Return a “memory view” object created from the given argument.  See
    Memory Views for more information.
 
-min(iterable, *, key=None)                     *min()..functions.txt;*
+min(iterable, *, key=None)                      *min()..functions.txt*
 min(iterable, *, default, key=None)
 min(arg1, arg2, *args, key=None)
 
@@ -1036,14 +1036,14 @@ min(arg1, arg2, *args, key=None)
 
    Changed in version 3.8: The _key_ can be "None".
 
-next(iterator)                                *next()..functions.txt;*
+next(iterator)                                 *next()..functions.txt*
 next(iterator, default)
 
    Retrieve the next item from the _iterator_ by calling its
    "__next__()" method.  If _default_ is given, it is returned if the
    iterator is exhausted, otherwise "StopIteration" is raised.
 
-class object                                  *object..functions.txt;*
+class object                                   *object..functions.txt*
 
    Return a new featureless object.  "object" is a base for all
    classes. It has methods that are common to all instances of Python
@@ -1054,7 +1054,7 @@ class object                                  *object..functions.txt;*
      "object" does _not_ have a "__dict__", so you can’t assign
      arbitrary attributes to an instance of the "object" class.
 
-oct(x)                                         *oct()..functions.txt;*
+oct(x)                                          *oct()..functions.txt*
 
    Convert an integer number to an octal string prefixed with “0o”.
    The result is a valid Python expression. If _x_ is not a Python
@@ -1079,7 +1079,7 @@ oct(x)                                         *oct()..functions.txt;*
 
    See also "format()" for more information.
 
-                                              *open()..functions.txt;*
+                                               *open()..functions.txt*
 open(file, mode='r', buffering=-1, encoding=None, errors=None, newline=None, closefd=True, opener=None)
 
    Open _file_ and return a corresponding _file object_.  If the file
@@ -1301,14 +1301,14 @@ open(file, mode='r', buffering=-1, encoding=None, errors=None, newline=None, clo
 
    Changed in version 3.11: The "'U'" mode has been removed.
 
-ord(c)                                         *ord()..functions.txt;*
+ord(c)                                          *ord()..functions.txt*
 
    Given a string representing one Unicode character, return an
    integer representing the Unicode code point of that character.  For
    example, "ord('a')" returns the integer "97" and "ord('€')" (Euro
    sign) returns "8364".  This is the inverse of "chr()".
 
-pow(base, exp, mod=None)                       *pow()..functions.txt;*
+pow(base, exp, mod=None)                        *pow()..functions.txt*
 
    Return _base_ to the power _exp_; if _mod_ is present, return
    _base_ to the power _exp_, modulo _mod_ (computed more efficiently
@@ -1345,7 +1345,7 @@ pow(base, exp, mod=None)                       *pow()..functions.txt;*
    Changed in version 3.8: Allow keyword arguments.  Formerly, only
    positional arguments were supported.
 
-                                             *print()..functions.txt;*
+                                              *print()..functions.txt*
 print(*objects, sep=' ', end='\n', file=None, flush=False)
 
    Print _objects_ to the text stream _file_, separated by _sep_ and
@@ -1369,7 +1369,7 @@ print(*objects, sep=' ', end='\n', file=None, flush=False)
 
    Changed in version 3.3: Added the _flush_ keyword argument.
 
-                                            *property..functions.txt;*
+                                             *property..functions.txt*
 class property(fget=None, fset=None, fdel=None, doc=None)
 
    Return a property attribute.
@@ -1449,14 +1449,14 @@ class property(fget=None, fset=None, fdel=None, doc=None)
    Changed in version 3.5: The docstrings of property objects are now
    writeable.
 
-class range(stop)                              *range..functions.txt;*
+class range(stop)                               *range..functions.txt*
 class range(start, stop, step=1)
 
    Rather than being a function, "range" is actually an immutable
    sequence type, as documented in Ranges and Sequence Types — list,
    tuple, range.
 
-repr(object)                                  *repr()..functions.txt;*
+repr(object)                                   *repr()..functions.txt*
 
    Return a string containing a printable representation of an object.
    For many types, this function makes an attempt to return a string
@@ -1469,14 +1469,14 @@ repr(object)                                  *repr()..functions.txt;*
    "sys.displayhook()" is not accessible, this function will raise
    "RuntimeError".
 
-reversed(seq)                             *reversed()..functions.txt;*
+reversed(seq)                              *reversed()..functions.txt*
 
    Return a reverse _iterator_.  _seq_ must be an object which has a
    "__reversed__()" method or supports the sequence protocol (the
    "__len__()" method and the "__getitem__()" method with integer
    arguments starting at "0").
 
-round(number, ndigits=None)                  *round()..functions.txt;*
+round(number, ndigits=None)                   *round()..functions.txt*
 
    Return _number_ rounded to _ndigits_ precision after the decimal
    point.  If _ndigits_ is omitted or is "None", it returns the
@@ -1503,7 +1503,7 @@ round(number, ndigits=None)                  *round()..functions.txt;*
      Floating Point Arithmetic:  Issues and Limitations for more
      information.
 
-class set                                        *set..functions.txt;*
+class set                                         *set..functions.txt*
 class set(iterable)
 
    Return a new "set" object, optionally with elements taken from
@@ -1513,7 +1513,7 @@ class set(iterable)
    For other containers see the built-in "frozenset", "list", "tuple",
    and "dict" classes, as well as the "collections" module.
 
-setattr(object, name, value)               *setattr()..functions.txt;*
+setattr(object, name, value)                *setattr()..functions.txt*
 
    This is the counterpart of "getattr()".  The arguments are an
    object, a string, and an arbitrary value.  The string may name an
@@ -1534,7 +1534,7 @@ setattr(object, name, value)               *setattr()..functions.txt;*
      manually mangle a private attribute’s (attributes with two
      leading underscores) name in order to set it with "setattr()".
 
-class slice(stop)                              *slice..functions.txt;*
+class slice(stop)                               *slice..functions.txt*
 class slice(start, stop, step=None)
 
    Return a _slice_ object representing the set of indices specified
@@ -1551,7 +1551,7 @@ class slice(start, stop, step=None)
    Changed in version 3.12: Slice objects are now _hashable_ (provided
    "start", "stop", and "step" are hashable).
 
-                                            *sorted()..functions.txt;*
+                                             *sorted()..functions.txt*
 sorted(iterable, /, *, key=None, reverse=False)
 
    Return a new sorted list from the items in _iterable_.
@@ -1588,7 +1588,7 @@ sorted(iterable, /, *, key=None, reverse=False)
    For sorting examples and a brief sorting tutorial, see Sorting HOW
    TO.
 
-@staticmethod                         *staticmethod()..functions.txt;*
+@staticmethod                          *staticmethod()..functions.txt*
 
    Transform a method into a static method.
 
@@ -1630,7 +1630,7 @@ sorted(iterable, /, *, key=None, reverse=False)
    "__annotations__"), have a new "__wrapped__" attribute, and are now
    callable as regular functions.
 
-class str(object='')                             *str..functions.txt;*
+class str(object='')                              *str..functions.txt*
 class str(object=b'', encoding='utf-8', errors='strict')
 
    Return a "str" version of _object_.  See "str()" for details.
@@ -1638,7 +1638,7 @@ class str(object=b'', encoding='utf-8', errors='strict')
    "str" is the built-in string _class_.  For general information
    about strings, see Text Sequence Type — str.
 
-sum(iterable, /, start=0)                      *sum()..functions.txt;*
+sum(iterable, /, start=0)                       *sum()..functions.txt*
 
    Sums _start_ and the items of an _iterable_ from left to right and
    returns the total.  The _iterable_’s items are normally numbers,
@@ -1657,7 +1657,7 @@ sum(iterable, /, start=0)                      *sum()..functions.txt;*
    algorithm that gives higher accuracy and better commutativity on
    most builds.
 
-class super                                    *super..functions.txt;*
+class super                                     *super..functions.txt*
 class super(type, object_or_type=None)
 
    Return a proxy object that delegates method calls to a parent or
@@ -1730,14 +1730,14 @@ class super(type, object_or_type=None)
    For practical suggestions on how to design cooperative classes
    using "super()", see guide to using super().
 
-class tuple                                    *tuple..functions.txt;*
+class tuple                                     *tuple..functions.txt*
 class tuple(iterable)
 
    Rather than being a function, "tuple" is actually an immutable
    sequence type, as documented in Tuples and Sequence Types — list,
    tuple, range.
 
-class type(object)                              *type..functions.txt;*
+class type(object)                               *type..functions.txt*
 class type(name, bases, dict, **kwds)
 
    With one argument, return the type of an _object_.  The return
@@ -1775,7 +1775,7 @@ class type(name, bases, dict, **kwds)
    "type.__new__" may no longer use the one-argument form to get the
    type of an object.
 
-vars()                                        *vars()..functions.txt;*
+vars()                                         *vars()..functions.txt*
 vars(object)
 
    Return the "__dict__" attribute for a module, class, instance, or
@@ -1794,7 +1794,7 @@ vars(object)
    doesn’t have a "__dict__" attribute (for example, if its class
    defines the "__slots__" attribute).
 
-zip(*iterables, strict=False)                  *zip()..functions.txt;*
+zip(*iterables, strict=False)                   *zip()..functions.txt*
 
    Iterate over several iterables in parallel, producing tuples with
    an item from each one.
@@ -1886,7 +1886,7 @@ zip(*iterables, strict=False)                  *zip()..functions.txt;*
 <
    Changed in version 3.10: Added the "strict" argument.
 
-                                        *__import__()..functions.txt;*
+                                         *__import__()..functions.txt*
 __import__(name, globals=None, locals=None, fromlist=(), level=0)
 
    Note:

@@ -1,4 +1,4 @@
-*imaplib.txt;*                                Last change: 2023 Sep 09
+*imaplib.txt;*                                Last change: 2023 Sep 10
 
 "imaplib" — IMAP4 protocol client
 *********************************
@@ -22,7 +22,7 @@ more information.
 Three classes are provided by the "imaplib" module, "IMAP4" is the
 base class:
 
-                                                 *IMAP4..imaplib.txt;*
+                                                  *IMAP4..imaplib.txt*
 class imaplib.IMAP4(host='', port=IMAP4_PORT, timeout=None)
 
    This class implements the actual IMAP4 protocol.  The connection is
@@ -49,19 +49,19 @@ class imaplib.IMAP4(host='', port=IMAP4_PORT, timeout=None)
 
 Three exceptions are defined as attributes of the "IMAP4" class:
 
-exception IMAP4.error                      *IMAP4.error..imaplib.txt;*
+exception IMAP4.error                       *IMAP4.error..imaplib.txt*
 
    Exception raised on any errors.  The reason for the exception is
    passed to the constructor as a string.
 
-exception IMAP4.abort                      *IMAP4.abort..imaplib.txt;*
+exception IMAP4.abort                       *IMAP4.abort..imaplib.txt*
 
    IMAP4 server errors cause this exception to be raised.  This is a
    sub-class of "IMAP4.error".  Note that closing the instance and
    instantiating a new one will usually allow recovery from this
    exception.
 
-exception IMAP4.readonly                *IMAP4.readonly..imaplib.txt;*
+exception IMAP4.readonly                 *IMAP4.readonly..imaplib.txt*
 
    This exception is raised when a writable mailbox has its status
    changed by the server.  This is a sub-class of "IMAP4.error".  Some
@@ -70,7 +70,7 @@ exception IMAP4.readonly                *IMAP4.readonly..imaplib.txt;*
 
 There’s also a subclass for secure connections:
 
-                                             *IMAP4_SSL..imaplib.txt;*
+                                              *IMAP4_SSL..imaplib.txt*
 class imaplib.IMAP4_SSL(host='', port=IMAP4_SSL_PORT, *, ssl_context=None, timeout=None)
 
    This is a subclass derived from "IMAP4" that connects over an SSL
@@ -100,7 +100,7 @@ class imaplib.IMAP4_SSL(host='', port=IMAP4_SSL_PORT, *, ssl_context=None, timeo
 
 The second subclass allows for connections created by a child process:
 
-class imaplib.IMAP4_stream(command)       *IMAP4_stream..imaplib.txt;*
+class imaplib.IMAP4_stream(command)        *IMAP4_stream..imaplib.txt*
 
    This is a subclass derived from "IMAP4" that connects to the
    "stdin/stdout" file descriptors created by passing _command_ to
@@ -108,23 +108,23 @@ class imaplib.IMAP4_stream(command)       *IMAP4_stream..imaplib.txt;*
 
 The following utility functions are defined:
 
-                                  *Internaldate2tuple()..imaplib.txt;*
+                                   *Internaldate2tuple()..imaplib.txt*
 imaplib.Internaldate2tuple(datestr)
 
    Parse an IMAP4 "INTERNALDATE" string and return corresponding local
    time.  The return value is a "time.struct_time" tuple or "None" if
    the string has wrong format.
 
-imaplib.Int2AP(num)                           *Int2AP()..imaplib.txt;*
+imaplib.Int2AP(num)                            *Int2AP()..imaplib.txt*
 
    Converts an integer into a bytes representation using characters
    from the set ["A" .. "P"].
 
-imaplib.ParseFlags(flagstr)               *ParseFlags()..imaplib.txt;*
+imaplib.ParseFlags(flagstr)                *ParseFlags()..imaplib.txt*
 
    Converts an IMAP4 "FLAGS" response to a tuple of individual flags.
 
-                                   *Time2Internaldate()..imaplib.txt;*
+                                    *Time2Internaldate()..imaplib.txt*
 imaplib.Time2Internaldate(date_time)
 
    Convert _date_time_ to an IMAP4 "INTERNALDATE" representation. The
@@ -183,12 +183,12 @@ contain an asterisk to indicate an infinite upper bound ("'3:*'").
 
 An "IMAP4" instance has the following methods:
 
-                                        *IMAP4.append()..imaplib.txt;*
+                                         *IMAP4.append()..imaplib.txt*
 IMAP4.append(mailbox, flags, date_time, message)
 
    Append _message_ to named mailbox.
 
-                                  *IMAP4.authenticate()..imaplib.txt;*
+                                   *IMAP4.authenticate()..imaplib.txt*
 IMAP4.authenticate(mechanism, authobject)
 
    Authenticate command — requires response processing.
@@ -210,32 +210,32 @@ IMAP4.authenticate(mechanism, authobject)
    Changed in version 3.5: string usernames and passwords are now
    encoded to "utf-8" instead of being limited to ASCII.
 
-IMAP4.check()                            *IMAP4.check()..imaplib.txt;*
+IMAP4.check()                             *IMAP4.check()..imaplib.txt*
 
    Checkpoint mailbox on server.
 
-IMAP4.close()                            *IMAP4.close()..imaplib.txt;*
+IMAP4.close()                             *IMAP4.close()..imaplib.txt*
 
    Close currently selected mailbox. Deleted messages are removed from
    writable mailbox. This is the recommended command before "LOGOUT".
 
-IMAP4.copy(message_set, new_mailbox)      *IMAP4.copy()..imaplib.txt;*
+IMAP4.copy(message_set, new_mailbox)       *IMAP4.copy()..imaplib.txt*
 
    Copy _message_set_ messages onto end of _new_mailbox_.
 
-IMAP4.create(mailbox)                   *IMAP4.create()..imaplib.txt;*
+IMAP4.create(mailbox)                    *IMAP4.create()..imaplib.txt*
 
    Create new mailbox named _mailbox_.
 
-IMAP4.delete(mailbox)                   *IMAP4.delete()..imaplib.txt;*
+IMAP4.delete(mailbox)                    *IMAP4.delete()..imaplib.txt*
 
    Delete old mailbox named _mailbox_.
 
-IMAP4.deleteacl(mailbox, who)        *IMAP4.deleteacl()..imaplib.txt;*
+IMAP4.deleteacl(mailbox, who)         *IMAP4.deleteacl()..imaplib.txt*
 
    Delete the ACLs (remove any rights) set for who on mailbox.
 
-IMAP4.enable(capability)                *IMAP4.enable()..imaplib.txt;*
+IMAP4.enable(capability)                 *IMAP4.enable()..imaplib.txt*
 
    Enable _capability_ (see **RFC 5161**).  Most capabilities do not
    need to be enabled.  Currently only the "UTF8=ACCEPT" capability is
@@ -244,87 +244,86 @@ IMAP4.enable(capability)                *IMAP4.enable()..imaplib.txt;*
    New in version 3.5: The "enable()" method itself, and **RFC 6855**
    support.
 
-IMAP4.expunge()                        *IMAP4.expunge()..imaplib.txt;*
+IMAP4.expunge()                         *IMAP4.expunge()..imaplib.txt*
 
    Permanently remove deleted items from selected mailbox. Generates
    an "EXPUNGE" response for each deleted message. Returned data
    contains a list of "EXPUNGE" message numbers in order received.
 
-                                         *IMAP4.fetch()..imaplib.txt;*
-IMAP4.fetch(message_set, message_parts)
+IMAP4.fetch(message_set, message_parts)   *IMAP4.fetch()..imaplib.txt*
 
    Fetch (parts of) messages.  _message_parts_ should be a string of
    message part names enclosed within parentheses, eg: ""(UID
    BODY[TEXT])"".  Returned data are tuples of message part envelope
    and data.
 
-IMAP4.getacl(mailbox)                   *IMAP4.getacl()..imaplib.txt;*
+IMAP4.getacl(mailbox)                    *IMAP4.getacl()..imaplib.txt*
 
    Get the "ACL"s for _mailbox_. The method is non-standard, but is
    supported by the "Cyrus" server.
 
-                                 *IMAP4.getannotation()..imaplib.txt;*
+                                  *IMAP4.getannotation()..imaplib.txt*
 IMAP4.getannotation(mailbox, entry, attribute)
 
    Retrieve the specified "ANNOTATION"s for _mailbox_. The method is
    non-standard, but is supported by the "Cyrus" server.
 
-IMAP4.getquota(root)                  *IMAP4.getquota()..imaplib.txt;*
+IMAP4.getquota(root)                   *IMAP4.getquota()..imaplib.txt*
 
    Get the "quota" _root_’s resource usage and limits. This method is
    part of the IMAP4 QUOTA extension defined in rfc2087.
 
-IMAP4.getquotaroot(mailbox)       *IMAP4.getquotaroot()..imaplib.txt;*
+IMAP4.getquotaroot(mailbox)        *IMAP4.getquotaroot()..imaplib.txt*
 
    Get the list of "quota" "roots" for the named _mailbox_. This
    method is part of the IMAP4 QUOTA extension defined in rfc2087.
 
-IMAP4.list([directory[, pattern]])        *IMAP4.list()..imaplib.txt;*
+IMAP4.list([directory[, pattern]])         *IMAP4.list()..imaplib.txt*
 
    List mailbox names in _directory_ matching _pattern_.  _directory_
    defaults to the top-level mail folder, and _pattern_ defaults to
    match anything.  Returned data contains a list of "LIST" responses.
 
-IMAP4.login(user, password)              *IMAP4.login()..imaplib.txt;*
+IMAP4.login(user, password)               *IMAP4.login()..imaplib.txt*
 
    Identify the client using a plaintext password. The _password_ will
    be quoted.
 
-                                *IMAP4.login_cram_md5()..imaplib.txt;*
+                                 *IMAP4.login_cram_md5()..imaplib.txt*
 IMAP4.login_cram_md5(user, password)
 
    Force use of "CRAM-MD5" authentication when identifying the client
    to protect the password.  Will only work if the server "CAPABILITY"
    response includes the phrase "AUTH=CRAM-MD5".
 
-IMAP4.logout()                          *IMAP4.logout()..imaplib.txt;*
+IMAP4.logout()                           *IMAP4.logout()..imaplib.txt*
 
    Shutdown connection to server. Returns server "BYE" response.
 
    Changed in version 3.8: The method no longer ignores silently
    arbitrary exceptions.
 
-IMAP4.lsub(directory='""', pattern='*')   *IMAP4.lsub()..imaplib.txt;*
+IMAP4.lsub(directory='""', pattern='*')    *IMAP4.lsub()..imaplib.txt*
 
    List subscribed mailbox names in directory matching pattern.
    _directory_ defaults to the top level directory and _pattern_
    defaults to match any mailbox. Returned data are tuples of message
    part envelope and data.
 
-IMAP4.myrights(mailbox)               *IMAP4.myrights()..imaplib.txt;*
+IMAP4.myrights(mailbox)                *IMAP4.myrights()..imaplib.txt*
 
    Show my ACLs for a mailbox (i.e. the rights that I have on
    mailbox).
 
-IMAP4.namespace()                    *IMAP4.namespace()..imaplib.txt;*
+IMAP4.namespace()                     *IMAP4.namespace()..imaplib.txt*
 
    Returns IMAP namespaces as defined in **RFC 2342**.
 
-IMAP4.noop()                              *IMAP4.noop()..imaplib.txt;*
+IMAP4.noop()                               *IMAP4.noop()..imaplib.txt*
 
    Send "NOOP" to server.
 
-IMAP4.open(host, port, timeout=None)      *IMAP4.open()..imaplib.txt;*
+IMAP4.open(host, port, timeout=None)       *IMAP4.open()..imaplib.txt*
 
    Opens socket to _port_ at _host_. The optional _timeout_ parameter
    specifies a timeout in seconds for the connection attempt. If
@@ -341,42 +340,42 @@ IMAP4.open(host, port, timeout=None)      *IMAP4.open()..imaplib.txt;*
 
    Changed in version 3.9: The _timeout_ parameter was added.
 
-                                       *IMAP4.partial()..imaplib.txt;*
+                                        *IMAP4.partial()..imaplib.txt*
 IMAP4.partial(message_num, message_part, start, length)
 
    Fetch truncated part of a message. Returned data is a tuple of
    message part envelope and data.
 
-IMAP4.proxyauth(user)                *IMAP4.proxyauth()..imaplib.txt;*
+IMAP4.proxyauth(user)                 *IMAP4.proxyauth()..imaplib.txt*
 
    Assume authentication as _user_. Allows an authorised administrator
    to proxy into any user’s mailbox.
 
-IMAP4.read(size)                          *IMAP4.read()..imaplib.txt;*
+IMAP4.read(size)                           *IMAP4.read()..imaplib.txt*
 
    Reads _size_ bytes from the remote server. You may override this
    method.
 
-IMAP4.readline()                      *IMAP4.readline()..imaplib.txt;*
+IMAP4.readline()                       *IMAP4.readline()..imaplib.txt*
 
    Reads one line from the remote server. You may override this
    method.
 
-IMAP4.recent()                          *IMAP4.recent()..imaplib.txt;*
+IMAP4.recent()                           *IMAP4.recent()..imaplib.txt*
 
    Prompt server for an update. Returned data is "None" if no new
    messages, else value of "RECENT" response.
 
-IMAP4.rename(oldmailbox, newmailbox)    *IMAP4.rename()..imaplib.txt;*
+IMAP4.rename(oldmailbox, newmailbox)     *IMAP4.rename()..imaplib.txt*
 
    Rename mailbox named _oldmailbox_ to _newmailbox_.
 
-IMAP4.response(code)                  *IMAP4.response()..imaplib.txt;*
+IMAP4.response(code)                   *IMAP4.response()..imaplib.txt*
 
    Return data for response _code_ if received, or "None". Returns the
    given code, instead of the usual type.
 
-                                        *IMAP4.search()..imaplib.txt;*
+                                         *IMAP4.search()..imaplib.txt*
 IMAP4.search(charset, criterion[, ...])
 
    Search mailbox for matching messages.  _charset_ may be "None", in
@@ -395,7 +394,7 @@ IMAP4.search(charset, criterion[, ...])
       typ, msgnums = M.search(None, '(FROM "LDJ")')
 <
 
-                                        *IMAP4.select()..imaplib.txt;*
+                                         *IMAP4.select()..imaplib.txt*
 IMAP4.select(mailbox='INBOX', readonly=False)
 
    Select a mailbox. Returned data is the count of messages in
@@ -403,39 +402,39 @@ IMAP4.select(mailbox='INBOX', readonly=False)
    If the _readonly_ flag is set, modifications to the mailbox are not
    allowed.
 
-IMAP4.send(data)                          *IMAP4.send()..imaplib.txt;*
+IMAP4.send(data)                           *IMAP4.send()..imaplib.txt*
 
    Sends "data" to the remote server. You may override this method.
 
    Raises an auditing event "imaplib.send" with arguments "self",
    "data".
 
-IMAP4.setacl(mailbox, who, what)        *IMAP4.setacl()..imaplib.txt;*
+IMAP4.setacl(mailbox, who, what)         *IMAP4.setacl()..imaplib.txt*
 
    Set an "ACL" for _mailbox_. The method is non-standard, but is
    supported by the "Cyrus" server.
 
-                                 *IMAP4.setannotation()..imaplib.txt;*
+                                  *IMAP4.setannotation()..imaplib.txt*
 IMAP4.setannotation(mailbox, entry, attribute[, ...])
 
    Set "ANNOTATION"s for _mailbox_. The method is non-standard, but is
    supported by the "Cyrus" server.
 
-IMAP4.setquota(root, limits)          *IMAP4.setquota()..imaplib.txt;*
+IMAP4.setquota(root, limits)           *IMAP4.setquota()..imaplib.txt*
 
    Set the "quota" _root_’s resource _limits_. This method is part of
    the IMAP4 QUOTA extension defined in rfc2087.
 
-IMAP4.shutdown()                      *IMAP4.shutdown()..imaplib.txt;*
+IMAP4.shutdown()                       *IMAP4.shutdown()..imaplib.txt*
 
    Close connection established in "open".  This method is implicitly
    called by "IMAP4.logout()".  You may override this method.
 
-IMAP4.socket()                          *IMAP4.socket()..imaplib.txt;*
+IMAP4.socket()                           *IMAP4.socket()..imaplib.txt*
 
    Returns socket instance used to connect to server.
 
-                                          *IMAP4.sort()..imaplib.txt;*
+                                           *IMAP4.sort()..imaplib.txt*
 IMAP4.sort(sort_criteria, charset, search_criterion[, ...])
 
    The "sort" command is a variant of "search" with sorting semantics
@@ -454,7 +453,7 @@ IMAP4.sort(sort_criteria, charset, search_criterion[, ...])
 
    This is an "IMAP4rev1" extension command.
 
-IMAP4.starttls(ssl_context=None)      *IMAP4.starttls()..imaplib.txt;*
+IMAP4.starttls(ssl_context=None)       *IMAP4.starttls()..imaplib.txt*
 
    Send a "STARTTLS" command.  The _ssl_context_ argument is optional
    and should be a "ssl.SSLContext" object.  This will enable
@@ -467,11 +466,11 @@ IMAP4.starttls(ssl_context=None)      *IMAP4.starttls()..imaplib.txt;*
    "ssl.SSLContext.check_hostname" and _Server Name Indication_ (see
    "ssl.HAS_SNI").
 
-IMAP4.status(mailbox, names)            *IMAP4.status()..imaplib.txt;*
+IMAP4.status(mailbox, names)             *IMAP4.status()..imaplib.txt*
 
    Request named status conditions for _mailbox_.
 
-                                         *IMAP4.store()..imaplib.txt;*
+                                          *IMAP4.store()..imaplib.txt*
 IMAP4.store(message_set, command, flag_list)
 
    Alters flag dispositions for messages in mailbox.  _command_ is
@@ -498,11 +497,11 @@ IMAP4.store(message_set, command, flag_list)
      handles them if they are sent from the server, since this
      improves real-world compatibility.
 
-IMAP4.subscribe(mailbox)             *IMAP4.subscribe()..imaplib.txt;*
+IMAP4.subscribe(mailbox)              *IMAP4.subscribe()..imaplib.txt*
 
    Subscribe to new mailbox.
 
-                                        *IMAP4.thread()..imaplib.txt;*
+                                         *IMAP4.thread()..imaplib.txt*
 IMAP4.thread(threading_algorithm, charset, search_criterion[, ...])
 
    The "thread" command is a variant of "search" with threading
@@ -525,18 +524,18 @@ IMAP4.thread(threading_algorithm, charset, search_criterion[, ...])
 
    This is an "IMAP4rev1" extension command.
 
-IMAP4.uid(command, arg[, ...])             *IMAP4.uid()..imaplib.txt;*
+IMAP4.uid(command, arg[, ...])              *IMAP4.uid()..imaplib.txt*
 
    Execute command args with messages identified by UID, rather than
    message number.  Returns response appropriate to command.  At least
    one argument must be supplied; if none are provided, the server
    will return an error and an exception will be raised.
 
-IMAP4.unsubscribe(mailbox)         *IMAP4.unsubscribe()..imaplib.txt;*
+IMAP4.unsubscribe(mailbox)          *IMAP4.unsubscribe()..imaplib.txt*
 
    Unsubscribe from old mailbox.
 
-IMAP4.unselect()                      *IMAP4.unselect()..imaplib.txt;*
+IMAP4.unselect()                       *IMAP4.unselect()..imaplib.txt*
 
    "imaplib.IMAP4.unselect()" frees server’s resources associated with
    the selected mailbox and returns the server to the authenticated
@@ -546,25 +545,25 @@ IMAP4.unselect()                      *IMAP4.unselect()..imaplib.txt;*
 
    New in version 3.9.
 
-IMAP4.xatom(name[, ...])                 *IMAP4.xatom()..imaplib.txt;*
+IMAP4.xatom(name[, ...])                  *IMAP4.xatom()..imaplib.txt*
 
    Allow simple extension commands notified by server in "CAPABILITY"
    response.
 
 The following attributes are defined on instances of "IMAP4":
 
-IMAP4.PROTOCOL_VERSION          *IMAP4.PROTOCOL_VERSION..imaplib.txt;*
+IMAP4.PROTOCOL_VERSION           *IMAP4.PROTOCOL_VERSION..imaplib.txt*
 
    The most recent supported protocol in the "CAPABILITY" response
    from the server.
 
-IMAP4.debug                                *IMAP4.debug..imaplib.txt;*
+IMAP4.debug                                 *IMAP4.debug..imaplib.txt*
 
    Integer value to control debugging output.  The initialize value is
    taken from the module variable "Debug".  Values greater than three
    trace each command.
 
-IMAP4.utf8_enabled                  *IMAP4.utf8_enabled..imaplib.txt;*
+IMAP4.utf8_enabled                   *IMAP4.utf8_enabled..imaplib.txt*
 
    Boolean value that is normally "False", but is set to "True" if an
    "enable()" command is successfully issued for the "UTF8=ACCEPT"

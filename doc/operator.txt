@@ -1,4 +1,4 @@
-*operator.txt;*                               Last change: 2023 Sep 09
+*operator.txt;*                               Last change: 2023 Sep 10
 
 "operator" — Standard operators as functions
 ********************************************
@@ -21,18 +21,18 @@ logical operations, mathematical operations and sequence operations.
 The object comparison functions are useful for all objects, and are
 named after the rich comparison operators they support:
 
-operator.lt(a, b)                                *lt()..operator.txt;*
-operator.le(a, b)                                *le()..operator.txt;*
-operator.eq(a, b)                                *eq()..operator.txt;*
-operator.ne(a, b)                                *ne()..operator.txt;*
-operator.ge(a, b)                                *ge()..operator.txt;*
-operator.gt(a, b)                                *gt()..operator.txt;*
-operator.__lt__(a, b)                        *__lt__()..operator.txt;*
-operator.__le__(a, b)                        *__le__()..operator.txt;*
-operator.__eq__(a, b)                        *__eq__()..operator.txt;*
-operator.__ne__(a, b)                        *__ne__()..operator.txt;*
-operator.__ge__(a, b)                        *__ge__()..operator.txt;*
-operator.__gt__(a, b)                        *__gt__()..operator.txt;*
+operator.lt(a, b)                                 *lt()..operator.txt*
+operator.le(a, b)                                 *le()..operator.txt*
+operator.eq(a, b)                                 *eq()..operator.txt*
+operator.ne(a, b)                                 *ne()..operator.txt*
+operator.ge(a, b)                                 *ge()..operator.txt*
+operator.gt(a, b)                                 *gt()..operator.txt*
+operator.__lt__(a, b)                         *__lt__()..operator.txt*
+operator.__le__(a, b)                         *__le__()..operator.txt*
+operator.__eq__(a, b)                         *__eq__()..operator.txt*
+operator.__ne__(a, b)                         *__ne__()..operator.txt*
+operator.__ge__(a, b)                         *__ge__()..operator.txt*
+operator.__gt__(a, b)                         *__gt__()..operator.txt*
 
    Perform “rich comparisons” between _a_ and _b_. Specifically,
    "lt(a, b)" is equivalent to "a < b", "le(a, b)" is equivalent to "a
@@ -46,51 +46,51 @@ operator.__gt__(a, b)                        *__gt__()..operator.txt;*
 The logical operations are also generally applicable to all objects,
 and support truth tests, identity tests, and boolean operations:
 
-operator.not_(obj)                             *not_()..operator.txt;*
-operator.__not__(obj)                       *__not__()..operator.txt;*
+operator.not_(obj)                              *not_()..operator.txt*
+operator.__not__(obj)                        *__not__()..operator.txt*
 
    Return the outcome of "not" _obj_.  (Note that there is no
    "__not__()" method for object instances; only the interpreter core
    defines this operation.  The result is affected by the "__bool__()"
    and "__len__()" methods.)
 
-operator.truth(obj)                           *truth()..operator.txt;*
+operator.truth(obj)                            *truth()..operator.txt*
 
    Return "True" if _obj_ is true, and "False" otherwise.  This is
    equivalent to using the "bool" constructor.
 
-operator.is_(a, b)                              *is_()..operator.txt;*
+operator.is_(a, b)                               *is_()..operator.txt*
 
    Return "a is b".  Tests object identity.
 
-operator.is_not(a, b)                        *is_not()..operator.txt;*
+operator.is_not(a, b)                         *is_not()..operator.txt*
 
    Return "a is not b".  Tests object identity.
 
 The mathematical and bitwise operations are the most numerous:
 
-operator.abs(obj)                               *abs()..operator.txt;*
-operator.__abs__(obj)                       *__abs__()..operator.txt;*
+operator.abs(obj)                                *abs()..operator.txt*
+operator.__abs__(obj)                        *__abs__()..operator.txt*
 
    Return the absolute value of _obj_.
 
-operator.add(a, b)                              *add()..operator.txt;*
-operator.__add__(a, b)                      *__add__()..operator.txt;*
+operator.add(a, b)                               *add()..operator.txt*
+operator.__add__(a, b)                       *__add__()..operator.txt*
 
    Return "a + b", for _a_ and _b_ numbers.
 
-operator.and_(a, b)                            *and_()..operator.txt;*
-operator.__and__(a, b)                      *__and__()..operator.txt;*
+operator.and_(a, b)                             *and_()..operator.txt*
+operator.__and__(a, b)                       *__and__()..operator.txt*
 
    Return the bitwise and of _a_ and _b_.
 
-operator.floordiv(a, b)                    *floordiv()..operator.txt;*
-operator.__floordiv__(a, b)            *__floordiv__()..operator.txt;*
+operator.floordiv(a, b)                     *floordiv()..operator.txt*
+operator.__floordiv__(a, b)             *__floordiv__()..operator.txt*
 
    Return "a // b".
 
-operator.index(a)                             *index()..operator.txt;*
-operator.__index__(a)                     *__index__()..operator.txt;*
+operator.index(a)                              *index()..operator.txt*
+operator.__index__(a)                      *__index__()..operator.txt*
 
    Return _a_ converted to an integer.  Equivalent to "a.__index__()".
 
@@ -98,115 +98,115 @@ operator.__index__(a)                     *__index__()..operator.txt;*
    Previously, the result could have been an instance of a subclass of
    "int".
 
-operator.inv(obj)                               *inv()..operator.txt;*
-operator.invert(obj)                         *invert()..operator.txt;*
-operator.__inv__(obj)                       *__inv__()..operator.txt;*
-operator.__invert__(obj)                 *__invert__()..operator.txt;*
+operator.inv(obj)                                *inv()..operator.txt*
+operator.invert(obj)                          *invert()..operator.txt*
+operator.__inv__(obj)                        *__inv__()..operator.txt*
+operator.__invert__(obj)                  *__invert__()..operator.txt*
 
    Return the bitwise inverse of the number _obj_.  This is equivalent
    to "~obj".
 
-operator.lshift(a, b)                        *lshift()..operator.txt;*
-operator.__lshift__(a, b)                *__lshift__()..operator.txt;*
+operator.lshift(a, b)                         *lshift()..operator.txt*
+operator.__lshift__(a, b)                 *__lshift__()..operator.txt*
 
    Return _a_ shifted left by _b_.
 
-operator.mod(a, b)                              *mod()..operator.txt;*
-operator.__mod__(a, b)                      *__mod__()..operator.txt;*
+operator.mod(a, b)                               *mod()..operator.txt*
+operator.__mod__(a, b)                       *__mod__()..operator.txt*
 
    Return "a % b".
 
-operator.mul(a, b)                              *mul()..operator.txt;*
-operator.__mul__(a, b)                      *__mul__()..operator.txt;*
+operator.mul(a, b)                               *mul()..operator.txt*
+operator.__mul__(a, b)                       *__mul__()..operator.txt*
 
    Return "a * b", for _a_ and _b_ numbers.
 
-operator.matmul(a, b)                        *matmul()..operator.txt;*
-operator.__matmul__(a, b)                *__matmul__()..operator.txt;*
+operator.matmul(a, b)                         *matmul()..operator.txt*
+operator.__matmul__(a, b)                 *__matmul__()..operator.txt*
 
    Return "a @ b".
 
    New in version 3.5.
 
-operator.neg(obj)                               *neg()..operator.txt;*
-operator.__neg__(obj)                       *__neg__()..operator.txt;*
+operator.neg(obj)                                *neg()..operator.txt*
+operator.__neg__(obj)                        *__neg__()..operator.txt*
 
    Return _obj_ negated ("-obj").
 
-operator.or_(a, b)                              *or_()..operator.txt;*
-operator.__or__(a, b)                        *__or__()..operator.txt;*
+operator.or_(a, b)                               *or_()..operator.txt*
+operator.__or__(a, b)                         *__or__()..operator.txt*
 
    Return the bitwise or of _a_ and _b_.
 
-operator.pos(obj)                               *pos()..operator.txt;*
-operator.__pos__(obj)                       *__pos__()..operator.txt;*
+operator.pos(obj)                                *pos()..operator.txt*
+operator.__pos__(obj)                        *__pos__()..operator.txt*
 
    Return _obj_ positive ("+obj").
 
-operator.pow(a, b)                              *pow()..operator.txt;*
-operator.__pow__(a, b)                      *__pow__()..operator.txt;*
+operator.pow(a, b)                               *pow()..operator.txt*
+operator.__pow__(a, b)                       *__pow__()..operator.txt*
 
    Return "a ** b", for _a_ and _b_ numbers.
 
-operator.rshift(a, b)                        *rshift()..operator.txt;*
-operator.__rshift__(a, b)                *__rshift__()..operator.txt;*
+operator.rshift(a, b)                         *rshift()..operator.txt*
+operator.__rshift__(a, b)                 *__rshift__()..operator.txt*
 
    Return _a_ shifted right by _b_.
 
-operator.sub(a, b)                              *sub()..operator.txt;*
-operator.__sub__(a, b)                      *__sub__()..operator.txt;*
+operator.sub(a, b)                               *sub()..operator.txt*
+operator.__sub__(a, b)                       *__sub__()..operator.txt*
 
    Return "a - b".
 
-operator.truediv(a, b)                      *truediv()..operator.txt;*
-operator.__truediv__(a, b)              *__truediv__()..operator.txt;*
+operator.truediv(a, b)                       *truediv()..operator.txt*
+operator.__truediv__(a, b)               *__truediv__()..operator.txt*
 
    Return "a / b" where 2/3 is .66 rather than 0.  This is also known
    as “true” division.
 
-operator.xor(a, b)                              *xor()..operator.txt;*
-operator.__xor__(a, b)                      *__xor__()..operator.txt;*
+operator.xor(a, b)                               *xor()..operator.txt*
+operator.__xor__(a, b)                       *__xor__()..operator.txt*
 
    Return the bitwise exclusive or of _a_ and _b_.
 
 Operations which work with sequences (some of them with mappings too)
 include:
 
-operator.concat(a, b)                        *concat()..operator.txt;*
-operator.__concat__(a, b)                *__concat__()..operator.txt;*
+operator.concat(a, b)                         *concat()..operator.txt*
+operator.__concat__(a, b)                 *__concat__()..operator.txt*
 
    Return "a + b" for _a_ and _b_ sequences.
 
-operator.contains(a, b)                    *contains()..operator.txt;*
-operator.__contains__(a, b)            *__contains__()..operator.txt;*
+operator.contains(a, b)                     *contains()..operator.txt*
+operator.__contains__(a, b)             *__contains__()..operator.txt*
 
    Return the outcome of the test "b in a". Note the reversed
    operands.
 
-operator.countOf(a, b)                      *countOf()..operator.txt;*
+operator.countOf(a, b)                       *countOf()..operator.txt*
 
    Return the number of occurrences of _b_ in _a_.
 
-operator.delitem(a, b)                      *delitem()..operator.txt;*
-operator.__delitem__(a, b)              *__delitem__()..operator.txt;*
+operator.delitem(a, b)                       *delitem()..operator.txt*
+operator.__delitem__(a, b)               *__delitem__()..operator.txt*
 
    Remove the value of _a_ at index _b_.
 
-operator.getitem(a, b)                      *getitem()..operator.txt;*
-operator.__getitem__(a, b)              *__getitem__()..operator.txt;*
+operator.getitem(a, b)                       *getitem()..operator.txt*
+operator.__getitem__(a, b)               *__getitem__()..operator.txt*
 
    Return the value of _a_ at index _b_.
 
-operator.indexOf(a, b)                      *indexOf()..operator.txt;*
+operator.indexOf(a, b)                       *indexOf()..operator.txt*
 
    Return the index of the first of occurrence of _b_ in _a_.
 
-operator.setitem(a, b, c)                   *setitem()..operator.txt;*
-operator.__setitem__(a, b, c)           *__setitem__()..operator.txt;*
+operator.setitem(a, b, c)                    *setitem()..operator.txt*
+operator.__setitem__(a, b, c)            *__setitem__()..operator.txt*
 
    Set the value of _a_ at index _b_ to _c_.
 
-operator.length_hint(obj, default=0)    *length_hint()..operator.txt;*
+operator.length_hint(obj, default=0)     *length_hint()..operator.txt*
 
    Return an estimated length for the object _obj_. First try to
    return its actual length, then an estimate using
@@ -216,9 +216,9 @@ operator.length_hint(obj, default=0)    *length_hint()..operator.txt;*
 
 The following operation works with callables:
 
-operator.call(obj, /, *args, **kwargs)         *call()..operator.txt;*
+operator.call(obj, /, *args, **kwargs)          *call()..operator.txt*
 
-                                           *__call__()..operator.txt;*
+                                            *__call__()..operator.txt*
 operator.__call__(obj, /, *args, **kwargs)
 
    Return "obj(*args, **kwargs)".
@@ -230,7 +230,7 @@ item lookups.  These are useful for making fast field extractors as
 arguments for "map()", "sorted()", "itertools.groupby()", or other
 functions that expect a function argument.
 
-operator.attrgetter(attr)                *attrgetter()..operator.txt;*
+operator.attrgetter(attr)                 *attrgetter()..operator.txt*
 operator.attrgetter(*attrs)
 
    Return a callable object that fetches _attr_ from its operand. If
@@ -264,7 +264,7 @@ operator.attrgetter(*attrs)
               obj = getattr(obj, name)
           return obj
 <
-operator.itemgetter(item)                *itemgetter()..operator.txt;*
+operator.itemgetter(item)                 *itemgetter()..operator.txt*
 operator.itemgetter(*items)
 
    Return a callable object that fetches _item_ from its operand using
@@ -312,7 +312,7 @@ operator.itemgetter(*items)
    >>> sorted(inventory, key=getcount)
    [('orange', 1), ('banana', 2), ('apple', 3), ('pear', 5)]
 
-                                       *methodcaller()..operator.txt;*
+                                        *methodcaller()..operator.txt*
 operator.methodcaller(name, /, *args, **kwargs)
 
    Return a callable object that calls the method _name_ on its
@@ -450,76 +450,76 @@ necessary:
 >>> s
 ['h', 'e', 'l', 'l', 'o', ' ', 'w', 'o', 'r', 'l', 'd']
 
-operator.iadd(a, b)                            *iadd()..operator.txt;*
-operator.__iadd__(a, b)                    *__iadd__()..operator.txt;*
+operator.iadd(a, b)                             *iadd()..operator.txt*
+operator.__iadd__(a, b)                     *__iadd__()..operator.txt*
 
    "a = iadd(a, b)" is equivalent to "a += b".
 
-operator.iand(a, b)                            *iand()..operator.txt;*
-operator.__iand__(a, b)                    *__iand__()..operator.txt;*
+operator.iand(a, b)                             *iand()..operator.txt*
+operator.__iand__(a, b)                     *__iand__()..operator.txt*
 
    "a = iand(a, b)" is equivalent to "a &= b".
 
-operator.iconcat(a, b)                      *iconcat()..operator.txt;*
-operator.__iconcat__(a, b)              *__iconcat__()..operator.txt;*
+operator.iconcat(a, b)                       *iconcat()..operator.txt*
+operator.__iconcat__(a, b)               *__iconcat__()..operator.txt*
 
    "a = iconcat(a, b)" is equivalent to "a += b" for _a_ and _b_
    sequences.
 
-operator.ifloordiv(a, b)                  *ifloordiv()..operator.txt;*
-operator.__ifloordiv__(a, b)          *__ifloordiv__()..operator.txt;*
+operator.ifloordiv(a, b)                   *ifloordiv()..operator.txt*
+operator.__ifloordiv__(a, b)           *__ifloordiv__()..operator.txt*
 
    "a = ifloordiv(a, b)" is equivalent to "a //= b".
 
-operator.ilshift(a, b)                      *ilshift()..operator.txt;*
-operator.__ilshift__(a, b)              *__ilshift__()..operator.txt;*
+operator.ilshift(a, b)                       *ilshift()..operator.txt*
+operator.__ilshift__(a, b)               *__ilshift__()..operator.txt*
 
    "a = ilshift(a, b)" is equivalent to "a <<= b".
 
-operator.imod(a, b)                            *imod()..operator.txt;*
-operator.__imod__(a, b)                    *__imod__()..operator.txt;*
+operator.imod(a, b)                             *imod()..operator.txt*
+operator.__imod__(a, b)                     *__imod__()..operator.txt*
 
    "a = imod(a, b)" is equivalent to "a %= b".
 
-operator.imul(a, b)                            *imul()..operator.txt;*
-operator.__imul__(a, b)                    *__imul__()..operator.txt;*
+operator.imul(a, b)                             *imul()..operator.txt*
+operator.__imul__(a, b)                     *__imul__()..operator.txt*
 
    "a = imul(a, b)" is equivalent to "a *= b".
 
-operator.imatmul(a, b)                      *imatmul()..operator.txt;*
-operator.__imatmul__(a, b)              *__imatmul__()..operator.txt;*
+operator.imatmul(a, b)                       *imatmul()..operator.txt*
+operator.__imatmul__(a, b)               *__imatmul__()..operator.txt*
 
    "a = imatmul(a, b)" is equivalent to "a @= b".
 
    New in version 3.5.
 
-operator.ior(a, b)                              *ior()..operator.txt;*
-operator.__ior__(a, b)                      *__ior__()..operator.txt;*
+operator.ior(a, b)                               *ior()..operator.txt*
+operator.__ior__(a, b)                       *__ior__()..operator.txt*
 
    "a = ior(a, b)" is equivalent to "a |= b".
 
-operator.ipow(a, b)                            *ipow()..operator.txt;*
-operator.__ipow__(a, b)                    *__ipow__()..operator.txt;*
+operator.ipow(a, b)                             *ipow()..operator.txt*
+operator.__ipow__(a, b)                     *__ipow__()..operator.txt*
 
    "a = ipow(a, b)" is equivalent to "a **= b".
 
-operator.irshift(a, b)                      *irshift()..operator.txt;*
-operator.__irshift__(a, b)              *__irshift__()..operator.txt;*
+operator.irshift(a, b)                       *irshift()..operator.txt*
+operator.__irshift__(a, b)               *__irshift__()..operator.txt*
 
    "a = irshift(a, b)" is equivalent to "a >>= b".
 
-operator.isub(a, b)                            *isub()..operator.txt;*
-operator.__isub__(a, b)                    *__isub__()..operator.txt;*
+operator.isub(a, b)                             *isub()..operator.txt*
+operator.__isub__(a, b)                     *__isub__()..operator.txt*
 
    "a = isub(a, b)" is equivalent to "a -= b".
 
-operator.itruediv(a, b)                    *itruediv()..operator.txt;*
-operator.__itruediv__(a, b)            *__itruediv__()..operator.txt;*
+operator.itruediv(a, b)                     *itruediv()..operator.txt*
+operator.__itruediv__(a, b)             *__itruediv__()..operator.txt*
 
    "a = itruediv(a, b)" is equivalent to "a /= b".
 
-operator.ixor(a, b)                            *ixor()..operator.txt;*
-operator.__ixor__(a, b)                    *__ixor__()..operator.txt;*
+operator.ixor(a, b)                             *ixor()..operator.txt*
+operator.__ixor__(a, b)                     *__ixor__()..operator.txt*
 
    "a = ixor(a, b)" is equivalent to "a ^= b".
 

@@ -1,4 +1,4 @@
-*glob.txt;*                                   Last change: 2023 Sep 09
+*glob.txt;*                                   Last change: 2023 Sep 10
 
 "glob" — Unix style pathname pattern expansion
 **********************************************
@@ -25,7 +25,7 @@ example, "'[?]'" matches the character "'?'".
 
 See also: The "pathlib" module offers high-level path objects.
 
-                                                   *glob()..glob.txt;*
+                                                    *glob()..glob.txt*
 glob.glob(pathname, *, root_dir=None, dir_fd=None, recursive=False, include_hidden=False)
 
    Return a possibly empty list of path names that match _pathname_,
@@ -73,7 +73,7 @@ glob.glob(pathname, *, root_dir=None, dir_fd=None, recursive=False, include_hidd
 
    Changed in version 3.11: Added the _include_hidden_ parameter.
 
-                                                  *iglob()..glob.txt;*
+                                                   *iglob()..glob.txt*
 glob.iglob(pathname, *, root_dir=None, dir_fd=None, recursive=False, include_hidden=False)
 
    Return an _iterator_ which yields the same values as "glob()"
@@ -92,7 +92,7 @@ glob.iglob(pathname, *, root_dir=None, dir_fd=None, recursive=False, include_hid
 
    Changed in version 3.11: Added the _include_hidden_ parameter.
 
-glob.escape(pathname)                            *escape()..glob.txt;*
+glob.escape(pathname)                             *escape()..glob.txt*
 
    Escape all special characters ("'?'", "'*'" and "'['"). This is
    useful if you want to match an arbitrary literal string that may

@@ -1,4 +1,4 @@
-*datetime.txt;*                               Last change: 2023 Sep 09
+*datetime.txt;*                               Last change: 2023 Sep 10
 
 "datetime" — Basic date and time types
 **************************************
@@ -81,17 +81,17 @@ Constants
 
 The "datetime" module exports the following constants:
 
-datetime.MINYEAR                              *MINYEAR..datetime.txt;*
+datetime.MINYEAR                               *MINYEAR..datetime.txt*
 
    The smallest year number allowed in a "date" or "datetime" object.
    "MINYEAR" is "1".
 
-datetime.MAXYEAR                              *MAXYEAR..datetime.txt;*
+datetime.MAXYEAR                               *MAXYEAR..datetime.txt*
 
    The largest year number allowed in a "date" or "datetime" object.
    "MAXYEAR" is "9999".
 
-datetime.UTC                                      *UTC..datetime.txt;*
+datetime.UTC                                       *UTC..datetime.txt*
 
    Alias for the UTC timezone singleton "datetime.timezone.utc".
 
@@ -101,37 +101,37 @@ datetime.UTC                                      *UTC..datetime.txt;*
 Available Types
 ===============
 
-class datetime.date                              *date..datetime.txt;*
+class datetime.date                               *date..datetime.txt*
 
    An idealized naive date, assuming the current Gregorian calendar
    always was, and always will be, in effect. Attributes: "year",
    "month", and "day".
 
-class datetime.time                              *time..datetime.txt;*
+class datetime.time                               *time..datetime.txt*
 
    An idealized time, independent of any particular day, assuming that
    every day has exactly 24*60*60 seconds.  (There is no notion of
    “leap seconds” here.) Attributes: "hour", "minute", "second",
    "microsecond", and "tzinfo".
 
-class datetime.datetime                      *datetime..datetime.txt;*
+class datetime.datetime                       *datetime..datetime.txt*
 
    A combination of a date and a time. Attributes: "year", "month",
    "day", "hour", "minute", "second", "microsecond", and "tzinfo".
 
-class datetime.timedelta                    *timedelta..datetime.txt;*
+class datetime.timedelta                     *timedelta..datetime.txt*
 
    A duration expressing the difference between two "date", "time", or
    "datetime" instances to microsecond resolution.
 
-class datetime.tzinfo                          *tzinfo..datetime.txt;*
+class datetime.tzinfo                           *tzinfo..datetime.txt*
 
    An abstract base class for time zone information objects. These are
    used by the "datetime" and "time" classes to provide a customizable
    notion of time adjustment (for example, to account for time zone
    and/or daylight saving time).
 
-class datetime.timezone                      *timezone..datetime.txt;*
+class datetime.timezone                       *timezone..datetime.txt*
 
    A class that implements the "tzinfo" abstract base class as a fixed
    offset from the UTC.
@@ -262,16 +262,16 @@ class datetime.timedelta(days=0, seconds=0, microseconds=0, milliseconds=0, minu
 <
 Class attributes:
 
-timedelta.min                           *timedelta.min..datetime.txt;*
+timedelta.min                            *timedelta.min..datetime.txt*
 
    The most negative "timedelta" object, "timedelta(-999999999)".
 
-timedelta.max                           *timedelta.max..datetime.txt;*
+timedelta.max                            *timedelta.max..datetime.txt*
 
    The most positive "timedelta" object, "timedelta(days=999999999,
    hours=23, minutes=59, seconds=59, microseconds=999999)".
 
-timedelta.resolution             *timedelta.resolution..datetime.txt;*
+timedelta.resolution              *timedelta.resolution..datetime.txt*
 
    The smallest possible difference between non-equal "timedelta"
    objects, "timedelta(microseconds=1)".
@@ -413,7 +413,7 @@ and only if it isn’t equal to "timedelta(0)".
 
 Instance methods:
 
-timedelta.total_seconds()   *timedelta.total_seconds()..datetime.txt;*
+timedelta.total_seconds()    *timedelta.total_seconds()..datetime.txt*
 
    Return the total number of seconds contained in the duration.
    Equivalent to "td / timedelta(seconds=1)". For interval units other
@@ -484,13 +484,13 @@ class datetime.date(year, month, day)
 
 Other constructors, all class methods:
 
-classmethod date.today()                 *date.today()..datetime.txt;*
+classmethod date.today()                  *date.today()..datetime.txt*
 
    Return the current local date.
 
    This is equivalent to "date.fromtimestamp(time.time())".
 
-                                 *date.fromtimestamp()..datetime.txt;*
+                                  *date.fromtimestamp()..datetime.txt*
 classmethod date.fromtimestamp(timestamp)
 
    Return the local date corresponding to the POSIX timestamp, such as
@@ -508,7 +508,7 @@ classmethod date.fromtimestamp(timestamp)
    supported by the platform C "localtime()" function. Raise "OSError"
    instead of "ValueError" on "localtime()" failure.
 
-                                   *date.fromordinal()..datetime.txt;*
+                                    *date.fromordinal()..datetime.txt*
 classmethod date.fromordinal(ordinal)
 
    Return the date corresponding to the proleptic Gregorian ordinal,
@@ -518,7 +518,7 @@ classmethod date.fromordinal(ordinal)
    date.max.toordinal()". For any date _d_,
    "date.fromordinal(d.toordinal()) == d".
 
-                                 *date.fromisoformat()..datetime.txt;*
+                                  *date.fromisoformat()..datetime.txt*
 classmethod date.fromisoformat(date_string)
 
    Return a "date" corresponding to a _date_string_ given in any valid
@@ -537,7 +537,7 @@ classmethod date.fromisoformat(date_string)
    Changed in version 3.11: Previously, this method only supported the
    format "YYYY-MM-DD".
 
-                               *date.fromisocalendar()..datetime.txt;*
+                                *date.fromisocalendar()..datetime.txt*
 classmethod date.fromisocalendar(year, week, day)
 
    Return a "date" corresponding to the ISO calendar date specified by
@@ -548,30 +548,30 @@ classmethod date.fromisocalendar(year, week, day)
 
 Class attributes:
 
-date.min                                     *date.min..datetime.txt;*
+date.min                                      *date.min..datetime.txt*
 
    The earliest representable date, "date(MINYEAR, 1, 1)".
 
-date.max                                     *date.max..datetime.txt;*
+date.max                                      *date.max..datetime.txt*
 
    The latest representable date, "date(MAXYEAR, 12, 31)".
 
-date.resolution                       *date.resolution..datetime.txt;*
+date.resolution                        *date.resolution..datetime.txt*
 
    The smallest possible difference between non-equal date objects,
    "timedelta(days=1)".
 
 Instance attributes (read-only):
 
-date.year                                   *date.year..datetime.txt;*
+date.year                                    *date.year..datetime.txt*
 
    Between "MINYEAR" and "MAXYEAR" inclusive.
 
-date.month                                 *date.month..datetime.txt;*
+date.month                                  *date.month..datetime.txt*
 
    Between 1 and 12 inclusive.
 
-date.day                                     *date.day..datetime.txt;*
+date.day                                      *date.day..datetime.txt*
 
    Between 1 and the number of days in the given month of the given
    year.
@@ -620,7 +620,7 @@ In Boolean contexts, all "date" objects are considered to be true.
 
 Instance methods:
 
-                                       *date.replace()..datetime.txt;*
+                                        *date.replace()..datetime.txt*
 date.replace(year=self.year, month=self.month, day=self.day)
 
    Return a date with the same value, except for those parameters
@@ -636,7 +636,7 @@ date.replace(year=self.year, month=self.month, day=self.day)
    "date" objects are also supported by generic function
    "copy.replace()".
 
-date.timetuple()                     *date.timetuple()..datetime.txt;*
+date.timetuple()                      *date.timetuple()..datetime.txt*
 
    Return a "time.struct_time" such as returned by "time.localtime()".
 
@@ -650,25 +650,25 @@ date.timetuple()                     *date.timetuple()..datetime.txt;*
    is the day number within the current year starting with "1" for
    January 1st.
 
-date.toordinal()                     *date.toordinal()..datetime.txt;*
+date.toordinal()                      *date.toordinal()..datetime.txt*
 
    Return the proleptic Gregorian ordinal of the date, where January 1
    of year 1 has ordinal 1. For any "date" object _d_,
    "date.fromordinal(d.toordinal()) == d".
 
-date.weekday()                         *date.weekday()..datetime.txt;*
+date.weekday()                          *date.weekday()..datetime.txt*
 
    Return the day of the week as an integer, where Monday is 0 and
    Sunday is 6. For example, "date(2002, 12, 4).weekday() == 2", a
    Wednesday. See also "isoweekday()".
 
-date.isoweekday()                   *date.isoweekday()..datetime.txt;*
+date.isoweekday()                    *date.isoweekday()..datetime.txt*
 
    Return the day of the week as an integer, where Monday is 1 and
    Sunday is 7. For example, "date(2002, 12, 4).isoweekday() == 3", a
    Wednesday. See also "weekday()", "isocalendar()".
 
-date.isocalendar()                 *date.isocalendar()..datetime.txt;*
+date.isocalendar()                  *date.isocalendar()..datetime.txt*
 
    Return a _named tuple_ object with three components: "year", "week"
    and "weekday".
@@ -695,7 +695,7 @@ date.isocalendar()                 *date.isocalendar()..datetime.txt;*
    Changed in version 3.9: Result changed from a tuple to a _named
    tuple_.
 
-date.isoformat()                     *date.isoformat()..datetime.txt;*
+date.isoformat()                      *date.isoformat()..datetime.txt*
 
    Return a string representing the date in ISO 8601 format, "YYYY-MM-
    DD":
@@ -704,11 +704,11 @@ date.isoformat()                     *date.isoformat()..datetime.txt;*
       >>> date(2002, 12, 4).isoformat()
       '2002-12-04'
 <
-date.__str__()                         *date.__str__()..datetime.txt;*
+date.__str__()                          *date.__str__()..datetime.txt*
 
    For a date _d_, "str(d)" is equivalent to "d.isoformat()".
 
-date.ctime()                             *date.ctime()..datetime.txt;*
+date.ctime()                              *date.ctime()..datetime.txt*
 
    Return a string representing the date:
 >
@@ -724,14 +724,14 @@ date.ctime()                             *date.ctime()..datetime.txt;*
    "time.ctime()" invokes, but which "date.ctime()" does not invoke)
    conforms to the C standard.
 
-date.strftime(format)                 *date.strftime()..datetime.txt;*
+date.strftime(format)                  *date.strftime()..datetime.txt*
 
    Return a string representing the date, controlled by an explicit
    format string. Format codes referring to hours, minutes or seconds
    will see 0 values. See also strftime() and strptime() Behavior and
    "date.isoformat()".
 
-date.__format__(format)             *date.__format__()..datetime.txt;*
+date.__format__(format)              *date.__format__()..datetime.txt*
 
    Same as "date.strftime()". This makes it possible to specify a
    format string for a "date" object in formatted string literals and
@@ -846,7 +846,7 @@ class datetime.datetime(year, month, day, hour=0, minute=0, second=0, microsecon
 
 Other constructors, all class methods:
 
-classmethod datetime.today()         *datetime.today()..datetime.txt;*
+classmethod datetime.today()          *datetime.today()..datetime.txt*
 
    Return the current local datetime, with "tzinfo" "None".
 
@@ -859,7 +859,7 @@ classmethod datetime.today()         *datetime.today()..datetime.txt;*
    This method is functionally equivalent to "now()", but without a
    "tz" parameter.
 
-classmethod datetime.now(tz=None)      *datetime.now()..datetime.txt;*
+classmethod datetime.now(tz=None)       *datetime.now()..datetime.txt*
 
    Return the current local date and time.
 
@@ -875,7 +875,7 @@ classmethod datetime.now(tz=None)      *datetime.now()..datetime.txt;*
 
    This function is preferred over "today()" and "utcnow()".
 
-classmethod datetime.utcnow()       *datetime.utcnow()..datetime.txt;*
+classmethod datetime.utcnow()        *datetime.utcnow()..datetime.txt*
 
    Return the current UTC date and time, with "tzinfo" "None".
 
@@ -894,7 +894,7 @@ classmethod datetime.utcnow()       *datetime.utcnow()..datetime.txt;*
    Deprecated since version 3.12: Use "datetime.now()" with "UTC"
    instead.
 
-                             *datetime.fromtimestamp()..datetime.txt;*
+                              *datetime.fromtimestamp()..datetime.txt*
 classmethod datetime.fromtimestamp(timestamp, tz=None)
 
    Return the local date and time corresponding to the POSIX
@@ -926,7 +926,7 @@ classmethod datetime.fromtimestamp(timestamp, tz=None)
    Changed in version 3.6: "fromtimestamp()" may return instances with
    "fold" set to 1.
 
-                          *datetime.utcfromtimestamp()..datetime.txt;*
+                           *datetime.utcfromtimestamp()..datetime.txt*
 classmethod datetime.utcfromtimestamp(timestamp)
 
    Return the UTC "datetime" corresponding to the POSIX timestamp,
@@ -965,7 +965,7 @@ classmethod datetime.utcfromtimestamp(timestamp)
    Deprecated since version 3.12: Use "datetime.fromtimestamp()" with
    "UTC" instead.
 
-                               *datetime.fromordinal()..datetime.txt;*
+                                *datetime.fromordinal()..datetime.txt*
 classmethod datetime.fromordinal(ordinal)
 
    Return the "datetime" corresponding to the proleptic Gregorian
@@ -974,7 +974,7 @@ classmethod datetime.fromordinal(ordinal)
    minute, second and microsecond of the result are all 0, and
    "tzinfo" is "None".
 
-                                   *datetime.combine()..datetime.txt;*
+                                    *datetime.combine()..datetime.txt*
 classmethod datetime.combine(date, time, tzinfo=time.tzinfo)
 
    Return a new "datetime" object whose date components are equal to
@@ -990,7 +990,7 @@ classmethod datetime.combine(date, time, tzinfo=time.tzinfo)
 
    Changed in version 3.6: Added the _tzinfo_ argument.
 
-                             *datetime.fromisoformat()..datetime.txt;*
+                              *datetime.fromisoformat()..datetime.txt*
 classmethod datetime.fromisoformat(date_string)
 
    Return a "datetime" corresponding to a _date_string_ in any valid
@@ -1034,7 +1034,7 @@ classmethod datetime.fromisoformat(date_string)
    formats that could be emitted by "date.isoformat()" or
    "datetime.isoformat()".
 
-                           *datetime.fromisocalendar()..datetime.txt;*
+                            *datetime.fromisocalendar()..datetime.txt*
 classmethod datetime.fromisocalendar(year, week, day)
 
    Return a "datetime" corresponding to the ISO calendar date
@@ -1044,7 +1044,7 @@ classmethod datetime.fromisocalendar(year, week, day)
 
    New in version 3.8.
 
-                                  *datetime.strptime()..datetime.txt;*
+                                   *datetime.strptime()..datetime.txt*
 classmethod datetime.strptime(date_string, format)
 
    Return a "datetime" corresponding to _date_string_, parsed
@@ -1062,58 +1062,58 @@ classmethod datetime.strptime(date_string, format)
 
 Class attributes:
 
-datetime.min                             *datetime.min..datetime.txt;*
+datetime.min                              *datetime.min..datetime.txt*
 
    The earliest representable "datetime", "datetime(MINYEAR, 1, 1,
    tzinfo=None)".
 
-datetime.max                             *datetime.max..datetime.txt;*
+datetime.max                              *datetime.max..datetime.txt*
 
    The latest representable "datetime", "datetime(MAXYEAR, 12, 31, 23,
    59, 59, 999999, tzinfo=None)".
 
-datetime.resolution               *datetime.resolution..datetime.txt;*
+datetime.resolution                *datetime.resolution..datetime.txt*
 
    The smallest possible difference between non-equal "datetime"
    objects, "timedelta(microseconds=1)".
 
 Instance attributes (read-only):
 
-datetime.year                           *datetime.year..datetime.txt;*
+datetime.year                            *datetime.year..datetime.txt*
 
    Between "MINYEAR" and "MAXYEAR" inclusive.
 
-datetime.month                         *datetime.month..datetime.txt;*
+datetime.month                          *datetime.month..datetime.txt*
 
    Between 1 and 12 inclusive.
 
-datetime.day                             *datetime.day..datetime.txt;*
+datetime.day                              *datetime.day..datetime.txt*
 
    Between 1 and the number of days in the given month of the given
    year.
 
-datetime.hour                           *datetime.hour..datetime.txt;*
+datetime.hour                            *datetime.hour..datetime.txt*
 
    In "range(24)".
 
-datetime.minute                       *datetime.minute..datetime.txt;*
+datetime.minute                        *datetime.minute..datetime.txt*
 
    In "range(60)".
 
-datetime.second                       *datetime.second..datetime.txt;*
+datetime.second                        *datetime.second..datetime.txt*
 
    In "range(60)".
 
-datetime.microsecond             *datetime.microsecond..datetime.txt;*
+datetime.microsecond              *datetime.microsecond..datetime.txt*
 
    In "range(1000000)".
 
-datetime.tzinfo                       *datetime.tzinfo..datetime.txt;*
+datetime.tzinfo                        *datetime.tzinfo..datetime.txt*
 
    The object passed as the _tzinfo_ argument to the "datetime"
    constructor, or "None" if none was passed.
 
-datetime.fold                           *datetime.fold..datetime.txt;*
+datetime.fold                            *datetime.fold..datetime.txt*
 
    In "[0, 1]". Used to disambiguate wall times during a repeated
    interval. (A repeated interval occurs when clocks are rolled back
@@ -1198,11 +1198,11 @@ Supported operations:
 
 Instance methods:
 
-datetime.date()                       *datetime.date()..datetime.txt;*
+datetime.date()                        *datetime.date()..datetime.txt*
 
    Return "date" object with same year, month and day.
 
-datetime.time()                       *datetime.time()..datetime.txt;*
+datetime.time()                        *datetime.time()..datetime.txt*
 
    Return "time" object with same hour, minute, second, microsecond
    and fold. "tzinfo" is "None". See also method "timetz()".
@@ -1210,7 +1210,7 @@ datetime.time()                       *datetime.time()..datetime.txt;*
    Changed in version 3.6: The fold value is copied to the returned
    "time" object.
 
-datetime.timetz()                   *datetime.timetz()..datetime.txt;*
+datetime.timetz()                    *datetime.timetz()..datetime.txt*
 
    Return "time" object with same hour, minute, second, microsecond,
    fold, and tzinfo attributes. See also method "time()".
@@ -1218,7 +1218,7 @@ datetime.timetz()                   *datetime.timetz()..datetime.txt;*
    Changed in version 3.6: The fold value is copied to the returned
    "time" object.
 
-                                   *datetime.replace()..datetime.txt;*
+                                    *datetime.replace()..datetime.txt*
 datetime.replace(year=self.year, month=self.month, day=self.day, hour=self.hour, minute=self.minute, second=self.second, microsecond=self.microsecond, tzinfo=self.tzinfo, *, fold=0)
 
    Return a datetime with the same attributes, except for those
@@ -1232,7 +1232,7 @@ datetime.replace(year=self.year, month=self.month, day=self.day, hour=self.hour,
 
    New in version 3.6: Added the "fold" argument.
 
-datetime.astimezone(tz=None)    *datetime.astimezone()..datetime.txt;*
+datetime.astimezone(tz=None)     *datetime.astimezone()..datetime.txt*
 
    Return a "datetime" object with new "tzinfo" attribute _tz_,
    adjusting the date and time data so the result is the same UTC time
@@ -1280,7 +1280,7 @@ datetime.astimezone(tz=None)    *datetime.astimezone()..datetime.txt;*
    on naive instances that are presumed to represent system local
    time.
 
-datetime.utcoffset()             *datetime.utcoffset()..datetime.txt;*
+datetime.utcoffset()              *datetime.utcoffset()..datetime.txt*
 
    If "tzinfo" is "None", returns "None", else returns
    "self.tzinfo.utcoffset(self)", and raises an exception if the
@@ -1290,7 +1290,7 @@ datetime.utcoffset()             *datetime.utcoffset()..datetime.txt;*
    Changed in version 3.7: The UTC offset is not restricted to a whole
    number of minutes.
 
-datetime.dst()                         *datetime.dst()..datetime.txt;*
+datetime.dst()                          *datetime.dst()..datetime.txt*
 
    If "tzinfo" is "None", returns "None", else returns
    "self.tzinfo.dst(self)", and raises an exception if the latter
@@ -1300,13 +1300,13 @@ datetime.dst()                         *datetime.dst()..datetime.txt;*
    Changed in version 3.7: The DST offset is not restricted to a whole
    number of minutes.
 
-datetime.tzname()                   *datetime.tzname()..datetime.txt;*
+datetime.tzname()                    *datetime.tzname()..datetime.txt*
 
    If "tzinfo" is "None", returns "None", else returns
    "self.tzinfo.tzname(self)", raises an exception if the latter
    doesn’t return "None" or a string object,
 
-datetime.timetuple()             *datetime.timetuple()..datetime.txt;*
+datetime.timetuple()              *datetime.timetuple()..datetime.txt*
 
    Return a "time.struct_time" such as returned by "time.localtime()".
 
@@ -1323,7 +1323,7 @@ datetime.timetuple()             *datetime.timetuple()..datetime.txt;*
    "tm_isdst" is set to "-1"; else if "dst()" returns a non-zero
    value, "tm_isdst" is set to "1"; else "tm_isdst" is set to "0".
 
-datetime.utctimetuple()       *datetime.utctimetuple()..datetime.txt;*
+datetime.utctimetuple()        *datetime.utctimetuple()..datetime.txt*
 
    If "datetime" instance _d_ is naive, this is the same as
    "d.timetuple()" except that "tm_isdst" is forced to 0 regardless of
@@ -1345,12 +1345,12 @@ datetime.utctimetuple()       *datetime.utctimetuple()..datetime.txt;*
      "datetime.replace(tzinfo=timezone.utc)" to make it aware, at
      which point you can use "datetime.timetuple()".
 
-datetime.toordinal()             *datetime.toordinal()..datetime.txt;*
+datetime.toordinal()              *datetime.toordinal()..datetime.txt*
 
    Return the proleptic Gregorian ordinal of the date. The same as
    "self.date().toordinal()".
 
-datetime.timestamp()             *datetime.timestamp()..datetime.txt;*
+datetime.timestamp()              *datetime.timestamp()..datetime.txt*
 
    Return POSIX timestamp corresponding to the "datetime" instance.
    The return value is a "float" similar to that returned by
@@ -1388,24 +1388,24 @@ datetime.timestamp()             *datetime.timestamp()..datetime.txt;*
 >
         timestamp = (dt - datetime(1970, 1, 1)) / timedelta(seconds=1)
 <
-datetime.weekday()                 *datetime.weekday()..datetime.txt;*
+datetime.weekday()                  *datetime.weekday()..datetime.txt*
 
    Return the day of the week as an integer, where Monday is 0 and
    Sunday is 6. The same as "self.date().weekday()". See also
    "isoweekday()".
 
-datetime.isoweekday()           *datetime.isoweekday()..datetime.txt;*
+datetime.isoweekday()            *datetime.isoweekday()..datetime.txt*
 
    Return the day of the week as an integer, where Monday is 1 and
    Sunday is 7. The same as "self.date().isoweekday()". See also
    "weekday()", "isocalendar()".
 
-datetime.isocalendar()         *datetime.isocalendar()..datetime.txt;*
+datetime.isocalendar()          *datetime.isocalendar()..datetime.txt*
 
    Return a _named tuple_ with three components: "year", "week" and
    "weekday". The same as "self.date().isocalendar()".
 
-                                 *datetime.isoformat()..datetime.txt;*
+                                  *datetime.isoformat()..datetime.txt*
 datetime.isoformat(sep='T', timespec='auto')
 
    Return a string representing the date and time in ISO 8601 format:
@@ -1479,12 +1479,12 @@ datetime.isoformat(sep='T', timespec='auto')
 <
    New in version 3.6: Added the _timespec_ argument.
 
-datetime.__str__()                 *datetime.__str__()..datetime.txt;*
+datetime.__str__()                  *datetime.__str__()..datetime.txt*
 
    For a "datetime" instance _d_, "str(d)" is equivalent to
    "d.isoformat(' ')".
 
-datetime.ctime()                     *datetime.ctime()..datetime.txt;*
+datetime.ctime()                      *datetime.ctime()..datetime.txt*
 
    Return a string representing the date and time:
 >
@@ -1503,13 +1503,13 @@ datetime.ctime()                     *datetime.ctime()..datetime.txt;*
    "time.ctime()" invokes, but which "datetime.ctime()" does not
    invoke) conforms to the C standard.
 
-datetime.strftime(format)         *datetime.strftime()..datetime.txt;*
+datetime.strftime(format)          *datetime.strftime()..datetime.txt*
 
    Return a string representing the date and time, controlled by an
    explicit format string. See also strftime() and strptime() Behavior
    and "datetime.isoformat()".
 
-datetime.__format__(format)     *datetime.__format__()..datetime.txt;*
+datetime.__format__(format)      *datetime.__format__()..datetime.txt*
 
    Same as "datetime.strftime()". This makes it possible to specify a
    format string for a "datetime" object in formatted string literals
@@ -1670,15 +1670,15 @@ class datetime.time(hour=0, minute=0, second=0, microsecond=0, tzinfo=None, *, f
 
 Class attributes:
 
-time.min                                     *time.min..datetime.txt;*
+time.min                                      *time.min..datetime.txt*
 
    The earliest representable "time", "time(0, 0, 0, 0)".
 
-time.max                                     *time.max..datetime.txt;*
+time.max                                      *time.max..datetime.txt*
 
    The latest representable "time", "time(23, 59, 59, 999999)".
 
-time.resolution                       *time.resolution..datetime.txt;*
+time.resolution                        *time.resolution..datetime.txt*
 
    The smallest possible difference between non-equal "time" objects,
    "timedelta(microseconds=1)", although note that arithmetic on
@@ -1686,28 +1686,28 @@ time.resolution                       *time.resolution..datetime.txt;*
 
 Instance attributes (read-only):
 
-time.hour                                   *time.hour..datetime.txt;*
+time.hour                                    *time.hour..datetime.txt*
 
    In "range(24)".
 
-time.minute                               *time.minute..datetime.txt;*
+time.minute                                *time.minute..datetime.txt*
 
    In "range(60)".
 
-time.second                               *time.second..datetime.txt;*
+time.second                                *time.second..datetime.txt*
 
    In "range(60)".
 
-time.microsecond                     *time.microsecond..datetime.txt;*
+time.microsecond                      *time.microsecond..datetime.txt*
 
    In "range(1000000)".
 
-time.tzinfo                               *time.tzinfo..datetime.txt;*
+time.tzinfo                                *time.tzinfo..datetime.txt*
 
    The object passed as the tzinfo argument to the "time" constructor,
    or "None" if none was passed.
 
-time.fold                                   *time.fold..datetime.txt;*
+time.fold                                    *time.fold..datetime.txt*
 
    In "[0, 1]". Used to disambiguate wall times during a repeated
    interval. (A repeated interval occurs when clocks are rolled back
@@ -1746,7 +1746,7 @@ in Python 3.5. See bpo-13936 for full details.
 
 Other constructor:
 
-                                 *time.fromisoformat()..datetime.txt;*
+                                  *time.fromisoformat()..datetime.txt*
 classmethod time.fromisoformat(time_string)
 
    Return a "time" corresponding to a _time_string_ in any valid ISO
@@ -1789,7 +1789,7 @@ classmethod time.fromisoformat(time_string)
 
 Instance methods:
 
-                                       *time.replace()..datetime.txt;*
+                                        *time.replace()..datetime.txt*
 time.replace(hour=self.hour, minute=self.minute, second=self.second, microsecond=self.microsecond, tzinfo=self.tzinfo, *, fold=0)
 
    Return a "time" with the same value, except for those attributes
@@ -1802,7 +1802,7 @@ time.replace(hour=self.hour, minute=self.minute, second=self.second, microsecond
 
    New in version 3.6: Added the "fold" argument.
 
-time.isoformat(timespec='auto')      *time.isoformat()..datetime.txt;*
+time.isoformat(timespec='auto')       *time.isoformat()..datetime.txt*
 
    Return a string representing the time in ISO 8601 format, one of:
 
@@ -1854,24 +1854,24 @@ time.isoformat(timespec='auto')      *time.isoformat()..datetime.txt;*
 <
    New in version 3.6: Added the _timespec_ argument.
 
-time.__str__()                         *time.__str__()..datetime.txt;*
+time.__str__()                          *time.__str__()..datetime.txt*
 
    For a time _t_, "str(t)" is equivalent to "t.isoformat()".
 
-time.strftime(format)                 *time.strftime()..datetime.txt;*
+time.strftime(format)                  *time.strftime()..datetime.txt*
 
    Return a string representing the time, controlled by an explicit
    format string.  See also strftime() and strptime() Behavior and
    "time.isoformat()".
 
-time.__format__(format)             *time.__format__()..datetime.txt;*
+time.__format__(format)              *time.__format__()..datetime.txt*
 
    Same as "time.strftime()". This makes it possible to specify a
    format string for a "time" object in formatted string literals and
    when using "str.format()". See also strftime() and strptime()
    Behavior and "time.isoformat()".
 
-time.utcoffset()                     *time.utcoffset()..datetime.txt;*
+time.utcoffset()                      *time.utcoffset()..datetime.txt*
 
    If "tzinfo" is "None", returns "None", else returns
    "self.tzinfo.utcoffset(None)", and raises an exception if the
@@ -1881,7 +1881,7 @@ time.utcoffset()                     *time.utcoffset()..datetime.txt;*
    Changed in version 3.7: The UTC offset is not restricted to a whole
    number of minutes.
 
-time.dst()                                 *time.dst()..datetime.txt;*
+time.dst()                                  *time.dst()..datetime.txt*
 
    If "tzinfo" is "None", returns "None", else returns
    "self.tzinfo.dst(None)", and raises an exception if the latter
@@ -1891,7 +1891,7 @@ time.dst()                                 *time.dst()..datetime.txt;*
    Changed in version 3.7: The DST offset is not restricted to a whole
    number of minutes.
 
-time.tzname()                           *time.tzname()..datetime.txt;*
+time.tzname()                            *time.tzname()..datetime.txt*
 
    If "tzinfo" is "None", returns "None", else returns
    "self.tzinfo.tzname(None)", or raises an exception if the latter
@@ -1962,7 +1962,7 @@ class datetime.tzinfo
    of aware "datetime" objects. If in doubt, simply implement all of
    them.
 
-tzinfo.utcoffset(dt)               *tzinfo.utcoffset()..datetime.txt;*
+tzinfo.utcoffset(dt)                *tzinfo.utcoffset()..datetime.txt*
 
    Return offset of local time from UTC, as a "timedelta" object that
    is positive east of UTC. If local time is west of UTC, this should
@@ -1989,7 +1989,7 @@ tzinfo.utcoffset(dt)               *tzinfo.utcoffset()..datetime.txt;*
    Changed in version 3.7: The UTC offset is not restricted to a whole
    number of minutes.
 
-tzinfo.dst(dt)                           *tzinfo.dst()..datetime.txt;*
+tzinfo.dst(dt)                            *tzinfo.dst()..datetime.txt*
 
    Return the daylight saving time (DST) adjustment, as a "timedelta"
    object or "None" if DST information isn’t known.
@@ -2043,7 +2043,7 @@ tzinfo.dst(dt)                           *tzinfo.dst()..datetime.txt;*
    Changed in version 3.7: The DST offset is not restricted to a whole
    number of minutes.
 
-tzinfo.tzname(dt)                     *tzinfo.tzname()..datetime.txt;*
+tzinfo.tzname(dt)                      *tzinfo.tzname()..datetime.txt*
 
    Return the time zone name corresponding to the "datetime" object
    _dt_, as a string. Nothing about string names is defined by the
@@ -2081,7 +2081,7 @@ not need worry about objects in other timezones.
 There is one more "tzinfo" method that a subclass may wish to
 override:
 
-tzinfo.fromutc(dt)                   *tzinfo.fromutc()..datetime.txt;*
+tzinfo.fromutc(dt)                    *tzinfo.fromutc()..datetime.txt*
 
    This is called from the default "datetime.astimezone()"
    implementation. When called from that, "dt.tzinfo" is _self_, and
@@ -2410,7 +2410,7 @@ class datetime.timezone(offset, name=None)
    Changed in version 3.7: The UTC offset is not restricted to a whole
    number of minutes.
 
-timezone.utcoffset(dt)           *timezone.utcoffset()..datetime.txt;*
+timezone.utcoffset(dt)            *timezone.utcoffset()..datetime.txt*
 
    Return the fixed value specified when the "timezone" instance is
    constructed.
@@ -2421,7 +2421,7 @@ timezone.utcoffset(dt)           *timezone.utcoffset()..datetime.txt;*
    Changed in version 3.7: The UTC offset is not restricted to a whole
    number of minutes.
 
-timezone.tzname(dt)                 *timezone.tzname()..datetime.txt;*
+timezone.tzname(dt)                  *timezone.tzname()..datetime.txt*
 
    Return the fixed value specified when the "timezone" instance is
    constructed.
@@ -2436,18 +2436,18 @@ timezone.tzname(dt)                 *timezone.tzname()..datetime.txt;*
    Changed in version 3.6: Name generated from "offset=timedelta(0)"
    is now plain "'UTC'", not "'UTC+00:00'".
 
-timezone.dst(dt)                       *timezone.dst()..datetime.txt;*
+timezone.dst(dt)                        *timezone.dst()..datetime.txt*
 
    Always returns "None".
 
-timezone.fromutc(dt)               *timezone.fromutc()..datetime.txt;*
+timezone.fromutc(dt)                *timezone.fromutc()..datetime.txt*
 
    Return "dt + offset". The _dt_ argument must be an aware "datetime"
    instance, with "tzinfo" set to "self".
 
 Class attributes:
 
-timezone.utc                             *timezone.utc..datetime.txt;*
+timezone.utc                              *timezone.utc..datetime.txt*
 
    The UTC timezone, "timezone(timedelta(0))".
 

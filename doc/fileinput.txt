@@ -1,4 +1,4 @@
-*fileinput.txt;*                              Last change: 2023 Sep 09
+*fileinput.txt;*                              Last change: 2023 Sep 10
 
 "fileinput" — Iterate over lines from multiple input streams
 ************************************************************
@@ -53,7 +53,7 @@ hook as additional keyword arguments. This module provides a
 
 The following function is the primary interface of this module:
 
-                                             *input()..fileinput.txt;*
+                                              *input()..fileinput.txt*
 fileinput.input(files=None, inplace=False, backup='', *, mode='r', openhook=None, encoding=None, errors=None)
 
    Create an instance of the "FileInput" class.  The instance will be
@@ -81,42 +81,42 @@ The following functions use the global state created by
 "fileinput.input()"; if there is no active state, "RuntimeError" is
 raised.
 
-fileinput.filename()                      *filename()..fileinput.txt;*
+fileinput.filename()                       *filename()..fileinput.txt*
 
    Return the name of the file currently being read.  Before the first
    line has been read, returns "None".
 
-fileinput.fileno()                          *fileno()..fileinput.txt;*
+fileinput.fileno()                           *fileno()..fileinput.txt*
 
    Return the integer “file descriptor” for the current file. When no
    file is opened (before the first line and between files), returns
    "-1".
 
-fileinput.lineno()                          *lineno()..fileinput.txt;*
+fileinput.lineno()                           *lineno()..fileinput.txt*
 
    Return the cumulative line number of the line that has just been
    read.  Before the first line has been read, returns "0".  After the
    last line of the last file has been read, returns the line number
    of that line.
 
-fileinput.filelineno()                  *filelineno()..fileinput.txt;*
+fileinput.filelineno()                   *filelineno()..fileinput.txt*
 
    Return the line number in the current file.  Before the first line
    has been read, returns "0".  After the last line of the last file
    has been read, returns the line number of that line within the
    file.
 
-fileinput.isfirstline()                *isfirstline()..fileinput.txt;*
+fileinput.isfirstline()                 *isfirstline()..fileinput.txt*
 
    Return "True" if the line just read is the first line of its file,
    otherwise return "False".
 
-fileinput.isstdin()                        *isstdin()..fileinput.txt;*
+fileinput.isstdin()                         *isstdin()..fileinput.txt*
 
    Return "True" if the last line was read from "sys.stdin", otherwise
    return "False".
 
-fileinput.nextfile()                      *nextfile()..fileinput.txt;*
+fileinput.nextfile()                       *nextfile()..fileinput.txt*
 
    Close the current file so that the next iteration will read the
    first line from the next file (if any); lines not read from the
@@ -127,14 +127,14 @@ fileinput.nextfile()                      *nextfile()..fileinput.txt;*
    last line of the last file has been read, this function has no
    effect.
 
-fileinput.close()                            *close()..fileinput.txt;*
+fileinput.close()                             *close()..fileinput.txt*
 
    Close the sequence.
 
 The class which implements the sequence behavior provided by the
 module is available for subclassing as well:
 
-                                           *FileInput..fileinput.txt;*
+                                            *FileInput..fileinput.txt*
 class fileinput.FileInput(files=None, inplace=False, backup='', *, mode='r', openhook=None, encoding=None, errors=None)
 
    Class "FileInput" is the implementation; its methods "filename()",
@@ -187,7 +187,7 @@ disabled when standard input is read.
 
 The two following opening hooks are provided by this module:
 
-                                   *hook_compressed()..fileinput.txt;*
+                                    *hook_compressed()..fileinput.txt*
 fileinput.hook_compressed(filename, mode, *, encoding=None, errors=None)
 
    Transparently opens files compressed with gzip and bzip2
@@ -206,7 +206,7 @@ fileinput.hook_compressed(filename, mode, *, encoding=None, errors=None)
    Changed in version 3.10: The keyword-only parameter _encoding_ and
    _errors_ are added.
 
-                                      *hook_encoded()..fileinput.txt;*
+                                       *hook_encoded()..fileinput.txt*
 fileinput.hook_encoded(encoding, errors=None)
 
    Returns a hook which opens each file with "open()", using the given

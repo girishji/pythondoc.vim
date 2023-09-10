@@ -1,4 +1,4 @@
-*shelve.txt;*                                 Last change: 2023 Sep 09
+*shelve.txt;*                                 Last change: 2023 Sep 10
 
 "shelve" — Python object persistence
 ************************************
@@ -14,7 +14,7 @@ module can handle. This includes most class instances, recursive data
 types, and objects containing lots of shared  sub-objects.  The keys
 are ordinary strings.
 
-                                                 *open()..shelve.txt;*
+                                                  *open()..shelve.txt*
 shelve.open(filename, flag='c', protocol=None, writeback=False)
 
    Open a persistent dictionary.  The filename specified is the base
@@ -69,14 +69,14 @@ those requiring persistent storage.
 
 Two additional methods are supported:
 
-Shelf.sync()                               *Shelf.sync()..shelve.txt;*
+Shelf.sync()                                *Shelf.sync()..shelve.txt*
 
    Write back all entries in the cache if the shelf was opened with
    _writeback_ set to "True".  Also empty the cache and synchronize
    the persistent dictionary on disk, if feasible.  This is called
    automatically when the shelf is closed with "close()".
 
-Shelf.close()                             *Shelf.close()..shelve.txt;*
+Shelf.close()                              *Shelf.close()..shelve.txt*
 
    Synchronize and close the persistent _dict_ object.  Operations on
    a closed shelf will fail with a "ValueError".
@@ -106,7 +106,7 @@ Restrictions
   to solve this, but this differs across Unix versions and requires
   knowledge about the database implementation used.
 
-                                                  *Shelf..shelve.txt;*
+                                                   *Shelf..shelve.txt*
 class shelve.Shelf(dict, protocol=None, writeback=False, keyencoding='utf-8')
 
    A subclass of "collections.abc.MutableMapping" which stores pickled
@@ -137,7 +137,7 @@ class shelve.Shelf(dict, protocol=None, writeback=False, keyencoding='utf-8')
    Changed in version 3.10: "pickle.DEFAULT_PROTOCOL" is now used as
    the default pickle protocol.
 
-                                             *BsdDbShelf..shelve.txt;*
+                                              *BsdDbShelf..shelve.txt*
 class shelve.BsdDbShelf(dict, protocol=None, writeback=False, keyencoding='utf-8')
 
    A subclass of "Shelf" which exposes "first()", "next()",
@@ -149,7 +149,7 @@ class shelve.BsdDbShelf(dict, protocol=None, writeback=False, keyencoding='utf-8
    The optional _protocol_, _writeback_, and _keyencoding_ parameters
    have the same interpretation as for the "Shelf" class.
 
-                                        *DbfilenameShelf..shelve.txt;*
+                                         *DbfilenameShelf..shelve.txt*
 class shelve.DbfilenameShelf(filename, flag='c', protocol=None, writeback=False)
 
    A subclass of "Shelf" which accepts a _filename_ instead of a dict-

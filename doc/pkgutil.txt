@@ -1,4 +1,4 @@
-*pkgutil.txt;*                                Last change: 2023 Sep 09
+*pkgutil.txt;*                                Last change: 2023 Sep 10
 
 "pkgutil" — Package extension utility
 *************************************
@@ -10,14 +10,14 @@
 This module provides utilities for the import system, in particular
 package support.
 
-                                            *ModuleInfo..pkgutil.txt;*
+                                             *ModuleInfo..pkgutil.txt*
 class pkgutil.ModuleInfo(module_finder, name, ispkg)
 
    A namedtuple that holds a brief summary of a module’s info.
 
    New in version 3.6.
 
-pkgutil.extend_path(path, name)          *extend_path()..pkgutil.txt;*
+pkgutil.extend_path(path, name)           *extend_path()..pkgutil.txt*
 
    Extend the search path for the modules which comprise a package.
    Intended use is to place the following code in a package’s
@@ -50,7 +50,7 @@ pkgutil.extend_path(path, name)          *extend_path()..pkgutil.txt;*
    filenames may cause this function to raise an exception (in line
    with "os.path.isdir()" behavior).
 
-pkgutil.find_loader(fullname)            *find_loader()..pkgutil.txt;*
+pkgutil.find_loader(fullname)             *find_loader()..pkgutil.txt*
 
    Retrieve a module _loader_ for the given _fullname_.
 
@@ -68,7 +68,7 @@ pkgutil.find_loader(fullname)            *find_loader()..pkgutil.txt;*
    Deprecated since version 3.12, will be removed in version 3.14: Use
    "importlib.util.find_spec()" instead.
 
-pkgutil.get_importer(path_item)         *get_importer()..pkgutil.txt;*
+pkgutil.get_importer(path_item)          *get_importer()..pkgutil.txt*
 
    Retrieve a _finder_ for the given _path_item_.
 
@@ -82,7 +82,7 @@ pkgutil.get_importer(path_item)         *get_importer()..pkgutil.txt;*
    rather than relying on the package internal **PEP 302** import
    emulation.
 
-pkgutil.get_loader(module_or_name)        *get_loader()..pkgutil.txt;*
+pkgutil.get_loader(module_or_name)         *get_loader()..pkgutil.txt*
 
    Get a _loader_ object for _module_or_name_.
 
@@ -102,7 +102,7 @@ pkgutil.get_loader(module_or_name)        *get_loader()..pkgutil.txt;*
    Deprecated since version 3.12, will be removed in version 3.14: Use
    "importlib.util.find_spec()" instead.
 
-pkgutil.iter_importers(fullname='')   *iter_importers()..pkgutil.txt;*
+pkgutil.iter_importers(fullname='')    *iter_importers()..pkgutil.txt*
 
    Yield _finder_ objects for the given module name.
 
@@ -120,7 +120,7 @@ pkgutil.iter_importers(fullname='')   *iter_importers()..pkgutil.txt;*
    rather than relying on the package internal **PEP 302** import
    emulation.
 
-                                        *iter_modules()..pkgutil.txt;*
+                                         *iter_modules()..pkgutil.txt*
 pkgutil.iter_modules(path=None, prefix='')
 
    Yields "ModuleInfo" for all submodules on _path_, or, if _path_ is
@@ -143,7 +143,7 @@ pkgutil.iter_modules(path=None, prefix='')
    rather than relying on the package internal **PEP 302** import
    emulation.
 
-                                       *walk_packages()..pkgutil.txt;*
+                                        *walk_packages()..pkgutil.txt*
 pkgutil.walk_packages(path=None, prefix='', onerror=None)
 
    Yields "ModuleInfo" for all modules recursively on _path_, or, if
@@ -184,7 +184,7 @@ pkgutil.walk_packages(path=None, prefix='', onerror=None)
    rather than relying on the package internal **PEP 302** import
    emulation.
 
-pkgutil.get_data(package, resource)         *get_data()..pkgutil.txt;*
+pkgutil.get_data(package, resource)          *get_data()..pkgutil.txt*
 
    Get a resource from a package.
 
@@ -209,7 +209,7 @@ pkgutil.get_data(package, resource)         *get_data()..pkgutil.txt;*
    particular, the _loader_ for _namespace packages_ does not support
    "get_data".
 
-pkgutil.resolve_name(name)              *resolve_name()..pkgutil.txt;*
+pkgutil.resolve_name(name)               *resolve_name()..pkgutil.txt*
 
    Resolve a name to an object.
 

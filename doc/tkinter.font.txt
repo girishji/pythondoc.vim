@@ -1,4 +1,4 @@
-*tkinterfont.txt;*                            Last change: 2023 Sep 09
+*tkinter.font.txt;*                           Last change: 2023 Sep 10
 
 "tkinter.font" — Tkinter font wrapper
 *************************************
@@ -12,12 +12,12 @@ using named fonts.
 
 The different font weights and slants are:
 
-tkinter.font.NORMAL                         *NORMAL..tkinterfont.txt;*
-tkinter.font.BOLD                             *BOLD..tkinterfont.txt;*
-tkinter.font.ITALIC                         *ITALIC..tkinterfont.txt;*
-tkinter.font.ROMAN                           *ROMAN..tkinterfont.txt;*
+tkinter.font.NORMAL                         *NORMAL..tkinter.font.txt*
+tkinter.font.BOLD                             *BOLD..tkinter.font.txt*
+tkinter.font.ITALIC                         *ITALIC..tkinter.font.txt*
+tkinter.font.ROMAN                           *ROMAN..tkinter.font.txt*
 
-                                              *Font..tkinterfont.txt;*
+                                              *Font..tkinter.font.txt*
 class tkinter.font.Font(root=None, font=None, name=None, exists=False, **options)
 
    The "Font" class represents a named font. _Font_ instances are
@@ -44,30 +44,30 @@ class tkinter.font.Font(root=None, font=None, name=None, exists=False, **options
             _underline_ - font underlining (0 - none, 1 - underline)
             _overstrike_ - font strikeout (0 - none, 1 - strikeout)
 
-                                     *Font.actual()..tkinterfont.txt;*
+                                     *Font.actual()..tkinter.font.txt*
    actual(option=None, displayof=None)
 
       Return the attributes of the font.
 
-   cget(option)                           *Font.cget()..tkinterfont.txt;*
+   cget(option)                           *Font.cget()..tkinter.font.txt*
 
       Retrieve an attribute of the font.
 
-   config(**options)                    *Font.config()..tkinterfont.txt;*
+   config(**options)                    *Font.config()..tkinter.font.txt*
 
       Modify attributes of the font.
 
-   copy()                                 *Font.copy()..tkinterfont.txt;*
+   copy()                                 *Font.copy()..tkinter.font.txt*
 
       Return new instance of the current font.
 
-   measure(text, displayof=None)       *Font.measure()..tkinterfont.txt;*
+   measure(text, displayof=None)       *Font.measure()..tkinter.font.txt*
 
       Return amount of space the text would occupy on the specified
       display when formatted in the current font. If no display is
       specified then the main application window is assumed.
 
-   metrics(*options, **kw)             *Font.metrics()..tkinterfont.txt;*
+   metrics(*options, **kw)             *Font.metrics()..tkinter.font.txt*
 
       Return font-specific data. Options include:
 
@@ -84,16 +84,16 @@ class tkinter.font.Font(root=None, font=None, name=None, exists=False, **options
 
       _fixed_ - 1 if font is fixed-width else 0
 
-                                        *families()..tkinterfont.txt;*
+                                        *families()..tkinter.font.txt*
 tkinter.font.families(root=None, displayof=None)
 
    Return the different font families.
 
-tkinter.font.names(root=None)              *names()..tkinterfont.txt;*
+tkinter.font.names(root=None)              *names()..tkinter.font.txt*
 
    Return the names of defined fonts.
 
-                                      *nametofont()..tkinterfont.txt;*
+                                      *nametofont()..tkinter.font.txt*
 tkinter.font.nametofont(name, root=None)
 
    Return a "Font" representation of a tk named font.

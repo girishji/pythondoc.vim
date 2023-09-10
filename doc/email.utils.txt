@@ -1,4 +1,4 @@
-*emailutils.txt;*                             Last change: 2023 Sep 09
+*email.utils.txt;*                            Last change: 2023 Sep 10
 
 "email.utils": Miscellaneous utilities
 **************************************
@@ -10,7 +10,7 @@
 There are a couple of useful utilities provided in the "email.utils"
 module:
 
-email.utils.localtime(dt=None)          *localtime()..emailutils.txt;*
+email.utils.localtime(dt=None)          *localtime()..email.utils.txt*
 
    Return local time as an aware datetime object.  If called without
    arguments, return current time.  Otherwise _dt_ argument should be
@@ -24,7 +24,7 @@ email.utils.localtime(dt=None)          *localtime()..emailutils.txt;*
    Deprecated since version 3.12, will be removed in version 3.14: The
    _isdst_ parameter.
 
-                                       *make_msgid()..emailutils.txt;*
+                                       *make_msgid()..email.utils.txt*
 email.utils.make_msgid(idstring=None, domain=None)
 
    Returns a string suitable for an **RFC 2822**-compliant _Message-
@@ -43,19 +43,19 @@ There is no need to directly use these with the new API, since the
 parsing and formatting they provide is done automatically by the
 header parsing machinery of the new API.
 
-email.utils.quote(str)                      *quote()..emailutils.txt;*
+email.utils.quote(str)                      *quote()..email.utils.txt*
 
    Return a new string with backslashes in _str_ replaced by two
    backslashes, and double quotes replaced by backslash-double quote.
 
-email.utils.unquote(str)                  *unquote()..emailutils.txt;*
+email.utils.unquote(str)                  *unquote()..email.utils.txt*
 
    Return a new string which is an _unquoted_ version of _str_. If
    _str_ ends and begins with double quotes, they are stripped off.
    Likewise if _str_ ends and begins with angle brackets, they are
    stripped off.
 
-email.utils.parseaddr(address)          *parseaddr()..emailutils.txt;*
+email.utils.parseaddr(address)          *parseaddr()..email.utils.txt*
 
    Parse address – which should be the value of some address-
    containing field such as _To_ or _Cc_ – into its constituent
@@ -63,7 +63,7 @@ email.utils.parseaddr(address)          *parseaddr()..emailutils.txt;*
    information, unless the parse fails, in which case a 2-tuple of
    "('', '')" is returned.
 
-                                       *formataddr()..emailutils.txt;*
+                                       *formataddr()..email.utils.txt*
 email.utils.formataddr(pair, charset='utf-8')
 
    The inverse of "parseaddr()", this takes a 2-tuple of the form
@@ -78,7 +78,7 @@ email.utils.formataddr(pair, charset='utf-8')
 
    Changed in version 3.3: Added the _charset_ option.
 
-                                     *getaddresses()..emailutils.txt;*
+                                     *getaddresses()..email.utils.txt*
 email.utils.getaddresses(fieldvalues)
 
    This method returns a list of 2-tuples of the form returned by
@@ -94,7 +94,7 @@ email.utils.getaddresses(fieldvalues)
       resent_ccs = msg.get_all('resent-cc', [])
       all_recipients = getaddresses(tos + ccs + resent_tos + resent_ccs)
 <
-email.utils.parsedate(date)             *parsedate()..emailutils.txt;*
+email.utils.parsedate(date)             *parsedate()..email.utils.txt*
 
    Attempts to parse a date according to the rules in **RFC 2822**.
    however, some mailers don’t follow that format as specified, so
@@ -105,7 +105,7 @@ email.utils.parsedate(date)             *parsedate()..emailutils.txt;*
    "time.mktime()"; otherwise "None" will be returned.  Note that
    indexes 6, 7, and 8 of the result tuple are not usable.
 
-email.utils.parsedate_tz(date)       *parsedate_tz()..emailutils.txt;*
+email.utils.parsedate_tz(date)       *parsedate_tz()..email.utils.txt*
 
    Performs the same function as "parsedate()", but returns either
    "None" or a 10-tuple; the first 9 elements make up a tuple that can
@@ -115,7 +115,7 @@ email.utils.parsedate_tz(date)       *parsedate_tz()..emailutils.txt;*
    last element of the tuple returned is "0", which represents UTC.
    Note that indexes 6, 7, and 8 of the result tuple are not usable.
 
-                            *parsedate_to_datetime()..emailutils.txt;*
+                            *parsedate_to_datetime()..email.utils.txt*
 email.utils.parsedate_to_datetime(date)
 
    The inverse of "format_datetime()".  Performs the same function as
@@ -132,13 +132,13 @@ email.utils.parsedate_to_datetime(date)
 
    New in version 3.3.
 
-email.utils.mktime_tz(tuple)            *mktime_tz()..emailutils.txt;*
+email.utils.mktime_tz(tuple)            *mktime_tz()..email.utils.txt*
 
    Turn a 10-tuple as returned by "parsedate_tz()" into a UTC
    timestamp (seconds since the Epoch).  If the timezone item in the
    tuple is "None", assume local time.
 
-                                       *formatdate()..emailutils.txt;*
+                                       *formatdate()..email.utils.txt*
 email.utils.formatdate(timeval=None, localtime=False, usegmt=False)
 
    Returns a date string as per **RFC 2822**, e.g.:
@@ -160,7 +160,7 @@ email.utils.formatdate(timeval=None, localtime=False, usegmt=False)
    This only applies when _localtime_ is "False".  The default is
    "False".
 
-                                  *format_datetime()..emailutils.txt;*
+                                  *format_datetime()..email.utils.txt*
 email.utils.format_datetime(dt, usegmt=False)
 
    Like "formatdate", but the input is a "datetime" instance.  If it
@@ -174,11 +174,11 @@ email.utils.format_datetime(dt, usegmt=False)
 
    New in version 3.3.
 
-email.utils.decode_rfc2231(s)      *decode_rfc2231()..emailutils.txt;*
+email.utils.decode_rfc2231(s)      *decode_rfc2231()..email.utils.txt*
 
    Decode the string _s_ according to **RFC 2231**.
 
-                                   *encode_rfc2231()..emailutils.txt;*
+                                   *encode_rfc2231()..email.utils.txt*
 email.utils.encode_rfc2231(s, charset=None, language=None)
 
    Encode the string _s_ according to **RFC 2231**.  Optional
@@ -187,7 +187,7 @@ email.utils.encode_rfc2231(s, charset=None, language=None)
    If _charset_ is given but _language_ is not, the string is encoded
    using the empty string for _language_.
 
-                           *collapse_rfc2231_value()..emailutils.txt;*
+                           *collapse_rfc2231_value()..email.utils.txt*
 email.utils.collapse_rfc2231_value(value, errors='replace', fallback_charset='us-ascii')
 
    When a header parameter is encoded in **RFC 2231** format,
@@ -203,7 +203,7 @@ email.utils.collapse_rfc2231_value(value, errors='replace', fallback_charset='us
    "collapse_rfc2231_value()" is not a tuple, it should be a string
    and it is returned unquoted.
 
-email.utils.decode_params(params)   *decode_params()..emailutils.txt;*
+email.utils.decode_params(params)   *decode_params()..email.utils.txt*
 
    Decode parameters list according to **RFC 2231**.  _params_ is a
    sequence of 2-tuples containing elements of the form "(content-

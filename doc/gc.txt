@@ -1,4 +1,4 @@
-*gc.txt;*                                     Last change: 2023 Sep 09
+*gc.txt;*                                     Last change: 2023 Sep 10
 
 "gc" — Garbage Collector interface
 **********************************
@@ -19,19 +19,19 @@ gc.garbage for inspection.
 
 The "gc" module provides the following functions:
 
-gc.enable()                                        *enable()..gc.txt;*
+gc.enable()                                         *enable()..gc.txt*
 
    Enable automatic garbage collection.
 
-gc.disable()                                      *disable()..gc.txt;*
+gc.disable()                                       *disable()..gc.txt*
 
    Disable automatic garbage collection.
 
-gc.isenabled()                                  *isenabled()..gc.txt;*
+gc.isenabled()                                   *isenabled()..gc.txt*
 
    Return "True" if automatic collection is enabled.
 
-gc.collect(generation=2)                          *collect()..gc.txt;*
+gc.collect(generation=2)                           *collect()..gc.txt*
 
    With no arguments, run a full collection.  The optional argument
    _generation_ may be an integer specifying which generation to
@@ -47,18 +47,18 @@ gc.collect(generation=2)                          *collect()..gc.txt;*
    The effect of calling "gc.collect()" while the interpreter is
    already performing a collection is undefined.
 
-gc.set_debug(flags)                             *set_debug()..gc.txt;*
+gc.set_debug(flags)                              *set_debug()..gc.txt*
 
    Set the garbage collection debugging flags. Debugging information
    will be written to "sys.stderr".  See below for a list of debugging
    flags which can be combined using bit operations to control
    debugging.
 
-gc.get_debug()                                  *get_debug()..gc.txt;*
+gc.get_debug()                                   *get_debug()..gc.txt*
 
    Return the debugging flags currently set.
 
-gc.get_objects(generation=None)               *get_objects()..gc.txt;*
+gc.get_objects(generation=None)                *get_objects()..gc.txt*
 
    Returns a list of all objects tracked by the collector, excluding
    the list returned. If _generation_ is not None, return only the
@@ -69,7 +69,7 @@ gc.get_objects(generation=None)               *get_objects()..gc.txt;*
    Raises an auditing event "gc.get_objects" with argument
    "generation".
 
-gc.get_stats()                                  *get_stats()..gc.txt;*
+gc.get_stats()                                   *get_stats()..gc.txt*
 
    Return a list of three per-generation dictionaries containing
    collection statistics since interpreter start.  The number of keys
@@ -88,7 +88,7 @@ gc.get_stats()                                  *get_stats()..gc.txt;*
 
    New in version 3.4.
 
-                                            *set_threshold()..gc.txt;*
+                                             *set_threshold()..gc.txt*
 gc.set_threshold(threshold0[, threshold1[, threshold2]])
 
    Set the garbage collection thresholds (the collection frequency).
@@ -110,17 +110,17 @@ gc.set_threshold(threshold0[, threshold1[, threshold2]])
    complicated, see Collecting the oldest generation for more
    information.
 
-gc.get_count()                                  *get_count()..gc.txt;*
+gc.get_count()                                   *get_count()..gc.txt*
 
    Return the current collection  counts as a tuple of "(count0,
    count1, count2)".
 
-gc.get_threshold()                          *get_threshold()..gc.txt;*
+gc.get_threshold()                           *get_threshold()..gc.txt*
 
    Return the current collection thresholds as a tuple of
    "(threshold0, threshold1, threshold2)".
 
-gc.get_referrers(*objs)                     *get_referrers()..gc.txt;*
+gc.get_referrers(*objs)                      *get_referrers()..gc.txt*
 
    Return the list of objects that directly refer to any of objs. This
    function will only locate those containers which support garbage
@@ -142,7 +142,7 @@ gc.get_referrers(*objs)                     *get_referrers()..gc.txt;*
 
    Raises an auditing event "gc.get_referrers" with argument "objs".
 
-gc.get_referents(*objs)                     *get_referents()..gc.txt;*
+gc.get_referents(*objs)                      *get_referents()..gc.txt*
 
    Return a list of objects directly referred to by any of the
    arguments. The referents returned are those objects visited by the
@@ -156,7 +156,7 @@ gc.get_referents(*objs)                     *get_referents()..gc.txt;*
 
    Raises an auditing event "gc.get_referents" with argument "objs".
 
-gc.is_tracked(obj)                             *is_tracked()..gc.txt;*
+gc.is_tracked(obj)                              *is_tracked()..gc.txt*
 
    Returns "True" if the object is currently tracked by the garbage
    collector, "False" otherwise.  As a general rule, instances of
@@ -181,7 +181,7 @@ gc.is_tracked(obj)                             *is_tracked()..gc.txt;*
 <
    New in version 3.1.
 
-gc.is_finalized(obj)                         *is_finalized()..gc.txt;*
+gc.is_finalized(obj)                          *is_finalized()..gc.txt*
 
    Returns "True" if the given object has been finalized by the
    garbage collector, "False" otherwise.
@@ -201,7 +201,7 @@ gc.is_finalized(obj)                         *is_finalized()..gc.txt;*
 <
    New in version 3.9.
 
-gc.freeze()                                        *freeze()..gc.txt;*
+gc.freeze()                                         *freeze()..gc.txt*
 
    Freeze all the objects tracked by the garbage collector; move them
    to a permanent generation and ignore them in all the future
@@ -219,14 +219,14 @@ gc.freeze()                                        *freeze()..gc.txt;*
 
    New in version 3.7.
 
-gc.unfreeze()                                    *unfreeze()..gc.txt;*
+gc.unfreeze()                                     *unfreeze()..gc.txt*
 
    Unfreeze the objects in the permanent generation, put them back
    into the oldest generation.
 
    New in version 3.7.
 
-gc.get_freeze_count()                    *get_freeze_count()..gc.txt;*
+gc.get_freeze_count()                     *get_freeze_count()..gc.txt*
 
    Return the number of objects in the permanent generation.
 
@@ -235,7 +235,7 @@ gc.get_freeze_count()                    *get_freeze_count()..gc.txt;*
 The following variables are provided for read-only access (you can
 mutate the values but should not rebind them):
 
-gc.garbage                                          *garbage..gc.txt;*
+gc.garbage                                           *garbage..gc.txt*
 
    A list of objects which the collector found to be unreachable but
    could not be freed (uncollectable objects).  Starting with Python
@@ -253,7 +253,7 @@ gc.garbage                                          *garbage..gc.txt;*
    Changed in version 3.4: Following **PEP 442**, objects with a
    "__del__()" method don’t end up in "gc.garbage" anymore.
 
-gc.callbacks                                      *callbacks..gc.txt;*
+gc.callbacks                                       *callbacks..gc.txt*
 
    A list of callbacks that will be invoked by the garbage collector
    before and after collection.  The callbacks will be called with two
@@ -290,16 +290,16 @@ gc.callbacks                                      *callbacks..gc.txt;*
 
 The following constants are provided for use with "set_debug()":
 
-gc.DEBUG_STATS                                  *DEBUG_STATS..gc.txt;*
+gc.DEBUG_STATS                                   *DEBUG_STATS..gc.txt*
 
    Print statistics during collection.  This information can be useful
    when tuning the collection frequency.
 
-gc.DEBUG_COLLECTABLE                      *DEBUG_COLLECTABLE..gc.txt;*
+gc.DEBUG_COLLECTABLE                       *DEBUG_COLLECTABLE..gc.txt*
 
    Print information on collectable objects found.
 
-gc.DEBUG_UNCOLLECTABLE                  *DEBUG_UNCOLLECTABLE..gc.txt;*
+gc.DEBUG_UNCOLLECTABLE                   *DEBUG_UNCOLLECTABLE..gc.txt*
 
    Print information of uncollectable objects found (objects which are
    not reachable but cannot be freed by the collector).  These objects
@@ -308,13 +308,13 @@ gc.DEBUG_UNCOLLECTABLE                  *DEBUG_UNCOLLECTABLE..gc.txt;*
    Changed in version 3.2: Also print the contents of the "garbage"
    list at _interpreter shutdown_, if it isn’t empty.
 
-gc.DEBUG_SAVEALL                              *DEBUG_SAVEALL..gc.txt;*
+gc.DEBUG_SAVEALL                               *DEBUG_SAVEALL..gc.txt*
 
    When set, all unreachable objects found will be appended to
    _garbage_ rather than being freed.  This can be useful for
    debugging a leaking program.
 
-gc.DEBUG_LEAK                                    *DEBUG_LEAK..gc.txt;*
+gc.DEBUG_LEAK                                     *DEBUG_LEAK..gc.txt*
 
    The debugging flags necessary for the collector to print
    information about a leaking program (equal to "DEBUG_COLLECTABLE |

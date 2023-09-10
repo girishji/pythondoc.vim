@@ -1,4 +1,4 @@
-*xmldomminidom.txt;*                          Last change: 2023 Sep 09
+*xml.dom.minidom.txt;*                        Last change: 2023 Sep 10
 
 "xml.dom.minidom" — Minimal DOM implementation
 **********************************************
@@ -35,7 +35,7 @@ DOM applications typically start by parsing some XML into a DOM.  With
 The "parse()" function can take either a filename or an open file
 object.
 
-                                         *parse()..xmldomminidom.txt;*
+                                        *parse()..xml.dom.minidom.txt*
 xml.dom.minidom.parse(filename_or_file, parser=None, bufsize=None)
 
    Return a "Document" from the given input. _filename_or_file_ may be
@@ -48,7 +48,7 @@ xml.dom.minidom.parse(filename_or_file, parser=None, bufsize=None)
 If you have XML in a string, you can use the "parseString()" function
 instead:
 
-                                   *parseString()..xmldomminidom.txt;*
+                                  *parseString()..xml.dom.minidom.txt*
 xml.dom.minidom.parseString(string, parser=None)
 
    Return a "Document" that represents the _string_. This method
@@ -112,7 +112,7 @@ The definition of the DOM API for Python is given as part of the
 "xml.dom" module documentation.  This section lists the differences
 between the API and "xml.dom.minidom".
 
-Node.unlink()                      *Node.unlink()..xmldomminidom.txt;*
+Node.unlink()                     *Node.unlink()..xml.dom.minidom.txt*
 
    Break internal references within the DOM so that it will be garbage
    collected on versions of Python without cyclic GC.  Even when
@@ -130,7 +130,7 @@ Node.unlink()                      *Node.unlink()..xmldomminidom.txt;*
           ... # Work with dom.
 <
 
-                                 *Node.writexml()..xmldomminidom.txt;*
+                                *Node.writexml()..xml.dom.minidom.txt*
 Node.writexml(writer, indent='', addindent='', newl='', encoding=None, standalone=None)
 
    Write XML to the writer object.  The writer receives texts but not
@@ -155,7 +155,7 @@ Node.writexml(writer, indent='', addindent='', newl='', encoding=None, standalon
 
    Changed in version 3.9: The _standalone_ parameter was added.
 
-                                    *Node.toxml()..xmldomminidom.txt;*
+                                   *Node.toxml()..xml.dom.minidom.txt*
 Node.toxml(encoding=None, standalone=None)
 
    Return a string or byte string containing the XML represented by
@@ -175,7 +175,7 @@ Node.toxml(encoding=None, standalone=None)
 
    Changed in version 3.9: The _standalone_ parameter was added.
 
-                              *Node.toprettyxml()..xmldomminidom.txt;*
+                             *Node.toprettyxml()..xml.dom.minidom.txt*
 Node.toprettyxml(indent='\t', newl='\n', encoding=None, standalone=None)
 
    Return a pretty-printed version of the document. _indent_ specifies

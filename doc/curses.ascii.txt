@@ -1,4 +1,4 @@
-*cursesascii.txt;*                            Last change: 2023 Sep 09
+*curses.ascii.txt;*                           Last change: 2023 Sep 10
 
 "curses.ascii" — Utilities for ASCII characters
 ***********************************************
@@ -115,70 +115,70 @@ digital computers.
 The module supplies the following functions, patterned on those in the
 standard C library:
 
-curses.ascii.isalnum(c)                  *isalnum()..cursesascii.txt;*
+curses.ascii.isalnum(c)                  *isalnum()..curses.ascii.txt*
 
    Checks for an ASCII alphanumeric character; it is equivalent to
    "isalpha(c) or isdigit(c)".
 
-curses.ascii.isalpha(c)                  *isalpha()..cursesascii.txt;*
+curses.ascii.isalpha(c)                  *isalpha()..curses.ascii.txt*
 
    Checks for an ASCII alphabetic character; it is equivalent to
    "isupper(c) or islower(c)".
 
-curses.ascii.isascii(c)                  *isascii()..cursesascii.txt;*
+curses.ascii.isascii(c)                  *isascii()..curses.ascii.txt*
 
    Checks for a character value that fits in the 7-bit ASCII set.
 
-curses.ascii.isblank(c)                  *isblank()..cursesascii.txt;*
+curses.ascii.isblank(c)                  *isblank()..curses.ascii.txt*
 
    Checks for an ASCII whitespace character; space or horizontal tab.
 
-curses.ascii.iscntrl(c)                  *iscntrl()..cursesascii.txt;*
+curses.ascii.iscntrl(c)                  *iscntrl()..curses.ascii.txt*
 
    Checks for an ASCII control character (in the range 0x00 to 0x1f or
    0x7f).
 
-curses.ascii.isdigit(c)                  *isdigit()..cursesascii.txt;*
+curses.ascii.isdigit(c)                  *isdigit()..curses.ascii.txt*
 
    Checks for an ASCII decimal digit, "'0'" through "'9'".  This is
    equivalent to "c in string.digits".
 
-curses.ascii.isgraph(c)                  *isgraph()..cursesascii.txt;*
+curses.ascii.isgraph(c)                  *isgraph()..curses.ascii.txt*
 
    Checks for ASCII any printable character except space.
 
-curses.ascii.islower(c)                  *islower()..cursesascii.txt;*
+curses.ascii.islower(c)                  *islower()..curses.ascii.txt*
 
    Checks for an ASCII lower-case character.
 
-curses.ascii.isprint(c)                  *isprint()..cursesascii.txt;*
+curses.ascii.isprint(c)                  *isprint()..curses.ascii.txt*
 
    Checks for any ASCII printable character including space.
 
-curses.ascii.ispunct(c)                  *ispunct()..cursesascii.txt;*
+curses.ascii.ispunct(c)                  *ispunct()..curses.ascii.txt*
 
    Checks for any printable ASCII character which is not a space or an
    alphanumeric character.
 
-curses.ascii.isspace(c)                  *isspace()..cursesascii.txt;*
+curses.ascii.isspace(c)                  *isspace()..curses.ascii.txt*
 
    Checks for ASCII white-space characters; space, line feed, carriage
    return, form feed, horizontal tab, vertical tab.
 
-curses.ascii.isupper(c)                  *isupper()..cursesascii.txt;*
+curses.ascii.isupper(c)                  *isupper()..curses.ascii.txt*
 
    Checks for an ASCII uppercase letter.
 
-curses.ascii.isxdigit(c)                *isxdigit()..cursesascii.txt;*
+curses.ascii.isxdigit(c)                *isxdigit()..curses.ascii.txt*
 
    Checks for an ASCII hexadecimal digit.  This is equivalent to "c in
    string.hexdigits".
 
-curses.ascii.isctrl(c)                    *isctrl()..cursesascii.txt;*
+curses.ascii.isctrl(c)                    *isctrl()..curses.ascii.txt*
 
    Checks for an ASCII control character (ordinal values 0 to 31).
 
-curses.ascii.ismeta(c)                    *ismeta()..cursesascii.txt;*
+curses.ascii.ismeta(c)                    *ismeta()..curses.ascii.txt*
 
    Checks for a non-ASCII character (ordinal values 0x80 and above).
 
@@ -193,16 +193,16 @@ anything about the host machine’s character encoding.
 The following two functions take either a single-character string or
 integer byte value; they return a value of the same type.
 
-curses.ascii.ascii(c)                      *ascii()..cursesascii.txt;*
+curses.ascii.ascii(c)                      *ascii()..curses.ascii.txt*
 
    Return the ASCII value corresponding to the low 7 bits of _c_.
 
-curses.ascii.ctrl(c)                        *ctrl()..cursesascii.txt;*
+curses.ascii.ctrl(c)                        *ctrl()..curses.ascii.txt*
 
    Return the control character corresponding to the given character
    (the character bit value is bitwise-anded with 0x1f).
 
-curses.ascii.alt(c)                          *alt()..cursesascii.txt;*
+curses.ascii.alt(c)                          *alt()..curses.ascii.txt*
 
    Return the 8-bit character corresponding to the given ASCII
    character (the character bit value is bitwise-ored with 0x80).
@@ -210,7 +210,7 @@ curses.ascii.alt(c)                          *alt()..cursesascii.txt;*
 The following function takes either a single-character string or
 integer value; it returns a string.
 
-curses.ascii.unctrl(c)                    *unctrl()..cursesascii.txt;*
+curses.ascii.unctrl(c)                    *unctrl()..curses.ascii.txt*
 
    Return a string representation of the ASCII character _c_.  If _c_
    is printable, this string is the character itself.  If the
@@ -221,7 +221,7 @@ curses.ascii.unctrl(c)                    *unctrl()..cursesascii.txt;*
    stripped, the preceding rules applied, and "'!'" prepended to the
    result.
 
-curses.ascii.controlnames             *controlnames..cursesascii.txt;*
+curses.ascii.controlnames             *controlnames..curses.ascii.txt*
 
    A 33-element string array that contains the ASCII mnemonics for the
    thirty-two ASCII control characters from 0 (NUL) to 0x1f (US), in

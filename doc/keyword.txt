@@ -1,4 +1,4 @@
-*keyword.txt;*                                Last change: 2023 Sep 09
+*keyword.txt;*                                Last change: 2023 Sep 10
 
 "keyword" — Testing for Python keywords
 ***************************************
@@ -10,24 +10,24 @@
 This module allows a Python program to determine if a string is a
 keyword or soft keyword.
 
-keyword.iskeyword(s)                       *iskeyword()..keyword.txt;*
+keyword.iskeyword(s)                        *iskeyword()..keyword.txt*
 
    Return "True" if _s_ is a Python keyword.
 
-keyword.kwlist                                  *kwlist..keyword.txt;*
+keyword.kwlist                                   *kwlist..keyword.txt*
 
    Sequence containing all the keywords defined for the interpreter.
    If any keywords are defined to only be active when particular
    "__future__" statements are in effect, these will be included as
    well.
 
-keyword.issoftkeyword(s)               *issoftkeyword()..keyword.txt;*
+keyword.issoftkeyword(s)                *issoftkeyword()..keyword.txt*
 
    Return "True" if _s_ is a Python soft keyword.
 
    New in version 3.9.
 
-keyword.softkwlist                          *softkwlist..keyword.txt;*
+keyword.softkwlist                           *softkwlist..keyword.txt*
 
    Sequence containing all the soft keywords defined for the
    interpreter.  If any soft keywords are defined to only be active

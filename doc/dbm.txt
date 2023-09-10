@@ -1,4 +1,4 @@
-*dbm.txt;*                                    Last change: 2023 Sep 09
+*dbm.txt;*                                    Last change: 2023 Sep 10
 
 "dbm" — Interfaces to Unix “databases”
 **************************************
@@ -12,13 +12,13 @@
 slow-but-simple implementation in module "dbm.dumb" will be used.
 There is a third party interface to the Oracle Berkeley DB.
 
-exception dbm.error                                  *error..dbm.txt;*
+exception dbm.error                                   *error..dbm.txt*
 
    A tuple containing the exceptions that can be raised by each of the
    supported modules, with a unique exception also named "dbm.error"
    as the first item — the latter is used when "dbm.error" is raised.
 
-dbm.whichdb(filename)                            *whichdb()..dbm.txt;*
+dbm.whichdb(filename)                             *whichdb()..dbm.txt*
 
    This function attempts to guess which of the several simple
    database modules available — "dbm.gnu", "dbm.ndbm" or "dbm.dumb" —
@@ -32,7 +32,7 @@ dbm.whichdb(filename)                            *whichdb()..dbm.txt;*
 
 Changed in version 3.11: Accepts _path-like object_ for filename.
 
-dbm.open(file, flag='r', mode=0o666)                *open()..dbm.txt;*
+dbm.open(file, flag='r', mode=0o666)                 *open()..dbm.txt*
 
    Open the database file _file_ and return a corresponding object.
 
@@ -197,14 +197,14 @@ dbm.gnu.open(filename[, flag[, mode]])
 
    Changed in version 3.11: Accepts _path-like object_ for filename.
 
-   gdbm.firstkey()                            *gdbm.firstkey()..dbm.txt;*
+   gdbm.firstkey()                             *gdbm.firstkey()..dbm.txt*
 
       It’s possible to loop over every key in the database using this
       method  and the "nextkey()" method.  The traversal is ordered by
       "gdbm"’s internal hash values, and won’t be sorted by the key
       values.  This method returns the starting key.
 
-   gdbm.nextkey(key)                           *gdbm.nextkey()..dbm.txt;*
+   gdbm.nextkey(key)                            *gdbm.nextkey()..dbm.txt*
 
       Returns the key that follows _key_ in the traversal.  The
       following code prints every key in the database "db", without
@@ -215,7 +215,7 @@ dbm.gnu.open(filename[, flag[, mode]])
              print(k)
              k = db.nextkey(k)
 <
-   gdbm.reorganize()                        *gdbm.reorganize()..dbm.txt;*
+   gdbm.reorganize()                         *gdbm.reorganize()..dbm.txt*
 
       If you have carried out a lot of deletions and would like to
       shrink the space used by the "gdbm" file, this routine will
@@ -224,16 +224,16 @@ dbm.gnu.open(filename[, flag[, mode]])
       otherwise, deleted file space will be kept and reused as new
       (key, value) pairs are added.
 
-   gdbm.sync()                                    *gdbm.sync()..dbm.txt;*
+   gdbm.sync()                                     *gdbm.sync()..dbm.txt*
 
       When the database has been opened in fast mode, this method
       forces any unwritten data to be written to the disk.
 
-   gdbm.close()                                  *gdbm.close()..dbm.txt;*
+   gdbm.close()                                   *gdbm.close()..dbm.txt*
 
       Close the "gdbm" database.
 
-   gdbm.clear()                                  *gdbm.clear()..dbm.txt;*
+   gdbm.clear()                                   *gdbm.clear()..dbm.txt*
 
       Remove all items from the "gdbm" database.
 
@@ -264,7 +264,7 @@ exception dbm.ndbm.error
    "KeyError" is raised for general mapping errors like specifying an
    incorrect key.
 
-dbm.ndbm.library                                   *library..dbm.txt;*
+dbm.ndbm.library                                    *library..dbm.txt*
 
    Name of the "ndbm" implementation library used.
 
@@ -301,11 +301,11 @@ dbm.ndbm.open(filename[, flag[, mode]])
 
    Changed in version 3.11: Accepts _path-like object_ for filename.
 
-   ndbm.close()                                  *ndbm.close()..dbm.txt;*
+   ndbm.close()                                   *ndbm.close()..dbm.txt*
 
       Close the "ndbm" database.
 
-   ndbm.clear()                                  *ndbm.clear()..dbm.txt;*
+   ndbm.clear()                                   *ndbm.clear()..dbm.txt*
 
       Remove all items from the "ndbm" database.
 
@@ -387,12 +387,12 @@ dbm.dumb.open(filename[, flag[, mode]])
    "collections.abc.MutableMapping" class, "dumbdbm" objects provide
    the following methods:
 
-   dumbdbm.sync()                              *dumbdbm.sync()..dbm.txt;*
+   dumbdbm.sync()                               *dumbdbm.sync()..dbm.txt*
 
       Synchronize the on-disk directory and data files.  This method
       is called by the "Shelve.sync()" method.
 
-   dumbdbm.close()                            *dumbdbm.close()..dbm.txt;*
+   dumbdbm.close()                             *dumbdbm.close()..dbm.txt*
 
       Close the "dumbdbm" database.
 

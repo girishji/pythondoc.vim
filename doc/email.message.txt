@@ -1,4 +1,4 @@
-*emailmessage.txt;*                           Last change: 2023 Sep 09
+*email.message.txt;*                          Last change: 2023 Sep 10
 
 "email.message": Representing an email message
 **********************************************
@@ -48,7 +48,7 @@ simple message objects, or a list of "EmailMessage" objects, for MIME
 container documents such as _multipart/*_ and _message/rfc822_ message
 objects.
 
-                                     *EmailMessage..emailmessage.txt;*
+                                     *EmailMessage..email.message.txt*
 class email.message.EmailMessage(policy=default)
 
    If _policy_ is specified use the rules it specifies to update and
@@ -58,7 +58,7 @@ class email.message.EmailMessage(policy=default)
    it uses the Python standard "\n" line endings).  For more
    information see the "policy" documentation.
 
-                         *EmailMessage.as_string()..emailmessage.txt;*
+                         *EmailMessage.as_string()..email.message.txt*
    as_string(unixfrom=False, maxheaderlen=None, policy=None)
 
       Return the entire message flattened as a string.  When optional
@@ -89,7 +89,7 @@ class email.message.EmailMessage(policy=default)
       is not specified was changed from defaulting to 0 to defaulting
       to the value of _max_line_length_ from the policy.
 
-   __str__()                  *EmailMessage.__str__()..emailmessage.txt;*
+   __str__()                  *EmailMessage.__str__()..email.message.txt*
 
       Equivalent to "as_string(policy=self.policy.clone(utf8=True))".
       Allows "str(msg)" to produce a string containing the serialized
@@ -100,7 +100,7 @@ class email.message.EmailMessage(policy=default)
       representation, instead of being a direct alias for
       "as_string()".
 
-                          *EmailMessage.as_bytes()..emailmessage.txt;*
+                          *EmailMessage.as_bytes()..email.message.txt*
    as_bytes(unixfrom=False, policy=None)
 
       Return the entire message flattened as a bytes object.  When
@@ -122,12 +122,12 @@ class email.message.EmailMessage(policy=default)
       messages.  See "email.generator.BytesGenerator" for a more
       flexible API for serializing messages.
 
-   __bytes__()              *EmailMessage.__bytes__()..emailmessage.txt;*
+   __bytes__()              *EmailMessage.__bytes__()..email.message.txt*
 
       Equivalent to "as_bytes()".  Allows "bytes(msg)" to produce a
       bytes object containing the serialized message.
 
-   is_multipart()        *EmailMessage.is_multipart()..emailmessage.txt;*
+   is_multipart()        *EmailMessage.is_multipart()..email.message.txt*
 
       Return "True" if the message’s payload is a list of
       sub-"EmailMessage" objects, otherwise return "False".  When
@@ -138,14 +138,14 @@ class email.message.EmailMessage(policy=default)
       "True". For example, "is_multipart" will return "True" when the
       "EmailMessage" is of type "message/rfc822".
 
-                      *EmailMessage.set_unixfrom()..emailmessage.txt;*
+                      *EmailMessage.set_unixfrom()..email.message.txt*
    set_unixfrom(unixfrom)
 
       Set the message’s envelope header to _unixfrom_, which should be
       a string.  (See "mboxMessage" for a brief description of this
       header.)
 
-   get_unixfrom()        *EmailMessage.get_unixfrom()..emailmessage.txt;*
+   get_unixfrom()        *EmailMessage.get_unixfrom()..email.message.txt*
 
       Return the message’s envelope header.  Defaults to "None" if the
       envelope header was never set.
@@ -168,11 +168,11 @@ class email.message.EmailMessage(policy=default)
    Note that in all cases, any envelope header present in the message
    is not included in the mapping interface.
 
-   __len__()                  *EmailMessage.__len__()..emailmessage.txt;*
+   __len__()                  *EmailMessage.__len__()..email.message.txt*
 
       Return the total number of headers, including duplicates.
 
-   __contains__(name)    *EmailMessage.__contains__()..emailmessage.txt;*
+   __contains__(name)    *EmailMessage.__contains__()..email.message.txt*
 
       Return "True" if the message object has a field named _name_.
       Matching is done without regard to case and _name_ does not
@@ -182,7 +182,7 @@ class email.message.EmailMessage(policy=default)
          if 'message-id' in myMessage:
             print('Message-ID:', myMessage['message-id'])
 <
-   __getitem__(name)      *EmailMessage.__getitem__()..emailmessage.txt;*
+   __getitem__(name)      *EmailMessage.__getitem__()..email.message.txt*
 
       Return the value of the named header field.  _name_ does not
       include the colon field separator.  If the header is missing,
@@ -197,7 +197,7 @@ class email.message.EmailMessage(policy=default)
       is an instance of a subclass of
       "email.headerregistry.BaseHeader".
 
-                       *EmailMessage.__setitem__()..emailmessage.txt;*
+                       *EmailMessage.__setitem__()..email.message.txt*
    __setitem__(name, val)
 
       Add a header to the message with field name _name_ and value
@@ -220,26 +220,26 @@ class email.message.EmailMessage(policy=default)
       assignments do an automatic deletion of the existing header in
       the future.
 
-   __delitem__(name)      *EmailMessage.__delitem__()..emailmessage.txt;*
+   __delitem__(name)      *EmailMessage.__delitem__()..email.message.txt*
 
       Delete all occurrences of the field with name _name_ from the
       message’s headers.  No exception is raised if the named field
       isn’t present in the headers.
 
-   keys()                        *EmailMessage.keys()..emailmessage.txt;*
+   keys()                        *EmailMessage.keys()..email.message.txt*
 
       Return a list of all the message’s header field names.
 
-   values()                    *EmailMessage.values()..emailmessage.txt;*
+   values()                    *EmailMessage.values()..email.message.txt*
 
       Return a list of all the message’s field values.
 
-   items()                      *EmailMessage.items()..emailmessage.txt;*
+   items()                      *EmailMessage.items()..email.message.txt*
 
       Return a list of 2-tuples containing all the message’s field
       headers and values.
 
-   get(name, failobj=None)        *EmailMessage.get()..emailmessage.txt;*
+   get(name, failobj=None)        *EmailMessage.get()..email.message.txt*
 
       Return the value of the named header field.  This is identical
       to "__getitem__()" except that optional _failobj_ is returned if
@@ -247,14 +247,14 @@ class email.message.EmailMessage(policy=default)
 
    Here are some additional useful header related methods:
 
-                           *EmailMessage.get_all()..emailmessage.txt;*
+                           *EmailMessage.get_all()..email.message.txt*
    get_all(name, failobj=None)
 
       Return a list of all the values for the field named _name_. If
       there are no such named headers in the message, _failobj_ is
       returned (defaults to "None").
 
-                        *EmailMessage.add_header()..emailmessage.txt;*
+                        *EmailMessage.add_header()..email.message.txt*
    add_header(_name, _value, **_params)
 
       Extended header setting.  This method is similar to
@@ -293,7 +293,7 @@ class email.message.EmailMessage(policy=default)
                         filename=('iso-8859-1', '', 'Fußballer.ppt'))
 <
 
-                    *EmailMessage.replace_header()..emailmessage.txt;*
+                    *EmailMessage.replace_header()..email.message.txt*
    replace_header(_name, _value)
 
       Replace a header.  Replace the first header found in the message
@@ -301,7 +301,7 @@ class email.message.EmailMessage(policy=default)
       of the original header.  If no matching header is found, raise a
       "KeyError".
 
-                  *EmailMessage.get_content_type()..emailmessage.txt;*
+                  *EmailMessage.get_content_type()..email.message.txt*
    get_content_type()
 
       Return the message’s content type, coerced to lower case of the
@@ -318,19 +318,19 @@ class email.message.EmailMessage(policy=default)
       invalid type specification, **RFC 2045** mandates that the
       default type be _text/plain_.)
 
-              *EmailMessage.get_content_maintype()..emailmessage.txt;*
+              *EmailMessage.get_content_maintype()..email.message.txt*
    get_content_maintype()
 
       Return the message’s main content type.  This is the _maintype_
       part of the string returned by "get_content_type()".
 
-               *EmailMessage.get_content_subtype()..emailmessage.txt;*
+               *EmailMessage.get_content_subtype()..email.message.txt*
    get_content_subtype()
 
       Return the message’s sub-content type.  This is the _subtype_
       part of the string returned by "get_content_type()".
 
-                  *EmailMessage.get_default_type()..emailmessage.txt;*
+                  *EmailMessage.get_default_type()..email.message.txt*
    get_default_type()
 
       Return the default content type.  Most messages have a default
@@ -338,7 +338,7 @@ class email.message.EmailMessage(policy=default)
       subparts of _multipart/digest_ containers.  Such subparts have a
       default content type of _message/rfc822_.
 
-                  *EmailMessage.set_default_type()..emailmessage.txt;*
+                  *EmailMessage.set_default_type()..email.message.txt*
    set_default_type(ctype)
 
       Set the default content type.  _ctype_ should either be
@@ -348,7 +348,7 @@ class email.message.EmailMessage(policy=default)
       "get_content_type" methods when no _Content-Type_ header is
       present in the message.
 
-                         *EmailMessage.set_param()..emailmessage.txt;*
+                         *EmailMessage.set_param()..email.message.txt*
    set_param(param, value, header='Content-Type', requote=True, charset=None, language='', replace=False)
 
       Set a parameter in the _Content-Type_ header.  If the parameter
@@ -379,7 +379,7 @@ class email.message.EmailMessage(policy=default)
 
       Changed in version 3.4: "replace" keyword was added.
 
-                         *EmailMessage.del_param()..emailmessage.txt;*
+                         *EmailMessage.del_param()..email.message.txt*
    del_param(param, header='content-type', requote=True)
 
       Remove the given parameter completely from the _Content-Type_
@@ -390,7 +390,7 @@ class email.message.EmailMessage(policy=default)
       Use of the _requote_ parameter with "EmailMessage" objects is
       deprecated.
 
-                      *EmailMessage.get_filename()..emailmessage.txt;*
+                      *EmailMessage.get_filename()..email.message.txt*
    get_filename(failobj=None)
 
       Return the value of the "filename" parameter of the _Content-
@@ -401,7 +401,7 @@ class email.message.EmailMessage(policy=default)
       The returned string will always be unquoted as per
       "email.utils.unquote()".
 
-                      *EmailMessage.get_boundary()..emailmessage.txt;*
+                      *EmailMessage.get_boundary()..email.message.txt*
    get_boundary(failobj=None)
 
       Return the value of the "boundary" parameter of the _Content-
@@ -409,7 +409,7 @@ class email.message.EmailMessage(policy=default)
       is missing, or has no "boundary" parameter.  The returned string
       will always be unquoted as per "email.utils.unquote()".
 
-                      *EmailMessage.set_boundary()..emailmessage.txt;*
+                      *EmailMessage.set_boundary()..email.message.txt*
    set_boundary(boundary)
 
       Set the "boundary" parameter of the _Content-Type_ header to
@@ -422,7 +422,7 @@ class email.message.EmailMessage(policy=default)
       boundary via "add_header()", because "set_boundary()" preserves
       the order of the _Content-Type_ header in the list of headers.
 
-               *EmailMessage.get_content_charset()..emailmessage.txt;*
+               *EmailMessage.get_content_charset()..email.message.txt*
    get_content_charset(failobj=None)
 
       Return the "charset" parameter of the _Content-Type_ header,
@@ -430,7 +430,7 @@ class email.message.EmailMessage(policy=default)
       if that header has no "charset" parameter, _failobj_ is
       returned.
 
-                      *EmailMessage.get_charsets()..emailmessage.txt;*
+                      *EmailMessage.get_charsets()..email.message.txt*
    get_charsets(failobj=None)
 
       Return a list containing the character set names in the message.
@@ -445,7 +445,7 @@ class email.message.EmailMessage(policy=default)
       MIME type, then that item in the returned list will be
       _failobj_.
 
-   is_attachment()      *EmailMessage.is_attachment()..emailmessage.txt;*
+   is_attachment()      *EmailMessage.is_attachment()..email.message.txt*
 
       Return "True" if there is a _Content-Disposition_ header and its
       (case insensitive) value is "attachment", "False" otherwise.
@@ -453,7 +453,7 @@ class email.message.EmailMessage(policy=default)
       Changed in version 3.4.2: is_attachment is now a method instead
       of a property, for consistency with "is_multipart()".
 
-           *EmailMessage.get_content_disposition()..emailmessage.txt;*
+           *EmailMessage.get_content_disposition()..email.message.txt*
    get_content_disposition()
 
       Return the lowercased value (without parameters) of the
@@ -466,7 +466,7 @@ class email.message.EmailMessage(policy=default)
    The following methods relate to interrogating and manipulating the
    content (payload) of the message.
 
-   walk()                        *EmailMessage.walk()..emailmessage.txt;*
+   walk()                        *EmailMessage.walk()..email.message.txt*
 
       The "walk()" method is an all-purpose generator which can be
       used to iterate over all the parts and subparts of a message
@@ -517,7 +517,7 @@ class email.message.EmailMessage(policy=default)
       contain subparts. "is_multipart()" returns "True" and "walk"
       descends into the subparts.
 
-                          *EmailMessage.get_body()..emailmessage.txt;*
+                          *EmailMessage.get_body()..email.message.txt*
    get_body(preferencelist=('related', 'html', 'plain'))
 
       Return the MIME part that is the best candidate to be the “body”
@@ -558,7 +558,7 @@ class email.message.EmailMessage(policy=default)
       treated as if they are of type "text/plain", which may
       occasionally cause "get_body" to return unexpected results.
 
-                  *EmailMessage.iter_attachments()..emailmessage.txt;*
+                  *EmailMessage.iter_attachments()..email.message.txt*
    iter_attachments()
 
       Return an iterator over all of the immediate sub-parts of the
@@ -575,13 +575,13 @@ class email.message.EmailMessage(policy=default)
       "multipart/alternative" or a non-"multipart", return an empty
       iterator.
 
-   iter_parts()            *EmailMessage.iter_parts()..emailmessage.txt;*
+   iter_parts()            *EmailMessage.iter_parts()..email.message.txt*
 
       Return an iterator over all of the immediate sub-parts of the
       message, which will be empty for a non-"multipart".  (See also
       "walk()".)
 
-                       *EmailMessage.get_content()..emailmessage.txt;*
+                       *EmailMessage.get_content()..email.message.txt*
    get_content(*args, content_manager=None, **kw)
 
       Call the "get_content()" method of the _content_manager_,
@@ -590,7 +590,7 @@ class email.message.EmailMessage(policy=default)
       _content_manager_ is not specified, use the "content_manager"
       specified by the current "policy".
 
-                       *EmailMessage.set_content()..emailmessage.txt;*
+                       *EmailMessage.set_content()..email.message.txt*
    set_content(*args, content_manager=None, **kw)
 
       Call the "set_content()" method of the _content_manager_,
@@ -599,7 +599,7 @@ class email.message.EmailMessage(policy=default)
       _content_manager_ is not specified, use the "content_manager"
       specified by the current "policy".
 
-                      *EmailMessage.make_related()..emailmessage.txt;*
+                      *EmailMessage.make_related()..email.message.txt*
    make_related(boundary=None)
 
       Convert a non-"multipart" message into a "multipart/related"
@@ -609,7 +609,7 @@ class email.message.EmailMessage(policy=default)
       otherwise leave the boundary to be automatically created when it
       is needed (for example, when the message is serialized).
 
-                  *EmailMessage.make_alternative()..emailmessage.txt;*
+                  *EmailMessage.make_alternative()..email.message.txt*
    make_alternative(boundary=None)
 
       Convert a non-"multipart" or a "multipart/related" into a
@@ -620,7 +620,7 @@ class email.message.EmailMessage(policy=default)
       created when it is needed (for example, when the message is
       serialized).
 
-                        *EmailMessage.make_mixed()..emailmessage.txt;*
+                        *EmailMessage.make_mixed()..email.message.txt*
    make_mixed(boundary=None)
 
       Convert a non-"multipart", a "multipart/related", or a
@@ -631,7 +631,7 @@ class email.message.EmailMessage(policy=default)
       to be automatically created when it is needed (for example, when
       the message is serialized).
 
-                       *EmailMessage.add_related()..emailmessage.txt;*
+                       *EmailMessage.add_related()..email.message.txt*
    add_related(*args, content_manager=None, **kw)
 
       If the message is a "multipart/related", create a new message
@@ -644,7 +644,7 @@ class email.message.EmailMessage(policy=default)
       added part has no _Content-Disposition_ header, add one with the
       value "inline".
 
-                   *EmailMessage.add_alternative()..emailmessage.txt;*
+                   *EmailMessage.add_alternative()..email.message.txt*
    add_alternative(*args, content_manager=None, **kw)
 
       If the message is a "multipart/alternative", create a new
@@ -656,7 +656,7 @@ class email.message.EmailMessage(policy=default)
       _content_manager_ is not specified, use the "content_manager"
       specified by the current "policy".
 
-                    *EmailMessage.add_attachment()..emailmessage.txt;*
+                    *EmailMessage.add_attachment()..email.message.txt*
    add_attachment(*args, content_manager=None, **kw)
 
       If the message is a "multipart/mixed", create a new message
@@ -672,18 +672,18 @@ class email.message.EmailMessage(policy=default)
       attachments (_Content-Disposition: inline_), by passing
       appropriate options to the "content_manager".
 
-   clear()                      *EmailMessage.clear()..emailmessage.txt;*
+   clear()                      *EmailMessage.clear()..email.message.txt*
 
       Remove the payload and all of the headers.
 
-   clear_content()      *EmailMessage.clear_content()..emailmessage.txt;*
+   clear_content()      *EmailMessage.clear_content()..email.message.txt*
 
       Remove the payload and all of the _!Content-_ headers, leaving
       all other headers intact and in their original order.
 
    "EmailMessage" objects have the following instance attributes:
 
-   preamble                    *EmailMessage.preamble..emailmessage.txt;*
+   preamble                    *EmailMessage.preamble..email.message.txt*
 
       The format of a MIME document allows for some text between the
       blank line following the headers, and the first multipart
@@ -706,7 +706,7 @@ class email.message.EmailMessage(policy=default)
       Note that if the message object has no preamble, the _preamble_
       attribute will be "None".
 
-   epilogue                    *EmailMessage.epilogue..emailmessage.txt;*
+   epilogue                    *EmailMessage.epilogue..email.message.txt*
 
       The _epilogue_ attribute acts the same way as the _preamble_
       attribute, except that it contains text that appears between the
@@ -714,13 +714,13 @@ class email.message.EmailMessage(policy=default)
       "preamble", if there is no epilog text this attribute will be
       "None".
 
-   defects                      *EmailMessage.defects..emailmessage.txt;*
+   defects                      *EmailMessage.defects..email.message.txt*
 
       The _defects_ attribute contains a list of all the problems
       found when parsing this message.  See "email.errors" for a
       detailed description of the possible parsing defects.
 
-                                         *MIMEPart..emailmessage.txt;*
+                                         *MIMEPart..email.message.txt*
 class email.message.MIMEPart(policy=default)
 
    This class represents a subpart of a MIME message.  It is identical

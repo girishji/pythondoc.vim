@@ -1,4 +1,4 @@
-*readline.txt;*                               Last change: 2023 Sep 09
+*readline.txt;*                               Last change: 2023 Sep 10
 
 "readline" — GNU readline interface
 ***********************************
@@ -44,13 +44,12 @@ Init file
 The following functions relate to the init file and user
 configuration:
 
-readline.parse_and_bind(string)      *parse_and_bind()..readline.txt;*
+readline.parse_and_bind(string)       *parse_and_bind()..readline.txt*
 
    Execute the init line provided in the _string_ argument. This calls
    "rl_parse_and_bind()" in the underlying library.
 
-                                     *read_init_file()..readline.txt;*
-readline.read_init_file([filename])
+readline.read_init_file([filename])   *read_init_file()..readline.txt*
 
    Execute a readline initialization file. The default filename is the
    last filename used. This calls "rl_read_init_file()" in the
@@ -62,18 +61,18 @@ Line buffer
 
 The following functions operate on the line buffer:
 
-readline.get_line_buffer()          *get_line_buffer()..readline.txt;*
+readline.get_line_buffer()           *get_line_buffer()..readline.txt*
 
    Return the current contents of the line buffer ("rl_line_buffer" in
    the underlying library).
 
-readline.insert_text(string)            *insert_text()..readline.txt;*
+readline.insert_text(string)             *insert_text()..readline.txt*
 
    Insert text into the line buffer at the cursor position.  This
    calls "rl_insert_text()" in the underlying library, but ignores the
    return value.
 
-readline.redisplay()                      *redisplay()..readline.txt;*
+readline.redisplay()                       *redisplay()..readline.txt*
 
    Change what’s displayed on the screen to reflect the current
    contents of the line buffer.  This calls "rl_redisplay()" in the
@@ -85,21 +84,21 @@ History file
 
 The following functions operate on a history file:
 
-                                  *read_history_file()..readline.txt;*
+                                   *read_history_file()..readline.txt*
 readline.read_history_file([filename])
 
    Load a readline history file, and append it to the history list.
    The default filename is "~/.history".  This calls "read_history()"
    in the underlying library.
 
-                                 *write_history_file()..readline.txt;*
+                                  *write_history_file()..readline.txt*
 readline.write_history_file([filename])
 
    Save the history list to a readline history file, overwriting any
    existing file.  The default filename is "~/.history".  This calls
    "write_history()" in the underlying library.
 
-                                *append_history_file()..readline.txt;*
+                                 *append_history_file()..readline.txt*
 readline.append_history_file(nelements[, filename])
 
    Append the last _nelements_ items of history to a file.  The
@@ -110,9 +109,9 @@ readline.append_history_file(nelements[, filename])
 
    New in version 3.5.
 
-readline.get_history_length()    *get_history_length()..readline.txt;*
+readline.get_history_length()     *get_history_length()..readline.txt*
 
-                                 *set_history_length()..readline.txt;*
+                                  *set_history_length()..readline.txt*
 readline.set_history_length(length)
 
    Set or return the desired number of lines to save in the history
@@ -127,45 +126,45 @@ History list
 
 The following functions operate on a global history list:
 
-readline.clear_history()              *clear_history()..readline.txt;*
+readline.clear_history()               *clear_history()..readline.txt*
 
    Clear the current history.  This calls "clear_history()" in the
    underlying library.  The Python function only exists if Python was
    compiled for a version of the library that supports it.
 
-                         *get_current_history_length()..readline.txt;*
+                          *get_current_history_length()..readline.txt*
 readline.get_current_history_length()
 
    Return the number of items currently in the history.  (This is
    different from "get_history_length()", which returns the maximum
    number of lines that will be written to a history file.)
 
-readline.get_history_item(index)   *get_history_item()..readline.txt;*
+readline.get_history_item(index)    *get_history_item()..readline.txt*
 
    Return the current contents of history item at _index_.  The item
    index is one-based.  This calls "history_get()" in the underlying
    library.
 
-                                *remove_history_item()..readline.txt;*
+                                 *remove_history_item()..readline.txt*
 readline.remove_history_item(pos)
 
    Remove history item specified by its position from the history. The
    position is zero-based.  This calls "remove_history()" in the
    underlying library.
 
-                               *replace_history_item()..readline.txt;*
+                                *replace_history_item()..readline.txt*
 readline.replace_history_item(pos, line)
 
    Replace history item specified by its position with _line_. The
    position is zero-based.  This calls "replace_history_entry()" in
    the underlying library.
 
-readline.add_history(line)              *add_history()..readline.txt;*
+readline.add_history(line)               *add_history()..readline.txt*
 
    Append _line_ to the history buffer, as if it was the last line
    typed. This calls "add_history()" in the underlying library.
 
-                                   *set_auto_history()..readline.txt;*
+                                    *set_auto_history()..readline.txt*
 readline.set_auto_history(enabled)
 
    Enable or disable automatic calls to "add_history()" when reading
@@ -183,7 +182,7 @@ readline.set_auto_history(enabled)
 Startup hooks
 =============
 
-                                   *set_startup_hook()..readline.txt;*
+                                    *set_startup_hook()..readline.txt*
 readline.set_startup_hook([function])
 
    Set or remove the function invoked by the "rl_startup_hook"
@@ -192,7 +191,7 @@ readline.set_startup_hook([function])
    function already installed is removed.  The hook is called with no
    arguments just before readline prints the first prompt.
 
-                                 *set_pre_input_hook()..readline.txt;*
+                                  *set_pre_input_hook()..readline.txt*
 readline.set_pre_input_hook([function])
 
    Set or remove the function invoked by the "rl_pre_input_hook"
@@ -216,7 +215,7 @@ Python identifiers for the interactive interpreter.  If the "readline"
 module is to be used with a custom completer, a different set of word
 delimiters should be set.
 
-readline.set_completer([function])    *set_completer()..readline.txt;*
+readline.set_completer([function])     *set_completer()..readline.txt*
 
    Set or remove the completer function.  If _function_ is specified,
    it will be used as the new completer function; if omitted or
@@ -231,20 +230,19 @@ readline.set_completer([function])    *set_completer()..readline.txt;*
    "rl_attempted_completion_function" callback of the underlying
    library.
 
-readline.get_completer()              *get_completer()..readline.txt;*
+readline.get_completer()               *get_completer()..readline.txt*
 
    Get the completer function, or "None" if no completer function has
    been set.
 
-                                *get_completion_type()..readline.txt;*
-readline.get_completion_type()
+readline.get_completion_type()   *get_completion_type()..readline.txt*
 
    Get the type of completion being attempted.  This returns the
    "rl_completion_type" variable in the underlying library as an
    integer.
 
-readline.get_begidx()                    *get_begidx()..readline.txt;*
-readline.get_endidx()                    *get_endidx()..readline.txt;*
+readline.get_begidx()                     *get_begidx()..readline.txt*
+readline.get_endidx()                     *get_endidx()..readline.txt*
 
    Get the beginning or ending index of the completion scope. These
    indexes are the _start_ and _end_ arguments passed to the
@@ -253,10 +251,10 @@ readline.get_endidx()                    *get_endidx()..readline.txt;*
    scenario based on the underlying C readline implementation. Ex:
    libedit is known to behave differently than libreadline.
 
-                               *set_completer_delims()..readline.txt;*
+                                *set_completer_delims()..readline.txt*
 readline.set_completer_delims(string)
 
-                               *get_completer_delims()..readline.txt;*
+                                *get_completer_delims()..readline.txt*
 readline.get_completer_delims()
 
    Set or get the word delimiters for completion.  These determine the
@@ -265,7 +263,7 @@ readline.get_completer_delims()
    "rl_completer_word_break_characters" variable in the underlying
    library.
 
-                *set_completion_display_matches_hook()..readline.txt;*
+                 *set_completion_display_matches_hook()..readline.txt*
 readline.set_completion_display_matches_hook([function])
 
    Set or remove the completion display function.  If _function_ is

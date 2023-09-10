@@ -1,4 +1,4 @@
-*pickletools.txt;*                            Last change: 2023 Sep 09
+*pickletools.txt;*                            Last change: 2023 Sep 10
 
 "pickletools" — Tools for pickle developers
 *******************************************
@@ -72,7 +72,7 @@ Command line options
 Programmatic Interface
 ======================
 
-                                             *dis()..pickletools.txt;*
+                                              *dis()..pickletools.txt*
 pickletools.dis(pickle, out=None, memo=None, indentlevel=4, annotate=0)
 
    Outputs a symbolic disassembly of the pickle to the file-like
@@ -88,7 +88,7 @@ pickletools.dis(pickle, out=None, memo=None, indentlevel=4, annotate=0)
 
    New in version 3.2: The _annotate_ argument.
 
-pickletools.genops(pickle)                *genops()..pickletools.txt;*
+pickletools.genops(pickle)                 *genops()..pickletools.txt*
 
    Provides an _iterator_ over all of the opcodes in a pickle,
    returning a sequence of "(opcode, arg, pos)" triples.  _opcode_ is
@@ -97,7 +97,7 @@ pickletools.genops(pickle)                *genops()..pickletools.txt;*
    at which this opcode is located. _pickle_ can be a string or a
    file-like object.
 
-pickletools.optimize(picklestring)      *optimize()..pickletools.txt;*
+pickletools.optimize(picklestring)       *optimize()..pickletools.txt*
 
    Returns a new equivalent pickle string after eliminating unused
    "PUT" opcodes. The optimized pickle is shorter, takes less

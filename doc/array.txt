@@ -1,4 +1,4 @@
-*array.txt;*                                  Last change: 2023 Sep 09
+*array.txt;*                                  Last change: 2023 Sep 10
 
 "array" — Efficient arrays of numeric values
 ********************************************
@@ -62,13 +62,13 @@ size can be accessed through the "array.itemsize" attribute.
 
 The module defines the following item:
 
-array.typecodes                                *typecodes..array.txt;*
+array.typecodes                                 *typecodes..array.txt*
 
    A string with all available type codes.
 
 The module defines the following type:
 
-class array.array(typecode[, initializer])         *array..array.txt;*
+class array.array(typecode[, initializer])          *array..array.txt*
 
    A new array whose items are restricted by _typecode_, and
    initialized from the optional _initializer_ value, which must be a
@@ -90,20 +90,20 @@ class array.array(typecode[, initializer])         *array..array.txt;*
    Raises an auditing event "array.__new__" with arguments "typecode",
    "initializer".
 
-   typecode                                  *array.typecode..array.txt;*
+   typecode                                   *array.typecode..array.txt*
 
       The typecode character used to create the array.
 
-   itemsize                                  *array.itemsize..array.txt;*
+   itemsize                                   *array.itemsize..array.txt*
 
       The length in bytes of one array item in the internal
       representation.
 
-   append(x)                                 *array.append()..array.txt;*
+   append(x)                                  *array.append()..array.txt*
 
       Append a new item with value _x_ to the end of the array.
 
-   buffer_info()                        *array.buffer_info()..array.txt;*
+   buffer_info()                         *array.buffer_info()..array.txt*
 
       Return a tuple "(address, length)" giving the current memory
       address and the length in elements of the buffer used to hold
@@ -124,7 +124,7 @@ class array.array(typecode[, initializer])         *array..array.txt;*
         compatibility and should be avoided in new code.  The buffer
         interface is documented in Buffer Protocol.
 
-   byteswap()                              *array.byteswap()..array.txt;*
+   byteswap()                               *array.byteswap()..array.txt*
 
       “Byteswap” all items of the array.  This is only supported for
       values which are 1, 2, 4, or 8 bytes in size; for other types of
@@ -132,11 +132,11 @@ class array.array(typecode[, initializer])         *array..array.txt;*
       data from a file written on a machine with a different byte
       order.
 
-   count(x)                                   *array.count()..array.txt;*
+   count(x)                                    *array.count()..array.txt*
 
       Return the number of occurrences of _x_ in the array.
 
-   extend(iterable)                          *array.extend()..array.txt;*
+   extend(iterable)                           *array.extend()..array.txt*
 
       Append items from _iterable_ to the end of the array.  If
       _iterable_ is another array, it must have _exactly_ the same
@@ -144,7 +144,7 @@ class array.array(typecode[, initializer])         *array..array.txt;*
       not an array, it must be iterable and its elements must be the
       right type to be appended to the array.
 
-   frombytes(s)                           *array.frombytes()..array.txt;*
+   frombytes(s)                            *array.frombytes()..array.txt*
 
       Appends items from the string, interpreting the string as an
       array of machine values (as if it had been read from a file
@@ -153,20 +153,20 @@ class array.array(typecode[, initializer])         *array..array.txt;*
       New in version 3.2: "fromstring()" is renamed to "frombytes()"
       for clarity.
 
-   fromfile(f, n)                          *array.fromfile()..array.txt;*
+   fromfile(f, n)                           *array.fromfile()..array.txt*
 
       Read _n_ items (as machine values) from the _file object_ _f_
       and append them to the end of the array.  If less than _n_ items
       are available, "EOFError" is raised, but the items that were
       available are still inserted into the array.
 
-   fromlist(list)                          *array.fromlist()..array.txt;*
+   fromlist(list)                           *array.fromlist()..array.txt*
 
       Append items from the list.  This is equivalent to "for x in
       list: a.append(x)" except that if there is a type error, the
       array is unchanged.
 
-   fromunicode(s)                       *array.fromunicode()..array.txt;*
+   fromunicode(s)                        *array.fromunicode()..array.txt*
 
       Extends this array with data from the given unicode string. The
       array must have type code "'u'" or "'w'"; otherwise a
@@ -174,7 +174,7 @@ class array.array(typecode[, initializer])         *array..array.txt;*
       "array.frombytes(unicodestring.encode(enc))" to append Unicode
       data to an array of some other type.
 
-   index(x[, start[, stop]])                  *array.index()..array.txt;*
+   index(x[, start[, stop]])                   *array.index()..array.txt*
 
       Return the smallest _i_ such that _i_ is the index of the first
       occurrence of _x_ in the array.  The optional arguments _start_
@@ -185,27 +185,27 @@ class array.array(typecode[, initializer])         *array..array.txt;*
       Changed in version 3.10: Added optional _start_ and _stop_
       parameters.
 
-   insert(i, x)                              *array.insert()..array.txt;*
+   insert(i, x)                               *array.insert()..array.txt*
 
       Insert a new item with value _x_ in the array before position
       _i_. Negative values are treated as being relative to the end of
       the array.
 
-   pop([i])                                     *array.pop()..array.txt;*
+   pop([i])                                      *array.pop()..array.txt*
 
       Removes the item with the index _i_ from the array and returns
       it. The optional argument defaults to "-1", so that by default
       the last item is removed and returned.
 
-   remove(x)                                 *array.remove()..array.txt;*
+   remove(x)                                  *array.remove()..array.txt*
 
       Remove the first occurrence of _x_ from the array.
 
-   reverse()                                *array.reverse()..array.txt;*
+   reverse()                                 *array.reverse()..array.txt*
 
       Reverse the order of the items in the array.
 
-   tobytes()                                *array.tobytes()..array.txt;*
+   tobytes()                                 *array.tobytes()..array.txt*
 
       Convert the array to an array of machine values and return the
       bytes representation (the same sequence of bytes that would be
@@ -214,15 +214,15 @@ class array.array(typecode[, initializer])         *array..array.txt;*
       New in version 3.2: "tostring()" is renamed to "tobytes()" for
       clarity.
 
-   tofile(f)                                 *array.tofile()..array.txt;*
+   tofile(f)                                  *array.tofile()..array.txt*
 
       Write all items (as machine values) to the _file object_ _f_.
 
-   tolist()                                  *array.tolist()..array.txt;*
+   tolist()                                   *array.tolist()..array.txt*
 
       Convert the array to an ordinary list with the same items.
 
-   tounicode()                            *array.tounicode()..array.txt;*
+   tounicode()                             *array.tounicode()..array.txt*
 
       Convert the array to a unicode string.  The array must have a
       type "'u'" or "'w'"; otherwise a "ValueError" is raised. Use

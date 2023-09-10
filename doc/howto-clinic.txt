@@ -1,4 +1,4 @@
-*howto-clinic.txt;*                           Last change: 2023 Sep 09
+*howto-clinic.txt;*                           Last change: 2023 Sep 10
 
 Argument Clinic How-To
 **********************
@@ -182,33 +182,33 @@ FILE ...
 Classes for extending Argument Clinic
 -------------------------------------
 
-class clinic.CConverter                *CConverter..howto-clinic.txt;*
+class clinic.CConverter                 *CConverter..howto-clinic.txt*
 
    The base class for all converters. See How to write a custom
    converter for how to subclass this class.
 
-   type                              *CConverter.type..howto-clinic.txt;*
+   type                               *CConverter.type..howto-clinic.txt*
 
       The C type to use for this variable. "type" should be a Python
       string specifying the type, e.g. "'int'". If this is a pointer
       type, the type string should end with "' *'".
 
-   default                        *CConverter.default..howto-clinic.txt;*
+   default                         *CConverter.default..howto-clinic.txt*
 
       The Python default value for this parameter, as a Python value.
       Or the magic value "unspecified" if there is no default.
 
-   py_default                  *CConverter.py_default..howto-clinic.txt;*
+   py_default                   *CConverter.py_default..howto-clinic.txt*
 
       "default" as it should appear in Python code, as a string. Or
       "None" if there is no default.
 
-   c_default                    *CConverter.c_default..howto-clinic.txt;*
+   c_default                     *CConverter.c_default..howto-clinic.txt*
 
       "default" as it should appear in C code, as a string. Or "None"
       if there is no default.
 
-   c_ignored_default    *CConverter.c_ignored_default..howto-clinic.txt;*
+   c_ignored_default     *CConverter.c_ignored_default..howto-clinic.txt*
 
       The default value used to initialize the C variable when there
       is no default, but not specifying a default may result in an
@@ -219,18 +219,17 @@ class clinic.CConverter                *CConverter..howto-clinic.txt;*
       uninitialized value.  This value should always be a non-empty
       string.
 
-   converter                    *CConverter.converter..howto-clinic.txt;*
+   converter                     *CConverter.converter..howto-clinic.txt*
 
       The name of the C converter function, as a string.
 
-   impl_by_reference    *CConverter.impl_by_reference..howto-clinic.txt;*
+   impl_by_reference     *CConverter.impl_by_reference..howto-clinic.txt*
 
       A boolean value.  If true, Argument Clinic will add a "&" in
       front of the name of the variable when passing it into the impl
       function.
 
-                    *CConverter.parse_by_reference..howto-clinic.txt;*
-   parse_by_reference
+   parse_by_reference   *CConverter.parse_by_reference..howto-clinic.txt*
 
       A boolean value.  If true, Argument Clinic will add a "&" in
       front of the name of the variable when passing it into

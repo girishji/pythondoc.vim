@@ -1,4 +1,4 @@
-*turtle.txt;*                                 Last change: 2023 Sep 09
+*turtle.txt;*                                 Last change: 2023 Sep 10
 
 "turtle" — Turtle graphics
 **************************
@@ -431,8 +431,8 @@ Most of the examples in this section refer to a Turtle instance called
 Turtle motion
 -------------
 
-turtle.forward(distance)                      *forward()..turtle.txt;*
-turtle.fd(distance)                                *fd()..turtle.txt;*
+turtle.forward(distance)                       *forward()..turtle.txt*
+turtle.fd(distance)                                 *fd()..turtle.txt*
 
    Parameters:
       **distance** – a number (integer or float)
@@ -449,9 +449,9 @@ turtle.fd(distance)                                *fd()..turtle.txt;*
       >>> turtle.position()
       (-50.00,0.00)
 <
-turtle.back(distance)                            *back()..turtle.txt;*
-turtle.bk(distance)                                *bk()..turtle.txt;*
-turtle.backward(distance)                    *backward()..turtle.txt;*
+turtle.back(distance)                             *back()..turtle.txt*
+turtle.bk(distance)                                 *bk()..turtle.txt*
+turtle.backward(distance)                     *backward()..turtle.txt*
 
    Parameters:
       **distance** – a number
@@ -465,8 +465,8 @@ turtle.backward(distance)                    *backward()..turtle.txt;*
       >>> turtle.position()
       (-30.00,0.00)
 <
-turtle.right(angle)                             *right()..turtle.txt;*
-turtle.rt(angle)                                   *rt()..turtle.txt;*
+turtle.right(angle)                              *right()..turtle.txt*
+turtle.rt(angle)                                    *rt()..turtle.txt*
 
    Parameters:
       **angle** – a number (integer or float)
@@ -481,8 +481,8 @@ turtle.rt(angle)                                   *rt()..turtle.txt;*
       >>> turtle.heading()
       337.0
 <
-turtle.left(angle)                               *left()..turtle.txt;*
-turtle.lt(angle)                                   *lt()..turtle.txt;*
+turtle.left(angle)                                *left()..turtle.txt*
+turtle.lt(angle)                                    *lt()..turtle.txt*
 
    Parameters:
       **angle** – a number (integer or float)
@@ -497,9 +497,9 @@ turtle.lt(angle)                                   *lt()..turtle.txt;*
       >>> turtle.heading()
       67.0
 <
-turtle.goto(x, y=None)                           *goto()..turtle.txt;*
-turtle.setpos(x, y=None)                       *setpos()..turtle.txt;*
-turtle.setposition(x, y=None)             *setposition()..turtle.txt;*
+turtle.goto(x, y=None)                            *goto()..turtle.txt*
+turtle.setpos(x, y=None)                        *setpos()..turtle.txt*
+turtle.setposition(x, y=None)              *setposition()..turtle.txt*
 
    Parameters:
       * **x** – a number or a pair/vector of numbers
@@ -526,7 +526,7 @@ turtle.setposition(x, y=None)             *setposition()..turtle.txt;*
       (0.00,0.00)
 <
 
-                                             *teleport()..turtle.txt;*
+                                              *teleport()..turtle.txt*
 turtle.teleport(x, y=None, *, fill_gap=False)
 
    Parameters:
@@ -557,7 +557,7 @@ turtle.teleport(x, y=None, *, fill_gap=False)
       >>> turtle.pos()
       (20.00,30.00)
 <
-turtle.setx(x)                                   *setx()..turtle.txt;*
+turtle.setx(x)                                    *setx()..turtle.txt*
 
    Parameters:
       **x** – a number (integer or float)
@@ -571,7 +571,7 @@ turtle.setx(x)                                   *setx()..turtle.txt;*
       >>> turtle.position()
       (10.00,240.00)
 <
-turtle.sety(y)                                   *sety()..turtle.txt;*
+turtle.sety(y)                                    *sety()..turtle.txt*
 
    Parameters:
       **y** – a number (integer or float)
@@ -585,8 +585,8 @@ turtle.sety(y)                                   *sety()..turtle.txt;*
       >>> turtle.position()
       (0.00,-10.00)
 <
-turtle.setheading(to_angle)                *setheading()..turtle.txt;*
-turtle.seth(to_angle)                            *seth()..turtle.txt;*
+turtle.setheading(to_angle)                 *setheading()..turtle.txt*
+turtle.seth(to_angle)                             *seth()..turtle.txt*
 
    Parameters:
       **to_angle** – a number (integer or float)
@@ -610,7 +610,7 @@ turtle.seth(to_angle)                            *seth()..turtle.txt;*
       >>> turtle.heading()
       90.0
 <
-turtle.home()                                    *home()..turtle.txt;*
+turtle.home()                                     *home()..turtle.txt*
 
    Move turtle to the origin – coordinates (0,0) – and set its heading
    to its start-orientation (which depends on the mode, see "mode()").
@@ -626,7 +626,7 @@ turtle.home()                                    *home()..turtle.txt;*
       0.0
 <
 
-                                               *circle()..turtle.txt;*
+                                                *circle()..turtle.txt*
 turtle.circle(radius, extent=None, steps=None)
 
    Parameters:
@@ -666,7 +666,7 @@ turtle.circle(radius, extent=None, steps=None)
       >>> turtle.heading()
       180.0
 <
-turtle.dot(size=None, *color)                     *dot()..turtle.txt;*
+turtle.dot(size=None, *color)                      *dot()..turtle.txt*
 
    Parameters:
       * **size** – an integer >= 1 (if given)
@@ -684,7 +684,7 @@ turtle.dot(size=None, *color)                     *dot()..turtle.txt;*
       >>> turtle.heading()
       0.0
 <
-turtle.stamp()                                  *stamp()..turtle.txt;*
+turtle.stamp()                                   *stamp()..turtle.txt*
 
    Stamp a copy of the turtle shape onto the canvas at the current
    turtle position.  Return a stamp_id for that stamp, which can be
@@ -694,7 +694,7 @@ turtle.stamp()                                  *stamp()..turtle.txt;*
       >>> stamp_id = turtle.stamp()
       >>> turtle.fd(50)
 <
-turtle.clearstamp(stampid)                 *clearstamp()..turtle.txt;*
+turtle.clearstamp(stampid)                  *clearstamp()..turtle.txt*
 
    Parameters:
       **stampid** – an integer, must be return value of previous
@@ -713,7 +713,7 @@ turtle.clearstamp(stampid)                 *clearstamp()..turtle.txt;*
       >>> turtle.position()
       (200.00,-0.00)
 <
-turtle.clearstamps(n=None)                *clearstamps()..turtle.txt;*
+turtle.clearstamps(n=None)                 *clearstamps()..turtle.txt*
 
    Parameters:
       **n** – an integer (or "None")
@@ -729,7 +729,7 @@ turtle.clearstamps(n=None)                *clearstamps()..turtle.txt;*
       >>> turtle.clearstamps(-2)
       >>> turtle.clearstamps()
 <
-turtle.undo()                                    *undo()..turtle.txt;*
+turtle.undo()                                     *undo()..turtle.txt*
 
    Undo (repeatedly) the last turtle action(s).  Number of available
    undo actions is determined by the size of the undobuffer.
@@ -740,7 +740,7 @@ turtle.undo()                                    *undo()..turtle.txt;*
       >>> for i in range(8):
       ...     turtle.undo()
 <
-turtle.speed(speed=None)                        *speed()..turtle.txt;*
+turtle.speed(speed=None)                         *speed()..turtle.txt*
 
    Parameters:
       **speed** – an integer in the range 0..10 or a speedstring (see
@@ -782,15 +782,15 @@ turtle.speed(speed=None)                        *speed()..turtle.txt;*
 Tell Turtle’s state
 -------------------
 
-turtle.position()                            *position()..turtle.txt;*
-turtle.pos()                                      *pos()..turtle.txt;*
+turtle.position()                             *position()..turtle.txt*
+turtle.pos()                                       *pos()..turtle.txt*
 
    Return the turtle’s current location (x,y) (as a "Vec2D" vector).
 >
       >>> turtle.pos()
       (440.00,-0.00)
 <
-turtle.towards(x, y=None)                     *towards()..turtle.txt;*
+turtle.towards(x, y=None)                      *towards()..turtle.txt*
 
    Parameters:
       * **x** – a number or a pair/vector of numbers or a turtle
@@ -807,7 +807,7 @@ turtle.towards(x, y=None)                     *towards()..turtle.txt;*
       >>> turtle.towards(0,0)
       225.0
 <
-turtle.xcor()                                    *xcor()..turtle.txt;*
+turtle.xcor()                                     *xcor()..turtle.txt*
 
    Return the turtle’s x coordinate.
 >
@@ -819,7 +819,7 @@ turtle.xcor()                                    *xcor()..turtle.txt;*
       >>> print(round(turtle.xcor(), 5))
       64.27876
 <
-turtle.ycor()                                    *ycor()..turtle.txt;*
+turtle.ycor()                                     *ycor()..turtle.txt*
 
    Return the turtle’s y coordinate.
 >
@@ -831,7 +831,7 @@ turtle.ycor()                                    *ycor()..turtle.txt;*
       >>> print(round(turtle.ycor(), 5))
       86.60254
 <
-turtle.heading()                              *heading()..turtle.txt;*
+turtle.heading()                               *heading()..turtle.txt*
 
    Return the turtle’s current heading (value depends on the turtle
    mode, see "mode()").
@@ -841,7 +841,7 @@ turtle.heading()                              *heading()..turtle.txt;*
       >>> turtle.heading()
       67.0
 <
-turtle.distance(x, y=None)                   *distance()..turtle.txt;*
+turtle.distance(x, y=None)                    *distance()..turtle.txt*
 
    Parameters:
       * **x** – a number or a pair/vector of numbers or a turtle
@@ -866,7 +866,7 @@ turtle.distance(x, y=None)                   *distance()..turtle.txt;*
 Settings for measurement
 ------------------------
 
-turtle.degrees(fullcircle=360.0)              *degrees()..turtle.txt;*
+turtle.degrees(fullcircle=360.0)               *degrees()..turtle.txt*
 
    Parameters:
       **fullcircle** – a number
@@ -888,7 +888,7 @@ turtle.degrees(fullcircle=360.0)              *degrees()..turtle.txt;*
       >>> turtle.heading()
       90.0
 <
-turtle.radians()                              *radians()..turtle.txt;*
+turtle.radians()                               *radians()..turtle.txt*
 
    Set the angle measurement units to radians.  Equivalent to
    "degrees(2*math.pi)".
@@ -909,20 +909,20 @@ Pen control
 Drawing state
 ~~~~~~~~~~~~~
 
-turtle.pendown()                              *pendown()..turtle.txt;*
-turtle.pd()                                        *pd()..turtle.txt;*
-turtle.down()                                    *down()..turtle.txt;*
+turtle.pendown()                               *pendown()..turtle.txt*
+turtle.pd()                                         *pd()..turtle.txt*
+turtle.down()                                     *down()..turtle.txt*
 
    Pull the pen down – drawing when moving.
 
-turtle.penup()                                  *penup()..turtle.txt;*
-turtle.pu()                                        *pu()..turtle.txt;*
-turtle.up()                                        *up()..turtle.txt;*
+turtle.penup()                                   *penup()..turtle.txt*
+turtle.pu()                                         *pu()..turtle.txt*
+turtle.up()                                         *up()..turtle.txt*
 
    Pull the pen up – no drawing when moving.
 
-turtle.pensize(width=None)                    *pensize()..turtle.txt;*
-turtle.width(width=None)                        *width()..turtle.txt;*
+turtle.pensize(width=None)                     *pensize()..turtle.txt*
+turtle.width(width=None)                         *width()..turtle.txt*
 
    Parameters:
       **width** – a positive number
@@ -936,7 +936,7 @@ turtle.width(width=None)                        *width()..turtle.txt;*
       1
       >>> turtle.pensize(10)   # from here on lines of width 10 are drawn
 <
-turtle.pen(pen=None, **pendict)                   *pen()..turtle.txt;*
+turtle.pen(pen=None, **pendict)                    *pen()..turtle.txt*
 
    Parameters:
       * **pen** – a dictionary with some or all of the below listed
@@ -988,7 +988,7 @@ turtle.pen(pen=None, **pendict)                   *pen()..turtle.txt;*
       >>> sorted(turtle.pen().items())[:3]
       [('fillcolor', 'green'), ('outline', 1), ('pencolor', 'red')]
 <
-turtle.isdown()                                *isdown()..turtle.txt;*
+turtle.isdown()                                 *isdown()..turtle.txt*
 
    Return "True" if pen is down, "False" if it’s up.
 >
@@ -1003,7 +1003,7 @@ turtle.isdown()                                *isdown()..turtle.txt;*
 Color control
 ~~~~~~~~~~~~~
 
-turtle.pencolor(*args)                       *pencolor()..turtle.txt;*
+turtle.pencolor(*args)                        *pencolor()..turtle.txt*
 
    Return or set the pencolor.
 
@@ -1049,7 +1049,7 @@ turtle.pencolor(*args)                       *pencolor()..turtle.txt;*
       >>> turtle.pencolor()
       (50.0, 193.0, 143.0)
 <
-turtle.fillcolor(*args)                     *fillcolor()..turtle.txt;*
+turtle.fillcolor(*args)                      *fillcolor()..turtle.txt*
 
    Return or set the fillcolor.
 
@@ -1090,7 +1090,7 @@ turtle.fillcolor(*args)                     *fillcolor()..turtle.txt;*
       >>> turtle.fillcolor()
       (255.0, 255.0, 255.0)
 <
-turtle.color(*args)                             *color()..turtle.txt;*
+turtle.color(*args)                              *color()..turtle.txt*
 
    Return or set pencolor and fillcolor.
 
@@ -1128,7 +1128,7 @@ See also: Screen method "colormode()".
 Filling
 ~~~~~~~
 
-turtle.filling()                              *filling()..turtle.txt;*
+turtle.filling()                               *filling()..turtle.txt*
 
    Return fillstate ("True" if filling, "False" else).
 >
@@ -1138,11 +1138,11 @@ turtle.filling()                              *filling()..turtle.txt;*
       ... else:
       ...    turtle.pensize(3)
 <
-turtle.begin_fill()                        *begin_fill()..turtle.txt;*
+turtle.begin_fill()                         *begin_fill()..turtle.txt*
 
    To be called just before drawing a shape to be filled.
 
-turtle.end_fill()                            *end_fill()..turtle.txt;*
+turtle.end_fill()                             *end_fill()..turtle.txt*
 
    Fill the shape drawn after the last call to "begin_fill()".
 
@@ -1161,7 +1161,7 @@ turtle.end_fill()                            *end_fill()..turtle.txt;*
 More drawing control
 ~~~~~~~~~~~~~~~~~~~~
 
-turtle.reset()                                  *reset()..turtle.txt;*
+turtle.reset()                                   *reset()..turtle.txt*
 
    Delete the turtle’s drawings from the screen, re-center the turtle
    and set variables to the default values.
@@ -1178,13 +1178,13 @@ turtle.reset()                                  *reset()..turtle.txt;*
       >>> turtle.heading()
       0.0
 <
-turtle.clear()                                  *clear()..turtle.txt;*
+turtle.clear()                                   *clear()..turtle.txt*
 
    Delete the turtle’s drawings from the screen.  Do not move turtle.
    State and position of the turtle as well as drawings of other
    turtles are not affected.
 
-                                                *write()..turtle.txt;*
+                                                 *write()..turtle.txt*
 turtle.write(arg, move=False, align='left', font=('Arial', 8, 'normal'))
 
    Parameters:
@@ -1213,8 +1213,8 @@ Turtle state
 Visibility
 ~~~~~~~~~~
 
-turtle.hideturtle()                        *hideturtle()..turtle.txt;*
-turtle.ht()                                        *ht()..turtle.txt;*
+turtle.hideturtle()                         *hideturtle()..turtle.txt*
+turtle.ht()                                         *ht()..turtle.txt*
 
    Make the turtle invisible.  It’s a good idea to do this while
    you’re in the middle of doing some complex drawing, because hiding
@@ -1222,14 +1222,14 @@ turtle.ht()                                        *ht()..turtle.txt;*
 >
       >>> turtle.hideturtle()
 <
-turtle.showturtle()                        *showturtle()..turtle.txt;*
-turtle.st()                                        *st()..turtle.txt;*
+turtle.showturtle()                         *showturtle()..turtle.txt*
+turtle.st()                                         *st()..turtle.txt*
 
    Make the turtle visible.
 >
       >>> turtle.showturtle()
 <
-turtle.isvisible()                          *isvisible()..turtle.txt;*
+turtle.isvisible()                           *isvisible()..turtle.txt*
 
    Return "True" if the Turtle is shown, "False" if it’s hidden.
 
@@ -1244,7 +1244,7 @@ turtle.isvisible()                          *isvisible()..turtle.txt;*
 Appearance
 ~~~~~~~~~~
 
-turtle.shape(name=None)                         *shape()..turtle.txt;*
+turtle.shape(name=None)                          *shape()..turtle.txt*
 
    Parameters:
       **name** – a string which is a valid shapename
@@ -1262,7 +1262,7 @@ turtle.shape(name=None)                         *shape()..turtle.txt;*
       >>> turtle.shape()
       'turtle'
 <
-turtle.resizemode(rmode=None)              *resizemode()..turtle.txt;*
+turtle.resizemode(rmode=None)               *resizemode()..turtle.txt*
 
    Parameters:
       **rmode** – one of the strings “auto”, “user”, “noresize”
@@ -1290,10 +1290,10 @@ turtle.resizemode(rmode=None)              *resizemode()..turtle.txt;*
       'auto'
 <
 
-                                            *shapesize()..turtle.txt;*
+                                             *shapesize()..turtle.txt*
 turtle.shapesize(stretch_wid=None, stretch_len=None, outline=None)
 
-                                           *turtlesize()..turtle.txt;*
+                                            *turtlesize()..turtle.txt*
 turtle.turtlesize(stretch_wid=None, stretch_len=None, outline=None)
 
    Parameters:
@@ -1320,7 +1320,7 @@ turtle.turtlesize(stretch_wid=None, stretch_len=None, outline=None)
       >>> turtle.shapesize()
       (5, 5, 8)
 <
-turtle.shearfactor(shear=None)            *shearfactor()..turtle.txt;*
+turtle.shearfactor(shear=None)             *shearfactor()..turtle.txt*
 
    Parameters:
       **shear** – number (optional)
@@ -1338,7 +1338,7 @@ turtle.shearfactor(shear=None)            *shearfactor()..turtle.txt;*
       >>> turtle.shearfactor()
       0.5
 <
-turtle.tilt(angle)                               *tilt()..turtle.txt;*
+turtle.tilt(angle)                                *tilt()..turtle.txt*
 
    Parameters:
       **angle** – a number
@@ -1354,7 +1354,7 @@ turtle.tilt(angle)                               *tilt()..turtle.txt;*
       >>> turtle.tilt(30)
       >>> turtle.fd(50)
 <
-turtle.tiltangle(angle=None)                *tiltangle()..turtle.txt;*
+turtle.tiltangle(angle=None)                 *tiltangle()..turtle.txt*
 
    Parameters:
       **angle** – a number (optional)
@@ -1375,7 +1375,7 @@ turtle.tiltangle(angle=None)                *tiltangle()..turtle.txt;*
       45.0
 <
 
-                                       *shapetransform()..turtle.txt;*
+                                        *shapetransform()..turtle.txt*
 turtle.shapetransform(t11=None, t12=None, t21=None, t22=None)
 
    Parameters:
@@ -1405,7 +1405,7 @@ turtle.shapetransform(t11=None, t12=None, t21=None, t22=None)
       >>> turtle.shapetransform()
       (4.0, -1.0, -0.0, 2.0)
 <
-turtle.get_shapepoly()                  *get_shapepoly()..turtle.txt;*
+turtle.get_shapepoly()                   *get_shapepoly()..turtle.txt*
 
    Return the current shape polygon as tuple of coordinate pairs. This
    can be used to define a new shape or components of a compound
@@ -1420,7 +1420,7 @@ turtle.get_shapepoly()                  *get_shapepoly()..turtle.txt;*
 Using events
 ------------
 
-turtle.onclick(fun, btn=1, add=None)          *onclick()..turtle.txt;*
+turtle.onclick(fun, btn=1, add=None)           *onclick()..turtle.txt*
 
    Parameters:
       * **fun** – a function with two arguments which will be called
@@ -1442,7 +1442,7 @@ turtle.onclick(fun, btn=1, add=None)          *onclick()..turtle.txt;*
       >>> onclick(turn)  # Now clicking into the turtle will turn it.
       >>> onclick(None)  # event-binding will be removed
 <
-turtle.onrelease(fun, btn=1, add=None)      *onrelease()..turtle.txt;*
+turtle.onrelease(fun, btn=1, add=None)       *onrelease()..turtle.txt*
 
    Parameters:
       * **fun** – a function with two arguments which will be called
@@ -1467,7 +1467,7 @@ turtle.onrelease(fun, btn=1, add=None)      *onrelease()..turtle.txt;*
       >>> turtle.onclick(turtle.glow)     # clicking on turtle turns fillcolor red,
       >>> turtle.onrelease(turtle.unglow) # releasing turns it to transparent.
 <
-turtle.ondrag(fun, btn=1, add=None)            *ondrag()..turtle.txt;*
+turtle.ondrag(fun, btn=1, add=None)             *ondrag()..turtle.txt*
 
    Parameters:
       * **fun** – a function with two arguments which will be called
@@ -1494,18 +1494,18 @@ turtle.ondrag(fun, btn=1, add=None)            *ondrag()..turtle.txt;*
 Special Turtle methods
 ----------------------
 
-turtle.begin_poly()                        *begin_poly()..turtle.txt;*
+turtle.begin_poly()                         *begin_poly()..turtle.txt*
 
    Start recording the vertices of a polygon.  Current turtle position
    is first vertex of polygon.
 
-turtle.end_poly()                            *end_poly()..turtle.txt;*
+turtle.end_poly()                             *end_poly()..turtle.txt*
 
    Stop recording the vertices of a polygon.  Current turtle position
    is last vertex of polygon.  This will be connected with the first
    vertex.
 
-turtle.get_poly()                            *get_poly()..turtle.txt;*
+turtle.get_poly()                             *get_poly()..turtle.txt*
 
    Return the last recorded polygon.
 >
@@ -1520,7 +1520,7 @@ turtle.get_poly()                            *get_poly()..turtle.txt;*
       >>> p = turtle.get_poly()
       >>> register_shape("myFavouriteShape", p)
 <
-turtle.clone()                                  *clone()..turtle.txt;*
+turtle.clone()                                   *clone()..turtle.txt*
 
    Create and return a clone of the turtle with same position, heading
    and turtle properties.
@@ -1528,8 +1528,8 @@ turtle.clone()                                  *clone()..turtle.txt;*
       >>> mick = Turtle()
       >>> joe = mick.clone()
 <
-turtle.getturtle()                          *getturtle()..turtle.txt;*
-turtle.getpen()                                *getpen()..turtle.txt;*
+turtle.getturtle()                           *getturtle()..turtle.txt*
+turtle.getpen()                                 *getpen()..turtle.txt*
 
    Return the Turtle object itself.  Only reasonable use: as a
    function to return the “anonymous turtle”:
@@ -1539,7 +1539,7 @@ turtle.getpen()                                *getpen()..turtle.txt;*
       >>> pet
       <turtle.Turtle object at 0x...>
 <
-turtle.getscreen()                          *getscreen()..turtle.txt;*
+turtle.getscreen()                           *getscreen()..turtle.txt*
 
    Return the "TurtleScreen" object the turtle is drawing on.
    TurtleScreen methods can then be called for that object.
@@ -1549,7 +1549,7 @@ turtle.getscreen()                          *getscreen()..turtle.txt;*
       <turtle._Screen object at 0x...>
       >>> ts.bgcolor("pink")
 <
-turtle.setundobuffer(size)              *setundobuffer()..turtle.txt;*
+turtle.setundobuffer(size)               *setundobuffer()..turtle.txt*
 
    Parameters:
       **size** – an integer or "None"
@@ -1561,7 +1561,7 @@ turtle.setundobuffer(size)              *setundobuffer()..turtle.txt;*
 >
       >>> turtle.setundobuffer(42)
 <
-turtle.undobufferentries()          *undobufferentries()..turtle.txt;*
+turtle.undobufferentries()           *undobufferentries()..turtle.txt*
 
    Return number of entries in the undobuffer.
 >
@@ -1612,7 +1612,7 @@ called "screen".
 Window control
 --------------
 
-turtle.bgcolor(*args)                         *bgcolor()..turtle.txt;*
+turtle.bgcolor(*args)                          *bgcolor()..turtle.txt*
 
    Parameters:
       **args** – a color string or three numbers in the range
@@ -1627,7 +1627,7 @@ turtle.bgcolor(*args)                         *bgcolor()..turtle.txt;*
       >>> screen.bgcolor()
       (128.0, 0.0, 128.0)
 <
-turtle.bgpic(picname=None)                      *bgpic()..turtle.txt;*
+turtle.bgpic(picname=None)                       *bgpic()..turtle.txt*
 
    Parameters:
       **picname** – a string, name of a gif-file or ""nopic"", or
@@ -1653,7 +1653,7 @@ turtle.clear()
      under the name "clearscreen".  The global function "clear" is a
      different one derived from the Turtle method "clear".
 
-turtle.clearscreen()                      *clearscreen()..turtle.txt;*
+turtle.clearscreen()                       *clearscreen()..turtle.txt*
 
    Delete all drawings and all turtles from the TurtleScreen.  Reset
    the now empty TurtleScreen to its initial state: white background,
@@ -1667,11 +1667,11 @@ turtle.reset()
      under the name "resetscreen".  The global function "reset" is
      another one derived from the Turtle method "reset".
 
-turtle.resetscreen()                      *resetscreen()..turtle.txt;*
+turtle.resetscreen()                       *resetscreen()..turtle.txt*
 
    Reset all Turtles on the Screen to their initial state.
 
-                                           *screensize()..turtle.txt;*
+                                            *screensize()..turtle.txt*
 turtle.screensize(canvwidth=None, canvheight=None, bg=None)
 
    Parameters:
@@ -1697,7 +1697,7 @@ turtle.screensize(canvwidth=None, canvheight=None, bg=None)
 
    e.g. to search for an erroneously escaped turtle ;-)
 
-                                  *setworldcoordinates()..turtle.txt;*
+                                   *setworldcoordinates()..turtle.txt*
 turtle.setworldcoordinates(llx, lly, urx, ury)
 
    Parameters:
@@ -1733,7 +1733,7 @@ turtle.setworldcoordinates(llx, lly, urx, ury)
 Animation control
 -----------------
 
-turtle.delay(delay=None)                        *delay()..turtle.txt;*
+turtle.delay(delay=None)                         *delay()..turtle.txt*
 
    Parameters:
       **delay** – positive integer
@@ -1750,7 +1750,7 @@ turtle.delay(delay=None)                        *delay()..turtle.txt;*
       >>> screen.delay()
       5
 <
-turtle.tracer(n=None, delay=None)              *tracer()..turtle.txt;*
+turtle.tracer(n=None, delay=None)               *tracer()..turtle.txt*
 
    Parameters:
       * **n** – nonnegative integer
@@ -1771,7 +1771,7 @@ turtle.tracer(n=None, delay=None)              *tracer()..turtle.txt;*
       ...     rt(90)
       ...     dist += 2
 <
-turtle.update()                                *update()..turtle.txt;*
+turtle.update()                                 *update()..turtle.txt*
 
    Perform a TurtleScreen update. To be used when tracer is turned
    off.
@@ -1782,14 +1782,14 @@ See also the RawTurtle/Turtle method "speed()".
 Using screen events
 -------------------
 
-turtle.listen(xdummy=None, ydummy=None)        *listen()..turtle.txt;*
+turtle.listen(xdummy=None, ydummy=None)         *listen()..turtle.txt*
 
    Set focus on TurtleScreen (in order to collect key-events).  Dummy
    arguments are provided in order to be able to pass "listen()" to
    the onclick method.
 
-turtle.onkey(fun, key)                          *onkey()..turtle.txt;*
-turtle.onkeyrelease(fun, key)            *onkeyrelease()..turtle.txt;*
+turtle.onkey(fun, key)                           *onkey()..turtle.txt*
+turtle.onkeyrelease(fun, key)             *onkeyrelease()..turtle.txt*
 
    Parameters:
       * **fun** – a function with no arguments or "None"
@@ -1808,7 +1808,7 @@ turtle.onkeyrelease(fun, key)            *onkeyrelease()..turtle.txt;*
       >>> screen.onkey(f, "Up")
       >>> screen.listen()
 <
-turtle.onkeypress(fun, key=None)           *onkeypress()..turtle.txt;*
+turtle.onkeypress(fun, key=None)            *onkeypress()..turtle.txt*
 
    Parameters:
       * **fun** – a function with no arguments or "None"
@@ -1829,7 +1829,7 @@ turtle.onkeypress(fun, key=None)           *onkeypress()..turtle.txt;*
 <
 turtle.onclick(fun, btn=1, add=None)
 
-                                        *onscreenclick()..turtle.txt;*
+                                         *onscreenclick()..turtle.txt*
 turtle.onscreenclick(fun, btn=1, add=None)
 
    Parameters:
@@ -1858,7 +1858,7 @@ turtle.onscreenclick(fun, btn=1, add=None)
      under the name "onscreenclick".  The global function "onclick" is
      another one derived from the Turtle method "onclick".
 
-turtle.ontimer(fun, t=0)                      *ontimer()..turtle.txt;*
+turtle.ontimer(fun, t=0)                       *ontimer()..turtle.txt*
 
    Parameters:
       * **fun** – a function with no arguments
@@ -1876,8 +1876,8 @@ turtle.ontimer(fun, t=0)                      *ontimer()..turtle.txt;*
       >>> f()   ### makes the turtle march around
       >>> running = False
 <
-turtle.mainloop()                            *mainloop()..turtle.txt;*
-turtle.done()                                    *done()..turtle.txt;*
+turtle.mainloop()                             *mainloop()..turtle.txt*
+turtle.done()                                     *done()..turtle.txt*
 
    Starts event loop - calling Tkinter’s mainloop function. Must be
    the last statement in a turtle graphics program. Must _not_ be used
@@ -1890,7 +1890,7 @@ turtle.done()                                    *done()..turtle.txt;*
 Input methods
 -------------
 
-turtle.textinput(title, prompt)             *textinput()..turtle.txt;*
+turtle.textinput(title, prompt)              *textinput()..turtle.txt*
 
    Parameters:
       * **title** – string
@@ -1905,7 +1905,7 @@ turtle.textinput(title, prompt)             *textinput()..turtle.txt;*
       >>> screen.textinput("NIM", "Name of first player:")
 <
 
-                                             *numinput()..turtle.txt;*
+                                              *numinput()..turtle.txt*
 turtle.numinput(title, prompt, default=None, minval=None, maxval=None)
 
    Parameters:
@@ -1934,7 +1934,7 @@ turtle.numinput(title, prompt, default=None, minval=None, maxval=None)
 Settings and special methods
 ----------------------------
 
-turtle.mode(mode=None)                           *mode()..turtle.txt;*
+turtle.mode(mode=None)                            *mode()..turtle.txt*
 
    Parameters:
       **mode** – one of the strings “standard”, “logo” or “world”
@@ -1959,7 +1959,7 @@ turtle.mode(mode=None)                           *mode()..turtle.txt;*
       >>> mode()
       'logo'
 <
-turtle.colormode(cmode=None)                *colormode()..turtle.txt;*
+turtle.colormode(cmode=None)                 *colormode()..turtle.txt*
 
    Parameters:
       **cmode** – one of the values 1.0 or 255
@@ -1980,7 +1980,7 @@ turtle.colormode(cmode=None)                *colormode()..turtle.txt;*
       255
       >>> turtle.pencolor(240,160,80)
 <
-turtle.getcanvas()                          *getcanvas()..turtle.txt;*
+turtle.getcanvas()                           *getcanvas()..turtle.txt*
 
    Return the Canvas of this TurtleScreen.  Useful for insiders who
    know what to do with a Tkinter Canvas.
@@ -1989,7 +1989,7 @@ turtle.getcanvas()                          *getcanvas()..turtle.txt;*
       >>> cv
       <turtle.ScrolledCanvas object ...>
 <
-turtle.getshapes()                          *getshapes()..turtle.txt;*
+turtle.getshapes()                           *getshapes()..turtle.txt*
 
    Return a list of names of all currently available turtle shapes.
 >
@@ -1997,9 +1997,9 @@ turtle.getshapes()                          *getshapes()..turtle.txt;*
       ['arrow', 'blank', 'circle', ..., 'turtle']
 <
 
-                                       *register_shape()..turtle.txt;*
+                                        *register_shape()..turtle.txt*
 turtle.register_shape(name, shape=None)
-turtle.addshape(name, shape=None)            *addshape()..turtle.txt;*
+turtle.addshape(name, shape=None)             *addshape()..turtle.txt*
 
    There are three different ways to call this function:
 
@@ -2025,21 +2025,21 @@ turtle.addshape(name, shape=None)            *addshape()..turtle.txt;*
    registered shapes can be used by issuing the command
    "shape(shapename)".
 
-turtle.turtles()                              *turtles()..turtle.txt;*
+turtle.turtles()                               *turtles()..turtle.txt*
 
    Return the list of turtles on the screen.
 >
       >>> for turtle in screen.turtles():
       ...     turtle.color("red")
 <
-turtle.window_height()                  *window_height()..turtle.txt;*
+turtle.window_height()                   *window_height()..turtle.txt*
 
    Return the height of the turtle window.
 >
       >>> screen.window_height()
       480
 <
-turtle.window_width()                    *window_width()..turtle.txt;*
+turtle.window_width()                     *window_width()..turtle.txt*
 
    Return the width of the turtle window.
 >
@@ -2050,11 +2050,11 @@ turtle.window_width()                    *window_width()..turtle.txt;*
 Methods specific to Screen, not inherited from TurtleScreen
 -----------------------------------------------------------
 
-turtle.bye()                                      *bye()..turtle.txt;*
+turtle.bye()                                       *bye()..turtle.txt*
 
    Shut the turtlegraphics window.
 
-turtle.exitonclick()                      *exitonclick()..turtle.txt;*
+turtle.exitonclick()                       *exitonclick()..turtle.txt*
 
    Bind "bye()" method to mouse clicks on the Screen.
 
@@ -2064,7 +2064,7 @@ turtle.exitonclick()                      *exitonclick()..turtle.txt;*
    to "True" in "turtle.cfg".  In this case IDLE’s own mainloop is
    active also for the client script.
 
-                                                *setup()..turtle.txt;*
+                                                 *setup()..turtle.txt*
 turtle.setup(width=_CFG['width'], height=_CFG['height'], startx=_CFG['leftright'], starty=_CFG['topbottom'])
 
    Set the size and position of the main window.  Default values of
@@ -2091,7 +2091,7 @@ turtle.setup(width=_CFG['width'], height=_CFG['height'], startx=_CFG['leftright'
       >>> screen.setup(width=.75, height=0.5, startx=None, starty=None)
       >>>              # sets window to 75% of screen by 50% of screen and centers
 <
-turtle.title(titlestring)                       *title()..turtle.txt;*
+turtle.title(titlestring)                        *title()..turtle.txt*
 
    Parameters:
       **titlestring** – a string that is shown in the titlebar of the
@@ -2105,8 +2105,8 @@ turtle.title(titlestring)                       *title()..turtle.txt;*
 Public classes
 ==============
 
-class turtle.RawTurtle(canvas)                *RawTurtle..turtle.txt;*
-class turtle.RawPen(canvas)                      *RawPen..turtle.txt;*
+class turtle.RawTurtle(canvas)                 *RawTurtle..turtle.txt*
+class turtle.RawPen(canvas)                       *RawPen..turtle.txt*
 
    Parameters:
       **canvas** – a "tkinter.Canvas", a "ScrolledCanvas" or a
@@ -2115,13 +2115,13 @@ class turtle.RawPen(canvas)                      *RawPen..turtle.txt;*
    Create a turtle.  The turtle has all methods described above as
    “methods of Turtle/RawTurtle”.
 
-class turtle.Turtle                              *Turtle..turtle.txt;*
+class turtle.Turtle                               *Turtle..turtle.txt*
 
    Subclass of RawTurtle, has the same interface but draws on a
    default "Screen" object created automatically when needed for the
    first time.
 
-class turtle.TurtleScreen(cv)              *TurtleScreen..turtle.txt;*
+class turtle.TurtleScreen(cv)               *TurtleScreen..turtle.txt*
 
    Parameters:
       **cv** – a "tkinter.Canvas"
@@ -2129,11 +2129,11 @@ class turtle.TurtleScreen(cv)              *TurtleScreen..turtle.txt;*
    Provides screen oriented methods like "bgcolor()" etc. that are
    described above.
 
-class turtle.Screen                              *Screen..turtle.txt;*
+class turtle.Screen                               *Screen..turtle.txt*
 
    Subclass of TurtleScreen, with four methods added.
 
-class turtle.ScrolledCanvas(master)      *ScrolledCanvas..turtle.txt;*
+class turtle.ScrolledCanvas(master)       *ScrolledCanvas..turtle.txt*
 
    Parameters:
       **master** – some Tkinter widget to contain the ScrolledCanvas,
@@ -2142,7 +2142,7 @@ class turtle.ScrolledCanvas(master)      *ScrolledCanvas..turtle.txt;*
    Used by class Screen, which thus automatically provides a
    ScrolledCanvas as playground for the turtles.
 
-class turtle.Shape(type_, data)                   *Shape..turtle.txt;*
+class turtle.Shape(type_, data)                    *Shape..turtle.txt*
 
    Parameters:
       **type_** – one of the strings “polygon”, “image”, “compound”
@@ -2161,7 +2161,7 @@ class turtle.Shape(type_, data)                   *Shape..turtle.txt;*
    |             | "addcomponent()" method)                                   |
    +-------------+------------------------------------------------------------+
 
-                                   *Shape.addcomponent()..turtle.txt;*
+                                    *Shape.addcomponent()..turtle.txt*
    addcomponent(poly, fill, outline=None)
 
       Parameters:
@@ -2180,7 +2180,7 @@ class turtle.Shape(type_, data)                   *Shape..turtle.txt;*
 <
       See Compound shapes.
 
-class turtle.Vec2D(x, y)                          *Vec2D..turtle.txt;*
+class turtle.Vec2D(x, y)                           *Vec2D..turtle.txt*
 
    A two-dimensional vector class, used as a helper class for
    implementing turtle graphics.  May be useful for turtle graphics
@@ -2323,7 +2323,7 @@ There is a utility to create a dictionary the keys of which are the
 method names and the values of which are the docstrings of the public
 methods of the classes Screen and Turtle.
 
-                                  *write_docstringdict()..turtle.txt;*
+                                   *write_docstringdict()..turtle.txt*
 turtle.write_docstringdict(filename='turtle_docstringdict')
 
    Parameters:

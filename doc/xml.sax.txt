@@ -1,4 +1,4 @@
-*xmlsax.txt;*                                 Last change: 2023 Sep 09
+*xml.sax.txt;*                                Last change: 2023 Sep 10
 
 "xml.sax" — Support for SAX2 parsers
 ************************************
@@ -27,7 +27,7 @@ argument "feature_external_ges".
 
 The convenience functions are:
 
-xml.sax.make_parser(parser_list=[])       *make_parser()..xmlsax.txt;*
+xml.sax.make_parser(parser_list=[])       *make_parser()..xml.sax.txt*
 
    Create and return a SAX "XMLReader" object.  The first parser found
    will be used.  If _parser_list_ is provided, it must be an iterable
@@ -38,7 +38,7 @@ xml.sax.make_parser(parser_list=[])       *make_parser()..xmlsax.txt;*
    Changed in version 3.8: The _parser_list_ argument can be any
    iterable, not just a list.
 
-                                                *parse()..xmlsax.txt;*
+                                                *parse()..xml.sax.txt*
 xml.sax.parse(filename_or_stream, handler, error_handler=handler.ErrorHandler())
 
    Create a SAX parser and use it to parse a document.  The document,
@@ -49,7 +49,7 @@ xml.sax.parse(filename_or_stream, handler, error_handler=handler.ErrorHandler())
    raised on all errors.  There is no return value; all work must be
    done by the _handler_ passed in.
 
-                                          *parseString()..xmlsax.txt;*
+                                          *parseString()..xml.sax.txt*
 xml.sax.parseString(string, handler, error_handler=handler.ErrorHandler())
 
    Similar to "parse()", but parses from a buffer _string_ received as
@@ -84,7 +84,7 @@ instantiated directly) and the handler classes are also available from
 In addition to these classes, "xml.sax" provides the following
 exception classes.
 
-                                           *SAXException..xmlsax.txt;*
+                                           *SAXException..xml.sax.txt*
 exception xml.sax.SAXException(msg, exception=None)
 
    Encapsulate an XML error or warning.  This class can contain basic
@@ -102,7 +102,7 @@ exception xml.sax.SAXException(msg, exception=None)
 
    This is the base class for the other SAX exception classes.
 
-                                      *SAXParseException..xmlsax.txt;*
+                                      *SAXParseException..xml.sax.txt*
 exception xml.sax.SAXParseException(msg, exception, locator)
 
    Subclass of "SAXException" raised on parse errors. Instances of
@@ -111,7 +111,7 @@ exception xml.sax.SAXParseException(msg, exception, locator)
    supports the SAX "Locator" interface as well as the "SAXException"
    interface.
 
-                              *SAXNotRecognizedException..xmlsax.txt;*
+                              *SAXNotRecognizedException..xml.sax.txt*
 exception xml.sax.SAXNotRecognizedException(msg, exception=None)
 
    Subclass of "SAXException" raised when a SAX "XMLReader" is
@@ -119,7 +119,7 @@ exception xml.sax.SAXNotRecognizedException(msg, exception=None)
    applications and extensions may use this class for similar
    purposes.
 
-                               *SAXNotSupportedException..xmlsax.txt;*
+                               *SAXNotSupportedException..xml.sax.txt*
 exception xml.sax.SAXNotSupportedException(msg, exception=None)
 
    Subclass of "SAXException" raised when a SAX "XMLReader" is asked
@@ -150,11 +150,11 @@ SAXException Objects
 
 The "SAXException" exception class supports the following methods:
 
-SAXException.getMessage()     *SAXException.getMessage()..xmlsax.txt;*
+SAXException.getMessage()     *SAXException.getMessage()..xml.sax.txt*
 
    Return a human-readable message describing the error condition.
 
-                            *SAXException.getException()..xmlsax.txt;*
+                            *SAXException.getException()..xml.sax.txt*
 SAXException.getException()
 
    Return an encapsulated exception object, or "None".

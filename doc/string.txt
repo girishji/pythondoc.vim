@@ -1,4 +1,4 @@
-*string.txt;*                                 Last change: 2023 Sep 09
+*string.txt;*                                 Last change: 2023 Sep 10
 
 "string" — Common string operations
 ***********************************
@@ -19,45 +19,45 @@ String constants
 
 The constants defined in this module are:
 
-string.ascii_letters                      *ascii_letters..string.txt;*
+string.ascii_letters                       *ascii_letters..string.txt*
 
    The concatenation of the "ascii_lowercase" and "ascii_uppercase"
    constants described below.  This value is not locale-dependent.
 
-string.ascii_lowercase                  *ascii_lowercase..string.txt;*
+string.ascii_lowercase                   *ascii_lowercase..string.txt*
 
    The lowercase letters "'abcdefghijklmnopqrstuvwxyz'".  This value
    is not locale-dependent and will not change.
 
-string.ascii_uppercase                  *ascii_uppercase..string.txt;*
+string.ascii_uppercase                   *ascii_uppercase..string.txt*
 
    The uppercase letters "'ABCDEFGHIJKLMNOPQRSTUVWXYZ'".  This value
    is not locale-dependent and will not change.
 
-string.digits                                    *digits..string.txt;*
+string.digits                                     *digits..string.txt*
 
    The string "'0123456789'".
 
-string.hexdigits                              *hexdigits..string.txt;*
+string.hexdigits                               *hexdigits..string.txt*
 
    The string "'0123456789abcdefABCDEF'".
 
-string.octdigits                              *octdigits..string.txt;*
+string.octdigits                               *octdigits..string.txt*
 
    The string "'01234567'".
 
-string.punctuation                          *punctuation..string.txt;*
+string.punctuation                           *punctuation..string.txt*
 
    String of ASCII characters which are considered punctuation
    characters in the "C" locale: "!"#$%&'()*+,-./:;<=>?@[\]^_`{|}~".
 
-string.printable                              *printable..string.txt;*
+string.printable                               *printable..string.txt*
 
    String of ASCII characters which are considered printable.  This is
    a combination of "digits", "ascii_letters", "punctuation", and
    "whitespace".
 
-string.whitespace                            *whitespace..string.txt;*
+string.whitespace                             *whitespace..string.txt*
 
    A string containing all ASCII characters that are considered
    whitespace. This includes the characters space, tab, linefeed,
@@ -73,11 +73,11 @@ in **PEP 3101**.  The "Formatter" class in the "string" module allows
 you to create and customize your own string formatting behaviors using
 the same implementation as the built-in "format()" method.
 
-class string.Formatter                        *Formatter..string.txt;*
+class string.Formatter                         *Formatter..string.txt*
 
    The "Formatter" class has the following public methods:
 
-                                     *Formatter.format()..string.txt;*
+                                      *Formatter.format()..string.txt*
    format(format_string, /, *args, **kwargs)
 
       The primary API method.  It takes a format string and an
@@ -87,7 +87,7 @@ class string.Formatter                        *Formatter..string.txt;*
       Changed in version 3.7: A format string argument is now
       positional-only.
 
-                                    *Formatter.vformat()..string.txt;*
+                                     *Formatter.vformat()..string.txt*
    vformat(format_string, args, kwargs)
 
       This function does the actual work of formatting.  It is exposed
@@ -102,7 +102,7 @@ class string.Formatter                        *Formatter..string.txt;*
    In addition, the "Formatter" defines a number of methods that are
    intended to be replaced by subclasses:
 
-   parse(format_string)                  *Formatter.parse()..string.txt;*
+   parse(format_string)                   *Formatter.parse()..string.txt*
 
       Loop over the format_string and return an iterable of tuples
       (_literal_text_, _field_name_, _format_spec_, _conversion_).
@@ -116,7 +116,7 @@ class string.Formatter                        *Formatter..string.txt;*
       string.  If there is no replacement field, then the values of
       _field_name_, _format_spec_ and _conversion_ will be "None".
 
-                                  *Formatter.get_field()..string.txt;*
+                                   *Formatter.get_field()..string.txt*
    get_field(field_name, args, kwargs)
 
       Given _field_name_ as returned by "parse()" (see above), convert
@@ -127,7 +127,7 @@ class string.Formatter                        *Formatter..string.txt;*
       value _used_key_ has the same meaning as the _key_ parameter to
       "get_value()".
 
-   get_value(key, args, kwargs)      *Formatter.get_value()..string.txt;*
+   get_value(key, args, kwargs)       *Formatter.get_value()..string.txt*
 
       Retrieve a given field value.  The _key_ argument will be either
       an integer or a string.  If it is an integer, it represents the
@@ -150,7 +150,7 @@ class string.Formatter                        *Formatter..string.txt;*
       If the index or keyword refers to an item that does not exist,
       then an "IndexError" or "KeyError" should be raised.
 
-                          *Formatter.check_unused_args()..string.txt;*
+                           *Formatter.check_unused_args()..string.txt*
    check_unused_args(used_args, args, kwargs)
 
       Implement checking for unused arguments if desired.  The
@@ -162,13 +162,13 @@ class string.Formatter                        *Formatter..string.txt;*
       "check_unused_args()" is assumed to raise an exception if the
       check fails.
 
-                               *Formatter.format_field()..string.txt;*
+                                *Formatter.format_field()..string.txt*
    format_field(value, format_spec)
 
       "format_field()" simply calls the global "format()" built-in.
       The method is provided so that subclasses can override it.
 
-                              *Formatter.convert_field()..string.txt;*
+                               *Formatter.convert_field()..string.txt*
    convert_field(value, conversion)
 
       Converts the value (returned by "get_field()") given a
@@ -710,12 +710,12 @@ Any other appearance of "$" in the string will result in a
 The "string" module provides a "Template" class that implements these
 rules.  The methods of "Template" are:
 
-class string.Template(template)                *Template..string.txt;*
+class string.Template(template)                 *Template..string.txt*
 
    The constructor takes a single argument which is the template
    string.
 
-                                  *Template.substitute()..string.txt;*
+                                   *Template.substitute()..string.txt*
    substitute(mapping={}, /, **kwds)
 
       Performs the template substitution, returning a new string.
@@ -725,7 +725,7 @@ class string.Template(template)                *Template..string.txt;*
       When both _mapping_ and _kwds_ are given and there are
       duplicates, the placeholders from _kwds_ take precedence.
 
-                             *Template.safe_substitute()..string.txt;*
+                              *Template.safe_substitute()..string.txt*
    safe_substitute(mapping={}, /, **kwds)
 
       Like "substitute()", except that if placeholders are missing
@@ -742,14 +742,14 @@ class string.Template(template)                *Template..string.txt;*
       malformed templates containing dangling delimiters, unmatched
       braces, or placeholders that are not valid Python identifiers.
 
-   is_valid()                          *Template.is_valid()..string.txt;*
+   is_valid()                           *Template.is_valid()..string.txt*
 
       Returns false if the template has invalid placeholders that will
       cause "substitute()" to raise "ValueError".
 
       New in version 3.11.
 
-   get_identifiers()            *Template.get_identifiers()..string.txt;*
+   get_identifiers()             *Template.get_identifiers()..string.txt*
 
       Returns a list of the valid identifiers in the template, in the
       order they first appear, ignoring any invalid identifiers.
@@ -758,7 +758,7 @@ class string.Template(template)                *Template..string.txt;*
 
    "Template" instances also provide one public data attribute:
 
-   template                              *Template.template..string.txt;*
+   template                               *Template.template..string.txt*
 
       This is the object passed to the constructor’s _template_
       argument.  In general, you shouldn’t change it, but read-only
@@ -852,7 +852,7 @@ matches the template without one of these named groups matching.
 Helper functions
 ================
 
-string.capwords(s, sep=None)                 *capwords()..string.txt;*
+string.capwords(s, sep=None)                  *capwords()..string.txt*
 
    Split the argument into words using "str.split()", capitalize each
    word using "str.capitalize()", and join the capitalized words using

@@ -1,4 +1,4 @@
-*functools.txt;*                              Last change: 2023 Sep 09
+*functools.txt;*                              Last change: 2023 Sep 10
 
 "functools" — Higher-order functions and operations on callable objects
 ***********************************************************************
@@ -13,7 +13,7 @@ be treated as a function for the purposes of this module.
 
 The "functools" module defines the following functions:
 
-@functools.cache(user_function)              *cache()..functools.txt;*
+@functools.cache(user_function)               *cache()..functools.txt*
 
    Simple lightweight unbounded function cache.  Sometimes called
    “memoize”.
@@ -46,7 +46,7 @@ The "functools" module defines the following functions:
 
    New in version 3.9.
 
-@functools.cached_property(func)   *cached_property()..functools.txt;*
+@functools.cached_property(func)    *cached_property()..functools.txt*
 
    Transform a method of a class into a property whose value is
    computed once and then cached as a normal attribute for the life of
@@ -113,7 +113,7 @@ The "functools" module defines the following functions:
    which could result in unacceptably high lock contention. In Python
    3.12+ this locking is removed.
 
-functools.cmp_to_key(func)              *cmp_to_key()..functools.txt;*
+functools.cmp_to_key(func)               *cmp_to_key()..functools.txt*
 
    Transform an old-style comparison function to a _key function_.
    Used with tools that accept key functions (such as "sorted()",
@@ -137,7 +137,7 @@ functools.cmp_to_key(func)              *cmp_to_key()..functools.txt;*
 
    New in version 3.2.
 
-@functools.lru_cache(user_function)      *lru_cache()..functools.txt;*
+@functools.lru_cache(user_function)       *lru_cache()..functools.txt*
 @functools.lru_cache(maxsize=128, typed=False)
 
    Decorator to wrap a function with a memoizing callable that saves
@@ -264,7 +264,7 @@ functools.cmp_to_key(func)              *cmp_to_key()..functools.txt;*
 
    New in version 3.9: Added the function "cache_parameters()"
 
-@functools.total_ordering           *total_ordering()..functools.txt;*
+@functools.total_ordering            *total_ordering()..functools.txt*
 
    Given a class defining one or more rich comparison ordering
    methods, this class decorator supplies the rest.  This simplifies
@@ -315,7 +315,7 @@ functools.cmp_to_key(func)              *cmp_to_key()..functools.txt;*
    underlying comparison function for unrecognised types is now
    supported.
 
-                                           *partial()..functools.txt;*
+                                            *partial()..functools.txt*
 functools.partial(func, /, *args, **keywords)
 
    Return a new partial object which when called will behave like
@@ -347,7 +347,7 @@ functools.partial(func, /, *args, **keywords)
    >>> basetwo('10010')
    18
 
-                                       *partialmethod..functools.txt;*
+                                        *partialmethod..functools.txt*
 class functools.partialmethod(func, /, *args, **keywords)
 
    Return a new "partialmethod" descriptor which behaves like
@@ -391,7 +391,7 @@ class functools.partialmethod(func, /, *args, **keywords)
 <
    New in version 3.4.
 
-                                            *reduce()..functools.txt;*
+                                             *reduce()..functools.txt*
 functools.reduce(function, iterable[, initializer])
 
    Apply _function_ of two arguments cumulatively to the items of
@@ -420,7 +420,7 @@ functools.reduce(function, iterable[, initializer])
    See "itertools.accumulate()" for an iterator that yields all
    intermediate values.
 
-@functools.singledispatch           *singledispatch()..functools.txt;*
+@functools.singledispatch            *singledispatch()..functools.txt*
 
    Transform a function into a _single-dispatch_ _generic function_.
 
@@ -572,7 +572,7 @@ functools.reduce(function, iterable[, initializer])
    Changed in version 3.11: The "register()" attribute now supports
    "types.UnionType" and "typing.Union" as type annotations.
 
-                                *singledispatchmethod..functools.txt;*
+                                 *singledispatchmethod..functools.txt*
 class functools.singledispatchmethod(func)
 
    Transform a method into a _single-dispatch_ _generic function_.
@@ -622,7 +622,7 @@ class functools.singledispatchmethod(func)
 
    New in version 3.8.
 
-                                    *update_wrapper()..functools.txt;*
+                                     *update_wrapper()..functools.txt*
 functools.update_wrapper(wrapper, wrapped, assigned=WRAPPER_ASSIGNMENTS, updated=WRAPPER_UPDATES)
 
    Update a _wrapper_ function to look like the _wrapped_ function.
@@ -668,7 +668,7 @@ functools.update_wrapper(wrapper, wrapped, assigned=WRAPPER_ASSIGNMENTS, updated
    refers to the wrapped function, even if that function defined a
    "__wrapped__" attribute. (see bpo-17482)
 
-                                             *wraps()..functools.txt;*
+                                              *wraps()..functools.txt*
 @functools.wraps(wrapped, assigned=WRAPPER_ASSIGNMENTS, updated=WRAPPER_UPDATES)
 
    This is a convenience function for invoking "update_wrapper()" as a
@@ -708,17 +708,17 @@ functools.update_wrapper(wrapper, wrapped, assigned=WRAPPER_ASSIGNMENTS, updated
 "partial" objects are callable objects created by "partial()". They
 have three read-only attributes:
 
-partial.func                            *partial.func..functools.txt;*
+partial.func                             *partial.func..functools.txt*
 
    A callable object or function.  Calls to the "partial" object will
    be forwarded to "func" with new arguments and keywords.
 
-partial.args                            *partial.args..functools.txt;*
+partial.args                             *partial.args..functools.txt*
 
    The leftmost positional arguments that will be prepended to the
    positional arguments provided to a "partial" object call.
 
-partial.keywords                    *partial.keywords..functools.txt;*
+partial.keywords                     *partial.keywords..functools.txt*
 
    The keyword arguments that will be supplied when the "partial"
    object is called.

@@ -1,4 +1,4 @@
-*howto-regex.txt;*                            Last change: 2023 Sep 09
+*howto-regex.txt;*                            Last change: 2023 Sep 10
 
 Regular Expression HOWTO
 ************************
@@ -552,8 +552,8 @@ explanation of each one.
 |                                   | more cleanly and understandably.             |
 +-----------------------------------+----------------------------------------------+
 
-re.I                                             *I..howto-regex.txt;*
-re.IGNORECASE                           *IGNORECASE..howto-regex.txt;*
+re.I                                              *I..howto-regex.txt*
+re.IGNORECASE                            *IGNORECASE..howto-regex.txt*
 
    Perform case-insensitive matching; character class and literal
    strings will match letters by ignoring case.  For example, "[A-Z]"
@@ -569,8 +569,8 @@ re.IGNORECASE                           *IGNORECASE..howto-regex.txt;*
    doesn’t take the current locale into account; it will if you also
    set the "LOCALE" flag.
 
-re.L                                             *L..howto-regex.txt;*
-re.LOCALE                                   *LOCALE..howto-regex.txt;*
+re.L                                              *L..howto-regex.txt*
+re.LOCALE                                    *LOCALE..howto-regex.txt*
 
    Make "\w", "\W", "\b", "\B" and case-insensitive matching dependent
    on the current locale instead of the Unicode database.
@@ -593,8 +593,8 @@ re.LOCALE                                   *LOCALE..howto-regex.txt;*
    Python 3 for Unicode (str) patterns, and it is able to handle
    different locales/languages.
 
-re.M                                             *M..howto-regex.txt;*
-re.MULTILINE                             *MULTILINE..howto-regex.txt;*
+re.M                                              *M..howto-regex.txt*
+re.MULTILINE                              *MULTILINE..howto-regex.txt*
 
    ("^" and "$" haven’t been explained yet;  they’ll be introduced in
    section More Metacharacters.)
@@ -608,22 +608,22 @@ re.MULTILINE                             *MULTILINE..howto-regex.txt;*
    the end of the string and at the end of each line (immediately
    preceding each newline).
 
-re.S                                             *S..howto-regex.txt;*
-re.DOTALL                                   *DOTALL..howto-regex.txt;*
+re.S                                              *S..howto-regex.txt*
+re.DOTALL                                    *DOTALL..howto-regex.txt*
 
    Makes the "'.'" special character match any character at all,
    including a newline; without this flag, "'.'" will match anything
    _except_ a newline.
 
-re.A                                             *A..howto-regex.txt;*
-re.ASCII                                     *ASCII..howto-regex.txt;*
+re.A                                              *A..howto-regex.txt*
+re.ASCII                                      *ASCII..howto-regex.txt*
 
    Make "\w", "\W", "\b", "\B", "\s" and "\S" perform ASCII-only
    matching instead of full Unicode matching. This is only meaningful
    for Unicode patterns, and is ignored for byte patterns.
 
-re.X                                             *X..howto-regex.txt;*
-re.VERBOSE                                 *VERBOSE..howto-regex.txt;*
+re.X                                              *X..howto-regex.txt*
+re.VERBOSE                                  *VERBOSE..howto-regex.txt*
 
    This flag allows you to write regular expressions that are more
    readable by granting you more flexibility in how you can format
@@ -1092,7 +1092,7 @@ delimiters that you can split by; string "split()" only supports
 splitting by whitespace or by a fixed string.  As you’d expect,
 there’s a module-level "re.split()" function, too.
 
-.split(string[, maxsplit=0])              *.split()..howto-regex.txt;*
+.split(string[, maxsplit=0])               *.split()..howto-regex.txt*
 
    Split _string_ by the matches of the regular expression.  If
    capturing parentheses are used in the RE, then their contents will
@@ -1142,7 +1142,7 @@ replace them with a different string.  The "sub()" method takes a
 replacement value, which can be either a string or a function, and the
 string to be processed.
 
-.sub(replacement, string[, count=0])        *.sub()..howto-regex.txt;*
+.sub(replacement, string[, count=0])         *.sub()..howto-regex.txt*
 
    Returns the string obtained by replacing the leftmost non-
    overlapping occurrences of the RE in _string_ by the replacement

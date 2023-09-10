@@ -1,4 +1,4 @@
-*select.txt;*                                 Last change: 2023 Sep 09
+*select.txt;*                                 Last change: 2023 Sep 10
 
 "select" — Waiting for I/O completion
 *************************************
@@ -29,14 +29,14 @@ more information.
 
 The module defines the following:
 
-exception select.error                            *error..select.txt;*
+exception select.error                             *error..select.txt*
 
    A deprecated alias of "OSError".
 
    Changed in version 3.3: Following **PEP 3151**, this class was made
    an alias of "OSError".
 
-select.devpoll()                              *devpoll()..select.txt;*
+select.devpoll()                               *devpoll()..select.txt*
 
    (Only supported on Solaris and derivatives.)  Returns a "/dev/poll"
    polling object; see section /dev/poll Polling Objects below for the
@@ -55,7 +55,7 @@ select.devpoll()                              *devpoll()..select.txt;*
    Changed in version 3.4: The new file descriptor is now non-
    inheritable.
 
-select.epoll(sizehint=-1, flags=0)              *epoll()..select.txt;*
+select.epoll(sizehint=-1, flags=0)               *epoll()..select.txt*
 
    (Only supported on Linux 2.5.44 and newer.) Return an edge polling
    object, which can be used as Edge or Level Triggered interface for
@@ -89,14 +89,14 @@ select.epoll(sizehint=-1, flags=0)              *epoll()..select.txt;*
    "select.EPOLL_CLOEXEC" is used by default now. Use
    "os.set_inheritable()" to make the file descriptor inheritable.
 
-select.poll()                                    *poll()..select.txt;*
+select.poll()                                     *poll()..select.txt*
 
    (Not supported by all operating systems.)  Returns a polling
    object, which supports registering and unregistering file
    descriptors, and then polling them for I/O events; see section
    Polling Objects below for the methods supported by polling objects.
 
-select.kqueue()                                *kqueue()..select.txt;*
+select.kqueue()                                 *kqueue()..select.txt*
 
    (Only supported on BSD.)  Returns a kernel queue object; see
    section Kqueue Objects below for the methods supported by kqueue
@@ -107,15 +107,14 @@ select.kqueue()                                *kqueue()..select.txt;*
    Changed in version 3.4: The new file descriptor is now non-
    inheritable.
 
-                                               *kevent()..select.txt;*
+                                                *kevent()..select.txt*
 select.kevent(ident, filter=KQ_FILTER_READ, flags=KQ_EV_ADD, fflags=0, data=0, udata=0)
 
    (Only supported on BSD.)  Returns a kernel event object; see
    section Kevent Objects below for the methods supported by kevent
    objects.
 
-                                               *select()..select.txt;*
-select.select(rlist, wlist, xlist[, timeout])
+select.select(rlist, wlist, xlist[, timeout])   *select()..select.txt*
 
    This is a straightforward interface to the Unix "select()" system
    call. The first three arguments are iterables of ‘waitable
@@ -162,7 +161,7 @@ select.select(rlist, wlist, xlist[, timeout])
    signal handler raises an exception (see **PEP 475** for the
    rationale), instead of raising "InterruptedError".
 
-select.PIPE_BUF                                *PIPE_BUF..select.txt;*
+select.PIPE_BUF                                 *PIPE_BUF..select.txt*
 
    The minimum number of bytes which can be written without blocking
    to a pipe when the pipe has been reported as ready for writing by
@@ -185,25 +184,25 @@ descriptors), "/dev/poll" is O(active file descriptors).
 
 "/dev/poll" behaviour is very close to the standard "poll()" object.
 
-devpoll.close()                         *devpoll.close()..select.txt;*
+devpoll.close()                          *devpoll.close()..select.txt*
 
    Close the file descriptor of the polling object.
 
    New in version 3.4.
 
-devpoll.closed                           *devpoll.closed..select.txt;*
+devpoll.closed                            *devpoll.closed..select.txt*
 
    "True" if the polling object is closed.
 
    New in version 3.4.
 
-devpoll.fileno()                       *devpoll.fileno()..select.txt;*
+devpoll.fileno()                        *devpoll.fileno()..select.txt*
 
    Return the file descriptor number of the polling object.
 
    New in version 3.4.
 
-devpoll.register(fd[, eventmask])    *devpoll.register()..select.txt;*
+devpoll.register(fd[, eventmask])     *devpoll.register()..select.txt*
 
    Register a file descriptor with the polling object.  Future calls
    to the "poll()" method will then check whether the file descriptor
@@ -224,12 +223,12 @@ devpoll.register(fd[, eventmask])    *devpoll.register()..select.txt;*
      unregister or modify it first. This is an important difference
      compared with "poll()".
 
-devpoll.modify(fd[, eventmask])        *devpoll.modify()..select.txt;*
+devpoll.modify(fd[, eventmask])         *devpoll.modify()..select.txt*
 
    This method does an "unregister()" followed by a "register()". It
    is (a bit) more efficient that doing the same explicitly.
 
-devpoll.unregister(fd)             *devpoll.unregister()..select.txt;*
+devpoll.unregister(fd)              *devpoll.unregister()..select.txt*
 
    Remove a file descriptor being tracked by a polling object.  Just
    like the "register()" method, _fd_ can be an integer or an object
@@ -238,7 +237,7 @@ devpoll.unregister(fd)             *devpoll.unregister()..select.txt;*
    Attempting to remove a file descriptor that was never registered is
    safely ignored.
 
-devpoll.poll([timeout])                  *devpoll.poll()..select.txt;*
+devpoll.poll([timeout])                   *devpoll.poll()..select.txt*
 
    Polls the set of registered file descriptors, and returns a
    possibly empty list containing "(fd, event)" 2-tuples for the
@@ -307,38 +306,38 @@ Edge and Level Trigger Polling (epoll) Objects
    New in version 3.6: "EPOLLEXCLUSIVE" was added.  It’s only
    supported by Linux Kernel 4.5 or later.
 
-epoll.close()                             *epoll.close()..select.txt;*
+epoll.close()                              *epoll.close()..select.txt*
 
    Close the control file descriptor of the epoll object.
 
-epoll.closed                               *epoll.closed..select.txt;*
+epoll.closed                                *epoll.closed..select.txt*
 
    "True" if the epoll object is closed.
 
-epoll.fileno()                           *epoll.fileno()..select.txt;*
+epoll.fileno()                            *epoll.fileno()..select.txt*
 
    Return the file descriptor number of the control fd.
 
-epoll.fromfd(fd)                         *epoll.fromfd()..select.txt;*
+epoll.fromfd(fd)                          *epoll.fromfd()..select.txt*
 
    Create an epoll object from a given file descriptor.
 
-epoll.register(fd[, eventmask])        *epoll.register()..select.txt;*
+epoll.register(fd[, eventmask])         *epoll.register()..select.txt*
 
    Register a fd descriptor with the epoll object.
 
-epoll.modify(fd, eventmask)              *epoll.modify()..select.txt;*
+epoll.modify(fd, eventmask)               *epoll.modify()..select.txt*
 
    Modify a registered file descriptor.
 
-epoll.unregister(fd)                 *epoll.unregister()..select.txt;*
+epoll.unregister(fd)                  *epoll.unregister()..select.txt*
 
    Remove a registered file descriptor from the epoll object.
 
    Changed in version 3.9: The method no longer ignores the "EBADF"
    error.
 
-epoll.poll(timeout=None, maxevents=-1)     *epoll.poll()..select.txt;*
+epoll.poll(timeout=None, maxevents=-1)      *epoll.poll()..select.txt*
 
    Wait for events. timeout in seconds (float)
 
@@ -360,7 +359,7 @@ afterward the whole bitmap has to be linearly scanned again.
 "select()" is O(highest file descriptor), while "poll()" is O(number
 of file descriptors).
 
-poll.register(fd[, eventmask])          *poll.register()..select.txt;*
+poll.register(fd[, eventmask])           *poll.register()..select.txt*
 
    Register a file descriptor with the polling object.  Future calls
    to the "poll()" method will then check whether the file descriptor
@@ -398,14 +397,14 @@ poll.register(fd[, eventmask])          *poll.register()..select.txt;*
    error, and has the same effect as registering the descriptor
    exactly once.
 
-poll.modify(fd, eventmask)                *poll.modify()..select.txt;*
+poll.modify(fd, eventmask)                 *poll.modify()..select.txt*
 
    Modifies an already registered fd. This has the same effect as
    "register(fd, eventmask)".  Attempting to modify a file descriptor
    that was never registered causes an "OSError" exception with errno
    "ENOENT" to be raised.
 
-poll.unregister(fd)                   *poll.unregister()..select.txt;*
+poll.unregister(fd)                    *poll.unregister()..select.txt*
 
    Remove a file descriptor being tracked by a polling object.  Just
    like the "register()" method, _fd_ can be an integer or an object
@@ -414,7 +413,7 @@ poll.unregister(fd)                   *poll.unregister()..select.txt;*
    Attempting to remove a file descriptor that was never registered
    causes a "KeyError" exception to be raised.
 
-poll.poll([timeout])                        *poll.poll()..select.txt;*
+poll.poll([timeout])                         *poll.poll()..select.txt*
 
    Polls the set of registered file descriptors, and returns a
    possibly empty list containing "(fd, event)" 2-tuples for the
@@ -438,23 +437,23 @@ poll.poll([timeout])                        *poll.poll()..select.txt;*
 Kqueue Objects
 ==============
 
-kqueue.close()                           *kqueue.close()..select.txt;*
+kqueue.close()                            *kqueue.close()..select.txt*
 
    Close the control file descriptor of the kqueue object.
 
-kqueue.closed                             *kqueue.closed..select.txt;*
+kqueue.closed                              *kqueue.closed..select.txt*
 
    "True" if the kqueue object is closed.
 
-kqueue.fileno()                         *kqueue.fileno()..select.txt;*
+kqueue.fileno()                          *kqueue.fileno()..select.txt*
 
    Return the file descriptor number of the control fd.
 
-kqueue.fromfd(fd)                       *kqueue.fromfd()..select.txt;*
+kqueue.fromfd(fd)                        *kqueue.fromfd()..select.txt*
 
    Create a kqueue object from a given file descriptor.
 
-                                       *kqueue.control()..select.txt;*
+                                        *kqueue.control()..select.txt*
 kqueue.control(changelist, max_events[, timeout]) -> eventlist
 
    Low level interface to kevent
@@ -477,14 +476,14 @@ Kevent Objects
 
 https://man.freebsd.org/cgi/man.cgi?query=kqueue&sektion=2
 
-kevent.ident                               *kevent.ident..select.txt;*
+kevent.ident                                *kevent.ident..select.txt*
 
    Value used to identify the event. The interpretation depends on the
    filter but it’s usually the file descriptor. In the constructor
    ident can either be an int or an object with a "fileno()" method.
    kevent stores the integer internally.
 
-kevent.filter                             *kevent.filter..select.txt;*
+kevent.filter                              *kevent.filter..select.txt*
 
    Name of the kernel filter.
 
@@ -513,7 +512,7 @@ kevent.filter                             *kevent.filter..select.txt;*
    | "KQ_FILTER_TIMER"           | Establishes an arbitrary timer                |
    +-----------------------------+-----------------------------------------------+
 
-kevent.flags                               *kevent.flags..select.txt;*
+kevent.flags                                *kevent.flags..select.txt*
 
    Filter action.
 
@@ -541,7 +540,7 @@ kevent.flags                               *kevent.flags..select.txt;*
    | "KQ_EV_ERROR"               | See return values                             |
    +-----------------------------+-----------------------------------------------+
 
-kevent.fflags                             *kevent.fflags..select.txt;*
+kevent.fflags                              *kevent.fflags..select.txt*
 
    Filter specific flags.
 
@@ -608,11 +607,11 @@ kevent.fflags                             *kevent.fflags..select.txt;*
    | "KQ_NOTE_LINKINV"            | link state is invalid                        |
    +------------------------------+----------------------------------------------+
 
-kevent.data                                 *kevent.data..select.txt;*
+kevent.data                                  *kevent.data..select.txt*
 
    Filter specific data.
 
-kevent.udata                               *kevent.udata..select.txt;*
+kevent.udata                                *kevent.udata..select.txt*
 
    User defined value.
 

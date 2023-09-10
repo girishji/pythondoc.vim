@@ -1,4 +1,4 @@
-*tomllib.txt;*                                Last change: 2023 Sep 09
+*tomllib.txt;*                                Last change: 2023 Sep 10
 
 "tomllib" — Parse TOML files
 ****************************
@@ -27,7 +27,7 @@ See also:
 
 This module defines the following functions:
 
-tomllib.load(fp, /, *, parse_float=float)       *load()..tomllib.txt;*
+tomllib.load(fp, /, *, parse_float=float)        *load()..tomllib.txt*
 
    Read a TOML file. The first argument should be a readable and
    binary file object. Return a "dict". Convert TOML types to Python
@@ -41,7 +41,7 @@ tomllib.load(fp, /, *, parse_float=float)       *load()..tomllib.txt;*
 
    A "TOMLDecodeError" will be raised on an invalid TOML document.
 
-tomllib.loads(s, /, *, parse_float=float)      *loads()..tomllib.txt;*
+tomllib.loads(s, /, *, parse_float=float)       *loads()..tomllib.txt*
 
    Load TOML from a "str" object. Return a "dict". Convert TOML types
    to Python using this conversion table. The _parse_float_ argument
@@ -51,7 +51,7 @@ tomllib.loads(s, /, *, parse_float=float)      *loads()..tomllib.txt;*
 
 The following exceptions are available:
 
-exception tomllib.TOMLDecodeError      *TOMLDecodeError..tomllib.txt;*
+exception tomllib.TOMLDecodeError       *TOMLDecodeError..tomllib.txt*
 
    Subclass of "ValueError".
 

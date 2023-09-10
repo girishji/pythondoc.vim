@@ -1,4 +1,4 @@
-*asyncio-subprocess.txt;*                     Last change: 2023 Sep 09
+*asyncio-subprocess.txt;*                     Last change: 2023 Sep 10
 
 Subprocesses
 ************
@@ -56,7 +56,7 @@ See also the Examples subsection.
 Creating Subprocesses
 =====================
 
-                   *create_subprocess_exec()..asyncio-subprocess.txt;*
+                    *create_subprocess_exec()..asyncio-subprocess.txt*
 coroutine asyncio.create_subprocess_exec(program, *args, stdin=None, stdout=None, stderr=None, limit=None, **kwds)
 
    Create a subprocess.
@@ -72,7 +72,7 @@ coroutine asyncio.create_subprocess_exec(program, *args, stdin=None, stdout=None
 
    Changed in version 3.10: Removed the _loop_ parameter.
 
-                  *create_subprocess_shell()..asyncio-subprocess.txt;*
+                   *create_subprocess_shell()..asyncio-subprocess.txt*
 coroutine asyncio.create_subprocess_shell(cmd, stdin=None, stdout=None, stderr=None, limit=None, **kwds)
 
    Run the _cmd_ shell command.
@@ -113,7 +113,7 @@ See also:
 Constants
 =========
 
-                    *asyncio.subprocess.PIPE..asyncio-subprocess.txt;*
+                     *asyncio.subprocess.PIPE..asyncio-subprocess.txt*
 asyncio.subprocess.PIPE
 
    Can be passed to the _stdin_, _stdout_ or _stderr_ parameters.
@@ -125,14 +125,14 @@ asyncio.subprocess.PIPE
    "Process.stdout" and "Process.stderr" attributes will point to
    "StreamReader" instances.
 
-                  *asyncio.subprocess.STDOUT..asyncio-subprocess.txt;*
+                   *asyncio.subprocess.STDOUT..asyncio-subprocess.txt*
 asyncio.subprocess.STDOUT
 
    Special value that can be used as the _stderr_ argument and
    indicates that standard error should be redirected into standard
    output.
 
-                 *asyncio.subprocess.DEVNULL..asyncio-subprocess.txt;*
+                  *asyncio.subprocess.DEVNULL..asyncio-subprocess.txt*
 asyncio.subprocess.DEVNULL
 
    Special value that can be used as the _stdin_, _stdout_ or _stderr_
@@ -149,7 +149,7 @@ functions return instances of the _Process_ class.  _Process_ is a
 high-level wrapper that allows communicating with subprocesses and
 watching for their completion.
 
-                 *asyncio.subprocess.Process..asyncio-subprocess.txt;*
+                  *asyncio.subprocess.Process..asyncio-subprocess.txt*
 class asyncio.subprocess.Process
 
    An object that wraps OS processes created by the
@@ -175,7 +175,7 @@ class asyncio.subprocess.Process
 
    See also the Subprocess and Threads section.
 
-          *asyncio.subprocess.Process.wait()..asyncio-subprocess.txt;*
+           *asyncio.subprocess.Process.wait()..asyncio-subprocess.txt*
    coroutine wait()
 
       Wait for the child process to terminate.
@@ -190,7 +190,7 @@ class asyncio.subprocess.Process
         data. Use the "communicate()" method when using pipes to avoid
         this condition.
 
-   *asyncio.subprocess.Process.communicate()..asyncio-subprocess.txt;*
+    *asyncio.subprocess.Process.communicate()..asyncio-subprocess.txt*
    coroutine communicate(input=None)
 
       Interact with process:
@@ -225,7 +225,7 @@ class asyncio.subprocess.Process
       Changed in version 3.12: _stdin_ gets closed when _input=None_
       too.
 
-   *asyncio.subprocess.Process.send_signal()..asyncio-subprocess.txt;*
+    *asyncio.subprocess.Process.send_signal()..asyncio-subprocess.txt*
    send_signal(signal)
 
       Sends the signal _signal_ to the child process.
@@ -237,7 +237,7 @@ class asyncio.subprocess.Process
         started with a _creationflags_ parameter which includes
         "CREATE_NEW_PROCESS_GROUP".
 
-     *asyncio.subprocess.Process.terminate()..asyncio-subprocess.txt;*
+      *asyncio.subprocess.Process.terminate()..asyncio-subprocess.txt*
    terminate()
 
       Stop the child process.
@@ -248,7 +248,7 @@ class asyncio.subprocess.Process
       On Windows the Win32 API function "TerminateProcess()" is called
       to stop the child process.
 
-   kill()    *asyncio.subprocess.Process.kill()..asyncio-subprocess.txt;*
+   kill()     *asyncio.subprocess.Process.kill()..asyncio-subprocess.txt*
 
       Kill the child process.
 
@@ -257,17 +257,17 @@ class asyncio.subprocess.Process
 
       On Windows this method is an alias for "terminate()".
 
-   stdin      *asyncio.subprocess.Process.stdin..asyncio-subprocess.txt;*
+   stdin       *asyncio.subprocess.Process.stdin..asyncio-subprocess.txt*
 
       Standard input stream ("StreamWriter") or "None" if the process
       was created with "stdin=None".
 
-   stdout    *asyncio.subprocess.Process.stdout..asyncio-subprocess.txt;*
+   stdout     *asyncio.subprocess.Process.stdout..asyncio-subprocess.txt*
 
       Standard output stream ("StreamReader") or "None" if the process
       was created with "stdout=None".
 
-   stderr    *asyncio.subprocess.Process.stderr..asyncio-subprocess.txt;*
+   stderr     *asyncio.subprocess.Process.stderr..asyncio-subprocess.txt*
 
       Standard error stream ("StreamReader") or "None" if the process
       was created with "stderr=None".
@@ -279,7 +279,7 @@ class asyncio.subprocess.Process
      process.stderr.read()". This avoids deadlocks due to streams
      pausing reading or writing and blocking the child process.
 
-   pid          *asyncio.subprocess.Process.pid..asyncio-subprocess.txt;*
+   pid           *asyncio.subprocess.Process.pid..asyncio-subprocess.txt*
 
       Process identification number (PID).
 
@@ -287,7 +287,7 @@ class asyncio.subprocess.Process
       "create_subprocess_shell()" function, this attribute is the PID
       of the spawned shell.
 
-      *asyncio.subprocess.Process.returncode..asyncio-subprocess.txt;*
+       *asyncio.subprocess.Process.returncode..asyncio-subprocess.txt*
    returncode
 
       Return code of the process when it exits.

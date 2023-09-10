@@ -1,4 +1,4 @@
-*logging.txt;*                                Last change: 2023 Sep 09
+*logging.txt;*                                Last change: 2023 Sep 10
 
 "logging" — Logging facility for Python
 ***************************************
@@ -73,9 +73,9 @@ construction "logging.getLogger(__name__)".  That’s because in a
 module, "__name__" is the module’s name in the Python package
 namespace.
 
-class logging.Logger                            *Logger..logging.txt;*
+class logging.Logger                             *Logger..logging.txt*
 
-   propagate                             *Logger.propagate..logging.txt;*
+   propagate                              *Logger.propagate..logging.txt*
 
       If this attribute evaluates to true, events logged to this
       logger will be passed to the handlers of higher level (ancestor)
@@ -113,7 +113,7 @@ class logging.Logger                            *Logger..logging.txt;*
         to attach handlers only to the root logger, and to let
         propagation take care of the rest.
 
-   setLevel(level)                      *Logger.setLevel()..logging.txt;*
+   setLevel(level)                       *Logger.setLevel()..logging.txt*
 
       Sets the threshold for this logger to _level_. Logging messages
       which are less severe than _level_ will be ignored; logging
@@ -151,14 +151,14 @@ class logging.Logger                            *Logger..logging.txt;*
       methods such as e.g. "getEffectiveLevel()" and "isEnabledFor()"
       will return/expect to be passed integers.
 
-   isEnabledFor(level)              *Logger.isEnabledFor()..logging.txt;*
+   isEnabledFor(level)               *Logger.isEnabledFor()..logging.txt*
 
       Indicates if a message of severity _level_ would be processed by
       this logger. This method checks first the module-level level set
       by "logging.disable(level)" and then the logger’s effective
       level as determined by "getEffectiveLevel()".
 
-   getEffectiveLevel()         *Logger.getEffectiveLevel()..logging.txt;*
+   getEffectiveLevel()          *Logger.getEffectiveLevel()..logging.txt*
 
       Indicates the effective level for this logger. If a value other
       than "NOTSET" has been set using "setLevel()", it is returned.
@@ -167,7 +167,7 @@ class logging.Logger                            *Logger..logging.txt;*
       The value returned is an integer, typically one of
       "logging.DEBUG", "logging.INFO" etc.
 
-   getChild(suffix)                     *Logger.getChild()..logging.txt;*
+   getChild(suffix)                      *Logger.getChild()..logging.txt*
 
       Returns a logger which is a descendant to this logger, as
       determined by the suffix. Thus,
@@ -179,7 +179,7 @@ class logging.Logger                            *Logger..logging.txt;*
 
       New in version 3.2.
 
-   getChildren()                     *Logger.getChildren()..logging.txt;*
+   getChildren()                      *Logger.getChildren()..logging.txt*
 
       Returns a set of loggers which are immediate children of this
       logger. So for example "logging.getLogger().getChildren()" might
@@ -191,7 +191,7 @@ class logging.Logger                            *Logger..logging.txt;*
 
       New in version 3.12.
 
-   debug(msg, *args, **kwargs)             *Logger.debug()..logging.txt;*
+   debug(msg, *args, **kwargs)              *Logger.debug()..logging.txt*
 
       Logs a message with level "DEBUG" on this logger. The _msg_ is
       the message format string, and the _args_ are the arguments
@@ -295,47 +295,47 @@ class logging.Logger                            *Logger..logging.txt;*
       Changed in version 3.13: Remove the undocumented "warn()" method
       which was an alias to the "warning()" method.
 
-   info(msg, *args, **kwargs)               *Logger.info()..logging.txt;*
+   info(msg, *args, **kwargs)                *Logger.info()..logging.txt*
 
       Logs a message with level "INFO" on this logger. The arguments
       are interpreted as for "debug()".
 
-   warning(msg, *args, **kwargs)         *Logger.warning()..logging.txt;*
+   warning(msg, *args, **kwargs)          *Logger.warning()..logging.txt*
 
       Logs a message with level "WARNING" on this logger. The
       arguments are interpreted as for "debug()".
 
-   error(msg, *args, **kwargs)             *Logger.error()..logging.txt;*
+   error(msg, *args, **kwargs)              *Logger.error()..logging.txt*
 
       Logs a message with level "ERROR" on this logger. The arguments
       are interpreted as for "debug()".
 
-   critical(msg, *args, **kwargs)       *Logger.critical()..logging.txt;*
+   critical(msg, *args, **kwargs)        *Logger.critical()..logging.txt*
 
       Logs a message with level "CRITICAL" on this logger. The
       arguments are interpreted as for "debug()".
 
-   log(level, msg, *args, **kwargs)          *Logger.log()..logging.txt;*
+   log(level, msg, *args, **kwargs)           *Logger.log()..logging.txt*
 
       Logs a message with integer level _level_ on this logger. The
       other arguments are interpreted as for "debug()".
 
-   exception(msg, *args, **kwargs)     *Logger.exception()..logging.txt;*
+   exception(msg, *args, **kwargs)      *Logger.exception()..logging.txt*
 
       Logs a message with level "ERROR" on this logger. The arguments
       are interpreted as for "debug()". Exception info is added to the
       logging message. This method should only be called from an
       exception handler.
 
-   addFilter(filter)                   *Logger.addFilter()..logging.txt;*
+   addFilter(filter)                    *Logger.addFilter()..logging.txt*
 
       Adds the specified filter _filter_ to this logger.
 
-   removeFilter(filter)             *Logger.removeFilter()..logging.txt;*
+   removeFilter(filter)              *Logger.removeFilter()..logging.txt*
 
       Removes the specified filter _filter_ from this logger.
 
-   filter(record)                         *Logger.filter()..logging.txt;*
+   filter(record)                          *Logger.filter()..logging.txt*
 
       Apply this logger’s filters to the record and return "True" if
       the record is to be processed. The filters are consulted in
@@ -344,15 +344,15 @@ class logging.Logger                            *Logger..logging.txt;*
       handlers). If one returns a false value, no further processing
       of the record occurs.
 
-   addHandler(hdlr)                   *Logger.addHandler()..logging.txt;*
+   addHandler(hdlr)                    *Logger.addHandler()..logging.txt*
 
       Adds the specified handler _hdlr_ to this logger.
 
-   removeHandler(hdlr)             *Logger.removeHandler()..logging.txt;*
+   removeHandler(hdlr)              *Logger.removeHandler()..logging.txt*
 
       Removes the specified handler _hdlr_ from this logger.
 
-                                   *Logger.findCaller()..logging.txt;*
+                                    *Logger.findCaller()..logging.txt*
    findCaller(stack_info=False, stacklevel=1)
 
       Finds the caller’s source filename and line number. Returns the
@@ -368,7 +368,7 @@ class logging.Logger                            *Logger..logging.txt;*
       event log refers not to the helper/wrapper code, but to the code
       that calls it.
 
-   handle(record)                         *Logger.handle()..logging.txt;*
+   handle(record)                          *Logger.handle()..logging.txt*
 
       Handles a record by passing it to all handlers associated with
       this logger and its ancestors (until a false value of
@@ -376,13 +376,13 @@ class logging.Logger                            *Logger..logging.txt;*
       received from a socket, as well as those created locally.
       Logger-level filtering is applied using "filter()".
 
-                                   *Logger.makeRecord()..logging.txt;*
+                                    *Logger.makeRecord()..logging.txt*
    makeRecord(name, level, fn, lno, msg, args, exc_info, func=None, extra=None, sinfo=None)
 
       This is a factory method which can be overridden in subclasses
       to create specialized "LogRecord" instances.
 
-   hasHandlers()                     *Logger.hasHandlers()..logging.txt;*
+   hasHandlers()                      *Logger.hasHandlers()..logging.txt*
 
       Checks to see if this logger has any handlers configured. This
       is done by looking for handlers in this logger and its parents
@@ -448,28 +448,28 @@ Handlers have the following attributes and methods. Note that
 for more useful subclasses. However, the "__init__()" method in
 subclasses needs to call "Handler.__init__()".
 
-class logging.Handler                          *Handler..logging.txt;*
+class logging.Handler                           *Handler..logging.txt*
 
-   __init__(level=NOTSET)              *Handler.__init__()..logging.txt;*
+   __init__(level=NOTSET)               *Handler.__init__()..logging.txt*
 
       Initializes the "Handler" instance by setting its level, setting
       the list of filters to the empty list and creating a lock (using
       "createLock()") for serializing access to an I/O mechanism.
 
-   createLock()                      *Handler.createLock()..logging.txt;*
+   createLock()                       *Handler.createLock()..logging.txt*
 
       Initializes a thread lock which can be used to serialize access
       to underlying I/O functionality which may not be threadsafe.
 
-   acquire()                            *Handler.acquire()..logging.txt;*
+   acquire()                             *Handler.acquire()..logging.txt*
 
       Acquires the thread lock created with "createLock()".
 
-   release()                            *Handler.release()..logging.txt;*
+   release()                             *Handler.release()..logging.txt*
 
       Releases the thread lock acquired with "acquire()".
 
-   setLevel(level)                     *Handler.setLevel()..logging.txt;*
+   setLevel(level)                      *Handler.setLevel()..logging.txt*
 
       Sets the threshold for this handler to _level_. Logging messages
       which are less severe than _level_ will be ignored. When a
@@ -482,19 +482,19 @@ class logging.Handler                          *Handler..logging.txt;*
       string representation of the level such as ‘INFO’ as an
       alternative to the integer constants such as "INFO".
 
-   setFormatter(fmt)               *Handler.setFormatter()..logging.txt;*
+   setFormatter(fmt)                *Handler.setFormatter()..logging.txt*
 
       Sets the "Formatter" for this handler to _fmt_.
 
-   addFilter(filter)                  *Handler.addFilter()..logging.txt;*
+   addFilter(filter)                   *Handler.addFilter()..logging.txt*
 
       Adds the specified filter _filter_ to this handler.
 
-   removeFilter(filter)            *Handler.removeFilter()..logging.txt;*
+   removeFilter(filter)             *Handler.removeFilter()..logging.txt*
 
       Removes the specified filter _filter_ from this handler.
 
-   filter(record)                        *Handler.filter()..logging.txt;*
+   filter(record)                         *Handler.filter()..logging.txt*
 
       Apply this handler’s filters to the record and return "True" if
       the record is to be processed. The filters are consulted in
@@ -502,26 +502,26 @@ class logging.Handler                          *Handler..logging.txt;*
       return a false value, the record will be emitted. If one returns
       a false value, the handler will not emit the record.
 
-   flush()                                *Handler.flush()..logging.txt;*
+   flush()                                 *Handler.flush()..logging.txt*
 
       Ensure all logging output has been flushed. This version does
       nothing and is intended to be implemented by subclasses.
 
-   close()                                *Handler.close()..logging.txt;*
+   close()                                 *Handler.close()..logging.txt*
 
       Tidy up any resources used by the handler. This version does no
       output but removes the handler from an internal list of handlers
       which is closed when "shutdown()" is called. Subclasses should
       ensure that this gets called from overridden "close()" methods.
 
-   handle(record)                        *Handler.handle()..logging.txt;*
+   handle(record)                         *Handler.handle()..logging.txt*
 
       Conditionally emits the specified logging record, depending on
       filters which may have been added to the handler. Wraps the
       actual emission of the record with acquisition/release of the
       I/O thread lock.
 
-   handleError(record)              *Handler.handleError()..logging.txt;*
+   handleError(record)               *Handler.handleError()..logging.txt*
 
       This method should be called from handlers when an exception is
       encountered during an "emit()" call. If the module-level
@@ -534,12 +534,12 @@ class logging.Handler                          *Handler..logging.txt;*
       exception occurred. (The default value of "raiseExceptions" is
       "True", as that is more useful during development).
 
-   format(record)                        *Handler.format()..logging.txt;*
+   format(record)                         *Handler.format()..logging.txt*
 
       Do formatting for a record - if a formatter is set, use it.
       Otherwise, use the default formatter for the module.
 
-   emit(record)                            *Handler.emit()..logging.txt;*
+   emit(record)                             *Handler.emit()..logging.txt*
 
       Do whatever it takes to actually log the specified logging
       record. This version is intended to be implemented by subclasses
@@ -573,7 +573,7 @@ For a list of handlers included as standard, see "logging.handlers".
 Formatter Objects
 =================
 
-                                             *Formatter..logging.txt;*
+                                              *Formatter..logging.txt*
 class logging.Formatter(fmt=None, datefmt=None, style='%', validate=True, *, defaults=None)
 
    Responsible for converting a "LogRecord" to an output string to be
@@ -615,7 +615,7 @@ class logging.Formatter(fmt=None, datefmt=None, style='%', validate=True, *, def
 
    New in version 3.10: The _defaults_ parameter.
 
-   format(record)                      *Formatter.format()..logging.txt;*
+   format(record)                       *Formatter.format()..logging.txt*
 
       The record’s attribute dictionary is used as the operand to a
       string formatting operation. Returns the resulting string.
@@ -639,7 +639,7 @@ class logging.Formatter(fmt=None, datefmt=None, style='%', validate=True, *, def
       exception information, using "formatStack()" to transform it if
       necessary.
 
-                                *Formatter.formatTime()..logging.txt;*
+                                 *Formatter.formatTime()..logging.txt*
    formatTime(record, datefmt=None)
 
       This method should be called from "format()" by a formatter
@@ -678,22 +678,21 @@ class logging.Formatter(fmt=None, datefmt=None, style='%', validate=True, *, def
 
       Changed in version 3.9: The "default_msec_format" can be "None".
 
-                           *Formatter.formatException()..logging.txt;*
-   formatException(exc_info)
+   formatException(exc_info)   *Formatter.formatException()..logging.txt*
 
       Formats the specified exception information (a standard
       exception tuple as returned by "sys.exc_info()") as a string.
       This default implementation just uses
       "traceback.print_exception()". The resulting string is returned.
 
-   formatStack(stack_info)        *Formatter.formatStack()..logging.txt;*
+   formatStack(stack_info)         *Formatter.formatStack()..logging.txt*
 
       Formats the specified stack information (a string as returned by
       "traceback.print_stack()", but with the last newline removed) as
       a string. This default implementation just returns the input
       value.
 
-                                    *BufferingFormatter..logging.txt;*
+                                     *BufferingFormatter..logging.txt*
 class logging.BufferingFormatter(linefmt=None)
 
    A base formatter class suitable for subclassing when you want to
@@ -702,7 +701,7 @@ class logging.BufferingFormatter(linefmt=None)
    single record). If not specified, the default formatter (which just
    outputs the event message) is used as the line formatter.
 
-                     *BufferingFormatter.formatHeader()..logging.txt;*
+                      *BufferingFormatter.formatHeader()..logging.txt*
    formatHeader(records)
 
       Return a header for a list of _records_. The base implementation
@@ -710,7 +709,7 @@ class logging.BufferingFormatter(linefmt=None)
       method if you want specific behaviour, e.g. to show the count of
       records, a title or a separator line.
 
-                     *BufferingFormatter.formatFooter()..logging.txt;*
+                      *BufferingFormatter.formatFooter()..logging.txt*
    formatFooter(records)
 
       Return a footer for a list of _records_. The base implementation
@@ -718,7 +717,7 @@ class logging.BufferingFormatter(linefmt=None)
       method if you want specific behaviour, e.g. to show the count of
       records or a separator line.
 
-   format(records)            *BufferingFormatter.format()..logging.txt;*
+   format(records)             *BufferingFormatter.format()..logging.txt*
 
       Return formatted text for a list of _records_. The base
       implementation just returns the empty string if there are no
@@ -737,14 +736,14 @@ events logged by loggers ‘A.B’, ‘A.B.C’, ‘A.B.C.D’, ‘A.B.D’ etc.
 not ‘A.BB’, ‘B.A.B’ etc. If initialized with the empty string, all
 events are passed.
 
-class logging.Filter(name='')                   *Filter..logging.txt;*
+class logging.Filter(name='')                    *Filter..logging.txt*
 
    Returns an instance of the "Filter" class. If _name_ is specified,
    it names a logger which, together with its children, will have its
    events allowed through the filter. If _name_ is the empty string,
    allows every event.
 
-   filter(record)                         *Filter.filter()..logging.txt;*
+   filter(record)                          *Filter.filter()..logging.txt*
 
       Is the specified record to be logged? Returns false for no, true
       for yes. Filters can either modify log records in-place or
@@ -796,7 +795,7 @@ time something is logged, and can be created manually via
 "makeLogRecord()" (for example, from a pickled event received over the
 wire).
 
-                                             *LogRecord..logging.txt;*
+                                              *LogRecord..logging.txt*
 class logging.LogRecord(name, level, pathname, lineno, msg, args, exc_info, func=None, sinfo=None)
 
    Contains all the information pertinent to the event being logged.
@@ -845,7 +844,7 @@ class logging.LogRecord(name, level, pathname, lineno, msg, args, exc_info, func
         stack information from the base of the stack in the current
         thread, up to the logging call.
 
-   getMessage()                    *LogRecord.getMessage()..logging.txt;*
+   getMessage()                     *LogRecord.getMessage()..logging.txt*
 
       Returns the message for this "LogRecord" instance after merging
       any user-supplied arguments with the message. If the user-
@@ -985,7 +984,7 @@ LoggerAdapter Objects
 information into logging calls. For a usage example, see the section
 on adding contextual information to your logging output.
 
-                                         *LoggerAdapter..logging.txt;*
+                                          *LoggerAdapter..logging.txt*
 class logging.LoggerAdapter(logger, extra, merge_extra=False)
 
    Returns an instance of "LoggerAdapter" initialized with an
@@ -996,7 +995,7 @@ class logging.LoggerAdapter(logger, extra, merge_extra=False)
    _extra_ argument of individual log calls and only use the one of
    the "LoggerAdapter" instance
 
-   process(msg, kwargs)           *LoggerAdapter.process()..logging.txt;*
+   process(msg, kwargs)            *LoggerAdapter.process()..logging.txt*
 
       Modifies the message and/or keyword arguments passed to a
       logging call in order to insert contextual information. This
@@ -1005,11 +1004,11 @@ class logging.LoggerAdapter(logger, extra, merge_extra=False)
       return value is a (_msg_, _kwargs_) tuple which has the
       (possibly modified) versions of the arguments passed in.
 
-   manager                          *LoggerAdapter.manager..logging.txt;*
+   manager                           *LoggerAdapter.manager..logging.txt*
 
       Delegates to the underlying "manager`" on _logger_.
 
-   _log                                *LoggerAdapter._log..logging.txt;*
+   _log                                 *LoggerAdapter._log..logging.txt*
 
       Delegates to the underlying "_log`()" method on _logger_.
 
@@ -1057,7 +1056,7 @@ Module-Level Functions
 In addition to the classes described above, there are a number of
 module-level functions.
 
-logging.getLogger(name=None)               *getLogger()..logging.txt;*
+logging.getLogger(name=None)                *getLogger()..logging.txt*
 
    Return a logger with the specified name or, if name is "None",
    return a logger which is the root logger of the hierarchy. If
@@ -1069,7 +1068,7 @@ logging.getLogger(name=None)               *getLogger()..logging.txt;*
    instance. This means that logger instances never need to be passed
    between different parts of an application.
 
-logging.getLoggerClass()              *getLoggerClass()..logging.txt;*
+logging.getLoggerClass()               *getLoggerClass()..logging.txt*
 
    Return either the standard "Logger" class, or the last class passed
    to "setLoggerClass()". This function may be called from within a
@@ -1080,7 +1079,7 @@ logging.getLoggerClass()              *getLoggerClass()..logging.txt;*
       class MyLogger(logging.getLoggerClass()):
           # ... override behaviour here
 <
-logging.getLogRecordFactory()    *getLogRecordFactory()..logging.txt;*
+logging.getLogRecordFactory()     *getLogRecordFactory()..logging.txt*
 
    Return a callable which is used to create a "LogRecord".
 
@@ -1091,7 +1090,7 @@ logging.getLogRecordFactory()    *getLogRecordFactory()..logging.txt;*
    See "setLogRecordFactory()" for more information about the how the
    factory is called.
 
-logging.debug(msg, *args, **kwargs)            *debug()..logging.txt;*
+logging.debug(msg, *args, **kwargs)             *debug()..logging.txt*
 
    Logs a message with level "DEBUG" on the root logger. The _msg_ is
    the message format string, and the _args_ are the arguments which
@@ -1169,12 +1168,12 @@ logging.debug(msg, *args, **kwargs)            *debug()..logging.txt;*
 
    Changed in version 3.2: The _stack_info_ parameter was added.
 
-logging.info(msg, *args, **kwargs)              *info()..logging.txt;*
+logging.info(msg, *args, **kwargs)               *info()..logging.txt*
 
    Logs a message with level "INFO" on the root logger. The arguments
    are interpreted as for "debug()".
 
-logging.warning(msg, *args, **kwargs)        *warning()..logging.txt;*
+logging.warning(msg, *args, **kwargs)         *warning()..logging.txt*
 
    Logs a message with level "WARNING" on the root logger. The
    arguments are interpreted as for "debug()".
@@ -1188,29 +1187,29 @@ logging.warning(msg, *args, **kwargs)        *warning()..logging.txt;*
    Changed in version 3.13: Remove the undocumented "warn()" function
    which was an alias to the "warning()" function.
 
-logging.error(msg, *args, **kwargs)            *error()..logging.txt;*
+logging.error(msg, *args, **kwargs)             *error()..logging.txt*
 
    Logs a message with level "ERROR" on the root logger. The arguments
    are interpreted as for "debug()".
 
-logging.critical(msg, *args, **kwargs)      *critical()..logging.txt;*
+logging.critical(msg, *args, **kwargs)       *critical()..logging.txt*
 
    Logs a message with level "CRITICAL" on the root logger. The
    arguments are interpreted as for "debug()".
 
-logging.exception(msg, *args, **kwargs)    *exception()..logging.txt;*
+logging.exception(msg, *args, **kwargs)     *exception()..logging.txt*
 
    Logs a message with level "ERROR" on the root logger. The arguments
    are interpreted as for "debug()". Exception info is added to the
    logging message. This function should only be called from an
    exception handler.
 
-logging.log(level, msg, *args, **kwargs)         *log()..logging.txt;*
+logging.log(level, msg, *args, **kwargs)          *log()..logging.txt*
 
    Logs a message with level _level_ on the root logger. The other
    arguments are interpreted as for "debug()".
 
-logging.disable(level=CRITICAL)              *disable()..logging.txt;*
+logging.disable(level=CRITICAL)               *disable()..logging.txt*
 
    Provides an overriding level _level_ for all loggers which takes
    precedence over the logger’s own level. When the need arises to
@@ -1233,8 +1232,7 @@ logging.disable(level=CRITICAL)              *disable()..logging.txt;*
    level "CRITICAL". See bpo-28524 for more information about this
    change.
 
-                                        *addLevelName()..logging.txt;*
-logging.addLevelName(level, levelName)
+logging.addLevelName(level, levelName)   *addLevelName()..logging.txt*
 
    Associates level _level_ with text _levelName_ in an internal
    dictionary, which is used to map numeric levels to a textual
@@ -1249,8 +1247,7 @@ logging.addLevelName(level, levelName)
      If you are thinking of defining your own levels, please see the
      section on Custom Levels.
 
-                                *getLevelNamesMapping()..logging.txt;*
-logging.getLevelNamesMapping()
+logging.getLevelNamesMapping()   *getLevelNamesMapping()..logging.txt*
 
    Returns a mapping from level names to their corresponding logging
    levels. For example, the string “CRITICAL” maps to "CRITICAL". The
@@ -1259,7 +1256,7 @@ logging.getLevelNamesMapping()
 
    New in version 3.11.
 
-logging.getLevelName(level)             *getLevelName()..logging.txt;*
+logging.getLevelName(level)              *getLevelName()..logging.txt*
 
    Returns the textual or numeric representation of logging level
    _level_.
@@ -1292,27 +1289,27 @@ logging.getLevelName(level)             *getLevelName()..logging.txt;*
    behaviour was considered a mistake, and was removed in Python 3.4,
    but reinstated in 3.4.2 due to retain backward compatibility.
 
-logging.getHandlerByName(name)      *getHandlerByName()..logging.txt;*
+logging.getHandlerByName(name)       *getHandlerByName()..logging.txt*
 
    Returns a handler with the specified _name_, or "None" if there is
    no handler with that name.
 
    New in version 3.12.
 
-logging.getHandlerNames()            *getHandlerNames()..logging.txt;*
+logging.getHandlerNames()             *getHandlerNames()..logging.txt*
 
    Returns an immutable set of all known handler names.
 
    New in version 3.12.
 
-logging.makeLogRecord(attrdict)        *makeLogRecord()..logging.txt;*
+logging.makeLogRecord(attrdict)         *makeLogRecord()..logging.txt*
 
    Creates and returns a new "LogRecord" instance whose attributes are
    defined by _attrdict_. This function is useful for taking a pickled
    "LogRecord" attribute dictionary, sent over a socket, and
    reconstituting it as a "LogRecord" instance at the receiving end.
 
-logging.basicConfig(**kwargs)            *basicConfig()..logging.txt;*
+logging.basicConfig(**kwargs)             *basicConfig()..logging.txt*
 
    Does basic configuration for the logging system by creating a
    "StreamHandler" with a default "Formatter" and adding it to the
@@ -1408,7 +1405,7 @@ logging.basicConfig(**kwargs)            *basicConfig()..logging.txt;*
    Changed in version 3.9: The _encoding_ and _errors_ arguments were
    added.
 
-logging.shutdown()                          *shutdown()..logging.txt;*
+logging.shutdown()                           *shutdown()..logging.txt*
 
    Informs the logging system to perform an orderly shutdown by
    flushing and closing all handlers. This should be called at
@@ -1419,7 +1416,7 @@ logging.shutdown()                          *shutdown()..logging.txt;*
    an exit handler (see "atexit"), so normally there’s no need to do
    that manually.
 
-logging.setLoggerClass(klass)         *setLoggerClass()..logging.txt;*
+logging.setLoggerClass(klass)          *setLoggerClass()..logging.txt*
 
    Tells the logging system to use the class _klass_ when
    instantiating a logger. The class should define "__init__()" such
@@ -1430,7 +1427,7 @@ logging.setLoggerClass(klass)         *setLoggerClass()..logging.txt;*
    not instantiate loggers directly using the subclass: continue to
    use the "logging.getLogger()" API to get your loggers.
 
-                                 *setLogRecordFactory()..logging.txt;*
+                                  *setLogRecordFactory()..logging.txt*
 logging.setLogRecordFactory(factory)
 
    Set a callable which is used to create a "LogRecord".
@@ -1485,7 +1482,7 @@ logging.setLogRecordFactory(factory)
 Module-Level Attributes
 =======================
 
-logging.lastResort                          *lastResort..logging.txt;*
+logging.lastResort                           *lastResort..logging.txt*
 
    A “handler of last resort” is available through this attribute.
    This is a "StreamHandler" writing to "sys.stderr" with a level of
@@ -1505,7 +1502,7 @@ Integration with the warnings module
 The "captureWarnings()" function can be used to integrate "logging"
 with the "warnings" module.
 
-logging.captureWarnings(capture)     *captureWarnings()..logging.txt;*
+logging.captureWarnings(capture)      *captureWarnings()..logging.txt*
 
    This function is used to turn the capture of warnings by logging on
    and off.

@@ -1,4 +1,4 @@
-*emailpolicy.txt;*                            Last change: 2023 Sep 09
+*email.policy.txt;*                           Last change: 2023 Sep 10
 
 "email.policy": Policy Objects
 ******************************
@@ -123,7 +123,7 @@ objects are added matters.  To illustrate:
    >>> apolicy.max_line_length
    100
 <
-class email.policy.Policy(**kw)             *Policy..emailpolicy.txt;*
+class email.policy.Policy(**kw)             *Policy..email.policy.txt*
 
    This is the _abstract base class_ for all policy classes.  It
    provides default implementations for a couple of trivial methods,
@@ -139,21 +139,21 @@ class email.policy.Policy(**kw)             *Policy..emailpolicy.txt;*
    This class defines the following properties, and thus values for
    the following may be passed in the constructor of any policy class:
 
-   max_line_length             *Policy.max_line_length..emailpolicy.txt;*
+   max_line_length             *Policy.max_line_length..email.policy.txt*
 
       The maximum length of any line in the serialized output, not
       counting the end of line character(s).  Default is 78, per **RFC
       5322**.  A value of "0" or "None" indicates that no line
       wrapping should be done at all.
 
-   linesep                             *Policy.linesep..emailpolicy.txt;*
+   linesep                             *Policy.linesep..email.policy.txt*
 
       The string to be used to terminate lines in serialized output.
       The default is "\n" because that’s the internal end-of-line
       discipline used by Python, though "\r\n" is required by the
       RFCs.
 
-   cte_type                           *Policy.cte_type..emailpolicy.txt;*
+   cte_type                           *Policy.cte_type..email.policy.txt*
 
       Controls the type of Content Transfer Encodings that may be or
       are required to be used.  The possible values are:
@@ -174,13 +174,13 @@ class email.policy.Policy(**kw)             *Policy..emailpolicy.txt;*
       a "Generator" is operating under a policy that specifies
       "cte_type=8bit", it will act as if "cte_type" is "7bit".
 
-   raise_on_defect             *Policy.raise_on_defect..emailpolicy.txt;*
+   raise_on_defect             *Policy.raise_on_defect..email.policy.txt*
 
       If "True", any defects encountered will be raised as errors.  If
       "False" (the default), defects will be passed to the
       "register_defect()" method.
 
-   mangle_from_                   *Policy.mangle_from_..emailpolicy.txt;*
+   mangle_from_                   *Policy.mangle_from_..email.policy.txt*
 
       If "True", lines starting with _“From “_ in the body are escaped
       by putting a ">" in front of them. This parameter is used when
@@ -189,7 +189,7 @@ class email.policy.Policy(**kw)             *Policy..emailpolicy.txt;*
 
       New in version 3.5: The _mangle_from__ parameter.
 
-   message_factory             *Policy.message_factory..emailpolicy.txt;*
+   message_factory             *Policy.message_factory..email.policy.txt*
 
       A factory function for constructing a new empty message object.
       Used by the parser when building messages.  Defaults to "None",
@@ -201,7 +201,7 @@ class email.policy.Policy(**kw)             *Policy..emailpolicy.txt;*
    using the email library to create policy instances with custom
    settings:
 
-   clone(**kw)                         *Policy.clone()..emailpolicy.txt;*
+   clone(**kw)                         *Policy.clone()..email.policy.txt*
 
       Return a new "Policy" instance whose attributes have the same
       values as the current instance, except where those attributes
@@ -211,7 +211,7 @@ class email.policy.Policy(**kw)             *Policy..emailpolicy.txt;*
    code, and are not intended to be called by an application using the
    email package. A custom policy must implement all of these methods.
 
-                            *Policy.handle_defect()..emailpolicy.txt;*
+                            *Policy.handle_defect()..email.policy.txt*
    handle_defect(obj, defect)
 
       Handle a _defect_ found on _obj_.  When the email package calls
@@ -222,7 +222,7 @@ class email.policy.Policy(**kw)             *Policy..emailpolicy.txt;*
       "False" (the default), _obj_ and _defect_ are passed to
       "register_defect()".
 
-                          *Policy.register_defect()..emailpolicy.txt;*
+                          *Policy.register_defect()..email.policy.txt*
    register_defect(obj, defect)
 
       Register a _defect_ on _obj_.  In the email package, _defect_
@@ -236,7 +236,7 @@ class email.policy.Policy(**kw)             *Policy..emailpolicy.txt;*
       also provide such an attribute, otherwise defects in parsed
       messages will raise unexpected errors.
 
-   header_max_count(name)   *Policy.header_max_count()..emailpolicy.txt;*
+   header_max_count(name)   *Policy.header_max_count()..email.policy.txt*
 
       Return the maximum allowed number of headers named _name_.
 
@@ -255,7 +255,7 @@ class email.policy.Policy(**kw)             *Policy..emailpolicy.txt;*
 
       The default implementation returns "None" for all header names.
 
-                      *Policy.header_source_parse()..emailpolicy.txt;*
+                      *Policy.header_source_parse()..email.policy.txt*
    header_source_parse(sourcelines)
 
       The email package calls this method with a list of strings, each
@@ -276,7 +276,7 @@ class email.policy.Policy(**kw)             *Policy..emailpolicy.txt;*
 
       There is no default implementation
 
-                       *Policy.header_store_parse()..emailpolicy.txt;*
+                       *Policy.header_store_parse()..email.policy.txt*
    header_store_parse(name, value)
 
       The email package calls this method with the name and value
@@ -293,7 +293,7 @@ class email.policy.Policy(**kw)             *Policy..emailpolicy.txt;*
 
       There is no default implementation
 
-                       *Policy.header_fetch_parse()..emailpolicy.txt;*
+                       *Policy.header_fetch_parse()..email.policy.txt*
    header_fetch_parse(name, value)
 
       The email package calls this method with the _name_ and _value_
@@ -311,7 +311,7 @@ class email.policy.Policy(**kw)             *Policy..emailpolicy.txt;*
 
       There is no default implementation
 
-   fold(name, value)                    *Policy.fold()..emailpolicy.txt;*
+   fold(name, value)                    *Policy.fold()..email.policy.txt*
 
       The email package calls this method with the _name_ and _value_
       currently stored in the "Message" for a given header.  The
@@ -325,7 +325,7 @@ class email.policy.Policy(**kw)             *Policy..emailpolicy.txt;*
       be no surrogateescaped binary data in the string returned by the
       method.
 
-   fold_binary(name, value)      *Policy.fold_binary()..emailpolicy.txt;*
+   fold_binary(name, value)      *Policy.fold_binary()..email.policy.txt*
 
       The same as "fold()", except that the returned value should be a
       bytes object rather than a string.
@@ -333,7 +333,7 @@ class email.policy.Policy(**kw)             *Policy..emailpolicy.txt;*
       _value_ may contain surrogateescaped binary data.  These could
       be converted back into binary data in the returned bytes object.
 
-class email.policy.EmailPolicy(**kw)   *EmailPolicy..emailpolicy.txt;*
+class email.policy.EmailPolicy(**kw)   *EmailPolicy..email.policy.txt*
 
    This concrete "Policy" provides behavior that is intended to be
    fully compliant with the current email RFCs.  These include (but
@@ -353,7 +353,7 @@ class email.policy.EmailPolicy(**kw)   *EmailPolicy..emailpolicy.txt;*
 
    New in version 3.6: [1]
 
-   utf8                              *EmailPolicy.utf8..emailpolicy.txt;*
+   utf8                              *EmailPolicy.utf8..email.policy.txt*
 
       If "False", follow **RFC 5322**, supporting non-ASCII characters
       in headers by encoding them as “encoded words”.  If "True",
@@ -361,7 +361,7 @@ class email.policy.EmailPolicy(**kw)   *EmailPolicy..emailpolicy.txt;*
       Messages formatted in this way may be passed to SMTP servers
       that support the "SMTPUTF8" extension (**RFC 6531**).
 
-   refold_source            *EmailPolicy.refold_source..emailpolicy.txt;*
+   refold_source            *EmailPolicy.refold_source..email.policy.txt*
 
       If the value for a header in the "Message" object originated
       from a "parser" (as opposed to being set by a program), this
@@ -380,7 +380,7 @@ class email.policy.EmailPolicy(**kw)   *EmailPolicy..emailpolicy.txt;*
 
       The default is "long".
 
-   header_factory          *EmailPolicy.header_factory..emailpolicy.txt;*
+   header_factory          *EmailPolicy.header_factory..email.policy.txt*
 
       A callable that takes two arguments, "name" and "value", where
       "name" is a header field name and "value" is an unfolded header
@@ -391,7 +391,7 @@ class email.policy.EmailPolicy(**kw)   *EmailPolicy..emailpolicy.txt;*
       header field stypes.  Support for additional custom parsing will
       be added in the future.
 
-   content_manager        *EmailPolicy.content_manager..emailpolicy.txt;*
+   content_manager        *EmailPolicy.content_manager..email.policy.txt*
 
       An object with at least two methods: get_content and
       set_content.  When the "get_content()" or "set_content()" method
@@ -406,14 +406,14 @@ class email.policy.EmailPolicy(**kw)   *EmailPolicy..emailpolicy.txt;*
    The class provides the following concrete implementations of the
    abstract methods of "Policy":
 
-                    *EmailPolicy.header_max_count()..emailpolicy.txt;*
+                    *EmailPolicy.header_max_count()..email.policy.txt*
    header_max_count(name)
 
       Returns the value of the "max_count" attribute of the
       specialized class used to represent the header with the given
       name.
 
-                 *EmailPolicy.header_source_parse()..emailpolicy.txt;*
+                 *EmailPolicy.header_source_parse()..email.policy.txt*
    header_source_parse(sourcelines)
 
       The name is parsed as everything up to the ‘":"’ and returned
@@ -422,7 +422,7 @@ class email.policy.EmailPolicy(**kw)   *EmailPolicy..emailpolicy.txt;*
       subsequent lines together, and stripping any trailing carriage
       return or linefeed characters.
 
-                  *EmailPolicy.header_store_parse()..emailpolicy.txt;*
+                  *EmailPolicy.header_store_parse()..email.policy.txt*
    header_store_parse(name, value)
 
       The name is returned unchanged.  If the input value has a "name"
@@ -432,7 +432,7 @@ class email.policy.EmailPolicy(**kw)   *EmailPolicy..emailpolicy.txt;*
       as the value.  In this case a "ValueError" is raised if the
       input value contains CR or LF characters.
 
-                  *EmailPolicy.header_fetch_parse()..emailpolicy.txt;*
+                  *EmailPolicy.header_fetch_parse()..email.policy.txt*
    header_fetch_parse(name, value)
 
       If the value has a "name" attribute, it is returned to
@@ -441,7 +441,7 @@ class email.policy.EmailPolicy(**kw)   *EmailPolicy..emailpolicy.txt;*
       the resulting header object is returned.  Any surrogateescaped
       bytes get turned into the unicode unknown-character glyph.
 
-   fold(name, value)               *EmailPolicy.fold()..emailpolicy.txt;*
+   fold(name, value)               *EmailPolicy.fold()..email.policy.txt*
 
       Header folding is controlled by the "refold_source" policy
       setting. A value is considered to be a ‘source value’ if and
@@ -461,7 +461,7 @@ class email.policy.EmailPolicy(**kw)   *EmailPolicy..emailpolicy.txt;*
       the binary data to be CTE encoded using the "unknown-8bit"
       charset.
 
-                         *EmailPolicy.fold_binary()..emailpolicy.txt;*
+                         *EmailPolicy.fold_binary()..email.policy.txt*
    fold_binary(name, value)
 
       The same as "fold()" if "cte_type" is "7bit", except that the
@@ -478,19 +478,19 @@ specific application domains.  Note that in the future the behavior of
 these instances (in particular the "HTTP" instance) may be adjusted to
 conform even more closely to the RFCs relevant to their domains.
 
-email.policy.default                       *default..emailpolicy.txt;*
+email.policy.default                       *default..email.policy.txt*
 
    An instance of "EmailPolicy" with all defaults unchanged.  This
    policy uses the standard Python "\n" line endings rather than the
    RFC-correct "\r\n".
 
-email.policy.SMTP                             *SMTP..emailpolicy.txt;*
+email.policy.SMTP                             *SMTP..email.policy.txt*
 
    Suitable for serializing messages in conformance with the email
    RFCs. Like "default", but with "linesep" set to "\r\n", which is
    RFC compliant.
 
-email.policy.SMTPUTF8                     *SMTPUTF8..emailpolicy.txt;*
+email.policy.SMTPUTF8                     *SMTPUTF8..email.policy.txt*
 
    The same as "SMTP" except that "utf8" is "True". Useful for
    serializing messages to a message store without using encoded words
@@ -498,13 +498,13 @@ email.policy.SMTPUTF8                     *SMTPUTF8..emailpolicy.txt;*
    sender or recipient addresses have non-ASCII characters (the
    "smtplib.SMTP.send_message()" method handles this automatically).
 
-email.policy.HTTP                             *HTTP..emailpolicy.txt;*
+email.policy.HTTP                             *HTTP..email.policy.txt*
 
    Suitable for serializing headers with for use in HTTP traffic.
    Like "SMTP" except that "max_line_length" is set to "None"
    (unlimited).
 
-email.policy.strict                         *strict..emailpolicy.txt;*
+email.policy.strict                         *strict..email.policy.txt*
 
    Convenience instance.  The same as "default" except that
    "raise_on_defect" is set to "True".  This allows any policy to be
@@ -536,7 +536,7 @@ converting the unicode string into the correct RFC encoded form.
 The header objects and their attributes are described in
 "headerregistry".
 
-class email.policy.Compat32(**kw)         *Compat32..emailpolicy.txt;*
+class email.policy.Compat32(**kw)         *Compat32..email.policy.txt*
 
    This concrete "Policy" is the backward compatibility policy.  It
    replicates the behavior of the email package in Python 3.2.  The
@@ -547,14 +547,14 @@ class email.policy.Compat32(**kw)         *Compat32..emailpolicy.txt;*
    The following attributes have values that are different from the
    "Policy" default:
 
-   mangle_from_                 *Compat32.mangle_from_..emailpolicy.txt;*
+   mangle_from_                 *Compat32.mangle_from_..email.policy.txt*
 
       The default is "True".
 
    The class provides the following concrete implementations of the
    abstract methods of "Policy":
 
-                    *Compat32.header_source_parse()..emailpolicy.txt;*
+                    *Compat32.header_source_parse()..email.policy.txt*
    header_source_parse(sourcelines)
 
       The name is parsed as everything up to the ‘":"’ and returned
@@ -563,26 +563,26 @@ class email.policy.Compat32(**kw)         *Compat32..emailpolicy.txt;*
       subsequent lines together, and stripping any trailing carriage
       return or linefeed characters.
 
-                     *Compat32.header_store_parse()..emailpolicy.txt;*
+                     *Compat32.header_store_parse()..email.policy.txt*
    header_store_parse(name, value)
 
       The name and value are returned unmodified.
 
-                     *Compat32.header_fetch_parse()..emailpolicy.txt;*
+                     *Compat32.header_fetch_parse()..email.policy.txt*
    header_fetch_parse(name, value)
 
       If the value contains binary data, it is converted into a
       "Header" object using the "unknown-8bit" charset. Otherwise it
       is returned unmodified.
 
-   fold(name, value)                  *Compat32.fold()..emailpolicy.txt;*
+   fold(name, value)                  *Compat32.fold()..email.policy.txt*
 
       Headers are folded using the "Header" folding algorithm, which
       preserves existing line breaks in the value, and wraps each
       resulting line to the "max_line_length".  Non-ASCII binary data
       are CTE encoded using the "unknown-8bit" charset.
 
-   fold_binary(name, value)    *Compat32.fold_binary()..emailpolicy.txt;*
+   fold_binary(name, value)    *Compat32.fold_binary()..email.policy.txt*
 
       Headers are folded using the "Header" folding algorithm, which
       preserves existing line breaks in the value, and wraps each
@@ -592,7 +592,7 @@ class email.policy.Compat32(**kw)         *Compat32..emailpolicy.txt;*
       with its existing line breaks and any (RFC invalid) binary data
       it may contain.
 
-email.policy.compat32                     *compat32..emailpolicy.txt;*
+email.policy.compat32                     *compat32..email.policy.txt*
 
    An instance of "Compat32", providing  backward compatibility with
    the behavior of the email package in Python 3.2.

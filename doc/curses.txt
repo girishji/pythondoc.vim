@@ -1,4 +1,4 @@
-*curses.txt;*                                 Last change: 2023 Sep 09
+*curses.txt;*                                 Last change: 2023 Sep 10
 
 "curses" — Terminal handling for character-cell displays
 ********************************************************
@@ -45,7 +45,7 @@ Functions
 
 The module "curses" defines the following exception:
 
-exception curses.error                            *error..curses.txt;*
+exception curses.error                             *error..curses.txt*
 
    Exception raised when a curses library function returns an error.
 
@@ -57,7 +57,7 @@ Note:
 
 The module "curses" defines the following functions:
 
-curses.baudrate()                            *baudrate()..curses.txt;*
+curses.baudrate()                             *baudrate()..curses.txt*
 
    Return the output speed of the terminal in bits per second.  On
    software terminal emulators it will have a fixed high value.
@@ -65,16 +65,16 @@ curses.baudrate()                            *baudrate()..curses.txt;*
    write output loops for time delays and occasionally to change
    interfaces depending on the line speed.
 
-curses.beep()                                    *beep()..curses.txt;*
+curses.beep()                                     *beep()..curses.txt*
 
    Emit a short attention sound.
 
-curses.can_change_color()            *can_change_color()..curses.txt;*
+curses.can_change_color()             *can_change_color()..curses.txt*
 
    Return "True" or "False", depending on whether the programmer can
    change the colors displayed by the terminal.
 
-curses.cbreak()                                *cbreak()..curses.txt;*
+curses.cbreak()                                 *cbreak()..curses.txt*
 
    Enter cbreak mode.  In cbreak mode (sometimes called “rare” mode)
    normal tty line buffering is turned off and characters are
@@ -83,7 +83,7 @@ curses.cbreak()                                *cbreak()..curses.txt;*
    their effects on the tty driver and calling program.  Calling first
    "raw()" then "cbreak()" leaves the terminal in cbreak mode.
 
-curses.color_content(color_number)      *color_content()..curses.txt;*
+curses.color_content(color_number)       *color_content()..curses.txt*
 
    Return the intensity of the red, green, and blue (RGB) components
    in the color _color_number_, which must be between "0" and "COLORS
@@ -91,7 +91,7 @@ curses.color_content(color_number)      *color_content()..curses.txt;*
    color, which will be between "0" (no component) and "1000" (maximum
    amount of component).
 
-curses.color_pair(pair_number)             *color_pair()..curses.txt;*
+curses.color_pair(pair_number)              *color_pair()..curses.txt*
 
    Return the attribute value for displaying text in the specified
    color pair. Only the first 256 color pairs are supported. This
@@ -99,7 +99,7 @@ curses.color_pair(pair_number)             *color_pair()..curses.txt;*
    the other "A_*" attributes.  "pair_number()" is the counterpart to
    this function.
 
-curses.curs_set(visibility)                  *curs_set()..curses.txt;*
+curses.curs_set(visibility)                   *curs_set()..curses.txt*
 
    Set the cursor state.  _visibility_ can be set to "0", "1", or "2",
    for invisible, normal, or very visible.  If the terminal supports
@@ -108,25 +108,25 @@ curses.curs_set(visibility)                  *curs_set()..curses.txt;*
    mode is an underline cursor and the “very visible” mode is a block
    cursor.
 
-curses.def_prog_mode()                  *def_prog_mode()..curses.txt;*
+curses.def_prog_mode()                   *def_prog_mode()..curses.txt*
 
    Save the current terminal mode as the “program” mode, the mode when
    the running program is using curses.  (Its counterpart is the
    “shell” mode, for when the program is not in curses.)  Subsequent
    calls to "reset_prog_mode()" will restore this mode.
 
-curses.def_shell_mode()                *def_shell_mode()..curses.txt;*
+curses.def_shell_mode()                 *def_shell_mode()..curses.txt*
 
    Save the current terminal mode as the “shell” mode, the mode when
    the running program is not using curses.  (Its counterpart is the
    “program” mode, when the program is using curses capabilities.)
    Subsequent calls to "reset_shell_mode()" will restore this mode.
 
-curses.delay_output(ms)                  *delay_output()..curses.txt;*
+curses.delay_output(ms)                   *delay_output()..curses.txt*
 
    Insert an _ms_ millisecond pause in output.
 
-curses.doupdate()                            *doupdate()..curses.txt;*
+curses.doupdate()                             *doupdate()..curses.txt*
 
    Update the physical screen.  The curses library keeps two data
    structures, one representing the current physical screen contents
@@ -142,23 +142,23 @@ curses.doupdate()                            *doupdate()..curses.txt;*
    issuing "noutrefresh()" calls on all windows, followed by a single
    "doupdate()".
 
-curses.echo()                                    *echo()..curses.txt;*
+curses.echo()                                     *echo()..curses.txt*
 
    Enter echo mode.  In echo mode, each character input is echoed to
    the screen as it is entered.
 
-curses.endwin()                                *endwin()..curses.txt;*
+curses.endwin()                                 *endwin()..curses.txt*
 
    De-initialize the library, and return terminal to normal status.
 
-curses.erasechar()                          *erasechar()..curses.txt;*
+curses.erasechar()                           *erasechar()..curses.txt*
 
    Return the user’s current erase character as a one-byte bytes
    object.  Under Unix operating systems this is a property of the
    controlling tty of the curses program, and is not set by the curses
    library itself.
 
-curses.filter()                                *filter()..curses.txt;*
+curses.filter()                                 *filter()..curses.txt*
 
    The "filter()" routine, if used, must be called before "initscr()"
    is called.  The effect is that, during those calls, "LINES" is set
@@ -169,20 +169,20 @@ curses.filter()                                *filter()..curses.txt;*
    enabling character-at-a-time  line editing without touching the
    rest of the screen.
 
-curses.flash()                                  *flash()..curses.txt;*
+curses.flash()                                   *flash()..curses.txt*
 
    Flash the screen.  That is, change it to reverse-video and then
    change it back in a short interval.  Some people prefer such as
    ‘visible bell’ to the audible attention signal produced by
    "beep()".
 
-curses.flushinp()                            *flushinp()..curses.txt;*
+curses.flushinp()                             *flushinp()..curses.txt*
 
    Flush all input buffers.  This throws away any  typeahead  that
    has been typed by the user and has not yet been processed by the
    program.
 
-curses.getmouse()                            *getmouse()..curses.txt;*
+curses.getmouse()                             *getmouse()..curses.txt*
 
    After "getch()" returns "KEY_MOUSE" to signal a mouse event, this
    method should be called to retrieve the queued mouse event,
@@ -199,24 +199,24 @@ curses.getmouse()                            *getmouse()..curses.txt;*
    Changed in version 3.10: The "BUTTON5_*" constants are now exposed
    if they are provided by the underlying curses library.
 
-curses.getsyx()                                *getsyx()..curses.txt;*
+curses.getsyx()                                 *getsyx()..curses.txt*
 
    Return the current coordinates of the virtual screen cursor as a
    tuple "(y, x)".  If "leaveok" is currently "True", then return
    "(-1, -1)".
 
-curses.getwin(file)                            *getwin()..curses.txt;*
+curses.getwin(file)                             *getwin()..curses.txt*
 
    Read window related data stored in the file by an earlier
    "window.putwin()" call. The routine then creates and initializes a
    new window using that data, returning the new window object.
 
-curses.has_colors()                        *has_colors()..curses.txt;*
+curses.has_colors()                         *has_colors()..curses.txt*
 
    Return "True" if the terminal can display colors; otherwise, return
    "False".
 
-                           *has_extended_color_support()..curses.txt;*
+                            *has_extended_color_support()..curses.txt*
 curses.has_extended_color_support()
 
    Return "True" if the module supports extended colors; otherwise,
@@ -228,26 +228,26 @@ curses.has_extended_color_support()
 
    New in version 3.10.
 
-curses.has_ic()                                *has_ic()..curses.txt;*
+curses.has_ic()                                 *has_ic()..curses.txt*
 
    Return "True" if the terminal has insert- and delete-character
    capabilities. This function is included for historical reasons
    only, as all modern software terminal emulators have such
    capabilities.
 
-curses.has_il()                                *has_il()..curses.txt;*
+curses.has_il()                                 *has_il()..curses.txt*
 
    Return "True" if the terminal has insert- and delete-line
    capabilities, or can simulate  them  using scrolling regions. This
    function is included for historical reasons only, as all modern
    software terminal emulators have such capabilities.
 
-curses.has_key(ch)                            *has_key()..curses.txt;*
+curses.has_key(ch)                             *has_key()..curses.txt*
 
    Take a key value _ch_, and return "True" if the current terminal
    type recognizes a key with that value.
 
-curses.halfdelay(tenths)                    *halfdelay()..curses.txt;*
+curses.halfdelay(tenths)                     *halfdelay()..curses.txt*
 
    Used for half-delay mode, which is similar to cbreak mode in that
    characters typed by the user are immediately available to the
@@ -256,7 +256,7 @@ curses.halfdelay(tenths)                    *halfdelay()..curses.txt;*
    _tenths_ must be a number between "1" and "255".  Use "nocbreak()"
    to leave half-delay mode.
 
-curses.init_color(color_number, r, g, b)   *init_color()..curses.txt;*
+curses.init_color(color_number, r, g, b)    *init_color()..curses.txt*
 
    Change the definition of a color, taking the number of the color to
    be changed followed by three RGB values (for the amounts of red,
@@ -267,7 +267,7 @@ curses.init_color(color_number, r, g, b)   *init_color()..curses.txt;*
    new definition.  This function is a no-op on most terminals; it is
    active only if "can_change_color()" returns "True".
 
-curses.init_pair(pair_number, fg, bg)       *init_pair()..curses.txt;*
+curses.init_pair(pair_number, fg, bg)        *init_pair()..curses.txt*
 
    Change the definition of a color-pair.  It takes three arguments:
    the number of the color-pair to be changed, the foreground color
@@ -279,7 +279,7 @@ curses.init_pair(pair_number, fg, bg)       *init_pair()..curses.txt;*
    pair was previously initialized, the screen is refreshed and all
    occurrences of that color-pair are changed to the new definition.
 
-curses.initscr()                              *initscr()..curses.txt;*
+curses.initscr()                               *initscr()..curses.txt*
 
    Initialize the library. Return a window object which represents the
    whole screen.
@@ -289,18 +289,18 @@ curses.initscr()                              *initscr()..curses.txt;*
      If there is an error opening the terminal, the underlying curses
      library may cause the interpreter to exit.
 
-                                      *is_term_resized()..curses.txt;*
+                                       *is_term_resized()..curses.txt*
 curses.is_term_resized(nlines, ncols)
 
    Return "True" if "resize_term()" would modify the window structure,
    "False" otherwise.
 
-curses.isendwin()                            *isendwin()..curses.txt;*
+curses.isendwin()                             *isendwin()..curses.txt*
 
    Return "True" if "endwin()" has been called (that is, the  curses
    library has been deinitialized).
 
-curses.keyname(k)                             *keyname()..curses.txt;*
+curses.keyname(k)                              *keyname()..curses.txt*
 
    Return the name of the key numbered _k_ as a bytes object.  The
    name of a key generating printable ASCII character is the key’s
@@ -310,33 +310,33 @@ curses.keyname(k)                             *keyname()..curses.txt;*
    combination (128–255) is a bytes object consisting of the prefix
    "b'M-'" followed by the name of the corresponding ASCII character.
 
-curses.killchar()                            *killchar()..curses.txt;*
+curses.killchar()                             *killchar()..curses.txt*
 
    Return the user’s current line kill character as a one-byte bytes
    object. Under Unix operating systems this is a property of the
    controlling tty of the curses program, and is not set by the curses
    library itself.
 
-curses.longname()                            *longname()..curses.txt;*
+curses.longname()                             *longname()..curses.txt*
 
    Return a bytes object containing the terminfo long name field
    describing the current terminal.  The maximum length of a verbose
    description is 128 characters.  It is defined only after the call
    to "initscr()".
 
-curses.meta(flag)                                *meta()..curses.txt;*
+curses.meta(flag)                                 *meta()..curses.txt*
 
    If _flag_ is "True", allow 8-bit characters to be input.  If _flag_
    is "False",  allow only 7-bit chars.
 
-curses.mouseinterval(interval)          *mouseinterval()..curses.txt;*
+curses.mouseinterval(interval)           *mouseinterval()..curses.txt*
 
    Set the maximum time in milliseconds that can elapse between press
    and release events in order for them to be recognized as a click,
    and return the previous interval value.  The default value is 200
    milliseconds, or one fifth of a second.
 
-curses.mousemask(mousemask)                 *mousemask()..curses.txt;*
+curses.mousemask(mousemask)                  *mousemask()..curses.txt*
 
    Set the mouse events to be reported, and return a tuple
    "(availmask, oldmask)".   _availmask_ indicates which of the
@@ -345,11 +345,11 @@ curses.mousemask(mousemask)                 *mousemask()..curses.txt;*
    mouse event mask.  If this function is never called, no mouse
    events are ever reported.
 
-curses.napms(ms)                                *napms()..curses.txt;*
+curses.napms(ms)                                 *napms()..curses.txt*
 
    Sleep for _ms_ milliseconds.
 
-curses.newpad(nlines, ncols)                   *newpad()..curses.txt;*
+curses.newpad(nlines, ncols)                    *newpad()..curses.txt*
 
    Create and return a pointer to a new pad data structure with the
    given number of lines and columns.  Return a pad as a window
@@ -369,7 +369,7 @@ curses.newpad(nlines, ncols)                   *newpad()..curses.txt;*
    _s_ arguments define a clipping box on the screen within which the
    pad region is to be displayed.
 
-curses.newwin(nlines, ncols)                   *newwin()..curses.txt;*
+curses.newwin(nlines, ncols)                    *newwin()..curses.txt*
 curses.newwin(nlines, ncols, begin_y, begin_x)
 
    Return a new window, whose left-upper corner is at  "(begin_y,
@@ -378,22 +378,22 @@ curses.newwin(nlines, ncols, begin_y, begin_x)
    By default, the window will extend from the  specified position to
    the lower right corner of the screen.
 
-curses.nl()                                        *nl()..curses.txt;*
+curses.nl()                                         *nl()..curses.txt*
 
    Enter newline mode.  This mode translates the return key into
    newline on input, and translates newline into return and line-feed
    on output. Newline mode is initially on.
 
-curses.nocbreak()                            *nocbreak()..curses.txt;*
+curses.nocbreak()                             *nocbreak()..curses.txt*
 
    Leave cbreak mode.  Return to normal “cooked” mode with line
    buffering.
 
-curses.noecho()                                *noecho()..curses.txt;*
+curses.noecho()                                 *noecho()..curses.txt*
 
    Leave echo mode.  Echoing of input characters is turned off.
 
-curses.nonl()                                    *nonl()..curses.txt;*
+curses.nonl()                                     *nonl()..curses.txt*
 
    Leave newline mode.  Disable translation of return into newline on
    input, and disable low-level translation of newline into
@@ -403,7 +403,7 @@ curses.nonl()                                    *nonl()..curses.txt;*
    sometimes speed up vertical motion a little; also, it will be able
    to detect the return key on input.
 
-curses.noqiflush()                          *noqiflush()..curses.txt;*
+curses.noqiflush()                           *noqiflush()..curses.txt*
 
    When the "noqiflush()" routine is used, normal flush of input and
    output queues associated with the "INTR", "QUIT" and "SUSP"
@@ -411,55 +411,55 @@ curses.noqiflush()                          *noqiflush()..curses.txt;*
    a signal handler if you want output to continue as though the
    interrupt had not occurred, after the handler exits.
 
-curses.noraw()                                  *noraw()..curses.txt;*
+curses.noraw()                                   *noraw()..curses.txt*
 
    Leave raw mode. Return to normal “cooked” mode with line buffering.
 
-curses.pair_content(pair_number)         *pair_content()..curses.txt;*
+curses.pair_content(pair_number)          *pair_content()..curses.txt*
 
    Return a tuple "(fg, bg)" containing the colors for the requested
    color pair. The value of _pair_number_ must be between "0" and
    "COLOR_PAIRS - 1".
 
-curses.pair_number(attr)                  *pair_number()..curses.txt;*
+curses.pair_number(attr)                   *pair_number()..curses.txt*
 
    Return the number of the color-pair set by the attribute value
    _attr_. "color_pair()" is the counterpart to this function.
 
-curses.putp(str)                                 *putp()..curses.txt;*
+curses.putp(str)                                  *putp()..curses.txt*
 
    Equivalent to "tputs(str, 1, putchar)"; emit the value of a
    specified terminfo capability for the current terminal.  Note that
    the output of "putp()" always goes to standard output.
 
-curses.qiflush([flag])                        *qiflush()..curses.txt;*
+curses.qiflush([flag])                         *qiflush()..curses.txt*
 
    If _flag_ is "False", the effect is the same as calling
    "noqiflush()". If _flag_ is "True", or no argument is provided, the
    queues will be flushed when these control characters are read.
 
-curses.raw()                                      *raw()..curses.txt;*
+curses.raw()                                       *raw()..curses.txt*
 
    Enter raw mode.  In raw mode, normal line buffering and  processing
    of interrupt, quit, suspend, and flow control keys are turned off;
    characters are presented to curses input functions one by one.
 
-curses.reset_prog_mode()              *reset_prog_mode()..curses.txt;*
+curses.reset_prog_mode()               *reset_prog_mode()..curses.txt*
 
    Restore the  terminal  to “program” mode, as previously saved  by
    "def_prog_mode()".
 
-curses.reset_shell_mode()            *reset_shell_mode()..curses.txt;*
+curses.reset_shell_mode()             *reset_shell_mode()..curses.txt*
 
    Restore the  terminal  to “shell” mode, as previously saved  by
    "def_shell_mode()".
 
-curses.resetty()                              *resetty()..curses.txt;*
+curses.resetty()                               *resetty()..curses.txt*
 
    Restore the state of the terminal modes to what it was at the last
    call to "savetty()".
 
-curses.resize_term(nlines, ncols)         *resize_term()..curses.txt;*
+curses.resize_term(nlines, ncols)          *resize_term()..curses.txt*
 
    Backend function used by "resizeterm()", performing most of the
    work; when resizing the windows, "resize_term()" blank-fills the
@@ -469,25 +469,25 @@ curses.resize_term(nlines, ncols)         *resize_term()..curses.txt;*
    convention of pads, it is not possible to resize these without
    additional interaction with the application.
 
-curses.resizeterm(nlines, ncols)           *resizeterm()..curses.txt;*
+curses.resizeterm(nlines, ncols)            *resizeterm()..curses.txt*
 
    Resize the standard and current windows to the specified
    dimensions, and adjusts other bookkeeping data used by the curses
    library that record the window dimensions (in particular the
    SIGWINCH handler).
 
-curses.savetty()                              *savetty()..curses.txt;*
+curses.savetty()                               *savetty()..curses.txt*
 
    Save the current state of the terminal modes in a buffer, usable by
    "resetty()".
 
-curses.get_escdelay()                    *get_escdelay()..curses.txt;*
+curses.get_escdelay()                     *get_escdelay()..curses.txt*
 
    Retrieves the value set by "set_escdelay()".
 
    New in version 3.9.
 
-curses.set_escdelay(ms)                  *set_escdelay()..curses.txt;*
+curses.set_escdelay(ms)                   *set_escdelay()..curses.txt*
 
    Sets the number of milliseconds to wait after reading an escape
    character, to distinguish between an individual escape character
@@ -496,13 +496,13 @@ curses.set_escdelay(ms)                  *set_escdelay()..curses.txt;*
 
    New in version 3.9.
 
-curses.get_tabsize()                      *get_tabsize()..curses.txt;*
+curses.get_tabsize()                       *get_tabsize()..curses.txt*
 
    Retrieves the value set by "set_tabsize()".
 
    New in version 3.9.
 
-curses.set_tabsize(size)                  *set_tabsize()..curses.txt;*
+curses.set_tabsize(size)                   *set_tabsize()..curses.txt*
 
    Sets the number of columns used by the curses library when
    converting a tab character to spaces as it adds the tab to a
@@ -510,12 +510,12 @@ curses.set_tabsize(size)                  *set_tabsize()..curses.txt;*
 
    New in version 3.9.
 
-curses.setsyx(y, x)                            *setsyx()..curses.txt;*
+curses.setsyx(y, x)                             *setsyx()..curses.txt*
 
    Set the virtual screen cursor to _y_, _x_. If _y_ and _x_ are both
    "-1", then "leaveok" is set "True".
 
-curses.setupterm(term=None, fd=-1)          *setupterm()..curses.txt;*
+curses.setupterm(term=None, fd=-1)           *setupterm()..curses.txt*
 
    Initialize the terminal.  _term_ is a string giving the terminal
    name, or "None"; if omitted or "None", the value of the "TERM"
@@ -523,7 +523,7 @@ curses.setupterm(term=None, fd=-1)          *setupterm()..curses.txt;*
    which any initialization sequences will be sent; if not supplied or
    "-1", the file descriptor for "sys.stdout" will be used.
 
-curses.start_color()                      *start_color()..curses.txt;*
+curses.start_color()                       *start_color()..curses.txt*
 
    Must be called if the programmer wants to use colors, and before
    any other color manipulation routine is called.  It is good
@@ -536,39 +536,39 @@ curses.start_color()                      *start_color()..curses.txt;*
    It also restores the colors on the terminal to the values they had
    when the terminal was just turned on.
 
-curses.termattrs()                          *termattrs()..curses.txt;*
+curses.termattrs()                           *termattrs()..curses.txt*
 
    Return a logical OR of all video attributes supported by the
    terminal.  This information is useful when a curses program needs
    complete control over the appearance of the screen.
 
-curses.termname()                            *termname()..curses.txt;*
+curses.termname()                             *termname()..curses.txt*
 
    Return the value of the environment variable "TERM", as a bytes
    object, truncated to 14 characters.
 
-curses.tigetflag(capname)                   *tigetflag()..curses.txt;*
+curses.tigetflag(capname)                    *tigetflag()..curses.txt*
 
    Return the value of the Boolean capability corresponding to the
    terminfo capability name _capname_ as an integer.  Return the value
    "-1" if _capname_ is not a Boolean capability, or "0" if it is
    canceled or absent from the terminal description.
 
-curses.tigetnum(capname)                     *tigetnum()..curses.txt;*
+curses.tigetnum(capname)                      *tigetnum()..curses.txt*
 
    Return the value of the numeric capability corresponding to the
    terminfo capability name _capname_ as an integer.  Return the value
    "-2" if _capname_ is not a numeric capability, or "-1" if it is
    canceled or absent from the terminal description.
 
-curses.tigetstr(capname)                     *tigetstr()..curses.txt;*
+curses.tigetstr(capname)                      *tigetstr()..curses.txt*
 
    Return the value of the string capability corresponding to the
    terminfo capability name _capname_ as a bytes object.  Return
    "None" if _capname_ is not a terminfo “string capability”, or is
    canceled or absent from the terminal description.
 
-curses.tparm(str[, ...])                        *tparm()..curses.txt;*
+curses.tparm(str[, ...])                         *tparm()..curses.txt*
 
    Instantiate the bytes object _str_ with the supplied parameters,
    where _str_ should be a parameterized string obtained from the
@@ -576,7 +576,7 @@ curses.tparm(str[, ...])                        *tparm()..curses.txt;*
    result in "b'\033[6;4H'", the exact result depending on terminal
    type.
 
-curses.typeahead(fd)                        *typeahead()..curses.txt;*
+curses.typeahead(fd)                         *typeahead()..curses.txt*
 
    Specify that the file descriptor _fd_ be used for typeahead
    checking.  If _fd_ is "-1", then no typeahead checking is done.
@@ -588,14 +588,14 @@ curses.typeahead(fd)                        *typeahead()..curses.txt;*
    to commands typed in advance. This function allows specifying a
    different file descriptor for typeahead checking.
 
-curses.unctrl(ch)                              *unctrl()..curses.txt;*
+curses.unctrl(ch)                               *unctrl()..curses.txt*
 
    Return a bytes object which is a printable representation of the
    character _ch_. Control characters are represented as a caret
    followed by the character, for example as "b'^C'". Printing
    characters are left as they are.
 
-curses.ungetch(ch)                            *ungetch()..curses.txt;*
+curses.ungetch(ch)                             *ungetch()..curses.txt*
 
    Push _ch_ so the next "getch()" will return it.
 
@@ -603,14 +603,14 @@ curses.ungetch(ch)                            *ungetch()..curses.txt;*
 
      Only one _ch_ can be pushed before "getch()" is called.
 
-curses.update_lines_cols()          *update_lines_cols()..curses.txt;*
+curses.update_lines_cols()           *update_lines_cols()..curses.txt*
 
    Update the "LINES" and "COLS" module variables. Useful for
    detecting manual screen resize.
 
    New in version 3.5.
 
-curses.unget_wch(ch)                        *unget_wch()..curses.txt;*
+curses.unget_wch(ch)                         *unget_wch()..curses.txt*
 
    Push _ch_ so the next "get_wch()" will return it.
 
@@ -620,12 +620,12 @@ curses.unget_wch(ch)                        *unget_wch()..curses.txt;*
 
    New in version 3.3.
 
-curses.ungetmouse(id, x, y, z, bstate)     *ungetmouse()..curses.txt;*
+curses.ungetmouse(id, x, y, z, bstate)      *ungetmouse()..curses.txt*
 
    Push a "KEY_MOUSE" event onto the input queue, associating the
    given state data with it.
 
-curses.use_env(flag)                          *use_env()..curses.txt;*
+curses.use_env(flag)                           *use_env()..curses.txt*
 
    If used, this function should be called before "initscr()" or
    newterm are called.  When _flag_ is "False", the values of lines
@@ -635,7 +635,7 @@ curses.use_env(flag)                          *use_env()..curses.txt;*
    behavior would be to use the window size if "LINES" and "COLUMNS"
    are not set).
 
-curses.use_default_colors()        *use_default_colors()..curses.txt;*
+curses.use_default_colors()         *use_default_colors()..curses.txt*
 
    Allow use of default values for colors on terminals supporting this
    feature. Use this to support transparency in your application.  The
@@ -644,7 +644,7 @@ curses.use_default_colors()        *use_default_colors()..curses.txt;*
    for instance, color pair _x_ to a red foreground color on the
    default background.
 
-curses.wrapper(func, /, *args, **kwargs)      *wrapper()..curses.txt;*
+curses.wrapper(func, /, *args, **kwargs)       *wrapper()..curses.txt*
 
    Initialize curses and call another callable object, _func_, which
    should be the rest of your curses-using application.  If the
@@ -665,7 +665,7 @@ Window Objects
 Window objects, as returned by "initscr()" and "newwin()" above, have
 the following methods and attributes:
 
-window.addch(ch[, attr])                 *window.addch()..curses.txt;*
+window.addch(ch[, attr])                  *window.addch()..curses.txt*
 window.addch(y, x, ch[, attr])
 
    Paint character _ch_ at "(y, x)" with attributes _attr_,
@@ -680,14 +680,14 @@ window.addch(y, x, ch[, attr])
      a window, subwindow, or pad will cause an exception to be raised
      after the character is printed.
 
-window.addnstr(str, n[, attr])         *window.addnstr()..curses.txt;*
+window.addnstr(str, n[, attr])          *window.addnstr()..curses.txt*
 window.addnstr(y, x, str, n[, attr])
 
    Paint at most _n_ characters of the character string _str_ at "(y,
    x)" with attributes _attr_, overwriting anything previously on the
    display.
 
-window.addstr(str[, attr])              *window.addstr()..curses.txt;*
+window.addstr(str[, attr])               *window.addstr()..curses.txt*
 window.addstr(y, x, str[, attr])
 
    Paint the character string _str_ at "(y, x)" with attributes
@@ -707,22 +707,22 @@ window.addstr(y, x, str[, attr])
        "addstr()" with a _str_ that has embedded newlines.  Instead,
        call "addstr()" separately for each line.
 
-window.attroff(attr)                   *window.attroff()..curses.txt;*
+window.attroff(attr)                    *window.attroff()..curses.txt*
 
    Remove attribute _attr_ from the “background” set applied to all
    writes to the current window.
 
-window.attron(attr)                     *window.attron()..curses.txt;*
+window.attron(attr)                      *window.attron()..curses.txt*
 
    Add attribute _attr_ from the “background” set applied to all
    writes to the current window.
 
-window.attrset(attr)                   *window.attrset()..curses.txt;*
+window.attrset(attr)                    *window.attrset()..curses.txt*
 
    Set the “background” set of attributes to _attr_.  This set is
    initially "0" (no attributes).
 
-window.bkgd(ch[, attr])                   *window.bkgd()..curses.txt;*
+window.bkgd(ch[, attr])                    *window.bkgd()..curses.txt*
 
    Set the background property of the window to the character _ch_,
    with attributes _attr_.  The change is then applied to every
@@ -734,7 +734,7 @@ window.bkgd(ch[, attr])                   *window.bkgd()..curses.txt;*
    * Wherever  the  former background character appears, it is changed
      to the new background character.
 
-window.bkgdset(ch[, attr])             *window.bkgdset()..curses.txt;*
+window.bkgdset(ch[, attr])              *window.bkgdset()..curses.txt*
 
    Set the window’s background.  A window’s background consists of a
    character and any combination of attributes.  The attribute part of
@@ -745,7 +745,7 @@ window.bkgdset(ch[, attr])             *window.bkgdset()..curses.txt;*
    the character through any scrolling and insert/delete
    line/character operations.
 
-                                        *window.border()..curses.txt;*
+                                         *window.border()..curses.txt*
 window.border([ls[, rs[, ts[, bs[, tl[, tr[, bl[, br]]]]]]]])
 
    Draw a border around the edges of the window. Each parameter
@@ -778,13 +778,13 @@ window.border([ls[, rs[, ts[, bs[, tl[, tr[, bl[, br]]]]]]]])
    | _br_        | Bottom-right corner   | "ACS_LRCORNER"          |
    +-------------+-----------------------+-------------------------+
 
-window.box([vertch, horch])                *window.box()..curses.txt;*
+window.box([vertch, horch])                 *window.box()..curses.txt*
 
    Similar to "border()", but both _ls_ and _rs_ are _vertch_ and both
    _ts_ and _bs_ are _horch_.  The default corner characters are
    always used by this function.
 
-window.chgat(attr)                       *window.chgat()..curses.txt;*
+window.chgat(attr)                        *window.chgat()..curses.txt*
 window.chgat(num, attr)
 window.chgat(y, x, attr)
 window.chgat(y, x, num, attr)
@@ -797,41 +797,41 @@ window.chgat(y, x, num, attr)
    "touchline()" method so that the contents will be redisplayed by
    the next window refresh.
 
-window.clear()                           *window.clear()..curses.txt;*
+window.clear()                            *window.clear()..curses.txt*
 
    Like "erase()", but also cause the whole window to be repainted
    upon next call to "refresh()".
 
-window.clearok(flag)                   *window.clearok()..curses.txt;*
+window.clearok(flag)                    *window.clearok()..curses.txt*
 
    If _flag_ is "True", the next call to "refresh()" will clear the
    window completely.
 
-window.clrtobot()                     *window.clrtobot()..curses.txt;*
+window.clrtobot()                      *window.clrtobot()..curses.txt*
 
    Erase from cursor to the end of the window: all lines below the
    cursor are deleted, and then the equivalent of "clrtoeol()" is
    performed.
 
-window.clrtoeol()                     *window.clrtoeol()..curses.txt;*
+window.clrtoeol()                      *window.clrtoeol()..curses.txt*
 
    Erase from cursor to the end of the line.
 
-window.cursyncup()                   *window.cursyncup()..curses.txt;*
+window.cursyncup()                    *window.cursyncup()..curses.txt*
 
    Update the current cursor position of all the ancestors of the
    window to reflect the current cursor position of the window.
 
-window.delch([y, x])                     *window.delch()..curses.txt;*
+window.delch([y, x])                      *window.delch()..curses.txt*
 
    Delete any character at "(y, x)".
 
-window.deleteln()                     *window.deleteln()..curses.txt;*
+window.deleteln()                      *window.deleteln()..curses.txt*
 
    Delete the line under the cursor. All following lines are moved up
    by one line.
 
-window.derwin(begin_y, begin_x)         *window.derwin()..curses.txt;*
+window.derwin(begin_y, begin_x)          *window.derwin()..curses.txt*
 window.derwin(nlines, ncols, begin_y, begin_x)
 
    An abbreviation for “derive window”, "derwin()" is the same as
@@ -839,12 +839,12 @@ window.derwin(nlines, ncols, begin_y, begin_x)
    relative to the origin of the window, rather than relative to the
    entire screen.  Return a window object for the derived window.
 
-window.echochar(ch[, attr])           *window.echochar()..curses.txt;*
+window.echochar(ch[, attr])            *window.echochar()..curses.txt*
 
    Add character _ch_ with attribute _attr_, and immediately  call
    "refresh()" on the window.
 
-window.enclose(y, x)                   *window.enclose()..curses.txt;*
+window.enclose(y, x)                    *window.enclose()..curses.txt*
 
    Test whether the given pair of screen-relative character-cell
    coordinates are enclosed by the given window, returning "True" or
@@ -854,7 +854,7 @@ window.enclose(y, x)                   *window.enclose()..curses.txt;*
    Changed in version 3.10: Previously it returned "1" or "0" instead
    of "True" or "False".
 
-window.encoding                         *window.encoding..curses.txt;*
+window.encoding                          *window.encoding..curses.txt*
 
    Encoding used to encode method arguments (Unicode strings and
    characters). The encoding attribute is inherited from the parent
@@ -864,27 +864,27 @@ window.encoding                         *window.encoding..curses.txt;*
 
    New in version 3.3.
 
-window.erase()                           *window.erase()..curses.txt;*
+window.erase()                            *window.erase()..curses.txt*
 
    Clear the window.
 
-window.getbegyx()                     *window.getbegyx()..curses.txt;*
+window.getbegyx()                      *window.getbegyx()..curses.txt*
 
    Return a tuple "(y, x)" of co-ordinates of upper-left corner.
 
-window.getbkgd()                       *window.getbkgd()..curses.txt;*
+window.getbkgd()                        *window.getbkgd()..curses.txt*
 
    Return the given window’s current background character/attribute
    pair.
 
-window.getch([y, x])                     *window.getch()..curses.txt;*
+window.getch([y, x])                      *window.getch()..curses.txt*
 
    Get a character. Note that the integer returned does _not_ have to
    be in ASCII range: function keys, keypad keys and so on are
    represented by numbers higher than 255.  In no-delay mode, return
    "-1" if there is no input, otherwise wait until a key is pressed.
 
-window.get_wch([y, x])                 *window.get_wch()..curses.txt;*
+window.get_wch([y, x])                  *window.get_wch()..curses.txt*
 
    Get a wide character. Return a character for most keys, or an
    integer for function keys, keypad keys, and other special keys. In
@@ -892,24 +892,24 @@ window.get_wch([y, x])                 *window.get_wch()..curses.txt;*
 
    New in version 3.3.
 
-window.getkey([y, x])                   *window.getkey()..curses.txt;*
+window.getkey([y, x])                    *window.getkey()..curses.txt*
 
    Get a character, returning a string instead of an integer, as
    "getch()" does. Function keys, keypad keys and other special keys
    return a multibyte string containing the key name.  In no-delay
    mode, raise an exception if there is no input.
 
-window.getmaxyx()                     *window.getmaxyx()..curses.txt;*
+window.getmaxyx()                      *window.getmaxyx()..curses.txt*
 
    Return a tuple "(y, x)" of the height and width of the window.
 
-window.getparyx()                     *window.getparyx()..curses.txt;*
+window.getparyx()                      *window.getparyx()..curses.txt*
 
    Return the beginning coordinates of this window relative to its
    parent window as a tuple "(y, x)".  Return "(-1, -1)" if this
    window has no parent.
 
-window.getstr()                         *window.getstr()..curses.txt;*
+window.getstr()                          *window.getstr()..curses.txt*
 window.getstr(n)
 window.getstr(y, x)
 window.getstr(y, x, n)
@@ -917,18 +917,18 @@ window.getstr(y, x, n)
    Read a bytes object from the user, with primitive line editing
    capacity.
 
-window.getyx()                           *window.getyx()..curses.txt;*
+window.getyx()                            *window.getyx()..curses.txt*
 
    Return a tuple "(y, x)" of current cursor position  relative to the
    window’s upper-left corner.
 
-window.hline(ch, n)                      *window.hline()..curses.txt;*
+window.hline(ch, n)                       *window.hline()..curses.txt*
 window.hline(y, x, ch, n)
 
    Display a horizontal line starting at "(y, x)" with length _n_
    consisting of the character _ch_.
 
-window.idcok(flag)                       *window.idcok()..curses.txt;*
+window.idcok(flag)                        *window.idcok()..curses.txt*
 
    If _flag_ is "False", curses no longer considers using the hardware
    insert/delete character feature of the terminal; if _flag_ is
@@ -936,13 +936,13 @@ window.idcok(flag)                       *window.idcok()..curses.txt;*
    curses is first initialized, use of character insert/delete is
    enabled by default.
 
-window.idlok(flag)                       *window.idlok()..curses.txt;*
+window.idlok(flag)                        *window.idlok()..curses.txt*
 
    If _flag_ is "True", "curses" will try and use hardware line
    editing facilities. Otherwise, line insertion/deletion are
    disabled.
 
-window.immedok(flag)                   *window.immedok()..curses.txt;*
+window.immedok(flag)                    *window.immedok()..curses.txt*
 
    If _flag_ is "True", any change in the window image automatically
    causes the window to be refreshed; you no longer have to call
@@ -950,19 +950,19 @@ window.immedok(flag)                   *window.immedok()..curses.txt;*
    considerably, due to repeated calls to wrefresh.  This option is
    disabled by default.
 
-window.inch([y, x])                       *window.inch()..curses.txt;*
+window.inch([y, x])                        *window.inch()..curses.txt*
 
    Return the character at the given position in the window. The
    bottom 8 bits are the character proper, and upper bits are the
    attributes.
 
-window.insch(ch[, attr])                 *window.insch()..curses.txt;*
+window.insch(ch[, attr])                  *window.insch()..curses.txt*
 window.insch(y, x, ch[, attr])
 
    Paint character _ch_ at "(y, x)" with attributes _attr_, moving the
    line from position _x_ right by one character.
 
-window.insdelln(nlines)               *window.insdelln()..curses.txt;*
+window.insdelln(nlines)                *window.insdelln()..curses.txt*
 
    Insert _nlines_ lines into the specified window above the current
    line.  The _nlines_ bottom lines are lost.  For negative _nlines_,
@@ -970,12 +970,12 @@ window.insdelln(nlines)               *window.insdelln()..curses.txt;*
    move the remaining lines up.  The bottom _nlines_ lines are
    cleared.  The current cursor position remains the same.
 
-window.insertln()                     *window.insertln()..curses.txt;*
+window.insertln()                      *window.insertln()..curses.txt*
 
    Insert a blank line under the cursor. All following lines are moved
    down by one line.
 
-window.insnstr(str, n[, attr])         *window.insnstr()..curses.txt;*
+window.insnstr(str, n[, attr])          *window.insnstr()..curses.txt*
 window.insnstr(y, x, str, n[, attr])
 
    Insert a character string (as many characters as will fit on the
@@ -985,7 +985,7 @@ window.insnstr(y, x, str, n[, attr])
    rightmost characters on the line being lost. The cursor position
    does not change (after moving to _y_, _x_, if specified).
 
-window.insstr(str[, attr])              *window.insstr()..curses.txt;*
+window.insstr(str[, attr])               *window.insstr()..curses.txt*
 window.insstr(y, x, str[, attr])
 
    Insert a character string (as many characters as will fit on the
@@ -994,7 +994,7 @@ window.insstr(y, x, str[, attr])
    characters on the line being lost.  The cursor position does not
    change (after moving to _y_, _x_, if specified).
 
-window.instr([n])                        *window.instr()..curses.txt;*
+window.instr([n])                         *window.instr()..curses.txt*
 window.instr(y, x[, n])
 
    Return a bytes object of characters, extracted from the window
@@ -1003,26 +1003,26 @@ window.instr(y, x[, n])
    specified, "instr()" returns a string at most _n_ characters long
    (exclusive of the trailing NUL).
 
-window.is_linetouched(line)     *window.is_linetouched()..curses.txt;*
+window.is_linetouched(line)      *window.is_linetouched()..curses.txt*
 
    Return "True" if the specified line was modified since the last
    call to "refresh()"; otherwise return "False".  Raise a
    "curses.error" exception if _line_ is not valid for the given
    window.
 
-window.is_wintouched()           *window.is_wintouched()..curses.txt;*
+window.is_wintouched()            *window.is_wintouched()..curses.txt*
 
    Return "True" if the specified window was modified since the last
    call to "refresh()"; otherwise return "False".
 
-window.keypad(flag)                     *window.keypad()..curses.txt;*
+window.keypad(flag)                      *window.keypad()..curses.txt*
 
    If _flag_ is "True", escape sequences generated by some keys
    (keypad,  function keys) will be interpreted by "curses". If _flag_
    is "False", escape sequences will be left as is in the input
    stream.
 
-window.leaveok(flag)                   *window.leaveok()..curses.txt;*
+window.leaveok(flag)                    *window.leaveok()..curses.txt*
 
    If _flag_ is "True", cursor is left where it is on update, instead
    of being at “cursor position.”  This reduces cursor movement where
@@ -1031,26 +1031,26 @@ window.leaveok(flag)                   *window.leaveok()..curses.txt;*
    If _flag_ is "False", cursor will always be at “cursor position”
    after an update.
 
-window.move(new_y, new_x)                 *window.move()..curses.txt;*
+window.move(new_y, new_x)                  *window.move()..curses.txt*
 
    Move cursor to "(new_y, new_x)".
 
-window.mvderwin(y, x)                 *window.mvderwin()..curses.txt;*
+window.mvderwin(y, x)                  *window.mvderwin()..curses.txt*
 
    Move the window inside its parent window.  The screen-relative
    parameters of the window are not changed.  This routine is used to
    display different parts of the parent window at the same physical
    position on the screen.
 
-window.mvwin(new_y, new_x)               *window.mvwin()..curses.txt;*
+window.mvwin(new_y, new_x)                *window.mvwin()..curses.txt*
 
    Move the window so its upper-left corner is at "(new_y, new_x)".
 
-window.nodelay(flag)                   *window.nodelay()..curses.txt;*
+window.nodelay(flag)                    *window.nodelay()..curses.txt*
 
    If _flag_ is "True", "getch()" will be non-blocking.
 
-window.notimeout(flag)               *window.notimeout()..curses.txt;*
+window.notimeout(flag)                *window.notimeout()..curses.txt*
 
    If _flag_ is "True", escape sequences will not be timed out.
 
@@ -1058,14 +1058,14 @@ window.notimeout(flag)               *window.notimeout()..curses.txt;*
    will not be interpreted, and will be left in the input stream as
    is.
 
-window.noutrefresh()               *window.noutrefresh()..curses.txt;*
+window.noutrefresh()                *window.noutrefresh()..curses.txt*
 
    Mark for refresh but wait.  This function updates the data
    structure representing the desired state of the window, but does
    not force an update of the physical screen.  To accomplish that,
    call  "doupdate()".
 
-                                       *window.overlay()..curses.txt;*
+                                        *window.overlay()..curses.txt*
 window.overlay(destwin[, sminrow, smincol, dminrow, dmincol, dmaxrow, dmaxcol])
 
    Overlay the window on top of _destwin_. The windows need not be the
@@ -1078,7 +1078,7 @@ window.overlay(destwin[, sminrow, smincol, dminrow, dmincol, dmaxrow, dmaxcol])
    left coordinates of the source window, and the other variables mark
    a rectangle in the destination window.
 
-                                     *window.overwrite()..curses.txt;*
+                                      *window.overwrite()..curses.txt*
 window.overwrite(destwin[, sminrow, smincol, dminrow, dmincol, dmaxrow, dmaxcol])
 
    Overwrite the window on top of _destwin_. The windows need not be
@@ -1091,24 +1091,24 @@ window.overwrite(destwin[, sminrow, smincol, dminrow, dmincol, dmaxrow, dmaxcol]
    upper-left coordinates of the source window, the other variables
    mark a rectangle in the destination window.
 
-window.putwin(file)                     *window.putwin()..curses.txt;*
+window.putwin(file)                      *window.putwin()..curses.txt*
 
    Write all data associated with the window into the provided file
    object.  This information can be later retrieved using the
    "getwin()" function.
 
-window.redrawln(beg, num)             *window.redrawln()..curses.txt;*
+window.redrawln(beg, num)              *window.redrawln()..curses.txt*
 
    Indicate that the _num_ screen lines, starting at line _beg_, are
    corrupted and should be completely redrawn on the next "refresh()"
    call.
 
-window.redrawwin()                   *window.redrawwin()..curses.txt;*
+window.redrawwin()                    *window.redrawwin()..curses.txt*
 
    Touch the entire window, causing it to be completely redrawn on the
    next "refresh()" call.
 
-                                       *window.refresh()..curses.txt;*
+                                        *window.refresh()..curses.txt*
 window.refresh([pminrow, pmincol, sminrow, smincol, smaxrow, smaxcol])
 
    Update the display immediately (sync actual screen with previous
@@ -1127,7 +1127,7 @@ window.refresh([pminrow, pmincol, sminrow, smincol, smaxrow, smaxcol])
    values of _pminrow_, _pmincol_, _sminrow_, or _smincol_ are treated
    as if they were zero.
 
-window.resize(nlines, ncols)            *window.resize()..curses.txt;*
+window.resize(nlines, ncols)             *window.resize()..curses.txt*
 
    Reallocate storage for a curses window to adjust its dimensions to
    the specified values.  If either dimension is larger than the
@@ -1135,11 +1135,11 @@ window.resize(nlines, ncols)            *window.resize()..curses.txt;*
    the current background rendition (as set by "bkgdset()") merged
    into them.
 
-window.scroll([lines=1])                *window.scroll()..curses.txt;*
+window.scroll([lines=1])                 *window.scroll()..curses.txt*
 
    Scroll the screen or scrolling region upward by _lines_ lines.
 
-window.scrollok(flag)                 *window.scrollok()..curses.txt;*
+window.scrollok(flag)                  *window.scrollok()..curses.txt*
 
    Control what happens when the cursor of a window is moved off the
    edge of the window or scrolling region, either as a result of a
@@ -1149,27 +1149,27 @@ window.scrollok(flag)                 *window.scrollok()..curses.txt;*
    line.  Note that in order to get the physical scrolling effect on
    the terminal, it is also necessary to call "idlok()".
 
-window.setscrreg(top, bottom)        *window.setscrreg()..curses.txt;*
+window.setscrreg(top, bottom)         *window.setscrreg()..curses.txt*
 
    Set the scrolling region from line _top_ to line _bottom_. All
    scrolling actions will take place in this region.
 
-window.standend()                     *window.standend()..curses.txt;*
+window.standend()                      *window.standend()..curses.txt*
 
    Turn off the standout attribute.  On some terminals this has the
    side effect of turning off all attributes.
 
-window.standout()                     *window.standout()..curses.txt;*
+window.standout()                      *window.standout()..curses.txt*
 
    Turn on attribute _A_STANDOUT_.
 
-window.subpad(begin_y, begin_x)         *window.subpad()..curses.txt;*
+window.subpad(begin_y, begin_x)          *window.subpad()..curses.txt*
 window.subpad(nlines, ncols, begin_y, begin_x)
 
    Return a sub-window, whose upper-left corner is at "(begin_y,
    begin_x)", and whose width/height is _ncols_/_nlines_.
 
-window.subwin(begin_y, begin_x)         *window.subwin()..curses.txt;*
+window.subwin(begin_y, begin_x)          *window.subwin()..curses.txt*
 window.subwin(nlines, ncols, begin_y, begin_x)
 
    Return a sub-window, whose upper-left corner is at "(begin_y,
@@ -1178,23 +1178,23 @@ window.subwin(nlines, ncols, begin_y, begin_x)
    By default, the sub-window will extend from the specified position
    to the lower right corner of the window.
 
-window.syncdown()                     *window.syncdown()..curses.txt;*
+window.syncdown()                      *window.syncdown()..curses.txt*
 
    Touch each location in the window that has been touched in any of
    its ancestor windows.  This routine is called by "refresh()", so it
    should almost never be necessary to call it manually.
 
-window.syncok(flag)                     *window.syncok()..curses.txt;*
+window.syncok(flag)                      *window.syncok()..curses.txt*
 
    If _flag_ is "True", then "syncup()" is called automatically
    whenever there is a change in the window.
 
-window.syncup()                         *window.syncup()..curses.txt;*
+window.syncup()                          *window.syncup()..curses.txt*
 
    Touch all locations in ancestors of the window that have been
    changed in  the window.
 
-window.timeout(delay)                  *window.timeout()..curses.txt;*
+window.timeout(delay)                   *window.timeout()..curses.txt*
 
    Set blocking or non-blocking read behavior for the window.  If
    _delay_ is negative, blocking read is used (which will wait
@@ -1204,7 +1204,7 @@ window.timeout(delay)                  *window.timeout()..curses.txt;*
    _delay_ milliseconds, and return "-1" if there is still no input at
    the end of that time.
 
-                                     *window.touchline()..curses.txt;*
+                                      *window.touchline()..curses.txt*
 window.touchline(start, count[, changed])
 
    Pretend _count_ lines have been changed, starting with line
@@ -1212,17 +1212,17 @@ window.touchline(start, count[, changed])
    affected lines are marked as having been changed (_changed_"=True")
    or unchanged (_changed_"=False").
 
-window.touchwin()                     *window.touchwin()..curses.txt;*
+window.touchwin()                      *window.touchwin()..curses.txt*
 
    Pretend the whole window has been changed, for purposes of drawing
    optimizations.
 
-window.untouchwin()                 *window.untouchwin()..curses.txt;*
+window.untouchwin()                  *window.untouchwin()..curses.txt*
 
    Mark all lines in  the  window  as unchanged since the last call to
    "refresh()".
 
-window.vline(ch, n[, attr])              *window.vline()..curses.txt;*
+window.vline(ch, n[, attr])               *window.vline()..curses.txt*
 window.vline(y, x, ch, n[, attr])
 
    Display a vertical line starting at "(y, x)" with length _n_
@@ -1234,23 +1234,23 @@ Constants
 
 The "curses" module defines the following data members:
 
-curses.ERR                                          *ERR..curses.txt;*
+curses.ERR                                           *ERR..curses.txt*
 
    Some curses routines  that  return  an integer, such as "getch()",
    return "ERR" upon failure.
 
-curses.OK                                            *OK..curses.txt;*
+curses.OK                                             *OK..curses.txt*
 
    Some curses routines  that  return  an integer, such as  "napms()",
    return "OK" upon success.
 
-curses.version                                  *version..curses.txt;*
+curses.version                                   *version..curses.txt*
 
-curses.__version__                          *__version__..curses.txt;*
+curses.__version__                           *__version__..curses.txt*
 
    A bytes object representing the current version of the module.
 
-curses.ncurses_version                  *ncurses_version..curses.txt;*
+curses.ncurses_version                   *ncurses_version..curses.txt*
 
    A named tuple containing the three components of the ncurses
    library version: _major_, _minor_, and _patch_.  All values are
@@ -1262,23 +1262,23 @@ curses.ncurses_version                  *ncurses_version..curses.txt;*
 
    New in version 3.8.
 
-curses.COLORS                                    *COLORS..curses.txt;*
+curses.COLORS                                     *COLORS..curses.txt*
 
    The maximum number of colors the terminal can support. It is
    defined only after the call to "start_color()".
 
-curses.COLOR_PAIRS                          *COLOR_PAIRS..curses.txt;*
+curses.COLOR_PAIRS                           *COLOR_PAIRS..curses.txt*
 
    The maximum number of color pairs the terminal can support. It is
    defined only after the call to "start_color()".
 
-curses.COLS                                        *COLS..curses.txt;*
+curses.COLS                                         *COLS..curses.txt*
 
    The width of the screen, i.e., the number of columns. It is defined
    only after the call to "initscr()". Updated by
    "update_lines_cols()", "resizeterm()" and "resize_term()".
 
-curses.LINES                                      *LINES..curses.txt;*
+curses.LINES                                       *LINES..curses.txt*
 
    The height of the screen, i.e., the number of lines. It is defined
    only after the call to "initscr()". Updated by
@@ -1722,7 +1722,7 @@ text boxes or for other purposes.
 
 The module "curses.textpad" defines the following function:
 
-                                            *rectangle()..curses.txt;*
+                                             *rectangle()..curses.txt*
 curses.textpad.rectangle(win, uly, ulx, lry, lrx)
 
    Draw a rectangle.  The first argument must be a window object; the
@@ -1741,7 +1741,7 @@ Textbox objects
 
 You can instantiate a "Textbox" object as follows:
 
-class curses.textpad.Textbox(win)               *Textbox..curses.txt;*
+class curses.textpad.Textbox(win)                *Textbox..curses.txt*
 
    Return a textbox widget object.  The _win_ argument should be a
    curses window object in which the textbox is to be contained. The
@@ -1751,7 +1751,7 @@ class curses.textpad.Textbox(win)               *Textbox..curses.txt;*
 
    "Textbox" objects have the following methods:
 
-   edit([validator])                        *Textbox.edit()..curses.txt;*
+   edit([validator])                         *Textbox.edit()..curses.txt*
 
       This is the entry point you will normally use.  It accepts
       editing keystrokes until one of the termination keystrokes is
@@ -1761,7 +1761,7 @@ class curses.textpad.Textbox(win)               *Textbox..curses.txt;*
       returns the window contents as a string; whether blanks in the
       window are included is affected by the "stripspaces" attribute.
 
-   do_command(ch)                     *Textbox.do_command()..curses.txt;*
+   do_command(ch)                      *Textbox.do_command()..curses.txt*
 
       Process a single command keystroke.  Here are the supported
       special keystrokes:
@@ -1822,12 +1822,12 @@ class curses.textpad.Textbox(win)               *Textbox..curses.txt;*
       All other keystrokes are treated as a command to insert the
       given character and move right (with line wrapping).
 
-   gather()                               *Textbox.gather()..curses.txt;*
+   gather()                                *Textbox.gather()..curses.txt*
 
       Return the window contents as a string; whether blanks in the
       window are included is affected by the "stripspaces" member.
 
-   stripspaces                         *Textbox.stripspaces..curses.txt;*
+   stripspaces                          *Textbox.stripspaces..curses.txt*
 
       This attribute is a flag which controls the interpretation of
       blanks in the window.  When it is on, trailing blanks on each

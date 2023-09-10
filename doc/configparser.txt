@@ -1,4 +1,4 @@
-*configparser.txt;*                           Last change: 2023 Sep 09
+*configparser.txt;*                           Last change: 2023 Sep 10
 
 "configparser" — Configuration file parser
 ******************************************
@@ -288,7 +288,7 @@ On top of the core functionality, "ConfigParser" supports
 interpolation.  This means values can be preprocessed before returning
 them from "get()" calls.
 
-                               *BasicInterpolation..configparser.txt;*
+                                *BasicInterpolation..configparser.txt*
 class configparser.BasicInterpolation
 
    The default implementation used by "ConfigParser".  It enables
@@ -318,7 +318,7 @@ class configparser.BasicInterpolation
    "%(my_dir)s/Pictures" as the value of "my_pictures" and
    "%(home_dir)s/lumberjack" as the value of "my_dir".
 
-                            *ExtendedInterpolation..configparser.txt;*
+                             *ExtendedInterpolation..configparser.txt*
 class configparser.ExtendedInterpolation
 
    An alternative handler for interpolation which implements a more
@@ -664,7 +664,7 @@ values of these parser attributes.  The defaults are defined on the
 classes, so they may be overridden by subclasses or by attribute
 assignment.
 
-                      *ConfigParser.BOOLEAN_STATES..configparser.txt;*
+                       *ConfigParser.BOOLEAN_STATES..configparser.txt*
 ConfigParser.BOOLEAN_STATES
 
    By default when using "getboolean()", config parsers consider the
@@ -686,7 +686,7 @@ ConfigParser.BOOLEAN_STATES
    Other typical Boolean pairs include "accept"/"reject" or
    "enabled"/"disabled".
 
-                       *ConfigParser.optionxform()..configparser.txt;*
+                        *ConfigParser.optionxform()..configparser.txt*
 ConfigParser.optionxform(option)
 
    This method transforms option names on every read, get, or set
@@ -721,7 +721,7 @@ ConfigParser.optionxform(option)
      form. This should be an idempotent function: if the name is
      already in canonical form, it should be returned unchanged.
 
-ConfigParser.SECTCRE         *ConfigParser.SECTCRE..configparser.txt;*
+ConfigParser.SECTCRE          *ConfigParser.SECTCRE..configparser.txt*
 
    A compiled regular expression used to parse section headers.  The
    default matches "[section]" to the name ""section"".  Whitespace is
@@ -856,7 +856,7 @@ used in interpolation if an option used is not defined elsewhere.
 ConfigParser Objects
 ====================
 
-                                     *ConfigParser..configparser.txt;*
+                                      *ConfigParser..configparser.txt*
 class configparser.ConfigParser(defaults=None, dict_type=dict, allow_no_value=False, delimiters=('=', ':'), comment_prefixes=('#', ';'), inline_comment_prefixes=None, strict=True, empty_lines_in_values=True, default_section=configparser.DEFAULTSECT, interpolation=BasicInterpolation(), converters={})
 
    The main configuration parser.  When _defaults_ is given, it is
@@ -925,16 +925,16 @@ class configparser.ConfigParser(defaults=None, dict_type=dict, allow_no_value=Fa
    Changed in version 3.8: The default _dict_type_ is "dict", since it
    now preserves insertion order.
 
-   defaults()                *ConfigParser.defaults()..configparser.txt;*
+   defaults()                 *ConfigParser.defaults()..configparser.txt*
 
       Return a dictionary containing the instance-wide defaults.
 
-   sections()                *ConfigParser.sections()..configparser.txt;*
+   sections()                 *ConfigParser.sections()..configparser.txt*
 
       Return a list of the sections available; the _default section_
       is not included in the list.
 
-   add_section(section)   *ConfigParser.add_section()..configparser.txt;*
+   add_section(section)    *ConfigParser.add_section()..configparser.txt*
 
       Add a section named _section_ to the instance.  If a section by
       the given name already exists, "DuplicateSectionError" is
@@ -945,23 +945,23 @@ class configparser.ConfigParser(defaults=None, dict_type=dict, allow_no_value=Fa
       Changed in version 3.2: Non-string section names raise
       "TypeError".
 
-   has_section(section)   *ConfigParser.has_section()..configparser.txt;*
+   has_section(section)    *ConfigParser.has_section()..configparser.txt*
 
       Indicates whether the named _section_ is present in the
       configuration. The _default section_ is not acknowledged.
 
-   options(section)           *ConfigParser.options()..configparser.txt;*
+   options(section)            *ConfigParser.options()..configparser.txt*
 
       Return a list of options available in the specified _section_.
 
-                        *ConfigParser.has_option()..configparser.txt;*
+                         *ConfigParser.has_option()..configparser.txt*
    has_option(section, option)
 
       If the given _section_ exists, and contains the given _option_,
       return "True"; otherwise return "False".  If the specified
       _section_ is "None" or an empty string, DEFAULT is assumed.
 
-                              *ConfigParser.read()..configparser.txt;*
+                               *ConfigParser.read()..configparser.txt*
    read(filenames, encoding=None)
 
       Attempt to read and parse an iterable of filenames, returning a
@@ -998,7 +998,7 @@ class configparser.ConfigParser(defaults=None, dict_type=dict, allow_no_value=Fa
       New in version 3.7: The _filenames_ parameter accepts a "bytes"
       object.
 
-                         *ConfigParser.read_file()..configparser.txt;*
+                          *ConfigParser.read_file()..configparser.txt*
    read_file(f, source=None)
 
       Read and parse configuration data from _f_ which must be an
@@ -1011,7 +1011,7 @@ class configparser.ConfigParser(defaults=None, dict_type=dict, allow_no_value=Fa
 
       New in version 3.2: Replaces "readfp()".
 
-                       *ConfigParser.read_string()..configparser.txt;*
+                        *ConfigParser.read_string()..configparser.txt*
    read_string(string, source='<string>')
 
       Parse configuration data from a string.
@@ -1022,7 +1022,7 @@ class configparser.ConfigParser(defaults=None, dict_type=dict, allow_no_value=Fa
 
       New in version 3.2.
 
-                         *ConfigParser.read_dict()..configparser.txt;*
+                          *ConfigParser.read_dict()..configparser.txt*
    read_dict(dictionary, source='<dict>')
 
       Load configuration from any object that provides a dict-like
@@ -1039,7 +1039,7 @@ class configparser.ConfigParser(defaults=None, dict_type=dict, allow_no_value=Fa
 
       New in version 3.2.
 
-                               *ConfigParser.get()..configparser.txt;*
+                                *ConfigParser.get()..configparser.txt*
    get(section, option, *, raw=False, vars=None[, fallback])
 
       Get an _option_ value for the named _section_.  If _vars_ is
@@ -1058,21 +1058,21 @@ class configparser.ConfigParser(defaults=None, dict_type=dict, allow_no_value=Fa
       argument as the _fallback_ fallback (especially when using the
       mapping protocol).
 
-                            *ConfigParser.getint()..configparser.txt;*
+                             *ConfigParser.getint()..configparser.txt*
    getint(section, option, *, raw=False, vars=None[, fallback])
 
       A convenience method which coerces the _option_ in the specified
       _section_ to an integer.  See "get()" for explanation of _raw_,
       _vars_ and _fallback_.
 
-                          *ConfigParser.getfloat()..configparser.txt;*
+                           *ConfigParser.getfloat()..configparser.txt*
    getfloat(section, option, *, raw=False, vars=None[, fallback])
 
       A convenience method which coerces the _option_ in the specified
       _section_ to a floating point number.  See "get()" for
       explanation of _raw_, _vars_ and _fallback_.
 
-                        *ConfigParser.getboolean()..configparser.txt;*
+                         *ConfigParser.getboolean()..configparser.txt*
    getboolean(section, option, *, raw=False, vars=None[, fallback])
 
       A convenience method which coerces the _option_ in the specified
@@ -1084,8 +1084,7 @@ class configparser.ConfigParser(defaults=None, dict_type=dict, allow_no_value=Fa
       cause it to raise "ValueError".  See "get()" for explanation of
       _raw_, _vars_ and _fallback_.
 
-                             *ConfigParser.items()..configparser.txt;*
-   items(raw=False, vars=None)
+   items(raw=False, vars=None)   *ConfigParser.items()..configparser.txt*
    items(section, raw=False, vars=None)
 
       When _section_ is not given, return a list of _section_name_,
@@ -1099,13 +1098,13 @@ class configparser.ConfigParser(defaults=None, dict_type=dict, allow_no_value=Fa
       in the result.  The previous behaviour mixed actual parser
       options with variables provided for interpolation.
 
-   set(section, option, value)    *ConfigParser.set()..configparser.txt;*
+   set(section, option, value)     *ConfigParser.set()..configparser.txt*
 
       If the given section exists, set the given option to the
       specified value; otherwise raise "NoSectionError".  _option_ and
       _value_ must be strings; if not, "TypeError" is raised.
 
-                             *ConfigParser.write()..configparser.txt;*
+                              *ConfigParser.write()..configparser.txt*
    write(fileobject, space_around_delimiters=True)
 
       Write a representation of the configuration to the specified
@@ -1121,7 +1120,7 @@ class configparser.ConfigParser(defaults=None, dict_type=dict, allow_no_value=Fa
      comment, depends on the given values for _comment_prefix_ and
      _inline_comment_prefix_.
 
-                     *ConfigParser.remove_option()..configparser.txt;*
+                      *ConfigParser.remove_option()..configparser.txt*
    remove_option(section, option)
 
       Remove the specified _option_ from the specified _section_.  If
@@ -1129,7 +1128,7 @@ class configparser.ConfigParser(defaults=None, dict_type=dict, allow_no_value=Fa
       option existed to be removed, return "True"; otherwise return
       "False".
 
-                    *ConfigParser.remove_section()..configparser.txt;*
+                     *ConfigParser.remove_section()..configparser.txt*
    remove_section(section)
 
       Remove the specified _section_ from the configuration.  If the
@@ -1156,7 +1155,7 @@ class configparser.ConfigParser(defaults=None, dict_type=dict, allow_no_value=Fa
       Note that when reading configuration files, whitespace around
       the option names is stripped before "optionxform()" is called.
 
-                          *MAX_INTERPOLATION_DEPTH..configparser.txt;*
+                           *MAX_INTERPOLATION_DEPTH..configparser.txt*
 configparser.MAX_INTERPOLATION_DEPTH
 
    The maximum depth for recursive interpolation for "get()" when the
@@ -1167,7 +1166,7 @@ configparser.MAX_INTERPOLATION_DEPTH
 RawConfigParser Objects
 =======================
 
-                                  *RawConfigParser..configparser.txt;*
+                                   *RawConfigParser..configparser.txt*
 class configparser.RawConfigParser(defaults=None, dict_type=dict, allow_no_value=False, *, delimiters=('=', ':'), comment_prefixes=('#', ';'), inline_comment_prefixes=None, strict=True, empty_lines_in_values=True, default_section=configparser.DEFAULTSECT[, interpolation])
 
    Legacy variant of the "ConfigParser".  It has interpolation
@@ -1184,7 +1183,7 @@ class configparser.RawConfigParser(defaults=None, dict_type=dict, allow_no_value
      values to be stored internally.  If you don’t want interpolation,
      you can use "ConfigParser(interpolation=None)".
 
-                    *RawConfigParser.add_section()..configparser.txt;*
+                     *RawConfigParser.add_section()..configparser.txt*
    add_section(section)
 
       Add a section named _section_ to the instance.  If a section by
@@ -1196,7 +1195,7 @@ class configparser.RawConfigParser(defaults=None, dict_type=dict, allow_no_value
       string named sections.  This behaviour is unsupported and may
       cause internal errors.
 
-                            *RawConfigParser.set()..configparser.txt;*
+                             *RawConfigParser.set()..configparser.txt*
    set(section, option, value)
 
       If the given section exists, set the given option to the
@@ -1216,16 +1215,16 @@ class configparser.RawConfigParser(defaults=None, dict_type=dict, allow_no_value
 Exceptions
 ==========
 
-exception configparser.Error                *Error..configparser.txt;*
+exception configparser.Error                 *Error..configparser.txt*
 
    Base class for all other "configparser" exceptions.
 
-                                   *NoSectionError..configparser.txt;*
+                                    *NoSectionError..configparser.txt*
 exception configparser.NoSectionError
 
    Exception raised when a specified section is not found.
 
-                            *DuplicateSectionError..configparser.txt;*
+                             *DuplicateSectionError..configparser.txt*
 exception configparser.DuplicateSectionError
 
    Exception raised if "add_section()" is called with the name of a
@@ -1236,7 +1235,7 @@ exception configparser.DuplicateSectionError
    New in version 3.2: Optional "source" and "lineno" attributes and
    arguments to "__init__()" were added.
 
-                             *DuplicateOptionError..configparser.txt;*
+                              *DuplicateOptionError..configparser.txt*
 exception configparser.DuplicateOptionError
 
    Exception raised by strict parsers if a single option appears twice
@@ -1245,46 +1244,45 @@ exception configparser.DuplicateOptionError
    dictionary may have two keys representing the same case-insensitive
    configuration key.
 
-                                    *NoOptionError..configparser.txt;*
+                                     *NoOptionError..configparser.txt*
 exception configparser.NoOptionError
 
    Exception raised when a specified option is not found in the
    specified section.
 
-                               *InterpolationError..configparser.txt;*
+                                *InterpolationError..configparser.txt*
 exception configparser.InterpolationError
 
    Base class for exceptions raised when problems occur performing
    string interpolation.
 
-                          *InterpolationDepthError..configparser.txt;*
+                           *InterpolationDepthError..configparser.txt*
 exception configparser.InterpolationDepthError
 
    Exception raised when string interpolation cannot be completed
    because the number of iterations exceeds "MAX_INTERPOLATION_DEPTH".
    Subclass of "InterpolationError".
 
-                  *InterpolationMissingOptionError..configparser.txt;*
+                   *InterpolationMissingOptionError..configparser.txt*
 exception configparser.InterpolationMissingOptionError
 
    Exception raised when an option referenced from a value does not
    exist. Subclass of "InterpolationError".
 
-                         *InterpolationSyntaxError..configparser.txt;*
+                          *InterpolationSyntaxError..configparser.txt*
 exception configparser.InterpolationSyntaxError
 
    Exception raised when the source text into which substitutions are
    made does not conform to the required syntax.  Subclass of
    "InterpolationError".
 
-                        *MissingSectionHeaderError..configparser.txt;*
+                         *MissingSectionHeaderError..configparser.txt*
 exception configparser.MissingSectionHeaderError
 
    Exception raised when attempting to parse a file which has no
    section headers.
 
-                                     *ParsingError..configparser.txt;*
-exception configparser.ParsingError
+exception configparser.ParsingError   *ParsingError..configparser.txt*
 
    Exception raised when errors occur attempting to parse a file.
 

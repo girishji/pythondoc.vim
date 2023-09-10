@@ -1,4 +1,4 @@
-*mmap.txt;*                                   Last change: 2023 Sep 09
+*mmap.txt;*                                   Last change: 2023 Sep 10
 
 "mmap" — Memory-mapped file support
 ***********************************
@@ -53,7 +53,7 @@ Changed in version 3.7: Added "ACCESS_DEFAULT" constant.
 To map anonymous memory, -1 should be passed as the fileno along with
 the length.
 
-                                                     *mmap..mmap.txt;*
+                                                      *mmap..mmap.txt*
 class mmap.mmap(fileno, length, tagname=None, access=ACCESS_DEFAULT[, offset])
 
    **(Windows version)** Maps _length_ bytes from the file specified
@@ -170,19 +170,19 @@ class mmap.mmap(fileno, length, flags=MAP_SHARED, prot=PROT_WRITE|PROT_READ, acc
 
    Memory-mapped file objects support the following methods:
 
-   close()                                      *mmap.close()..mmap.txt;*
+   close()                                       *mmap.close()..mmap.txt*
 
       Closes the mmap. Subsequent calls to other methods of the object
       will result in a ValueError exception being raised. This will
       not close the open file.
 
-   closed                                        *mmap.closed..mmap.txt;*
+   closed                                         *mmap.closed..mmap.txt*
 
       "True" if the file is closed.
 
       New in version 3.2.
 
-   find(sub[, start[, end]])                     *mmap.find()..mmap.txt;*
+   find(sub[, start[, end]])                      *mmap.find()..mmap.txt*
 
       Returns the lowest index in the object where the subsequence
       _sub_ is found, such that _sub_ is contained in the range
@@ -192,7 +192,7 @@ class mmap.mmap(fileno, length, flags=MAP_SHARED, prot=PROT_WRITE|PROT_READ, acc
       Changed in version 3.5: Writable _bytes-like object_ is now
       accepted.
 
-   flush([offset[, size]])                      *mmap.flush()..mmap.txt;*
+   flush([offset[, size]])                       *mmap.flush()..mmap.txt*
 
       Flushes changes made to the in-memory copy of a file back to
       disk. Without use of this call there is no guarantee that
@@ -210,7 +210,7 @@ class mmap.mmap(fileno, length, flags=MAP_SHARED, prot=PROT_WRITE|PROT_READ, acc
       value was returned on success; an exception was raised on error
       under Unix.
 
-   madvise(option[, start[, length]])         *mmap.madvise()..mmap.txt;*
+   madvise(option[, start[, length]])          *mmap.madvise()..mmap.txt*
 
       Send advice _option_ to the kernel about the memory region
       beginning at _start_ and extending _length_ bytes.  _option_
@@ -223,14 +223,14 @@ class mmap.mmap(fileno, length, flags=MAP_SHARED, prot=PROT_WRITE|PROT_READ, acc
 
       New in version 3.8.
 
-   move(dest, src, count)                        *mmap.move()..mmap.txt;*
+   move(dest, src, count)                         *mmap.move()..mmap.txt*
 
       Copy the _count_ bytes starting at offset _src_ to the
       destination index _dest_.  If the mmap was created with
       "ACCESS_READ", then calls to move will raise a "TypeError"
       exception.
 
-   read([n])                                     *mmap.read()..mmap.txt;*
+   read([n])                                      *mmap.read()..mmap.txt*
 
       Return a "bytes" containing up to _n_ bytes starting from the
       current file position. If the argument is omitted, "None" or
@@ -240,18 +240,18 @@ class mmap.mmap(fileno, length, flags=MAP_SHARED, prot=PROT_WRITE|PROT_READ, acc
 
       Changed in version 3.3: Argument can be omitted or "None".
 
-   read_byte()                              *mmap.read_byte()..mmap.txt;*
+   read_byte()                               *mmap.read_byte()..mmap.txt*
 
       Returns a byte at the current file position as an integer, and
       advances the file position by 1.
 
-   readline()                                *mmap.readline()..mmap.txt;*
+   readline()                                 *mmap.readline()..mmap.txt*
 
       Returns a single line, starting at the current file position and
       up to the next newline. The file position is updated to point
       after the bytes that were returned.
 
-   resize(newsize)                             *mmap.resize()..mmap.txt;*
+   resize(newsize)                              *mmap.resize()..mmap.txt*
 
       Resizes the map and the underlying file, if any. If the mmap was
       created with "ACCESS_READ" or "ACCESS_COPY", resizing the map
@@ -267,7 +267,7 @@ class mmap.mmap(fileno, length, flags=MAP_SHARED, prot=PROT_WRITE|PROT_READ, acc
       when another map is held Allows resize against an anonymous map
       on Windows
 
-   rfind(sub[, start[, end]])                   *mmap.rfind()..mmap.txt;*
+   rfind(sub[, start[, end]])                    *mmap.rfind()..mmap.txt*
 
       Returns the highest index in the object where the subsequence
       _sub_ is found, such that _sub_ is contained in the range
@@ -277,7 +277,7 @@ class mmap.mmap(fileno, length, flags=MAP_SHARED, prot=PROT_WRITE|PROT_READ, acc
       Changed in version 3.5: Writable _bytes-like object_ is now
       accepted.
 
-   seek(pos[, whence])                           *mmap.seek()..mmap.txt;*
+   seek(pos[, whence])                            *mmap.seek()..mmap.txt*
 
       Set the file’s current position.  _whence_ argument is optional
       and defaults to "os.SEEK_SET" or "0" (absolute file
@@ -285,16 +285,16 @@ class mmap.mmap(fileno, length, flags=MAP_SHARED, prot=PROT_WRITE|PROT_READ, acc
       relative to the current position) and "os.SEEK_END" or "2" (seek
       relative to the file’s end).
 
-   size()                                        *mmap.size()..mmap.txt;*
+   size()                                         *mmap.size()..mmap.txt*
 
       Return the length of the file, which can be larger than the size
       of the memory-mapped area.
 
-   tell()                                        *mmap.tell()..mmap.txt;*
+   tell()                                         *mmap.tell()..mmap.txt*
 
       Returns the current position of the file pointer.
 
-   write(bytes)                                 *mmap.write()..mmap.txt;*
+   write(bytes)                                  *mmap.write()..mmap.txt*
 
       Write the bytes in _bytes_ into memory at the current position
       of the file pointer and return the number of bytes written
@@ -310,7 +310,7 @@ class mmap.mmap(fileno, length, flags=MAP_SHARED, prot=PROT_WRITE|PROT_READ, acc
       Changed in version 3.6: The number of bytes written is now
       returned.
 
-   write_byte(byte)                        *mmap.write_byte()..mmap.txt;*
+   write_byte(byte)                         *mmap.write_byte()..mmap.txt*
 
       Write the integer _byte_ into memory at the current position of
       the file pointer; the file position is advanced by "1". If the
@@ -321,30 +321,30 @@ class mmap.mmap(fileno, length, flags=MAP_SHARED, prot=PROT_WRITE|PROT_READ, acc
 MADV_* Constants
 ================
 
-mmap.MADV_NORMAL                              *MADV_NORMAL..mmap.txt;*
-mmap.MADV_RANDOM                              *MADV_RANDOM..mmap.txt;*
-mmap.MADV_SEQUENTIAL                      *MADV_SEQUENTIAL..mmap.txt;*
-mmap.MADV_WILLNEED                          *MADV_WILLNEED..mmap.txt;*
-mmap.MADV_DONTNEED                          *MADV_DONTNEED..mmap.txt;*
-mmap.MADV_REMOVE                              *MADV_REMOVE..mmap.txt;*
-mmap.MADV_DONTFORK                          *MADV_DONTFORK..mmap.txt;*
-mmap.MADV_DOFORK                              *MADV_DOFORK..mmap.txt;*
-mmap.MADV_HWPOISON                          *MADV_HWPOISON..mmap.txt;*
-mmap.MADV_MERGEABLE                        *MADV_MERGEABLE..mmap.txt;*
-mmap.MADV_UNMERGEABLE                    *MADV_UNMERGEABLE..mmap.txt;*
-mmap.MADV_SOFT_OFFLINE                  *MADV_SOFT_OFFLINE..mmap.txt;*
-mmap.MADV_HUGEPAGE                          *MADV_HUGEPAGE..mmap.txt;*
-mmap.MADV_NOHUGEPAGE                      *MADV_NOHUGEPAGE..mmap.txt;*
-mmap.MADV_DONTDUMP                          *MADV_DONTDUMP..mmap.txt;*
-mmap.MADV_DODUMP                              *MADV_DODUMP..mmap.txt;*
-mmap.MADV_FREE                                  *MADV_FREE..mmap.txt;*
-mmap.MADV_NOSYNC                              *MADV_NOSYNC..mmap.txt;*
-mmap.MADV_AUTOSYNC                          *MADV_AUTOSYNC..mmap.txt;*
-mmap.MADV_NOCORE                              *MADV_NOCORE..mmap.txt;*
-mmap.MADV_CORE                                  *MADV_CORE..mmap.txt;*
-mmap.MADV_PROTECT                            *MADV_PROTECT..mmap.txt;*
-mmap.MADV_FREE_REUSABLE                *MADV_FREE_REUSABLE..mmap.txt;*
-mmap.MADV_FREE_REUSE                      *MADV_FREE_REUSE..mmap.txt;*
+mmap.MADV_NORMAL                               *MADV_NORMAL..mmap.txt*
+mmap.MADV_RANDOM                               *MADV_RANDOM..mmap.txt*
+mmap.MADV_SEQUENTIAL                       *MADV_SEQUENTIAL..mmap.txt*
+mmap.MADV_WILLNEED                           *MADV_WILLNEED..mmap.txt*
+mmap.MADV_DONTNEED                           *MADV_DONTNEED..mmap.txt*
+mmap.MADV_REMOVE                               *MADV_REMOVE..mmap.txt*
+mmap.MADV_DONTFORK                           *MADV_DONTFORK..mmap.txt*
+mmap.MADV_DOFORK                               *MADV_DOFORK..mmap.txt*
+mmap.MADV_HWPOISON                           *MADV_HWPOISON..mmap.txt*
+mmap.MADV_MERGEABLE                         *MADV_MERGEABLE..mmap.txt*
+mmap.MADV_UNMERGEABLE                     *MADV_UNMERGEABLE..mmap.txt*
+mmap.MADV_SOFT_OFFLINE                   *MADV_SOFT_OFFLINE..mmap.txt*
+mmap.MADV_HUGEPAGE                           *MADV_HUGEPAGE..mmap.txt*
+mmap.MADV_NOHUGEPAGE                       *MADV_NOHUGEPAGE..mmap.txt*
+mmap.MADV_DONTDUMP                           *MADV_DONTDUMP..mmap.txt*
+mmap.MADV_DODUMP                               *MADV_DODUMP..mmap.txt*
+mmap.MADV_FREE                                   *MADV_FREE..mmap.txt*
+mmap.MADV_NOSYNC                               *MADV_NOSYNC..mmap.txt*
+mmap.MADV_AUTOSYNC                           *MADV_AUTOSYNC..mmap.txt*
+mmap.MADV_NOCORE                               *MADV_NOCORE..mmap.txt*
+mmap.MADV_CORE                                   *MADV_CORE..mmap.txt*
+mmap.MADV_PROTECT                             *MADV_PROTECT..mmap.txt*
+mmap.MADV_FREE_REUSABLE                 *MADV_FREE_REUSABLE..mmap.txt*
+mmap.MADV_FREE_REUSE                       *MADV_FREE_REUSE..mmap.txt*
 
    These options can be passed to "mmap.madvise()".  Not every option
    will be present on every system.
@@ -357,16 +357,16 @@ mmap.MADV_FREE_REUSE                      *MADV_FREE_REUSE..mmap.txt;*
 MAP_* Constants
 ===============
 
-mmap.MAP_SHARED                                *MAP_SHARED..mmap.txt;*
-mmap.MAP_PRIVATE                              *MAP_PRIVATE..mmap.txt;*
-mmap.MAP_DENYWRITE                          *MAP_DENYWRITE..mmap.txt;*
-mmap.MAP_EXECUTABLE                        *MAP_EXECUTABLE..mmap.txt;*
-mmap.MAP_ANON                                    *MAP_ANON..mmap.txt;*
-mmap.MAP_ANONYMOUS                          *MAP_ANONYMOUS..mmap.txt;*
-mmap.MAP_POPULATE                            *MAP_POPULATE..mmap.txt;*
-mmap.MAP_STACK                                  *MAP_STACK..mmap.txt;*
-mmap.MAP_ALIGNED_SUPER                  *MAP_ALIGNED_SUPER..mmap.txt;*
-mmap.MAP_CONCEAL                              *MAP_CONCEAL..mmap.txt;*
+mmap.MAP_SHARED                                 *MAP_SHARED..mmap.txt*
+mmap.MAP_PRIVATE                               *MAP_PRIVATE..mmap.txt*
+mmap.MAP_DENYWRITE                           *MAP_DENYWRITE..mmap.txt*
+mmap.MAP_EXECUTABLE                         *MAP_EXECUTABLE..mmap.txt*
+mmap.MAP_ANON                                     *MAP_ANON..mmap.txt*
+mmap.MAP_ANONYMOUS                           *MAP_ANONYMOUS..mmap.txt*
+mmap.MAP_POPULATE                             *MAP_POPULATE..mmap.txt*
+mmap.MAP_STACK                                   *MAP_STACK..mmap.txt*
+mmap.MAP_ALIGNED_SUPER                   *MAP_ALIGNED_SUPER..mmap.txt*
+mmap.MAP_CONCEAL                               *MAP_CONCEAL..mmap.txt*
 
    These are the various flags that can be passed to "mmap.mmap()".
    "MAP_ALIGNED_SUPER" is only available at FreeBSD and "MAP_CONCEAL"

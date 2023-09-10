@@ -1,4 +1,4 @@
-*argparse.txt;*                               Last change: 2023 Sep 09
+*argparse.txt;*                               Last change: 2023 Sep 10
 
 "argparse" — Parser for command-line options, arguments and sub-commands
 ************************************************************************
@@ -188,7 +188,7 @@ command-line arguments from "sys.argv".
 ArgumentParser objects
 ======================
 
-                                       *ArgumentParser..argparse.txt;*
+                                        *ArgumentParser..argparse.txt*
 class argparse.ArgumentParser(prog=None, usage=None, description=None, epilog=None, parents=[], formatter_class=argparse.HelpFormatter, prefix_chars='-', fromfile_prefix_chars=None, argument_default=None, conflict_handler='error', add_help=True, allow_abbrev=True, exit_on_error=True)
 
    Create a new "ArgumentParser" object. All parameters should be
@@ -427,16 +427,16 @@ formatter_class
 specifying an alternate formatting class.  Currently, there are four
 such classes:
 
-                          *RawDescriptionHelpFormatter..argparse.txt;*
+                           *RawDescriptionHelpFormatter..argparse.txt*
 class argparse.RawDescriptionHelpFormatter
 
-                                 *RawTextHelpFormatter..argparse.txt;*
+                                  *RawTextHelpFormatter..argparse.txt*
 class argparse.RawTextHelpFormatter
 
-                        *ArgumentDefaultsHelpFormatter..argparse.txt;*
+                         *ArgumentDefaultsHelpFormatter..argparse.txt*
 class argparse.ArgumentDefaultsHelpFormatter
 
-                             *MetavarTypeHelpFormatter..argparse.txt;*
+                              *MetavarTypeHelpFormatter..argparse.txt*
 class argparse.MetavarTypeHelpFormatter
 
 "RawDescriptionHelpFormatter" and "RawTextHelpFormatter" give more
@@ -738,7 +738,7 @@ New in version 3.9.
 The add_argument() method
 =========================
 
-                        *ArgumentParser.add_argument()..argparse.txt;*
+                         *ArgumentParser.add_argument()..argparse.txt*
 ArgumentParser.add_argument(name or flags...[, action][, nargs][, const][, default][, type][, choices][, required][, help][, metavar][, dest])
 
    Define how a single command-line argument should be parsed.  Each
@@ -1420,7 +1420,7 @@ callable which processes arguments from the command-line. Any object
 which follows this API may be passed as the "action" parameter to
 "add_argument()".
 
-                                               *Action..argparse.txt;*
+                                                *Action..argparse.txt*
 class argparse.Action(option_strings, dest, nargs=None, const=None, default=None, type=None, choices=None, required=False, help=None, metavar=None)
 
 Action objects are used by an ArgumentParser to represent the
@@ -1464,7 +1464,7 @@ default will be used.
 The parse_args() method
 =======================
 
-                          *ArgumentParser.parse_args()..argparse.txt;*
+                           *ArgumentParser.parse_args()..argparse.txt*
 ArgumentParser.parse_args(args=None, namespace=None)
 
    Convert argument strings to objects and assign them as attributes
@@ -1649,7 +1649,7 @@ interactive prompt:
 The Namespace object
 --------------------
 
-class argparse.Namespace                    *Namespace..argparse.txt;*
+class argparse.Namespace                     *Namespace..argparse.txt*
 
    Simple class used by default by "parse_args()" to create an object
    holding attributes and return it.
@@ -1686,7 +1686,7 @@ Other utilities
 Sub-commands
 ------------
 
-                      *ArgumentParser.add_subparsers()..argparse.txt;*
+                       *ArgumentParser.add_subparsers()..argparse.txt*
 ArgumentParser.add_subparsers([title][, description][, prog][, parser_class][, action][, option_strings][, dest][, required][, help][, metavar])
 
    Many programs split up their functionality into a number of sub-
@@ -1892,7 +1892,7 @@ ArgumentParser.add_subparsers([title][, description][, prog][, parser_class][, a
 FileType objects
 ----------------
 
-                                             *FileType..argparse.txt;*
+                                              *FileType..argparse.txt*
 class argparse.FileType(mode='r', bufsize=-1, encoding=None, errors=None)
 
    The "FileType" factory creates objects that can be passed to the
@@ -1923,7 +1923,7 @@ class argparse.FileType(mode='r', bufsize=-1, encoding=None, errors=None)
 Argument groups
 ---------------
 
-                  *ArgumentParser.add_argument_group()..argparse.txt;*
+                   *ArgumentParser.add_argument_group()..argparse.txt*
 ArgumentParser.add_argument_group(title=None, description=None)
 
    By default, "ArgumentParser" groups command-line arguments into
@@ -1982,7 +1982,7 @@ ArgumentParser.add_argument_group(title=None, description=None)
 Mutual exclusion
 ----------------
 
-        *ArgumentParser.add_mutually_exclusive_group()..argparse.txt;*
+         *ArgumentParser.add_mutually_exclusive_group()..argparse.txt*
 ArgumentParser.add_mutually_exclusive_group(required=False)
 
    Create a mutually exclusive group. "argparse" will make sure that
@@ -2046,7 +2046,7 @@ ArgumentParser.add_mutually_exclusive_group(required=False)
 Parser defaults
 ---------------
 
-                        *ArgumentParser.set_defaults()..argparse.txt;*
+                         *ArgumentParser.set_defaults()..argparse.txt*
 ArgumentParser.set_defaults(**kwargs)
 
    Most of the time, the attributes of the object returned by
@@ -2074,7 +2074,7 @@ ArgumentParser.set_defaults(**kwargs)
    multiple parsers.  See the "add_subparsers()" method for an example
    of this type.
 
-                         *ArgumentParser.get_default()..argparse.txt;*
+                          *ArgumentParser.get_default()..argparse.txt*
 ArgumentParser.get_default(dest)
 
    Get the default value for a namespace attribute, as set by either
@@ -2093,14 +2093,14 @@ In most typical applications, "parse_args()" will take care of
 formatting and printing any usage or error messages.  However, several
 formatting methods are available:
 
-                         *ArgumentParser.print_usage()..argparse.txt;*
+                          *ArgumentParser.print_usage()..argparse.txt*
 ArgumentParser.print_usage(file=None)
 
    Print a brief description of how the "ArgumentParser" should be
    invoked on the command line.  If _file_ is "None", "sys.stdout" is
    assumed.
 
-                          *ArgumentParser.print_help()..argparse.txt;*
+                           *ArgumentParser.print_help()..argparse.txt*
 ArgumentParser.print_help(file=None)
 
    Print a help message, including the program usage and information
@@ -2110,13 +2110,13 @@ ArgumentParser.print_help(file=None)
 There are also variants of these methods that simply return a string
 instead of printing it:
 
-                        *ArgumentParser.format_usage()..argparse.txt;*
+                         *ArgumentParser.format_usage()..argparse.txt*
 ArgumentParser.format_usage()
 
    Return a string containing a brief description of how the
    "ArgumentParser" should be invoked on the command line.
 
-                         *ArgumentParser.format_help()..argparse.txt;*
+                          *ArgumentParser.format_help()..argparse.txt*
 ArgumentParser.format_help()
 
    Return a string containing a help message, including the program
@@ -2127,7 +2127,7 @@ ArgumentParser.format_help()
 Partial parsing
 ---------------
 
-                    *ArgumentParser.parse_known_args()..argparse.txt;*
+                     *ArgumentParser.parse_known_args()..argparse.txt*
 ArgumentParser.parse_known_args(args=None, namespace=None)
 
 Sometimes a script may only parse a few of the command-line arguments,
@@ -2154,7 +2154,7 @@ Warning:
 Customizing file parsing
 ------------------------
 
-            *ArgumentParser.convert_arg_line_to_args()..argparse.txt;*
+             *ArgumentParser.convert_arg_line_to_args()..argparse.txt*
 ArgumentParser.convert_arg_line_to_args(arg_line)
 
    Arguments that are read from a file (see the
@@ -2179,7 +2179,7 @@ ArgumentParser.convert_arg_line_to_args(arg_line)
 Exiting methods
 ---------------
 
-                                *ArgumentParser.exit()..argparse.txt;*
+                                 *ArgumentParser.exit()..argparse.txt*
 ArgumentParser.exit(status=0, message=None)
 
    This method terminates the program, exiting with the specified
@@ -2192,9 +2192,7 @@ ArgumentParser.exit(status=0, message=None)
                   raise Exception(f'Exiting because of an error: {message}')
               exit(status)
 <
-
-                               *ArgumentParser.error()..argparse.txt;*
-ArgumentParser.error(message)
+ArgumentParser.error(message)   *ArgumentParser.error()..argparse.txt*
 
    This method prints a usage message including the _message_ to the
    standard error and terminates the program with a status code of 2.
@@ -2203,10 +2201,10 @@ ArgumentParser.error(message)
 Intermixed parsing
 ------------------
 
-               *ArgumentParser.parse_intermixed_args()..argparse.txt;*
+                *ArgumentParser.parse_intermixed_args()..argparse.txt*
 ArgumentParser.parse_intermixed_args(args=None, namespace=None)
 
-         *ArgumentParser.parse_known_intermixed_args()..argparse.txt;*
+          *ArgumentParser.parse_known_intermixed_args()..argparse.txt*
 ArgumentParser.parse_known_intermixed_args(args=None, namespace=None)
 
 A number of Unix commands allow the user to intermix optional
@@ -2303,7 +2301,7 @@ A partial upgrade path from "optparse" to "argparse":
 Exceptions
 ==========
 
-exception argparse.ArgumentError        *ArgumentError..argparse.txt;*
+exception argparse.ArgumentError         *ArgumentError..argparse.txt*
 
    An error from creating or using an argument (optional or
    positional).
@@ -2311,7 +2309,7 @@ exception argparse.ArgumentError        *ArgumentError..argparse.txt;*
    The string value of this exception is the message, augmented with
    information about the argument that caused it.
 
-                                    *ArgumentTypeError..argparse.txt;*
+                                     *ArgumentTypeError..argparse.txt*
 exception argparse.ArgumentTypeError
 
    Raised when something goes wrong converting a command line string

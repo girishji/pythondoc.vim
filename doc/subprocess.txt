@@ -1,4 +1,4 @@
-*subprocess.txt;*                             Last change: 2023 Sep 09
+*subprocess.txt;*                             Last change: 2023 Sep 10
 
 "subprocess" — Subprocess management
 ************************************
@@ -33,7 +33,7 @@ The recommended approach to invoking subprocesses is to use the
 "run()" function for all use cases it can handle. For more advanced
 use cases, the underlying "Popen" interface can be used directly.
 
-                                              *run()..subprocess.txt;*
+                                               *run()..subprocess.txt*
 subprocess.run(args, *, stdin=None, input=None, stdout=None, stderr=None, capture_output=False, shell=False, cwd=None, timeout=None, check=False, encoding=None, errors=None, text=None, env=None, universal_newlines=None, **other_popen_kwargs)
 
    Run the command described by _args_.  Wait for command to complete,
@@ -116,18 +116,17 @@ subprocess.run(args, *, stdin=None, input=None, stdout=None, stderr=None, captur
    dropping a malicious program named "cmd.exe" into a current
    directory no longer works.
 
-                                   *CompletedProcess..subprocess.txt;*
-class subprocess.CompletedProcess
+class subprocess.CompletedProcess   *CompletedProcess..subprocess.txt*
 
    The return value from "run()", representing a process that has
    finished.
 
-   args                          *CompletedProcess.args..subprocess.txt;*
+   args                           *CompletedProcess.args..subprocess.txt*
 
       The arguments used to launch the process. This may be a list or
       a string.
 
-   returncode              *CompletedProcess.returncode..subprocess.txt;*
+   returncode               *CompletedProcess.returncode..subprocess.txt*
 
       Exit status of the child process. Typically, an exit status of 0
       indicates that it ran successfully.
@@ -135,7 +134,7 @@ class subprocess.CompletedProcess
       A negative value "-N" indicates that the child was terminated by
       signal "N" (POSIX only).
 
-   stdout                      *CompletedProcess.stdout..subprocess.txt;*
+   stdout                       *CompletedProcess.stdout..subprocess.txt*
 
       Captured stdout from the child process. A bytes sequence, or a
       string if "run()" was called with an encoding, errors, or
@@ -145,20 +144,20 @@ class subprocess.CompletedProcess
       and stderr will be combined in this attribute, and "stderr" will
       be "None".
 
-   stderr                      *CompletedProcess.stderr..subprocess.txt;*
+   stderr                       *CompletedProcess.stderr..subprocess.txt*
 
       Captured stderr from the child process. A bytes sequence, or a
       string if "run()" was called with an encoding, errors, or
       text=True. "None" if stderr was not captured.
 
-                *CompletedProcess.check_returncode()..subprocess.txt;*
+                 *CompletedProcess.check_returncode()..subprocess.txt*
    check_returncode()
 
       If "returncode" is non-zero, raise a "CalledProcessError".
 
    New in version 3.5.
 
-subprocess.DEVNULL                          *DEVNULL..subprocess.txt;*
+subprocess.DEVNULL                           *DEVNULL..subprocess.txt*
 
    Special value that can be used as the _stdin_, _stdout_ or _stderr_
    argument to "Popen" and indicates that the special file
@@ -166,40 +165,39 @@ subprocess.DEVNULL                          *DEVNULL..subprocess.txt;*
 
    New in version 3.3.
 
-subprocess.PIPE                                *PIPE..subprocess.txt;*
+subprocess.PIPE                                 *PIPE..subprocess.txt*
 
    Special value that can be used as the _stdin_, _stdout_ or _stderr_
    argument to "Popen" and indicates that a pipe to the standard
    stream should be opened.  Most useful with "Popen.communicate()".
 
-subprocess.STDOUT                            *STDOUT..subprocess.txt;*
+subprocess.STDOUT                             *STDOUT..subprocess.txt*
 
    Special value that can be used as the _stderr_ argument to "Popen"
    and indicates that standard error should go into the same handle as
    standard output.
 
-                                    *SubprocessError..subprocess.txt;*
+                                     *SubprocessError..subprocess.txt*
 exception subprocess.SubprocessError
 
    Base class for all other exceptions from this module.
 
    New in version 3.3.
 
-                                     *TimeoutExpired..subprocess.txt;*
-exception subprocess.TimeoutExpired
+exception subprocess.TimeoutExpired   *TimeoutExpired..subprocess.txt*
 
    Subclass of "SubprocessError", raised when a timeout expires while
    waiting for a child process.
 
-   cmd                              *TimeoutExpired.cmd..subprocess.txt;*
+   cmd                               *TimeoutExpired.cmd..subprocess.txt*
 
       Command that was used to spawn the child process.
 
-   timeout                      *TimeoutExpired.timeout..subprocess.txt;*
+   timeout                       *TimeoutExpired.timeout..subprocess.txt*
 
       Timeout in seconds.
 
-   output                        *TimeoutExpired.output..subprocess.txt;*
+   output                         *TimeoutExpired.output..subprocess.txt*
 
       Output of the child process if it was captured by "run()" or
       "check_output()".  Otherwise, "None".  This is always "bytes"
@@ -207,11 +205,11 @@ exception subprocess.TimeoutExpired
       setting.  It may remain "None" instead of "b''" when no output
       was observed.
 
-   stdout                        *TimeoutExpired.stdout..subprocess.txt;*
+   stdout                         *TimeoutExpired.stdout..subprocess.txt*
 
       Alias for output, for symmetry with "stderr".
 
-   stderr                        *TimeoutExpired.stderr..subprocess.txt;*
+   stderr                         *TimeoutExpired.stderr..subprocess.txt*
 
       Stderr output of the child process if it was captured by
       "run()". Otherwise, "None".  This is always "bytes" when stderr
@@ -223,32 +221,32 @@ exception subprocess.TimeoutExpired
 
    Changed in version 3.5: _stdout_ and _stderr_ attributes added
 
-                                 *CalledProcessError..subprocess.txt;*
+                                  *CalledProcessError..subprocess.txt*
 exception subprocess.CalledProcessError
 
    Subclass of "SubprocessError", raised when a process run by
    "check_call()", "check_output()", or "run()" (with "check=True")
    returns a non-zero exit status.
 
-   returncode            *CalledProcessError.returncode..subprocess.txt;*
+   returncode             *CalledProcessError.returncode..subprocess.txt*
 
       Exit status of the child process.  If the process exited due to
       a signal, this will be the negative signal number.
 
-   cmd                          *CalledProcessError.cmd..subprocess.txt;*
+   cmd                           *CalledProcessError.cmd..subprocess.txt*
 
       Command that was used to spawn the child process.
 
-   output                    *CalledProcessError.output..subprocess.txt;*
+   output                     *CalledProcessError.output..subprocess.txt*
 
       Output of the child process if it was captured by "run()" or
       "check_output()".  Otherwise, "None".
 
-   stdout                    *CalledProcessError.stdout..subprocess.txt;*
+   stdout                     *CalledProcessError.stdout..subprocess.txt*
 
       Alias for output, for symmetry with "stderr".
 
-   stderr                    *CalledProcessError.stderr..subprocess.txt;*
+   stderr                     *CalledProcessError.stderr..subprocess.txt*
 
       Stderr output of the child process if it was captured by
       "run()". Otherwise, "None".
@@ -345,7 +343,7 @@ handled by the "Popen" class. It offers a lot of flexibility so that
 developers are able to handle the less common cases not covered by the
 convenience functions.
 
-                                              *Popen..subprocess.txt;*
+                                               *Popen..subprocess.txt*
 class subprocess.Popen(args, bufsize=-1, executable=None, stdin=None, stdout=None, stderr=None, preexec_fn=None, close_fds=True, shell=False, cwd=None, env=None, universal_newlines=None, startupinfo=None, creationflags=0, restore_signals=True, start_new_session=False, pass_fds=(), *, group=None, extra_groups=None, user=None, umask=-1, encoding=None, errors=None, text=None, pipesize=-1, process_group=None)
 
    Execute a child program in a new process.  On POSIX, the class uses
@@ -765,12 +763,12 @@ Popen Objects
 
 Instances of the "Popen" class have the following methods:
 
-Popen.poll()                           *Popen.poll()..subprocess.txt;*
+Popen.poll()                            *Popen.poll()..subprocess.txt*
 
    Check if child process has terminated.  Set and return "returncode"
    attribute. Otherwise, returns "None".
 
-Popen.wait(timeout=None)               *Popen.wait()..subprocess.txt;*
+Popen.wait(timeout=None)                *Popen.wait()..subprocess.txt*
 
    Wait for child process to terminate.  Set and return "returncode"
    attribute.
@@ -794,7 +792,7 @@ Popen.wait(timeout=None)               *Popen.wait()..subprocess.txt;*
 
    Changed in version 3.3: _timeout_ was added.
 
-                                *Popen.communicate()..subprocess.txt;*
+                                 *Popen.communicate()..subprocess.txt*
 Popen.communicate(input=None, timeout=None)
 
    Interact with process: Send data to stdin.  Read data from stdout
@@ -835,7 +833,7 @@ Popen.communicate(input=None, timeout=None)
 
    Changed in version 3.3: _timeout_ was added.
 
-Popen.send_signal(signal)       *Popen.send_signal()..subprocess.txt;*
+Popen.send_signal(signal)        *Popen.send_signal()..subprocess.txt*
 
    Sends the signal _signal_ to the child.
 
@@ -848,13 +846,13 @@ Popen.send_signal(signal)       *Popen.send_signal()..subprocess.txt;*
      _creationflags_ parameter which includes
      "CREATE_NEW_PROCESS_GROUP".
 
-Popen.terminate()                 *Popen.terminate()..subprocess.txt;*
+Popen.terminate()                  *Popen.terminate()..subprocess.txt*
 
    Stop the child. On POSIX OSs the method sends SIGTERM to the child.
    On Windows the Win32 API function "TerminateProcess()" is called to
    stop the child.
 
-Popen.kill()                           *Popen.kill()..subprocess.txt;*
+Popen.kill()                            *Popen.kill()..subprocess.txt*
 
    Kills the child. On POSIX OSs the function sends SIGKILL to the
    child. On Windows "kill()" is an alias for "terminate()".
@@ -862,14 +860,14 @@ Popen.kill()                           *Popen.kill()..subprocess.txt;*
 The following attributes are also set by the class for you to access.
 Reassigning them to new values is unsupported:
 
-Popen.args                               *Popen.args..subprocess.txt;*
+Popen.args                                *Popen.args..subprocess.txt*
 
    The _args_ argument as it was passed to "Popen" – a sequence of
    program arguments or else a single string.
 
    New in version 3.3.
 
-Popen.stdin                             *Popen.stdin..subprocess.txt;*
+Popen.stdin                              *Popen.stdin..subprocess.txt*
 
    If the _stdin_ argument was "PIPE", this attribute is a writeable
    stream object as returned by "open()". If the _encoding_ or
@@ -878,7 +876,7 @@ Popen.stdin                             *Popen.stdin..subprocess.txt;*
    stream, otherwise it is a byte stream. If the _stdin_ argument was
    not "PIPE", this attribute is "None".
 
-Popen.stdout                           *Popen.stdout..subprocess.txt;*
+Popen.stdout                            *Popen.stdout..subprocess.txt*
 
    If the _stdout_ argument was "PIPE", this attribute is a readable
    stream object as returned by "open()". Reading from the stream
@@ -888,7 +886,7 @@ Popen.stdout                           *Popen.stdout..subprocess.txt;*
    stream, otherwise it is a byte stream. If the _stdout_ argument was
    not "PIPE", this attribute is "None".
 
-Popen.stderr                           *Popen.stderr..subprocess.txt;*
+Popen.stderr                            *Popen.stderr..subprocess.txt*
 
    If the _stderr_ argument was "PIPE", this attribute is a readable
    stream object as returned by "open()". Reading from the stream
@@ -904,14 +902,14 @@ Warning:
   ".stderr.read" to avoid deadlocks due to any of the other OS pipe
   buffers filling up and blocking the child process.
 
-Popen.pid                                 *Popen.pid..subprocess.txt;*
+Popen.pid                                  *Popen.pid..subprocess.txt*
 
    The process ID of the child process.
 
    Note that if you set the _shell_ argument to "True", this is the
    process ID of the spawned shell.
 
-Popen.returncode                   *Popen.returncode..subprocess.txt;*
+Popen.returncode                    *Popen.returncode..subprocess.txt*
 
    The child return code. Initially "None", "returncode" is set by a
    call to the "poll()", "wait()", or "communicate()" methods if they
@@ -930,7 +928,7 @@ Windows Popen Helpers
 The "STARTUPINFO" class and following constants are only available on
 Windows.
 
-                                        *STARTUPINFO..subprocess.txt;*
+                                         *STARTUPINFO..subprocess.txt*
 class subprocess.STARTUPINFO(*, dwFlags=0, hStdInput=None, hStdOutput=None, hStdError=None, wShowWindow=0, lpAttributeList=None)
 
    Partial support of the Windows STARTUPINFO structure is used for
@@ -939,7 +937,7 @@ class subprocess.STARTUPINFO(*, dwFlags=0, hStdInput=None, hStdOutput=None, hStd
 
    Changed in version 3.7: Keyword-only argument support was added.
 
-   dwFlags                         *STARTUPINFO.dwFlags..subprocess.txt;*
+   dwFlags                          *STARTUPINFO.dwFlags..subprocess.txt*
 
       A bit field that determines whether certain "STARTUPINFO"
       attributes are used when the process creates a window.
@@ -947,28 +945,28 @@ class subprocess.STARTUPINFO(*, dwFlags=0, hStdInput=None, hStdOutput=None, hStd
          si = subprocess.STARTUPINFO()
          si.dwFlags = subprocess.STARTF_USESTDHANDLES | subprocess.STARTF_USESHOWWINDOW
 <
-   hStdInput                     *STARTUPINFO.hStdInput..subprocess.txt;*
+   hStdInput                      *STARTUPINFO.hStdInput..subprocess.txt*
 
       If "dwFlags" specifies "STARTF_USESTDHANDLES", this attribute is
       the standard input handle for the process. If
       "STARTF_USESTDHANDLES" is not specified, the default for
       standard input is the keyboard buffer.
 
-   hStdOutput                   *STARTUPINFO.hStdOutput..subprocess.txt;*
+   hStdOutput                    *STARTUPINFO.hStdOutput..subprocess.txt*
 
       If "dwFlags" specifies "STARTF_USESTDHANDLES", this attribute is
       the standard output handle for the process. Otherwise, this
       attribute is ignored and the default for standard output is the
       console window’s buffer.
 
-   hStdError                     *STARTUPINFO.hStdError..subprocess.txt;*
+   hStdError                      *STARTUPINFO.hStdError..subprocess.txt*
 
       If "dwFlags" specifies "STARTF_USESTDHANDLES", this attribute is
       the standard error handle for the process. Otherwise, this
       attribute is ignored and the default for standard error is the
       console window’s buffer.
 
-   wShowWindow                 *STARTUPINFO.wShowWindow..subprocess.txt;*
+   wShowWindow                  *STARTUPINFO.wShowWindow..subprocess.txt*
 
       If "dwFlags" specifies "STARTF_USESHOWWINDOW", this attribute
       can be any of the values that can be specified in the "nCmdShow"
@@ -978,7 +976,7 @@ class subprocess.STARTUPINFO(*, dwFlags=0, hStdInput=None, hStdOutput=None, hStd
       "SW_HIDE" is provided for this attribute. It is used when
       "Popen" is called with "shell=True".
 
-   lpAttributeList         *STARTUPINFO.lpAttributeList..subprocess.txt;*
+   lpAttributeList          *STARTUPINFO.lpAttributeList..subprocess.txt*
 
       A dictionary of additional attributes for process creation as
       given in "STARTUPINFOEX", see UpdateProcThreadAttribute.
@@ -1011,44 +1009,44 @@ Windows Constants
 
 The "subprocess" module exposes the following constants.
 
-subprocess.STD_INPUT_HANDLE        *STD_INPUT_HANDLE..subprocess.txt;*
+subprocess.STD_INPUT_HANDLE         *STD_INPUT_HANDLE..subprocess.txt*
 
    The standard input device. Initially, this is the console input
    buffer, "CONIN$".
 
-subprocess.STD_OUTPUT_HANDLE      *STD_OUTPUT_HANDLE..subprocess.txt;*
+subprocess.STD_OUTPUT_HANDLE       *STD_OUTPUT_HANDLE..subprocess.txt*
 
    The standard output device. Initially, this is the active console
    screen buffer, "CONOUT$".
 
-subprocess.STD_ERROR_HANDLE        *STD_ERROR_HANDLE..subprocess.txt;*
+subprocess.STD_ERROR_HANDLE         *STD_ERROR_HANDLE..subprocess.txt*
 
    The standard error device. Initially, this is the active console
    screen buffer, "CONOUT$".
 
-subprocess.SW_HIDE                          *SW_HIDE..subprocess.txt;*
+subprocess.SW_HIDE                           *SW_HIDE..subprocess.txt*
 
    Hides the window. Another window will be activated.
 
-                               *STARTF_USESTDHANDLES..subprocess.txt;*
+                                *STARTF_USESTDHANDLES..subprocess.txt*
 subprocess.STARTF_USESTDHANDLES
 
    Specifies that the "STARTUPINFO.hStdInput",
    "STARTUPINFO.hStdOutput", and "STARTUPINFO.hStdError" attributes
    contain additional information.
 
-                               *STARTF_USESHOWWINDOW..subprocess.txt;*
+                                *STARTF_USESHOWWINDOW..subprocess.txt*
 subprocess.STARTF_USESHOWWINDOW
 
    Specifies that the "STARTUPINFO.wShowWindow" attribute contains
    additional information.
 
-subprocess.CREATE_NEW_CONSOLE    *CREATE_NEW_CONSOLE..subprocess.txt;*
+subprocess.CREATE_NEW_CONSOLE     *CREATE_NEW_CONSOLE..subprocess.txt*
 
    The new process has a new console, instead of inheriting its
    parent’s console (the default).
 
-                           *CREATE_NEW_PROCESS_GROUP..subprocess.txt;*
+                            *CREATE_NEW_PROCESS_GROUP..subprocess.txt*
 subprocess.CREATE_NEW_PROCESS_GROUP
 
    A "Popen" "creationflags" parameter to specify that a new process
@@ -1057,7 +1055,7 @@ subprocess.CREATE_NEW_PROCESS_GROUP
 
    This flag is ignored if "CREATE_NEW_CONSOLE" is specified.
 
-                        *ABOVE_NORMAL_PRIORITY_CLASS..subprocess.txt;*
+                         *ABOVE_NORMAL_PRIORITY_CLASS..subprocess.txt*
 subprocess.ABOVE_NORMAL_PRIORITY_CLASS
 
    A "Popen" "creationflags" parameter to specify that a new process
@@ -1065,7 +1063,7 @@ subprocess.ABOVE_NORMAL_PRIORITY_CLASS
 
    New in version 3.7.
 
-                        *BELOW_NORMAL_PRIORITY_CLASS..subprocess.txt;*
+                         *BELOW_NORMAL_PRIORITY_CLASS..subprocess.txt*
 subprocess.BELOW_NORMAL_PRIORITY_CLASS
 
    A "Popen" "creationflags" parameter to specify that a new process
@@ -1073,23 +1071,21 @@ subprocess.BELOW_NORMAL_PRIORITY_CLASS
 
    New in version 3.7.
 
-                                *HIGH_PRIORITY_CLASS..subprocess.txt;*
-subprocess.HIGH_PRIORITY_CLASS
+subprocess.HIGH_PRIORITY_CLASS   *HIGH_PRIORITY_CLASS..subprocess.txt*
 
    A "Popen" "creationflags" parameter to specify that a new process
    will have a high priority.
 
    New in version 3.7.
 
-                                *IDLE_PRIORITY_CLASS..subprocess.txt;*
-subprocess.IDLE_PRIORITY_CLASS
+subprocess.IDLE_PRIORITY_CLASS   *IDLE_PRIORITY_CLASS..subprocess.txt*
 
    A "Popen" "creationflags" parameter to specify that a new process
    will have an idle (lowest) priority.
 
    New in version 3.7.
 
-                              *NORMAL_PRIORITY_CLASS..subprocess.txt;*
+                               *NORMAL_PRIORITY_CLASS..subprocess.txt*
 subprocess.NORMAL_PRIORITY_CLASS
 
    A "Popen" "creationflags" parameter to specify that a new process
@@ -1097,7 +1093,7 @@ subprocess.NORMAL_PRIORITY_CLASS
 
    New in version 3.7.
 
-                            *REALTIME_PRIORITY_CLASS..subprocess.txt;*
+                             *REALTIME_PRIORITY_CLASS..subprocess.txt*
 subprocess.REALTIME_PRIORITY_CLASS
 
    A "Popen" "creationflags" parameter to specify that a new process
@@ -1110,14 +1106,14 @@ subprocess.REALTIME_PRIORITY_CLASS
 
    New in version 3.7.
 
-subprocess.CREATE_NO_WINDOW        *CREATE_NO_WINDOW..subprocess.txt;*
+subprocess.CREATE_NO_WINDOW         *CREATE_NO_WINDOW..subprocess.txt*
 
    A "Popen" "creationflags" parameter to specify that a new process
    will not create a window.
 
    New in version 3.7.
 
-subprocess.DETACHED_PROCESS        *DETACHED_PROCESS..subprocess.txt;*
+subprocess.DETACHED_PROCESS         *DETACHED_PROCESS..subprocess.txt*
 
    A "Popen" "creationflags" parameter to specify that a new process
    will not inherit its parent’s console. This value cannot be used
@@ -1125,7 +1121,7 @@ subprocess.DETACHED_PROCESS        *DETACHED_PROCESS..subprocess.txt;*
 
    New in version 3.7.
 
-                          *CREATE_DEFAULT_ERROR_MODE..subprocess.txt;*
+                           *CREATE_DEFAULT_ERROR_MODE..subprocess.txt*
 subprocess.CREATE_DEFAULT_ERROR_MODE
 
    A "Popen" "creationflags" parameter to specify that a new process
@@ -1136,7 +1132,7 @@ subprocess.CREATE_DEFAULT_ERROR_MODE
 
    New in version 3.7.
 
-                          *CREATE_BREAKAWAY_FROM_JOB..subprocess.txt;*
+                           *CREATE_BREAKAWAY_FROM_JOB..subprocess.txt*
 subprocess.CREATE_BREAKAWAY_FROM_JOB
 
    A "Popen" "creationflags" parameter to specify that a new process
@@ -1152,7 +1148,7 @@ Prior to Python 3.5, these three functions comprised the high level
 API to subprocess. You can now use "run()" in many cases, but lots of
 existing code calls these functions.
 
-                                             *call()..subprocess.txt;*
+                                              *call()..subprocess.txt*
 subprocess.call(args, *, stdin=None, stdout=None, stderr=None, shell=False, cwd=None, timeout=None, **other_popen_kwargs)
 
    Run the command described by _args_.  Wait for command to complete,
@@ -1185,7 +1181,7 @@ subprocess.call(args, *, stdin=None, stdout=None, stderr=None, shell=False, cwd=
    dropping a malicious program named "cmd.exe" into a current
    directory no longer works.
 
-                                       *check_call()..subprocess.txt;*
+                                        *check_call()..subprocess.txt*
 subprocess.check_call(args, *, stdin=None, stdout=None, stderr=None, shell=False, cwd=None, timeout=None, **other_popen_kwargs)
 
    Run command with arguments.  Wait for command to complete. If the
@@ -1222,7 +1218,7 @@ subprocess.check_call(args, *, stdin=None, stdout=None, stderr=None, shell=False
    dropping a malicious program named "cmd.exe" into a current
    directory no longer works.
 
-                                     *check_output()..subprocess.txt;*
+                                      *check_output()..subprocess.txt*
 subprocess.check_output(args, *, stdin=None, stderr=None, shell=False, cwd=None, encoding=None, errors=None, universal_newlines=None, timeout=None, text=None, **other_popen_kwargs)
 
    Run command with arguments and return its output.
@@ -1479,7 +1475,7 @@ This module also provides the following legacy functions from the 2.x
 and none of the guarantees described above regarding security and
 exception handling consistency are valid for these functions.
 
-                                  *getstatusoutput()..subprocess.txt;*
+                                   *getstatusoutput()..subprocess.txt*
 subprocess.getstatusoutput(cmd, *, encoding=None, errors=None)
 
    Return "(exitcode, output)" of executing _cmd_ in a shell.
@@ -1511,7 +1507,7 @@ subprocess.getstatusoutput(cmd, *, encoding=None, errors=None)
 
    New in version 3.11: Added _encoding_ and _errors_ arguments.
 
-                                        *getoutput()..subprocess.txt;*
+                                         *getoutput()..subprocess.txt*
 subprocess.getoutput(cmd, *, encoding=None, errors=None)
 
    Return output (stdout and stderr) of executing _cmd_ in a shell.

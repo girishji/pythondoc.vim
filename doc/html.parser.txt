@@ -1,4 +1,4 @@
-*htmlparser.txt;*                             Last change: 2023 Sep 09
+*html.parser.txt;*                            Last change: 2023 Sep 10
 
 "html.parser" — Simple HTML and XHTML parser
 ********************************************
@@ -11,7 +11,7 @@ This module defines a class "HTMLParser" which serves as the basis for
 parsing text files formatted in HTML (HyperText Mark-up Language) and
 XHTML.
 
-                                         *HTMLParser..htmlparser.txt;*
+                                         *HTMLParser..html.parser.txt*
 class html.parser.HTMLParser(*, convert_charrefs=True)
 
    Create a parser instance able to parse invalid markup.
@@ -79,13 +79,13 @@ The output will then be:
 
 "HTMLParser" instances have the following methods:
 
-HTMLParser.feed(data)             *HTMLParser.feed()..htmlparser.txt;*
+HTMLParser.feed(data)             *HTMLParser.feed()..html.parser.txt*
 
    Feed some text to the parser.  It is processed insofar as it
    consists of complete elements; incomplete data is buffered until
    more data is fed or "close()" is called.  _data_ must be "str".
 
-HTMLParser.close()               *HTMLParser.close()..htmlparser.txt;*
+HTMLParser.close()               *HTMLParser.close()..html.parser.txt*
 
    Force processing of all buffered data as if it were followed by an
    end-of-file mark.  This method may be redefined by a derived class
@@ -93,16 +93,16 @@ HTMLParser.close()               *HTMLParser.close()..htmlparser.txt;*
    redefined version should always call the "HTMLParser" base class
    method "close()".
 
-HTMLParser.reset()               *HTMLParser.reset()..htmlparser.txt;*
+HTMLParser.reset()               *HTMLParser.reset()..html.parser.txt*
 
    Reset the instance.  Loses all unprocessed data.  This is called
    implicitly at instantiation time.
 
-HTMLParser.getpos()             *HTMLParser.getpos()..htmlparser.txt;*
+HTMLParser.getpos()             *HTMLParser.getpos()..html.parser.txt*
 
    Return current line number and offset.
 
-                     *HTMLParser.get_starttag_text()..htmlparser.txt;*
+                     *HTMLParser.get_starttag_text()..html.parser.txt*
 HTMLParser.get_starttag_text()
 
    Return the text of the most recently opened start tag.  This should
@@ -116,7 +116,7 @@ encountered and they are meant to be overridden in a subclass.  The
 base class implementations do nothing (except for
 "handle_startendtag()"):
 
-                       *HTMLParser.handle_starttag()..htmlparser.txt;*
+                       *HTMLParser.handle_starttag()..html.parser.txt*
 HTMLParser.handle_starttag(tag, attrs)
 
    This method is called to handle the start tag of an element (e.g.
@@ -136,7 +136,7 @@ HTMLParser.handle_starttag(tag, attrs)
    All entity references from "html.entities" are replaced in the
    attribute values.
 
-                         *HTMLParser.handle_endtag()..htmlparser.txt;*
+                         *HTMLParser.handle_endtag()..html.parser.txt*
 HTMLParser.handle_endtag(tag)
 
    This method is called to handle the end tag of an element (e.g.
@@ -144,7 +144,7 @@ HTMLParser.handle_endtag(tag)
 
    The _tag_ argument is the name of the tag converted to lower case.
 
-                    *HTMLParser.handle_startendtag()..htmlparser.txt;*
+                    *HTMLParser.handle_startendtag()..html.parser.txt*
 HTMLParser.handle_startendtag(tag, attrs)
 
    Similar to "handle_starttag()", but called when the parser
@@ -153,14 +153,14 @@ HTMLParser.handle_startendtag(tag, attrs)
    lexical information; the default implementation simply calls
    "handle_starttag()" and "handle_endtag()".
 
-                           *HTMLParser.handle_data()..htmlparser.txt;*
+                           *HTMLParser.handle_data()..html.parser.txt*
 HTMLParser.handle_data(data)
 
    This method is called to process arbitrary data (e.g. text nodes
    and the content of "<script>...</script>" and
    "<style>...</style>").
 
-                      *HTMLParser.handle_entityref()..htmlparser.txt;*
+                      *HTMLParser.handle_entityref()..html.parser.txt*
 HTMLParser.handle_entityref(name)
 
    This method is called to process a named character reference of the
@@ -168,7 +168,7 @@ HTMLParser.handle_entityref(name)
    reference (e.g. "'gt'").  This method is never called if
    _convert_charrefs_ is "True".
 
-                        *HTMLParser.handle_charref()..htmlparser.txt;*
+                        *HTMLParser.handle_charref()..html.parser.txt*
 HTMLParser.handle_charref(name)
 
    This method is called to process decimal and hexadecimal numeric
@@ -178,7 +178,7 @@ HTMLParser.handle_charref(name)
    "'62'" or "'x3E'".  This method is never called if
    _convert_charrefs_ is "True".
 
-                        *HTMLParser.handle_comment()..htmlparser.txt;*
+                        *HTMLParser.handle_comment()..html.parser.txt*
 HTMLParser.handle_comment(data)
 
    This method is called when a comment is encountered (e.g. "<!--
@@ -192,7 +192,7 @@ HTMLParser.handle_comment(data)
    9]>IE9-specific content<![endif]-->", this method will receive
    "'[if IE 9]>IE9-specific content<![endif]'".
 
-                           *HTMLParser.handle_decl()..htmlparser.txt;*
+                           *HTMLParser.handle_decl()..html.parser.txt*
 HTMLParser.handle_decl(decl)
 
    This method is called to handle an HTML doctype declaration (e.g.
@@ -201,7 +201,7 @@ HTMLParser.handle_decl(decl)
    The _decl_ parameter will be the entire contents of the declaration
    inside the "<!...>" markup (e.g. "'DOCTYPE html'").
 
-HTMLParser.handle_pi(data)   *HTMLParser.handle_pi()..htmlparser.txt;*
+HTMLParser.handle_pi(data)   *HTMLParser.handle_pi()..html.parser.txt*
 
    Method called when a processing instruction is encountered.  The
    _data_ parameter will contain the entire processing instruction.
@@ -216,7 +216,7 @@ HTMLParser.handle_pi(data)   *HTMLParser.handle_pi()..htmlparser.txt;*
      processing instructions.  An XHTML processing instruction using
      the trailing "'?'" will cause the "'?'" to be included in _data_.
 
-                          *HTMLParser.unknown_decl()..htmlparser.txt;*
+                          *HTMLParser.unknown_decl()..html.parser.txt*
 HTMLParser.unknown_decl(data)
 
    This method is called when an unrecognized declaration is read by

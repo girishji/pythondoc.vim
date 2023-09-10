@@ -1,4 +1,4 @@
-*httpcookies.txt;*                            Last change: 2023 Sep 09
+*http.cookies.txt;*                           Last change: 2023 Sep 10
 
 "http.cookies" — HTTP state management
 **************************************
@@ -31,12 +31,12 @@ Note:
   your cookie data comes from a browser you should always prepare for
   invalid data and catch "CookieError" on parsing.
 
-exception http.cookies.CookieError     *CookieError..httpcookies.txt;*
+exception http.cookies.CookieError     *CookieError..http.cookies.txt*
 
    Exception failing because of **RFC 2109** invalidity: incorrect
    attributes, incorrect _Set-Cookie_ header, etc.
 
-                                        *BaseCookie..httpcookies.txt;*
+                                        *BaseCookie..http.cookies.txt*
 class http.cookies.BaseCookie([input])
 
    This class is a dictionary-like object whose keys are strings and
@@ -46,7 +46,7 @@ class http.cookies.BaseCookie([input])
 
    If _input_ is given, it is passed to the "load()" method.
 
-                                      *SimpleCookie..httpcookies.txt;*
+                                      *SimpleCookie..http.cookies.txt*
 class http.cookies.SimpleCookie([input])
 
    This class derives from "BaseCookie" and overrides "value_decode()"
@@ -69,14 +69,14 @@ See also:
 Cookie Objects
 ==============
 
-                         *BaseCookie.value_decode()..httpcookies.txt;*
+                         *BaseCookie.value_decode()..http.cookies.txt*
 BaseCookie.value_decode(val)
 
    Return a tuple "(real_value, coded_value)" from a string
    representation. "real_value" can be any type. This method does no
    decoding in "BaseCookie" — it exists so it can be overridden.
 
-                         *BaseCookie.value_encode()..httpcookies.txt;*
+                         *BaseCookie.value_encode()..http.cookies.txt*
 BaseCookie.value_encode(val)
 
    Return a tuple "(real_value, coded_value)". _val_ can be any type,
@@ -87,7 +87,7 @@ BaseCookie.value_encode(val)
    In general, it should be the case that "value_encode()" and
    "value_decode()" are inverses on the range of _value_decode_.
 
-                               *BaseCookie.output()..httpcookies.txt;*
+                               *BaseCookie.output()..http.cookies.txt*
 BaseCookie.output(attrs=None, header='Set-Cookie:', sep='\r\n')
 
    Return a string representation suitable to be sent as HTTP headers.
@@ -95,7 +95,7 @@ BaseCookie.output(attrs=None, header='Set-Cookie:', sep='\r\n')
    _sep_ is used to join the headers together, and is by default the
    combination "'\r\n'" (CRLF).
 
-                            *BaseCookie.js_output()..httpcookies.txt;*
+                            *BaseCookie.js_output()..http.cookies.txt*
 BaseCookie.js_output(attrs=None)
 
    Return an embeddable JavaScript snippet, which, if run on a browser
@@ -104,7 +104,7 @@ BaseCookie.js_output(attrs=None)
 
    The meaning for _attrs_ is the same as in "output()".
 
-BaseCookie.load(rawdata)         *BaseCookie.load()..httpcookies.txt;*
+BaseCookie.load(rawdata)         *BaseCookie.load()..http.cookies.txt*
 
    If _rawdata_ is a string, parse it as an "HTTP_COOKIE" and add the
    values found there as "Morsel"s. If it is a dictionary, it is
@@ -117,7 +117,7 @@ BaseCookie.load(rawdata)         *BaseCookie.load()..httpcookies.txt;*
 Morsel Objects
 ==============
 
-class http.cookies.Morsel                   *Morsel..httpcookies.txt;*
+class http.cookies.Morsel                   *Morsel..http.cookies.txt*
 
    Abstract a key/value pair, which has some **RFC 2109** attributes.
 
@@ -162,27 +162,27 @@ class http.cookies.Morsel                   *Morsel..httpcookies.txt;*
 
    Changed in version 3.8: Added support for the "samesite" attribute.
 
-Morsel.value                          *Morsel.value..httpcookies.txt;*
+Morsel.value                          *Morsel.value..http.cookies.txt*
 
    The value of the cookie.
 
-Morsel.coded_value              *Morsel.coded_value..httpcookies.txt;*
+Morsel.coded_value              *Morsel.coded_value..http.cookies.txt*
 
    The encoded value of the cookie — this is what should be sent.
 
-Morsel.key                              *Morsel.key..httpcookies.txt;*
+Morsel.key                              *Morsel.key..http.cookies.txt*
 
    The name of the cookie.
 
-Morsel.set(key, value, coded_value)   *Morsel.set()..httpcookies.txt;*
+Morsel.set(key, value, coded_value)   *Morsel.set()..http.cookies.txt*
 
    Set the _key_, _value_ and _coded_value_ attributes.
 
-Morsel.isReservedKey(K)     *Morsel.isReservedKey()..httpcookies.txt;*
+Morsel.isReservedKey(K)     *Morsel.isReservedKey()..http.cookies.txt*
 
    Whether _K_ is a member of the set of keys of a "Morsel".
 
-                                   *Morsel.output()..httpcookies.txt;*
+                                   *Morsel.output()..http.cookies.txt*
 Morsel.output(attrs=None, header='Set-Cookie:')
 
    Return a string representation of the Morsel, suitable to be sent
@@ -190,7 +190,7 @@ Morsel.output(attrs=None, header='Set-Cookie:')
    unless _attrs_ is given, in which case it should be a list of
    attributes to use. _header_ is by default ""Set-Cookie:"".
 
-Morsel.js_output(attrs=None)    *Morsel.js_output()..httpcookies.txt;*
+Morsel.js_output(attrs=None)    *Morsel.js_output()..http.cookies.txt*
 
    Return an embeddable JavaScript snippet, which, if run on a browser
    which supports JavaScript, will act the same as if the HTTP header
@@ -198,7 +198,7 @@ Morsel.js_output(attrs=None)    *Morsel.js_output()..httpcookies.txt;*
 
    The meaning for _attrs_ is the same as in "output()".
 
-                             *Morsel.OutputString()..httpcookies.txt;*
+                             *Morsel.OutputString()..http.cookies.txt*
 Morsel.OutputString(attrs=None)
 
    Return a string representing the Morsel, without any surrounding
@@ -206,7 +206,7 @@ Morsel.OutputString(attrs=None)
 
    The meaning for _attrs_ is the same as in "output()".
 
-Morsel.update(values)              *Morsel.update()..httpcookies.txt;*
+Morsel.update(values)              *Morsel.update()..http.cookies.txt*
 
    Update the values in the Morsel dictionary with the values in the
    dictionary _values_.  Raise an error if any of the keys in the
@@ -214,13 +214,13 @@ Morsel.update(values)              *Morsel.update()..httpcookies.txt;*
 
    Changed in version 3.5: an error is raised for invalid keys.
 
-Morsel.copy(value)                   *Morsel.copy()..httpcookies.txt;*
+Morsel.copy(value)                   *Morsel.copy()..http.cookies.txt*
 
    Return a shallow copy of the Morsel object.
 
    Changed in version 3.5: return a Morsel object instead of a dict.
 
-                               *Morsel.setdefault()..httpcookies.txt;*
+                               *Morsel.setdefault()..http.cookies.txt*
 Morsel.setdefault(key, value=None)
 
    Raise an error if key is not a valid **RFC 2109** attribute,

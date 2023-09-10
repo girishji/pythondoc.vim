@@ -1,4 +1,4 @@
-*httpserver.txt;*                             Last change: 2023 Sep 09
+*http.server.txt;*                            Last change: 2023 Sep 10
 
 "http.server" — HTTP servers
 ****************************
@@ -30,7 +30,7 @@ handler.  Code to create and run the server looks like this:
        httpd.serve_forever()
 <
 
-                                         *HTTPServer..httpserver.txt;*
+                                         *HTTPServer..http.server.txt*
 class http.server.HTTPServer(server_address, RequestHandlerClass)
 
    This class builds on the "TCPServer" class by storing the server
@@ -38,7 +38,7 @@ class http.server.HTTPServer(server_address, RequestHandlerClass)
    "server_port". The server is accessible by the handler, typically
    through the handler’s "server" instance variable.
 
-                                *ThreadingHTTPServer..httpserver.txt;*
+                                *ThreadingHTTPServer..http.server.txt*
 class http.server.ThreadingHTTPServer(server_address, RequestHandlerClass)
 
    This class is identical to HTTPServer but uses threads to handle
@@ -52,7 +52,7 @@ The "HTTPServer" and "ThreadingHTTPServer" must be given a
 _RequestHandlerClass_ on instantiation, of which this module provides
 three different variants:
 
-                             *BaseHTTPRequestHandler..httpserver.txt;*
+                             *BaseHTTPRequestHandler..http.server.txt*
 class http.server.BaseHTTPRequestHandler(request, client_address, server)
 
    This class is used to handle the HTTP requests that arrive at the
@@ -71,48 +71,48 @@ class http.server.BaseHTTPRequestHandler(request, client_address, server)
 
    "BaseHTTPRequestHandler" has the following instance variables:
 
-              *BaseHTTPRequestHandler.client_address..httpserver.txt;*
+              *BaseHTTPRequestHandler.client_address..http.server.txt*
    client_address
 
       Contains a tuple of the form "(host, port)" referring to the
       client’s address.
 
-   server                *BaseHTTPRequestHandler.server..httpserver.txt;*
+   server                *BaseHTTPRequestHandler.server..http.server.txt*
 
       Contains the server instance.
 
-            *BaseHTTPRequestHandler.close_connection..httpserver.txt;*
+            *BaseHTTPRequestHandler.close_connection..http.server.txt*
    close_connection
 
       Boolean that should be set before "handle_one_request()"
       returns, indicating if another request may be expected, or if
       the connection should be shut down.
 
-   requestline      *BaseHTTPRequestHandler.requestline..httpserver.txt;*
+   requestline      *BaseHTTPRequestHandler.requestline..http.server.txt*
 
       Contains the string representation of the HTTP request line. The
       terminating CRLF is stripped. This attribute should be set by
       "handle_one_request()". If no valid request line was processed,
       it should be set to the empty string.
 
-   command              *BaseHTTPRequestHandler.command..httpserver.txt;*
+   command              *BaseHTTPRequestHandler.command..http.server.txt*
 
       Contains the command (request type). For example, "'GET'".
 
-   path                    *BaseHTTPRequestHandler.path..httpserver.txt;*
+   path                    *BaseHTTPRequestHandler.path..http.server.txt*
 
       Contains the request path. If query component of the URL is
       present, then "path" includes the query. Using the terminology
       of **RFC 3986**, "path" here includes "hier-part" and the
       "query".
 
-             *BaseHTTPRequestHandler.request_version..httpserver.txt;*
+             *BaseHTTPRequestHandler.request_version..http.server.txt*
    request_version
 
       Contains the version string from the request. For example,
       "'HTTP/1.0'".
 
-   headers              *BaseHTTPRequestHandler.headers..httpserver.txt;*
+   headers              *BaseHTTPRequestHandler.headers..http.server.txt*
 
       Holds an instance of the class specified by the "MessageClass"
       class variable. This instance parses and manages the headers in
@@ -120,12 +120,12 @@ class http.server.BaseHTTPRequestHandler(request, client_address, server)
       "http.client" is used to parse the headers and it requires that
       the HTTP request provide a valid **RFC 2822** style header.
 
-   rfile                  *BaseHTTPRequestHandler.rfile..httpserver.txt;*
+   rfile                  *BaseHTTPRequestHandler.rfile..http.server.txt*
 
       An "io.BufferedIOBase" input stream, ready to read from the
       start of the optional input data.
 
-   wfile                  *BaseHTTPRequestHandler.wfile..httpserver.txt;*
+   wfile                  *BaseHTTPRequestHandler.wfile..http.server.txt*
 
       Contains the output stream for writing a response back to the
       client. Proper adherence to the HTTP protocol must be used when
@@ -136,7 +136,7 @@ class http.server.BaseHTTPRequestHandler(request, client_address, server)
 
    "BaseHTTPRequestHandler" has the following attributes:
 
-              *BaseHTTPRequestHandler.server_version..httpserver.txt;*
+              *BaseHTTPRequestHandler.server_version..http.server.txt*
    server_version
 
       Specifies the server software version.  You may want to override
@@ -144,13 +144,13 @@ class http.server.BaseHTTPRequestHandler(request, client_address, server)
       each string is of the form name[/version]. For example,
       "'BaseHTTP/0.2'".
 
-   sys_version      *BaseHTTPRequestHandler.sys_version..httpserver.txt;*
+   sys_version      *BaseHTTPRequestHandler.sys_version..http.server.txt*
 
       Contains the Python system version, in a form usable by the
       "version_string" method and the "server_version" class variable.
       For example, "'Python/1.4'".
 
-        *BaseHTTPRequestHandler.error_message_format..httpserver.txt;*
+        *BaseHTTPRequestHandler.error_message_format..http.server.txt*
    error_message_format
 
       Specifies a format string that should be used by "send_error()"
@@ -158,13 +158,13 @@ class http.server.BaseHTTPRequestHandler(request, client_address, server)
       is filled by default with variables from "responses" based on
       the status code that passed to "send_error()".
 
-          *BaseHTTPRequestHandler.error_content_type..httpserver.txt;*
+          *BaseHTTPRequestHandler.error_content_type..http.server.txt*
    error_content_type
 
       Specifies the Content-Type HTTP header of error responses sent
       to the client.  The default value is "'text/html'".
 
-            *BaseHTTPRequestHandler.protocol_version..httpserver.txt;*
+            *BaseHTTPRequestHandler.protocol_version..http.server.txt*
    protocol_version
 
       Specifies the HTTP version to which the server is conformant. It
@@ -176,13 +176,13 @@ class http.server.BaseHTTPRequestHandler(request, client_address, server)
       of its responses to clients. For backwards compatibility, the
       setting defaults to "'HTTP/1.0'".
 
-   MessageClass    *BaseHTTPRequestHandler.MessageClass..httpserver.txt;*
+   MessageClass    *BaseHTTPRequestHandler.MessageClass..http.server.txt*
 
       Specifies an "email.message.Message"-like class to parse HTTP
       headers.  Typically, this is not overridden, and it defaults to
       "http.client.HTTPMessage".
 
-   responses          *BaseHTTPRequestHandler.responses..httpserver.txt;*
+   responses          *BaseHTTPRequestHandler.responses..http.server.txt*
 
       This attribute contains a mapping of error code integers to two-
       element tuples containing a short and long message. For example,
@@ -193,21 +193,21 @@ class http.server.BaseHTTPRequestHandler(request, client_address, server)
 
    A "BaseHTTPRequestHandler" instance has the following methods:
 
-   handle()            *BaseHTTPRequestHandler.handle()..httpserver.txt;*
+   handle()            *BaseHTTPRequestHandler.handle()..http.server.txt*
 
       Calls "handle_one_request()" once (or, if persistent connections
       are enabled, multiple times) to handle incoming HTTP requests.
       You should never need to override it; instead, implement
       appropriate "do_*()" methods.
 
-        *BaseHTTPRequestHandler.handle_one_request()..httpserver.txt;*
+        *BaseHTTPRequestHandler.handle_one_request()..http.server.txt*
    handle_one_request()
 
       This method will parse and dispatch the request to the
       appropriate "do_*()" method.  You should never need to override
       it.
 
-         *BaseHTTPRequestHandler.handle_expect_100()..httpserver.txt;*
+         *BaseHTTPRequestHandler.handle_expect_100()..http.server.txt*
    handle_expect_100()
 
       When an HTTP/1.1 conformant server receives an "Expect:
@@ -219,7 +219,7 @@ class http.server.BaseHTTPRequestHandler(request, client_address, server)
 
       New in version 3.2.
 
-                *BaseHTTPRequestHandler.send_error()..httpserver.txt;*
+                *BaseHTTPRequestHandler.send_error()..http.server.txt*
    send_error(code, message=None, explain=None)
 
       Sends and logs a complete error reply to the client. The numeric
@@ -239,7 +239,7 @@ class http.server.BaseHTTPRequestHandler(request, client_address, server)
       Changed in version 3.4: The error response includes a Content-
       Length header. Added the _explain_ argument.
 
-             *BaseHTTPRequestHandler.send_response()..httpserver.txt;*
+             *BaseHTTPRequestHandler.send_response()..http.server.txt*
    send_response(code, message=None)
 
       Adds a response header to the headers buffer and logs the
@@ -254,7 +254,7 @@ class http.server.BaseHTTPRequestHandler(request, client_address, server)
       Changed in version 3.3: Headers are stored to an internal buffer
       and "end_headers()" needs to be called explicitly.
 
-               *BaseHTTPRequestHandler.send_header()..httpserver.txt;*
+               *BaseHTTPRequestHandler.send_header()..http.server.txt*
    send_header(keyword, value)
 
       Adds the HTTP header to an internal buffer which will be written
@@ -267,7 +267,7 @@ class http.server.BaseHTTPRequestHandler(request, client_address, server)
       Changed in version 3.2: Headers are stored in an internal
       buffer.
 
-        *BaseHTTPRequestHandler.send_response_only()..httpserver.txt;*
+        *BaseHTTPRequestHandler.send_response_only()..http.server.txt*
    send_response_only(code, message=None)
 
       Sends the response header only, used for the purposes when "100
@@ -278,7 +278,7 @@ class http.server.BaseHTTPRequestHandler(request, client_address, server)
 
       New in version 3.2.
 
-               *BaseHTTPRequestHandler.end_headers()..httpserver.txt;*
+               *BaseHTTPRequestHandler.end_headers()..http.server.txt*
    end_headers()
 
       Adds a blank line (indicating the end of the HTTP headers in the
@@ -287,7 +287,7 @@ class http.server.BaseHTTPRequestHandler(request, client_address, server)
       Changed in version 3.2: The buffered headers are written to the
       output stream.
 
-             *BaseHTTPRequestHandler.flush_headers()..httpserver.txt;*
+             *BaseHTTPRequestHandler.flush_headers()..http.server.txt*
    flush_headers()
 
       Finally send the headers to the output stream and flush the
@@ -295,7 +295,7 @@ class http.server.BaseHTTPRequestHandler(request, client_address, server)
 
       New in version 3.3.
 
-               *BaseHTTPRequestHandler.log_request()..httpserver.txt;*
+               *BaseHTTPRequestHandler.log_request()..http.server.txt*
    log_request(code='-', size='-')
 
       Logs an accepted (successful) request. _code_ should specify the
@@ -303,13 +303,13 @@ class http.server.BaseHTTPRequestHandler(request, client_address, server)
       response is available, then it should be passed as the _size_
       parameter.
 
-   log_error(...)   *BaseHTTPRequestHandler.log_error()..httpserver.txt;*
+   log_error(...)   *BaseHTTPRequestHandler.log_error()..http.server.txt*
 
       Logs an error when a request cannot be fulfilled. By default, it
       passes the message to "log_message()", so it takes the same
       arguments (_format_ and additional values).
 
-               *BaseHTTPRequestHandler.log_message()..httpserver.txt;*
+               *BaseHTTPRequestHandler.log_message()..http.server.txt*
    log_message(format, ...)
 
       Logs an arbitrary message to "sys.stderr". This is typically
@@ -319,14 +319,14 @@ class http.server.BaseHTTPRequestHandler(request, client_address, server)
       inputs to the formatting. The client ip address and current date
       and time are prefixed to every message logged.
 
-            *BaseHTTPRequestHandler.version_string()..httpserver.txt;*
+            *BaseHTTPRequestHandler.version_string()..http.server.txt*
    version_string()
 
       Returns the server software’s version string. This is a
       combination of the "server_version" and "sys_version"
       attributes.
 
-          *BaseHTTPRequestHandler.date_time_string()..httpserver.txt;*
+          *BaseHTTPRequestHandler.date_time_string()..http.server.txt*
    date_time_string(timestamp=None)
 
       Returns the date and time given by _timestamp_ (which must be
@@ -336,12 +336,12 @@ class http.server.BaseHTTPRequestHandler(request, client_address, server)
 
       The result looks like "'Sun, 06 Nov 1994 08:49:37 GMT'".
 
-      *BaseHTTPRequestHandler.log_date_time_string()..httpserver.txt;*
+      *BaseHTTPRequestHandler.log_date_time_string()..http.server.txt*
    log_date_time_string()
 
       Returns the current date and time, formatted for logging.
 
-            *BaseHTTPRequestHandler.address_string()..httpserver.txt;*
+            *BaseHTTPRequestHandler.address_string()..http.server.txt*
    address_string()
 
       Returns the client address.
@@ -350,7 +350,7 @@ class http.server.BaseHTTPRequestHandler(request, client_address, server)
       To avoid name resolution delays, it now always returns the IP
       address.
 
-                           *SimpleHTTPRequestHandler..httpserver.txt;*
+                           *SimpleHTTPRequestHandler..http.server.txt*
 class http.server.SimpleHTTPRequestHandler(request, client_address, server, directory=None)
 
    This class serves files from the directory _directory_ and below,
@@ -369,13 +369,13 @@ class http.server.SimpleHTTPRequestHandler(request, client_address, server, dire
    The following are defined as class-level attributes of
    "SimpleHTTPRequestHandler":
 
-            *SimpleHTTPRequestHandler.server_version..httpserver.txt;*
+            *SimpleHTTPRequestHandler.server_version..http.server.txt*
    server_version
 
       This will be ""SimpleHTTP/" + __version__", where "__version__"
       is defined at the module level.
 
-            *SimpleHTTPRequestHandler.extensions_map..httpserver.txt;*
+            *SimpleHTTPRequestHandler.extensions_map..http.server.txt*
    extensions_map
 
       A dictionary mapping suffixes into MIME types, contains custom
@@ -387,14 +387,14 @@ class http.server.SimpleHTTPRequestHandler(request, client_address, server, dire
 
    The "SimpleHTTPRequestHandler" class defines the following methods:
 
-   do_HEAD()        *SimpleHTTPRequestHandler.do_HEAD()..httpserver.txt;*
+   do_HEAD()        *SimpleHTTPRequestHandler.do_HEAD()..http.server.txt*
 
       This method serves the "'HEAD'" request type: it sends the
       headers it would send for the equivalent "GET" request. See the
       "do_GET()" method for a more complete explanation of the
       possible headers.
 
-   do_GET()          *SimpleHTTPRequestHandler.do_GET()..httpserver.txt;*
+   do_GET()          *SimpleHTTPRequestHandler.do_GET()..http.server.txt*
 
       The request is mapped to a local file by interpreting the
       request as a path relative to the current working directory.
@@ -489,7 +489,7 @@ conformant server:
 <
 New in version 3.11: "--protocol" argument was introduced.
 
-                              *CGIHTTPRequestHandler..httpserver.txt;*
+                              *CGIHTTPRequestHandler..http.server.txt*
 class http.server.CGIHTTPRequestHandler(request, client_address, server)
 
    This class is used to serve either files or output of CGI scripts
@@ -515,7 +515,7 @@ class http.server.CGIHTTPRequestHandler(request, client_address, server)
 
    The "CGIHTTPRequestHandler" defines the following data member:
 
-              *CGIHTTPRequestHandler.cgi_directories..httpserver.txt;*
+              *CGIHTTPRequestHandler.cgi_directories..http.server.txt*
    cgi_directories
 
       This defaults to "['/cgi-bin', '/htbin']" and describes
@@ -523,7 +523,7 @@ class http.server.CGIHTTPRequestHandler(request, client_address, server)
 
    The "CGIHTTPRequestHandler" defines the following method:
 
-   do_POST()           *CGIHTTPRequestHandler.do_POST()..httpserver.txt;*
+   do_POST()           *CGIHTTPRequestHandler.do_POST()..http.server.txt*
 
       This method serves the "'POST'" request type, only allowed for
       CGI scripts.  Error 501, “Can only POST to CGI scripts”, is

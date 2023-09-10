@@ -1,4 +1,4 @@
-*emailparser.txt;*                            Last change: 2023 Sep 09
+*email.parser.txt;*                           Last change: 2023 Sep 10
 
 "email.parser": Parsing email messages
 **************************************
@@ -65,7 +65,7 @@ defects that it can find.
 
 Here is the API for the "BytesFeedParser":
 
-                                   *BytesFeedParser..emailparser.txt;*
+                                   *BytesFeedParser..email.parser.txt*
 class email.parser.BytesFeedParser(_factory=None, *, policy=policy.compat32)
 
    Create a "BytesFeedParser" instance.  Optional __factory_ is a no-
@@ -92,7 +92,7 @@ class email.parser.BytesFeedParser(_factory=None, *, policy=policy.compat32)
    Changed in version 3.6: __factory_ defaults to the policy
    "message_factory".
 
-   feed(data)                  *BytesFeedParser.feed()..emailparser.txt;*
+   feed(data)                  *BytesFeedParser.feed()..email.parser.txt*
 
       Feed the parser some more data.  _data_ should be a _bytes-like
       object_ containing one or more lines.  The lines can be partial
@@ -101,13 +101,13 @@ class email.parser.BytesFeedParser(_factory=None, *, policy=policy.compat32)
       carriage return, newline, or carriage return and newline (they
       can even be mixed).
 
-   close()                    *BytesFeedParser.close()..emailparser.txt;*
+   close()                    *BytesFeedParser.close()..email.parser.txt*
 
       Complete the parsing of all previously fed data and return the
       root message object.  It is undefined what happens if "feed()"
       is called after this method has been called.
 
-                                        *FeedParser..emailparser.txt;*
+                                        *FeedParser..email.parser.txt*
 class email.parser.FeedParser(_factory=None, *, policy=policy.compat32)
 
    Works like "BytesFeedParser" except that the input to the "feed()"
@@ -131,7 +131,7 @@ headers of the message.  "BytesHeaderParser" and "HeaderParser" can be
 much faster in these situations, since they do not attempt to parse
 the message body, instead setting the payload to the raw body.
 
-                                       *BytesParser..emailparser.txt;*
+                                       *BytesParser..email.parser.txt*
 class email.parser.BytesParser(_class=None, *, policy=policy.compat32)
 
    Create a "BytesParser" instance.  The __class_ and _policy_
@@ -148,7 +148,7 @@ class email.parser.BytesParser(_class=None, *, policy=policy.compat32)
    Changed in version 3.6: __class_ defaults to the policy
    "message_factory".
 
-   parse(fp, headersonly=False)   *BytesParser.parse()..emailparser.txt;*
+   parse(fp, headersonly=False)   *BytesParser.parse()..email.parser.txt*
 
       Read all the data from the binary file-like object _fp_, parse
       the resulting bytes, and return the message object.  _fp_ must
@@ -167,7 +167,7 @@ class email.parser.BytesParser(_class=None, *, policy=policy.compat32)
       parsing after reading the headers or not.  The default is
       "False", meaning it parses the entire contents of the file.
 
-                          *BytesParser.parsebytes()..emailparser.txt;*
+                          *BytesParser.parsebytes()..email.parser.txt*
    parsebytes(bytes, headersonly=False)
 
       Similar to the "parse()" method, except it takes a _bytes-like
@@ -179,7 +179,7 @@ class email.parser.BytesParser(_class=None, *, policy=policy.compat32)
 
    New in version 3.2.
 
-                                 *BytesHeaderParser..emailparser.txt;*
+                                 *BytesHeaderParser..email.parser.txt*
 class email.parser.BytesHeaderParser(_class=None, *, policy=policy.compat32)
 
    Exactly like "BytesParser", except that _headersonly_ defaults to
@@ -187,7 +187,7 @@ class email.parser.BytesHeaderParser(_class=None, *, policy=policy.compat32)
 
    New in version 3.3.
 
-                                            *Parser..emailparser.txt;*
+                                            *Parser..email.parser.txt*
 class email.parser.Parser(_class=None, *, policy=policy.compat32)
 
    This class is parallel to "BytesParser", but handles string input.
@@ -198,7 +198,7 @@ class email.parser.Parser(_class=None, *, policy=policy.compat32)
    Changed in version 3.6: __class_ defaults to the policy
    "message_factory".
 
-   parse(fp, headersonly=False)        *Parser.parse()..emailparser.txt;*
+   parse(fp, headersonly=False)        *Parser.parse()..email.parser.txt*
 
       Read all the data from the text-mode file-like object _fp_,
       parse the resulting text, and return the root message object.
@@ -208,7 +208,7 @@ class email.parser.Parser(_class=None, *, policy=policy.compat32)
       Other than the text mode requirement, this method operates like
       "BytesParser.parse()".
 
-                                 *Parser.parsestr()..emailparser.txt;*
+                                 *Parser.parsestr()..email.parser.txt*
    parsestr(text, headersonly=False)
 
       Similar to the "parse()" method, except it takes a string object
@@ -218,7 +218,7 @@ class email.parser.Parser(_class=None, *, policy=policy.compat32)
 
       Optional _headersonly_ is as with the "parse()" method.
 
-                                      *HeaderParser..emailparser.txt;*
+                                      *HeaderParser..email.parser.txt*
 class email.parser.HeaderParser(_class=None, *, policy=policy.compat32)
 
    Exactly like "Parser", except that _headersonly_ defaults to
@@ -229,7 +229,7 @@ object is such a common task, four functions are provided as a
 convenience.  They are available in the top-level "email" package
 namespace.
 
-                              *message_from_bytes()..emailparser.txt;*
+                              *message_from_bytes()..email.parser.txt*
 email.message_from_bytes(s, _class=None, *, policy=policy.compat32)
 
    Return a message object structure from a _bytes-like object_.  This
@@ -242,7 +242,7 @@ email.message_from_bytes(s, _class=None, *, policy=policy.compat32)
    Changed in version 3.3: Removed the _strict_ argument.  Added the
    _policy_ keyword.
 
-                        *message_from_binary_file()..emailparser.txt;*
+                        *message_from_binary_file()..email.parser.txt*
 email.message_from_binary_file(fp, _class=None, *, policy=policy.compat32)
 
    Return a message object structure tree from an open binary _file
@@ -255,7 +255,7 @@ email.message_from_binary_file(fp, _class=None, *, policy=policy.compat32)
    Changed in version 3.3: Removed the _strict_ argument.  Added the
    _policy_ keyword.
 
-                             *message_from_string()..emailparser.txt;*
+                             *message_from_string()..email.parser.txt*
 email.message_from_string(s, _class=None, *, policy=policy.compat32)
 
    Return a message object structure from a string.  This is
@@ -265,7 +265,7 @@ email.message_from_string(s, _class=None, *, policy=policy.compat32)
    Changed in version 3.3: Removed the _strict_ argument.  Added the
    _policy_ keyword.
 
-                               *message_from_file()..emailparser.txt;*
+                               *message_from_file()..email.parser.txt*
 email.message_from_file(fp, _class=None, *, policy=policy.compat32)
 
    Return a message object structure tree from an open _file object_.

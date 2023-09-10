@@ -1,4 +1,4 @@
-*urllibrequest.txt;*                          Last change: 2023 Sep 09
+*urllib.request.txt;*                         Last change: 2023 Sep 10
 
 "urllib.request" — Extensible library for opening URLs
 ******************************************************
@@ -24,7 +24,7 @@ more information.
 
 The "urllib.request" module defines the following functions:
 
-                                       *urlopen()..urllibrequest.txt;*
+                                       *urlopen()..urllib.request.txt*
 urllib.request.urlopen(url, data=None[, timeout], *, context=None)
 
    Open _url_, which can be either a string containing a valid,
@@ -101,7 +101,7 @@ urllib.request.urlopen(url, data=None[, timeout], *, context=None)
    Changed in version 3.13: Remove _cafile_, _capath_ and _cadefault_
    parameters: use the _context_ parameter instead.
 
-                                *install_opener()..urllibrequest.txt;*
+                                *install_opener()..urllib.request.txt*
 urllib.request.install_opener(opener)
 
    Install an "OpenerDirector" instance as the default global opener.
@@ -111,7 +111,7 @@ urllib.request.install_opener(opener)
    "OpenerDirector", and any class with the appropriate interface will
    work.
 
-                                  *build_opener()..urllibrequest.txt;*
+                                  *build_opener()..urllib.request.txt*
 urllib.request.build_opener([handler, ...])
 
    Return an "OpenerDirector" instance, which chains the handlers in
@@ -131,7 +131,7 @@ urllib.request.build_opener([handler, ...])
    A "BaseHandler" subclass may also change its "handler_order"
    attribute to modify its position in the handlers list.
 
-                                  *pathname2url()..urllibrequest.txt;*
+                                  *pathname2url()..urllib.request.txt*
 urllib.request.pathname2url(path)
 
    Convert the pathname _path_ from the local syntax for a path to the
@@ -139,14 +139,14 @@ urllib.request.pathname2url(path)
    complete URL.  The return value will already be quoted using the
    "quote()" function.
 
-                                  *url2pathname()..urllibrequest.txt;*
+                                  *url2pathname()..urllib.request.txt*
 urllib.request.url2pathname(path)
 
    Convert the path component _path_ from a percent-encoded URL to the
    local syntax for a path.  This does not accept a complete URL.
    This function uses "unquote()" to decode _path_.
 
-urllib.request.getproxies()         *getproxies()..urllibrequest.txt;*
+urllib.request.getproxies()         *getproxies()..urllib.request.txt*
 
    This helper function returns a dictionary of scheme to proxy server
    URL mappings. It scans the environment for variables named
@@ -169,7 +169,7 @@ urllib.request.getproxies()         *getproxies()..urllibrequest.txt;*
 
 The following classes are provided:
 
-                                         *Request..urllibrequest.txt;*
+                                         *Request..urllib.request.txt*
 class urllib.request.Request(url, data=None, headers={}, origin_req_host=None, unverifiable=False, method=None)
 
    This class is an abstraction of a URL request.
@@ -252,35 +252,35 @@ class urllib.request.Request(url, data=None, headers={}, origin_req_host=None, u
    Length" has not been provided and _data_ is neither "None" nor a
    bytes object. Fall back to use chunked transfer encoding instead.
 
-                                  *OpenerDirector..urllibrequest.txt;*
+                                  *OpenerDirector..urllib.request.txt*
 class urllib.request.OpenerDirector
 
    The "OpenerDirector" class opens URLs via "BaseHandler"s chained
    together. It manages the chaining of handlers, and recovery from
    errors.
 
-class urllib.request.BaseHandler     *BaseHandler..urllibrequest.txt;*
+class urllib.request.BaseHandler     *BaseHandler..urllib.request.txt*
 
    This is the base class for all registered handlers — and handles
    only the simple mechanics of registration.
 
-                         *HTTPDefaultErrorHandler..urllibrequest.txt;*
+                         *HTTPDefaultErrorHandler..urllib.request.txt*
 class urllib.request.HTTPDefaultErrorHandler
 
    A class which defines a default handler for HTTP error responses;
    all responses are turned into "HTTPError" exceptions.
 
-                             *HTTPRedirectHandler..urllibrequest.txt;*
+                             *HTTPRedirectHandler..urllib.request.txt*
 class urllib.request.HTTPRedirectHandler
 
    A class to handle redirections.
 
-                             *HTTPCookieProcessor..urllibrequest.txt;*
+                             *HTTPCookieProcessor..urllib.request.txt*
 class urllib.request.HTTPCookieProcessor(cookiejar=None)
 
    A class to handle HTTP Cookies.
 
-                                    *ProxyHandler..urllibrequest.txt;*
+                                    *ProxyHandler..urllib.request.txt*
 class urllib.request.ProxyHandler(proxies=None)
 
    Cause requests to go through a proxy. If _proxies_ is given, it
@@ -304,19 +304,19 @@ class urllib.request.ProxyHandler(proxies=None)
         "HTTP_PROXY" will be ignored if a variable "REQUEST_METHOD" is
         set; see the documentation on "getproxies()".
 
-                                 *HTTPPasswordMgr..urllibrequest.txt;*
+                                 *HTTPPasswordMgr..urllib.request.txt*
 class urllib.request.HTTPPasswordMgr
 
    Keep a database of  "(realm, uri) -> (user, password)" mappings.
 
-                 *HTTPPasswordMgrWithDefaultRealm..urllibrequest.txt;*
+                 *HTTPPasswordMgrWithDefaultRealm..urllib.request.txt*
 class urllib.request.HTTPPasswordMgrWithDefaultRealm
 
    Keep a database of  "(realm, uri) -> (user, password)" mappings. A
    realm of "None" is considered a catch-all realm, which is searched
    if no other realm fits.
 
-                    *HTTPPasswordMgrWithPriorAuth..urllibrequest.txt;*
+                    *HTTPPasswordMgrWithPriorAuth..urllib.request.txt*
 class urllib.request.HTTPPasswordMgrWithPriorAuth
 
    A variant of "HTTPPasswordMgrWithDefaultRealm" that also has a
@@ -327,7 +327,7 @@ class urllib.request.HTTPPasswordMgrWithPriorAuth
 
    New in version 3.5.
 
-                        *AbstractBasicAuthHandler..urllibrequest.txt;*
+                        *AbstractBasicAuthHandler..urllib.request.txt*
 class urllib.request.AbstractBasicAuthHandler(password_mgr=None)
 
    This is a mixin class that helps with HTTP authentication, both to
@@ -350,7 +350,7 @@ class urllib.request.AbstractBasicAuthHandler(password_mgr=None)
 
    New in version 3.5: Added "is_authenticated" support.
 
-                            *HTTPBasicAuthHandler..urllibrequest.txt;*
+                            *HTTPBasicAuthHandler..urllib.request.txt*
 class urllib.request.HTTPBasicAuthHandler(password_mgr=None)
 
    Handle authentication with the remote host. _password_mgr_, if
@@ -360,7 +360,7 @@ class urllib.request.HTTPBasicAuthHandler(password_mgr=None)
    HTTPBasicAuthHandler will raise a "ValueError" when presented with
    a wrong Authentication scheme.
 
-                           *ProxyBasicAuthHandler..urllibrequest.txt;*
+                           *ProxyBasicAuthHandler..urllib.request.txt*
 class urllib.request.ProxyBasicAuthHandler(password_mgr=None)
 
    Handle authentication with the proxy. _password_mgr_, if given,
@@ -368,7 +368,7 @@ class urllib.request.ProxyBasicAuthHandler(password_mgr=None)
    refer to section HTTPPasswordMgr Objects for information on the
    interface that must be supported.
 
-                       *AbstractDigestAuthHandler..urllibrequest.txt;*
+                       *AbstractDigestAuthHandler..urllib.request.txt*
 class urllib.request.AbstractDigestAuthHandler(password_mgr=None)
 
    This is a mixin class that helps with HTTP authentication, both to
@@ -377,7 +377,7 @@ class urllib.request.AbstractDigestAuthHandler(password_mgr=None)
    section HTTPPasswordMgr Objects for information on the interface
    that must be supported.
 
-                           *HTTPDigestAuthHandler..urllibrequest.txt;*
+                           *HTTPDigestAuthHandler..urllib.request.txt*
 class urllib.request.HTTPDigestAuthHandler(password_mgr=None)
 
    Handle authentication with the remote host. _password_mgr_, if
@@ -394,7 +394,7 @@ class urllib.request.HTTPDigestAuthHandler(password_mgr=None)
    Changed in version 3.3: Raise "ValueError" on unsupported
    Authentication Scheme.
 
-                          *ProxyDigestAuthHandler..urllibrequest.txt;*
+                          *ProxyDigestAuthHandler..urllib.request.txt*
 class urllib.request.ProxyDigestAuthHandler(password_mgr=None)
 
    Handle authentication with the proxy. _password_mgr_, if given,
@@ -402,11 +402,11 @@ class urllib.request.ProxyDigestAuthHandler(password_mgr=None)
    refer to section HTTPPasswordMgr Objects for information on the
    interface that must be supported.
 
-class urllib.request.HTTPHandler     *HTTPHandler..urllibrequest.txt;*
+class urllib.request.HTTPHandler     *HTTPHandler..urllib.request.txt*
 
    A class to handle opening of HTTP URLs.
 
-                                    *HTTPSHandler..urllibrequest.txt;*
+                                    *HTTPSHandler..urllib.request.txt*
 class urllib.request.HTTPSHandler(debuglevel=0, context=None, check_hostname=None)
 
    A class to handle opening of HTTPS URLs.  _context_ and
@@ -415,32 +415,32 @@ class urllib.request.HTTPSHandler(debuglevel=0, context=None, check_hostname=Non
 
    Changed in version 3.2: _context_ and _check_hostname_ were added.
 
-class urllib.request.FileHandler     *FileHandler..urllibrequest.txt;*
+class urllib.request.FileHandler     *FileHandler..urllib.request.txt*
 
    Open local files.
 
-class urllib.request.DataHandler     *DataHandler..urllibrequest.txt;*
+class urllib.request.DataHandler     *DataHandler..urllib.request.txt*
 
    Open data URLs.
 
    New in version 3.4.
 
-class urllib.request.FTPHandler       *FTPHandler..urllibrequest.txt;*
+class urllib.request.FTPHandler       *FTPHandler..urllib.request.txt*
 
    Open FTP URLs.
 
-                                 *CacheFTPHandler..urllibrequest.txt;*
+                                 *CacheFTPHandler..urllib.request.txt*
 class urllib.request.CacheFTPHandler
 
    Open FTP URLs, keeping a cache of open FTP connections to minimize
    delays.
 
-                                  *UnknownHandler..urllibrequest.txt;*
+                                  *UnknownHandler..urllib.request.txt*
 class urllib.request.UnknownHandler
 
    A catch-all class to handle unknown URLs.
 
-                              *HTTPErrorProcessor..urllibrequest.txt;*
+                              *HTTPErrorProcessor..urllib.request.txt*
 class urllib.request.HTTPErrorProcessor
 
    Process HTTP error responses.
@@ -453,7 +453,7 @@ The following methods describe "Request"’s public interface, and so
 all may be overridden in subclasses.  It also defines several public
 attributes that can be used by clients to inspect the parsed request.
 
-Request.full_url                *Request.full_url..urllibrequest.txt;*
+Request.full_url                *Request.full_url..urllib.request.txt*
 
    The original URL passed to the constructor.
 
@@ -463,26 +463,26 @@ Request.full_url                *Request.full_url..urllibrequest.txt;*
    Getting "full_url" returns the original request URL with the
    fragment, if it was present.
 
-Request.type                        *Request.type..urllibrequest.txt;*
+Request.type                        *Request.type..urllib.request.txt*
 
    The URI scheme.
 
-Request.host                        *Request.host..urllibrequest.txt;*
+Request.host                        *Request.host..urllib.request.txt*
 
    The URI authority, typically a host, but may also contain a port
    separated by a colon.
 
-                         *Request.origin_req_host..urllibrequest.txt;*
+                         *Request.origin_req_host..urllib.request.txt*
 Request.origin_req_host
 
    The original host for the request, without port.
 
-Request.selector                *Request.selector..urllibrequest.txt;*
+Request.selector                *Request.selector..urllib.request.txt*
 
    The URI path.  If the "Request" uses a proxy, then selector will be
    the full URL that is passed to the proxy.
 
-Request.data                        *Request.data..urllibrequest.txt;*
+Request.data                        *Request.data..urllib.request.txt*
 
    The entity body for the request, or "None" if not specified.
 
@@ -490,12 +490,12 @@ Request.data                        *Request.data..urllibrequest.txt;*
    deletes “Content-Length” header if it was previously set or
    calculated.
 
-Request.unverifiable        *Request.unverifiable..urllibrequest.txt;*
+Request.unverifiable        *Request.unverifiable..urllib.request.txt*
 
    boolean, indicates whether the request is unverifiable as defined
    by **RFC 2965**.
 
-Request.method                    *Request.method..urllibrequest.txt;*
+Request.method                    *Request.method..urllib.request.txt*
 
    The HTTP request method to use.  By default its value is "None",
    which means that "get_method()" will do its normal computation of
@@ -511,7 +511,7 @@ Request.method                    *Request.method..urllibrequest.txt;*
    subclasses; previously it could only be set via the constructor
    argument.
 
-Request.get_method()        *Request.get_method()..urllibrequest.txt;*
+Request.get_method()        *Request.get_method()..urllib.request.txt*
 
    Return a string indicating the HTTP request method.  If
    "Request.method" is not "None", return its value, otherwise return
@@ -521,7 +521,7 @@ Request.get_method()        *Request.get_method()..urllibrequest.txt;*
    Changed in version 3.3: get_method now looks at the value of
    "Request.method".
 
-                            *Request.add_header()..urllibrequest.txt;*
+                            *Request.add_header()..urllib.request.txt*
 Request.add_header(key, val)
 
    Add another header to the request.  Headers are currently ignored
@@ -534,18 +534,18 @@ Request.add_header(key, val)
    the same functionality using only one header.  Note that headers
    added using this method are also added to redirected requests.
 
-               *Request.add_unredirected_header()..urllibrequest.txt;*
+               *Request.add_unredirected_header()..urllib.request.txt*
 Request.add_unredirected_header(key, header)
 
    Add a header that will not be added to a redirected request.
 
-                            *Request.has_header()..urllibrequest.txt;*
+                            *Request.has_header()..urllib.request.txt*
 Request.has_header(header)
 
    Return whether the instance has the named header (checks both
    regular and unredirected).
 
-                         *Request.remove_header()..urllibrequest.txt;*
+                         *Request.remove_header()..urllib.request.txt*
 Request.remove_header(header)
 
    Remove named header from the request instance (both from regular
@@ -553,7 +553,7 @@ Request.remove_header(header)
 
    New in version 3.4.
 
-Request.get_full_url()    *Request.get_full_url()..urllibrequest.txt;*
+Request.get_full_url()    *Request.get_full_url()..urllib.request.txt*
 
    Return the URL given in the constructor.
 
@@ -561,20 +561,20 @@ Request.get_full_url()    *Request.get_full_url()..urllibrequest.txt;*
 
    Returns "Request.full_url"
 
-                             *Request.set_proxy()..urllibrequest.txt;*
+                             *Request.set_proxy()..urllib.request.txt*
 Request.set_proxy(host, type)
 
    Prepare the request by connecting to a proxy server. The _host_ and
    _type_ will replace those of the instance, and the instance’s
    selector will be the original URL given in the constructor.
 
-                            *Request.get_header()..urllibrequest.txt;*
+                            *Request.get_header()..urllib.request.txt*
 Request.get_header(header_name, default=None)
 
    Return the value of the given header. If the header is not present,
    return the default value.
 
-Request.header_items()    *Request.header_items()..urllibrequest.txt;*
+Request.header_items()    *Request.header_items()..urllib.request.txt*
 
    Return a list of tuples (header_name, header_value) of the Request
    headers.
@@ -589,7 +589,7 @@ OpenerDirector Objects
 
 "OpenerDirector" instances have the following methods:
 
-                    *OpenerDirector.add_handler()..urllibrequest.txt;*
+                    *OpenerDirector.add_handler()..urllib.request.txt*
 OpenerDirector.add_handler(handler)
 
    _handler_ should be an instance of "BaseHandler".  The following
@@ -623,7 +623,7 @@ OpenerDirector.add_handler(handler)
 
      See "BaseHandler.<protocol>_response()" for more information.
 
-                           *OpenerDirector.open()..urllibrequest.txt;*
+                           *OpenerDirector.open()..urllib.request.txt*
 OpenerDirector.open(url, data=None[, timeout])
 
    Open the given _url_ (which can be a request object or a string),
@@ -636,7 +636,7 @@ OpenerDirector.open(url, data=None[, timeout])
    be used). The timeout feature actually works only for HTTP, HTTPS
    and FTP connections.
 
-                          *OpenerDirector.error()..urllibrequest.txt;*
+                          *OpenerDirector.error()..urllib.request.txt*
 OpenerDirector.error(proto, *args)
 
    Handle an error of the given protocol.  This will call the
@@ -683,12 +683,12 @@ BaseHandler Objects
 useful, and others that are meant to be used by derived classes.
 These are intended for direct use:
 
-                        *BaseHandler.add_parent()..urllibrequest.txt;*
+                        *BaseHandler.add_parent()..urllib.request.txt*
 BaseHandler.add_parent(director)
 
    Add a director as parent.
 
-BaseHandler.close()          *BaseHandler.close()..urllibrequest.txt;*
+BaseHandler.close()          *BaseHandler.close()..urllib.request.txt*
 
    Remove any parents.
 
@@ -701,12 +701,12 @@ Note:
   "<protocol>_request()" or "<protocol>_response()" methods are named
   "*Processor"; all others are named "*Handler".
 
-BaseHandler.parent            *BaseHandler.parent..urllibrequest.txt;*
+BaseHandler.parent            *BaseHandler.parent..urllib.request.txt*
 
    A valid "OpenerDirector", which can be used to open using a
    different protocol, or handle errors.
 
-                      *BaseHandler.default_open()..urllibrequest.txt;*
+                      *BaseHandler.default_open()..urllib.request.txt*
 BaseHandler.default_open(req)
 
    This method is _not_ defined in "BaseHandler", but subclasses
@@ -732,7 +732,7 @@ BaseHandler.<protocol>_open(req)
    "OpenerDirector". Return values should be the same as for
    "default_open()".
 
-                      *BaseHandler.unknown_open()..urllibrequest.txt;*
+                      *BaseHandler.unknown_open()..urllib.request.txt*
 BaseHandler.unknown_open(req)
 
    This method is _not_ defined in "BaseHandler", but subclasses
@@ -743,7 +743,7 @@ BaseHandler.unknown_open(req)
    "OpenerDirector".  Return values should be the same as for
    "default_open()".
 
-                *BaseHandler.http_error_default()..urllibrequest.txt;*
+                *BaseHandler.http_error_default()..urllib.request.txt*
 BaseHandler.http_error_default(req, fp, code, msg, hdrs)
 
    This method is _not_ defined in "BaseHandler", but subclasses
@@ -808,7 +808,7 @@ Note:
   the HTTPRedirectHandler is presented with a redirected URL which is
   not an HTTP, HTTPS or FTP URL.
 
-          *HTTPRedirectHandler.redirect_request()..urllibrequest.txt;*
+          *HTTPRedirectHandler.redirect_request()..urllib.request.txt*
 HTTPRedirectHandler.redirect_request(req, fp, code, msg, hdrs, newurl)
 
    Return a "Request" or "None" in response to a redirect. This is
@@ -828,33 +828,33 @@ HTTPRedirectHandler.redirect_request(req, fp, code, msg, hdrs, newurl)
      automatic redirection of these responses, changing the POST to a
      "GET", and the default implementation reproduces this behavior.
 
-            *HTTPRedirectHandler.http_error_301()..urllibrequest.txt;*
+            *HTTPRedirectHandler.http_error_301()..urllib.request.txt*
 HTTPRedirectHandler.http_error_301(req, fp, code, msg, hdrs)
 
    Redirect to the "Location:" or "URI:" URL.  This method is called
    by the parent "OpenerDirector" when getting an HTTP ‘moved
    permanently’ response.
 
-            *HTTPRedirectHandler.http_error_302()..urllibrequest.txt;*
+            *HTTPRedirectHandler.http_error_302()..urllib.request.txt*
 HTTPRedirectHandler.http_error_302(req, fp, code, msg, hdrs)
 
    The same as "http_error_301()", but called for the ‘found’
    response.
 
-            *HTTPRedirectHandler.http_error_303()..urllibrequest.txt;*
+            *HTTPRedirectHandler.http_error_303()..urllib.request.txt*
 HTTPRedirectHandler.http_error_303(req, fp, code, msg, hdrs)
 
    The same as "http_error_301()", but called for the ‘see other’
    response.
 
-            *HTTPRedirectHandler.http_error_307()..urllibrequest.txt;*
+            *HTTPRedirectHandler.http_error_307()..urllib.request.txt*
 HTTPRedirectHandler.http_error_307(req, fp, code, msg, hdrs)
 
    The same as "http_error_301()", but called for the ‘temporary
    redirect’ response. It does not allow changing the request method
    from "POST" to "GET".
 
-            *HTTPRedirectHandler.http_error_308()..urllibrequest.txt;*
+            *HTTPRedirectHandler.http_error_308()..urllib.request.txt*
 HTTPRedirectHandler.http_error_308(req, fp, code, msg, hdrs)
 
    The same as "http_error_301()", but called for the ‘permanent
@@ -869,7 +869,7 @@ HTTPCookieProcessor Objects
 
 "HTTPCookieProcessor" instances have one attribute:
 
-                   *HTTPCookieProcessor.cookiejar..urllibrequest.txt;*
+                   *HTTPCookieProcessor.cookiejar..urllib.request.txt*
 HTTPCookieProcessor.cookiejar
 
    The "http.cookiejar.CookieJar" in which cookies are stored.
@@ -893,7 +893,7 @@ HTTPPasswordMgr Objects
 These methods are available on "HTTPPasswordMgr" and
 "HTTPPasswordMgrWithDefaultRealm" objects.
 
-                  *HTTPPasswordMgr.add_password()..urllibrequest.txt;*
+                  *HTTPPasswordMgr.add_password()..urllib.request.txt*
 HTTPPasswordMgr.add_password(realm, uri, user, passwd)
 
    _uri_ can be either a single URI, or a sequence of URIs. _realm_,
@@ -901,7 +901,7 @@ HTTPPasswordMgr.add_password(realm, uri, user, passwd)
    to be used as authentication tokens when authentication for _realm_
    and a super-URI of any of the given URIs is given.
 
-            *HTTPPasswordMgr.find_user_password()..urllibrequest.txt;*
+            *HTTPPasswordMgr.find_user_password()..urllib.request.txt*
 HTTPPasswordMgr.find_user_password(realm, authuri)
 
    Get user/password for given realm and URI, if any.  This method
@@ -919,7 +919,7 @@ This password manager extends "HTTPPasswordMgrWithDefaultRealm" to
 support tracking URIs for which authentication credentials should
 always be sent.
 
-     *HTTPPasswordMgrWithPriorAuth.add_password()..urllibrequest.txt;*
+     *HTTPPasswordMgrWithPriorAuth.add_password()..urllib.request.txt*
 HTTPPasswordMgrWithPriorAuth.add_password(realm, uri, user, passwd, is_authenticated=False)
 
    _realm_, _uri_, _user_, _passwd_ are as for
@@ -928,18 +928,18 @@ HTTPPasswordMgrWithPriorAuth.add_password(realm, uri, user, passwd, is_authentic
    list of URIs. If _is_authenticated_ is specified as "True", _realm_
    is ignored.
 
-*HTTPPasswordMgrWithPriorAuth.find_user_password()..urllibrequest.txt;*
+*HTTPPasswordMgrWithPriorAuth.find_user_password()..urllib.request.txt*
 HTTPPasswordMgrWithPriorAuth.find_user_password(realm, authuri)
 
    Same as for "HTTPPasswordMgrWithDefaultRealm" objects
 
-*HTTPPasswordMgrWithPriorAuth.update_authenticated()..urllibrequest.txt;*
+*HTTPPasswordMgrWithPriorAuth.update_authenticated()..urllib.request.txt*
 HTTPPasswordMgrWithPriorAuth.update_authenticated(self, uri, is_authenticated=False)
 
    Update the "is_authenticated" flag for the given _uri_ or list of
    URIs.
 
- *HTTPPasswordMgrWithPriorAuth.is_authenticated()..urllibrequest.txt;*
+ *HTTPPasswordMgrWithPriorAuth.is_authenticated()..urllib.request.txt*
 HTTPPasswordMgrWithPriorAuth.is_authenticated(self, authuri)
 
    Returns the current state of the "is_authenticated" flag for the
@@ -949,7 +949,7 @@ HTTPPasswordMgrWithPriorAuth.is_authenticated(self, authuri)
 AbstractBasicAuthHandler Objects
 ================================
 
-*AbstractBasicAuthHandler.http_error_auth_reqed()..urllibrequest.txt;*
+*AbstractBasicAuthHandler.http_error_auth_reqed()..urllib.request.txt*
 AbstractBasicAuthHandler.http_error_auth_reqed(authreq, host, req, headers)
 
    Handle an authentication request by getting a user/password pair,
@@ -969,7 +969,7 @@ AbstractBasicAuthHandler.http_error_auth_reqed(authreq, host, req, headers)
 HTTPBasicAuthHandler Objects
 ============================
 
-           *HTTPBasicAuthHandler.http_error_401()..urllibrequest.txt;*
+           *HTTPBasicAuthHandler.http_error_401()..urllib.request.txt*
 HTTPBasicAuthHandler.http_error_401(req, fp, code, msg, hdrs)
 
    Retry the request with authentication information, if available.
@@ -978,7 +978,7 @@ HTTPBasicAuthHandler.http_error_401(req, fp, code, msg, hdrs)
 ProxyBasicAuthHandler Objects
 =============================
 
-          *ProxyBasicAuthHandler.http_error_407()..urllibrequest.txt;*
+          *ProxyBasicAuthHandler.http_error_407()..urllib.request.txt*
 ProxyBasicAuthHandler.http_error_407(req, fp, code, msg, hdrs)
 
    Retry the request with authentication information, if available.
@@ -987,7 +987,7 @@ ProxyBasicAuthHandler.http_error_407(req, fp, code, msg, hdrs)
 AbstractDigestAuthHandler Objects
 =================================
 
-*AbstractDigestAuthHandler.http_error_auth_reqed()..urllibrequest.txt;*
+*AbstractDigestAuthHandler.http_error_auth_reqed()..urllib.request.txt*
 AbstractDigestAuthHandler.http_error_auth_reqed(authreq, host, req, headers)
 
    _authreq_ should be the name of the header where the information
@@ -999,7 +999,7 @@ AbstractDigestAuthHandler.http_error_auth_reqed(authreq, host, req, headers)
 HTTPDigestAuthHandler Objects
 =============================
 
-          *HTTPDigestAuthHandler.http_error_401()..urllibrequest.txt;*
+          *HTTPDigestAuthHandler.http_error_401()..urllib.request.txt*
 HTTPDigestAuthHandler.http_error_401(req, fp, code, msg, hdrs)
 
    Retry the request with authentication information, if available.
@@ -1008,7 +1008,7 @@ HTTPDigestAuthHandler.http_error_401(req, fp, code, msg, hdrs)
 ProxyDigestAuthHandler Objects
 ==============================
 
-         *ProxyDigestAuthHandler.http_error_407()..urllibrequest.txt;*
+         *ProxyDigestAuthHandler.http_error_407()..urllib.request.txt*
 ProxyDigestAuthHandler.http_error_407(req, fp, code, msg, hdrs)
 
    Retry the request with authentication information, if available.
@@ -1017,7 +1017,7 @@ ProxyDigestAuthHandler.http_error_407(req, fp, code, msg, hdrs)
 HTTPHandler Objects
 ===================
 
-                         *HTTPHandler.http_open()..urllibrequest.txt;*
+                         *HTTPHandler.http_open()..urllib.request.txt*
 HTTPHandler.http_open(req)
 
    Send an HTTP request, which can be either GET or POST, depending on
@@ -1027,7 +1027,7 @@ HTTPHandler.http_open(req)
 HTTPSHandler Objects
 ====================
 
-                       *HTTPSHandler.https_open()..urllibrequest.txt;*
+                       *HTTPSHandler.https_open()..urllib.request.txt*
 HTTPSHandler.https_open(req)
 
    Send an HTTPS request, which can be either GET or POST, depending
@@ -1037,7 +1037,7 @@ HTTPSHandler.https_open(req)
 FileHandler Objects
 ===================
 
-                         *FileHandler.file_open()..urllibrequest.txt;*
+                         *FileHandler.file_open()..urllib.request.txt*
 FileHandler.file_open(req)
 
    Open the file locally, if there is no host name, or the host name
@@ -1051,7 +1051,7 @@ FileHandler.file_open(req)
 DataHandler Objects
 ===================
 
-                         *DataHandler.data_open()..urllibrequest.txt;*
+                         *DataHandler.data_open()..urllib.request.txt*
 DataHandler.data_open(req)
 
    Read a data URL. This kind of URL contains the content encoded in
@@ -1066,7 +1066,7 @@ DataHandler.data_open(req)
 FTPHandler Objects
 ==================
 
-FTPHandler.ftp_open(req)   *FTPHandler.ftp_open()..urllibrequest.txt;*
+FTPHandler.ftp_open(req)   *FTPHandler.ftp_open()..urllib.request.txt*
 
    Open the FTP file indicated by _req_. The login is always done with
    empty username and password.
@@ -1078,12 +1078,12 @@ CacheFTPHandler Objects
 "CacheFTPHandler" objects are "FTPHandler" objects with the following
 additional methods:
 
-                    *CacheFTPHandler.setTimeout()..urllibrequest.txt;*
+                    *CacheFTPHandler.setTimeout()..urllib.request.txt*
 CacheFTPHandler.setTimeout(t)
 
    Set timeout of connections to _t_ seconds.
 
-                   *CacheFTPHandler.setMaxConns()..urllibrequest.txt;*
+                   *CacheFTPHandler.setMaxConns()..urllib.request.txt*
 CacheFTPHandler.setMaxConns(m)
 
    Set maximum number of cached connections to _m_.
@@ -1092,7 +1092,7 @@ CacheFTPHandler.setMaxConns(m)
 UnknownHandler Objects
 ======================
 
-                   *UnknownHandler.unknown_open()..urllibrequest.txt;*
+                   *UnknownHandler.unknown_open()..urllib.request.txt*
 UnknownHandler.unknown_open()
 
    Raise a "URLError" exception.
@@ -1101,7 +1101,7 @@ UnknownHandler.unknown_open()
 HTTPErrorProcessor Objects
 ==========================
 
-              *HTTPErrorProcessor.http_response()..urllibrequest.txt;*
+              *HTTPErrorProcessor.http_response()..urllib.request.txt*
 HTTPErrorProcessor.http_response(request, response)
 
    Process HTTP error responses.
@@ -1113,7 +1113,7 @@ HTTPErrorProcessor.http_response(request, response)
    "OpenerDirector.error()". Eventually, "HTTPDefaultErrorHandler"
    will raise an "HTTPError" if no other handler handles the error.
 
-             *HTTPErrorProcessor.https_response()..urllibrequest.txt;*
+             *HTTPErrorProcessor.https_response()..urllib.request.txt*
 HTTPErrorProcessor.https_response(request, response)
 
    Process HTTPS error responses.
@@ -1303,7 +1303,7 @@ The following functions and classes are ported from the Python 2
 module "urllib" (as opposed to "urllib2").  They might become
 deprecated at some point in the future.
 
-                                   *urlretrieve()..urllibrequest.txt;*
+                                   *urlretrieve()..urllib.request.txt*
 urllib.request.urlretrieve(url, filename=None, reporthook=None, data=None)
 
    Copy a network object denoted by a URL to a local file. If the URL
@@ -1354,12 +1354,12 @@ urllib.request.urlretrieve(url, filename=None, reporthook=None, data=None)
    In this case you just have to assume that the download was
    successful.
 
-urllib.request.urlcleanup()         *urlcleanup()..urllibrequest.txt;*
+urllib.request.urlcleanup()         *urlcleanup()..urllib.request.txt*
 
    Cleans up temporary files that may have been left behind by
    previous calls to "urlretrieve()".
 
-                                       *URLopener..urllibrequest.txt;*
+                                       *URLopener..urllib.request.txt*
 class urllib.request.URLopener(proxies=None, **x509)
 
    Deprecated since version 3.3.
@@ -1390,7 +1390,7 @@ class urllib.request.URLopener(proxies=None, **x509)
    "URLopener" objects will raise an "OSError" exception if the server
    returns an error code.
 
-   open(fullurl, data=None)        *URLopener.open()..urllibrequest.txt;*
+   open(fullurl, data=None)        *URLopener.open()..urllib.request.txt*
 
       Open _fullurl_ using the appropriate protocol.  This method sets
       up cache and proxy information, then calls the appropriate open
@@ -1400,12 +1400,12 @@ class urllib.request.URLopener(proxies=None, **x509)
 
       This method always quotes _fullurl_ using "quote()".
 
-                        *URLopener.open_unknown()..urllibrequest.txt;*
+                        *URLopener.open_unknown()..urllib.request.txt*
    open_unknown(fullurl, data=None)
 
       Overridable interface to open unknown URL types.
 
-                            *URLopener.retrieve()..urllibrequest.txt;*
+                            *URLopener.retrieve()..urllib.request.txt*
    retrieve(url, filename=None, reporthook=None, data=None)
 
       Retrieves the contents of _url_ and places it in _filename_.
@@ -1430,14 +1430,14 @@ class urllib.request.URLopener(proxies=None, **x509)
       in standard _application/x-www-form-urlencoded_ format; see the
       "urllib.parse.urlencode()" function.
 
-   version                        *URLopener.version..urllibrequest.txt;*
+   version                        *URLopener.version..urllib.request.txt*
 
       Variable that specifies the user agent of the opener object.  To
       get "urllib" to tell servers that it is a particular user agent,
       set this in a subclass as a class variable or in the constructor
       before calling the base constructor.
 
-                                  *FancyURLopener..urllibrequest.txt;*
+                                  *FancyURLopener..urllib.request.txt*
 class urllib.request.FancyURLopener(...)
 
    Deprecated since version 3.3.
@@ -1476,7 +1476,7 @@ class urllib.request.FancyURLopener(...)
    The "FancyURLopener" class offers one additional method that should
    be overloaded to provide the appropriate behavior:
 
-             *FancyURLopener.prompt_user_passwd()..urllibrequest.txt;*
+             *FancyURLopener.prompt_user_passwd()..urllib.request.txt*
    prompt_user_passwd(host, realm)
 
       Return information needed to authenticate the user at the given
@@ -1547,37 +1547,37 @@ define a minimal file-like interface, including "read()" and
 the "urllib.request" module. The typical response object is a
 "urllib.response.addinfourl" instance:
 
-class urllib.response.addinfourl      *addinfourl..urllibrequest.txt;*
+class urllib.response.addinfourl      *addinfourl..urllib.request.txt*
 
-   url                               *addinfourl.url..urllibrequest.txt;*
+   url                               *addinfourl.url..urllib.request.txt*
 
       URL of the resource retrieved, commonly used to determine if a
       redirect was followed.
 
-   headers                       *addinfourl.headers..urllibrequest.txt;*
+   headers                       *addinfourl.headers..urllib.request.txt*
 
       Returns the headers of the response in the form of an
       "EmailMessage" instance.
 
-   status                         *addinfourl.status..urllibrequest.txt;*
+   status                         *addinfourl.status..urllib.request.txt*
 
       New in version 3.9.
 
       Status code returned by server.
 
-   geturl()                     *addinfourl.geturl()..urllibrequest.txt;*
+   geturl()                     *addinfourl.geturl()..urllib.request.txt*
 
       Deprecated since version 3.9: Deprecated in favor of "url".
 
-   info()                         *addinfourl.info()..urllibrequest.txt;*
+   info()                         *addinfourl.info()..urllib.request.txt*
 
       Deprecated since version 3.9: Deprecated in favor of "headers".
 
-   code                             *addinfourl.code..urllibrequest.txt;*
+   code                             *addinfourl.code..urllib.request.txt*
 
       Deprecated since version 3.9: Deprecated in favor of "status".
 
-   getcode()                   *addinfourl.getcode()..urllibrequest.txt;*
+   getcode()                   *addinfourl.getcode()..urllib.request.txt*
 
       Deprecated since version 3.9: Deprecated in favor of "status".
 

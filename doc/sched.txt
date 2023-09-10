@@ -1,4 +1,4 @@
-*sched.txt;*                                  Last change: 2023 Sep 09
+*sched.txt;*                                  Last change: 2023 Sep 10
 
 "sched" — Event scheduler
 *************************
@@ -10,7 +10,7 @@
 The "sched" module defines a class which implements a general purpose
 event scheduler:
 
-                                               *scheduler..sched.txt;*
+                                                *scheduler..sched.txt*
 class sched.scheduler(timefunc=time.monotonic, delayfunc=time.sleep)
 
    The "scheduler" class defines a generic interface to scheduling
@@ -62,7 +62,7 @@ Scheduler Objects
 
 "scheduler" instances have the following methods and attributes:
 
-                                    *scheduler.enterabs()..sched.txt;*
+                                     *scheduler.enterabs()..sched.txt*
 scheduler.enterabs(time, priority, action, argument=(), kwargs={})
 
    Schedule a new event. The _time_ argument should be a numeric type
@@ -83,7 +83,7 @@ scheduler.enterabs(time, priority, action, argument=(), kwargs={})
 
    Changed in version 3.3: _kwargs_ parameter was added.
 
-                                       *scheduler.enter()..sched.txt;*
+                                        *scheduler.enter()..sched.txt*
 scheduler.enter(delay, priority, action, argument=(), kwargs={})
 
    Schedule an event for _delay_ more time units. Other than the
@@ -94,16 +94,16 @@ scheduler.enter(delay, priority, action, argument=(), kwargs={})
 
    Changed in version 3.3: _kwargs_ parameter was added.
 
-scheduler.cancel(event)               *scheduler.cancel()..sched.txt;*
+scheduler.cancel(event)                *scheduler.cancel()..sched.txt*
 
    Remove the event from the queue. If _event_ is not an event
    currently in the queue, this method will raise a "ValueError".
 
-scheduler.empty()                      *scheduler.empty()..sched.txt;*
+scheduler.empty()                       *scheduler.empty()..sched.txt*
 
    Return "True" if the event queue is empty.
 
-scheduler.run(blocking=True)             *scheduler.run()..sched.txt;*
+scheduler.run(blocking=True)              *scheduler.run()..sched.txt*
 
    Run all scheduled events. This method will wait  (using the
    _delayfunc_ function passed to the constructor) for the next event,
@@ -125,7 +125,7 @@ scheduler.run(blocking=True)             *scheduler.run()..sched.txt;*
 
    Changed in version 3.3: _blocking_ parameter was added.
 
-scheduler.queue                          *scheduler.queue..sched.txt;*
+scheduler.queue                           *scheduler.queue..sched.txt*
 
    Read-only attribute returning a list of upcoming events in the
    order they will be run.  Each event is shown as a _named tuple_

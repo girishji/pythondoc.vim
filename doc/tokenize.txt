@@ -1,4 +1,4 @@
-*tokenize.txt;*                               Last change: 2023 Sep 09
+*tokenize.txt;*                               Last change: 2023 Sep 10
 
 "tokenize" — Tokenizer for Python source
 ****************************************
@@ -31,7 +31,7 @@ Tokenizing Input
 
 The primary entry point is a _generator_:
 
-tokenize.tokenize(readline)                *tokenize()..tokenize.txt;*
+tokenize.tokenize(readline)                 *tokenize()..tokenize.txt*
 
    The "tokenize()" generator requires one argument, _readline_, which
    must be a callable object which provides the same interface as the
@@ -59,8 +59,7 @@ tokenize.tokenize(readline)                *tokenize()..tokenize.txt;*
    "tokenize()" determines the source encoding of the file by looking
    for a UTF-8 BOM or encoding cookie, according to **PEP 263**.
 
-                                    *generate_tokens()..tokenize.txt;*
-tokenize.generate_tokens(readline)
+tokenize.generate_tokens(readline)   *generate_tokens()..tokenize.txt*
 
    Tokenize a source reading unicode strings instead of bytes.
 
@@ -78,7 +77,7 @@ Another function is provided to reverse the tokenization process. This
 is useful for creating tools that tokenize a script, modify the token
 stream, and write back the modified script.
 
-tokenize.untokenize(iterable)            *untokenize()..tokenize.txt;*
+tokenize.untokenize(iterable)             *untokenize()..tokenize.txt*
 
    Converts tokens back into Python source code.  The _iterable_ must
    return sequences with at least two elements, the token type and the
@@ -97,8 +96,7 @@ tokenize.untokenize(iterable)            *untokenize()..tokenize.txt;*
 "tokenize()" needs to detect the encoding of source files it
 tokenizes. The function it uses to do this is available:
 
-                                    *detect_encoding()..tokenize.txt;*
-tokenize.detect_encoding(readline)
+tokenize.detect_encoding(readline)   *detect_encoding()..tokenize.txt*
 
    The "detect_encoding()" function is used to detect the encoding
    that should be used to decode a Python source file. It requires one
@@ -120,14 +118,14 @@ tokenize.detect_encoding(readline)
    Use "open()" to open Python source files: it uses
    "detect_encoding()" to detect the file encoding.
 
-tokenize.open(filename)                        *open()..tokenize.txt;*
+tokenize.open(filename)                         *open()..tokenize.txt*
 
    Open a file in read only mode using the encoding detected by
    "detect_encoding()".
 
    New in version 3.2.
 
-exception tokenize.TokenError              *TokenError..tokenize.txt;*
+exception tokenize.TokenError               *TokenError..tokenize.txt*
 
    Raised when either a docstring or expression that may be split over
    several lines is not completed anywhere in the file, for example:

@@ -1,4 +1,4 @@
-*emailcompat32-message.txt;*                  Last change: 2023 Sep 09
+*email.compat32-message.txt;*                 Last change: 2023 Sep 10
 
 "email.message.Message": Representing an email message using the "compat32" API
 *******************************************************************************
@@ -44,7 +44,7 @@ MIME container documents (e.g. _multipart/*_ and _message/rfc822_).
 
 Here are the methods of the "Message" class:
 
-                                 *Message..emailcompat32-message.txt;*
+                                 *Message..email.compat32-message.txt*
 class email.message.Message(policy=compat32)
 
    If _policy_ is specified (it must be an instance of a "policy"
@@ -56,7 +56,7 @@ class email.message.Message(policy=compat32)
 
    Changed in version 3.3: The _policy_ keyword argument was added.
 
-                     *Message.as_string()..emailcompat32-message.txt;*
+                     *Message.as_string()..email.compat32-message.txt*
    as_string(unixfrom=False, maxheaderlen=0, policy=None)
 
       Return the entire message flattened as a string.  When optional
@@ -97,12 +97,12 @@ class email.message.Message(policy=compat32)
 
       Changed in version 3.4: the _policy_ keyword argument was added.
 
-   __str__()              *Message.__str__()..emailcompat32-message.txt;*
+   __str__()              *Message.__str__()..email.compat32-message.txt*
 
       Equivalent to "as_string()".  Allows "str(msg)" to produce a
       string containing the formatted message.
 
-                      *Message.as_bytes()..emailcompat32-message.txt;*
+                      *Message.as_bytes()..email.compat32-message.txt*
    as_bytes(unixfrom=False, policy=None)
 
       Return the entire message flattened as a bytes object.  When
@@ -134,14 +134,14 @@ class email.message.Message(policy=compat32)
 <
       New in version 3.4.
 
-   __bytes__()          *Message.__bytes__()..emailcompat32-message.txt;*
+   __bytes__()          *Message.__bytes__()..email.compat32-message.txt*
 
       Equivalent to "as_bytes()".  Allows "bytes(msg)" to produce a
       bytes object containing the formatted message.
 
       New in version 3.4.
 
-   is_multipart()    *Message.is_multipart()..emailcompat32-message.txt;*
+   is_multipart()    *Message.is_multipart()..email.compat32-message.txt*
 
       Return "True" if the message’s payload is a list of
       sub-"Message" objects, otherwise return "False".  When
@@ -152,18 +152,18 @@ class email.message.Message(policy=compat32)
       "True". For example, "is_multipart" will return "True" when the
       "Message" is of type "message/rfc822".)
 
-                  *Message.set_unixfrom()..emailcompat32-message.txt;*
+                  *Message.set_unixfrom()..email.compat32-message.txt*
    set_unixfrom(unixfrom)
 
       Set the message’s envelope header to _unixfrom_, which should be
       a string.
 
-   get_unixfrom()    *Message.get_unixfrom()..emailcompat32-message.txt;*
+   get_unixfrom()    *Message.get_unixfrom()..email.compat32-message.txt*
 
       Return the message’s envelope header.  Defaults to "None" if the
       envelope header was never set.
 
-   attach(payload)         *Message.attach()..emailcompat32-message.txt;*
+   attach(payload)         *Message.attach()..email.compat32-message.txt*
 
       Add the given _payload_ to the current payload, which must be
       "None" or a list of "Message" objects before the call. After the
@@ -175,7 +175,7 @@ class email.message.Message(policy=compat32)
       functionality is replaced by "set_content()" and the related
       "make" and "add" methods.
 
-                   *Message.get_payload()..emailcompat32-message.txt;*
+                   *Message.get_payload()..email.compat32-message.txt*
    get_payload(i=None, decode=False)
 
       Return the current payload, which will be a list of "Message"
@@ -219,7 +219,7 @@ class email.message.Message(policy=compat32)
       This is a legacy method.  On the "EmailMessage" class its
       functionality is replaced by "get_content()" and "iter_parts()".
 
-                   *Message.set_payload()..emailcompat32-message.txt;*
+                   *Message.set_payload()..email.compat32-message.txt*
    set_payload(payload, charset=None)
 
       Set the entire message object’s payload to _payload_.  It is the
@@ -230,7 +230,7 @@ class email.message.Message(policy=compat32)
       This is a legacy method.  On the "EmailMessage" class its
       functionality is replaced by "set_content()".
 
-                   *Message.set_charset()..emailcompat32-message.txt;*
+                   *Message.set_charset()..email.compat32-message.txt*
    set_charset(charset)
 
       Set the character set of the payload to _charset_, which can
@@ -259,7 +259,7 @@ class email.message.Message(policy=compat32)
       functionality is replaced by the _charset_ parameter of the
       "email.emailmessage.EmailMessage.set_content()" method.
 
-   get_charset()      *Message.get_charset()..emailcompat32-message.txt;*
+   get_charset()      *Message.get_charset()..email.compat32-message.txt*
 
       Return the "Charset" instance associated with the message’s
       payload.
@@ -290,11 +290,11 @@ class email.message.Message(policy=compat32)
    retrieved through this interface, be represented as "Header"
    objects with a charset of "unknown-8bit".
 
-   __len__()              *Message.__len__()..emailcompat32-message.txt;*
+   __len__()              *Message.__len__()..email.compat32-message.txt*
 
       Return the total number of headers, including duplicates.
 
-                  *Message.__contains__()..emailcompat32-message.txt;*
+                  *Message.__contains__()..email.compat32-message.txt*
    __contains__(name)
 
       Return "True" if the message object has a field named _name_.
@@ -305,7 +305,7 @@ class email.message.Message(policy=compat32)
             print('Message-ID:', myMessage['message-id'])
 <
 
-                   *Message.__getitem__()..emailcompat32-message.txt;*
+                   *Message.__getitem__()..email.compat32-message.txt*
    __getitem__(name)
 
       Return the value of the named header field.  _name_ should not
@@ -317,7 +317,7 @@ class email.message.Message(policy=compat32)
       returned is undefined.  Use the "get_all()" method to get the
       values of all the extant named headers.
 
-                   *Message.__setitem__()..emailcompat32-message.txt;*
+                   *Message.__setitem__()..email.compat32-message.txt*
    __setitem__(name, val)
 
       Add a header to the message with field name _name_ and value
@@ -333,27 +333,27 @@ class email.message.Message(policy=compat32)
          msg['subject'] = 'Python roolz!'
 <
 
-                   *Message.__delitem__()..emailcompat32-message.txt;*
+                   *Message.__delitem__()..email.compat32-message.txt*
    __delitem__(name)
 
       Delete all occurrences of the field with name _name_ from the
       message’s headers.  No exception is raised if the named field
       isn’t present in the headers.
 
-   keys()                    *Message.keys()..emailcompat32-message.txt;*
+   keys()                    *Message.keys()..email.compat32-message.txt*
 
       Return a list of all the message’s header field names.
 
-   values()                *Message.values()..emailcompat32-message.txt;*
+   values()                *Message.values()..email.compat32-message.txt*
 
       Return a list of all the message’s field values.
 
-   items()                  *Message.items()..emailcompat32-message.txt;*
+   items()                  *Message.items()..email.compat32-message.txt*
 
       Return a list of 2-tuples containing all the message’s field
       headers and values.
 
-   get(name, failobj=None)    *Message.get()..emailcompat32-message.txt;*
+   get(name, failobj=None)    *Message.get()..email.compat32-message.txt*
 
       Return the value of the named header field.  This is identical
       to "__getitem__()" except that optional _failobj_ is returned if
@@ -361,14 +361,14 @@ class email.message.Message(policy=compat32)
 
    Here are some additional useful methods:
 
-                       *Message.get_all()..emailcompat32-message.txt;*
+                       *Message.get_all()..email.compat32-message.txt*
    get_all(name, failobj=None)
 
       Return a list of all the values for the field named _name_. If
       there are no such named headers in the message, _failobj_ is
       returned (defaults to "None").
 
-                    *Message.add_header()..emailcompat32-message.txt;*
+                    *Message.add_header()..email.compat32-message.txt*
    add_header(_name, _value, **_params)
 
       Extended header setting.  This method is similar to
@@ -409,14 +409,14 @@ class email.message.Message(policy=compat32)
          Content-Disposition: attachment; filename*="iso-8859-1''Fu%DFballer.ppt"
 <
 
-                *Message.replace_header()..emailcompat32-message.txt;*
+                *Message.replace_header()..email.compat32-message.txt*
    replace_header(_name, _value)
 
       Replace a header.  Replace the first header found in the message
       that matches __name_, retaining header order and field name
       case.  If no matching header was found, a "KeyError" is raised.
 
-              *Message.get_content_type()..emailcompat32-message.txt;*
+              *Message.get_content_type()..email.compat32-message.txt*
    get_content_type()
 
       Return the message’s content type.  The returned string is
@@ -432,19 +432,19 @@ class email.message.Message(policy=compat32)
       header has an invalid type specification, **RFC 2045** mandates
       that the default type be _text/plain_.
 
-          *Message.get_content_maintype()..emailcompat32-message.txt;*
+          *Message.get_content_maintype()..email.compat32-message.txt*
    get_content_maintype()
 
       Return the message’s main content type.  This is the _maintype_
       part of the string returned by "get_content_type()".
 
-           *Message.get_content_subtype()..emailcompat32-message.txt;*
+           *Message.get_content_subtype()..email.compat32-message.txt*
    get_content_subtype()
 
       Return the message’s sub-content type.  This is the _subtype_
       part of the string returned by "get_content_type()".
 
-              *Message.get_default_type()..emailcompat32-message.txt;*
+              *Message.get_default_type()..email.compat32-message.txt*
    get_default_type()
 
       Return the default content type.  Most messages have a default
@@ -452,7 +452,7 @@ class email.message.Message(policy=compat32)
       subparts of _multipart/digest_ containers.  Such subparts have a
       default content type of _message/rfc822_.
 
-              *Message.set_default_type()..emailcompat32-message.txt;*
+              *Message.set_default_type()..email.compat32-message.txt*
    set_default_type(ctype)
 
       Set the default content type.  _ctype_ should either be
@@ -460,7 +460,7 @@ class email.message.Message(policy=compat32)
       The default content type is not stored in the _Content-Type_
       header.
 
-                    *Message.get_params()..emailcompat32-message.txt;*
+                    *Message.get_params()..email.compat32-message.txt*
    get_params(failobj=None, header='content-type', unquote=True)
 
       Return the message’s _Content-Type_ parameters, as a list. The
@@ -479,7 +479,7 @@ class email.message.Message(policy=compat32)
       functionality is replaced by the _params_ property of the
       individual header objects returned by the header access methods.
 
-                     *Message.get_param()..emailcompat32-message.txt;*
+                     *Message.get_param()..email.compat32-message.txt*
    get_param(param, failobj=None, header='content-type', unquote=True)
 
       Return the value of the _Content-Type_ header’s parameter
@@ -516,7 +516,7 @@ class email.message.Message(policy=compat32)
       functionality is replaced by the _params_ property of the
       individual header objects returned by the header access methods.
 
-                     *Message.set_param()..emailcompat32-message.txt;*
+                     *Message.set_param()..email.compat32-message.txt*
    set_param(param, value, header='Content-Type', requote=True, charset=None, language='', replace=False)
 
       Set a parameter in the _Content-Type_ header.  If the parameter
@@ -540,7 +540,7 @@ class email.message.Message(policy=compat32)
 
       Changed in version 3.4: "replace" keyword was added.
 
-                     *Message.del_param()..emailcompat32-message.txt;*
+                     *Message.del_param()..email.compat32-message.txt*
    del_param(param, header='content-type', requote=True)
 
       Remove the given parameter completely from the _Content-Type_
@@ -549,7 +549,7 @@ class email.message.Message(policy=compat32)
       unless _requote_ is "False" (the default is "True").  Optional
       _header_ specifies an alternative to _Content-Type_.
 
-                      *Message.set_type()..emailcompat32-message.txt;*
+                      *Message.set_type()..email.compat32-message.txt*
    set_type(type, header='Content-Type', requote=True)
 
       Set the main type and subtype for the _Content-Type_ header.
@@ -568,7 +568,7 @@ class email.message.Message(policy=compat32)
       This is a legacy method.  On the "EmailMessage" class its
       functionality is replaced by the "make_" and "add_" methods.
 
-                  *Message.get_filename()..emailcompat32-message.txt;*
+                  *Message.get_filename()..email.compat32-message.txt*
    get_filename(failobj=None)
 
       Return the value of the "filename" parameter of the _Content-
@@ -579,7 +579,7 @@ class email.message.Message(policy=compat32)
       The returned string will always be unquoted as per
       "email.utils.unquote()".
 
-                  *Message.get_boundary()..emailcompat32-message.txt;*
+                  *Message.get_boundary()..email.compat32-message.txt*
    get_boundary(failobj=None)
 
       Return the value of the "boundary" parameter of the _Content-
@@ -587,7 +587,7 @@ class email.message.Message(policy=compat32)
       is missing, or has no "boundary" parameter.  The returned string
       will always be unquoted as per "email.utils.unquote()".
 
-                  *Message.set_boundary()..emailcompat32-message.txt;*
+                  *Message.set_boundary()..email.compat32-message.txt*
    set_boundary(boundary)
 
       Set the "boundary" parameter of the _Content-Type_ header to
@@ -602,7 +602,7 @@ class email.message.Message(policy=compat32)
       However, it does _not_ preserve any continuation lines which may
       have been present in the original _Content-Type_ header.
 
-           *Message.get_content_charset()..emailcompat32-message.txt;*
+           *Message.get_content_charset()..email.compat32-message.txt*
    get_content_charset(failobj=None)
 
       Return the "charset" parameter of the _Content-Type_ header,
@@ -614,7 +614,7 @@ class email.message.Message(policy=compat32)
       the "Charset" instance for the default encoding of the message
       body.
 
-                  *Message.get_charsets()..emailcompat32-message.txt;*
+                  *Message.get_charsets()..email.compat32-message.txt*
    get_charsets(failobj=None)
 
       Return a list containing the character set names in the message.
@@ -629,7 +629,7 @@ class email.message.Message(policy=compat32)
       main MIME type, then that item in the returned list will be
       _failobj_.
 
-       *Message.get_content_disposition()..emailcompat32-message.txt;*
+       *Message.get_content_disposition()..email.compat32-message.txt*
    get_content_disposition()
 
       Return the lowercased value (without parameters) of the
@@ -639,7 +639,7 @@ class email.message.Message(policy=compat32)
 
       New in version 3.5.
 
-   walk()                    *Message.walk()..emailcompat32-message.txt;*
+   walk()                    *Message.walk()..email.compat32-message.txt*
 
       The "walk()" method is an all-purpose generator which can be
       used to iterate over all the parts and subparts of a message
@@ -693,7 +693,7 @@ class email.message.Message(policy=compat32)
    attributes, which can be used when generating the plain text of a
    MIME message.
 
-   preamble                *Message.preamble..emailcompat32-message.txt;*
+   preamble                *Message.preamble..email.compat32-message.txt*
 
       The format of a MIME document allows for some text between the
       blank line following the headers, and the first multipart
@@ -716,7 +716,7 @@ class email.message.Message(policy=compat32)
       Note that if the message object has no preamble, the _preamble_
       attribute will be "None".
 
-   epilogue                *Message.epilogue..emailcompat32-message.txt;*
+   epilogue                *Message.epilogue..email.compat32-message.txt*
 
       The _epilogue_ attribute acts the same way as the _preamble_
       attribute, except that it contains text that appears between the
@@ -725,7 +725,7 @@ class email.message.Message(policy=compat32)
       You do not need to set the epilogue to the empty string in order
       for the "Generator" to print a newline at the end of the file.
 
-   defects                  *Message.defects..emailcompat32-message.txt;*
+   defects                  *Message.defects..email.compat32-message.txt*
 
       The _defects_ attribute contains a list of all the problems
       found when parsing this message.  See "email.errors" for a

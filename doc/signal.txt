@@ -1,4 +1,4 @@
-*signal.txt;*                                 Last change: 2023 Sep 09
+*signal.txt;*                                 Last change: 2023 Sep 10
 
 "signal" — Set handlers for asynchronous events
 ***********************************************
@@ -82,20 +82,20 @@ as "Signals" objects.
 
 The signal module defines three enums:
 
-class signal.Signals                            *Signals..signal.txt;*
+class signal.Signals                             *Signals..signal.txt*
 
    "enum.IntEnum" collection of SIG* constants and the CTRL_*
    constants.
 
    New in version 3.5.
 
-class signal.Handlers                          *Handlers..signal.txt;*
+class signal.Handlers                           *Handlers..signal.txt*
 
    "enum.IntEnum" collection the constants "SIG_DFL" and "SIG_IGN".
 
    New in version 3.5.
 
-class signal.Sigmasks                          *Sigmasks..signal.txt;*
+class signal.Sigmasks                           *Sigmasks..signal.txt*
 
    "enum.IntEnum" collection the constants "SIG_BLOCK", "SIG_UNBLOCK"
    and "SIG_SETMASK".
@@ -109,57 +109,57 @@ class signal.Sigmasks                          *Sigmasks..signal.txt;*
 
 The variables defined in the "signal" module are:
 
-signal.SIG_DFL                                  *SIG_DFL..signal.txt;*
+signal.SIG_DFL                                   *SIG_DFL..signal.txt*
 
    This is one of two standard signal handling options; it will simply
    perform the default function for the signal.  For example, on most
    systems the default action for "SIGQUIT" is to dump core and exit,
    while the default action for "SIGCHLD" is to simply ignore it.
 
-signal.SIG_IGN                                  *SIG_IGN..signal.txt;*
+signal.SIG_IGN                                   *SIG_IGN..signal.txt*
 
    This is another standard signal handler, which will simply ignore
    the given signal.
 
-signal.SIGABRT                                  *SIGABRT..signal.txt;*
+signal.SIGABRT                                   *SIGABRT..signal.txt*
 
    Abort signal from _abort(3)_.
 
-signal.SIGALRM                                  *SIGALRM..signal.txt;*
+signal.SIGALRM                                   *SIGALRM..signal.txt*
 
    Timer signal from _alarm(2)_.
 
    Availability: Unix.
 
-signal.SIGBREAK                                *SIGBREAK..signal.txt;*
+signal.SIGBREAK                                 *SIGBREAK..signal.txt*
 
    Interrupt from keyboard (CTRL + BREAK).
 
    Availability: Windows.
 
-signal.SIGBUS                                    *SIGBUS..signal.txt;*
+signal.SIGBUS                                     *SIGBUS..signal.txt*
 
    Bus error (bad memory access).
 
    Availability: Unix.
 
-signal.SIGCHLD                                  *SIGCHLD..signal.txt;*
+signal.SIGCHLD                                   *SIGCHLD..signal.txt*
 
    Child process stopped or terminated.
 
    Availability: Unix.
 
-signal.SIGCLD                                    *SIGCLD..signal.txt;*
+signal.SIGCLD                                     *SIGCLD..signal.txt*
 
    Alias to "SIGCHLD".
 
-signal.SIGCONT                                  *SIGCONT..signal.txt;*
+signal.SIGCONT                                   *SIGCONT..signal.txt*
 
    Continue the process if it is currently stopped
 
    Availability: Unix.
 
-signal.SIGFPE                                    *SIGFPE..signal.txt;*
+signal.SIGFPE                                     *SIGFPE..signal.txt*
 
    Floating-point exception. For example, division by zero.
 
@@ -168,24 +168,24 @@ signal.SIGFPE                                    *SIGFPE..signal.txt;*
      "ZeroDivisionError" is raised when the second argument of a
      division or modulo operation is zero.
 
-signal.SIGHUP                                    *SIGHUP..signal.txt;*
+signal.SIGHUP                                     *SIGHUP..signal.txt*
 
    Hangup detected on controlling terminal or death of controlling
    process.
 
    Availability: Unix.
 
-signal.SIGILL                                    *SIGILL..signal.txt;*
+signal.SIGILL                                     *SIGILL..signal.txt*
 
    Illegal instruction.
 
-signal.SIGINT                                    *SIGINT..signal.txt;*
+signal.SIGINT                                     *SIGINT..signal.txt*
 
    Interrupt from keyboard (CTRL + C).
 
    Default action is to raise "KeyboardInterrupt".
 
-signal.SIGKILL                                  *SIGKILL..signal.txt;*
+signal.SIGKILL                                   *SIGKILL..signal.txt*
 
    Kill signal.
 
@@ -193,7 +193,7 @@ signal.SIGKILL                                  *SIGKILL..signal.txt;*
 
    Availability: Unix.
 
-signal.SIGPIPE                                  *SIGPIPE..signal.txt;*
+signal.SIGPIPE                                   *SIGPIPE..signal.txt*
 
    Broken pipe: write to pipe with no readers.
 
@@ -201,11 +201,11 @@ signal.SIGPIPE                                  *SIGPIPE..signal.txt;*
 
    Availability: Unix.
 
-signal.SIGSEGV                                  *SIGSEGV..signal.txt;*
+signal.SIGSEGV                                   *SIGSEGV..signal.txt*
 
    Segmentation fault: invalid memory reference.
 
-signal.SIGSTKFLT                              *SIGSTKFLT..signal.txt;*
+signal.SIGSTKFLT                               *SIGSTKFLT..signal.txt*
 
       Stack fault on coprocessor. The Linux kernel does not raise this
       signal: it can only be raised in user space.
@@ -217,23 +217,23 @@ signal.SIGSTKFLT                              *SIGSTKFLT..signal.txt;*
 
    New in version 3.11.
 
-signal.SIGTERM                                  *SIGTERM..signal.txt;*
+signal.SIGTERM                                   *SIGTERM..signal.txt*
 
    Termination signal.
 
-signal.SIGUSR1                                  *SIGUSR1..signal.txt;*
+signal.SIGUSR1                                   *SIGUSR1..signal.txt*
 
    User-defined signal 1.
 
    Availability: Unix.
 
-signal.SIGUSR2                                  *SIGUSR2..signal.txt;*
+signal.SIGUSR2                                   *SIGUSR2..signal.txt*
 
    User-defined signal 2.
 
    Availability: Unix.
 
-signal.SIGWINCH                                *SIGWINCH..signal.txt;*
+signal.SIGWINCH                                 *SIGWINCH..signal.txt*
 
    Window resize signal.
 
@@ -250,7 +250,7 @@ SIG*
    same set of signal names; only those names defined by the system
    are defined by this module.
 
-signal.CTRL_C_EVENT                        *CTRL_C_EVENT..signal.txt;*
+signal.CTRL_C_EVENT                         *CTRL_C_EVENT..signal.txt*
 
    The signal corresponding to the "Ctrl+C" keystroke event. This
    signal can only be used with "os.kill()".
@@ -259,7 +259,7 @@ signal.CTRL_C_EVENT                        *CTRL_C_EVENT..signal.txt;*
 
    New in version 3.2.
 
-signal.CTRL_BREAK_EVENT                *CTRL_BREAK_EVENT..signal.txt;*
+signal.CTRL_BREAK_EVENT                 *CTRL_BREAK_EVENT..signal.txt*
 
    The signal corresponding to the "Ctrl+Break" keystroke event. This
    signal can only be used with "os.kill()".
@@ -268,22 +268,22 @@ signal.CTRL_BREAK_EVENT                *CTRL_BREAK_EVENT..signal.txt;*
 
    New in version 3.2.
 
-signal.NSIG                                        *NSIG..signal.txt;*
+signal.NSIG                                         *NSIG..signal.txt*
 
    One more than the number of the highest signal number. Use
    "valid_signals()" to get valid signal numbers.
 
-signal.ITIMER_REAL                          *ITIMER_REAL..signal.txt;*
+signal.ITIMER_REAL                           *ITIMER_REAL..signal.txt*
 
    Decrements interval timer in real time, and delivers "SIGALRM" upon
    expiration.
 
-signal.ITIMER_VIRTUAL                    *ITIMER_VIRTUAL..signal.txt;*
+signal.ITIMER_VIRTUAL                     *ITIMER_VIRTUAL..signal.txt*
 
    Decrements interval timer only when the process is executing, and
    delivers SIGVTALRM upon expiration.
 
-signal.ITIMER_PROF                          *ITIMER_PROF..signal.txt;*
+signal.ITIMER_PROF                           *ITIMER_PROF..signal.txt*
 
    Decrements interval timer both when the process executes and when
    the system is executing on behalf of the process. Coupled with
@@ -291,21 +291,21 @@ signal.ITIMER_PROF                          *ITIMER_PROF..signal.txt;*
    spent by the application in user and kernel space. SIGPROF is
    delivered upon expiration.
 
-signal.SIG_BLOCK                              *SIG_BLOCK..signal.txt;*
+signal.SIG_BLOCK                               *SIG_BLOCK..signal.txt*
 
    A possible value for the _how_ parameter to "pthread_sigmask()"
    indicating that signals are to be blocked.
 
    New in version 3.3.
 
-signal.SIG_UNBLOCK                          *SIG_UNBLOCK..signal.txt;*
+signal.SIG_UNBLOCK                           *SIG_UNBLOCK..signal.txt*
 
    A possible value for the _how_ parameter to "pthread_sigmask()"
    indicating that signals are to be unblocked.
 
    New in version 3.3.
 
-signal.SIG_SETMASK                          *SIG_SETMASK..signal.txt;*
+signal.SIG_SETMASK                           *SIG_SETMASK..signal.txt*
 
    A possible value for the _how_ parameter to "pthread_sigmask()"
    indicating that the signal mask is to be replaced.
@@ -314,7 +314,7 @@ signal.SIG_SETMASK                          *SIG_SETMASK..signal.txt;*
 
 The "signal" module defines one exception:
 
-exception signal.ItimerError                *ItimerError..signal.txt;*
+exception signal.ItimerError                 *ItimerError..signal.txt*
 
    Raised to signal an error from the underlying "setitimer()" or
    "getitimer()" implementation. Expect this error if an invalid
@@ -326,7 +326,7 @@ exception signal.ItimerError                *ItimerError..signal.txt;*
 
 The "signal" module defines the following functions:
 
-signal.alarm(time)                              *alarm()..signal.txt;*
+signal.alarm(time)                               *alarm()..signal.txt*
 
    If _time_ is non-zero, this function requests that a "SIGALRM"
    signal be sent to the process in _time_ seconds. Any previously
@@ -340,7 +340,7 @@ signal.alarm(time)                              *alarm()..signal.txt;*
 
    See the man page _alarm(2)_ for further information.
 
-signal.getsignal(signalnum)                 *getsignal()..signal.txt;*
+signal.getsignal(signalnum)                  *getsignal()..signal.txt*
 
    Return the current signal handler for the signal _signalnum_. The
    returned value may be a callable Python object, or one of the
@@ -350,7 +350,7 @@ signal.getsignal(signalnum)                 *getsignal()..signal.txt;*
    was previously in use, and "None" means that the previous signal
    handler was not installed from Python.
 
-signal.strsignal(signalnum)                 *strsignal()..signal.txt;*
+signal.strsignal(signalnum)                  *strsignal()..signal.txt*
 
    Returns the description of signal _signalnum_, such as “Interrupt”
    for "SIGINT". Returns "None" if _signalnum_ has no description.
@@ -358,7 +358,7 @@ signal.strsignal(signalnum)                 *strsignal()..signal.txt;*
 
    New in version 3.8.
 
-signal.valid_signals()                  *valid_signals()..signal.txt;*
+signal.valid_signals()                   *valid_signals()..signal.txt*
 
    Return the set of valid signal numbers on this platform.  This can
    be less than "range(1, NSIG)" if some signals are reserved by the
@@ -366,7 +366,7 @@ signal.valid_signals()                  *valid_signals()..signal.txt;*
 
    New in version 3.8.
 
-signal.pause()                                  *pause()..signal.txt;*
+signal.pause()                                   *pause()..signal.txt*
 
    Cause the process to sleep until a signal is received; the
    appropriate handler will then be called.  Returns nothing.
@@ -378,13 +378,13 @@ signal.pause()                                  *pause()..signal.txt;*
    See also "sigwait()", "sigwaitinfo()", "sigtimedwait()" and
    "sigpending()".
 
-signal.raise_signal(signum)              *raise_signal()..signal.txt;*
+signal.raise_signal(signum)               *raise_signal()..signal.txt*
 
    Sends a signal to the calling process. Returns nothing.
 
    New in version 3.8.
 
-                                    *pidfd_send_signal()..signal.txt;*
+                                     *pidfd_send_signal()..signal.txt*
 signal.pidfd_send_signal(pidfd, sig, siginfo=None, flags=0)
 
    Send signal _sig_ to the process referred to by file descriptor
@@ -398,7 +398,7 @@ signal.pidfd_send_signal(pidfd, sig, siginfo=None, flags=0)
 
    New in version 3.9.
 
-                                         *pthread_kill()..signal.txt;*
+                                          *pthread_kill()..signal.txt*
 signal.pthread_kill(thread_id, signalnum)
 
    Send the signal _signalnum_ to the thread _thread_id_, another
@@ -428,7 +428,7 @@ signal.pthread_kill(thread_id, signalnum)
 
    New in version 3.3.
 
-signal.pthread_sigmask(how, mask)     *pthread_sigmask()..signal.txt;*
+signal.pthread_sigmask(how, mask)      *pthread_sigmask()..signal.txt*
 
    Fetch and/or change the signal mask of the calling thread.  The
    signal mask is the set of signals whose delivery is currently
@@ -466,7 +466,7 @@ signal.pthread_sigmask(how, mask)     *pthread_sigmask()..signal.txt;*
 
    New in version 3.3.
 
-                                            *setitimer()..signal.txt;*
+                                             *setitimer()..signal.txt*
 signal.setitimer(which, seconds, interval=0.0)
 
    Sets given interval timer (one of "signal.ITIMER_REAL",
@@ -489,14 +489,14 @@ signal.setitimer(which, seconds, interval=0.0)
 
    Availability: Unix.
 
-signal.getitimer(which)                     *getitimer()..signal.txt;*
+signal.getitimer(which)                      *getitimer()..signal.txt*
 
    Returns current value of a given interval timer specified by
    _which_.
 
    Availability: Unix.
 
-                                        *set_wakeup_fd()..signal.txt;*
+                                         *set_wakeup_fd()..signal.txt*
 signal.set_wakeup_fd(fd, *, warn_on_full_buffer=True)
 
    Set the wakeup file descriptor to _fd_.  When a signal is received,
@@ -539,7 +539,7 @@ signal.set_wakeup_fd(fd, *, warn_on_full_buffer=True)
 
    Changed in version 3.7: Added "warn_on_full_buffer" parameter.
 
-signal.siginterrupt(signalnum, flag)     *siginterrupt()..signal.txt;*
+signal.siginterrupt(signalnum, flag)      *siginterrupt()..signal.txt*
 
    Change system call restart behaviour: if _flag_ is "False", system
    calls will be restarted when interrupted by signal _signalnum_,
@@ -553,7 +553,7 @@ signal.siginterrupt(signalnum, flag)     *siginterrupt()..signal.txt;*
    the restart behaviour to interruptible by implicitly calling
    "siginterrupt()" with a true _flag_ value for the given signal.
 
-signal.signal(signalnum, handler)              *signal()..signal.txt;*
+signal.signal(signalnum, handler)               *signal()..signal.txt*
 
    Set the handler for signal _signalnum_ to the function _handler_.
    _handler_ can be a callable Python object taking two arguments (see
@@ -579,7 +579,7 @@ signal.signal(signalnum, handler)              *signal()..signal.txt;*
    will be raised if a signal name is not defined as "SIG*" module
    level constant.
 
-signal.sigpending()                        *sigpending()..signal.txt;*
+signal.sigpending()                         *sigpending()..signal.txt*
 
    Examine the set of signals that are pending for delivery to the
    calling thread (i.e., the signals which have been raised while
@@ -593,7 +593,7 @@ signal.sigpending()                        *sigpending()..signal.txt;*
 
    New in version 3.3.
 
-signal.sigwait(sigset)                        *sigwait()..signal.txt;*
+signal.sigwait(sigset)                         *sigwait()..signal.txt*
 
    Suspend execution of the calling thread until the delivery of one
    of the signals specified in the signal set _sigset_.  The function
@@ -609,7 +609,7 @@ signal.sigwait(sigset)                        *sigwait()..signal.txt;*
 
    New in version 3.3.
 
-signal.sigwaitinfo(sigset)                *sigwaitinfo()..signal.txt;*
+signal.sigwaitinfo(sigset)                 *sigwaitinfo()..signal.txt*
 
    Suspend execution of the calling thread until the delivery of one
    of the signals specified in the signal set _sigset_.  The function
@@ -636,7 +636,7 @@ signal.sigwaitinfo(sigset)                *sigwaitinfo()..signal.txt;*
    by a signal not in _sigset_ and the signal handler does not raise
    an exception (see **PEP 475** for the rationale).
 
-signal.sigtimedwait(sigset, timeout)     *sigtimedwait()..signal.txt;*
+signal.sigtimedwait(sigset, timeout)      *sigtimedwait()..signal.txt*
 
    Like "sigwaitinfo()", but takes an additional _timeout_ argument
    specifying a timeout. If _timeout_ is specified as "0", a poll is

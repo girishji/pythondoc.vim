@@ -1,4 +1,4 @@
-*asyncio-queue.txt;*                          Last change: 2023 Sep 09
+*asyncio-queue.txt;*                          Last change: 2023 Sep 10
 
 Queues
 ******
@@ -21,7 +21,7 @@ See also the Examples section below.
 Queue
 =====
 
-class asyncio.Queue(maxsize=0)             *Queue..asyncio-queue.txt;*
+class asyncio.Queue(maxsize=0)              *Queue..asyncio-queue.txt*
 
    A first in, first out (FIFO) queue.
 
@@ -38,32 +38,32 @@ class asyncio.Queue(maxsize=0)             *Queue..asyncio-queue.txt;*
 
    This class is not thread safe.
 
-   maxsize                            *Queue.maxsize..asyncio-queue.txt;*
+   maxsize                             *Queue.maxsize..asyncio-queue.txt*
 
       Number of items allowed in the queue.
 
-   empty()                            *Queue.empty()..asyncio-queue.txt;*
+   empty()                             *Queue.empty()..asyncio-queue.txt*
 
       Return "True" if the queue is empty, "False" otherwise.
 
-   full()                              *Queue.full()..asyncio-queue.txt;*
+   full()                               *Queue.full()..asyncio-queue.txt*
 
       Return "True" if there are "maxsize" items in the queue.
 
       If the queue was initialized with "maxsize=0" (the default),
       then "full()" never returns "True".
 
-   coroutine get()                      *Queue.get()..asyncio-queue.txt;*
+   coroutine get()                       *Queue.get()..asyncio-queue.txt*
 
       Remove and return an item from the queue. If queue is empty,
       wait until an item is available.
 
-   get_nowait()                  *Queue.get_nowait()..asyncio-queue.txt;*
+   get_nowait()                   *Queue.get_nowait()..asyncio-queue.txt*
 
       Return an item if one is immediately available, else raise
       "QueueEmpty".
 
-   coroutine join()                    *Queue.join()..asyncio-queue.txt;*
+   coroutine join()                     *Queue.join()..asyncio-queue.txt*
 
       Block until all items in the queue have been received and
       processed.
@@ -74,22 +74,22 @@ class asyncio.Queue(maxsize=0)             *Queue..asyncio-queue.txt;*
       all work on it is complete.  When the count of unfinished tasks
       drops to zero, "join()" unblocks.
 
-   coroutine put(item)                  *Queue.put()..asyncio-queue.txt;*
+   coroutine put(item)                   *Queue.put()..asyncio-queue.txt*
 
       Put an item into the queue. If the queue is full, wait until a
       free slot is available before adding the item.
 
-   put_nowait(item)              *Queue.put_nowait()..asyncio-queue.txt;*
+   put_nowait(item)               *Queue.put_nowait()..asyncio-queue.txt*
 
       Put an item into the queue without blocking.
 
       If no free slot is immediately available, raise "QueueFull".
 
-   qsize()                            *Queue.qsize()..asyncio-queue.txt;*
+   qsize()                             *Queue.qsize()..asyncio-queue.txt*
 
       Return the number of items in the queue.
 
-   task_done()                    *Queue.task_done()..asyncio-queue.txt;*
+   task_done()                     *Queue.task_done()..asyncio-queue.txt*
 
       Indicate that a formerly enqueued task is complete.
 
@@ -108,7 +108,7 @@ class asyncio.Queue(maxsize=0)             *Queue..asyncio-queue.txt;*
 Priority Queue
 ==============
 
-class asyncio.PriorityQueue        *PriorityQueue..asyncio-queue.txt;*
+class asyncio.PriorityQueue         *PriorityQueue..asyncio-queue.txt*
 
    A variant of "Queue"; retrieves entries in priority order (lowest
    first).
@@ -119,7 +119,7 @@ class asyncio.PriorityQueue        *PriorityQueue..asyncio-queue.txt;*
 LIFO Queue
 ==========
 
-class asyncio.LifoQueue                *LifoQueue..asyncio-queue.txt;*
+class asyncio.LifoQueue                 *LifoQueue..asyncio-queue.txt*
 
    A variant of "Queue" that retrieves most recently added entries
    first (last in, first out).
@@ -128,12 +128,12 @@ class asyncio.LifoQueue                *LifoQueue..asyncio-queue.txt;*
 Exceptions
 ==========
 
-exception asyncio.QueueEmpty          *QueueEmpty..asyncio-queue.txt;*
+exception asyncio.QueueEmpty           *QueueEmpty..asyncio-queue.txt*
 
    This exception is raised when the "get_nowait()" method is called
    on an empty queue.
 
-exception asyncio.QueueFull            *QueueFull..asyncio-queue.txt;*
+exception asyncio.QueueFull             *QueueFull..asyncio-queue.txt*
 
    Exception raised when the "put_nowait()" method is called on a
    queue that has reached its _maxsize_.

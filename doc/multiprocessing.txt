@@ -1,4 +1,4 @@
-*multiprocessing.txt;*                        Last change: 2023 Sep 09
+*multiprocessing.txt;*                        Last change: 2023 Sep 10
 
 "multiprocessing" — Process-based parallelism
 *********************************************
@@ -483,7 +483,7 @@ The "multiprocessing" package mostly replicates the API of the
 "Process" and exceptions
 ------------------------
 
-                                       *Process..multiprocessing.txt;*
+                                        *Process..multiprocessing.txt*
 class multiprocessing.Process(group=None, target=None, name=None, args=(), kwargs={}, *, daemon=None)
 
    Process objects represent activity that is run in a separate
@@ -511,7 +511,7 @@ class multiprocessing.Process(group=None, target=None, name=None, args=(), kwarg
 
    Changed in version 3.3: Added the _daemon_ argument.
 
-   run()                            *Process.run()..multiprocessing.txt;*
+   run()                             *Process.run()..multiprocessing.txt*
 
       Method representing the process’s activity.
 
@@ -534,7 +534,7 @@ class multiprocessing.Process(group=None, target=None, name=None, args=(), kwarg
          >>> p.run()
          1
 <
-   start()                        *Process.start()..multiprocessing.txt;*
+   start()                         *Process.start()..multiprocessing.txt*
 
       Start the process’s activity.
 
@@ -542,7 +542,7 @@ class multiprocessing.Process(group=None, target=None, name=None, args=(), kwarg
       arranges for the object’s "run()" method to be invoked in a
       separate process.
 
-   join([timeout])                 *Process.join()..multiprocessing.txt;*
+   join([timeout])                  *Process.join()..multiprocessing.txt*
 
       If the optional argument _timeout_ is "None" (the default), the
       method blocks until the process whose "join()" method is called
@@ -557,7 +557,7 @@ class multiprocessing.Process(group=None, target=None, name=None, args=(), kwarg
       deadlock.  It is an error to attempt to join a process before it
       has been started.
 
-   name                              *Process.name..multiprocessing.txt;*
+   name                               *Process.name..multiprocessing.txt*
 
       The process’s name.  The name is a string used for
       identification purposes only.  It has no semantics.  Multiple
@@ -568,14 +568,14 @@ class multiprocessing.Process(group=None, target=None, name=None, args=(), kwarg
       ‘Process-N_1:N_2:…:N_k’ is constructed, where each N_k is the
       N-th child of its parent.
 
-   is_alive()                  *Process.is_alive()..multiprocessing.txt;*
+   is_alive()                   *Process.is_alive()..multiprocessing.txt*
 
       Return whether the process is alive.
 
       Roughly, a process object is alive from the moment the "start()"
       method returns until the child process terminates.
 
-   daemon                          *Process.daemon..multiprocessing.txt;*
+   daemon                           *Process.daemon..multiprocessing.txt*
 
       The process’s daemon flag, a Boolean value.  This must be set
       before "start()" is called.
@@ -595,12 +595,12 @@ class multiprocessing.Process(group=None, target=None, name=None, args=(), kwarg
    In addition to the  "threading.Thread" API, "Process" objects also
    support the following attributes and methods:
 
-   pid                                *Process.pid..multiprocessing.txt;*
+   pid                                 *Process.pid..multiprocessing.txt*
 
       Return the process ID.  Before the process is spawned, this will
       be "None".
 
-   exitcode                      *Process.exitcode..multiprocessing.txt;*
+   exitcode                       *Process.exitcode..multiprocessing.txt*
 
       The child’s exit code.  This will be "None" if the process has
       not yet terminated.
@@ -613,7 +613,7 @@ class multiprocessing.Process(group=None, target=None, name=None, args=(), kwarg
       "run()", the exit code will be 1.  If it was terminated by
       signal _N_, the exit code will be the negative value _-N_.
 
-   authkey                        *Process.authkey..multiprocessing.txt;*
+   authkey                         *Process.authkey..multiprocessing.txt*
 
       The process’s authentication key (a byte string).
 
@@ -626,7 +626,7 @@ class multiprocessing.Process(group=None, target=None, name=None, args=(), kwarg
 
       See Authentication keys.
 
-   sentinel                      *Process.sentinel..multiprocessing.txt;*
+   sentinel                       *Process.sentinel..multiprocessing.txt*
 
       A numeric handle of a system object which will become “ready”
       when the process ends.
@@ -642,7 +642,7 @@ class multiprocessing.Process(group=None, target=None, name=None, args=(), kwarg
 
       New in version 3.3.
 
-   terminate()                *Process.terminate()..multiprocessing.txt;*
+   terminate()                 *Process.terminate()..multiprocessing.txt*
 
       Terminate the process.  On POSIX this is done using the
       "SIGTERM" signal; on Windows "TerminateProcess()" is used.  Note
@@ -661,13 +661,13 @@ class multiprocessing.Process(group=None, target=None, name=None, args=(), kwarg
         etc. then terminating it is liable to cause other processes to
         deadlock.
 
-   kill()                          *Process.kill()..multiprocessing.txt;*
+   kill()                           *Process.kill()..multiprocessing.txt*
 
       Same as "terminate()" but using the "SIGKILL" signal on POSIX.
 
       New in version 3.7.
 
-   close()                        *Process.close()..multiprocessing.txt;*
+   close()                         *Process.close()..multiprocessing.txt*
 
       Close the "Process" object, releasing all resources associated
       with it.  "ValueError" is raised if the underlying process is
@@ -699,12 +699,12 @@ class multiprocessing.Process(group=None, target=None, name=None, args=(), kwarg
       True
 <
 
-                                  *ProcessError..multiprocessing.txt;*
+                                   *ProcessError..multiprocessing.txt*
 exception multiprocessing.ProcessError
 
    The base class of all "multiprocessing" exceptions.
 
-                                *BufferTooShort..multiprocessing.txt;*
+                                 *BufferTooShort..multiprocessing.txt*
 exception multiprocessing.BufferTooShort
 
    Exception raised by "Connection.recv_bytes_into()" when the
@@ -713,12 +713,12 @@ exception multiprocessing.BufferTooShort
    If "e" is an instance of "BufferTooShort" then "e.args[0]" will
    give the message as a byte string.
 
-                           *AuthenticationError..multiprocessing.txt;*
+                            *AuthenticationError..multiprocessing.txt*
 exception multiprocessing.AuthenticationError
 
    Raised when there is an authentication error.
 
-                                  *TimeoutError..multiprocessing.txt;*
+                                   *TimeoutError..multiprocessing.txt*
 exception multiprocessing.TimeoutError
 
    Raised by methods with a timeout when the timeout expires.
@@ -796,7 +796,7 @@ Warning:
 For an example of the usage of queues for interprocess communication
 see Examples.
 
-multiprocessing.Pipe([duplex])          *Pipe()..multiprocessing.txt;*
+multiprocessing.Pipe([duplex])           *Pipe()..multiprocessing.txt*
 
    Returns a pair "(conn1, conn2)" of "Connection" objects
    representing the ends of a pipe.
@@ -806,7 +806,7 @@ multiprocessing.Pipe([duplex])          *Pipe()..multiprocessing.txt;*
    only be used for receiving messages and "conn2" can only be used
    for sending messages.
 
-class multiprocessing.Queue([maxsize])   *Queue..multiprocessing.txt;*
+class multiprocessing.Queue([maxsize])    *Queue..multiprocessing.txt*
 
    Returns a process shared queue implemented using a pipe and a few
    locks/semaphores.  When a process first puts an item on the queue a
@@ -819,7 +819,7 @@ class multiprocessing.Queue([maxsize])   *Queue..multiprocessing.txt;*
    "Queue" implements all the methods of "queue.Queue" except for
    "task_done()" and "join()".
 
-   qsize()                          *Queue.qsize()..multiprocessing.txt;*
+   qsize()                           *Queue.qsize()..multiprocessing.txt*
 
       Return the approximate size of the queue.  Because of
       multithreading/multiprocessing semantics, this number is not
@@ -828,19 +828,19 @@ class multiprocessing.Queue([maxsize])   *Queue..multiprocessing.txt;*
       Note that this may raise "NotImplementedError" on platforms like
       macOS where "sem_getvalue()" is not implemented.
 
-   empty()                          *Queue.empty()..multiprocessing.txt;*
+   empty()                           *Queue.empty()..multiprocessing.txt*
 
       Return "True" if the queue is empty, "False" otherwise.  Because
       of multithreading/multiprocessing semantics, this is not
       reliable.
 
-   full()                            *Queue.full()..multiprocessing.txt;*
+   full()                             *Queue.full()..multiprocessing.txt*
 
       Return "True" if the queue is full, "False" otherwise.  Because
       of multithreading/multiprocessing semantics, this is not
       reliable.
 
-   put(obj[, block[, timeout]])       *Queue.put()..multiprocessing.txt;*
+   put(obj[, block[, timeout]])        *Queue.put()..multiprocessing.txt*
 
       Put obj into the queue.  If the optional argument _block_ is
       "True" (the default) and _timeout_ is "None" (the default),
@@ -854,11 +854,11 @@ class multiprocessing.Queue([maxsize])   *Queue..multiprocessing.txt;*
       Changed in version 3.8: If the queue is closed, "ValueError" is
       raised instead of "AssertionError".
 
-   put_nowait(obj)             *Queue.put_nowait()..multiprocessing.txt;*
+   put_nowait(obj)              *Queue.put_nowait()..multiprocessing.txt*
 
       Equivalent to "put(obj, False)".
 
-   get([block[, timeout]])            *Queue.get()..multiprocessing.txt;*
+   get([block[, timeout]])             *Queue.get()..multiprocessing.txt*
 
       Remove and return an item from the queue.  If optional args
       _block_ is "True" (the default) and _timeout_ is "None" (the
@@ -872,7 +872,7 @@ class multiprocessing.Queue([maxsize])   *Queue..multiprocessing.txt;*
       Changed in version 3.8: If the queue is closed, "ValueError" is
       raised instead of "OSError".
 
-   get_nowait()                *Queue.get_nowait()..multiprocessing.txt;*
+   get_nowait()                 *Queue.get_nowait()..multiprocessing.txt*
 
       Equivalent to "get(False)".
 
@@ -880,14 +880,14 @@ class multiprocessing.Queue([maxsize])   *Queue..multiprocessing.txt;*
    "queue.Queue".  These methods are usually unnecessary for most
    code:
 
-   close()                          *Queue.close()..multiprocessing.txt;*
+   close()                           *Queue.close()..multiprocessing.txt*
 
       Indicate that no more data will be put on this queue by the
       current process.  The background thread will quit once it has
       flushed all buffered data to the pipe.  This is called
       automatically when the queue is garbage collected.
 
-   join_thread()              *Queue.join_thread()..multiprocessing.txt;*
+   join_thread()               *Queue.join_thread()..multiprocessing.txt*
 
       Join the background thread.  This can only be used after
       "close()" has been called.  It blocks until the background
@@ -899,7 +899,7 @@ class multiprocessing.Queue([maxsize])   *Queue..multiprocessing.txt;*
       process can call "cancel_join_thread()" to make "join_thread()"
       do nothing.
 
-                    *Queue.cancel_join_thread()..multiprocessing.txt;*
+                     *Queue.cancel_join_thread()..multiprocessing.txt*
    cancel_join_thread()
 
       Prevent "join_thread()" from blocking.  In particular, this
@@ -922,12 +922,11 @@ class multiprocessing.Queue([maxsize])   *Queue..multiprocessing.txt;*
      "ImportError". See bpo-3770 for additional information.  The same
      holds true for any of the specialized queue types listed below.
 
-                                   *SimpleQueue..multiprocessing.txt;*
-class multiprocessing.SimpleQueue
+class multiprocessing.SimpleQueue   *SimpleQueue..multiprocessing.txt*
 
    It is a simplified "Queue" type, very close to a locked "Pipe".
 
-   close()                    *SimpleQueue.close()..multiprocessing.txt;*
+   close()                     *SimpleQueue.close()..multiprocessing.txt*
 
       Close the queue: release internal resources.
 
@@ -937,25 +936,25 @@ class multiprocessing.SimpleQueue
 
       New in version 3.9.
 
-   empty()                    *SimpleQueue.empty()..multiprocessing.txt;*
+   empty()                     *SimpleQueue.empty()..multiprocessing.txt*
 
       Return "True" if the queue is empty, "False" otherwise.
 
-   get()                        *SimpleQueue.get()..multiprocessing.txt;*
+   get()                         *SimpleQueue.get()..multiprocessing.txt*
 
       Remove and return an item from the queue.
 
-   put(item)                    *SimpleQueue.put()..multiprocessing.txt;*
+   put(item)                     *SimpleQueue.put()..multiprocessing.txt*
 
       Put _item_ into the queue.
 
-                                 *JoinableQueue..multiprocessing.txt;*
+                                  *JoinableQueue..multiprocessing.txt*
 class multiprocessing.JoinableQueue([maxsize])
 
    "JoinableQueue", a "Queue" subclass, is a queue which additionally
    has "task_done()" and "join()" methods.
 
-   task_done()          *JoinableQueue.task_done()..multiprocessing.txt;*
+   task_done()           *JoinableQueue.task_done()..multiprocessing.txt*
 
       Indicate that a formerly enqueued task is complete. Used by
       queue consumers.  For each "get()" used to fetch a task, a
@@ -969,7 +968,7 @@ class multiprocessing.JoinableQueue([maxsize])
       Raises a "ValueError" if called more times than there were items
       placed in the queue.
 
-   join()                    *JoinableQueue.join()..multiprocessing.txt;*
+   join()                     *JoinableQueue.join()..multiprocessing.txt*
 
       Block until all items in the queue have been gotten and
       processed.
@@ -984,7 +983,7 @@ class multiprocessing.JoinableQueue([maxsize])
 Miscellaneous
 -------------
 
-                             *active_children()..multiprocessing.txt;*
+                              *active_children()..multiprocessing.txt*
 multiprocessing.active_children()
 
    Return list of all live children of the current process.
@@ -992,7 +991,7 @@ multiprocessing.active_children()
    Calling this has the side effect of “joining” any processes which
    have already finished.
 
-multiprocessing.cpu_count()        *cpu_count()..multiprocessing.txt;*
+multiprocessing.cpu_count()         *cpu_count()..multiprocessing.txt*
 
    Return the number of CPUs in the system.
 
@@ -1005,14 +1004,14 @@ multiprocessing.cpu_count()        *cpu_count()..multiprocessing.txt;*
 
    See also: "os.cpu_count()"
 
-                             *current_process()..multiprocessing.txt;*
+                              *current_process()..multiprocessing.txt*
 multiprocessing.current_process()
 
    Return the "Process" object corresponding to the current process.
 
    An analogue of "threading.current_thread()".
 
-                              *parent_process()..multiprocessing.txt;*
+                               *parent_process()..multiprocessing.txt*
 multiprocessing.parent_process()
 
    Return the "Process" object corresponding to the parent process of
@@ -1021,7 +1020,7 @@ multiprocessing.parent_process()
 
    New in version 3.8.
 
-                              *freeze_support()..multiprocessing.txt;*
+                               *freeze_support()..multiprocessing.txt*
 multiprocessing.freeze_support()
 
    Add support for when a program which uses "multiprocessing" has
@@ -1049,7 +1048,7 @@ multiprocessing.freeze_support()
    program has not been frozen), then "freeze_support()" has no
    effect.
 
-                       *get_all_start_methods()..multiprocessing.txt;*
+                        *get_all_start_methods()..multiprocessing.txt*
 multiprocessing.get_all_start_methods()
 
    Returns a list of the supported start methods, the first of which
@@ -1059,7 +1058,7 @@ multiprocessing.get_all_start_methods()
 
    New in version 3.4.
 
-                                 *get_context()..multiprocessing.txt;*
+                                  *get_context()..multiprocessing.txt*
 multiprocessing.get_context(method=None)
 
    Return a context object which has the same attributes as the
@@ -1072,7 +1071,7 @@ multiprocessing.get_context(method=None)
 
    New in version 3.4.
 
-                            *get_start_method()..multiprocessing.txt;*
+                             *get_start_method()..multiprocessing.txt*
 multiprocessing.get_start_method(allow_none=False)
 
    Return the name of start method used for starting processes.
@@ -1091,7 +1090,7 @@ can lead to crashes of the subprocess. See bpo-33725.
 
 New in version 3.4.
 
-                              *set_executable()..multiprocessing.txt;*
+                               *set_executable()..multiprocessing.txt*
 multiprocessing.set_executable(executable)
 
    Set the path of the Python interpreter to use when starting a child
@@ -1107,7 +1106,7 @@ multiprocessing.set_executable(executable)
 
    Changed in version 3.11: Accepts a _path-like object_.
 
-                      *set_forkserver_preload()..multiprocessing.txt;*
+                       *set_forkserver_preload()..multiprocessing.txt*
 multiprocessing.set_forkserver_preload(module_names)
 
    Set a list of module names for the forkserver main process to
@@ -1125,7 +1124,7 @@ multiprocessing.set_forkserver_preload(module_names)
 
    New in version 3.4.
 
-                            *set_start_method()..multiprocessing.txt;*
+                             *set_start_method()..multiprocessing.txt*
 multiprocessing.set_start_method(method, force=False)
 
    Set the method which should be used to start child processes. The
@@ -1161,10 +1160,10 @@ connected sockets.
 Connection objects are usually created using "Pipe" – see also
 Listeners and Clients.
 
-                                    *Connection..multiprocessing.txt;*
+                                     *Connection..multiprocessing.txt*
 class multiprocessing.connection.Connection
 
-   send(obj)                    *Connection.send()..multiprocessing.txt;*
+   send(obj)                     *Connection.send()..multiprocessing.txt*
 
       Send an object to the other end of the connection which should
       be read using "recv()".
@@ -1173,25 +1172,25 @@ class multiprocessing.connection.Connection
       32 MiB+, though it depends on the OS) may raise a "ValueError"
       exception.
 
-   recv()                       *Connection.recv()..multiprocessing.txt;*
+   recv()                        *Connection.recv()..multiprocessing.txt*
 
       Return an object sent from the other end of the connection using
       "send()".  Blocks until there is something to receive.  Raises
       "EOFError" if there is nothing left to receive and the other end
       was closed.
 
-   fileno()                   *Connection.fileno()..multiprocessing.txt;*
+   fileno()                    *Connection.fileno()..multiprocessing.txt*
 
       Return the file descriptor or handle used by the connection.
 
-   close()                     *Connection.close()..multiprocessing.txt;*
+   close()                      *Connection.close()..multiprocessing.txt*
 
       Close the connection.
 
       This is called automatically when the connection is garbage
       collected.
 
-   poll([timeout])              *Connection.poll()..multiprocessing.txt;*
+   poll([timeout])               *Connection.poll()..multiprocessing.txt*
 
       Return whether there is any data available to be read.
 
@@ -1203,7 +1202,7 @@ class multiprocessing.connection.Connection
       Note that multiple connection objects may be polled at once by
       using "multiprocessing.connection.wait()".
 
-                       *Connection.send_bytes()..multiprocessing.txt;*
+                        *Connection.send_bytes()..multiprocessing.txt*
    send_bytes(buffer[, offset[, size]])
 
       Send byte data from a _bytes-like object_ as a complete message.
@@ -1213,7 +1212,7 @@ class multiprocessing.connection.Connection
       from buffer.  Very large buffers (approximately 32 MiB+, though
       it depends on the OS) may raise a "ValueError" exception
 
-                       *Connection.recv_bytes()..multiprocessing.txt;*
+                        *Connection.recv_bytes()..multiprocessing.txt*
    recv_bytes([maxlength])
 
       Return a complete message of byte data sent from the other end
@@ -1228,7 +1227,7 @@ class multiprocessing.connection.Connection
       Changed in version 3.3: This function used to raise "IOError",
       which is now an alias of "OSError".
 
-                  *Connection.recv_bytes_into()..multiprocessing.txt;*
+                   *Connection.recv_bytes_into()..multiprocessing.txt*
    recv_bytes_into(buffer[, offset])
 
       Read into _buffer_ a complete message of byte data sent from the
@@ -1299,14 +1298,14 @@ documentation for "threading" module.
 Note that one can also create synchronization primitives by using a
 manager object – see Managers.
 
-                                       *Barrier..multiprocessing.txt;*
+                                        *Barrier..multiprocessing.txt*
 class multiprocessing.Barrier(parties[, action[, timeout]])
 
    A barrier object: a clone of "threading.Barrier".
 
    New in version 3.3.
 
-                              *BoundedSemaphore..multiprocessing.txt;*
+                               *BoundedSemaphore..multiprocessing.txt*
 class multiprocessing.BoundedSemaphore([value])
 
    A bounded semaphore object: a close analog of
@@ -1321,7 +1320,7 @@ class multiprocessing.BoundedSemaphore([value])
      On macOS, this is indistinguishable from "Semaphore" because
      "sem_getvalue()" is not implemented on that platform.
 
-                                     *Condition..multiprocessing.txt;*
+                                      *Condition..multiprocessing.txt*
 class multiprocessing.Condition([lock])
 
    A condition variable: an alias for "threading.Condition".
@@ -1331,11 +1330,11 @@ class multiprocessing.Condition([lock])
 
    Changed in version 3.3: The "wait_for()" method was added.
 
-class multiprocessing.Event              *Event..multiprocessing.txt;*
+class multiprocessing.Event               *Event..multiprocessing.txt*
 
    A clone of "threading.Event".
 
-class multiprocessing.Lock                *Lock..multiprocessing.txt;*
+class multiprocessing.Lock                 *Lock..multiprocessing.txt*
 
    A non-recursive lock object: a close analog of "threading.Lock".
    Once a process or thread has acquired a lock, subsequent attempts
@@ -1352,7 +1351,7 @@ class multiprocessing.Lock                *Lock..multiprocessing.txt;*
    "Lock" supports the _context manager_ protocol and thus may be used
    in "with" statements.
 
-                                *Lock.acquire()..multiprocessing.txt;*
+                                 *Lock.acquire()..multiprocessing.txt*
    acquire(block=True, timeout=None)
 
       Acquire a lock, blocking or non-blocking.
@@ -1381,7 +1380,7 @@ class multiprocessing.Lock                *Lock..multiprocessing.txt;*
       "True" if the lock has been acquired or "False" if the timeout
       period has elapsed.
 
-   release()                       *Lock.release()..multiprocessing.txt;*
+   release()                        *Lock.release()..multiprocessing.txt*
 
       Release a lock.  This can be called from any process or thread,
       not only the process or thread which originally acquired the
@@ -1390,7 +1389,7 @@ class multiprocessing.Lock                *Lock..multiprocessing.txt;*
       Behavior is the same as in "threading.Lock.release()" except
       that when invoked on an unlocked lock, a "ValueError" is raised.
 
-class multiprocessing.RLock              *RLock..multiprocessing.txt;*
+class multiprocessing.RLock               *RLock..multiprocessing.txt*
 
    A recursive lock object: a close analog of "threading.RLock".  A
    recursive lock must be released by the process or thread that
@@ -1406,7 +1405,7 @@ class multiprocessing.RLock              *RLock..multiprocessing.txt;*
    "RLock" supports the _context manager_ protocol and thus may be
    used in "with" statements.
 
-                               *RLock.acquire()..multiprocessing.txt;*
+                                *RLock.acquire()..multiprocessing.txt*
    acquire(block=True, timeout=None)
 
       Acquire a lock, blocking or non-blocking.
@@ -1436,7 +1435,7 @@ class multiprocessing.RLock              *RLock..multiprocessing.txt;*
       _timeout_ differ from the implemented behaviors in
       "threading.RLock.acquire()".
 
-   release()                      *RLock.release()..multiprocessing.txt;*
+   release()                       *RLock.release()..multiprocessing.txt*
 
       Release a lock, decrementing the recursion level.  If after the
       decrement the recursion level is zero, reset the lock to
@@ -1453,7 +1452,7 @@ class multiprocessing.RLock              *RLock..multiprocessing.txt;*
       raised in this situation differs from the implemented behavior
       in "threading.RLock.release()".
 
-                                     *Semaphore..multiprocessing.txt;*
+                                      *Semaphore..multiprocessing.txt*
 class multiprocessing.Semaphore([value])
 
    A semaphore object: a close analog of "threading.Semaphore".
@@ -1493,7 +1492,7 @@ Shared "ctypes" Objects
 It is possible to create shared objects using shared memory which can
 be inherited by child processes.
 
-                                       *Value()..multiprocessing.txt;*
+                                        *Value()..multiprocessing.txt*
 multiprocessing.Value(typecode_or_type, *args, lock=True)
 
    Return a "ctypes" object allocated from shared memory.  By default
@@ -1527,7 +1526,7 @@ multiprocessing.Value(typecode_or_type, *args, lock=True)
 <
    Note that _lock_ is a keyword-only argument.
 
-                                       *Array()..multiprocessing.txt;*
+                                        *Array()..multiprocessing.txt*
 multiprocessing.Array(typecode_or_type, size_or_initializer, *, lock=True)
 
    Return a ctypes array allocated from shared memory.  By default the
@@ -1569,7 +1568,7 @@ Note:
   in the context of a second process and trying to dereference the
   pointer from the second process may cause a crash.
 
-                                    *RawArray()..multiprocessing.txt;*
+                                     *RawArray()..multiprocessing.txt*
 multiprocessing.sharedctypes.RawArray(typecode_or_type, size_or_initializer)
 
    Return a ctypes array allocated from shared memory.
@@ -1586,7 +1585,7 @@ multiprocessing.sharedctypes.RawArray(typecode_or_type, size_or_initializer)
    – use "Array()" instead to make sure that access is automatically
    synchronized using a lock.
 
-                                    *RawValue()..multiprocessing.txt;*
+                                     *RawValue()..multiprocessing.txt*
 multiprocessing.sharedctypes.RawValue(typecode_or_type, *args)
 
    Return a ctypes object allocated from shared memory.
@@ -1634,13 +1633,12 @@ multiprocessing.sharedctypes.Value(typecode_or_type, *args, lock=True)
 
    Note that _lock_ is a keyword-only argument.
 
-                                        *copy()..multiprocessing.txt;*
-multiprocessing.sharedctypes.copy(obj)
+multiprocessing.sharedctypes.copy(obj)   *copy()..multiprocessing.txt*
 
    Return a ctypes object allocated from shared memory which is a copy
    of the ctypes object _obj_.
 
-                                *synchronized()..multiprocessing.txt;*
+                                 *synchronized()..multiprocessing.txt*
 multiprocessing.sharedctypes.synchronized(obj[, lock])
 
    Return a process-safe wrapper object for a ctypes object which uses
@@ -1725,7 +1723,7 @@ processes running on different machines. A manager object controls a
 server process which manages _shared objects_.  Other processes can
 access the shared objects by using proxies.
 
-                     *multiprocessing.Manager()..multiprocessing.txt;*
+                      *multiprocessing.Manager()..multiprocessing.txt*
 multiprocessing.Manager()
 
    Returns a started "SyncManager" object which can be used for
@@ -1737,7 +1735,7 @@ Manager processes will be shutdown as soon as they are garbage
 collected or their parent process exits.  The manager classes are
 defined in the "multiprocessing.managers" module:
 
-                                   *BaseManager..multiprocessing.txt;*
+                                    *BaseManager..multiprocessing.txt*
 class multiprocessing.managers.BaseManager(address=None, authkey=None, serializer='pickle', ctx=None, *, shutdown_timeout=1.0)
 
    Create a BaseManager object.
@@ -1768,14 +1766,14 @@ class multiprocessing.managers.BaseManager(address=None, authkey=None, serialize
 
    Changed in version 3.11: Added the _shutdown_timeout_ parameter.
 
-                           *BaseManager.start()..multiprocessing.txt;*
+                            *BaseManager.start()..multiprocessing.txt*
    start([initializer[, initargs]])
 
       Start a subprocess to start the manager.  If _initializer_ is
       not "None" then the subprocess will call
       "initializer(*initargs)" when it starts.
 
-   get_server()          *BaseManager.get_server()..multiprocessing.txt;*
+   get_server()           *BaseManager.get_server()..multiprocessing.txt*
 
       Returns a "Server" object which represents the actual server
       under the control of the Manager. The "Server" object supports
@@ -1788,7 +1786,7 @@ class multiprocessing.managers.BaseManager(address=None, authkey=None, serialize
 <
       "Server" additionally has an "address" attribute.
 
-   connect()                *BaseManager.connect()..multiprocessing.txt;*
+   connect()                 *BaseManager.connect()..multiprocessing.txt*
 
       Connect a local manager object to a remote manager process:
 >
@@ -1796,14 +1794,14 @@ class multiprocessing.managers.BaseManager(address=None, authkey=None, serialize
          >>> m = BaseManager(address=('127.0.0.1', 50000), authkey=b'abc')
          >>> m.connect()
 <
-   shutdown()              *BaseManager.shutdown()..multiprocessing.txt;*
+   shutdown()               *BaseManager.shutdown()..multiprocessing.txt*
 
       Stop the process used by the manager.  This is only available if
       "start()" has been used to start the server process.
 
       This can be called multiple times.
 
-                        *BaseManager.register()..multiprocessing.txt;*
+                         *BaseManager.register()..multiprocessing.txt*
    register(typeid[, callable[, proxytype[, exposed[, method_to_typeid[, create_method]]]]])
 
       A classmethod which can be used for registering a type or
@@ -1845,7 +1843,7 @@ class multiprocessing.managers.BaseManager(address=None, authkey=None, serialize
 
    "BaseManager" instances also have one read-only property:
 
-   address                    *BaseManager.address..multiprocessing.txt;*
+   address                     *BaseManager.address..multiprocessing.txt*
 
       The address used by the manager.
 
@@ -1856,7 +1854,7 @@ class multiprocessing.managers.BaseManager(address=None, authkey=None, serialize
    previous versions "__enter__()" did not start the manager’s server
    process if it was not already started.
 
-                                   *SyncManager..multiprocessing.txt;*
+                                    *SyncManager..multiprocessing.txt*
 class multiprocessing.managers.SyncManager
 
    A subclass of "BaseManager" which can be used for the
@@ -1867,7 +1865,7 @@ class multiprocessing.managers.SyncManager
    commonly used data types to be synchronized across processes. This
    notably includes shared lists and dictionaries.
 
-                         *SyncManager.Barrier()..multiprocessing.txt;*
+                          *SyncManager.Barrier()..multiprocessing.txt*
    Barrier(parties[, action[, timeout]])
 
       Create a shared "threading.Barrier" object and return a proxy
@@ -1875,13 +1873,13 @@ class multiprocessing.managers.SyncManager
 
       New in version 3.3.
 
-                *SyncManager.BoundedSemaphore()..multiprocessing.txt;*
+                 *SyncManager.BoundedSemaphore()..multiprocessing.txt*
    BoundedSemaphore([value])
 
       Create a shared "threading.BoundedSemaphore" object and return a
       proxy for it.
 
-   Condition([lock])      *SyncManager.Condition()..multiprocessing.txt;*
+   Condition([lock])       *SyncManager.Condition()..multiprocessing.txt*
 
       Create a shared "threading.Condition" object and return a proxy
       for it.
@@ -1891,51 +1889,50 @@ class multiprocessing.managers.SyncManager
 
       Changed in version 3.3: The "wait_for()" method was added.
 
-   Event()                    *SyncManager.Event()..multiprocessing.txt;*
+   Event()                     *SyncManager.Event()..multiprocessing.txt*
 
       Create a shared "threading.Event" object and return a proxy for
       it.
 
-   Lock()                      *SyncManager.Lock()..multiprocessing.txt;*
+   Lock()                       *SyncManager.Lock()..multiprocessing.txt*
 
       Create a shared "threading.Lock" object and return a proxy for
       it.
 
-   Namespace()            *SyncManager.Namespace()..multiprocessing.txt;*
+   Namespace()             *SyncManager.Namespace()..multiprocessing.txt*
 
       Create a shared "Namespace" object and return a proxy for it.
 
-   Queue([maxsize])           *SyncManager.Queue()..multiprocessing.txt;*
+   Queue([maxsize])            *SyncManager.Queue()..multiprocessing.txt*
 
       Create a shared "queue.Queue" object and return a proxy for it.
 
-   RLock()                    *SyncManager.RLock()..multiprocessing.txt;*
+   RLock()                     *SyncManager.RLock()..multiprocessing.txt*
 
       Create a shared "threading.RLock" object and return a proxy for
       it.
 
-   Semaphore([value])     *SyncManager.Semaphore()..multiprocessing.txt;*
+   Semaphore([value])      *SyncManager.Semaphore()..multiprocessing.txt*
 
       Create a shared "threading.Semaphore" object and return a proxy
       for it.
 
-                           *SyncManager.Array()..multiprocessing.txt;*
-   Array(typecode, sequence)
+   Array(typecode, sequence)   *SyncManager.Array()..multiprocessing.txt*
 
       Create an array and return a proxy for it.
 
-   Value(typecode, value)     *SyncManager.Value()..multiprocessing.txt;*
+   Value(typecode, value)      *SyncManager.Value()..multiprocessing.txt*
 
       Create an object with a writable "value" attribute and return a
       proxy for it.
 
-   dict()                      *SyncManager.dict()..multiprocessing.txt;*
+   dict()                       *SyncManager.dict()..multiprocessing.txt*
    dict(mapping)
    dict(sequence)
 
       Create a shared "dict" object and return a proxy for it.
 
-   list()                      *SyncManager.list()..multiprocessing.txt;*
+   list()                       *SyncManager.list()..multiprocessing.txt*
    list(sequence)
 
       Create a shared "list" object and return a proxy for it.
@@ -1945,7 +1942,7 @@ class multiprocessing.managers.SyncManager
    contain other shared objects which will all be managed and
    synchronized by the "SyncManager".
 
-                                     *Namespace..multiprocessing.txt;*
+                                      *Namespace..multiprocessing.txt*
 class multiprocessing.managers.Namespace
 
    A type that can register with "SyncManager".
@@ -2149,12 +2146,12 @@ Note:
   One should just use a copy of the referent instead when making
   comparisons.
 
-                                     *BaseProxy..multiprocessing.txt;*
+                                      *BaseProxy..multiprocessing.txt*
 class multiprocessing.managers.BaseProxy
 
    Proxy objects are instances of subclasses of "BaseProxy".
 
-                       *BaseProxy._callmethod()..multiprocessing.txt;*
+                        *BaseProxy._callmethod()..multiprocessing.txt*
    _callmethod(methodname[, args[, kwds]])
 
       Call and return the result of a method of the proxy’s referent.
@@ -2194,18 +2191,18 @@ class multiprocessing.managers.BaseProxy
          ...
          IndexError: list index out of range
 <
-   _getvalue()              *BaseProxy._getvalue()..multiprocessing.txt;*
+   _getvalue()               *BaseProxy._getvalue()..multiprocessing.txt*
 
       Return a copy of the referent.
 
       If the referent is unpicklable then this will raise an
       exception.
 
-   __repr__()                *BaseProxy.__repr__()..multiprocessing.txt;*
+   __repr__()                 *BaseProxy.__repr__()..multiprocessing.txt*
 
       Return a representation of the proxy object.
 
-   __str__()                  *BaseProxy.__str__()..multiprocessing.txt;*
+   __str__()                   *BaseProxy.__str__()..multiprocessing.txt*
 
       Return the representation of the referent.
 
@@ -2227,7 +2224,7 @@ Process Pools
 One can create a pool of processes which will carry out tasks
 submitted to it with the "Pool" class.
 
-                                          *Pool..multiprocessing.txt;*
+                                           *Pool..multiprocessing.txt*
 class multiprocessing.pool.Pool([processes[, initializer[, initargs[, maxtasksperchild[, context]]]]])
 
    A process pool object which controls a pool of worker processes to
@@ -2281,7 +2278,7 @@ class multiprocessing.pool.Pool([processes[, initializer[, initargs[, maxtaskspe
      _maxtasksperchild_ argument to the "Pool" exposes this ability to
      the end user.
 
-   apply(func[, args[, kwds]])       *Pool.apply()..multiprocessing.txt;*
+   apply(func[, args[, kwds]])        *Pool.apply()..multiprocessing.txt*
 
       Call _func_ with arguments _args_ and keyword arguments _kwds_.
       It blocks until the result is ready. Given this blocks,
@@ -2289,7 +2286,7 @@ class multiprocessing.pool.Pool([processes[, initializer[, initargs[, maxtaskspe
       parallel. Additionally, _func_ is only executed in one of the
       workers of the pool.
 
-                            *Pool.apply_async()..multiprocessing.txt;*
+                             *Pool.apply_async()..multiprocessing.txt*
    apply_async(func[, args[, kwds[, callback[, error_callback]]]])
 
       A variant of the "apply()" method which returns a "AsyncResult"
@@ -2307,7 +2304,7 @@ class multiprocessing.pool.Pool([processes[, initializer[, initargs[, maxtaskspe
       Callbacks should complete immediately since otherwise the thread
       which handles the results will get blocked.
 
-   map(func, iterable[, chunksize])    *Pool.map()..multiprocessing.txt;*
+   map(func, iterable[, chunksize])     *Pool.map()..multiprocessing.txt*
 
       A parallel equivalent of the "map()" built-in function (it
       supports only one _iterable_ argument though, for multiple
@@ -2322,7 +2319,7 @@ class multiprocessing.pool.Pool([processes[, initializer[, initargs[, maxtaskspe
       iterables. Consider using "imap()" or "imap_unordered()" with
       explicit _chunksize_ option for better efficiency.
 
-                              *Pool.map_async()..multiprocessing.txt;*
+                               *Pool.map_async()..multiprocessing.txt*
    map_async(func, iterable[, chunksize[, callback[, error_callback]]])
 
       A variant of the "map()" method which returns a "AsyncResult"
@@ -2340,8 +2337,7 @@ class multiprocessing.pool.Pool([processes[, initializer[, initargs[, maxtaskspe
       Callbacks should complete immediately since otherwise the thread
       which handles the results will get blocked.
 
-                                   *Pool.imap()..multiprocessing.txt;*
-   imap(func, iterable[, chunksize])
+   imap(func, iterable[, chunksize])   *Pool.imap()..multiprocessing.txt*
 
       A lazier version of "map()".
 
@@ -2356,7 +2352,7 @@ class multiprocessing.pool.Pool([processes[, initializer[, initargs[, maxtaskspe
       "multiprocessing.TimeoutError" if the result cannot be returned
       within _timeout_ seconds.
 
-                         *Pool.imap_unordered()..multiprocessing.txt;*
+                          *Pool.imap_unordered()..multiprocessing.txt*
    imap_unordered(func, iterable[, chunksize])
 
       The same as "imap()" except that the ordering of the results
@@ -2364,7 +2360,7 @@ class multiprocessing.pool.Pool([processes[, initializer[, initargs[, maxtaskspe
       (Only when there is only one worker process is the order
       guaranteed to be “correct”.)
 
-                                *Pool.starmap()..multiprocessing.txt;*
+                                 *Pool.starmap()..multiprocessing.txt*
    starmap(func, iterable[, chunksize])
 
       Like "map()" except that the elements of the _iterable_ are
@@ -2375,7 +2371,7 @@ class multiprocessing.pool.Pool([processes[, initializer[, initargs[, maxtaskspe
 
       New in version 3.3.
 
-                          *Pool.starmap_async()..multiprocessing.txt;*
+                           *Pool.starmap_async()..multiprocessing.txt*
    starmap_async(func, iterable[, chunksize[, callback[, error_callback]]])
 
       A combination of "starmap()" and "map_async()" that iterates
@@ -2384,19 +2380,19 @@ class multiprocessing.pool.Pool([processes[, initializer[, initargs[, maxtaskspe
 
       New in version 3.3.
 
-   close()                           *Pool.close()..multiprocessing.txt;*
+   close()                            *Pool.close()..multiprocessing.txt*
 
       Prevents any more tasks from being submitted to the pool.  Once
       all the tasks have been completed the worker processes will
       exit.
 
-   terminate()                   *Pool.terminate()..multiprocessing.txt;*
+   terminate()                    *Pool.terminate()..multiprocessing.txt*
 
       Stops the worker processes immediately without completing
       outstanding work.  When the pool object is garbage collected
       "terminate()" will be called immediately.
 
-   join()                             *Pool.join()..multiprocessing.txt;*
+   join()                              *Pool.join()..multiprocessing.txt*
 
       Wait for the worker processes to exit.  One must call "close()"
       or "terminate()" before using "join()".
@@ -2405,13 +2401,13 @@ class multiprocessing.pool.Pool([processes[, initializer[, initargs[, maxtaskspe
    protocol – see Context Manager Types.  "__enter__()" returns the
    pool object, and "__exit__()" calls "terminate()".
 
-                                   *AsyncResult..multiprocessing.txt;*
+                                    *AsyncResult..multiprocessing.txt*
 class multiprocessing.pool.AsyncResult
 
    The class of the result returned by "Pool.apply_async()" and
    "Pool.map_async()".
 
-   get([timeout])               *AsyncResult.get()..multiprocessing.txt;*
+   get([timeout])                *AsyncResult.get()..multiprocessing.txt*
 
       Return the result when it arrives.  If _timeout_ is not "None"
       and the result does not arrive within _timeout_ seconds then
@@ -2419,16 +2415,16 @@ class multiprocessing.pool.AsyncResult
       raised an exception then that exception will be reraised by
       "get()".
 
-   wait([timeout])             *AsyncResult.wait()..multiprocessing.txt;*
+   wait([timeout])              *AsyncResult.wait()..multiprocessing.txt*
 
       Wait until the result is available or until _timeout_ seconds
       pass.
 
-   ready()                    *AsyncResult.ready()..multiprocessing.txt;*
+   ready()                     *AsyncResult.ready()..multiprocessing.txt*
 
       Return whether the call has completed.
 
-   successful()          *AsyncResult.successful()..multiprocessing.txt;*
+   successful()           *AsyncResult.successful()..multiprocessing.txt*
 
       Return whether the call completed without raising an exception.
       Will raise "ValueError" if the result is not ready.
@@ -2472,7 +2468,7 @@ dealing with sockets or Windows named pipes.  It also has support for
 _digest authentication_ using the "hmac" module, and for polling
 multiple connections at the same time.
 
-                           *deliver_challenge()..multiprocessing.txt;*
+                            *deliver_challenge()..multiprocessing.txt*
 multiprocessing.connection.deliver_challenge(connection, authkey)
 
    Send a randomly generated message to the other end of the
@@ -2482,7 +2478,7 @@ multiprocessing.connection.deliver_challenge(connection, authkey)
    the key then a welcome message is sent to the other end of the
    connection.  Otherwise "AuthenticationError" is raised.
 
-                            *answer_challenge()..multiprocessing.txt;*
+                             *answer_challenge()..multiprocessing.txt*
 multiprocessing.connection.answer_challenge(connection, authkey)
 
    Receive a message, calculate the digest of the message using
@@ -2491,7 +2487,7 @@ multiprocessing.connection.answer_challenge(connection, authkey)
    If a welcome message is not received, then "AuthenticationError" is
    raised.
 
-                                      *Client()..multiprocessing.txt;*
+                                       *Client()..multiprocessing.txt*
 multiprocessing.connection.Client(address[, family[, authkey]])
 
    Attempt to set up a connection to the listener which is using
@@ -2507,7 +2503,7 @@ multiprocessing.connection.Client(address[, family[, authkey]])
    "AuthenticationError" is raised if authentication fails. See
    Authentication keys.
 
-                                      *Listener..multiprocessing.txt;*
+                                       *Listener..multiprocessing.txt*
 class multiprocessing.connection.Listener([address[, family[, backlog[, authkey]]]])
 
    A wrapper for a bound socket or Windows named pipe which is
@@ -2543,14 +2539,14 @@ class multiprocessing.connection.Listener([address[, family[, backlog[, authkey]
    "AuthenticationError" is raised if authentication fails. See
    Authentication keys.
 
-   accept()                     *Listener.accept()..multiprocessing.txt;*
+   accept()                      *Listener.accept()..multiprocessing.txt*
 
       Accept a connection on the bound socket or named pipe of the
       listener object and return a "Connection" object. If
       authentication is attempted and fails, then
       "AuthenticationError" is raised.
 
-   close()                       *Listener.close()..multiprocessing.txt;*
+   close()                        *Listener.close()..multiprocessing.txt*
 
       Close the bound socket or named pipe of the listener object.
       This is called automatically when the listener is garbage
@@ -2558,11 +2554,11 @@ class multiprocessing.connection.Listener([address[, family[, backlog[, authkey]
 
    Listener objects have the following read-only properties:
 
-   address                       *Listener.address..multiprocessing.txt;*
+   address                        *Listener.address..multiprocessing.txt*
 
       The address which is being used by the Listener object.
 
-   last_accepted           *Listener.last_accepted..multiprocessing.txt;*
+   last_accepted            *Listener.last_accepted..multiprocessing.txt*
 
       The address from which the last accepted connection came.  If
       this is unavailable then it is "None".
@@ -2571,7 +2567,7 @@ class multiprocessing.connection.Listener([address[, family[, backlog[, authkey]
    management protocol – see Context Manager Types.  "__enter__()"
    returns the listener object, and "__exit__()" calls "close()".
 
-                                        *wait()..multiprocessing.txt;*
+                                         *wait()..multiprocessing.txt*
 multiprocessing.connection.wait(object_list, timeout=None)
 
    Wait till an object in _object_list_ is ready.  Returns the list of
@@ -2734,7 +2730,7 @@ Some support for logging is available.  Note, however, that the
 (depending on the handler type) for messages from different processes
 to get mixed up.
 
-multiprocessing.get_logger()      *get_logger()..multiprocessing.txt;*
+multiprocessing.get_logger()       *get_logger()..multiprocessing.txt*
 
    Returns the logger used by "multiprocessing".  If necessary, a new
    one will be created.
@@ -2747,7 +2743,7 @@ multiprocessing.get_logger()      *get_logger()..multiprocessing.txt;*
    the parent process’s logger – any other customization of the logger
    will not be inherited.
 
-                               *log_to_stderr()..multiprocessing.txt;*
+                                *log_to_stderr()..multiprocessing.txt*
 multiprocessing.log_to_stderr(level=None)
 
    This function performs a call to "get_logger()" but in addition to
@@ -2785,7 +2781,7 @@ returns an instance of "ThreadPool", which is a subclass of "Pool"
 that supports all the same method calls but uses a pool of worker
 threads rather than worker processes.
 
-                                    *ThreadPool..multiprocessing.txt;*
+                                     *ThreadPool..multiprocessing.txt*
 class multiprocessing.pool.ThreadPool([processes[, initializer[, initargs]]])
 
    A thread pool object which controls a pool of worker threads to

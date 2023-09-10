@@ -1,4 +1,4 @@
-*emailencoders.txt;*                          Last change: 2023 Sep 09
+*email.encoders.txt;*                         Last change: 2023 Sep 10
 
 "email.encoders": Encoders
 **************************
@@ -38,7 +38,7 @@ They must be applied to individual subparts instead, and will raise a
 
 Here are the encoding functions provided:
 
-                                 *encode_quopri()..emailencoders.txt;*
+                                 *encode_quopri()..email.encoders.txt*
 email.encoders.encode_quopri(msg)
 
    Encodes the payload into quoted-printable form and sets the
@@ -46,7 +46,7 @@ email.encoders.encode_quopri(msg)
    is a good encoding to use when most of your payload is normal
    printable data, but contains a few unprintable characters.
 
-                                 *encode_base64()..emailencoders.txt;*
+                                 *encode_base64()..email.encoders.txt*
 email.encoders.encode_base64(msg)
 
    Encodes the payload into base64 form and sets the _Content-
@@ -55,14 +55,14 @@ email.encoders.encode_base64(msg)
    more compact form than quoted-printable.  The drawback of base64
    encoding is that it renders the text non-human readable.
 
-                                *encode_7or8bit()..emailencoders.txt;*
+                                *encode_7or8bit()..email.encoders.txt*
 email.encoders.encode_7or8bit(msg)
 
    This doesn’t actually modify the message’s payload, but it does set
    the _Content-Transfer-Encoding_ header to either "7bit" or "8bit"
    as appropriate, based on the payload data.
 
-email.encoders.encode_noop(msg)    *encode_noop()..emailencoders.txt;*
+email.encoders.encode_noop(msg)    *encode_noop()..email.encoders.txt*
 
    This does nothing; it doesn’t even set the _Content-Transfer-
    Encoding_ header.

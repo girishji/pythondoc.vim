@@ -1,4 +1,4 @@
-*hashlib.txt;*                                Last change: 2023 Sep 09
+*hashlib.txt;*                                Last change: 2023 Sep 10
 
 "hashlib" — Secure hashes and message digests
 *********************************************
@@ -102,7 +102,7 @@ More condensed:
 Constructors
 ============
 
-                                                 *new()..hashlib.txt;*
+                                                  *new()..hashlib.txt*
 hashlib.new(name[, data], \*, usedforsecurity=True)
 
    Is a generic constructor that takes the string _name_ of the
@@ -117,33 +117,32 @@ Using "new()" with an algorithm name:
 >>> h.hexdigest()
 '031edd7d41651593c5fe5c006fa5752b37fddff7bc4e843aa6af0c950f4b9406'
 
-hashlib.md5([data], \*, usedforsecurity=True)    *md5()..hashlib.txt;*
+hashlib.md5([data], \*, usedforsecurity=True)     *md5()..hashlib.txt*
 
-                                                *sha1()..hashlib.txt;*
-hashlib.sha1([data], \*, usedforsecurity=True)
+hashlib.sha1([data], \*, usedforsecurity=True)   *sha1()..hashlib.txt*
 
-                                              *sha224()..hashlib.txt;*
+                                               *sha224()..hashlib.txt*
 hashlib.sha224([data], \*, usedforsecurity=True)
 
-                                              *sha256()..hashlib.txt;*
+                                               *sha256()..hashlib.txt*
 hashlib.sha256([data], \*, usedforsecurity=True)
 
-                                              *sha384()..hashlib.txt;*
+                                               *sha384()..hashlib.txt*
 hashlib.sha384([data], \*, usedforsecurity=True)
 
-                                              *sha512()..hashlib.txt;*
+                                               *sha512()..hashlib.txt*
 hashlib.sha512([data], \*, usedforsecurity=True)
 
-                                            *sha3_224()..hashlib.txt;*
+                                             *sha3_224()..hashlib.txt*
 hashlib.sha3_224([data], \*, usedforsecurity=True)
 
-                                            *sha3_256()..hashlib.txt;*
+                                             *sha3_256()..hashlib.txt*
 hashlib.sha3_256([data], \*, usedforsecurity=True)
 
-                                            *sha3_384()..hashlib.txt;*
+                                             *sha3_384()..hashlib.txt*
 hashlib.sha3_384([data], \*, usedforsecurity=True)
 
-                                            *sha3_512()..hashlib.txt;*
+                                             *sha3_512()..hashlib.txt*
 hashlib.sha3_512([data], \*, usedforsecurity=True)
 
 Named constructors such as these are faster than passing an algorithm
@@ -155,7 +154,7 @@ Attributes
 
 Hashlib provides the following constant module attributes:
 
-hashlib.algorithms_guaranteed    *algorithms_guaranteed..hashlib.txt;*
+hashlib.algorithms_guaranteed     *algorithms_guaranteed..hashlib.txt*
 
    A set containing the names of the hash algorithms guaranteed to be
    supported by this module on all platforms.  Note that ‘md5’ is in
@@ -164,7 +163,7 @@ hashlib.algorithms_guaranteed    *algorithms_guaranteed..hashlib.txt;*
 
    New in version 3.2.
 
-hashlib.algorithms_available      *algorithms_available..hashlib.txt;*
+hashlib.algorithms_available       *algorithms_available..hashlib.txt*
 
    A set containing the names of the hash algorithms that are
    available in the running Python interpreter.  These names will be
@@ -181,17 +180,17 @@ Hash Objects
 The following values are provided as constant attributes of the hash
 objects returned by the constructors:
 
-hash.digest_size                      *hash.digest_size..hashlib.txt;*
+hash.digest_size                       *hash.digest_size..hashlib.txt*
 
    The size of the resulting hash in bytes.
 
-hash.block_size                        *hash.block_size..hashlib.txt;*
+hash.block_size                         *hash.block_size..hashlib.txt*
 
    The internal block size of the hash algorithm in bytes.
 
 A hash object has the following attributes:
 
-hash.name                                    *hash.name..hashlib.txt;*
+hash.name                                     *hash.name..hashlib.txt*
 
    The canonical name of this hash, always lowercase and always
    suitable as a parameter to "new()" to create another hash of this
@@ -203,27 +202,27 @@ hash.name                                    *hash.name..hashlib.txt;*
 
 A hash object has the following methods:
 
-hash.update(data)                        *hash.update()..hashlib.txt;*
+hash.update(data)                         *hash.update()..hashlib.txt*
 
    Update the hash object with the _bytes-like object_. Repeated calls
    are equivalent to a single call with the concatenation of all the
    arguments: "m.update(a); m.update(b)" is equivalent to
    "m.update(a+b)".
 
-hash.digest()                            *hash.digest()..hashlib.txt;*
+hash.digest()                             *hash.digest()..hashlib.txt*
 
    Return the digest of the data passed to the "update()" method so
    far. This is a bytes object of size "digest_size" which may contain
    bytes in the whole range from 0 to 255.
 
-hash.hexdigest()                      *hash.hexdigest()..hashlib.txt;*
+hash.hexdigest()                       *hash.hexdigest()..hashlib.txt*
 
    Like "digest()" except the digest is returned as a string object of
    double length, containing only hexadecimal digits.  This may be
    used to exchange the value safely in email or other non-binary
    environments.
 
-hash.copy()                                *hash.copy()..hashlib.txt;*
+hash.copy()                                 *hash.copy()..hashlib.txt*
 
    Return a copy (“clone”) of the hash object.  This can be used to
    efficiently compute the digests of data sharing a common initial
@@ -233,10 +232,10 @@ hash.copy()                                *hash.copy()..hashlib.txt;*
 SHAKE variable length digests
 =============================
 
-                                           *shake_128()..hashlib.txt;*
+                                            *shake_128()..hashlib.txt*
 hashlib.shake_128([data], \*, usedforsecurity=True)
 
-                                           *shake_256()..hashlib.txt;*
+                                            *shake_256()..hashlib.txt*
 hashlib.shake_256([data], \*, usedforsecurity=True)
 
 The "shake_128()" and "shake_256()" algorithms provide variable length
@@ -244,13 +243,13 @@ digests with length_in_bits//2 up to 128 or 256 bits of security. As
 such, their digest methods require a length. Maximum length is not
 limited by the SHAKE algorithm.
 
-shake.digest(length)                    *shake.digest()..hashlib.txt;*
+shake.digest(length)                     *shake.digest()..hashlib.txt*
 
    Return the digest of the data passed to the "update()" method so
    far. This is a bytes object of size _length_ which may contain
    bytes in the whole range from 0 to 255.
 
-shake.hexdigest(length)              *shake.hexdigest()..hashlib.txt;*
+shake.hexdigest(length)               *shake.hexdigest()..hashlib.txt*
 
    Like "digest()" except the digest is returned as a string object of
    double length, containing only hexadecimal digits.  This may be
@@ -270,8 +269,7 @@ File hashing
 The hashlib module provides a helper function for efficient hashing of
 a file or file-like object.
 
-                                         *file_digest()..hashlib.txt;*
-hashlib.file_digest(fileobj, digest, /)
+hashlib.file_digest(fileobj, digest, /)   *file_digest()..hashlib.txt*
 
    Return a digest object that has been updated with contents of file
    object.
@@ -317,7 +315,7 @@ password hashing. Naive algorithms such as "sha1(password)" are not
 resistant against brute-force attacks. A good password hashing
 function must be tunable, slow, and include a salt.
 
-                                         *pbkdf2_hmac()..hashlib.txt;*
+                                          *pbkdf2_hmac()..hashlib.txt*
 hashlib.pbkdf2_hmac(hash_name, password, salt, iterations, dklen=None)
 
    The function provides PKCS#5 password-based key derivation function
@@ -355,7 +353,7 @@ hashlib.pbkdf2_hmac(hash_name, password, salt, iterations, dklen=None)
    built with OpenSSL. The slow pure Python implementation has been
    removed.
 
-                                              *scrypt()..hashlib.txt;*
+                                               *scrypt()..hashlib.txt*
 hashlib.scrypt(password, *, salt, n, r, p, maxmem=0, dklen=64)
 
    The function provides scrypt password-based key derivation function
@@ -397,10 +395,10 @@ Creating hash objects
 
 New hash objects are created by calling constructor functions:
 
-                                             *blake2b()..hashlib.txt;*
+                                              *blake2b()..hashlib.txt*
 hashlib.blake2b(data=b'', *, digest_size=64, key=b'', salt=b'', person=b'', fanout=1, depth=1, leaf_size=0, node_offset=0, node_depth=0, inner_size=0, last_node=False, usedforsecurity=True)
 
-                                             *blake2s()..hashlib.txt;*
+                                              *blake2s()..hashlib.txt*
 hashlib.blake2s(data=b'', *, digest_size=32, key=b'', salt=b'', person=b'', fanout=1, depth=1, leaf_size=0, node_offset=0, node_depth=0, inner_size=0, last_node=False, usedforsecurity=True)
 
 These functions return the corresponding hash objects for calculating
@@ -474,28 +472,28 @@ tree hashing.
 Constants
 ---------
 
-blake2b.SALT_SIZE                    *blake2b.SALT_SIZE..hashlib.txt;*
+blake2b.SALT_SIZE                     *blake2b.SALT_SIZE..hashlib.txt*
 
-blake2s.SALT_SIZE                    *blake2s.SALT_SIZE..hashlib.txt;*
+blake2s.SALT_SIZE                     *blake2s.SALT_SIZE..hashlib.txt*
 
 Salt length (maximum length accepted by constructors).
 
-blake2b.PERSON_SIZE                *blake2b.PERSON_SIZE..hashlib.txt;*
+blake2b.PERSON_SIZE                 *blake2b.PERSON_SIZE..hashlib.txt*
 
-blake2s.PERSON_SIZE                *blake2s.PERSON_SIZE..hashlib.txt;*
+blake2s.PERSON_SIZE                 *blake2s.PERSON_SIZE..hashlib.txt*
 
 Personalization string length (maximum length accepted by
 constructors).
 
-blake2b.MAX_KEY_SIZE              *blake2b.MAX_KEY_SIZE..hashlib.txt;*
+blake2b.MAX_KEY_SIZE               *blake2b.MAX_KEY_SIZE..hashlib.txt*
 
-blake2s.MAX_KEY_SIZE              *blake2s.MAX_KEY_SIZE..hashlib.txt;*
+blake2s.MAX_KEY_SIZE               *blake2s.MAX_KEY_SIZE..hashlib.txt*
 
 Maximum key size.
 
-blake2b.MAX_DIGEST_SIZE        *blake2b.MAX_DIGEST_SIZE..hashlib.txt;*
+blake2b.MAX_DIGEST_SIZE         *blake2b.MAX_DIGEST_SIZE..hashlib.txt*
 
-blake2s.MAX_DIGEST_SIZE        *blake2s.MAX_DIGEST_SIZE..hashlib.txt;*
+blake2s.MAX_DIGEST_SIZE         *blake2s.MAX_DIGEST_SIZE..hashlib.txt*
 
 Maximum digest size that the hash function can output.
 

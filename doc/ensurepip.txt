@@ -1,4 +1,4 @@
-*ensurepip.txt;*                              Last change: 2023 Sep 09
+*ensurepip.txt;*                              Last change: 2023 Sep 10
 
 "ensurepip" — Bootstrapping the "pip" installer
 ***********************************************
@@ -94,12 +94,12 @@ Module API
 
 "ensurepip" exposes two functions for programmatic use:
 
-ensurepip.version()                        *version()..ensurepip.txt;*
+ensurepip.version()                         *version()..ensurepip.txt*
 
    Returns a string specifying the available version of pip that will
    be installed when bootstrapping an environment.
 
-                                         *bootstrap()..ensurepip.txt;*
+                                          *bootstrap()..ensurepip.txt*
 ensurepip.bootstrap(root=None, upgrade=False, user=False, altinstall=False, default_pip=False, verbosity=0)
 
    Bootstraps "pip" into the current or designated environment.

@@ -1,4 +1,4 @@
-*httpclient.txt;*                             Last change: 2023 Sep 09
+*http.client.txt;*                            Last change: 2023 Sep 10
 
 "http.client" — HTTP protocol client
 ************************************
@@ -29,7 +29,7 @@ more information.
 
 The module provides the following classes:
 
-                                     *HTTPConnection..httpclient.txt;*
+                                     *HTTPConnection..http.client.txt*
 class http.client.HTTPConnection(host, port=None[, timeout], source_address=None, blocksize=8192)
 
    An "HTTPConnection" instance represents one transaction with an
@@ -60,7 +60,7 @@ class http.client.HTTPConnection(host, port=None[, timeout], source_address=None
 
    Changed in version 3.7: _blocksize_ parameter was added.
 
-                                    *HTTPSConnection..httpclient.txt;*
+                                    *HTTPSConnection..http.client.txt*
 class http.client.HTTPSConnection(host, port=None, *[, timeout], source_address=None, context=None, blocksize=8192)
 
    A subclass of "HTTPConnection" that uses SSL for communication with
@@ -97,7 +97,7 @@ class http.client.HTTPSConnection(host, port=None, *[, timeout], source_address=
    Changed in version 3.12: The deprecated _key_file_, _cert_file_ and
    _check_hostname_ parameters have been removed.
 
-                                       *HTTPResponse..httpclient.txt;*
+                                       *HTTPResponse..http.client.txt*
 class http.client.HTTPResponse(sock, debuglevel=0, method=None, url=None)
 
    Class whose instances are returned upon successful connection.  Not
@@ -108,7 +108,7 @@ class http.client.HTTPResponse(sock, debuglevel=0, method=None, url=None)
 
 This module provides the following function:
 
-http.client.parse_headers(fp)       *parse_headers()..httpclient.txt;*
+http.client.parse_headers(fp)       *parse_headers()..http.client.txt*
 
    Parse the headers from a file pointer _fp_ representing a HTTP
    request/response. The file has to be a "BufferedIOBase" reader
@@ -129,71 +129,71 @@ http.client.parse_headers(fp)       *parse_headers()..httpclient.txt;*
 
 The following exceptions are raised as appropriate:
 
-exception http.client.HTTPException   *HTTPException..httpclient.txt;*
+exception http.client.HTTPException   *HTTPException..http.client.txt*
 
    The base class of the other exceptions in this module.  It is a
    subclass of "Exception".
 
-exception http.client.NotConnected     *NotConnected..httpclient.txt;*
+exception http.client.NotConnected     *NotConnected..http.client.txt*
 
    A subclass of "HTTPException".
 
-exception http.client.InvalidURL         *InvalidURL..httpclient.txt;*
+exception http.client.InvalidURL         *InvalidURL..http.client.txt*
 
    A subclass of "HTTPException", raised if a port is given and is
    either non-numeric or empty.
 
-                                    *UnknownProtocol..httpclient.txt;*
+                                    *UnknownProtocol..http.client.txt*
 exception http.client.UnknownProtocol
 
    A subclass of "HTTPException".
 
-                            *UnknownTransferEncoding..httpclient.txt;*
+                            *UnknownTransferEncoding..http.client.txt*
 exception http.client.UnknownTransferEncoding
 
    A subclass of "HTTPException".
 
-                              *UnimplementedFileMode..httpclient.txt;*
+                              *UnimplementedFileMode..http.client.txt*
 exception http.client.UnimplementedFileMode
 
    A subclass of "HTTPException".
 
-                                     *IncompleteRead..httpclient.txt;*
+                                     *IncompleteRead..http.client.txt*
 exception http.client.IncompleteRead
 
    A subclass of "HTTPException".
 
-                            *ImproperConnectionState..httpclient.txt;*
+                            *ImproperConnectionState..http.client.txt*
 exception http.client.ImproperConnectionState
 
    A subclass of "HTTPException".
 
-                                  *CannotSendRequest..httpclient.txt;*
+                                  *CannotSendRequest..http.client.txt*
 exception http.client.CannotSendRequest
 
    A subclass of "ImproperConnectionState".
 
-                                   *CannotSendHeader..httpclient.txt;*
+                                   *CannotSendHeader..http.client.txt*
 exception http.client.CannotSendHeader
 
    A subclass of "ImproperConnectionState".
 
-                                   *ResponseNotReady..httpclient.txt;*
+                                   *ResponseNotReady..http.client.txt*
 exception http.client.ResponseNotReady
 
    A subclass of "ImproperConnectionState".
 
-exception http.client.BadStatusLine   *BadStatusLine..httpclient.txt;*
+exception http.client.BadStatusLine   *BadStatusLine..http.client.txt*
 
    A subclass of "HTTPException".  Raised if a server responds with a
    HTTP status code that we don’t understand.
 
-exception http.client.LineTooLong       *LineTooLong..httpclient.txt;*
+exception http.client.LineTooLong       *LineTooLong..http.client.txt*
 
    A subclass of "HTTPException".  Raised if an excessively long line
    is received in the HTTP protocol from the server.
 
-                                 *RemoteDisconnected..httpclient.txt;*
+                                 *RemoteDisconnected..http.client.txt*
 exception http.client.RemoteDisconnected
 
    A subclass of "ConnectionResetError" and "BadStatusLine".  Raised
@@ -205,15 +205,15 @@ exception http.client.RemoteDisconnected
 
 The constants defined in this module are:
 
-http.client.HTTP_PORT                     *HTTP_PORT..httpclient.txt;*
+http.client.HTTP_PORT                     *HTTP_PORT..http.client.txt*
 
    The default port for the HTTP protocol (always "80").
 
-http.client.HTTPS_PORT                   *HTTPS_PORT..httpclient.txt;*
+http.client.HTTPS_PORT                   *HTTPS_PORT..http.client.txt*
 
    The default port for the HTTPS protocol (always "443").
 
-http.client.responses                     *responses..httpclient.txt;*
+http.client.responses                     *responses..http.client.txt*
 
    This dictionary maps the HTTP 1.1 status codes to the W3C names.
 
@@ -229,7 +229,7 @@ HTTPConnection Objects
 
 "HTTPConnection" instances have the following methods:
 
-                           *HTTPConnection.request()..httpclient.txt;*
+                           *HTTPConnection.request()..http.client.txt*
 HTTPConnection.request(method, url, body=None, headers={}, *, encode_chunked=False)
 
    This will send a request to the server using the HTTP request
@@ -296,7 +296,7 @@ HTTPConnection.request(method, url, body=None, headers={}, *, encode_chunked=Fal
    now chunk-encoded. The _encode_chunked_ argument was added. No
    attempt is made to determine the Content-Length for file objects.
 
-                       *HTTPConnection.getresponse()..httpclient.txt;*
+                       *HTTPConnection.getresponse()..http.client.txt*
 HTTPConnection.getresponse()
 
    Should be called after a request is sent to get the response from
@@ -311,7 +311,7 @@ HTTPConnection.getresponse()
    raised, the "HTTPConnection" object will be ready to reconnect when
    a new request is sent.
 
-                    *HTTPConnection.set_debuglevel()..httpclient.txt;*
+                    *HTTPConnection.set_debuglevel()..http.client.txt*
 HTTPConnection.set_debuglevel(level)
 
    Set the debugging level.  The default debug level is "0", meaning
@@ -322,7 +322,7 @@ HTTPConnection.set_debuglevel(level)
 
    New in version 3.1.
 
-                        *HTTPConnection.set_tunnel()..httpclient.txt;*
+                        *HTTPConnection.set_tunnel()..http.client.txt*
 HTTPConnection.set_tunnel(host, port=None, headers=None)
 
    Set the host and the port for HTTP Connect Tunnelling. This allows
@@ -359,7 +359,7 @@ HTTPConnection.set_tunnel(host, port=None, headers=None)
    headers are mandatory for HTTP/1.1, so one will be automatically
    generated and transmitted if not provided in the headers argument.
 
-        *HTTPConnection.get_proxy_response_headers()..httpclient.txt;*
+        *HTTPConnection.get_proxy_response_headers()..http.client.txt*
 HTTPConnection.get_proxy_response_headers()
 
    Returns a dictionary with the headers of the response received from
@@ -369,7 +369,7 @@ HTTPConnection.get_proxy_response_headers()
 
    New in version 3.12.
 
-HTTPConnection.connect()   *HTTPConnection.connect()..httpclient.txt;*
+HTTPConnection.connect()   *HTTPConnection.connect()..http.client.txt*
 
    Connect to the server specified when the object was created.  By
    default, this is called automatically when making a request if the
@@ -378,11 +378,11 @@ HTTPConnection.connect()   *HTTPConnection.connect()..httpclient.txt;*
    Raises an auditing event "http.client.connect" with arguments
    "self", "host", "port".
 
-HTTPConnection.close()       *HTTPConnection.close()..httpclient.txt;*
+HTTPConnection.close()       *HTTPConnection.close()..http.client.txt*
 
    Close the connection to the server.
 
-HTTPConnection.blocksize   *HTTPConnection.blocksize..httpclient.txt;*
+HTTPConnection.blocksize   *HTTPConnection.blocksize..http.client.txt*
 
    Buffer size in bytes for sending a file-like message body.
 
@@ -392,7 +392,7 @@ As an alternative to using the "request()" method described above, you
 can also send your request step by step, by using the four functions
 below.
 
-                        *HTTPConnection.putrequest()..httpclient.txt;*
+                        *HTTPConnection.putrequest()..http.client.txt*
 HTTPConnection.putrequest(method, url, skip_host=False, skip_accept_encoding=False)
 
    This should be the first call after the connection to the server
@@ -403,7 +403,7 @@ HTTPConnection.putrequest(method, url, skip_host=False, skip_accept_encoding=Fal
    encodings), specify _skip_host_ or _skip_accept_encoding_ with non-
    False values.
 
-                         *HTTPConnection.putheader()..httpclient.txt;*
+                         *HTTPConnection.putheader()..http.client.txt*
 HTTPConnection.putheader(header, argument[, ...])
 
    Send an **RFC 822**-style header to the server.  It sends a line to
@@ -411,7 +411,7 @@ HTTPConnection.putheader(header, argument[, ...])
    first argument.  If more arguments are given, continuation lines
    are sent, each consisting of a tab and an argument.
 
-                        *HTTPConnection.endheaders()..httpclient.txt;*
+                        *HTTPConnection.endheaders()..http.client.txt*
 HTTPConnection.endheaders(message_body=None, *, encode_chunked=False)
 
    Send a blank line to the server, signalling the end of the headers.
@@ -439,7 +439,7 @@ HTTPConnection.endheaders(message_body=None, *, encode_chunked=False)
    New in version 3.6: Chunked encoding support.  The _encode_chunked_
    parameter was added.
 
-HTTPConnection.send(data)     *HTTPConnection.send()..httpclient.txt;*
+HTTPConnection.send(data)     *HTTPConnection.send()..http.client.txt*
 
    Send data to the server.  This should be used directly only after
    the "endheaders()" method has been called and before
@@ -459,18 +459,18 @@ response is an iterable object and can be used in a with statement.
 Changed in version 3.5: The "io.BufferedIOBase" interface is now
 implemented and all of its reader operations are supported.
 
-HTTPResponse.read([amt])        *HTTPResponse.read()..httpclient.txt;*
+HTTPResponse.read([amt])        *HTTPResponse.read()..http.client.txt*
 
    Reads and returns the response body, or up to the next _amt_ bytes.
 
-HTTPResponse.readinto(b)    *HTTPResponse.readinto()..httpclient.txt;*
+HTTPResponse.readinto(b)    *HTTPResponse.readinto()..http.client.txt*
 
    Reads up to the next len(b) bytes of the response body into the
    buffer _b_. Returns the number of bytes read.
 
    New in version 3.3.
 
-                           *HTTPResponse.getheader()..httpclient.txt;*
+                           *HTTPResponse.getheader()..http.client.txt*
 HTTPResponse.getheader(name, default=None)
 
    Return the value of the header _name_, or _default_ if there is no
@@ -479,62 +479,62 @@ HTTPResponse.getheader(name, default=None)
    is any iterable other than a single string, its elements are
    similarly returned joined by commas.
 
-                          *HTTPResponse.getheaders()..httpclient.txt;*
+                          *HTTPResponse.getheaders()..http.client.txt*
 HTTPResponse.getheaders()
 
    Return a list of (header, value) tuples.
 
-HTTPResponse.fileno()         *HTTPResponse.fileno()..httpclient.txt;*
+HTTPResponse.fileno()         *HTTPResponse.fileno()..http.client.txt*
 
    Return the "fileno" of the underlying socket.
 
-HTTPResponse.msg                   *HTTPResponse.msg..httpclient.txt;*
+HTTPResponse.msg                   *HTTPResponse.msg..http.client.txt*
 
    A "http.client.HTTPMessage" instance containing the response
    headers.  "http.client.HTTPMessage" is a subclass of
    "email.message.Message".
 
-HTTPResponse.version           *HTTPResponse.version..httpclient.txt;*
+HTTPResponse.version           *HTTPResponse.version..http.client.txt*
 
    HTTP protocol version used by server.  10 for HTTP/1.0, 11 for
    HTTP/1.1.
 
-HTTPResponse.url                   *HTTPResponse.url..httpclient.txt;*
+HTTPResponse.url                   *HTTPResponse.url..http.client.txt*
 
    URL of the resource retrieved, commonly used to determine if a
    redirect was followed.
 
-HTTPResponse.headers           *HTTPResponse.headers..httpclient.txt;*
+HTTPResponse.headers           *HTTPResponse.headers..http.client.txt*
 
    Headers of the response in the form of an
    "email.message.EmailMessage" instance.
 
-HTTPResponse.status             *HTTPResponse.status..httpclient.txt;*
+HTTPResponse.status             *HTTPResponse.status..http.client.txt*
 
    Status code returned by server.
 
-HTTPResponse.reason             *HTTPResponse.reason..httpclient.txt;*
+HTTPResponse.reason             *HTTPResponse.reason..http.client.txt*
 
    Reason phrase returned by server.
 
-HTTPResponse.debuglevel     *HTTPResponse.debuglevel..httpclient.txt;*
+HTTPResponse.debuglevel     *HTTPResponse.debuglevel..http.client.txt*
 
    A debugging hook.  If "debuglevel" is greater than zero, messages
    will be printed to stdout as the response is read and parsed.
 
-HTTPResponse.closed             *HTTPResponse.closed..httpclient.txt;*
+HTTPResponse.closed             *HTTPResponse.closed..http.client.txt*
 
    Is "True" if the stream is closed.
 
-HTTPResponse.geturl()         *HTTPResponse.geturl()..httpclient.txt;*
+HTTPResponse.geturl()         *HTTPResponse.geturl()..http.client.txt*
 
    Deprecated since version 3.9: Deprecated in favor of "url".
 
-HTTPResponse.info()             *HTTPResponse.info()..httpclient.txt;*
+HTTPResponse.info()             *HTTPResponse.info()..http.client.txt*
 
    Deprecated since version 3.9: Deprecated in favor of "headers".
 
-HTTPResponse.getcode()       *HTTPResponse.getcode()..httpclient.txt;*
+HTTPResponse.getcode()       *HTTPResponse.getcode()..http.client.txt*
 
    Deprecated since version 3.9: Deprecated in favor of "status".
 

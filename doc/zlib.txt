@@ -1,4 +1,4 @@
-*zlib.txt;*                                   Last change: 2023 Sep 09
+*zlib.txt;*                                   Last change: 2023 Sep 10
 
 "zlib" — Compression compatible with **gzip**
 *********************************************
@@ -21,11 +21,11 @@ For reading and writing ".gz" files see the "gzip" module.
 
 The available exception and functions in this module are:
 
-exception zlib.error                                *error..zlib.txt;*
+exception zlib.error                                 *error..zlib.txt*
 
    Exception raised on compression and decompression errors.
 
-zlib.adler32(data[, value])                     *adler32()..zlib.txt;*
+zlib.adler32(data[, value])                      *adler32()..zlib.txt*
 
    Computes an Adler-32 checksum of _data_.  (An Adler-32 checksum is
    almost as reliable as a CRC32 but can be computed much more
@@ -40,7 +40,7 @@ zlib.adler32(data[, value])                     *adler32()..zlib.txt;*
 
    Changed in version 3.0: The result is always unsigned.
 
-                                               *compress()..zlib.txt;*
+                                                *compress()..zlib.txt*
 zlib.compress(data, /, level=-1, wbits=MAX_WBITS)
 
    Compresses the bytes in _data_, returning a bytes object containing
@@ -78,7 +78,7 @@ zlib.compress(data, /, level=-1, wbits=MAX_WBITS)
    Changed in version 3.11: The _wbits_ parameter is now available to
    set window bits and compression type.
 
-                                            *compressobj()..zlib.txt;*
+                                             *compressobj()..zlib.txt*
 zlib.compressobj(level=-1, method=DEFLATED, wbits=MAX_WBITS, memLevel=DEF_MEM_LEVEL, strategy=Z_DEFAULT_STRATEGY[, zdict])
 
    Returns a compression object, to be used for compressing data
@@ -117,7 +117,7 @@ zlib.compressobj(level=-1, method=DEFLATED, wbits=MAX_WBITS, memLevel=DEF_MEM_LE
    Changed in version 3.3: Added the _zdict_ parameter and keyword
    argument support.
 
-zlib.crc32(data[, value])                         *crc32()..zlib.txt;*
+zlib.crc32(data[, value])                          *crc32()..zlib.txt*
 
    Computes a CRC (Cyclic Redundancy Check) checksum of _data_. The
    result is an unsigned 32-bit integer. If _value_ is present, it is
@@ -131,7 +131,7 @@ zlib.crc32(data[, value])                         *crc32()..zlib.txt;*
 
    Changed in version 3.0: The result is always unsigned.
 
-                                             *decompress()..zlib.txt;*
+                                              *decompress()..zlib.txt*
 zlib.decompress(data, /, wbits=MAX_WBITS, bufsize=DEF_BUF_SIZE)
 
    Decompresses the bytes in _data_, returning a bytes object
@@ -177,7 +177,7 @@ zlib.decompress(data, /, wbits=MAX_WBITS, bufsize=DEF_BUF_SIZE)
    Changed in version 3.6: _wbits_ and _bufsize_ can be used as
    keyword arguments.
 
-                                          *decompressobj()..zlib.txt;*
+                                           *decompressobj()..zlib.txt*
 zlib.decompressobj(wbits=MAX_WBITS[, zdict])
 
    Returns a decompression object, to be used for decompressing data
@@ -202,7 +202,7 @@ zlib.decompressobj(wbits=MAX_WBITS[, zdict])
 
 Compression objects support the following methods:
 
-Compress.compress(data)               *Compress.compress()..zlib.txt;*
+Compress.compress(data)                *Compress.compress()..zlib.txt*
 
    Compress _data_, returning a bytes object containing compressed
    data for at least part of the data in _data_.  This data should be
@@ -210,7 +210,7 @@ Compress.compress(data)               *Compress.compress()..zlib.txt;*
    "compress()" method.  Some input may be kept in internal buffers
    for later processing.
 
-Compress.flush([mode])                   *Compress.flush()..zlib.txt;*
+Compress.flush([mode])                    *Compress.flush()..zlib.txt*
 
    All pending input is processed, and a bytes object containing the
    remaining compressed output is returned.  _mode_ can be selected
@@ -223,7 +223,7 @@ Compress.flush([mode])                   *Compress.flush()..zlib.txt;*
    method cannot be called again; the only realistic action is to
    delete the object.
 
-Compress.copy()                           *Compress.copy()..zlib.txt;*
+Compress.copy()                            *Compress.copy()..zlib.txt*
 
    Returns a copy of the compression object.  This can be used to
    efficiently compress a set of data that share a common initial
@@ -234,7 +234,7 @@ support to compression objects.
 
 Decompression objects support the following methods and attributes:
 
-Decompress.unused_data             *Decompress.unused_data..zlib.txt;*
+Decompress.unused_data              *Decompress.unused_data..zlib.txt*
 
    A bytes object which contains any bytes past the end of the
    compressed data. That is, this remains "b""" until the last byte
@@ -242,7 +242,7 @@ Decompress.unused_data             *Decompress.unused_data..zlib.txt;*
    bytestring turned out to contain compressed data, this is "b""", an
    empty bytes object.
 
-Decompress.unconsumed_tail     *Decompress.unconsumed_tail..zlib.txt;*
+Decompress.unconsumed_tail      *Decompress.unconsumed_tail..zlib.txt*
 
    A bytes object that contains any data that was not consumed by the
    last "decompress()" call because it exceeded the limit for the
@@ -251,7 +251,7 @@ Decompress.unconsumed_tail     *Decompress.unconsumed_tail..zlib.txt;*
    concatenated to it) back to a subsequent "decompress()" method call
    in order to get correct output.
 
-Decompress.eof                             *Decompress.eof..zlib.txt;*
+Decompress.eof                              *Decompress.eof..zlib.txt*
 
    A boolean indicating whether the end of the compressed data stream
    has been reached.
@@ -261,7 +261,7 @@ Decompress.eof                             *Decompress.eof..zlib.txt;*
 
    New in version 3.3.
 
-                                  *Decompress.decompress()..zlib.txt;*
+                                   *Decompress.decompress()..zlib.txt*
 Decompress.decompress(data, max_length=0)
 
    Decompress _data_, returning a bytes object containing the
@@ -282,7 +282,7 @@ Decompress.decompress(data, max_length=0)
    Changed in version 3.6: _max_length_ can be used as a keyword
    argument.
 
-Decompress.flush([length])             *Decompress.flush()..zlib.txt;*
+Decompress.flush([length])              *Decompress.flush()..zlib.txt*
 
    All pending input is processed, and a bytes object containing the
    remaining uncompressed output is returned.  After calling
@@ -292,7 +292,7 @@ Decompress.flush([length])             *Decompress.flush()..zlib.txt;*
    The optional parameter _length_ sets the initial size of the output
    buffer.
 
-Decompress.copy()                       *Decompress.copy()..zlib.txt;*
+Decompress.copy()                        *Decompress.copy()..zlib.txt*
 
    Returns a copy of the decompression object.  This can be used to
    save the state of the decompressor midway through the data stream
@@ -305,13 +305,13 @@ support to decompression objects.
 Information about the version of the zlib library in use is available
 through the following constants:
 
-zlib.ZLIB_VERSION                            *ZLIB_VERSION..zlib.txt;*
+zlib.ZLIB_VERSION                             *ZLIB_VERSION..zlib.txt*
 
    The version string of the zlib library that was used for building
    the module. This may be different from the zlib library actually
    used at runtime, which is available as "ZLIB_RUNTIME_VERSION".
 
-zlib.ZLIB_RUNTIME_VERSION            *ZLIB_RUNTIME_VERSION..zlib.txt;*
+zlib.ZLIB_RUNTIME_VERSION             *ZLIB_RUNTIME_VERSION..zlib.txt*
 
    The version string of the zlib library actually loaded by the
    interpreter.

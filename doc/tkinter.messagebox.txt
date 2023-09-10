@@ -1,4 +1,4 @@
-*tkintermessagebox.txt;*                      Last change: 2023 Sep 09
+*tkinter.messagebox.txt;*                     Last change: 2023 Sep 10
 
 "tkinter.messagebox" — Tkinter message prompts
 **********************************************
@@ -15,39 +15,39 @@ styles and layouts include but are not limited to:
 
    [image]
 
-                                     *Message..tkintermessagebox.txt;*
+                                     *Message..tkinter.messagebox.txt*
 class tkinter.messagebox.Message(master=None, **options)
 
    Create a default information message box.
 
 **Information message box**
 
-                                  *showinfo()..tkintermessagebox.txt;*
+                                  *showinfo()..tkinter.messagebox.txt*
 tkinter.messagebox.showinfo(title=None, message=None, **options)
 
 **Warning message boxes**
 
-                               *showwarning()..tkintermessagebox.txt;*
+                               *showwarning()..tkinter.messagebox.txt*
 tkinter.messagebox.showwarning(title=None, message=None, **options)
 
-                                 *showerror()..tkintermessagebox.txt;*
+                                 *showerror()..tkinter.messagebox.txt*
 tkinter.messagebox.showerror(title=None, message=None, **options)
 
 **Question message boxes**
 
-                               *askquestion()..tkintermessagebox.txt;*
+                               *askquestion()..tkinter.messagebox.txt*
 tkinter.messagebox.askquestion(title=None, message=None, **options)
 
-                               *askokcancel()..tkintermessagebox.txt;*
+                               *askokcancel()..tkinter.messagebox.txt*
 tkinter.messagebox.askokcancel(title=None, message=None, **options)
 
-                            *askretrycancel()..tkintermessagebox.txt;*
+                            *askretrycancel()..tkinter.messagebox.txt*
 tkinter.messagebox.askretrycancel(title=None, message=None, **options)
 
-                                  *askyesno()..tkintermessagebox.txt;*
+                                  *askyesno()..tkinter.messagebox.txt*
 tkinter.messagebox.askyesno(title=None, message=None, **options)
 
-                            *askyesnocancel()..tkintermessagebox.txt;*
+                            *askyesnocancel()..tkinter.messagebox.txt*
 tkinter.messagebox.askyesnocancel(title=None, message=None, **options)
 
 vim:tw=78:ts=8:ft=help:norl:

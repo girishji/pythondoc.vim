@@ -1,4 +1,4 @@
-*doctest.txt;*                                Last change: 2023 Sep 09
+*doctest.txt;*                                Last change: 2023 Sep 10
 
 "doctest" — Test interactive Python examples
 ********************************************
@@ -494,8 +494,7 @@ The first group of options define test semantics, controlling aspects
 of how doctest decides whether actual output matches an example’s
 expected output:
 
-                                *DONT_ACCEPT_TRUE_FOR_1..doctest.txt;*
-doctest.DONT_ACCEPT_TRUE_FOR_1
+doctest.DONT_ACCEPT_TRUE_FOR_1   *DONT_ACCEPT_TRUE_FOR_1..doctest.txt*
 
    By default, if an expected output block contains just "1", an
    actual output block containing just "1" or just "True" is
@@ -506,7 +505,7 @@ doctest.DONT_ACCEPT_TRUE_FOR_1
    expecting “little integer” output still work in these cases.  This
    option will probably go away, but not for several years.
 
-doctest.DONT_ACCEPT_BLANKLINE    *DONT_ACCEPT_BLANKLINE..doctest.txt;*
+doctest.DONT_ACCEPT_BLANKLINE     *DONT_ACCEPT_BLANKLINE..doctest.txt*
 
    By default, if an expected output block contains a line containing
    only the string "<BLANKLINE>", then that line will match a blank
@@ -515,7 +514,7 @@ doctest.DONT_ACCEPT_BLANKLINE    *DONT_ACCEPT_BLANKLINE..doctest.txt;*
    blank line is expected.  When "DONT_ACCEPT_BLANKLINE" is specified,
    this substitution is not allowed.
 
-doctest.NORMALIZE_WHITESPACE      *NORMALIZE_WHITESPACE..doctest.txt;*
+doctest.NORMALIZE_WHITESPACE       *NORMALIZE_WHITESPACE..doctest.txt*
 
    When specified, all sequences of whitespace (blanks and newlines)
    are treated as equal.  Any sequence of whitespace within the
@@ -525,7 +524,7 @@ doctest.NORMALIZE_WHITESPACE      *NORMALIZE_WHITESPACE..doctest.txt;*
    output is very long, and you want to wrap it across multiple lines
    in your source.
 
-doctest.ELLIPSIS                              *ELLIPSIS..doctest.txt;*
+doctest.ELLIPSIS                               *ELLIPSIS..doctest.txt*
 
    When specified, an ellipsis marker ("...") in the expected output
    can match any substring in the actual output.  This includes
@@ -534,7 +533,7 @@ doctest.ELLIPSIS                              *ELLIPSIS..doctest.txt;*
    same kinds of “oops, it matched too much!” surprises that ".*" is
    prone to in regular expressions.
 
-                               *IGNORE_EXCEPTION_DETAIL..doctest.txt;*
+                                *IGNORE_EXCEPTION_DETAIL..doctest.txt*
 doctest.IGNORE_EXCEPTION_DETAIL
 
    When specified, doctests expecting exceptions pass so long as an
@@ -569,7 +568,7 @@ doctest.IGNORE_EXCEPTION_DETAIL
    any information relating to the module containing the exception
    under test.
 
-doctest.SKIP                                      *SKIP..doctest.txt;*
+doctest.SKIP                                       *SKIP..doctest.txt*
 
    When specified, do not run the example at all.  This can be useful
    in contexts where doctest examples serve as both documentation and
@@ -581,23 +580,23 @@ doctest.SKIP                                      *SKIP..doctest.txt;*
    The SKIP flag can also be used for temporarily “commenting out”
    examples.
 
-doctest.COMPARISON_FLAGS              *COMPARISON_FLAGS..doctest.txt;*
+doctest.COMPARISON_FLAGS               *COMPARISON_FLAGS..doctest.txt*
 
    A bitmask or’ing together all the comparison flags above.
 
 The second group of options controls how test failures are reported:
 
-doctest.REPORT_UDIFF                      *REPORT_UDIFF..doctest.txt;*
+doctest.REPORT_UDIFF                       *REPORT_UDIFF..doctest.txt*
 
    When specified, failures that involve multi-line expected and
    actual outputs are displayed using a unified diff.
 
-doctest.REPORT_CDIFF                      *REPORT_CDIFF..doctest.txt;*
+doctest.REPORT_CDIFF                       *REPORT_CDIFF..doctest.txt*
 
    When specified, failures that involve multi-line expected and
    actual outputs will be displayed using a context diff.
 
-doctest.REPORT_NDIFF                      *REPORT_NDIFF..doctest.txt;*
+doctest.REPORT_NDIFF                       *REPORT_NDIFF..doctest.txt*
 
    When specified, differences are computed by "difflib.Differ", using
    the same algorithm as the popular "ndiff.py" utility. This is the
@@ -606,7 +605,7 @@ doctest.REPORT_NDIFF                      *REPORT_NDIFF..doctest.txt;*
    "1" where actual output contains letter "l", a line is inserted
    with a caret marking the mismatching column positions.
 
-                             *REPORT_ONLY_FIRST_FAILURE..doctest.txt;*
+                              *REPORT_ONLY_FIRST_FAILURE..doctest.txt*
 doctest.REPORT_ONLY_FIRST_FAILURE
 
    When specified, display the first failing example in each doctest,
@@ -618,7 +617,7 @@ doctest.REPORT_ONLY_FIRST_FAILURE
    are still run, and still count towards the total number of failures
    reported; only the output is suppressed.
 
-doctest.FAIL_FAST                            *FAIL_FAST..doctest.txt;*
+doctest.FAIL_FAST                             *FAIL_FAST..doctest.txt*
 
    When specified, exit after the first failing example and don’t
    attempt to run the remaining examples. Thus, the number of failures
@@ -631,7 +630,7 @@ doctest.FAIL_FAST                            *FAIL_FAST..doctest.txt;*
 
    New in version 3.4.
 
-doctest.REPORTING_FLAGS                *REPORTING_FLAGS..doctest.txt;*
+doctest.REPORTING_FLAGS                 *REPORTING_FLAGS..doctest.txt*
 
    A bitmask or’ing together all the reporting flags above.
 
@@ -639,7 +638,7 @@ There is also a way to register new option flag names, though this
 isn’t useful unless you intend to extend "doctest" internals via
 subclassing:
 
-                                 *register_optionflag()..doctest.txt;*
+                                  *register_optionflag()..doctest.txt*
 doctest.register_optionflag(name)
 
    Create a new option flag with a given name, and return the new
@@ -785,7 +784,7 @@ formal introduction to these two functions, see sections Simple Usage:
 Checking Examples in Docstrings and Simple Usage: Checking Examples in
 a Text File.
 
-                                            *testfile()..doctest.txt;*
+                                             *testfile()..doctest.txt*
 doctest.testfile(filename, module_relative=True, name=None, package=None, globs=None, verbose=None, report=True, optionflags=0, extraglobs=None, raise_on_error=False, parser=DocTestParser(), encoding=None)
 
    All arguments except _filename_ are optional, and should be
@@ -859,7 +858,7 @@ doctest.testfile(filename, module_relative=True, name=None, package=None, globs=
    Optional argument _encoding_ specifies an encoding that should be
    used to convert the file to unicode.
 
-                                             *testmod()..doctest.txt;*
+                                              *testmod()..doctest.txt*
 doctest.testmod(m=None, name=None, globs=None, verbose=None, report=True, optionflags=0, extraglobs=None, raise_on_error=False, exclude_empty=False)
 
    All arguments are optional, and all except for _m_ should be
@@ -896,7 +895,7 @@ doctest.testmod(m=None, name=None, globs=None, verbose=None, report=True, option
    function "testfile()" above, except that _globs_ defaults to
    "m.__dict__".
 
-                              *run_docstring_examples()..doctest.txt;*
+                               *run_docstring_examples()..doctest.txt*
 doctest.run_docstring_examples(f, globs, verbose=False, name='NoName', compileflags=None, optionflags=0)
 
    Test examples associated with object _f_; for example, _f_ may be a
@@ -942,7 +941,7 @@ test module:
 There are two main functions for creating "unittest.TestSuite"
 instances from text files and modules with doctests:
 
-                                        *DocFileSuite()..doctest.txt;*
+                                         *DocFileSuite()..doctest.txt*
 doctest.DocFileSuite(*paths, module_relative=True, package=None, setUp=None, tearDown=None, globs=None, optionflags=0, parser=DocTestParser(), encoding=None)
 
    Convert doctest tests from one or more text files to a
@@ -1015,7 +1014,7 @@ doctest.DocFileSuite(*paths, module_relative=True, package=None, setUp=None, tea
    The global "__file__" is added to the globals provided to doctests
    loaded from a text file using "DocFileSuite()".
 
-                                        *DocTestSuite()..doctest.txt;*
+                                         *DocTestSuite()..doctest.txt*
 doctest.DocTestSuite(module=None, globs=None, extraglobs=None, test_finder=None, setUp=None, tearDown=None, optionflags=0, checker=None)
 
    Convert doctest tests for a module to a "unittest.TestSuite".
@@ -1075,7 +1074,7 @@ through "unittest" to "doctest" test runners.
 For this reason, "doctest" also supports a notion of "doctest"
 reporting flags specific to "unittest" support, via this function:
 
-                            *set_unittest_reportflags()..doctest.txt;*
+                             *set_unittest_reportflags()..doctest.txt*
 doctest.set_unittest_reportflags(flags)
 
    Set the "doctest" reporting flags to use.
@@ -1148,7 +1147,7 @@ following diagram:
 DocTest Objects
 ---------------
 
-                                               *DocTest..doctest.txt;*
+                                                *DocTest..doctest.txt*
 class doctest.DocTest(examples, globs, name, filename, lineno, docstring)
 
    A collection of doctest examples that should be run in a single
@@ -1158,36 +1157,36 @@ class doctest.DocTest(examples, globs, name, filename, lineno, docstring)
    "DocTest" defines the following attributes.  They are initialized
    by the constructor, and should not be modified directly.
 
-   examples                              *DocTest.examples..doctest.txt;*
+   examples                               *DocTest.examples..doctest.txt*
 
       A list of "Example" objects encoding the individual interactive
       Python examples that should be run by this test.
 
-   globs                                    *DocTest.globs..doctest.txt;*
+   globs                                     *DocTest.globs..doctest.txt*
 
       The namespace (aka globals) that the examples should be run in.
       This is a dictionary mapping names to values.  Any changes to
       the namespace made by the examples (such as binding new
       variables) will be reflected in "globs" after the test is run.
 
-   name                                      *DocTest.name..doctest.txt;*
+   name                                       *DocTest.name..doctest.txt*
 
       A string name identifying the "DocTest".  Typically, this is the
       name of the object or file that the test was extracted from.
 
-   filename                              *DocTest.filename..doctest.txt;*
+   filename                               *DocTest.filename..doctest.txt*
 
       The name of the file that this "DocTest" was extracted from; or
       "None" if the filename is unknown, or if the "DocTest" was not
       extracted from a file.
 
-   lineno                                  *DocTest.lineno..doctest.txt;*
+   lineno                                   *DocTest.lineno..doctest.txt*
 
       The line number within "filename" where this "DocTest" begins,
       or "None" if the line number is unavailable.  This line number
       is zero-based with respect to the beginning of the file.
 
-   docstring                            *DocTest.docstring..doctest.txt;*
+   docstring                             *DocTest.docstring..doctest.txt*
 
       The string that the test was extracted from, or "None" if the
       string is unavailable, or if the test was not extracted from a
@@ -1197,7 +1196,7 @@ class doctest.DocTest(examples, globs, name, filename, lineno, docstring)
 Example Objects
 ---------------
 
-                                               *Example..doctest.txt;*
+                                                *Example..doctest.txt*
 class doctest.Example(source, want, exc_msg=None, lineno=0, indent=0, options=None)
 
    A single interactive example, consisting of a Python statement and
@@ -1207,13 +1206,13 @@ class doctest.Example(source, want, exc_msg=None, lineno=0, indent=0, options=No
    "Example" defines the following attributes.  They are initialized
    by the constructor, and should not be modified directly.
 
-   source                                  *Example.source..doctest.txt;*
+   source                                   *Example.source..doctest.txt*
 
       A string containing the example’s source code.  This source code
       consists of a single Python statement, and always ends with a
       newline; the constructor adds a newline when necessary.
 
-   want                                      *Example.want..doctest.txt;*
+   want                                       *Example.want..doctest.txt*
 
       The expected output from running the example’s source code
       (either from stdout, or a traceback in case of exception).
@@ -1221,7 +1220,7 @@ class doctest.Example(source, want, exc_msg=None, lineno=0, indent=0, options=No
       which case it’s an empty string.  The constructor adds a newline
       when necessary.
 
-   exc_msg                                *Example.exc_msg..doctest.txt;*
+   exc_msg                                 *Example.exc_msg..doctest.txt*
 
       The exception message generated by the example, if the example
       is expected to generate an exception; or "None" if it is not
@@ -1231,19 +1230,19 @@ class doctest.Example(source, want, exc_msg=None, lineno=0, indent=0, options=No
       newline unless it’s "None".  The constructor adds a newline if
       needed.
 
-   lineno                                  *Example.lineno..doctest.txt;*
+   lineno                                   *Example.lineno..doctest.txt*
 
       The line number within the string containing this example where
       the example begins.  This line number is zero-based with respect
       to the beginning of the containing string.
 
-   indent                                  *Example.indent..doctest.txt;*
+   indent                                   *Example.indent..doctest.txt*
 
       The example’s indentation in the containing string, i.e., the
       number of space characters that precede the example’s first
       prompt.
 
-   options                                *Example.options..doctest.txt;*
+   options                                 *Example.options..doctest.txt*
 
       A dictionary mapping from option flags to "True" or "False",
       which is used to override default options for this example.  Any
@@ -1255,7 +1254,7 @@ class doctest.Example(source, want, exc_msg=None, lineno=0, indent=0, options=No
 DocTestFinder objects
 ---------------------
 
-                                         *DocTestFinder..doctest.txt;*
+                                          *DocTestFinder..doctest.txt*
 class doctest.DocTestFinder(verbose=False, parser=DocTestParser(), recurse=True, exclude_empty=True)
 
    A processing class used to extract the "DocTest"s that are relevant
@@ -1281,7 +1280,7 @@ class doctest.DocTestFinder(verbose=False, parser=DocTestParser(), recurse=True,
 
    "DocTestFinder" defines the following method:
 
-                                  *DocTestFinder.find()..doctest.txt;*
+                                   *DocTestFinder.find()..doctest.txt*
    find(obj[, name][, module][, globs][, extraglobs])
 
       Return a list of the "DocTest"s that are defined by _obj_’s
@@ -1326,14 +1325,14 @@ class doctest.DocTestFinder(verbose=False, parser=DocTestParser(), recurse=True,
 DocTestParser objects
 ---------------------
 
-class doctest.DocTestParser              *DocTestParser..doctest.txt;*
+class doctest.DocTestParser               *DocTestParser..doctest.txt*
 
    A processing class used to extract interactive examples from a
    string, and use them to create a "DocTest" object.
 
    "DocTestParser" defines the following methods:
 
-                           *DocTestParser.get_doctest()..doctest.txt;*
+                            *DocTestParser.get_doctest()..doctest.txt*
    get_doctest(string, globs, name, filename, lineno)
 
       Extract all doctest examples from the given string, and collect
@@ -1343,7 +1342,7 @@ class doctest.DocTestParser              *DocTestParser..doctest.txt;*
       new "DocTest" object.  See the documentation for "DocTest" for
       more information.
 
-                          *DocTestParser.get_examples()..doctest.txt;*
+                           *DocTestParser.get_examples()..doctest.txt*
    get_examples(string, name='<string>')
 
       Extract all doctest examples from the given string, and return
@@ -1351,7 +1350,7 @@ class doctest.DocTestParser              *DocTestParser..doctest.txt;*
       The optional argument _name_ is a name identifying this string,
       and is only used for error messages.
 
-   parse(string, name='<string>')   *DocTestParser.parse()..doctest.txt;*
+   parse(string, name='<string>')    *DocTestParser.parse()..doctest.txt*
 
       Divide the given string into examples and intervening text, and
       return them as a list of alternating "Example"s and strings.
@@ -1363,18 +1362,18 @@ class doctest.DocTestParser              *DocTestParser..doctest.txt;*
 TestResults objects
 -------------------
 
-                                           *TestResults..doctest.txt;*
+                                            *TestResults..doctest.txt*
 class doctest.TestResults(failed, attempted)
 
-   failed                              *TestResults.failed..doctest.txt;*
+   failed                               *TestResults.failed..doctest.txt*
 
       Number of failed tests.
 
-   attempted                        *TestResults.attempted..doctest.txt;*
+   attempted                         *TestResults.attempted..doctest.txt*
 
       Number of attempted tests.
 
-   skipped                            *TestResults.skipped..doctest.txt;*
+   skipped                             *TestResults.skipped..doctest.txt*
 
       Number of skipped tests.
 
@@ -1384,7 +1383,7 @@ class doctest.TestResults(failed, attempted)
 DocTestRunner objects
 ---------------------
 
-                                         *DocTestRunner..doctest.txt;*
+                                          *DocTestRunner..doctest.txt*
 class doctest.DocTestRunner(checker=None, verbose=None, optionflags=0)
 
    A processing class used to execute and verify the interactive
@@ -1430,7 +1429,7 @@ class doctest.DocTestRunner(checker=None, verbose=None, optionflags=0)
 
    "DocTestParser" defines the following methods:
 
-                          *DocTestRunner.report_start()..doctest.txt;*
+                           *DocTestRunner.report_start()..doctest.txt*
    report_start(out, test, example)
 
       Report that the test runner is about to process the given
@@ -1442,7 +1441,7 @@ class doctest.DocTestRunner(checker=None, verbose=None, optionflags=0)
       test _containing example_.  _out_ is the output function that
       was passed to "DocTestRunner.run()".
 
-                        *DocTestRunner.report_success()..doctest.txt;*
+                         *DocTestRunner.report_success()..doctest.txt*
    report_success(out, test, example, got)
 
       Report that the given example ran successfully.  This method is
@@ -1454,7 +1453,7 @@ class doctest.DocTestRunner(checker=None, verbose=None, optionflags=0)
       _example_.  _out_ is the output function that was passed to
       "DocTestRunner.run()".
 
-                        *DocTestRunner.report_failure()..doctest.txt;*
+                         *DocTestRunner.report_failure()..doctest.txt*
    report_failure(out, test, example, got)
 
       Report that the given example failed.  This method is provided
@@ -1466,7 +1465,7 @@ class doctest.DocTestRunner(checker=None, verbose=None, optionflags=0)
       _example_.  _out_ is the output function that was passed to
       "DocTestRunner.run()".
 
-           *DocTestRunner.report_unexpected_exception()..doctest.txt;*
+            *DocTestRunner.report_unexpected_exception()..doctest.txt*
    report_unexpected_exception(out, test, example, exc_info)
 
       Report that the given example raised an unexpected exception.
@@ -1479,7 +1478,7 @@ class doctest.DocTestRunner(checker=None, verbose=None, optionflags=0)
       _example_.  _out_ is the output function that was passed to
       "DocTestRunner.run()".
 
-                                   *DocTestRunner.run()..doctest.txt;*
+                                    *DocTestRunner.run()..doctest.txt*
    run(test, compileflags=None, out=None, clear_globs=True)
 
       Run the examples in _test_ (a "DocTest" object), and display the
@@ -1501,7 +1500,7 @@ class doctest.DocTestRunner(checker=None, verbose=None, optionflags=0)
       "DocTestRunner"’s output checker, and the results are formatted
       by the "DocTestRunner.report_*()" methods.
 
-   summarize(verbose=None)      *DocTestRunner.summarize()..doctest.txt;*
+   summarize(verbose=None)       *DocTestRunner.summarize()..doctest.txt*
 
       Print a summary of all the test cases that have been run by this
       DocTestRunner, and return a "TestResults" instance.
@@ -1512,15 +1511,15 @@ class doctest.DocTestRunner(checker=None, verbose=None, optionflags=0)
 
    "DocTestParser" has the following attributes:
 
-   tries                              *DocTestRunner.tries..doctest.txt;*
+   tries                               *DocTestRunner.tries..doctest.txt*
 
       Number of attempted examples.
 
-   failures                        *DocTestRunner.failures..doctest.txt;*
+   failures                         *DocTestRunner.failures..doctest.txt*
 
       Number of failed examples.
 
-   skips                              *DocTestRunner.skips..doctest.txt;*
+   skips                               *DocTestRunner.skips..doctest.txt*
 
       Number of skipped examples.
 
@@ -1530,7 +1529,7 @@ class doctest.DocTestRunner(checker=None, verbose=None, optionflags=0)
 OutputChecker objects
 ---------------------
 
-class doctest.OutputChecker              *OutputChecker..doctest.txt;*
+class doctest.OutputChecker               *OutputChecker..doctest.txt*
 
    A class used to check the whether the actual output from a doctest
    example matches the expected output.  "OutputChecker" defines two
@@ -1540,7 +1539,7 @@ class doctest.OutputChecker              *OutputChecker..doctest.txt;*
 
    "OutputChecker" defines the following methods:
 
-                          *OutputChecker.check_output()..doctest.txt;*
+                           *OutputChecker.check_output()..doctest.txt*
    check_output(want, got, optionflags)
 
       Return "True" iff the actual output from an example (_got_)
@@ -1550,7 +1549,7 @@ class doctest.OutputChecker              *OutputChecker..doctest.txt;*
       types are also possible.  See section Option Flags for more
       information about option flags.
 
-                     *OutputChecker.output_difference()..doctest.txt;*
+                      *OutputChecker.output_difference()..doctest.txt*
    output_difference(example, got, optionflags)
 
       Return a string describing the differences between the expected
@@ -1625,7 +1624,7 @@ Doctest provides several mechanisms for debugging doctest examples:
 Functions that convert doctests to Python code, and possibly run the
 synthesized code under the debugger:
 
-                                *script_from_examples()..doctest.txt;*
+                                 *script_from_examples()..doctest.txt*
 doctest.script_from_examples(s)
 
    Convert text with examples to a script.
@@ -1660,7 +1659,7 @@ doctest.script_from_examples(s)
    but can also be useful when you want to transform an interactive
    Python session into a Python script.
 
-doctest.testsource(module, name)          *testsource()..doctest.txt;*
+doctest.testsource(module, name)           *testsource()..doctest.txt*
 
    Convert the doctest for an object to a script.
 
@@ -1678,7 +1677,7 @@ doctest.testsource(module, name)          *testsource()..doctest.txt;*
    prints a script version of function "f()"’s docstring, with
    doctests converted to code, and the rest placed in comments.
 
-doctest.debug(module, name, pm=False)          *debug()..doctest.txt;*
+doctest.debug(module, name, pm=False)           *debug()..doctest.txt*
 
    Debug the doctests for an object.
 
@@ -1699,7 +1698,7 @@ doctest.debug(module, name, pm=False)          *debug()..doctest.txt;*
    specified, or is false, the script is run under the debugger from
    the start, via passing an appropriate "exec()" call to "pdb.run()".
 
-                                           *debug_src()..doctest.txt;*
+                                            *debug_src()..doctest.txt*
 doctest.debug_src(src, pm=False, globs=None)
 
    Debug the doctests in a string.
@@ -1721,7 +1720,7 @@ of most interest to testing framework authors, and will only be
 sketched here.  See the source code, and especially "DebugRunner"’s
 docstring (which is a doctest!) for more details:
 
-                                           *DebugRunner..doctest.txt;*
+                                            *DebugRunner..doctest.txt*
 class doctest.DebugRunner(checker=None, verbose=None, optionflags=0)
 
    A subclass of "DocTestRunner" that raises an exception as soon as a
@@ -1737,7 +1736,7 @@ class doctest.DebugRunner(checker=None, verbose=None, optionflags=0)
 There are two exceptions that may be raised by "DebugRunner"
 instances:
 
-                                        *DocTestFailure..doctest.txt;*
+                                         *DocTestFailure..doctest.txt*
 exception doctest.DocTestFailure(test, example, got)
 
    An exception raised by "DocTestRunner" to signal that a doctest
@@ -1747,19 +1746,19 @@ exception doctest.DocTestFailure(test, example, got)
 
 "DocTestFailure" defines the following attributes:
 
-DocTestFailure.test                *DocTestFailure.test..doctest.txt;*
+DocTestFailure.test                 *DocTestFailure.test..doctest.txt*
 
    The "DocTest" object that was being run when the example failed.
 
-DocTestFailure.example          *DocTestFailure.example..doctest.txt;*
+DocTestFailure.example           *DocTestFailure.example..doctest.txt*
 
    The "Example" that failed.
 
-DocTestFailure.got                  *DocTestFailure.got..doctest.txt;*
+DocTestFailure.got                   *DocTestFailure.got..doctest.txt*
 
    The example’s actual output.
 
-                                   *UnexpectedException..doctest.txt;*
+                                    *UnexpectedException..doctest.txt*
 exception doctest.UnexpectedException(test, example, exc_info)
 
    An exception raised by "DocTestRunner" to signal that a doctest
@@ -1768,16 +1767,16 @@ exception doctest.UnexpectedException(test, example, exc_info)
 
 "UnexpectedException" defines the following attributes:
 
-UnexpectedException.test      *UnexpectedException.test..doctest.txt;*
+UnexpectedException.test       *UnexpectedException.test..doctest.txt*
 
    The "DocTest" object that was being run when the example failed.
 
-                           *UnexpectedException.example..doctest.txt;*
+                            *UnexpectedException.example..doctest.txt*
 UnexpectedException.example
 
    The "Example" that failed.
 
-                          *UnexpectedException.exc_info..doctest.txt;*
+                           *UnexpectedException.exc_info..doctest.txt*
 UnexpectedException.exc_info
 
    A tuple containing information about the unexpected exception, as

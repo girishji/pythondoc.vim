@@ -1,4 +1,4 @@
-*threading.txt;*                              Last change: 2023 Sep 09
+*threading.txt;*                              Last change: 2023 Sep 10
 
 "threading" — Thread-based parallelism
 **************************************
@@ -51,7 +51,7 @@ more information.
 
 This module defines the following functions:
 
-threading.active_count()              *active_count()..threading.txt;*
+threading.active_count()               *active_count()..threading.txt*
 
    Return the number of "Thread" objects currently alive.  The
    returned count is equal to the length of the list returned by
@@ -59,7 +59,7 @@ threading.active_count()              *active_count()..threading.txt;*
 
    The function "activeCount" is a deprecated alias for this function.
 
-threading.current_thread()          *current_thread()..threading.txt;*
+threading.current_thread()           *current_thread()..threading.txt*
 
    Return the current "Thread" object, corresponding to the caller’s
    thread of control.  If the caller’s thread of control was not
@@ -69,7 +69,7 @@ threading.current_thread()          *current_thread()..threading.txt;*
    The function "currentThread" is a deprecated alias for this
    function.
 
-threading.excepthook(args, /)           *excepthook()..threading.txt;*
+threading.excepthook(args, /)            *excepthook()..threading.txt*
 
    Handle uncaught exception raised by "Thread.run()".
 
@@ -104,7 +104,7 @@ threading.excepthook(args, /)           *excepthook()..threading.txt;*
 
    New in version 3.8.
 
-threading.__excepthook__              *__excepthook__..threading.txt;*
+threading.__excepthook__               *__excepthook__..threading.txt*
 
    Holds the original value of "threading.excepthook()". It is saved
    so that the original value can be restored in case they happen to
@@ -112,7 +112,7 @@ threading.__excepthook__              *__excepthook__..threading.txt;*
 
    New in version 3.10.
 
-threading.get_ident()                    *get_ident()..threading.txt;*
+threading.get_ident()                     *get_ident()..threading.txt*
 
    Return the ‘thread identifier’ of the current thread.  This is a
    nonzero integer.  Its value has no direct meaning; it is intended
@@ -122,7 +122,7 @@ threading.get_ident()                    *get_ident()..threading.txt;*
 
    New in version 3.3.
 
-threading.get_native_id()            *get_native_id()..threading.txt;*
+threading.get_native_id()             *get_native_id()..threading.txt*
 
    Return the native integral Thread ID of the current thread assigned
    by the kernel. This is a non-negative integer. Its value may be
@@ -135,7 +135,7 @@ threading.get_native_id()            *get_native_id()..threading.txt;*
 
    New in version 3.8.
 
-threading.enumerate()                    *enumerate()..threading.txt;*
+threading.enumerate()                     *enumerate()..threading.txt*
 
    Return a list of all "Thread" objects currently active.  The list
    includes daemonic threads and dummy thread objects created by
@@ -143,20 +143,20 @@ threading.enumerate()                    *enumerate()..threading.txt;*
    that have not yet been started.  However, the main thread is always
    part of the result, even when terminated.
 
-threading.main_thread()                *main_thread()..threading.txt;*
+threading.main_thread()                 *main_thread()..threading.txt*
 
    Return the main "Thread" object.  In normal conditions, the main
    thread is the thread from which the Python interpreter was started.
 
    New in version 3.4.
 
-threading.settrace(func)                  *settrace()..threading.txt;*
+threading.settrace(func)                   *settrace()..threading.txt*
 
    Set a trace function for all threads started from the "threading"
    module. The _func_ will be passed to  "sys.settrace()" for each
    thread, before its "run()" method is called.
 
-                              *settrace_all_threads()..threading.txt;*
+                               *settrace_all_threads()..threading.txt*
 threading.settrace_all_threads(func)
 
    Set a trace function for all threads started from the "threading"
@@ -167,19 +167,19 @@ threading.settrace_all_threads(func)
 
    New in version 3.12.
 
-threading.gettrace()                      *gettrace()..threading.txt;*
+threading.gettrace()                       *gettrace()..threading.txt*
 
    Get the trace function as set by "settrace()".
 
    New in version 3.10.
 
-threading.setprofile(func)              *setprofile()..threading.txt;*
+threading.setprofile(func)               *setprofile()..threading.txt*
 
    Set a profile function for all threads started from the "threading"
    module. The _func_ will be passed to  "sys.setprofile()" for each
    thread, before its "run()" method is called.
 
-                            *setprofile_all_threads()..threading.txt;*
+                             *setprofile_all_threads()..threading.txt*
 threading.setprofile_all_threads(func)
 
    Set a profile function for all threads started from the "threading"
@@ -190,13 +190,13 @@ threading.setprofile_all_threads(func)
 
    New in version 3.12.
 
-threading.getprofile()                  *getprofile()..threading.txt;*
+threading.getprofile()                   *getprofile()..threading.txt*
 
    Get the profiler function as set by "setprofile()".
 
    New in version 3.10.
 
-threading.stack_size([size])            *stack_size()..threading.txt;*
+threading.stack_size([size])             *stack_size()..threading.txt*
 
    Return the thread stack size used when creating new threads.  The
    optional _size_ argument specifies the stack size to be used for
@@ -221,7 +221,7 @@ threading.stack_size([size])            *stack_size()..threading.txt;*
 
 This module also defines the following constant:
 
-threading.TIMEOUT_MAX                    *TIMEOUT_MAX..threading.txt;*
+threading.TIMEOUT_MAX                     *TIMEOUT_MAX..threading.txt*
 
    The maximum value allowed for the _timeout_ parameter of blocking
    functions ("Lock.acquire()", "RLock.acquire()", "Condition.wait()",
@@ -257,7 +257,7 @@ and store attributes on it:
 <
 The instance’s values will be different for separate threads.
 
-class threading.local                          *local..threading.txt;*
+class threading.local                           *local..threading.txt*
 
    A class that represents thread-local data.
 
@@ -320,7 +320,7 @@ functionality; they are always considered alive and daemonic, and
 cannot be joined.  They are never deleted, since it is impossible to
 detect the termination of alien threads.
 
-                                              *Thread..threading.txt;*
+                                               *Thread..threading.txt*
 class threading.Thread(group=None, target=None, name=None, args=(), kwargs={}, *, daemon=None)
 
    This constructor should always be called with keyword arguments.
@@ -356,7 +356,7 @@ class threading.Thread(group=None, target=None, name=None, args=(), kwargs={}, *
 
    Changed in version 3.3: Added the _daemon_ argument.
 
-   start()                               *Thread.start()..threading.txt;*
+   start()                                *Thread.start()..threading.txt*
 
       Start the thread’s activity.
 
@@ -367,7 +367,7 @@ class threading.Thread(group=None, target=None, name=None, args=(), kwargs={}, *
       This method will raise a "RuntimeError" if called more than once
       on the same thread object.
 
-   run()                                   *Thread.run()..threading.txt;*
+   run()                                    *Thread.run()..threading.txt*
 
       Method representing the thread’s activity.
 
@@ -390,7 +390,7 @@ class threading.Thread(group=None, target=None, name=None, args=(), kwargs={}, *
          >>> t.run()
          1
 <
-   join(timeout=None)                     *Thread.join()..threading.txt;*
+   join(timeout=None)                      *Thread.join()..threading.txt*
 
       Wait until the thread terminates. This blocks the calling thread
       until the thread whose "join()" method is called terminates –
@@ -414,21 +414,21 @@ class threading.Thread(group=None, target=None, name=None, args=(), kwargs={}, *
       error to "join()" a thread before it has been started and
       attempts to do so raise the same exception.
 
-   name                                     *Thread.name..threading.txt;*
+   name                                      *Thread.name..threading.txt*
 
       A string used for identification purposes only. It has no
       semantics. Multiple threads may be given the same name.  The
       initial name is set by the constructor.
 
-   getName()                           *Thread.getName()..threading.txt;*
-   setName()                           *Thread.setName()..threading.txt;*
+   getName()                            *Thread.getName()..threading.txt*
+   setName()                            *Thread.setName()..threading.txt*
 
       Deprecated getter/setter API for "name"; use it directly as a
       property instead.
 
       Deprecated since version 3.10.
 
-   ident                                   *Thread.ident..threading.txt;*
+   ident                                    *Thread.ident..threading.txt*
 
       The ‘thread identifier’ of this thread or "None" if the thread
       has not been started.  This is a nonzero integer.  See the
@@ -436,7 +436,7 @@ class threading.Thread(group=None, target=None, name=None, args=(), kwargs={}, *
       a thread exits and another thread is created.  The identifier is
       available even after the thread has exited.
 
-   native_id                           *Thread.native_id..threading.txt;*
+   native_id                            *Thread.native_id..threading.txt*
 
       The Thread ID ("TID") of this thread, as assigned by the OS
       (kernel). This is a non-negative integer, or "None" if the
@@ -456,7 +456,7 @@ class threading.Thread(group=None, target=None, name=None, args=(), kwargs={}, *
 
       New in version 3.8.
 
-   is_alive()                         *Thread.is_alive()..threading.txt;*
+   is_alive()                          *Thread.is_alive()..threading.txt*
 
       Return whether the thread is alive.
 
@@ -464,7 +464,7 @@ class threading.Thread(group=None, target=None, name=None, args=(), kwargs={}, *
       until just after the "run()" method terminates.  The module
       function "enumerate()" returns a list of all alive threads.
 
-   daemon                                 *Thread.daemon..threading.txt;*
+   daemon                                  *Thread.daemon..threading.txt*
 
       A boolean value indicating whether this thread is a daemon
       thread ("True") or not ("False").  This must be set before
@@ -476,8 +476,8 @@ class threading.Thread(group=None, target=None, name=None, args=(), kwargs={}, *
       The entire Python program exits when no alive non-daemon threads
       are left.
 
-   isDaemon()                         *Thread.isDaemon()..threading.txt;*
-   setDaemon()                       *Thread.setDaemon()..threading.txt;*
+   isDaemon()                          *Thread.isDaemon()..threading.txt*
+   setDaemon()                        *Thread.setDaemon()..threading.txt*
 
       Deprecated getter/setter API for "daemon"; use it directly as a
       property instead.
@@ -513,7 +513,7 @@ proceeds is not defined, and may vary across implementations.
 
 All methods are executed atomically.
 
-class threading.Lock                            *Lock..threading.txt;*
+class threading.Lock                             *Lock..threading.txt*
 
    The class implementing primitive lock objects.  Once a thread has
    acquired a lock, subsequent attempts to acquire it block, until it
@@ -523,7 +523,7 @@ class threading.Lock                            *Lock..threading.txt;*
    instance of the most efficient version of the concrete Lock class
    that is supported by the platform.
 
-   acquire(blocking=True, timeout=-1)    *Lock.acquire()..threading.txt;*
+   acquire(blocking=True, timeout=-1)     *Lock.acquire()..threading.txt*
 
       Acquire a lock, blocking or non-blocking.
 
@@ -552,7 +552,7 @@ class threading.Lock                            *Lock..threading.txt;*
       by signals on POSIX if the underlying threading implementation
       supports it.
 
-   release()                             *Lock.release()..threading.txt;*
+   release()                              *Lock.release()..threading.txt*
 
       Release a lock.  This can be called from any thread, not only
       the thread which has acquired the lock.
@@ -565,7 +565,7 @@ class threading.Lock                            *Lock..threading.txt;*
 
       There is no return value.
 
-   locked()                               *Lock.locked()..threading.txt;*
+   locked()                                *Lock.locked()..threading.txt*
 
       Return "True" if the lock is acquired.
 
@@ -588,7 +588,7 @@ resets the lock to unlocked and allows another thread blocked in
 
 Reentrant locks also support the context management protocol.
 
-class threading.RLock                          *RLock..threading.txt;*
+class threading.RLock                           *RLock..threading.txt*
 
    This class implements reentrant lock objects.  A reentrant lock
    must be released by the thread that acquired it.  Once a thread has
@@ -600,7 +600,7 @@ class threading.RLock                          *RLock..threading.txt;*
    instance of the most efficient version of the concrete RLock class
    that is supported by the platform.
 
-   acquire(blocking=True, timeout=-1)   *RLock.acquire()..threading.txt;*
+   acquire(blocking=True, timeout=-1)    *RLock.acquire()..threading.txt*
 
       Acquire a lock, blocking or non-blocking.
 
@@ -630,7 +630,7 @@ class threading.RLock                          *RLock..threading.txt;*
 
       Changed in version 3.2: The _timeout_ parameter is new.
 
-   release()                            *RLock.release()..threading.txt;*
+   release()                             *RLock.release()..threading.txt*
 
       Release a lock, decrementing the recursion level.  If after the
       decrement it is zero, reset the lock to unlocked (not owned by
@@ -714,7 +714,7 @@ state change can be interesting for only one or several waiting
 threads.  E.g. in a typical producer-consumer situation, adding one
 item to the buffer only needs to wake up one consumer thread.
 
-class threading.Condition(lock=None)       *Condition..threading.txt;*
+class threading.Condition(lock=None)        *Condition..threading.txt*
 
    This class implements condition variable objects.  A condition
    variable allows one or more threads to wait until they are notified
@@ -727,18 +727,18 @@ class threading.Condition(lock=None)       *Condition..threading.txt;*
 
    Changed in version 3.3: changed from a factory function to a class.
 
-   acquire(*args)                   *Condition.acquire()..threading.txt;*
+   acquire(*args)                    *Condition.acquire()..threading.txt*
 
       Acquire the underlying lock. This method calls the corresponding
       method on the underlying lock; the return value is whatever that
       method returns.
 
-   release()                        *Condition.release()..threading.txt;*
+   release()                         *Condition.release()..threading.txt*
 
       Release the underlying lock. This method calls the corresponding
       method on the underlying lock; there is no return value.
 
-   wait(timeout=None)                  *Condition.wait()..threading.txt;*
+   wait(timeout=None)                   *Condition.wait()..threading.txt*
 
       Wait until notified or until a timeout occurs. If the calling
       thread has not acquired the lock when this method is called, a
@@ -768,7 +768,7 @@ class threading.Condition(lock=None)       *Condition..threading.txt;*
       Changed in version 3.2: Previously, the method always returned
       "None".
 
-                                *Condition.wait_for()..threading.txt;*
+                                 *Condition.wait_for()..threading.txt*
    wait_for(predicate, timeout=None)
 
       Wait until a condition evaluates to true.  _predicate_ should be
@@ -792,7 +792,7 @@ class threading.Condition(lock=None)       *Condition..threading.txt;*
 
       New in version 3.2.
 
-   notify(n=1)                       *Condition.notify()..threading.txt;*
+   notify(n=1)                        *Condition.notify()..threading.txt*
 
       By default, wake up one thread waiting on this condition, if
       any.  If the calling thread has not acquired the lock when this
@@ -810,7 +810,7 @@ class threading.Condition(lock=None)       *Condition..threading.txt;*
       "wait()" call until it can reacquire the lock.  Since "notify()"
       does not release the lock, its caller should.
 
-   notify_all()                  *Condition.notify_all()..threading.txt;*
+   notify_all()                   *Condition.notify_all()..threading.txt*
 
       Wake up all threads waiting on this condition.  This method acts
       like "notify()", but wakes up all waiting threads instead of
@@ -835,7 +835,7 @@ zero, it blocks, waiting until some other thread calls "release()".
 
 Semaphores also support the context management protocol.
 
-class threading.Semaphore(value=1)         *Semaphore..threading.txt;*
+class threading.Semaphore(value=1)          *Semaphore..threading.txt*
 
    This class implements semaphore objects.  A semaphore manages an
    atomic counter representing the number of "release()" calls minus
@@ -849,7 +849,7 @@ class threading.Semaphore(value=1)         *Semaphore..threading.txt;*
 
    Changed in version 3.3: changed from a factory function to a class.
 
-                                 *Semaphore.acquire()..threading.txt;*
+                                  *Semaphore.acquire()..threading.txt*
    acquire(blocking=True, timeout=None)
 
       Acquire a semaphore.
@@ -877,7 +877,7 @@ class threading.Semaphore(value=1)         *Semaphore..threading.txt;*
 
       Changed in version 3.2: The _timeout_ parameter is new.
 
-   release(n=1)                     *Semaphore.release()..threading.txt;*
+   release(n=1)                      *Semaphore.release()..threading.txt*
 
       Release a semaphore, incrementing the internal counter by _n_.
       When it was zero on entry and other threads are waiting for it
@@ -886,7 +886,7 @@ class threading.Semaphore(value=1)         *Semaphore..threading.txt;*
       Changed in version 3.9: Added the _n_ parameter to release
       multiple waiting threads at once.
 
-                                    *BoundedSemaphore..threading.txt;*
+                                     *BoundedSemaphore..threading.txt*
 class threading.BoundedSemaphore(value=1)
 
    Class implementing bounded semaphore objects.  A bounded semaphore
@@ -937,7 +937,7 @@ An event object manages an internal flag that can be set to true with
 the "set()" method and reset to false with the "clear()" method.  The
 "wait()" method blocks until the flag is true.
 
-class threading.Event                          *Event..threading.txt;*
+class threading.Event                           *Event..threading.txt*
 
    Class implementing event objects.  An event manages a flag that can
    be set to true with the "set()" method and reset to false with the
@@ -946,25 +946,25 @@ class threading.Event                          *Event..threading.txt;*
 
    Changed in version 3.3: changed from a factory function to a class.
 
-   is_set()                              *Event.is_set()..threading.txt;*
+   is_set()                               *Event.is_set()..threading.txt*
 
       Return "True" if and only if the internal flag is true.
 
       The method "isSet" is a deprecated alias for this method.
 
-   set()                                    *Event.set()..threading.txt;*
+   set()                                     *Event.set()..threading.txt*
 
       Set the internal flag to true. All threads waiting for it to
       become true are awakened. Threads that call "wait()" once the
       flag is true will not block at all.
 
-   clear()                                *Event.clear()..threading.txt;*
+   clear()                                 *Event.clear()..threading.txt*
 
       Reset the internal flag to false. Subsequently, threads calling
       "wait()" will block until "set()" is called to set the internal
       flag to true again.
 
-   wait(timeout=None)                      *Event.wait()..threading.txt;*
+   wait(timeout=None)                       *Event.wait()..threading.txt*
 
       Block until the internal flag is true.  If the internal flag is
       true on entry, return immediately.  Otherwise, block until
@@ -1007,7 +1007,7 @@ For example:
    t.start()  # after 30 seconds, "hello, world" will be printed
 <
 
-                                               *Timer..threading.txt;*
+                                                *Timer..threading.txt*
 class threading.Timer(interval, function, args=None, kwargs=None)
 
    Create a timer that will run _function_ with arguments _args_ and
@@ -1018,7 +1018,7 @@ class threading.Timer(interval, function, args=None, kwargs=None)
 
    Changed in version 3.3: changed from a factory function to a class.
 
-   cancel()                              *Timer.cancel()..threading.txt;*
+   cancel()                               *Timer.cancel()..threading.txt*
 
       Stop the timer, and cancel the execution of the timer’s action.
       This will only work if the timer is still in its waiting stage.
@@ -1057,7 +1057,7 @@ thread:
            process_client_connection(connection)
 <
 
-                                             *Barrier..threading.txt;*
+                                              *Barrier..threading.txt*
 class threading.Barrier(parties, action=None, timeout=None)
 
    Create a barrier object for _parties_ number of threads.  An
@@ -1065,7 +1065,7 @@ class threading.Barrier(parties, action=None, timeout=None)
    threads when they are released.  _timeout_ is the default timeout
    value if none is specified for the "wait()" method.
 
-   wait(timeout=None)                    *Barrier.wait()..threading.txt;*
+   wait(timeout=None)                     *Barrier.wait()..threading.txt*
 
       Pass the barrier.  When all the threads party to the barrier
       have called this function, they are all released simultaneously.
@@ -1091,7 +1091,7 @@ class threading.Barrier(parties, action=None, timeout=None)
       This method may raise a "BrokenBarrierError" exception if the
       barrier is broken or reset while a thread is waiting.
 
-   reset()                              *Barrier.reset()..threading.txt;*
+   reset()                               *Barrier.reset()..threading.txt*
 
       Return the barrier to the default, empty state.  Any threads
       waiting on it will receive the "BrokenBarrierError" exception.
@@ -1101,7 +1101,7 @@ class threading.Barrier(parties, action=None, timeout=None)
       unknown.  If a barrier is broken it may be better to just leave
       it and create a new one.
 
-   abort()                              *Barrier.abort()..threading.txt;*
+   abort()                               *Barrier.abort()..threading.txt*
 
       Put the barrier into a broken state.  This causes any active or
       future calls to "wait()" to fail with the "BrokenBarrierError".
@@ -1112,19 +1112,19 @@ class threading.Barrier(parties, action=None, timeout=None)
       sensible _timeout_ value to automatically guard against one of
       the threads going awry.
 
-   parties                              *Barrier.parties..threading.txt;*
+   parties                               *Barrier.parties..threading.txt*
 
       The number of threads required to pass the barrier.
 
-   n_waiting                          *Barrier.n_waiting..threading.txt;*
+   n_waiting                           *Barrier.n_waiting..threading.txt*
 
       The number of threads currently waiting in the barrier.
 
-   broken                                *Barrier.broken..threading.txt;*
+   broken                                 *Barrier.broken..threading.txt*
 
       A boolean that is "True" if the barrier is in the broken state.
 
-                                  *BrokenBarrierError..threading.txt;*
+                                   *BrokenBarrierError..threading.txt*
 exception threading.BrokenBarrierError
 
    This exception, a subclass of "RuntimeError", is raised when the

@@ -1,4 +1,4 @@
-*optparse.txt;*                               Last change: 2023 Sep 09
+*optparse.txt;*                               Last change: 2023 Sep 10
 
 "optparse" — Parser for command line options
 ********************************************
@@ -546,7 +546,7 @@ option groups, each of which can contain several options.
 
 An option group is obtained using the class "OptionGroup":
 
-                                          *OptionGroup..optparse.txt;*
+                                           *OptionGroup..optparse.txt*
 class optparse.OptionGroup(parser, title, description=None)
 
    where
@@ -638,7 +638,7 @@ that results in the following output:
 Another interesting method, in particular when working
 programmatically with option groups is:
 
-                      *OptionParser.get_option_group()..optparse.txt;*
+                       *OptionParser.get_option_group()..optparse.txt*
 OptionParser.get_option_group(opt_str)
 
    Return the "OptionGroup" to which the short or long option string
@@ -670,7 +670,7 @@ For example, if your script is called "/usr/bin/foo":
 The following two methods can be used to print and get the "version"
 string:
 
-                         *OptionParser.print_version()..optparse.txt;*
+                          *OptionParser.print_version()..optparse.txt*
 OptionParser.print_version(file=None)
 
    Print the version message for the current program ("self.version")
@@ -679,7 +679,7 @@ OptionParser.print_version(file=None)
    of the current program.  Does nothing if "self.version" is empty or
    undefined.
 
-                           *OptionParser.get_version()..optparse.txt;*
+                            *OptionParser.get_version()..optparse.txt*
 OptionParser.get_version()
 
    Same as "print_version()" but returns the version string instead of
@@ -776,7 +776,7 @@ Creating the parser
 The first step in using "optparse" is to create an OptionParser
 instance.
 
-class optparse.OptionParser(...)         *OptionParser..optparse.txt;*
+class optparse.OptionParser(...)          *OptionParser..optparse.txt*
 
    The OptionParser constructor has no required arguments, but a
    number of optional keyword arguments.  You should always pass them
@@ -879,7 +879,7 @@ overall option string.
 The canonical way to create an "Option" instance is with the
 "add_option()" method of "OptionParser".
 
-                            *OptionParser.add_option()..optparse.txt;*
+                             *OptionParser.add_option()..optparse.txt*
 OptionParser.add_option(option)
 OptionParser.add_option(*opt_str, attr=value, ...)
 
@@ -939,7 +939,7 @@ somewhere. "optparse" always creates a special object for this,
 conventionally called "options", which is an instance of
 "optparse.Values".
 
-class optparse.Values                          *Values..optparse.txt;*
+class optparse.Values                           *Values..optparse.txt*
 
    An object holding parsed argument names and values as attributes.
    Normally created by calling when calling
@@ -983,7 +983,7 @@ options.
 Option attributes
 -----------------
 
-class optparse.Option                          *Option..optparse.txt;*
+class optparse.Option                           *Option..optparse.txt*
 
    A single command line argument, with various attributes passed by
    keyword to the constructor. Normally created with
@@ -996,21 +996,21 @@ The following option attributes may be passed as keyword arguments to
 not relevant to a particular option, or fail to pass a required option
 attribute, "optparse" raises "OptionError".
 
-Option.action                           *Option.action..optparse.txt;*
+Option.action                            *Option.action..optparse.txt*
 
    (default: ""store"")
 
    Determines "optparse"’s behaviour when this option is seen on the
    command line; the available options are documented here.
 
-Option.type                               *Option.type..optparse.txt;*
+Option.type                                *Option.type..optparse.txt*
 
    (default: ""string"")
 
    The argument type expected by this option (e.g., ""string"" or
    ""int""); the available option types are documented here.
 
-Option.dest                               *Option.dest..optparse.txt;*
+Option.dest                                *Option.dest..optparse.txt*
 
    (default: derived from option strings)
 
@@ -1019,12 +1019,12 @@ Option.dest                               *Option.dest..optparse.txt;*
    attribute of the "options" object that "optparse" builds as it
    parses the command line.
 
-Option.default                         *Option.default..optparse.txt;*
+Option.default                          *Option.default..optparse.txt*
 
    The value to use for this option’s destination if the option is not
    seen on the command line.  See also "OptionParser.set_defaults()".
 
-Option.nargs                             *Option.nargs..optparse.txt;*
+Option.nargs                              *Option.nargs..optparse.txt*
 
    (default: 1)
 
@@ -1032,29 +1032,29 @@ Option.nargs                             *Option.nargs..optparse.txt;*
    option is seen.  If > 1, "optparse" will store a tuple of values to
    "dest".
 
-Option.const                             *Option.const..optparse.txt;*
+Option.const                              *Option.const..optparse.txt*
 
    For actions that store a constant value, the constant value to
    store.
 
-Option.choices                         *Option.choices..optparse.txt;*
+Option.choices                          *Option.choices..optparse.txt*
 
    For options of type ""choice"", the list of strings the user may
    choose from.
 
-Option.callback                       *Option.callback..optparse.txt;*
+Option.callback                        *Option.callback..optparse.txt*
 
    For options with action ""callback"", the callable to call when
    this option is seen.  See section Option Callbacks for detail on
    the arguments passed to the callable.
 
-Option.callback_args             *Option.callback_args..optparse.txt;*
-Option.callback_kwargs         *Option.callback_kwargs..optparse.txt;*
+Option.callback_args              *Option.callback_args..optparse.txt*
+Option.callback_kwargs          *Option.callback_kwargs..optparse.txt*
 
    Additional positional and keyword arguments to pass to "callback"
    after the four standard callback arguments.
 
-Option.help                               *Option.help..optparse.txt;*
+Option.help                                *Option.help..optparse.txt*
 
    Help text to print for this option when listing all available
    options after the user supplies a "help" option (such as "--help").
@@ -1062,7 +1062,7 @@ Option.help                               *Option.help..optparse.txt;*
    text.  To hide this option, use the special value
    "optparse.SUPPRESS_HELP".
 
-Option.metavar                         *Option.metavar..optparse.txt;*
+Option.metavar                          *Option.metavar..optparse.txt*
 
    (default: derived from option strings)
 
@@ -1309,7 +1309,7 @@ Parsing arguments
 The whole point of creating and populating an OptionParser is to call
 its "parse_args()" method.
 
-                            *OptionParser.parse_args()..optparse.txt;*
+                             *OptionParser.parse_args()..optparse.txt*
 OptionParser.parse_args(args=None, values=None)
 
    Parse the command-line options found in _args_.
@@ -1352,7 +1352,7 @@ The default behavior of the option parser can be customized slightly,
 and you can also poke around your option parser and see what’s there.
 OptionParser provides several methods to help you out:
 
-             *OptionParser.disable_interspersed_args()..optparse.txt;*
+              *OptionParser.disable_interspersed_args()..optparse.txt*
 OptionParser.disable_interspersed_args()
 
    Set parsing to stop on the first non-option.  For example, if "-a"
@@ -1374,26 +1374,26 @@ OptionParser.disable_interspersed_args()
    options don’t get confused.  For example, each command might have a
    different set of options.
 
-              *OptionParser.enable_interspersed_args()..optparse.txt;*
+               *OptionParser.enable_interspersed_args()..optparse.txt*
 OptionParser.enable_interspersed_args()
 
    Set parsing to not stop on the first non-option, allowing
    interspersing switches with command arguments.  This is the default
    behavior.
 
-                            *OptionParser.get_option()..optparse.txt;*
+                             *OptionParser.get_option()..optparse.txt*
 OptionParser.get_option(opt_str)
 
    Returns the Option instance with the option string _opt_str_, or
    "None" if no options have that option string.
 
-                            *OptionParser.has_option()..optparse.txt;*
+                             *OptionParser.has_option()..optparse.txt*
 OptionParser.has_option(opt_str)
 
    Return "True" if the OptionParser has an option with option string
    _opt_str_ (e.g., "-q" or "--verbose").
 
-                         *OptionParser.remove_option()..optparse.txt;*
+                          *OptionParser.remove_option()..optparse.txt*
 OptionParser.remove_option(opt_str)
 
    If the "OptionParser" has an option corresponding to _opt_str_,
@@ -1488,7 +1488,7 @@ Other methods
 
 OptionParser supports several other public methods:
 
-                             *OptionParser.set_usage()..optparse.txt;*
+                              *OptionParser.set_usage()..optparse.txt*
 OptionParser.set_usage(usage)
 
    Set the usage string according to the rules described above for the
@@ -1496,7 +1496,7 @@ OptionParser.set_usage(usage)
    default usage string; use "optparse.SUPPRESS_USAGE" to suppress a
    usage message.
 
-                           *OptionParser.print_usage()..optparse.txt;*
+                            *OptionParser.print_usage()..optparse.txt*
 OptionParser.print_usage(file=None)
 
    Print the usage message for the current program ("self.usage") to
@@ -1504,12 +1504,12 @@ OptionParser.print_usage(file=None)
    "self.usage" is replaced with the name of the current program.
    Does nothing if "self.usage" is empty or not defined.
 
-OptionParser.get_usage()     *OptionParser.get_usage()..optparse.txt;*
+OptionParser.get_usage()      *OptionParser.get_usage()..optparse.txt*
 
    Same as "print_usage()" but returns the usage string instead of
    printing it.
 
-                          *OptionParser.set_defaults()..optparse.txt;*
+                           *OptionParser.set_defaults()..optparse.txt*
 OptionParser.set_defaults(dest=value, ...)
 
    Set default values for several option destinations at once.  Using
@@ -1836,12 +1836,12 @@ To add new types, you need to define your own subclass of "optparse"’s
 "Option" class.  This class has a couple of attributes that define
 "optparse"’s types: "TYPES" and "TYPE_CHECKER".
 
-Option.TYPES                             *Option.TYPES..optparse.txt;*
+Option.TYPES                              *Option.TYPES..optparse.txt*
 
    A tuple of type names; in your subclass, simply define a new tuple
    "TYPES" that builds on the standard one.
 
-Option.TYPE_CHECKER               *Option.TYPE_CHECKER..optparse.txt;*
+Option.TYPE_CHECKER                *Option.TYPE_CHECKER..optparse.txt*
 
    A dictionary mapping type names to type-checking functions.  A
    type-checking function has the following signature:
@@ -1936,19 +1936,19 @@ When you add an action, you need to categorize it by listing it in at
 least one of the following class attributes of Option (all are lists
 of strings):
 
-Option.ACTIONS                         *Option.ACTIONS..optparse.txt;*
+Option.ACTIONS                          *Option.ACTIONS..optparse.txt*
 
    All actions must be listed in ACTIONS.
 
-Option.STORE_ACTIONS             *Option.STORE_ACTIONS..optparse.txt;*
+Option.STORE_ACTIONS              *Option.STORE_ACTIONS..optparse.txt*
 
    “store” actions are additionally listed here.
 
-Option.TYPED_ACTIONS             *Option.TYPED_ACTIONS..optparse.txt;*
+Option.TYPED_ACTIONS              *Option.TYPED_ACTIONS..optparse.txt*
 
    “typed” actions are additionally listed here.
 
-                          *Option.ALWAYS_TYPED_ACTIONS..optparse.txt;*
+                           *Option.ALWAYS_TYPED_ACTIONS..optparse.txt*
 Option.ALWAYS_TYPED_ACTIONS
 
    Actions that always take a type (i.e. whose options always take a
@@ -2026,27 +2026,26 @@ Features of note:
 Exceptions
 ==========
 
-exception optparse.OptionError            *OptionError..optparse.txt;*
+exception optparse.OptionError             *OptionError..optparse.txt*
 
    Raised if an "Option" instance is created with invalid or
    inconsistent arguments.
 
-                                  *OptionConflictError..optparse.txt;*
+                                   *OptionConflictError..optparse.txt*
 exception optparse.OptionConflictError
 
    Raised if conflicting options are added to an "OptionParser".
 
-                                     *OptionValueError..optparse.txt;*
-exception optparse.OptionValueError
+exception optparse.OptionValueError   *OptionValueError..optparse.txt*
 
    Raised if an invalid option value is encountered on the command
    line.
 
-exception optparse.BadOptionError      *BadOptionError..optparse.txt;*
+exception optparse.BadOptionError       *BadOptionError..optparse.txt*
 
    Raised if an invalid option is passed on the command line.
 
-                                 *AmbiguousOptionError..optparse.txt;*
+                                  *AmbiguousOptionError..optparse.txt*
 exception optparse.AmbiguousOptionError
 
    Raised if an ambiguous option is passed on the command line.

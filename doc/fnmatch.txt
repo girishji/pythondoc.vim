@@ -1,4 +1,4 @@
-*fnmatch.txt;*                                Last change: 2023 Sep 09
+*fnmatch.txt;*                                Last change: 2023 Sep 10
 
 "fnmatch" — Unix filename pattern matching
 ******************************************
@@ -37,7 +37,7 @@ Also note that "functools.lru_cache()" with the _maxsize_ of 32768 is
 used to cache the compiled regex patterns in the following functions:
 "fnmatch()", "fnmatchcase()", "filter()".
 
-fnmatch.fnmatch(filename, pattern)           *fnmatch()..fnmatch.txt;*
+fnmatch.fnmatch(filename, pattern)            *fnmatch()..fnmatch.txt*
 
    Test whether the _filename_ string matches the _pattern_ string,
    returning "True" or "False".  Both parameters are case-normalized
@@ -55,19 +55,19 @@ fnmatch.fnmatch(filename, pattern)           *fnmatch()..fnmatch.txt;*
           if fnmatch.fnmatch(file, '*.txt'):
               print(file)
 <
-fnmatch.fnmatchcase(filename, pattern)   *fnmatchcase()..fnmatch.txt;*
+fnmatch.fnmatchcase(filename, pattern)    *fnmatchcase()..fnmatch.txt*
 
    Test whether _filename_ matches _pattern_, returning "True" or
    "False"; the comparison is case-sensitive and does not apply
    "os.path.normcase()".
 
-fnmatch.filter(names, pattern)                *filter()..fnmatch.txt;*
+fnmatch.filter(names, pattern)                 *filter()..fnmatch.txt*
 
    Construct a list from those elements of the iterable _names_ that
    match _pattern_. It is the same as "[n for n in names if fnmatch(n,
    pattern)]", but implemented more efficiently.
 
-fnmatch.translate(pattern)                 *translate()..fnmatch.txt;*
+fnmatch.translate(pattern)                  *translate()..fnmatch.txt*
 
    Return the shell-style _pattern_ converted to a regular expression
    for using with "re.match()".

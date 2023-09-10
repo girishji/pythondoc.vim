@@ -1,4 +1,4 @@
-*dis.txt;*                                    Last change: 2023 Sep 09
+*dis.txt;*                                    Last change: 2023 Sep 10
 
 "dis" — Disassembler for Python bytecode
 ****************************************
@@ -61,7 +61,7 @@ The bytecode analysis API allows pieces of Python code to be wrapped
 in a "Bytecode" object that provides easy access to details of the
 compiled code.
 
-                                                  *Bytecode..dis.txt;*
+                                                   *Bytecode..dis.txt*
 class dis.Bytecode(x, *, first_line=None, current_offset=None, show_caches=False, adaptive=False)
 
    Analyse the bytecode corresponding to a function, generator,
@@ -89,27 +89,27 @@ class dis.Bytecode(x, *, first_line=None, current_offset=None, show_caches=False
    If _adaptive_ is "True", "dis()" will display specialized bytecode
    that may be different from the original bytecode.
 
-                                 *Bytecode.from_traceback()..dis.txt;*
+                                  *Bytecode.from_traceback()..dis.txt*
    classmethod from_traceback(tb, *, show_caches=False)
 
       Construct a "Bytecode" instance from the given traceback,
       setting _current_offset_ to the instruction responsible for the
       exception.
 
-   codeobj                                   *Bytecode.codeobj..dis.txt;*
+   codeobj                                    *Bytecode.codeobj..dis.txt*
 
       The compiled code object.
 
-   first_line                             *Bytecode.first_line..dis.txt;*
+   first_line                              *Bytecode.first_line..dis.txt*
 
       The first source line of the code object (if available)
 
-   dis()                                       *Bytecode.dis()..dis.txt;*
+   dis()                                        *Bytecode.dis()..dis.txt*
 
       Return a formatted view of the bytecode operations (the same as
       printed by "dis.dis()", but returned as a multi-line string).
 
-   info()                                     *Bytecode.info()..dis.txt;*
+   info()                                      *Bytecode.info()..dis.txt*
 
       Return a formatted multi-line string with detailed information
       about the code object, like "code_info()".
@@ -141,7 +141,7 @@ convert the input directly to the desired output. They can be useful
 if only a single operation is being performed, so the intermediate
 analysis object isn’t useful:
 
-dis.code_info(x)                               *code_info()..dis.txt;*
+dis.code_info(x)                                *code_info()..dis.txt*
 
    Return a formatted multi-line string with detailed code object
    information for the supplied function, generator, asynchronous
@@ -156,7 +156,7 @@ dis.code_info(x)                               *code_info()..dis.txt;*
    Changed in version 3.7: This can now handle coroutine and
    asynchronous generator objects.
 
-dis.show_code(x, *, file=None)                 *show_code()..dis.txt;*
+dis.show_code(x, *, file=None)                  *show_code()..dis.txt*
 
    Print detailed code object information for the supplied function,
    method, source code string or code object to _file_ (or
@@ -170,7 +170,7 @@ dis.show_code(x, *, file=None)                 *show_code()..dis.txt;*
 
    Changed in version 3.4: Added _file_ parameter.
 
-                                                     *dis()..dis.txt;*
+                                                      *dis()..dis.txt*
 dis.dis(x=None, *, file=None, depth=None, show_caches=False, adaptive=False)
 
    Disassemble the _x_ object.  _x_ can denote either a module, a
@@ -210,7 +210,7 @@ dis.dis(x=None, *, file=None, depth=None, show_caches=False, adaptive=False)
    Changed in version 3.11: Added the _show_caches_ and _adaptive_
    parameters.
 
-                                                   *distb()..dis.txt;*
+                                                    *distb()..dis.txt*
 dis.distb(tb=None, *, file=None, show_caches=False, adaptive=False)
 
    Disassemble the top-of-stack function of a traceback, using the
@@ -225,10 +225,10 @@ dis.distb(tb=None, *, file=None, show_caches=False, adaptive=False)
    Changed in version 3.11: Added the _show_caches_ and _adaptive_
    parameters.
 
-                                             *disassemble()..dis.txt;*
+                                              *disassemble()..dis.txt*
 dis.disassemble(code, lasti=-1, *, file=None, show_caches=False, adaptive=False)
 
-                                                   *disco()..dis.txt;*
+                                                    *disco()..dis.txt*
 dis.disco(code, lasti=-1, *, file=None, show_caches=False, adaptive=False)
 
    Disassemble a code object, indicating the last instruction if
@@ -260,7 +260,7 @@ dis.disco(code, lasti=-1, *, file=None, show_caches=False, adaptive=False)
    Changed in version 3.11: Added the _show_caches_ and _adaptive_
    parameters.
 
-                                        *get_instructions()..dis.txt;*
+                                         *get_instructions()..dis.txt*
 dis.get_instructions(x, *, first_line=None, show_caches=False, adaptive=False)
 
    Return an iterator over the instructions in the supplied function,
@@ -282,7 +282,7 @@ dis.get_instructions(x, *, first_line=None, show_caches=False, adaptive=False)
    Changed in version 3.11: Added the _show_caches_ and _adaptive_
    parameters.
 
-dis.findlinestarts(code)                  *findlinestarts()..dis.txt;*
+dis.findlinestarts(code)                   *findlinestarts()..dis.txt*
 
    This generator function uses the "co_lines" method of the code
    object _code_ to find the offsets which are starts of lines in the
@@ -298,12 +298,12 @@ dis.findlinestarts(code)                  *findlinestarts()..dis.txt;*
    Changed in version 3.13: Line numbers can be "None" for bytecode
    that does not map to source lines.
 
-dis.findlabels(code)                          *findlabels()..dis.txt;*
+dis.findlabels(code)                           *findlabels()..dis.txt*
 
    Detect all offsets in the raw compiled bytecode string _code_ which
    are jump targets, and return a list of these offsets.
 
-                                            *stack_effect()..dis.txt;*
+                                             *stack_effect()..dis.txt*
 dis.stack_effect(opcode, oparg=None, *, jump=None)
 
    Compute the stack effect of _opcode_ with argument _oparg_.
@@ -331,83 +331,83 @@ Python Bytecode Instructions
 The "get_instructions()" function and "Bytecode" class provide details
 of bytecode instructions as "Instruction" instances:
 
-class dis.Instruction                          *Instruction..dis.txt;*
+class dis.Instruction                           *Instruction..dis.txt*
 
    Details for a bytecode operation
 
-   opcode                                  *Instruction.opcode..dis.txt;*
+   opcode                                   *Instruction.opcode..dis.txt*
 
       numeric code for operation, corresponding to the opcode values
       listed below and the bytecode values in the Opcode collections.
 
-   opname                                  *Instruction.opname..dis.txt;*
+   opname                                   *Instruction.opname..dis.txt*
 
       human readable name for operation
 
-   baseopcode                          *Instruction.baseopcode..dis.txt;*
+   baseopcode                           *Instruction.baseopcode..dis.txt*
 
       numeric code for the base operation if operation is specialized;
       otherwise equal to "opcode"
 
-   baseopname                          *Instruction.baseopname..dis.txt;*
+   baseopname                           *Instruction.baseopname..dis.txt*
 
       human readable name for the base operation if operation is
       specialized; otherwise equal to "opname"
 
-   arg                                        *Instruction.arg..dis.txt;*
+   arg                                         *Instruction.arg..dis.txt*
 
       numeric argument to operation (if any), otherwise "None"
 
-   oparg                                    *Instruction.oparg..dis.txt;*
+   oparg                                     *Instruction.oparg..dis.txt*
 
       alias for "arg"
 
-   argval                                  *Instruction.argval..dis.txt;*
+   argval                                   *Instruction.argval..dis.txt*
 
       resolved arg value (if any), otherwise "None"
 
-   argrepr                                *Instruction.argrepr..dis.txt;*
+   argrepr                                 *Instruction.argrepr..dis.txt*
 
       human readable description of operation argument (if any),
       otherwise an empty string.
 
-   offset                                  *Instruction.offset..dis.txt;*
+   offset                                   *Instruction.offset..dis.txt*
 
       start index of operation within bytecode sequence
 
-   start_offset                      *Instruction.start_offset..dis.txt;*
+   start_offset                       *Instruction.start_offset..dis.txt*
 
       start index of operation within bytecode sequence, including
       prefixed "EXTENDED_ARG" operations if present; otherwise equal
       to "offset"
 
-   cache_offset                      *Instruction.cache_offset..dis.txt;*
+   cache_offset                       *Instruction.cache_offset..dis.txt*
 
       start index of the cache entries following the operation
 
-   end_offset                          *Instruction.end_offset..dis.txt;*
+   end_offset                           *Instruction.end_offset..dis.txt*
 
       end index of the cache entries following the operation
 
-   starts_line                        *Instruction.starts_line..dis.txt;*
+   starts_line                         *Instruction.starts_line..dis.txt*
 
       "True" if this opcode starts a source line, otherwise "False"
 
-   line_number                        *Instruction.line_number..dis.txt;*
+   line_number                         *Instruction.line_number..dis.txt*
 
       source line number associated with this opcode (if any),
       otherwise "None"
 
-   is_jump_target                  *Instruction.is_jump_target..dis.txt;*
+   is_jump_target                   *Instruction.is_jump_target..dis.txt*
 
       "True" if other code jumps to here, otherwise "False"
 
-   jump_target                        *Instruction.jump_target..dis.txt;*
+   jump_target                         *Instruction.jump_target..dis.txt*
 
       bytecode index of the jump target if this is a jump operation,
       otherwise "None"
 
-   positions                            *Instruction.positions..dis.txt;*
+   positions                             *Instruction.positions..dis.txt*
 
       "dis.Positions" object holding the start and end locations that
       are covered by this instruction.
@@ -420,18 +420,18 @@ class dis.Instruction                          *Instruction..dis.txt;*
    "start_offset", "cache_offset", "end_offset", "baseopname",
    "baseopcode", "jump_target", "oparg", and "line_number".
 
-class dis.Positions                              *Positions..dis.txt;*
+class dis.Positions                               *Positions..dis.txt*
 
    In case the information is not available, some fields might be
    "None".
 
-   lineno                                    *Positions.lineno..dis.txt;*
+   lineno                                     *Positions.lineno..dis.txt*
 
-   end_lineno                            *Positions.end_lineno..dis.txt;*
+   end_lineno                             *Positions.end_lineno..dis.txt*
 
-   col_offset                            *Positions.col_offset..dis.txt;*
+   col_offset                             *Positions.col_offset..dis.txt*
 
-   end_col_offset                    *Positions.end_col_offset..dis.txt;*
+   end_col_offset                     *Positions.end_col_offset..dis.txt*
 
    New in version 3.11.
 
@@ -1675,29 +1675,29 @@ Changed in version 3.12: The collections now contain pseudo
 instructions as well. These are opcodes with values ">=
 MIN_PSEUDO_OPCODE".
 
-dis.opname                                          *opname..dis.txt;*
+dis.opname                                           *opname..dis.txt*
 
    Sequence of operation names, indexable using the bytecode.
 
-dis.opmap                                            *opmap..dis.txt;*
+dis.opmap                                             *opmap..dis.txt*
 
    Dictionary mapping operation names to bytecodes.
 
-dis.cmp_op                                          *cmp_op..dis.txt;*
+dis.cmp_op                                           *cmp_op..dis.txt*
 
    Sequence of all compare operation names.
 
-dis.hasarg                                          *hasarg..dis.txt;*
+dis.hasarg                                           *hasarg..dis.txt*
 
    Sequence of bytecodes that use their argument.
 
    New in version 3.12.
 
-dis.hasconst                                      *hasconst..dis.txt;*
+dis.hasconst                                       *hasconst..dis.txt*
 
    Sequence of bytecodes that access a constant.
 
-dis.hasfree                                        *hasfree..dis.txt;*
+dis.hasfree                                         *hasfree..dis.txt*
 
    Sequence of bytecodes that access a free variable. ‘free’ in this
    context refers to names in the current scope that are referenced by
@@ -1705,39 +1705,39 @@ dis.hasfree                                        *hasfree..dis.txt;*
    scope.  It does _not_ include references to global or builtin
    scopes.
 
-dis.hasname                                        *hasname..dis.txt;*
+dis.hasname                                         *hasname..dis.txt*
 
    Sequence of bytecodes that access an attribute by name.
 
-dis.hasjump                                        *hasjump..dis.txt;*
+dis.hasjump                                         *hasjump..dis.txt*
 
    Sequence of bytecodes that have a jump target. All jumps are
    relative.
 
    New in version 3.13.
 
-dis.haslocal                                      *haslocal..dis.txt;*
+dis.haslocal                                       *haslocal..dis.txt*
 
    Sequence of bytecodes that access a local variable.
 
-dis.hascompare                                  *hascompare..dis.txt;*
+dis.hascompare                                   *hascompare..dis.txt*
 
    Sequence of bytecodes of Boolean operations.
 
-dis.hasexc                                          *hasexc..dis.txt;*
+dis.hasexc                                           *hasexc..dis.txt*
 
    Sequence of bytecodes that set an exception handler.
 
    New in version 3.12.
 
-dis.hasjrel                                        *hasjrel..dis.txt;*
+dis.hasjrel                                         *hasjrel..dis.txt*
 
    Sequence of bytecodes that have a relative jump target.
 
    Deprecated since version 3.13: All jumps are now relative. Use
    "hasjump".
 
-dis.hasjabs                                        *hasjabs..dis.txt;*
+dis.hasjabs                                         *hasjabs..dis.txt*
 
    Sequence of bytecodes that have an absolute jump target.
 

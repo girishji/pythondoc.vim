@@ -1,4 +1,4 @@
-*tkinterscrolledtext.txt;*                    Last change: 2023 Sep 09
+*tkinter.scrolledtext.txt;*                   Last change: 2023 Sep 10
 
 "tkinter.scrolledtext" — Scrolled Text Widget
 *********************************************
@@ -20,14 +20,14 @@ used directly to achieve most normal geometry management behavior.
 Should more specific control be necessary, the following attributes
 are available:
 
-                              *ScrolledText..tkinterscrolledtext.txt;*
+                              *ScrolledText..tkinter.scrolledtext.txt*
 class tkinter.scrolledtext.ScrolledText(master=None, **kw)
 
-   frame                   *ScrolledText.frame..tkinterscrolledtext.txt;*
+   frame                   *ScrolledText.frame..tkinter.scrolledtext.txt*
 
       The frame which surrounds the text and scroll bar widgets.
 
-   vbar                     *ScrolledText.vbar..tkinterscrolledtext.txt;*
+   vbar                     *ScrolledText.vbar..tkinter.scrolledtext.txt*
 
       The scroll bar widget.
 

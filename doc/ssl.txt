@@ -1,4 +1,4 @@
-*ssl.txt;*                                    Last change: 2023 Sep 09
+*ssl.txt;*                                    Last change: 2023 Sep 10
 
 "ssl" — TLS/SSL wrapper for socket objects
 ******************************************
@@ -116,7 +116,7 @@ Context creation
 A convenience function helps create "SSLContext" objects for common
 purposes.
 
-                                  *create_default_context()..ssl.txt;*
+                                   *create_default_context()..ssl.txt*
 ssl.create_default_context(purpose=Purpose.SERVER_AUTH, cafile=None, capath=None, cadata=None)
 
    Return a new "SSLContext" object with default settings for the
@@ -184,7 +184,7 @@ ssl.create_default_context(purpose=Purpose.SERVER_AUTH, cafile=None, capath=None
 Exceptions
 ----------
 
-exception ssl.SSLError                            *SSLError..ssl.txt;*
+exception ssl.SSLError                             *SSLError..ssl.txt*
 
    Raised to signal an error from the underlying SSL implementation
    (currently provided by the OpenSSL library).  This signifies some
@@ -196,7 +196,7 @@ exception ssl.SSLError                            *SSLError..ssl.txt;*
    Changed in version 3.3: "SSLError" used to be a subtype of
    "socket.error".
 
-   library                                   *SSLError.library..ssl.txt;*
+   library                                    *SSLError.library..ssl.txt*
 
       A string mnemonic designating the OpenSSL submodule in which the
       error occurred, such as "SSL", "PEM" or "X509".  The range of
@@ -204,7 +204,7 @@ exception ssl.SSLError                            *SSLError..ssl.txt;*
 
       New in version 3.3.
 
-   reason                                     *SSLError.reason..ssl.txt;*
+   reason                                      *SSLError.reason..ssl.txt*
 
       A string mnemonic designating the reason this error occurred,
       for example "CERTIFICATE_VERIFY_FAILED".  The range of possible
@@ -212,7 +212,7 @@ exception ssl.SSLError                            *SSLError..ssl.txt;*
 
       New in version 3.3.
 
-exception ssl.SSLZeroReturnError        *SSLZeroReturnError..ssl.txt;*
+exception ssl.SSLZeroReturnError         *SSLZeroReturnError..ssl.txt*
 
    A subclass of "SSLError" raised when trying to read or write and
    the SSL connection has been closed cleanly.  Note that this doesn’t
@@ -220,7 +220,7 @@ exception ssl.SSLZeroReturnError        *SSLZeroReturnError..ssl.txt;*
 
    New in version 3.3.
 
-exception ssl.SSLWantReadError            *SSLWantReadError..ssl.txt;*
+exception ssl.SSLWantReadError             *SSLWantReadError..ssl.txt*
 
    A subclass of "SSLError" raised by a non-blocking SSL socket when
    trying to read or write data, but more data needs to be received on
@@ -228,7 +228,7 @@ exception ssl.SSLWantReadError            *SSLWantReadError..ssl.txt;*
 
    New in version 3.3.
 
-exception ssl.SSLWantWriteError          *SSLWantWriteError..ssl.txt;*
+exception ssl.SSLWantWriteError           *SSLWantWriteError..ssl.txt*
 
    A subclass of "SSLError" raised by a non-blocking SSL socket when
    trying to read or write data, but more data needs to be sent on the
@@ -236,7 +236,7 @@ exception ssl.SSLWantWriteError          *SSLWantWriteError..ssl.txt;*
 
    New in version 3.3.
 
-exception ssl.SSLSyscallError              *SSLSyscallError..ssl.txt;*
+exception ssl.SSLSyscallError               *SSLSyscallError..ssl.txt*
 
    A subclass of "SSLError" raised when a system error was encountered
    while trying to fulfill an operation on a SSL socket.
@@ -245,7 +245,7 @@ exception ssl.SSLSyscallError              *SSLSyscallError..ssl.txt;*
 
    New in version 3.3.
 
-exception ssl.SSLEOFError                      *SSLEOFError..ssl.txt;*
+exception ssl.SSLEOFError                       *SSLEOFError..ssl.txt*
 
    A subclass of "SSLError" raised when the SSL connection has been
    terminated abruptly.  Generally, you shouldn’t try to reuse the
@@ -253,7 +253,7 @@ exception ssl.SSLEOFError                      *SSLEOFError..ssl.txt;*
 
    New in version 3.3.
 
-                                  *SSLCertVerificationError..ssl.txt;*
+                                   *SSLCertVerificationError..ssl.txt*
 exception ssl.SSLCertVerificationError
 
    A subclass of "SSLError" raised when certificate validation has
@@ -261,15 +261,15 @@ exception ssl.SSLCertVerificationError
 
    New in version 3.7.
 
-   verify_code           *SSLCertVerificationError.verify_code..ssl.txt;*
+   verify_code            *SSLCertVerificationError.verify_code..ssl.txt*
 
       A numeric error number that denotes the verification error.
 
-   verify_message     *SSLCertVerificationError.verify_message..ssl.txt;*
+   verify_message      *SSLCertVerificationError.verify_message..ssl.txt*
 
       A human readable string of the verification error.
 
-exception ssl.CertificateError            *CertificateError..ssl.txt;*
+exception ssl.CertificateError             *CertificateError..ssl.txt*
 
    An alias for "SSLCertVerificationError".
 
@@ -280,7 +280,7 @@ exception ssl.CertificateError            *CertificateError..ssl.txt;*
 Random generation
 -----------------
 
-ssl.RAND_bytes(num)                           *RAND_bytes()..ssl.txt;*
+ssl.RAND_bytes(num)                            *RAND_bytes()..ssl.txt*
 
    Return _num_ cryptographically strong pseudo-random bytes. Raises
    an "SSLError" if the PRNG has not been seeded with enough data or
@@ -296,14 +296,14 @@ ssl.RAND_bytes(num)                           *RAND_bytes()..ssl.txt;*
 
    New in version 3.3.
 
-ssl.RAND_status()                            *RAND_status()..ssl.txt;*
+ssl.RAND_status()                             *RAND_status()..ssl.txt*
 
    Return "True" if the SSL pseudo-random number generator has been
    seeded with ‘enough’ randomness, and "False" otherwise.  You can
    use "ssl.RAND_egd()" and "ssl.RAND_add()" to increase the
    randomness of the pseudo-random number generator.
 
-ssl.RAND_add(bytes, entropy)                    *RAND_add()..ssl.txt;*
+ssl.RAND_add(bytes, entropy)                     *RAND_add()..ssl.txt*
 
    Mix the given _bytes_ into the SSL pseudo-random number generator.
    The parameter _entropy_ (a float) is a lower bound on the entropy
@@ -317,7 +317,7 @@ ssl.RAND_add(bytes, entropy)                    *RAND_add()..ssl.txt;*
 Certificate handling
 --------------------
 
-                                    *cert_time_to_seconds()..ssl.txt;*
+                                     *cert_time_to_seconds()..ssl.txt*
 ssl.cert_time_to_seconds(cert_time)
 
    Return the time in seconds since the Epoch, given the "cert_time"
@@ -341,7 +341,7 @@ ssl.cert_time_to_seconds(cert_time)
    was used previously. Return an integer (no fractions of a second in
    the input format)
 
-                                  *get_server_certificate()..ssl.txt;*
+                                   *get_server_certificate()..ssl.txt*
 ssl.get_server_certificate(addr, ssl_version=PROTOCOL_TLS_CLIENT, ca_certs=None[, timeout])
 
    Given the address "addr" of an SSL-protected server, as a
@@ -364,20 +364,19 @@ ssl.get_server_certificate(addr, ssl_version=PROTOCOL_TLS_CLIENT, ca_certs=None[
 
    Changed in version 3.10: The _timeout_ parameter was added.
 
-                                    *DER_cert_to_PEM_cert()..ssl.txt;*
+                                     *DER_cert_to_PEM_cert()..ssl.txt*
 ssl.DER_cert_to_PEM_cert(DER_cert_bytes)
 
    Given a certificate as a DER-encoded blob of bytes, returns a PEM-
    encoded string version of the same certificate.
 
-                                    *PEM_cert_to_DER_cert()..ssl.txt;*
+                                     *PEM_cert_to_DER_cert()..ssl.txt*
 ssl.PEM_cert_to_DER_cert(PEM_cert_string)
 
    Given a certificate as an ASCII PEM string, returns a DER-encoded
    sequence of bytes for that same certificate.
 
-                                *get_default_verify_paths()..ssl.txt;*
-ssl.get_default_verify_paths()
+ssl.get_default_verify_paths()   *get_default_verify_paths()..ssl.txt*
 
    Returns a named tuple with paths to OpenSSL’s default cafile and
    capath. The paths are the same as used by
@@ -402,7 +401,7 @@ ssl.get_default_verify_paths()
 
    New in version 3.4.
 
-ssl.enum_certificates(store_name)      *enum_certificates()..ssl.txt;*
+ssl.enum_certificates(store_name)       *enum_certificates()..ssl.txt*
 
    Retrieve certificates from Windows’ system cert store. _store_name_
    may be one of "CA", "ROOT" or "MY". Windows may provide additional
@@ -425,7 +424,7 @@ ssl.enum_certificates(store_name)      *enum_certificates()..ssl.txt;*
 
    New in version 3.4.
 
-ssl.enum_crls(store_name)                      *enum_crls()..ssl.txt;*
+ssl.enum_crls(store_name)                       *enum_crls()..ssl.txt*
 
    Retrieve CRLs from Windows’ system cert store. _store_name_ may be
    one of "CA", "ROOT" or "MY". Windows may provide additional cert
@@ -448,7 +447,7 @@ Constants
 
    New in version 3.6.
 
-ssl.CERT_NONE                                    *CERT_NONE..ssl.txt;*
+ssl.CERT_NONE                                     *CERT_NONE..ssl.txt*
 
    Possible value for "SSLContext.verify_mode". Except for
    "PROTOCOL_TLS_CLIENT", it is the default mode.  With client-side
@@ -461,7 +460,7 @@ ssl.CERT_NONE                                    *CERT_NONE..ssl.txt;*
 
    See the discussion of Security considerations below.
 
-ssl.CERT_OPTIONAL                            *CERT_OPTIONAL..ssl.txt;*
+ssl.CERT_OPTIONAL                             *CERT_OPTIONAL..ssl.txt*
 
    Possible value for "SSLContext.verify_mode". In client mode,
    "CERT_OPTIONAL" has the same meaning as "CERT_REQUIRED". It is
@@ -476,7 +475,7 @@ ssl.CERT_OPTIONAL                            *CERT_OPTIONAL..ssl.txt;*
    Use of this setting requires a valid set of CA certificates to be
    passed to "SSLContext.load_verify_locations()".
 
-ssl.CERT_REQUIRED                            *CERT_REQUIRED..ssl.txt;*
+ssl.CERT_REQUIRED                             *CERT_REQUIRED..ssl.txt*
 
    Possible value for "SSLContext.verify_mode". In this mode,
    certificates are required from the other side of the socket
@@ -494,13 +493,13 @@ ssl.CERT_REQUIRED                            *CERT_REQUIRED..ssl.txt;*
    Use of this setting requires a valid set of CA certificates to be
    passed to "SSLContext.load_verify_locations()".
 
-class ssl.VerifyMode                            *VerifyMode..ssl.txt;*
+class ssl.VerifyMode                             *VerifyMode..ssl.txt*
 
    "enum.IntEnum" collection of CERT_* constants.
 
    New in version 3.6.
 
-ssl.VERIFY_DEFAULT                          *VERIFY_DEFAULT..ssl.txt;*
+ssl.VERIFY_DEFAULT                           *VERIFY_DEFAULT..ssl.txt*
 
    Possible value for "SSLContext.verify_flags". In this mode,
    certificate revocation lists (CRLs) are not checked. By default
@@ -508,7 +507,7 @@ ssl.VERIFY_DEFAULT                          *VERIFY_DEFAULT..ssl.txt;*
 
    New in version 3.4.
 
-ssl.VERIFY_CRL_CHECK_LEAF            *VERIFY_CRL_CHECK_LEAF..ssl.txt;*
+ssl.VERIFY_CRL_CHECK_LEAF             *VERIFY_CRL_CHECK_LEAF..ssl.txt*
 
    Possible value for "SSLContext.verify_flags". In this mode, only
    the peer cert is checked but none of the intermediate CA
@@ -519,28 +518,28 @@ ssl.VERIFY_CRL_CHECK_LEAF            *VERIFY_CRL_CHECK_LEAF..ssl.txt;*
 
    New in version 3.4.
 
-ssl.VERIFY_CRL_CHECK_CHAIN          *VERIFY_CRL_CHECK_CHAIN..ssl.txt;*
+ssl.VERIFY_CRL_CHECK_CHAIN           *VERIFY_CRL_CHECK_CHAIN..ssl.txt*
 
    Possible value for "SSLContext.verify_flags". In this mode, CRLs of
    all certificates in the peer cert chain are checked.
 
    New in version 3.4.
 
-ssl.VERIFY_X509_STRICT                  *VERIFY_X509_STRICT..ssl.txt;*
+ssl.VERIFY_X509_STRICT                   *VERIFY_X509_STRICT..ssl.txt*
 
    Possible value for "SSLContext.verify_flags" to disable workarounds
    for broken X.509 certificates.
 
    New in version 3.4.
 
-ssl.VERIFY_ALLOW_PROXY_CERTS      *VERIFY_ALLOW_PROXY_CERTS..ssl.txt;*
+ssl.VERIFY_ALLOW_PROXY_CERTS       *VERIFY_ALLOW_PROXY_CERTS..ssl.txt*
 
    Possible value for "SSLContext.verify_flags" to enables proxy
    certificate verification.
 
    New in version 3.10.
 
-ssl.VERIFY_X509_TRUSTED_FIRST    *VERIFY_X509_TRUSTED_FIRST..ssl.txt;*
+ssl.VERIFY_X509_TRUSTED_FIRST     *VERIFY_X509_TRUSTED_FIRST..ssl.txt*
 
    Possible value for "SSLContext.verify_flags". It instructs OpenSSL
    to prefer trusted certificates when building the trust chain to
@@ -548,7 +547,7 @@ ssl.VERIFY_X509_TRUSTED_FIRST    *VERIFY_X509_TRUSTED_FIRST..ssl.txt;*
 
    New in version 3.4.4.
 
-ssl.VERIFY_X509_PARTIAL_CHAIN    *VERIFY_X509_PARTIAL_CHAIN..ssl.txt;*
+ssl.VERIFY_X509_PARTIAL_CHAIN     *VERIFY_X509_PARTIAL_CHAIN..ssl.txt*
 
    Possible value for "SSLContext.verify_flags". It instructs OpenSSL
    to accept intermediate CAs in the trust store to be treated as
@@ -558,13 +557,13 @@ ssl.VERIFY_X509_PARTIAL_CHAIN    *VERIFY_X509_PARTIAL_CHAIN..ssl.txt;*
 
    New in version 3.10.
 
-class ssl.VerifyFlags                          *VerifyFlags..ssl.txt;*
+class ssl.VerifyFlags                           *VerifyFlags..ssl.txt*
 
    "enum.IntFlag" collection of VERIFY_* constants.
 
    New in version 3.6.
 
-ssl.PROTOCOL_TLS                              *PROTOCOL_TLS..ssl.txt;*
+ssl.PROTOCOL_TLS                               *PROTOCOL_TLS..ssl.txt*
 
    Selects the highest protocol version that both the client and
    server support. Despite the name, this option can select both “SSL”
@@ -577,7 +576,7 @@ ssl.PROTOCOL_TLS                              *PROTOCOL_TLS..ssl.txt;*
    TLS protocol constant is deprecated in favor of
    "PROTOCOL_TLS_CLIENT" and "PROTOCOL_TLS_SERVER".
 
-ssl.PROTOCOL_TLS_CLIENT                *PROTOCOL_TLS_CLIENT..ssl.txt;*
+ssl.PROTOCOL_TLS_CLIENT                 *PROTOCOL_TLS_CLIENT..ssl.txt*
 
    Auto-negotiate the highest protocol version that both the client
    and server support, and configure the context client-side
@@ -586,7 +585,7 @@ ssl.PROTOCOL_TLS_CLIENT                *PROTOCOL_TLS_CLIENT..ssl.txt;*
 
    New in version 3.6.
 
-ssl.PROTOCOL_TLS_SERVER                *PROTOCOL_TLS_SERVER..ssl.txt;*
+ssl.PROTOCOL_TLS_SERVER                 *PROTOCOL_TLS_SERVER..ssl.txt*
 
    Auto-negotiate the highest protocol version that both the client
    and server support, and configure the context server-side
@@ -594,13 +593,13 @@ ssl.PROTOCOL_TLS_SERVER                *PROTOCOL_TLS_SERVER..ssl.txt;*
 
    New in version 3.6.
 
-ssl.PROTOCOL_SSLv23                        *PROTOCOL_SSLv23..ssl.txt;*
+ssl.PROTOCOL_SSLv23                         *PROTOCOL_SSLv23..ssl.txt*
 
    Alias for "PROTOCOL_TLS".
 
    Deprecated since version 3.6: Use "PROTOCOL_TLS" instead.
 
-ssl.PROTOCOL_SSLv3                          *PROTOCOL_SSLv3..ssl.txt;*
+ssl.PROTOCOL_SSLv3                           *PROTOCOL_SSLv3..ssl.txt*
 
    Selects SSL version 3 as the channel encryption protocol.
 
@@ -616,14 +615,14 @@ ssl.PROTOCOL_SSLv3                          *PROTOCOL_SSLv3..ssl.txt;*
    or "PROTOCOL_TLS_CLIENT" with "SSLContext.minimum_version" and
    "SSLContext.maximum_version" instead.
 
-ssl.PROTOCOL_TLSv1                          *PROTOCOL_TLSv1..ssl.txt;*
+ssl.PROTOCOL_TLSv1                           *PROTOCOL_TLSv1..ssl.txt*
 
    Selects TLS version 1.0 as the channel encryption protocol.
 
    Deprecated since version 3.6: OpenSSL has deprecated all version
    specific protocols.
 
-ssl.PROTOCOL_TLSv1_1                      *PROTOCOL_TLSv1_1..ssl.txt;*
+ssl.PROTOCOL_TLSv1_1                       *PROTOCOL_TLSv1_1..ssl.txt*
 
    Selects TLS version 1.1 as the channel encryption protocol.
    Available only with openssl version 1.0.1+.
@@ -633,7 +632,7 @@ ssl.PROTOCOL_TLSv1_1                      *PROTOCOL_TLSv1_1..ssl.txt;*
    Deprecated since version 3.6: OpenSSL has deprecated all version
    specific protocols.
 
-ssl.PROTOCOL_TLSv1_2                      *PROTOCOL_TLSv1_2..ssl.txt;*
+ssl.PROTOCOL_TLSv1_2                       *PROTOCOL_TLSv1_2..ssl.txt*
 
    Selects TLS version 1.2 as the channel encryption protocol.
    Available only with openssl version 1.0.1+.
@@ -643,7 +642,7 @@ ssl.PROTOCOL_TLSv1_2                      *PROTOCOL_TLSv1_2..ssl.txt;*
    Deprecated since version 3.6: OpenSSL has deprecated all version
    specific protocols.
 
-ssl.OP_ALL                                          *OP_ALL..ssl.txt;*
+ssl.OP_ALL                                           *OP_ALL..ssl.txt*
 
    Enables workarounds for various bugs present in other SSL
    implementations. This option is set by default.  It does not
@@ -651,7 +650,7 @@ ssl.OP_ALL                                          *OP_ALL..ssl.txt;*
 
    New in version 3.2.
 
-ssl.OP_NO_SSLv2                                *OP_NO_SSLv2..ssl.txt;*
+ssl.OP_NO_SSLv2                                 *OP_NO_SSLv2..ssl.txt*
 
    Prevents an SSLv2 connection.  This option is only applicable in
    conjunction with "PROTOCOL_TLS".  It prevents the peers from
@@ -661,7 +660,7 @@ ssl.OP_NO_SSLv2                                *OP_NO_SSLv2..ssl.txt;*
 
    Deprecated since version 3.6: SSLv2 is deprecated
 
-ssl.OP_NO_SSLv3                                *OP_NO_SSLv3..ssl.txt;*
+ssl.OP_NO_SSLv3                                 *OP_NO_SSLv3..ssl.txt*
 
    Prevents an SSLv3 connection.  This option is only applicable in
    conjunction with "PROTOCOL_TLS".  It prevents the peers from
@@ -671,7 +670,7 @@ ssl.OP_NO_SSLv3                                *OP_NO_SSLv3..ssl.txt;*
 
    Deprecated since version 3.6: SSLv3 is deprecated
 
-ssl.OP_NO_TLSv1                                *OP_NO_TLSv1..ssl.txt;*
+ssl.OP_NO_TLSv1                                 *OP_NO_TLSv1..ssl.txt*
 
    Prevents a TLSv1 connection.  This option is only applicable in
    conjunction with "PROTOCOL_TLS".  It prevents the peers from
@@ -683,7 +682,7 @@ ssl.OP_NO_TLSv1                                *OP_NO_TLSv1..ssl.txt;*
    OpenSSL 1.1.0, use the new "SSLContext.minimum_version" and
    "SSLContext.maximum_version" instead.
 
-ssl.OP_NO_TLSv1_1                            *OP_NO_TLSv1_1..ssl.txt;*
+ssl.OP_NO_TLSv1_1                             *OP_NO_TLSv1_1..ssl.txt*
 
    Prevents a TLSv1.1 connection. This option is only applicable in
    conjunction with "PROTOCOL_TLS". It prevents the peers from
@@ -695,7 +694,7 @@ ssl.OP_NO_TLSv1_1                            *OP_NO_TLSv1_1..ssl.txt;*
    Deprecated since version 3.7: The option is deprecated since
    OpenSSL 1.1.0.
 
-ssl.OP_NO_TLSv1_2                            *OP_NO_TLSv1_2..ssl.txt;*
+ssl.OP_NO_TLSv1_2                             *OP_NO_TLSv1_2..ssl.txt*
 
    Prevents a TLSv1.2 connection. This option is only applicable in
    conjunction with "PROTOCOL_TLS". It prevents the peers from
@@ -707,7 +706,7 @@ ssl.OP_NO_TLSv1_2                            *OP_NO_TLSv1_2..ssl.txt;*
    Deprecated since version 3.7: The option is deprecated since
    OpenSSL 1.1.0.
 
-ssl.OP_NO_TLSv1_3                            *OP_NO_TLSv1_3..ssl.txt;*
+ssl.OP_NO_TLSv1_3                             *OP_NO_TLSv1_3..ssl.txt*
 
    Prevents a TLSv1.3 connection. This option is only applicable in
    conjunction with "PROTOCOL_TLS". It prevents the peers from
@@ -721,7 +720,7 @@ ssl.OP_NO_TLSv1_3                            *OP_NO_TLSv1_3..ssl.txt;*
    OpenSSL 1.1.0. It was added to 2.7.15, 3.6.3 and 3.7.0 for
    backwards compatibility with OpenSSL 1.0.2.
 
-ssl.OP_NO_RENEGOTIATION                *OP_NO_RENEGOTIATION..ssl.txt;*
+ssl.OP_NO_RENEGOTIATION                 *OP_NO_RENEGOTIATION..ssl.txt*
 
    Disable all renegotiation in TLSv1.2 and earlier. Do not send
    HelloRequest messages, and ignore renegotiation requests via
@@ -731,7 +730,7 @@ ssl.OP_NO_RENEGOTIATION                *OP_NO_RENEGOTIATION..ssl.txt;*
 
    New in version 3.7.
 
-                               *OP_CIPHER_SERVER_PREFERENCE..ssl.txt;*
+                                *OP_CIPHER_SERVER_PREFERENCE..ssl.txt*
 ssl.OP_CIPHER_SERVER_PREFERENCE
 
    Use the server’s cipher ordering preference, rather than the
@@ -740,7 +739,7 @@ ssl.OP_CIPHER_SERVER_PREFERENCE
 
    New in version 3.3.
 
-ssl.OP_SINGLE_DH_USE                      *OP_SINGLE_DH_USE..ssl.txt;*
+ssl.OP_SINGLE_DH_USE                       *OP_SINGLE_DH_USE..ssl.txt*
 
    Prevents re-use of the same DH key for distinct SSL sessions.  This
    improves forward secrecy but requires more computational resources.
@@ -748,7 +747,7 @@ ssl.OP_SINGLE_DH_USE                      *OP_SINGLE_DH_USE..ssl.txt;*
 
    New in version 3.3.
 
-ssl.OP_SINGLE_ECDH_USE                  *OP_SINGLE_ECDH_USE..ssl.txt;*
+ssl.OP_SINGLE_ECDH_USE                   *OP_SINGLE_ECDH_USE..ssl.txt*
 
    Prevents re-use of the same ECDH key for distinct SSL sessions.
    This improves forward secrecy but requires more computational
@@ -756,8 +755,7 @@ ssl.OP_SINGLE_ECDH_USE                  *OP_SINGLE_ECDH_USE..ssl.txt;*
 
    New in version 3.3.
 
-                                *OP_ENABLE_MIDDLEBOX_COMPAT..ssl.txt;*
-ssl.OP_ENABLE_MIDDLEBOX_COMPAT
+ssl.OP_ENABLE_MIDDLEBOX_COMPAT   *OP_ENABLE_MIDDLEBOX_COMPAT..ssl.txt*
 
    Send dummy Change Cipher Spec (CCS) messages in TLS 1.3 handshake
    to make a TLS 1.3 connection look more like a TLS 1.2 connection.
@@ -766,24 +764,24 @@ ssl.OP_ENABLE_MIDDLEBOX_COMPAT
 
    New in version 3.8.
 
-ssl.OP_NO_COMPRESSION                    *OP_NO_COMPRESSION..ssl.txt;*
+ssl.OP_NO_COMPRESSION                     *OP_NO_COMPRESSION..ssl.txt*
 
    Disable compression on the SSL channel.  This is useful if the
    application protocol supports its own compression scheme.
 
    New in version 3.3.
 
-class ssl.Options                                  *Options..ssl.txt;*
+class ssl.Options                                   *Options..ssl.txt*
 
    "enum.IntFlag" collection of OP_* constants.
 
-ssl.OP_NO_TICKET                              *OP_NO_TICKET..ssl.txt;*
+ssl.OP_NO_TICKET                               *OP_NO_TICKET..ssl.txt*
 
    Prevent client side from requesting a session ticket.
 
    New in version 3.6.
 
-ssl.OP_IGNORE_UNEXPECTED_EOF      *OP_IGNORE_UNEXPECTED_EOF..ssl.txt;*
+ssl.OP_IGNORE_UNEXPECTED_EOF       *OP_IGNORE_UNEXPECTED_EOF..ssl.txt*
 
    Ignore unexpected shutdown of TLS connections.
 
@@ -791,7 +789,7 @@ ssl.OP_IGNORE_UNEXPECTED_EOF      *OP_IGNORE_UNEXPECTED_EOF..ssl.txt;*
 
    New in version 3.10.
 
-ssl.OP_ENABLE_KTLS                          *OP_ENABLE_KTLS..ssl.txt;*
+ssl.OP_ENABLE_KTLS                           *OP_ENABLE_KTLS..ssl.txt*
 
    Enable the use of the kernel TLS. To benefit from the feature,
    OpenSSL must have been compiled with support for it, and the
@@ -808,14 +806,14 @@ ssl.OP_ENABLE_KTLS                          *OP_ENABLE_KTLS..ssl.txt;*
 
    New in version 3.12.
 
-ssl.OP_LEGACY_SERVER_CONNECT      *OP_LEGACY_SERVER_CONNECT..ssl.txt;*
+ssl.OP_LEGACY_SERVER_CONNECT       *OP_LEGACY_SERVER_CONNECT..ssl.txt*
 
    Allow legacy insecure renegotiation between OpenSSL and unpatched
    servers only.
 
    New in version 3.12.
 
-ssl.HAS_ALPN                                      *HAS_ALPN..ssl.txt;*
+ssl.HAS_ALPN                                       *HAS_ALPN..ssl.txt*
 
    Whether the OpenSSL library has built-in support for the
    _Application-Layer Protocol Negotiation_ TLS extension as described
@@ -823,7 +821,7 @@ ssl.HAS_ALPN                                      *HAS_ALPN..ssl.txt;*
 
    New in version 3.5.
 
-                               *HAS_NEVER_CHECK_COMMON_NAME..ssl.txt;*
+                                *HAS_NEVER_CHECK_COMMON_NAME..ssl.txt*
 ssl.HAS_NEVER_CHECK_COMMON_NAME
 
    Whether the OpenSSL library has built-in support not checking
@@ -832,7 +830,7 @@ ssl.HAS_NEVER_CHECK_COMMON_NAME
 
    New in version 3.7.
 
-ssl.HAS_ECDH                                      *HAS_ECDH..ssl.txt;*
+ssl.HAS_ECDH                                       *HAS_ECDH..ssl.txt*
 
    Whether the OpenSSL library has built-in support for the Elliptic
    Curve-based Diffie-Hellman key exchange.  This should be true
@@ -840,14 +838,14 @@ ssl.HAS_ECDH                                      *HAS_ECDH..ssl.txt;*
 
    New in version 3.3.
 
-ssl.HAS_SNI                                        *HAS_SNI..ssl.txt;*
+ssl.HAS_SNI                                         *HAS_SNI..ssl.txt*
 
    Whether the OpenSSL library has built-in support for the _Server
    Name Indication_ extension (as defined in **RFC 6066**).
 
    New in version 3.2.
 
-ssl.HAS_NPN                                        *HAS_NPN..ssl.txt;*
+ssl.HAS_NPN                                         *HAS_NPN..ssl.txt*
 
    Whether the OpenSSL library has built-in support for the _Next
    Protocol Negotiation_ as described in the Application Layer
@@ -857,56 +855,56 @@ ssl.HAS_NPN                                        *HAS_NPN..ssl.txt;*
 
    New in version 3.3.
 
-ssl.HAS_SSLv2                                    *HAS_SSLv2..ssl.txt;*
+ssl.HAS_SSLv2                                     *HAS_SSLv2..ssl.txt*
 
    Whether the OpenSSL library has built-in support for the SSL 2.0
    protocol.
 
    New in version 3.7.
 
-ssl.HAS_SSLv3                                    *HAS_SSLv3..ssl.txt;*
+ssl.HAS_SSLv3                                     *HAS_SSLv3..ssl.txt*
 
    Whether the OpenSSL library has built-in support for the SSL 3.0
    protocol.
 
    New in version 3.7.
 
-ssl.HAS_TLSv1                                    *HAS_TLSv1..ssl.txt;*
+ssl.HAS_TLSv1                                     *HAS_TLSv1..ssl.txt*
 
    Whether the OpenSSL library has built-in support for the TLS 1.0
    protocol.
 
    New in version 3.7.
 
-ssl.HAS_TLSv1_1                                *HAS_TLSv1_1..ssl.txt;*
+ssl.HAS_TLSv1_1                                 *HAS_TLSv1_1..ssl.txt*
 
    Whether the OpenSSL library has built-in support for the TLS 1.1
    protocol.
 
    New in version 3.7.
 
-ssl.HAS_TLSv1_2                                *HAS_TLSv1_2..ssl.txt;*
+ssl.HAS_TLSv1_2                                 *HAS_TLSv1_2..ssl.txt*
 
    Whether the OpenSSL library has built-in support for the TLS 1.2
    protocol.
 
    New in version 3.7.
 
-ssl.HAS_TLSv1_3                                *HAS_TLSv1_3..ssl.txt;*
+ssl.HAS_TLSv1_3                                 *HAS_TLSv1_3..ssl.txt*
 
    Whether the OpenSSL library has built-in support for the TLS 1.3
    protocol.
 
    New in version 3.7.
 
-ssl.CHANNEL_BINDING_TYPES            *CHANNEL_BINDING_TYPES..ssl.txt;*
+ssl.CHANNEL_BINDING_TYPES             *CHANNEL_BINDING_TYPES..ssl.txt*
 
    List of supported TLS channel binding types.  Strings in this list
    can be used as arguments to "SSLSocket.get_channel_binding()".
 
    New in version 3.3.
 
-ssl.OPENSSL_VERSION                        *OPENSSL_VERSION..ssl.txt;*
+ssl.OPENSSL_VERSION                         *OPENSSL_VERSION..ssl.txt*
 
    The version string of the OpenSSL library loaded by the
    interpreter:
@@ -916,7 +914,7 @@ ssl.OPENSSL_VERSION                        *OPENSSL_VERSION..ssl.txt;*
 <
    New in version 3.2.
 
-ssl.OPENSSL_VERSION_INFO              *OPENSSL_VERSION_INFO..ssl.txt;*
+ssl.OPENSSL_VERSION_INFO               *OPENSSL_VERSION_INFO..ssl.txt*
 
    A tuple of five integers representing version information about the
    OpenSSL library:
@@ -926,7 +924,7 @@ ssl.OPENSSL_VERSION_INFO              *OPENSSL_VERSION_INFO..ssl.txt;*
 <
    New in version 3.2.
 
-ssl.OPENSSL_VERSION_NUMBER          *OPENSSL_VERSION_NUMBER..ssl.txt;*
+ssl.OPENSSL_VERSION_NUMBER           *OPENSSL_VERSION_NUMBER..ssl.txt*
 
    The raw version number of the OpenSSL library, as a single integer:
 >
@@ -937,10 +935,10 @@ ssl.OPENSSL_VERSION_NUMBER          *OPENSSL_VERSION_NUMBER..ssl.txt;*
 <
    New in version 3.2.
 
-                       *ALERT_DESCRIPTION_HANDSHAKE_FAILURE..ssl.txt;*
+                        *ALERT_DESCRIPTION_HANDSHAKE_FAILURE..ssl.txt*
 ssl.ALERT_DESCRIPTION_HANDSHAKE_FAILURE
 
-                          *ALERT_DESCRIPTION_INTERNAL_ERROR..ssl.txt;*
+                           *ALERT_DESCRIPTION_INTERNAL_ERROR..ssl.txt*
 ssl.ALERT_DESCRIPTION_INTERNAL_ERROR
 ALERT_DESCRIPTION_*
 
@@ -953,13 +951,13 @@ ALERT_DESCRIPTION_*
 
    New in version 3.4.
 
-class ssl.AlertDescription                *AlertDescription..ssl.txt;*
+class ssl.AlertDescription                 *AlertDescription..ssl.txt*
 
    "enum.IntEnum" collection of ALERT_DESCRIPTION_* constants.
 
    New in version 3.6.
 
-Purpose.SERVER_AUTH                    *Purpose.SERVER_AUTH..ssl.txt;*
+Purpose.SERVER_AUTH                     *Purpose.SERVER_AUTH..ssl.txt*
 
    Option for "create_default_context()" and
    "SSLContext.load_default_certs()".  This value indicates that the
@@ -968,7 +966,7 @@ Purpose.SERVER_AUTH                    *Purpose.SERVER_AUTH..ssl.txt;*
 
    New in version 3.4.
 
-Purpose.CLIENT_AUTH                    *Purpose.CLIENT_AUTH..ssl.txt;*
+Purpose.CLIENT_AUTH                     *Purpose.CLIENT_AUTH..ssl.txt*
 
    Option for "create_default_context()" and
    "SSLContext.load_default_certs()".  This value indicates that the
@@ -977,38 +975,36 @@ Purpose.CLIENT_AUTH                    *Purpose.CLIENT_AUTH..ssl.txt;*
 
    New in version 3.4.
 
-class ssl.SSLErrorNumber                    *SSLErrorNumber..ssl.txt;*
+class ssl.SSLErrorNumber                     *SSLErrorNumber..ssl.txt*
 
    "enum.IntEnum" collection of SSL_ERROR_* constants.
 
    New in version 3.6.
 
-class ssl.TLSVersion                            *TLSVersion..ssl.txt;*
+class ssl.TLSVersion                             *TLSVersion..ssl.txt*
 
    "enum.IntEnum" collection of SSL and TLS versions for
    "SSLContext.maximum_version" and "SSLContext.minimum_version".
 
    New in version 3.7.
 
-                              *TLSVersion.MINIMUM_SUPPORTED..ssl.txt;*
-TLSVersion.MINIMUM_SUPPORTED
+TLSVersion.MINIMUM_SUPPORTED   *TLSVersion.MINIMUM_SUPPORTED..ssl.txt*
 
-                              *TLSVersion.MAXIMUM_SUPPORTED..ssl.txt;*
-TLSVersion.MAXIMUM_SUPPORTED
+TLSVersion.MAXIMUM_SUPPORTED   *TLSVersion.MAXIMUM_SUPPORTED..ssl.txt*
 
    The minimum or maximum supported SSL or TLS version. These are
    magic constants. Their values don’t reflect the lowest and highest
    available TLS/SSL versions.
 
-TLSVersion.SSLv3                          *TLSVersion.SSLv3..ssl.txt;*
+TLSVersion.SSLv3                           *TLSVersion.SSLv3..ssl.txt*
 
-TLSVersion.TLSv1                          *TLSVersion.TLSv1..ssl.txt;*
+TLSVersion.TLSv1                           *TLSVersion.TLSv1..ssl.txt*
 
-TLSVersion.TLSv1_1                      *TLSVersion.TLSv1_1..ssl.txt;*
+TLSVersion.TLSv1_1                       *TLSVersion.TLSv1_1..ssl.txt*
 
-TLSVersion.TLSv1_2                      *TLSVersion.TLSv1_2..ssl.txt;*
+TLSVersion.TLSv1_2                       *TLSVersion.TLSv1_2..ssl.txt*
 
-TLSVersion.TLSv1_3                      *TLSVersion.TLSv1_3..ssl.txt;*
+TLSVersion.TLSv1_3                       *TLSVersion.TLSv1_3..ssl.txt*
 
    SSL 3.0 to TLS 1.3.
 
@@ -1019,7 +1015,7 @@ TLSVersion.TLSv1_3                      *TLSVersion.TLSv1_3..ssl.txt;*
 SSL Sockets
 ===========
 
-class ssl.SSLSocket(socket.socket)               *SSLSocket..ssl.txt;*
+class ssl.SSLSocket(socket.socket)                *SSLSocket..ssl.txt*
 
    SSL sockets provide the following methods of Socket Objects:
 
@@ -1085,7 +1081,7 @@ class ssl.SSLSocket(socket.socket)               *SSLSocket..ssl.txt;*
 
 SSL sockets also have the following additional methods and attributes:
 
-SSLSocket.read(len=1024, buffer=None)     *SSLSocket.read()..ssl.txt;*
+SSLSocket.read(len=1024, buffer=None)      *SSLSocket.read()..ssl.txt*
 
    Read up to _len_ bytes of data from the SSL socket and return the
    result as a "bytes" instance. If _buffer_ is specified, then read
@@ -1103,7 +1099,7 @@ SSLSocket.read(len=1024, buffer=None)     *SSLSocket.read()..ssl.txt;*
 
    Deprecated since version 3.6: Use "recv()" instead of "read()".
 
-SSLSocket.write(buf)                     *SSLSocket.write()..ssl.txt;*
+SSLSocket.write(buf)                      *SSLSocket.write()..ssl.txt*
 
    Write _buf_ to the SSL socket and return the number of bytes
    written. The _buf_ argument must be an object supporting the buffer
@@ -1131,7 +1127,7 @@ Note:
   socket API methods like "recv()" and "send()" instead of these
   methods.
 
-SSLSocket.do_handshake()          *SSLSocket.do_handshake()..ssl.txt;*
+SSLSocket.do_handshake()           *SSLSocket.do_handshake()..ssl.txt*
 
    Perform the SSL setup handshake.
 
@@ -1149,7 +1145,7 @@ SSLSocket.do_handshake()          *SSLSocket.do_handshake()..ssl.txt;*
    handshake is aborted early and a TLS alert message is sent to the
    peer.
 
-                                   *SSLSocket.getpeercert()..ssl.txt;*
+                                    *SSLSocket.getpeercert()..ssl.txt*
 SSLSocket.getpeercert(binary_form=False)
 
    If there is no certificate for the peer on the other end of the
@@ -1218,14 +1214,14 @@ SSLSocket.getpeercert(binary_form=False)
    Changed in version 3.9: IPv6 address strings no longer have a
    trailing new line.
 
-SSLSocket.cipher()                      *SSLSocket.cipher()..ssl.txt;*
+SSLSocket.cipher()                       *SSLSocket.cipher()..ssl.txt*
 
    Returns a three-value tuple containing the name of the cipher being
    used, the version of the SSL protocol that defines its use, and the
    number of secret bits being used.  If no connection has been
    established, returns "None".
 
-SSLSocket.shared_ciphers()      *SSLSocket.shared_ciphers()..ssl.txt;*
+SSLSocket.shared_ciphers()       *SSLSocket.shared_ciphers()..ssl.txt*
 
    Return the list of ciphers available in both the client and server.
    Each entry of the returned list is a three-value tuple containing
@@ -1236,7 +1232,7 @@ SSLSocket.shared_ciphers()      *SSLSocket.shared_ciphers()..ssl.txt;*
 
    New in version 3.5.
 
-SSLSocket.compression()            *SSLSocket.compression()..ssl.txt;*
+SSLSocket.compression()             *SSLSocket.compression()..ssl.txt*
 
    Return the compression algorithm being used as a string, or "None"
    if the connection isn’t compressed.
@@ -1247,7 +1243,7 @@ SSLSocket.compression()            *SSLSocket.compression()..ssl.txt;*
 
    New in version 3.3.
 
-                           *SSLSocket.get_channel_binding()..ssl.txt;*
+                            *SSLSocket.get_channel_binding()..ssl.txt*
 SSLSocket.get_channel_binding(cb_type='tls-unique')
 
    Get channel binding data for current connection, as a bytes object.
@@ -1263,7 +1259,7 @@ SSLSocket.get_channel_binding(cb_type='tls-unique')
 
    New in version 3.3.
 
-                        *SSLSocket.selected_alpn_protocol()..ssl.txt;*
+                         *SSLSocket.selected_alpn_protocol()..ssl.txt*
 SSLSocket.selected_alpn_protocol()
 
    Return the protocol that was selected during the TLS handshake.  If
@@ -1274,7 +1270,7 @@ SSLSocket.selected_alpn_protocol()
 
    New in version 3.5.
 
-                         *SSLSocket.selected_npn_protocol()..ssl.txt;*
+                          *SSLSocket.selected_npn_protocol()..ssl.txt*
 SSLSocket.selected_npn_protocol()
 
    Return the higher-level protocol that was selected during the
@@ -1286,7 +1282,7 @@ SSLSocket.selected_npn_protocol()
 
    Deprecated since version 3.10: NPN has been superseded by ALPN
 
-SSLSocket.unwrap()                      *SSLSocket.unwrap()..ssl.txt;*
+SSLSocket.unwrap()                       *SSLSocket.unwrap()..ssl.txt*
 
    Performs the SSL shutdown handshake, which removes the TLS layer
    from the underlying socket, and returns the underlying socket
@@ -1295,7 +1291,7 @@ SSLSocket.unwrap()                      *SSLSocket.unwrap()..ssl.txt;*
    used for further communication with the other side of the
    connection, rather than the original socket.
 
-                  *SSLSocket.verify_client_post_handshake()..ssl.txt;*
+                   *SSLSocket.verify_client_post_handshake()..ssl.txt*
 SSLSocket.verify_client_post_handshake()
 
    Requests post-handshake authentication (PHA) from a TLS 1.3 client.
@@ -1318,7 +1314,7 @@ SSLSocket.verify_client_post_handshake()
 
    New in version 3.8.
 
-SSLSocket.version()                    *SSLSocket.version()..ssl.txt;*
+SSLSocket.version()                     *SSLSocket.version()..ssl.txt*
 
    Return the actual SSL protocol version negotiated by the connection
    as a string, or "None" if no secure connection is established. As
@@ -1328,25 +1324,25 @@ SSLSocket.version()                    *SSLSocket.version()..ssl.txt;*
 
    New in version 3.5.
 
-SSLSocket.pending()                    *SSLSocket.pending()..ssl.txt;*
+SSLSocket.pending()                     *SSLSocket.pending()..ssl.txt*
 
    Returns the number of already decrypted bytes available for read,
    pending on the connection.
 
-SSLSocket.context                        *SSLSocket.context..ssl.txt;*
+SSLSocket.context                         *SSLSocket.context..ssl.txt*
 
    The "SSLContext" object this SSL socket is tied to.
 
    New in version 3.2.
 
-SSLSocket.server_side                *SSLSocket.server_side..ssl.txt;*
+SSLSocket.server_side                 *SSLSocket.server_side..ssl.txt*
 
    A boolean which is "True" for server-side sockets and "False" for
    client-side sockets.
 
    New in version 3.2.
 
-SSLSocket.server_hostname        *SSLSocket.server_hostname..ssl.txt;*
+SSLSocket.server_hostname         *SSLSocket.server_hostname..ssl.txt*
 
    Hostname of the server: "str" type, or "None" for server-side
    socket or if the hostname was not specified in the constructor.
@@ -1358,7 +1354,7 @@ SSLSocket.server_hostname        *SSLSocket.server_hostname..ssl.txt;*
    this attribute now stores the A-label form (""xn--pythn-mua.org""),
    rather than the U-label form (""pythön.org"").
 
-SSLSocket.session                        *SSLSocket.session..ssl.txt;*
+SSLSocket.session                         *SSLSocket.session..ssl.txt*
 
    The "SSLSession" for this SSL connection. The session is available
    for client and server side sockets after the TLS handshake has been
@@ -1367,7 +1363,7 @@ SSLSocket.session                        *SSLSocket.session..ssl.txt;*
 
    New in version 3.6.
 
-SSLSocket.session_reused          *SSLSocket.session_reused..ssl.txt;*
+SSLSocket.session_reused           *SSLSocket.session_reused..ssl.txt*
 
    New in version 3.6.
 
@@ -1383,7 +1379,7 @@ private key(s). It also manages a cache of SSL sessions for server-
 side sockets, in order to speed up repeated connections from the same
 clients.
 
-class ssl.SSLContext(protocol=None)             *SSLContext..ssl.txt;*
+class ssl.SSLContext(protocol=None)              *SSLContext..ssl.txt*
 
    Create a new SSL context.  You may pass _protocol_ which must be
    one of the "PROTOCOL_*" constants defined in this module.  The
@@ -1450,7 +1446,7 @@ class ssl.SSLContext(protocol=None)             *SSLContext..ssl.txt;*
 
 "SSLContext" objects have the following methods and attributes:
 
-                             *SSLContext.cert_store_stats()..ssl.txt;*
+                              *SSLContext.cert_store_stats()..ssl.txt*
 SSLContext.cert_store_stats()
 
    Get statistics about quantities of loaded X.509 certificates, count
@@ -1464,7 +1460,7 @@ SSLContext.cert_store_stats()
 <
    New in version 3.4.
 
-                              *SSLContext.load_cert_chain()..ssl.txt;*
+                               *SSLContext.load_cert_chain()..ssl.txt*
 SSLContext.load_cert_chain(certfile, keyfile=None, password=None)
 
    Load a private key and the corresponding certificate.  The
@@ -1495,7 +1491,7 @@ SSLContext.load_cert_chain(certfile, keyfile=None, password=None)
 
    Changed in version 3.3: New optional argument _password_.
 
-                           *SSLContext.load_default_certs()..ssl.txt;*
+                            *SSLContext.load_default_certs()..ssl.txt*
 SSLContext.load_default_certs(purpose=Purpose.SERVER_AUTH)
 
    Load a set of default “certification authority” (CA) certificates
@@ -1513,7 +1509,7 @@ SSLContext.load_default_certs(purpose=Purpose.SERVER_AUTH)
 
    New in version 3.4.
 
-                        *SSLContext.load_verify_locations()..ssl.txt;*
+                         *SSLContext.load_verify_locations()..ssl.txt*
 SSLContext.load_verify_locations(cafile=None, capath=None, cadata=None)
 
    Load a set of “certification authority” (CA) certificates used to
@@ -1542,7 +1538,7 @@ SSLContext.load_verify_locations(cafile=None, capath=None, cadata=None)
 
    Changed in version 3.4: New optional argument _cadata_
 
-                                 *SSLContext.get_ca_certs()..ssl.txt;*
+                                  *SSLContext.get_ca_certs()..ssl.txt*
 SSLContext.get_ca_certs(binary_form=False)
 
    Get a list of loaded “certification authority” (CA) certificates.
@@ -1559,7 +1555,7 @@ SSLContext.get_ca_certs(binary_form=False)
 
    New in version 3.4.
 
-SSLContext.get_ciphers()          *SSLContext.get_ciphers()..ssl.txt;*
+SSLContext.get_ciphers()           *SSLContext.get_ciphers()..ssl.txt*
 
    Get a list of enabled ciphers. The list is in order of cipher
    priority. See "SSLContext.set_ciphers()".
@@ -1596,7 +1592,7 @@ SSLContext.get_ciphers()          *SSLContext.get_ciphers()..ssl.txt;*
 <
    New in version 3.6.
 
-                     *SSLContext.set_default_verify_paths()..ssl.txt;*
+                      *SSLContext.set_default_verify_paths()..ssl.txt*
 SSLContext.set_default_verify_paths()
 
    Load a set of default “certification authority” (CA) certificates
@@ -1606,7 +1602,7 @@ SSLContext.set_default_verify_paths()
    When the OpenSSL library is provided as part of the operating
    system, though, it is likely to be configured properly.
 
-SSLContext.set_ciphers(ciphers)   *SSLContext.set_ciphers()..ssl.txt;*
+SSLContext.set_ciphers(ciphers)    *SSLContext.set_ciphers()..ssl.txt*
 
    Set the available ciphers for sockets created with this context. It
    should be a string in the OpenSSL cipher list format. If no cipher
@@ -1620,7 +1616,7 @@ SSLContext.set_ciphers(ciphers)   *SSLContext.set_ciphers()..ssl.txt;*
      will give the currently selected cipher.TLS 1.3 cipher suites
      cannot be disabled with "set_ciphers()".
 
-                           *SSLContext.set_alpn_protocols()..ssl.txt;*
+                            *SSLContext.set_alpn_protocols()..ssl.txt*
 SSLContext.set_alpn_protocols(protocols)
 
    Specify which protocols the socket should advertise during the
@@ -1636,7 +1632,7 @@ SSLContext.set_alpn_protocols(protocols)
 
    New in version 3.5.
 
-                            *SSLContext.set_npn_protocols()..ssl.txt;*
+                             *SSLContext.set_npn_protocols()..ssl.txt*
 SSLContext.set_npn_protocols(protocols)
 
    Specify which protocols the socket should advertise during the
@@ -1654,7 +1650,7 @@ SSLContext.set_npn_protocols(protocols)
 
    Deprecated since version 3.10: NPN has been superseded by ALPN
 
-SSLContext.sni_callback            *SSLContext.sni_callback..ssl.txt;*
+SSLContext.sni_callback             *SSLContext.sni_callback..ssl.txt*
 
    Register a callback function that will be called after the TLS
    Client Hello handshake message has been received by the SSL/TLS
@@ -1702,7 +1698,7 @@ SSLContext.sni_callback            *SSLContext.sni_callback..ssl.txt;*
 
    New in version 3.7.
 
-                        *SSLContext.set_servername_callback..ssl.txt;*
+                         *SSLContext.set_servername_callback..ssl.txt*
 SSLContext.set_servername_callback(server_name_callback)
 
    This is a legacy API retained for backwards compatibility. When
@@ -1719,7 +1715,7 @@ SSLContext.set_servername_callback(server_name_callback)
 
    New in version 3.4.
 
-                               *SSLContext.load_dh_params()..ssl.txt;*
+                                *SSLContext.load_dh_params()..ssl.txt*
 SSLContext.load_dh_params(dhfile)
 
    Load the key generation parameters for Diffie-Hellman (DH) key
@@ -1733,7 +1729,7 @@ SSLContext.load_dh_params(dhfile)
 
    New in version 3.3.
 
-                               *SSLContext.set_ecdh_curve()..ssl.txt;*
+                                *SSLContext.set_ecdh_curve()..ssl.txt*
 SSLContext.set_ecdh_curve(curve_name)
 
    Set the curve name for Elliptic Curve-based Diffie-Hellman (ECDH)
@@ -1754,7 +1750,7 @@ SSLContext.set_ecdh_curve(curve_name)
      SSL/TLS & Perfect Forward Secrecy
         Vincent Bernat.
 
-                                  *SSLContext.wrap_socket()..ssl.txt;*
+                                   *SSLContext.wrap_socket()..ssl.txt*
 SSLContext.wrap_socket(sock, server_side=False, do_handshake_on_connect=True, suppress_ragged_eofs=True, server_hostname=None, session=None)
 
    Wrap an existing Python socket _sock_ and return an instance of
@@ -1806,7 +1802,7 @@ SSLContext.wrap_socket(sock, server_side=False, do_handshake_on_connect=True, su
    Changed in version 3.7: The method returns an instance of
    "SSLContext.sslsocket_class" instead of hard-coded "SSLSocket".
 
-SSLContext.sslsocket_class      *SSLContext.sslsocket_class..ssl.txt;*
+SSLContext.sslsocket_class       *SSLContext.sslsocket_class..ssl.txt*
 
    The return type of "SSLContext.wrap_socket()", defaults to
    "SSLSocket". The attribute can be overridden on instance of class
@@ -1814,7 +1810,7 @@ SSLContext.sslsocket_class      *SSLContext.sslsocket_class..ssl.txt;*
 
    New in version 3.7.
 
-                                     *SSLContext.wrap_bio()..ssl.txt;*
+                                      *SSLContext.wrap_bio()..ssl.txt*
 SSLContext.wrap_bio(incoming, outgoing, server_side=False, server_hostname=None, session=None)
 
    Wrap the BIO objects _incoming_ and _outgoing_ and return an
@@ -1830,7 +1826,7 @@ SSLContext.wrap_bio(incoming, outgoing, server_side=False, server_hostname=None,
    Changed in version 3.7: The method returns an instance of
    "SSLContext.sslobject_class" instead of hard-coded "SSLObject".
 
-SSLContext.sslobject_class      *SSLContext.sslobject_class..ssl.txt;*
+SSLContext.sslobject_class       *SSLContext.sslobject_class..ssl.txt*
 
    The return type of "SSLContext.wrap_bio()", defaults to
    "SSLObject". The attribute can be overridden on instance of class
@@ -1838,7 +1834,7 @@ SSLContext.sslobject_class      *SSLContext.sslobject_class..ssl.txt;*
 
    New in version 3.7.
 
-SSLContext.session_stats()      *SSLContext.session_stats()..ssl.txt;*
+SSLContext.session_stats()       *SSLContext.session_stats()..ssl.txt*
 
    Get statistics about the SSL sessions created or managed by this
    context. A dictionary is returned which maps the names of each
@@ -1850,7 +1846,7 @@ SSLContext.session_stats()      *SSLContext.session_stats()..ssl.txt;*
       >>> stats['hits'], stats['misses']
       (0, 0)
 <
-SSLContext.check_hostname        *SSLContext.check_hostname..ssl.txt;*
+SSLContext.check_hostname         *SSLContext.check_hostname..ssl.txt*
 
    Whether to match the peer cert’s hostname in
    "SSLSocket.do_handshake()". The context’s "verify_mode" must be set
@@ -1883,7 +1879,7 @@ SSLContext.check_hostname        *SSLContext.check_hostname..ssl.txt;*
    "verify_mode" is "CERT_NONE". Previously the same operation would
    have failed with a "ValueError".
 
-SSLContext.keylog_filename      *SSLContext.keylog_filename..ssl.txt;*
+SSLContext.keylog_filename       *SSLContext.keylog_filename..ssl.txt*
 
    Write TLS keys to a keylog file, whenever key material is generated
    or received. The keylog file is designed for debugging purposes
@@ -1894,7 +1890,7 @@ SSLContext.keylog_filename      *SSLContext.keylog_filename..ssl.txt;*
 
    New in version 3.8.
 
-SSLContext.maximum_version      *SSLContext.maximum_version..ssl.txt;*
+SSLContext.maximum_version       *SSLContext.maximum_version..ssl.txt*
 
    A "TLSVersion" enum member representing the highest supported TLS
    version. The value defaults to "TLSVersion.MAXIMUM_SUPPORTED". The
@@ -1910,14 +1906,14 @@ SSLContext.maximum_version      *SSLContext.maximum_version..ssl.txt;*
 
    New in version 3.7.
 
-SSLContext.minimum_version      *SSLContext.minimum_version..ssl.txt;*
+SSLContext.minimum_version       *SSLContext.minimum_version..ssl.txt*
 
    Like "SSLContext.maximum_version" except it is the lowest supported
    version or "TLSVersion.MINIMUM_SUPPORTED".
 
    New in version 3.7.
 
-SSLContext.num_tickets              *SSLContext.num_tickets..ssl.txt;*
+SSLContext.num_tickets               *SSLContext.num_tickets..ssl.txt*
 
    Control the number of TLS 1.3 session tickets of a
    "PROTOCOL_TLS_SERVER" context. The setting has no impact on TLS 1.0
@@ -1925,7 +1921,7 @@ SSLContext.num_tickets              *SSLContext.num_tickets..ssl.txt;*
 
    New in version 3.8.
 
-SSLContext.options                      *SSLContext.options..ssl.txt;*
+SSLContext.options                       *SSLContext.options..ssl.txt*
 
    An integer representing the set of SSL options enabled on this
    context. The default value is "OP_ALL", but you can specify other
@@ -1942,7 +1938,7 @@ SSLContext.options                      *SSLContext.options..ssl.txt;*
    "SSLContext.minimum_version" and "SSLContext.maximum_version"
    instead.
 
-                            *SSLContext.post_handshake_auth..ssl.txt;*
+                             *SSLContext.post_handshake_auth..ssl.txt*
 SSLContext.post_handshake_auth
 
    Enable TLS 1.3 post-handshake client authentication. Post-handshake
@@ -1962,12 +1958,12 @@ SSLContext.post_handshake_auth
 
    New in version 3.8.
 
-SSLContext.protocol                    *SSLContext.protocol..ssl.txt;*
+SSLContext.protocol                     *SSLContext.protocol..ssl.txt*
 
    The protocol version chosen when constructing the context.  This
    attribute is read-only.
 
-                    *SSLContext.hostname_checks_common_name..ssl.txt;*
+                     *SSLContext.hostname_checks_common_name..ssl.txt*
 SSLContext.hostname_checks_common_name
 
    Whether "check_hostname" falls back to verify the cert’s subject
@@ -1980,14 +1976,14 @@ SSLContext.hostname_checks_common_name
    version 1.1.1k. Python 3.8.9, 3.9.3, and 3.10 include workarounds
    for previous versions.
 
-SSLContext.security_level        *SSLContext.security_level..ssl.txt;*
+SSLContext.security_level         *SSLContext.security_level..ssl.txt*
 
    An integer representing the security level for the context. This
    attribute is read-only.
 
    New in version 3.10.
 
-SSLContext.verify_flags            *SSLContext.verify_flags..ssl.txt;*
+SSLContext.verify_flags             *SSLContext.verify_flags..ssl.txt*
 
    The flags for certificate verification operations. You can set
    flags like "VERIFY_CRL_CHECK_LEAF" by ORing them together. By
@@ -2002,7 +1998,7 @@ SSLContext.verify_flags            *SSLContext.verify_flags..ssl.txt;*
    >>> ssl.create_default_context().verify_flags  
    <VerifyFlags.VERIFY_X509_TRUSTED_FIRST: 32768>
 
-SSLContext.verify_mode              *SSLContext.verify_mode..ssl.txt;*
+SSLContext.verify_mode               *SSLContext.verify_mode..ssl.txt*
 
    Whether to try to verify other peers’ certificates and how to
    behave if verification fails.  This attribute must be one of
@@ -2420,7 +2416,7 @@ routines. This is mostly relevant for platforms like Windows where
 this model is not efficient. For this purpose, a reduced scope variant
 of "SSLSocket" called "SSLObject" is provided.
 
-class ssl.SSLObject                              *SSLObject..ssl.txt;*
+class ssl.SSLObject                               *SSLObject..ssl.txt*
 
    A reduced-scope variant of "SSLSocket" representing an SSL protocol
    instance that does not contain any network IO methods. This class
@@ -2520,26 +2516,26 @@ An SSLObject communicates with the outside world using memory buffers.
 The class "MemoryBIO" provides a memory buffer that can be used for
 this purpose.  It wraps an OpenSSL memory BIO (Basic IO) object:
 
-class ssl.MemoryBIO                              *MemoryBIO..ssl.txt;*
+class ssl.MemoryBIO                               *MemoryBIO..ssl.txt*
 
    A memory buffer that can be used to pass data between Python and an
    SSL protocol instance.
 
-   pending                                  *MemoryBIO.pending..ssl.txt;*
+   pending                                   *MemoryBIO.pending..ssl.txt*
 
       Return the number of bytes currently in the memory buffer.
 
-   eof                                          *MemoryBIO.eof..ssl.txt;*
+   eof                                           *MemoryBIO.eof..ssl.txt*
 
       A boolean indicating whether the memory BIO is current at the
       end-of-file position.
 
-   read(n=-1)                                *MemoryBIO.read()..ssl.txt;*
+   read(n=-1)                                 *MemoryBIO.read()..ssl.txt*
 
       Read up to _n_ bytes from the memory buffer. If _n_ is not
       specified or negative, all bytes are returned.
 
-   write(buf)                               *MemoryBIO.write()..ssl.txt;*
+   write(buf)                                *MemoryBIO.write()..ssl.txt*
 
       Write the bytes from _buf_ to the memory BIO. The _buf_ argument
       must be an object supporting the buffer protocol.
@@ -2547,7 +2543,7 @@ class ssl.MemoryBIO                              *MemoryBIO..ssl.txt;*
       The return value is the number of bytes written, which is always
       equal to the length of _buf_.
 
-   write_eof()                          *MemoryBIO.write_eof()..ssl.txt;*
+   write_eof()                           *MemoryBIO.write_eof()..ssl.txt*
 
       Write an EOF marker to the memory BIO. After this method has
       been called, it is illegal to call "write()". The attribute
@@ -2560,19 +2556,19 @@ SSL session
 
 New in version 3.6.
 
-class ssl.SSLSession                            *SSLSession..ssl.txt;*
+class ssl.SSLSession                             *SSLSession..ssl.txt*
 
    Session object used by "session".
 
-   id                                           *SSLSession.id..ssl.txt;*
+   id                                            *SSLSession.id..ssl.txt*
 
-   time                                       *SSLSession.time..ssl.txt;*
+   time                                        *SSLSession.time..ssl.txt*
 
-   timeout                                 *SSLSession.timeout..ssl.txt;*
+   timeout                                  *SSLSession.timeout..ssl.txt*
 
-   ticket_lifetime_hint       *SSLSession.ticket_lifetime_hint..ssl.txt;*
+   ticket_lifetime_hint        *SSLSession.ticket_lifetime_hint..ssl.txt*
 
-   has_ticket                           *SSLSession.has_ticket..ssl.txt;*
+   has_ticket                            *SSLSession.has_ticket..ssl.txt*
 
 
 Security considerations

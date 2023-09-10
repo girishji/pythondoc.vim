@@ -1,4 +1,4 @@
-*tkinterttk.txt;*                             Last change: 2023 Sep 09
+*tkinter.ttk.txt;*                            Last change: 2023 Sep 10
 
 "tkinter.ttk" — Tk themed widgets
 *********************************
@@ -239,16 +239,16 @@ ttk.Widget
 Besides the methods described below, the "ttk.Widget" supports the
 methods "tkinter.Widget.cget()" and "tkinter.Widget.configure()".
 
-class tkinter.ttk.Widget                     *Widget..tkinterttk.txt;*
+class tkinter.ttk.Widget                     *Widget..tkinter.ttk.txt*
 
-   identify(x, y)                    *Widget.identify()..tkinterttk.txt;*
+   identify(x, y)                    *Widget.identify()..tkinter.ttk.txt*
 
       Returns the name of the element at position _x_ _y_, or the
       empty string if the point does not lie within any element.
 
       _x_ and _y_ are pixel coordinates relative to the widget.
 
-                                   *Widget.instate()..tkinterttk.txt;*
+                                   *Widget.instate()..tkinter.ttk.txt*
    instate(statespec, callback=None, *args, **kw)
 
       Test the widget’s state. If a callback is not specified, returns
@@ -256,7 +256,7 @@ class tkinter.ttk.Widget                     *Widget..tkinterttk.txt;*
       otherwise. If callback is specified then it is called with args
       if widget state matches _statespec_.
 
-   state(statespec=None)                *Widget.state()..tkinterttk.txt;*
+   state(statespec=None)                *Widget.state()..tkinter.ttk.txt*
 
       Modify or inquire widget state. If _statespec_ is specified,
       sets the widget state according to it and return a new
@@ -332,20 +332,20 @@ event when the user selects an element from the list of values.
 ttk.Combobox
 ------------
 
-class tkinter.ttk.Combobox                 *Combobox..tkinterttk.txt;*
+class tkinter.ttk.Combobox                 *Combobox..tkinter.ttk.txt*
 
-   current(newindex=None)           *Combobox.current()..tkinterttk.txt;*
+   current(newindex=None)           *Combobox.current()..tkinter.ttk.txt*
 
       If _newindex_ is specified, sets the combobox value to the
       element position _newindex_. Otherwise, returns the index of the
       current value or -1 if the current value is not in the values
       list.
 
-   get()                                *Combobox.get()..tkinterttk.txt;*
+   get()                                *Combobox.get()..tkinter.ttk.txt*
 
       Returns the current value of the combobox.
 
-   set(value)                           *Combobox.set()..tkinterttk.txt;*
+   set(value)                           *Combobox.set()..tkinter.ttk.txt*
 
       Sets the value of the combobox to _value_.
 
@@ -418,13 +418,13 @@ user presses <Down>.
 ttk.Spinbox
 -----------
 
-class tkinter.ttk.Spinbox                   *Spinbox..tkinterttk.txt;*
+class tkinter.ttk.Spinbox                   *Spinbox..tkinter.ttk.txt*
 
-   get()                                 *Spinbox.get()..tkinterttk.txt;*
+   get()                                 *Spinbox.get()..tkinter.ttk.txt*
 
       Returns the current value of the spinbox.
 
-   set(value)                            *Spinbox.set()..tkinterttk.txt;*
+   set(value)                            *Spinbox.set()..tkinter.ttk.txt*
 
       Sets the value of the spinbox to _value_.
 
@@ -528,9 +528,9 @@ a new tab is selected.
 ttk.Notebook
 ------------
 
-class tkinter.ttk.Notebook                 *Notebook..tkinterttk.txt;*
+class tkinter.ttk.Notebook                 *Notebook..tkinter.ttk.txt*
 
-   add(child, **kw)                     *Notebook.add()..tkinterttk.txt;*
+   add(child, **kw)                     *Notebook.add()..tkinter.ttk.txt*
 
       Adds a new tab to the notebook.
 
@@ -539,12 +539,12 @@ class tkinter.ttk.Notebook                 *Notebook..tkinterttk.txt;*
 
       See Tab Options for the list of available options.
 
-   forget(tab_id)                    *Notebook.forget()..tkinterttk.txt;*
+   forget(tab_id)                    *Notebook.forget()..tkinter.ttk.txt*
 
       Removes the tab specified by _tab_id_, unmaps and unmanages the
       associated window.
 
-   hide(tab_id)                        *Notebook.hide()..tkinterttk.txt;*
+   hide(tab_id)                        *Notebook.hide()..tkinter.ttk.txt*
 
       Hides the tab specified by _tab_id_.
 
@@ -552,17 +552,17 @@ class tkinter.ttk.Notebook                 *Notebook..tkinterttk.txt;*
       managed by the notebook and its configuration remembered. Hidden
       tabs may be restored with the "add()" command.
 
-   identify(x, y)                  *Notebook.identify()..tkinterttk.txt;*
+   identify(x, y)                  *Notebook.identify()..tkinter.ttk.txt*
 
       Returns the name of the tab element at position _x_, _y_, or the
       empty string if none.
 
-   index(tab_id)                      *Notebook.index()..tkinterttk.txt;*
+   index(tab_id)                      *Notebook.index()..tkinter.ttk.txt*
 
       Returns the numeric index of the tab specified by _tab_id_, or
       the total number of tabs if _tab_id_ is the string “end”.
 
-   insert(pos, child, **kw)          *Notebook.insert()..tkinterttk.txt;*
+   insert(pos, child, **kw)          *Notebook.insert()..tkinter.ttk.txt*
 
       Inserts a pane at the specified position.
 
@@ -572,7 +572,7 @@ class tkinter.ttk.Notebook                 *Notebook..tkinterttk.txt;*
 
       See Tab Options for the list of available options.
 
-   select(tab_id=None)               *Notebook.select()..tkinterttk.txt;*
+   select(tab_id=None)               *Notebook.select()..tkinter.ttk.txt*
 
       Selects the specified _tab_id_.
 
@@ -581,7 +581,7 @@ class tkinter.ttk.Notebook                 *Notebook..tkinterttk.txt;*
       _tab_id_ is omitted, returns the widget name of the currently
       selected pane.
 
-   tab(tab_id, option=None, **kw)       *Notebook.tab()..tkinterttk.txt;*
+   tab(tab_id, option=None, **kw)       *Notebook.tab()..tkinter.ttk.txt*
 
       Query or modify the options of the specific _tab_id_.
 
@@ -590,11 +590,11 @@ class tkinter.ttk.Notebook                 *Notebook..tkinterttk.txt;*
       _option_. Otherwise, sets the options to the corresponding
       values.
 
-   tabs()                              *Notebook.tabs()..tkinterttk.txt;*
+   tabs()                              *Notebook.tabs()..tkinter.ttk.txt*
 
       Returns a list of windows managed by the notebook.
 
-   enable_traversal()      *Notebook.enable_traversal()..tkinterttk.txt;*
+   enable_traversal()      *Notebook.enable_traversal()..tkinter.ttk.txt*
 
       Enable keyboard traversal for a toplevel window containing this
       notebook.
@@ -665,21 +665,21 @@ This widget accepts the following specific options:
 ttk.Progressbar
 ---------------
 
-class tkinter.ttk.Progressbar           *Progressbar..tkinterttk.txt;*
+class tkinter.ttk.Progressbar           *Progressbar..tkinter.ttk.txt*
 
-   start(interval=None)            *Progressbar.start()..tkinterttk.txt;*
+   start(interval=None)            *Progressbar.start()..tkinter.ttk.txt*
 
       Begin autoincrement mode: schedules a recurring timer event that
       calls "Progressbar.step()" every _interval_ milliseconds. If
       omitted, _interval_ defaults to 50 milliseconds.
 
-   step(amount=None)                *Progressbar.step()..tkinterttk.txt;*
+   step(amount=None)                *Progressbar.step()..tkinter.ttk.txt*
 
       Increments the progress bar’s value by _amount_.
 
       _amount_ defaults to 1.0 if omitted.
 
-   stop()                           *Progressbar.stop()..tkinterttk.txt;*
+   stop()                           *Progressbar.stop()..tkinter.ttk.txt*
 
       Stop autoincrement mode: cancels any recurring timer event
       initiated by "Progressbar.start()" for this progress bar.
@@ -900,9 +900,9 @@ to determine the affected item or items.
 ttk.Treeview
 ------------
 
-class tkinter.ttk.Treeview                 *Treeview..tkinterttk.txt;*
+class tkinter.ttk.Treeview                 *Treeview..tkinter.ttk.txt*
 
-   bbox(item, column=None)             *Treeview.bbox()..tkinterttk.txt;*
+   bbox(item, column=None)             *Treeview.bbox()..tkinter.ttk.txt*
 
       Returns the bounding box (relative to the treeview widget’s
       window) of the specified _item_ in the form (x, y, width,
@@ -912,13 +912,13 @@ class tkinter.ttk.Treeview                 *Treeview..tkinterttk.txt;*
       If the _item_ is not visible (i.e., if it is a descendant of a
       closed item or is scrolled offscreen), returns an empty string.
 
-   get_children(item=None)     *Treeview.get_children()..tkinterttk.txt;*
+   get_children(item=None)     *Treeview.get_children()..tkinter.ttk.txt*
 
       Returns the list of children belonging to _item_.
 
       If _item_ is not specified, returns root children.
 
-                            *Treeview.set_children()..tkinterttk.txt;*
+                            *Treeview.set_children()..tkinter.ttk.txt*
    set_children(item, *newchildren)
 
       Replaces _item_’s child with _newchildren_.
@@ -928,7 +928,7 @@ class tkinter.ttk.Treeview                 *Treeview..tkinterttk.txt;*
       ancestor of _item_. Note that not specifying _newchildren_
       results in detaching _item_’s children.
 
-                                  *Treeview.column()..tkinterttk.txt;*
+                                  *Treeview.column()..tkinter.ttk.txt*
    column(column, option=None, **kw)
 
       Query or modify the options for the specified _column_.
@@ -962,13 +962,13 @@ class tkinter.ttk.Treeview                 *Treeview..tkinterttk.txt;*
 
       To configure the tree column, call this with column = “#0”
 
-   delete(*items)                    *Treeview.delete()..tkinterttk.txt;*
+   delete(*items)                    *Treeview.delete()..tkinter.ttk.txt*
 
       Delete all specified _items_ and all their descendants.
 
       The root item may not be deleted.
 
-   detach(*items)                    *Treeview.detach()..tkinterttk.txt;*
+   detach(*items)                    *Treeview.detach()..tkinter.ttk.txt*
 
       Unlinks all of the specified _items_ from the tree.
 
@@ -978,17 +978,17 @@ class tkinter.ttk.Treeview                 *Treeview..tkinterttk.txt;*
 
       The root item may not be detached.
 
-   exists(item)                      *Treeview.exists()..tkinterttk.txt;*
+   exists(item)                      *Treeview.exists()..tkinter.ttk.txt*
 
       Returns "True" if the specified _item_ is present in the tree.
 
-   focus(item=None)                   *Treeview.focus()..tkinterttk.txt;*
+   focus(item=None)                   *Treeview.focus()..tkinter.ttk.txt*
 
       If _item_ is specified, sets the focus item to _item_.
       Otherwise, returns the current focus item, or ‘’ if there is
       none.
 
-                                 *Treeview.heading()..tkinterttk.txt;*
+                                 *Treeview.heading()..tkinter.ttk.txt*
    heading(column, option=None, **kw)
 
       Query or modify the heading options for the specified _column_.
@@ -1017,23 +1017,23 @@ class tkinter.ttk.Treeview                 *Treeview..tkinterttk.txt;*
       To configure the tree column heading, call this with column =
       “#0”.
 
-   identify(component, x, y)       *Treeview.identify()..tkinterttk.txt;*
+   identify(component, x, y)       *Treeview.identify()..tkinter.ttk.txt*
 
       Returns a description of the specified _component_ under the
       point given by _x_ and _y_, or the empty string if no such
       _component_ is present at that position.
 
-   identify_row(y)             *Treeview.identify_row()..tkinterttk.txt;*
+   identify_row(y)             *Treeview.identify_row()..tkinter.ttk.txt*
 
       Returns the item ID of the item at position _y_.
 
-   identify_column(x)       *Treeview.identify_column()..tkinterttk.txt;*
+   identify_column(x)       *Treeview.identify_column()..tkinter.ttk.txt*
 
       Returns the data column identifier of the cell at position _x_.
 
       The tree column has ID #0.
 
-   identify_region(x, y)    *Treeview.identify_region()..tkinterttk.txt;*
+   identify_region(x, y)    *Treeview.identify_region()..tkinter.ttk.txt*
 
       Returns one of:
 
@@ -1051,19 +1051,19 @@ class tkinter.ttk.Treeview                 *Treeview..tkinterttk.txt;*
 
       Availability: Tk 8.6.
 
-                        *Treeview.identify_element()..tkinterttk.txt;*
+                        *Treeview.identify_element()..tkinter.ttk.txt*
    identify_element(x, y)
 
       Returns the element at position _x_, _y_.
 
       Availability: Tk 8.6.
 
-   index(item)                        *Treeview.index()..tkinterttk.txt;*
+   index(item)                        *Treeview.index()..tkinter.ttk.txt*
 
       Returns the integer index of _item_ within its parent’s list of
       children.
 
-                                  *Treeview.insert()..tkinterttk.txt;*
+                                  *Treeview.insert()..tkinter.ttk.txt*
    insert(parent, index, iid=None, **kw)
 
       Creates a new item and returns the item identifier of the newly
@@ -1081,7 +1081,7 @@ class tkinter.ttk.Treeview                 *Treeview..tkinterttk.txt;*
 
       See Item Options for the list of available points.
 
-   item(item, option=None, **kw)       *Treeview.item()..tkinterttk.txt;*
+   item(item, option=None, **kw)       *Treeview.item()..tkinter.ttk.txt*
 
       Query or modify the options for the specified _item_.
 
@@ -1090,7 +1090,7 @@ class tkinter.ttk.Treeview                 *Treeview..tkinterttk.txt;*
       option is returned. Otherwise, sets the options to the
       corresponding values as given by _kw_.
 
-   move(item, parent, index)           *Treeview.move()..tkinterttk.txt;*
+   move(item, parent, index)           *Treeview.move()..tkinter.ttk.txt*
 
       Moves _item_ to position _index_ in _parent_’s list of children.
 
@@ -1099,26 +1099,26 @@ class tkinter.ttk.Treeview                 *Treeview..tkinterttk.txt;*
       beginning; if greater than or equal to the number of children,
       it is moved to the end. If _item_ was detached it is reattached.
 
-   next(item)                          *Treeview.next()..tkinterttk.txt;*
+   next(item)                          *Treeview.next()..tkinter.ttk.txt*
 
       Returns the identifier of _item_’s next sibling, or ‘’ if _item_
       is the last child of its parent.
 
-   parent(item)                      *Treeview.parent()..tkinterttk.txt;*
+   parent(item)                      *Treeview.parent()..tkinter.ttk.txt*
 
       Returns the ID of the parent of _item_, or ‘’ if _item_ is at
       the top level of the hierarchy.
 
-   prev(item)                          *Treeview.prev()..tkinterttk.txt;*
+   prev(item)                          *Treeview.prev()..tkinter.ttk.txt*
 
       Returns the identifier of _item_’s previous sibling, or ‘’ if
       _item_ is the first child of its parent.
 
-   reattach(item, parent, index)   *Treeview.reattach()..tkinterttk.txt;*
+   reattach(item, parent, index)   *Treeview.reattach()..tkinter.ttk.txt*
 
       An alias for "Treeview.move()".
 
-   see(item)                            *Treeview.see()..tkinterttk.txt;*
+   see(item)                            *Treeview.see()..tkinter.ttk.txt*
 
       Ensure that _item_ is visible.
 
@@ -1126,7 +1126,7 @@ class tkinter.ttk.Treeview                 *Treeview..tkinterttk.txt;*
       scrolls the widget if necessary so that _item_ is within the
       visible portion of the tree.
 
-   selection()                    *Treeview.selection()..tkinterttk.txt;*
+   selection()                    *Treeview.selection()..tkinter.ttk.txt*
 
       Returns a tuple of selected items.
 
@@ -1134,21 +1134,21 @@ class tkinter.ttk.Treeview                 *Treeview..tkinterttk.txt;*
       For changing the selection state use the following selection
       methods.
 
-   selection_set(*items)      *Treeview.selection_set()..tkinterttk.txt;*
+   selection_set(*items)      *Treeview.selection_set()..tkinter.ttk.txt*
 
       _items_ becomes the new selection.
 
       Changed in version 3.6: _items_ can be passed as separate
       arguments, not just as a single tuple.
 
-   selection_add(*items)      *Treeview.selection_add()..tkinterttk.txt;*
+   selection_add(*items)      *Treeview.selection_add()..tkinter.ttk.txt*
 
       Add _items_ to the selection.
 
       Changed in version 3.6: _items_ can be passed as separate
       arguments, not just as a single tuple.
 
-                        *Treeview.selection_remove()..tkinterttk.txt;*
+                        *Treeview.selection_remove()..tkinter.ttk.txt*
    selection_remove(*items)
 
       Remove _items_ from the selection.
@@ -1156,7 +1156,7 @@ class tkinter.ttk.Treeview                 *Treeview..tkinterttk.txt;*
       Changed in version 3.6: _items_ can be passed as separate
       arguments, not just as a single tuple.
 
-                        *Treeview.selection_toggle()..tkinterttk.txt;*
+                        *Treeview.selection_toggle()..tkinter.ttk.txt*
    selection_toggle(*items)
 
       Toggle the selection state of each item in _items_.
@@ -1164,7 +1164,7 @@ class tkinter.ttk.Treeview                 *Treeview..tkinterttk.txt;*
       Changed in version 3.6: _items_ can be passed as separate
       arguments, not just as a single tuple.
 
-   set(item, column=None, value=None)   *Treeview.set()..tkinterttk.txt;*
+   set(item, column=None, value=None)   *Treeview.set()..tkinter.ttk.txt*
 
       With one argument, returns a dictionary of column/value pairs
       for the specified _item_. With two arguments, returns the
@@ -1172,14 +1172,14 @@ class tkinter.ttk.Treeview                 *Treeview..tkinterttk.txt;*
       sets the value of given _column_ in given _item_ to the
       specified _value_.
 
-                                *Treeview.tag_bind()..tkinterttk.txt;*
+                                *Treeview.tag_bind()..tkinter.ttk.txt*
    tag_bind(tagname, sequence=None, callback=None)
 
       Bind a callback for the given event _sequence_ to the tag
       _tagname_. When an event is delivered to an item, the callbacks
       for each of the item’s tags option are called.
 
-                           *Treeview.tag_configure()..tkinterttk.txt;*
+                           *Treeview.tag_configure()..tkinter.ttk.txt*
    tag_configure(tagname, option=None, **kw)
 
       Query or modify the options for the specified _tagname_.
@@ -1189,7 +1189,7 @@ class tkinter.ttk.Treeview                 *Treeview..tkinterttk.txt;*
       _option_ for the specified _tagname_. Otherwise, sets the
       options to the corresponding values for the given _tagname_.
 
-   tag_has(tagname, item=None)      *Treeview.tag_has()..tkinterttk.txt;*
+   tag_has(tagname, item=None)      *Treeview.tag_has()..tkinter.ttk.txt*
 
       If _item_ is specified, returns 1 or 0 depending on whether the
       specified _item_ has the given _tagname_. Otherwise, returns a
@@ -1197,11 +1197,11 @@ class tkinter.ttk.Treeview                 *Treeview..tkinterttk.txt;*
 
       Availability: Tk 8.6
 
-   xview(*args)                       *Treeview.xview()..tkinterttk.txt;*
+   xview(*args)                       *Treeview.xview()..tkinter.ttk.txt*
 
       Query or modify horizontal position of the treeview.
 
-   yview(*args)                       *Treeview.yview()..tkinterttk.txt;*
+   yview(*args)                       *Treeview.yview()..tkinter.ttk.txt*
 
       Query or modify vertical position of the treeview.
 
@@ -1222,11 +1222,11 @@ See also:
   Tcl’2004 conference presentation
      This document explains how the theme engine works
 
-class tkinter.ttk.Style                       *Style..tkinterttk.txt;*
+class tkinter.ttk.Style                       *Style..tkinter.ttk.txt*
 
    This class is used to manipulate the style database.
 
-                                  *Style.configure()..tkinterttk.txt;*
+                                  *Style.configure()..tkinter.ttk.txt*
    configure(style, query_opt=None, **kw)
 
       Query or set the default value of the specified option(s) in
@@ -1251,7 +1251,7 @@ class tkinter.ttk.Style                       *Style..tkinterttk.txt;*
 
          root.mainloop()
 <
-   map(style, query_opt=None, **kw)        *Style.map()..tkinterttk.txt;*
+   map(style, query_opt=None, **kw)        *Style.map()..tkinter.ttk.txt*
 
       Query or sets dynamic values of the specified option(s) in
       _style_.
@@ -1284,7 +1284,7 @@ class tkinter.ttk.Style                       *Style..tkinterttk.txt;*
       example, the result would be a blue foreground when the widget
       were in active or pressed states.
 
-                                     *Style.lookup()..tkinterttk.txt;*
+                                     *Style.lookup()..tkinter.ttk.txt*
    lookup(style, option, state=None, default=None)
 
       Returns the value specified for _option_ in _style_.
@@ -1299,7 +1299,7 @@ class tkinter.ttk.Style                       *Style..tkinterttk.txt;*
 
          print(ttk.Style().lookup("TButton", "font"))
 <
-   layout(style, layoutspec=None)       *Style.layout()..tkinterttk.txt;*
+   layout(style, layoutspec=None)       *Style.layout()..tkinter.ttk.txt*
 
       Define the widget layout for given _style_. If _layoutspec_ is
       omitted, return the layout specification for given style.
@@ -1334,7 +1334,7 @@ class tkinter.ttk.Style                       *Style..tkinterttk.txt;*
          root.mainloop()
 <
 
-                             *Style.element_create()..tkinterttk.txt;*
+                             *Style.element_create()..tkinter.ttk.txt*
    element_create(elementname, etype, *args, **kw)
 
       Create a new element in the current theme, of the given _etype_
@@ -1373,16 +1373,16 @@ class tkinter.ttk.Style                       *Style..tkinterttk.txt;*
       an element to clone from. If this element to clone from is not
       specified, an empty element will be used. _kw_ is discarded.
 
-   element_names()               *Style.element_names()..tkinterttk.txt;*
+   element_names()               *Style.element_names()..tkinter.ttk.txt*
 
       Returns the list of elements defined in the current theme.
 
-                            *Style.element_options()..tkinterttk.txt;*
+                            *Style.element_options()..tkinter.ttk.txt*
    element_options(elementname)
 
       Returns the list of _elementname_’s options.
 
-                               *Style.theme_create()..tkinterttk.txt;*
+                               *Style.theme_create()..tkinter.ttk.txt*
    theme_create(themename, parent=None, settings=None)
 
       Create a new theme.
@@ -1393,7 +1393,7 @@ class tkinter.ttk.Style                       *Style..tkinterttk.txt;*
       are expected to have the same syntax used for
       "theme_settings()".
 
-                             *Style.theme_settings()..tkinterttk.txt;*
+                             *Style.theme_settings()..tkinter.ttk.txt*
    theme_settings(themename, settings)
 
       Temporarily sets the current theme to _themename_, apply
@@ -1431,11 +1431,11 @@ class tkinter.ttk.Style                       *Style..tkinterttk.txt;*
 
          root.mainloop()
 <
-   theme_names()                   *Style.theme_names()..tkinterttk.txt;*
+   theme_names()                   *Style.theme_names()..tkinter.ttk.txt*
 
       Returns a list of all known themes.
 
-   theme_use(themename=None)         *Style.theme_use()..tkinterttk.txt;*
+   theme_use(themename=None)         *Style.theme_use()..tkinter.ttk.txt*
 
       If _themename_ is not given, returns the theme in use.
       Otherwise, sets the current theme to _themename_, refreshes all

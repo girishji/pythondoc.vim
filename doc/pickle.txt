@@ -1,4 +1,4 @@
-*pickle.txt;*                                 Last change: 2023 Sep 09
+*pickle.txt;*                                 Last change: 2023 Sep 10
 
 "pickle" — Python object serialization
 **************************************
@@ -174,13 +174,13 @@ serialization and de-serialization, you can create a "Pickler" or an
 
 The "pickle" module provides the following constants:
 
-pickle.HIGHEST_PROTOCOL                *HIGHEST_PROTOCOL..pickle.txt;*
+pickle.HIGHEST_PROTOCOL                 *HIGHEST_PROTOCOL..pickle.txt*
 
    An integer, the highest protocol version available.  This value can
    be passed as a _protocol_ value to functions "dump()" and "dumps()"
    as well as the "Pickler" constructor.
 
-pickle.DEFAULT_PROTOCOL                *DEFAULT_PROTOCOL..pickle.txt;*
+pickle.DEFAULT_PROTOCOL                 *DEFAULT_PROTOCOL..pickle.txt*
 
    An integer, the default protocol version used for pickling.  May be
    less than "HIGHEST_PROTOCOL".  Currently the default protocol is 4,
@@ -194,7 +194,7 @@ pickle.DEFAULT_PROTOCOL                *DEFAULT_PROTOCOL..pickle.txt;*
 The "pickle" module provides the following functions to make the
 pickling process more convenient:
 
-                                                 *dump()..pickle.txt;*
+                                                  *dump()..pickle.txt*
 pickle.dump(obj, file, protocol=None, *, fix_imports=True, buffer_callback=None)
 
    Write the pickled representation of the object _obj_ to the open
@@ -206,7 +206,7 @@ pickle.dump(obj, file, protocol=None, *, fix_imports=True, buffer_callback=None)
 
    Changed in version 3.8: The _buffer_callback_ argument was added.
 
-                                                *dumps()..pickle.txt;*
+                                                 *dumps()..pickle.txt*
 pickle.dumps(obj, protocol=None, *, fix_imports=True, buffer_callback=None)
 
    Return the pickled representation of the object _obj_ as a "bytes"
@@ -217,7 +217,7 @@ pickle.dumps(obj, protocol=None, *, fix_imports=True, buffer_callback=None)
 
    Changed in version 3.8: The _buffer_callback_ argument was added.
 
-                                                 *load()..pickle.txt;*
+                                                  *load()..pickle.txt*
 pickle.load(file, *, fix_imports=True, encoding='ASCII', errors='strict', buffers=None)
 
    Read the pickled representation of an object from the open _file
@@ -233,7 +233,7 @@ pickle.load(file, *, fix_imports=True, encoding='ASCII', errors='strict', buffer
 
    Changed in version 3.8: The _buffers_ argument was added.
 
-                                                *loads()..pickle.txt;*
+                                                 *loads()..pickle.txt*
 pickle.loads(data, /, *, fix_imports=True, encoding='ASCII', errors='strict', buffers=None)
 
    Return the reconstituted object hierarchy of the pickled
@@ -251,12 +251,12 @@ pickle.loads(data, /, *, fix_imports=True, encoding='ASCII', errors='strict', bu
 
 The "pickle" module defines three exceptions:
 
-exception pickle.PickleError                *PickleError..pickle.txt;*
+exception pickle.PickleError                 *PickleError..pickle.txt*
 
    Common base class for the other pickling exceptions.  It inherits
    "Exception".
 
-exception pickle.PicklingError            *PicklingError..pickle.txt;*
+exception pickle.PicklingError             *PicklingError..pickle.txt*
 
    Error raised when an unpicklable object is encountered by
    "Pickler". It inherits "PickleError".
@@ -264,7 +264,7 @@ exception pickle.PicklingError            *PicklingError..pickle.txt;*
    Refer to What can be pickled and unpickled? to learn what kinds of
    objects can be pickled.
 
-exception pickle.UnpicklingError        *UnpicklingError..pickle.txt;*
+exception pickle.UnpicklingError         *UnpicklingError..pickle.txt*
 
    Error raised when there is a problem unpickling an object, such as
    a data corruption or a security violation.  It inherits
@@ -277,7 +277,7 @@ exception pickle.UnpicklingError        *UnpicklingError..pickle.txt;*
 The "pickle" module exports three classes, "Pickler", "Unpickler" and
 "PickleBuffer":
 
-                                                *Pickler..pickle.txt;*
+                                                 *Pickler..pickle.txt*
 class pickle.Pickler(file, protocol=None, *, fix_imports=True, buffer_callback=None)
 
    This takes a binary file for writing a pickle data stream.
@@ -310,12 +310,12 @@ class pickle.Pickler(file, protocol=None, *, fix_imports=True, buffer_callback=N
 
    Changed in version 3.8: The _buffer_callback_ argument was added.
 
-   dump(obj)                                *Pickler.dump()..pickle.txt;*
+   dump(obj)                                 *Pickler.dump()..pickle.txt*
 
       Write the pickled representation of _obj_ to the open file
       object given in the constructor.
 
-   persistent_id(obj)              *Pickler.persistent_id()..pickle.txt;*
+   persistent_id(obj)               *Pickler.persistent_id()..pickle.txt*
 
       Do nothing by default.  This exists so a subclass can override
       it.
@@ -330,7 +330,7 @@ class pickle.Pickler(file, protocol=None, *, fix_imports=True, buffer_callback=N
       See Persistence of External Objects for details and examples of
       uses.
 
-   dispatch_table                   *Pickler.dispatch_table..pickle.txt;*
+   dispatch_table                    *Pickler.dispatch_table..pickle.txt*
 
       A pickler object’s dispatch table is a registry of _reduction
       functions_ of the kind which can be declared using
@@ -352,7 +352,7 @@ class pickle.Pickler(file, protocol=None, *, fix_imports=True, buffer_callback=N
 
       New in version 3.3.
 
-   reducer_override(obj)        *Pickler.reducer_override()..pickle.txt;*
+   reducer_override(obj)         *Pickler.reducer_override()..pickle.txt*
 
       Special reducer that can be defined in "Pickler" subclasses.
       This method has priority over any reducer in the
@@ -366,7 +366,7 @@ class pickle.Pickler(file, protocol=None, *, fix_imports=True, buffer_callback=N
 
       New in version 3.8.
 
-   fast                                       *Pickler.fast..pickle.txt;*
+   fast                                        *Pickler.fast..pickle.txt*
 
       Deprecated. Enable fast mode if set to a true value.  The fast
       mode disables the usage of memo, therefore speeding the pickling
@@ -376,7 +376,7 @@ class pickle.Pickler(file, protocol=None, *, fix_imports=True, buffer_callback=N
 
       Use "pickletools.optimize()" if you need more compact pickles.
 
-                                              *Unpickler..pickle.txt;*
+                                               *Unpickler..pickle.txt*
 class pickle.Unpickler(file, *, fix_imports=True, encoding='ASCII', errors='strict', buffers=None)
 
    This takes a binary file for reading a pickle data stream.
@@ -414,14 +414,14 @@ class pickle.Unpickler(file, *, fix_imports=True, encoding='ASCII', errors='stri
 
    Changed in version 3.8: The _buffers_ argument was added.
 
-   load()                                 *Unpickler.load()..pickle.txt;*
+   load()                                  *Unpickler.load()..pickle.txt*
 
       Read the pickled representation of an object from the open file
       object given in the constructor, and return the reconstituted
       object hierarchy specified therein.  Bytes past the pickled
       representation of the object are ignored.
 
-   persistent_load(pid)        *Unpickler.persistent_load()..pickle.txt;*
+   persistent_load(pid)         *Unpickler.persistent_load()..pickle.txt*
 
       Raise an "UnpicklingError" by default.
 
@@ -432,7 +432,7 @@ class pickle.Unpickler(file, *, fix_imports=True, encoding='ASCII', errors='stri
       See Persistence of External Objects for details and examples of
       uses.
 
-   find_class(module, name)         *Unpickler.find_class()..pickle.txt;*
+   find_class(module, name)          *Unpickler.find_class()..pickle.txt*
 
       Import _module_ if necessary and return the object called _name_
       from it, where the _module_ and _name_ arguments are "str"
@@ -446,7 +446,7 @@ class pickle.Unpickler(file, *, fix_imports=True, encoding='ASCII', errors='stri
       Raises an auditing event "pickle.find_class" with arguments
       "module", "name".
 
-class pickle.PickleBuffer(buffer)          *PickleBuffer..pickle.txt;*
+class pickle.PickleBuffer(buffer)           *PickleBuffer..pickle.txt*
 
    A wrapper for a buffer representing picklable data.  _buffer_ must
    be a buffer-providing object, such as a _bytes-like object_ or a
@@ -461,14 +461,14 @@ class pickle.PickleBuffer(buffer)          *PickleBuffer..pickle.txt;*
 
    New in version 3.8.
 
-   raw()                                *PickleBuffer.raw()..pickle.txt;*
+   raw()                                 *PickleBuffer.raw()..pickle.txt*
 
       Return a "memoryview" of the memory area underlying this buffer.
       The returned object is a one-dimensional, C-contiguous
       memoryview with format "B" (unsigned bytes).  "BufferError" is
       raised if the buffer is neither C- nor Fortran-contiguous.
 
-   release()                        *PickleBuffer.release()..pickle.txt;*
+   release()                         *PickleBuffer.release()..pickle.txt*
 
       Release the underlying buffer exposed by the PickleBuffer
       object.
@@ -562,7 +562,7 @@ implementation of this behaviour:
 Classes can alter the default behaviour by providing one or several
 special methods:
 
-object.__getnewargs_ex__()   *object.__getnewargs_ex__()..pickle.txt;*
+object.__getnewargs_ex__()    *object.__getnewargs_ex__()..pickle.txt*
 
    In protocols 2 and newer, classes that implements the
    "__getnewargs_ex__()" method can dictate the values passed to the
@@ -579,7 +579,7 @@ object.__getnewargs_ex__()   *object.__getnewargs_ex__()..pickle.txt;*
    Changed in version 3.6: "__getnewargs_ex__()" is now used in
    protocols 2 and 3.
 
-object.__getnewargs__()         *object.__getnewargs__()..pickle.txt;*
+object.__getnewargs__()          *object.__getnewargs__()..pickle.txt*
 
    This method serves a similar purpose as "__getnewargs_ex__()", but
    supports only positional arguments.  It must return a tuple of
@@ -592,7 +592,7 @@ object.__getnewargs__()         *object.__getnewargs__()..pickle.txt;*
    Changed in version 3.6: Before Python 3.6, "__getnewargs__()" was
    called instead of "__getnewargs_ex__()" in protocols 2 and 3.
 
-object.__getstate__()             *object.__getstate__()..pickle.txt;*
+object.__getstate__()              *object.__getstate__()..pickle.txt*
 
    Classes can further influence how their instances are pickled by
    overriding the method "__getstate__()".  It is called and the
@@ -618,7 +618,7 @@ object.__getstate__()             *object.__getstate__()..pickle.txt;*
    Changed in version 3.11: Added the default implementation of the
    "__getstate__()" method in the "object" class.
 
-object.__setstate__(state)        *object.__setstate__()..pickle.txt;*
+object.__setstate__(state)         *object.__setstate__()..pickle.txt*
 
    Upon unpickling, if the class defines "__setstate__()", it is
    called with the unpickled state.  In that case, there is no
@@ -656,7 +656,7 @@ the high-level interface (i.e., "__getnewargs_ex__()",
 show, however, cases where using "__reduce__()" is the only option or
 leads to more efficient pickling or both.
 
-object.__reduce__()                 *object.__reduce__()..pickle.txt;*
+object.__reduce__()                  *object.__reduce__()..pickle.txt*
 
    The interface is currently defined as follows.  The "__reduce__()"
    method takes no argument and shall return either a string or
@@ -709,7 +709,7 @@ object.__reduce__()                 *object.__reduce__()..pickle.txt;*
      New in version 3.8: The optional sixth tuple item, "(obj,
      state)", was added.
 
-object.__reduce_ex__(protocol)   *object.__reduce_ex__()..pickle.txt;*
+object.__reduce_ex__(protocol)    *object.__reduce_ex__()..pickle.txt*
 
    Alternatively, a "__reduce_ex__()" method may be defined.  The only
    difference is this method should take a single integer argument,

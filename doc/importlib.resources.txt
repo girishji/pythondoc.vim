@@ -1,4 +1,4 @@
-*importlibresources.txt;*                     Last change: 2023 Sep 09
+*importlib.resources.txt;*                    Last change: 2023 Sep 10
 
 "importlib.resources" – Package resource reading, opening and access
 ********************************************************************
@@ -42,12 +42,12 @@ Note:
 "get_resource_reader(fullname)" method as specified by
 "importlib.resources.abc.ResourceReader".
 
-importlib.resources.Anchor           *Anchor..importlibresources.txt;*
+importlib.resources.Anchor           *Anchor..importlib.resources.txt*
 
    Represents an anchor for resources, either a "module object" or a
    module name as a string. Defined as "Union[str, ModuleType]".
 
-                                    *files()..importlibresources.txt;*
+                                    *files()..importlib.resources.txt*
 importlib.resources.files(anchor: Anchor | None = None)
 
    Returns a "Traversable" object representing the resource container
@@ -69,7 +69,7 @@ importlib.resources.files(anchor: Anchor | None = None)
    passing the anchor positionally or using "importlib_resources >=
    5.10" for a compatible interface on older Pythons.
 
-                                  *as_file()..importlibresources.txt;*
+                                  *as_file()..importlib.resources.txt*
 importlib.resources.as_file(traversable)
 
    Given a "Traversable" object representing a file or directory,

@@ -1,4 +1,4 @@
-*ospath.txt;*                                 Last change: 2023 Sep 09
+*os.path.txt;*                                Last change: 2023 Sep 10
 
 "os.path" — Common pathname manipulations
 *****************************************
@@ -46,7 +46,7 @@ Changed in version 3.8: "exists()", "lexists()", "isdir()",
 raising an exception for paths that contain characters or bytes
 unrepresentable at the OS level.
 
-os.path.abspath(path)                         *abspath()..ospath.txt;*
+os.path.abspath(path)                         *abspath()..os.path.txt*
 
    Return a normalized absolutized version of the pathname _path_. On
    most platforms, this is equivalent to calling the function
@@ -54,7 +54,7 @@ os.path.abspath(path)                         *abspath()..ospath.txt;*
 
    Changed in version 3.6: Accepts a _path-like object_.
 
-os.path.basename(path)                       *basename()..ospath.txt;*
+os.path.basename(path)                       *basename()..os.path.txt*
 
    Return the base name of pathname _path_.  This is the second
    element of the pair returned by passing _path_ to the function
@@ -65,7 +65,7 @@ os.path.basename(path)                       *basename()..ospath.txt;*
 
    Changed in version 3.6: Accepts a _path-like object_.
 
-os.path.commonpath(paths)                  *commonpath()..ospath.txt;*
+os.path.commonpath(paths)                  *commonpath()..os.path.txt*
 
    Return the longest common sub-path of each pathname in the sequence
    _paths_.  Raise "ValueError" if _paths_ contain both absolute and
@@ -79,7 +79,7 @@ os.path.commonpath(paths)                  *commonpath()..ospath.txt;*
 
    Changed in version 3.6: Accepts a sequence of _path-like objects_.
 
-os.path.commonprefix(list)               *commonprefix()..ospath.txt;*
+os.path.commonprefix(list)               *commonprefix()..os.path.txt*
 
    Return the longest path prefix (taken character-by-character) that
    is a prefix of all paths in  _list_.  If _list_ is empty, return
@@ -99,7 +99,7 @@ os.path.commonprefix(list)               *commonprefix()..ospath.txt;*
 <
    Changed in version 3.6: Accepts a _path-like object_.
 
-os.path.dirname(path)                         *dirname()..ospath.txt;*
+os.path.dirname(path)                         *dirname()..os.path.txt*
 
    Return the directory name of pathname _path_.  This is the first
    element of the pair returned by passing _path_ to the function
@@ -107,7 +107,7 @@ os.path.dirname(path)                         *dirname()..ospath.txt;*
 
    Changed in version 3.6: Accepts a _path-like object_.
 
-os.path.exists(path)                           *exists()..ospath.txt;*
+os.path.exists(path)                           *exists()..os.path.txt*
 
    Return "True" if _path_ refers to an existing path or an open file
    descriptor.  Returns "False" for broken symbolic links.  On some
@@ -120,7 +120,7 @@ os.path.exists(path)                           *exists()..ospath.txt;*
 
    Changed in version 3.6: Accepts a _path-like object_.
 
-os.path.lexists(path)                         *lexists()..ospath.txt;*
+os.path.lexists(path)                         *lexists()..os.path.txt*
 
    Return "True" if _path_ refers to an existing path. Returns "True"
    for broken symbolic links.   Equivalent to "exists()" on platforms
@@ -128,7 +128,7 @@ os.path.lexists(path)                         *lexists()..ospath.txt;*
 
    Changed in version 3.6: Accepts a _path-like object_.
 
-os.path.expanduser(path)                   *expanduser()..ospath.txt;*
+os.path.expanduser(path)                   *expanduser()..os.path.txt*
 
    On Unix and Windows, return the argument with an initial component
    of "~" or "~user" replaced by that _user_’s home directory.
@@ -152,7 +152,7 @@ os.path.expanduser(path)                   *expanduser()..ospath.txt;*
 
    Changed in version 3.8: No longer uses "HOME" on Windows.
 
-os.path.expandvars(path)                   *expandvars()..ospath.txt;*
+os.path.expandvars(path)                   *expandvars()..os.path.txt*
 
    Return the argument with environment variables expanded.
    Substrings of the form "$name" or "${name}" are replaced by the
@@ -164,14 +164,14 @@ os.path.expandvars(path)                   *expandvars()..ospath.txt;*
 
    Changed in version 3.6: Accepts a _path-like object_.
 
-os.path.getatime(path)                       *getatime()..ospath.txt;*
+os.path.getatime(path)                       *getatime()..os.path.txt*
 
    Return the time of last access of _path_.  The return value is a
    floating point number giving the number of seconds since the epoch
    (see the  "time" module).  Raise "OSError" if the file does not
    exist or is inaccessible.
 
-os.path.getmtime(path)                       *getmtime()..ospath.txt;*
+os.path.getmtime(path)                       *getmtime()..os.path.txt*
 
    Return the time of last modification of _path_.  The return value
    is a floating point number giving the number of seconds since the
@@ -180,7 +180,7 @@ os.path.getmtime(path)                       *getmtime()..ospath.txt;*
 
    Changed in version 3.6: Accepts a _path-like object_.
 
-os.path.getctime(path)                       *getctime()..ospath.txt;*
+os.path.getctime(path)                       *getctime()..os.path.txt*
 
    Return the system’s ctime which, on some systems (like Unix) is the
    time of the last metadata change, and, on others (like Windows), is
@@ -190,14 +190,14 @@ os.path.getctime(path)                       *getctime()..ospath.txt;*
 
    Changed in version 3.6: Accepts a _path-like object_.
 
-os.path.getsize(path)                         *getsize()..ospath.txt;*
+os.path.getsize(path)                         *getsize()..os.path.txt*
 
    Return the size, in bytes, of _path_.  Raise "OSError" if the file
    does not exist or is inaccessible.
 
    Changed in version 3.6: Accepts a _path-like object_.
 
-os.path.isabs(path)                             *isabs()..ospath.txt;*
+os.path.isabs(path)                             *isabs()..os.path.txt*
 
    Return "True" if _path_ is an absolute pathname.  On Unix, that
    means it begins with a slash, on Windows that it begins with a
@@ -205,7 +205,7 @@ os.path.isabs(path)                             *isabs()..ospath.txt;*
 
    Changed in version 3.6: Accepts a _path-like object_.
 
-os.path.isfile(path)                           *isfile()..ospath.txt;*
+os.path.isfile(path)                           *isfile()..os.path.txt*
 
    Return "True" if _path_ is an "existing" regular file. This follows
    symbolic links, so both "islink()" and "isfile()" can be true for
@@ -213,7 +213,7 @@ os.path.isfile(path)                           *isfile()..ospath.txt;*
 
    Changed in version 3.6: Accepts a _path-like object_.
 
-os.path.isdir(path)                             *isdir()..ospath.txt;*
+os.path.isdir(path)                             *isdir()..os.path.txt*
 
    Return "True" if _path_ is an "existing" directory.  This follows
    symbolic links, so both "islink()" and "isdir()" can be true for
@@ -221,7 +221,7 @@ os.path.isdir(path)                             *isdir()..ospath.txt;*
 
    Changed in version 3.6: Accepts a _path-like object_.
 
-os.path.isjunction(path)                   *isjunction()..ospath.txt;*
+os.path.isjunction(path)                   *isjunction()..os.path.txt*
 
    Return "True" if _path_ refers to an "existing" directory entry
    that is a junction.  Always return "False" if junctions are not
@@ -229,7 +229,7 @@ os.path.isjunction(path)                   *isjunction()..ospath.txt;*
 
    New in version 3.12.
 
-os.path.islink(path)                           *islink()..ospath.txt;*
+os.path.islink(path)                           *islink()..os.path.txt*
 
    Return "True" if _path_ refers to an "existing" directory entry
    that is a symbolic link.  Always "False" if symbolic links are not
@@ -237,7 +237,7 @@ os.path.islink(path)                           *islink()..ospath.txt;*
 
    Changed in version 3.6: Accepts a _path-like object_.
 
-os.path.ismount(path)                         *ismount()..ospath.txt;*
+os.path.ismount(path)                         *ismount()..os.path.txt*
 
    Return "True" if pathname _path_ is a _mount point_: a point in a
    file system where a different file system has been mounted.  On
@@ -255,7 +255,7 @@ os.path.ismount(path)                         *ismount()..ospath.txt;*
 
    Changed in version 3.6: Accepts a _path-like object_.
 
-os.path.isdevdrive(path)                   *isdevdrive()..ospath.txt;*
+os.path.isdevdrive(path)                   *isdevdrive()..os.path.txt*
 
    Return "True" if pathname _path_ is located on a Windows Dev Drive.
    A Dev Drive is optimized for developer scenarios, and offers faster
@@ -272,7 +272,7 @@ os.path.isdevdrive(path)                   *isdevdrive()..ospath.txt;*
 
    New in version 3.12.
 
-os.path.join(path, *paths)                       *join()..ospath.txt;*
+os.path.join(path, *paths)                       *join()..os.path.txt*
 
    Join one or more path segments intelligently.  The return value is
    the concatenation of _path_ and all members of _*paths_, with
@@ -294,7 +294,7 @@ os.path.join(path, *paths)                       *join()..ospath.txt;*
    Changed in version 3.6: Accepts a _path-like object_ for _path_ and
    _paths_.
 
-os.path.normcase(path)                       *normcase()..ospath.txt;*
+os.path.normcase(path)                       *normcase()..os.path.txt*
 
    Normalize the case of a pathname.  On Windows, convert all
    characters in the pathname to lowercase, and also convert forward
@@ -303,7 +303,7 @@ os.path.normcase(path)                       *normcase()..ospath.txt;*
 
    Changed in version 3.6: Accepts a _path-like object_.
 
-os.path.normpath(path)                       *normpath()..ospath.txt;*
+os.path.normpath(path)                       *normpath()..os.path.txt*
 
       Normalize a pathname by collapsing redundant separators and up-
       level references so that "A//B", "A/B/", "A/./B" and
@@ -323,7 +323,7 @@ os.path.normpath(path)                       *normpath()..ospath.txt;*
 
      Changed in version 3.6: Accepts a _path-like object_.
 
-os.path.realpath(path, *, strict=False)      *realpath()..ospath.txt;*
+os.path.realpath(path, *, strict=False)      *realpath()..os.path.txt*
 
    Return the canonical path of the specified filename, eliminating
    any symbolic links encountered in the path (if they are supported
@@ -349,7 +349,7 @@ os.path.realpath(path, *, strict=False)      *realpath()..ospath.txt;*
 
    Changed in version 3.10: The _strict_ parameter was added.
 
-os.path.relpath(path, start=os.curdir)        *relpath()..ospath.txt;*
+os.path.relpath(path, start=os.curdir)        *relpath()..os.path.txt*
 
    Return a relative filepath to _path_ either from the current
    directory or from an optional _start_ directory.  This is a path
@@ -363,7 +363,7 @@ os.path.relpath(path, start=os.curdir)        *relpath()..ospath.txt;*
 
    Changed in version 3.6: Accepts a _path-like object_.
 
-os.path.samefile(path1, path2)               *samefile()..ospath.txt;*
+os.path.samefile(path1, path2)               *samefile()..os.path.txt*
 
    Return "True" if both pathname arguments refer to the same file or
    directory. This is determined by the device number and i-node
@@ -379,7 +379,7 @@ os.path.samefile(path1, path2)               *samefile()..ospath.txt;*
 
    Changed in version 3.6: Accepts a _path-like object_.
 
-os.path.sameopenfile(fp1, fp2)           *sameopenfile()..ospath.txt;*
+os.path.sameopenfile(fp1, fp2)           *sameopenfile()..os.path.txt*
 
    Return "True" if the file descriptors _fp1_ and _fp2_ refer to the
    same file.
@@ -390,7 +390,7 @@ os.path.sameopenfile(fp1, fp2)           *sameopenfile()..ospath.txt;*
 
    Changed in version 3.6: Accepts a _path-like object_.
 
-os.path.samestat(stat1, stat2)               *samestat()..ospath.txt;*
+os.path.samestat(stat1, stat2)               *samestat()..os.path.txt*
 
    Return "True" if the stat tuples _stat1_ and _stat2_ refer to the
    same file. These structures may have been returned by "os.fstat()",
@@ -403,7 +403,7 @@ os.path.samestat(stat1, stat2)               *samestat()..ospath.txt;*
 
    Changed in version 3.6: Accepts a _path-like object_.
 
-os.path.split(path)                             *split()..ospath.txt;*
+os.path.split(path)                             *split()..os.path.txt*
 
    Split the pathname _path_ into a pair, "(head, tail)" where _tail_
    is the last pathname component and _head_ is everything leading up
@@ -418,7 +418,7 @@ os.path.split(path)                             *split()..ospath.txt;*
 
    Changed in version 3.6: Accepts a _path-like object_.
 
-os.path.splitdrive(path)                   *splitdrive()..ospath.txt;*
+os.path.splitdrive(path)                   *splitdrive()..os.path.txt*
 
    Split the pathname _path_ into a pair "(drive, tail)" where _drive_
    is either a mount point or the empty string.  On systems which do
@@ -442,7 +442,7 @@ os.path.splitdrive(path)                   *splitdrive()..ospath.txt;*
 <
    Changed in version 3.6: Accepts a _path-like object_.
 
-os.path.splitroot(path)                     *splitroot()..ospath.txt;*
+os.path.splitroot(path)                     *splitroot()..os.path.txt*
 
    Split the pathname _path_ into a 3-item tuple "(drive, root, tail)"
    where _drive_ is a device name or mount point, _root_ is a string
@@ -473,7 +473,7 @@ os.path.splitroot(path)                     *splitroot()..ospath.txt;*
 <
    New in version 3.12.
 
-os.path.splitext(path)                       *splitext()..ospath.txt;*
+os.path.splitext(path)                       *splitext()..os.path.txt*
 
    Split the pathname _path_ into a pair "(root, ext)"  such that
    "root + ext == path", and the extension, _ext_, is empty or begins
@@ -503,7 +503,7 @@ os.path.splitext(path)                       *splitext()..ospath.txt;*
 <
    Changed in version 3.6: Accepts a _path-like object_.
 
-                             *supports_unicode_filenames..ospath.txt;*
+                             *supports_unicode_filenames..os.path.txt*
 os.path.supports_unicode_filenames
 
    "True" if arbitrary Unicode strings can be used as file names

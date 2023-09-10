@@ -1,4 +1,4 @@
-*contextlib.txt;*                             Last change: 2023 Sep 09
+*contextlib.txt;*                             Last change: 2023 Sep 10
 
 "contextlib" — Utilities for "with"-statement contexts
 ******************************************************
@@ -17,7 +17,7 @@ Utilities
 
 Functions and classes provided:
 
-                             *AbstractContextManager..contextlib.txt;*
+                              *AbstractContextManager..contextlib.txt*
 class contextlib.AbstractContextManager
 
    An _abstract base class_ for classes that implement
@@ -29,7 +29,7 @@ class contextlib.AbstractContextManager
 
    New in version 3.6.
 
-                        *AbstractAsyncContextManager..contextlib.txt;*
+                         *AbstractAsyncContextManager..contextlib.txt*
 class contextlib.AbstractAsyncContextManager
 
    An _abstract base class_ for classes that implement
@@ -41,7 +41,7 @@ class contextlib.AbstractAsyncContextManager
 
    New in version 3.7.
 
-@contextlib.contextmanager         *contextmanager()..contextlib.txt;*
+@contextlib.contextmanager          *contextmanager()..contextlib.txt*
 
    This function is a _decorator_ that can be used to define a factory
    function for "with" statement context managers, without needing to
@@ -101,7 +101,7 @@ class contextlib.AbstractAsyncContextManager
 
    Changed in version 3.2: Use of "ContextDecorator".
 
-                              *asynccontextmanager()..contextlib.txt;*
+                               *asynccontextmanager()..contextlib.txt*
 @contextlib.asynccontextmanager
 
       Similar to "contextmanager()", but creates an asynchronous
@@ -158,7 +158,7 @@ class contextlib.AbstractAsyncContextManager
    Changed in version 3.10: Async context managers created with
    "asynccontextmanager()" can be used as decorators.
 
-contextlib.closing(thing)                 *closing()..contextlib.txt;*
+contextlib.closing(thing)                  *closing()..contextlib.txt*
 
    Return a context manager that closes _thing_ upon completion of the
    block.  This is basically equivalent to:
@@ -185,7 +185,7 @@ contextlib.closing(thing)                 *closing()..contextlib.txt;*
    occurs, "page.close()" will be called when the "with" block is
    exited.
 
-contextlib.aclosing(thing)               *aclosing()..contextlib.txt;*
+contextlib.aclosing(thing)                *aclosing()..contextlib.txt*
 
    Return an async context manager that calls the "aclose()" method of
    _thing_ upon completion of the block.  This is basically equivalent
@@ -218,7 +218,7 @@ contextlib.aclosing(thing)               *aclosing()..contextlib.txt;*
 
    New in version 3.10.
 
-                                      *nullcontext()..contextlib.txt;*
+                                       *nullcontext()..contextlib.txt*
 contextlib.nullcontext(enter_result=None)
 
    Return a context manager that returns _enter_result_ from
@@ -267,7 +267,7 @@ contextlib.nullcontext(enter_result=None)
    Changed in version 3.10: _asynchronous context manager_ support was
    added.
 
-contextlib.suppress(*exceptions)         *suppress()..contextlib.txt;*
+contextlib.suppress(*exceptions)          *suppress()..contextlib.txt*
 
    Return a context manager that suppresses any of the specified
    exceptions if they occur in the body of a "with" statement and then
@@ -313,7 +313,7 @@ contextlib.suppress(*exceptions)         *suppress()..contextlib.txt;*
    Changed in version 3.12: "suppress" now supports suppressing
    exceptions raised as part of an "ExceptionGroup".
 
-                                  *redirect_stdout()..contextlib.txt;*
+                                   *redirect_stdout()..contextlib.txt*
 contextlib.redirect_stdout(new_target)
 
    Context manager for temporarily redirecting "sys.stdout" to another
@@ -354,7 +354,7 @@ contextlib.redirect_stdout(new_target)
 
    New in version 3.4.
 
-                                  *redirect_stderr()..contextlib.txt;*
+                                   *redirect_stderr()..contextlib.txt*
 contextlib.redirect_stderr(new_target)
 
    Similar to "redirect_stdout()" but redirecting "sys.stderr" to
@@ -364,7 +364,7 @@ contextlib.redirect_stderr(new_target)
 
    New in version 3.5.
 
-contextlib.chdir(path)                      *chdir()..contextlib.txt;*
+contextlib.chdir(path)                       *chdir()..contextlib.txt*
 
    Non parallel-safe context manager to change the current working
    directory. As this changes a global state, the working directory,
@@ -381,8 +381,7 @@ contextlib.chdir(path)                      *chdir()..contextlib.txt;*
 
    New in version 3.11.
 
-                                   *ContextDecorator..contextlib.txt;*
-class contextlib.ContextDecorator
+class contextlib.ContextDecorator   *ContextDecorator..contextlib.txt*
 
    A base class that enables a context manager to also be used as a
    decorator.
@@ -464,7 +463,7 @@ class contextlib.ContextDecorator
 
    New in version 3.2.
 
-                              *AsyncContextDecorator..contextlib.txt;*
+                               *AsyncContextDecorator..contextlib.txt*
 class contextlib.AsyncContextDecorator
 
    Similar to "ContextDecorator" but only for asynchronous functions.
@@ -505,7 +504,7 @@ class contextlib.AsyncContextDecorator
 <
    New in version 3.10.
 
-class contextlib.ExitStack                *ExitStack..contextlib.txt;*
+class contextlib.ExitStack                 *ExitStack..contextlib.txt*
 
    A context manager that is designed to make it easy to
    programmatically combine other context managers and cleanup
@@ -548,7 +547,7 @@ class contextlib.ExitStack                *ExitStack..contextlib.txt;*
 
    New in version 3.3.
 
-   enter_context(cm)         *ExitStack.enter_context()..contextlib.txt;*
+   enter_context(cm)          *ExitStack.enter_context()..contextlib.txt*
 
       Enters a new context manager and adds its "__exit__()" method to
       the callback stack. The return value is the result of the
@@ -560,7 +559,7 @@ class contextlib.ExitStack                *ExitStack..contextlib.txt;*
       Changed in version 3.11: Raises "TypeError" instead of
       "AttributeError" if _cm_ is not a context manager.
 
-   push(exit)                         *ExitStack.push()..contextlib.txt;*
+   push(exit)                          *ExitStack.push()..contextlib.txt*
 
       Adds a context manager’s "__exit__()" method to the callback
       stack.
@@ -581,7 +580,7 @@ class contextlib.ExitStack                *ExitStack..contextlib.txt;*
       The passed in object is returned from the function, allowing
       this method to be used as a function decorator.
 
-                               *ExitStack.callback()..contextlib.txt;*
+                                *ExitStack.callback()..contextlib.txt*
    callback(callback, /, *args, **kwds)
 
       Accepts an arbitrary callback function and arguments and adds it
@@ -594,7 +593,7 @@ class contextlib.ExitStack                *ExitStack..contextlib.txt;*
       The passed in callback is returned from the function, allowing
       this method to be used as a function decorator.
 
-   pop_all()                       *ExitStack.pop_all()..contextlib.txt;*
+   pop_all()                        *ExitStack.pop_all()..contextlib.txt*
 
       Transfers the callback stack to a fresh "ExitStack" instance and
       returns it. No callbacks are invoked by this operation -
@@ -614,14 +613,14 @@ class contextlib.ExitStack                *ExitStack..contextlib.txt;*
              # they will remain open even after the with statement ends.
              # close_files() can then be invoked explicitly to close them all.
 <
-   close()                           *ExitStack.close()..contextlib.txt;*
+   close()                            *ExitStack.close()..contextlib.txt*
 
       Immediately unwinds the callback stack, invoking callbacks in
       the reverse order of registration. For any context managers and
       exit callbacks registered, the arguments passed in will indicate
       that no exception occurred.
 
-class contextlib.AsyncExitStack      *AsyncExitStack..contextlib.txt;*
+class contextlib.AsyncExitStack       *AsyncExitStack..contextlib.txt*
 
    An asynchronous context manager, similar to "ExitStack", that
    supports combining both synchronous and asynchronous context
@@ -630,7 +629,7 @@ class contextlib.AsyncExitStack      *AsyncExitStack..contextlib.txt;*
    The "close()" method is not implemented, "aclose()" must be used
    instead.
 
-               *AsyncExitStack.enter_async_context()..contextlib.txt;*
+                *AsyncExitStack.enter_async_context()..contextlib.txt*
    coroutine enter_async_context(cm)
 
       Similar to "enter_context()" but expects an asynchronous context
@@ -639,18 +638,18 @@ class contextlib.AsyncExitStack      *AsyncExitStack..contextlib.txt;*
       Changed in version 3.11: Raises "TypeError" instead of
       "AttributeError" if _cm_ is not an asynchronous context manager.
 
-                   *AsyncExitStack.push_async_exit()..contextlib.txt;*
+                    *AsyncExitStack.push_async_exit()..contextlib.txt*
    push_async_exit(exit)
 
       Similar to "push()" but expects either an asynchronous context
       manager or a coroutine function.
 
-               *AsyncExitStack.push_async_callback()..contextlib.txt;*
+                *AsyncExitStack.push_async_callback()..contextlib.txt*
    push_async_callback(callback, /, *args, **kwds)
 
       Similar to "callback()" but expects a coroutine function.
 
-   coroutine aclose()          *AsyncExitStack.aclose()..contextlib.txt;*
+   coroutine aclose()           *AsyncExitStack.aclose()..contextlib.txt*
 
       Similar to "close()" but properly handles awaitables.
 

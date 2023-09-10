@@ -1,4 +1,4 @@
-*exceptions.txt;*                             Last change: 2023 Sep 09
+*exceptions.txt;*                             Last change: 2023 Sep 10
 
 Built-in Exceptions
 *******************
@@ -86,7 +86,7 @@ Base classes
 The following exceptions are used mostly as base classes for other
 exceptions.
 
-exception BaseException               *BaseException..exceptions.txt;*
+exception BaseException                *BaseException..exceptions.txt*
 
    The base class for all built-in exceptions.  It is not meant to be
    directly inherited by user-defined classes (for that, use
@@ -94,7 +94,7 @@ exception BaseException               *BaseException..exceptions.txt;*
    the representation of the argument(s) to the instance are returned,
    or the empty string when there were no arguments.
 
-   args                             *BaseException.args..exceptions.txt;*
+   args                              *BaseException.args..exceptions.txt*
 
       The tuple of arguments given to the exception constructor.  Some
       built-in exceptions (like "OSError") expect a certain number of
@@ -102,7 +102,7 @@ exception BaseException               *BaseException..exceptions.txt;*
       tuple, while others are usually called only with a single string
       giving an error message.
 
-   with_traceback(tb)   *BaseException.with_traceback()..exceptions.txt;*
+   with_traceback(tb)    *BaseException.with_traceback()..exceptions.txt*
 
       This method sets _tb_ as the new traceback for the exception and
       returns the exception object.  It was more commonly used before
@@ -120,7 +120,7 @@ exception BaseException               *BaseException..exceptions.txt;*
              tb = sys.exception().__traceback__
              raise OtherException(...).with_traceback(tb)
 <
-   add_note(note)             *BaseException.add_note()..exceptions.txt;*
+   add_note(note)              *BaseException.add_note()..exceptions.txt*
 
       Add the string "note" to the exception’s notes which appear in
       the standard traceback after the exception string. A "TypeError"
@@ -128,7 +128,7 @@ exception BaseException               *BaseException..exceptions.txt;*
 
       New in version 3.11.
 
-   __notes__                   *BaseException.__notes__..exceptions.txt;*
+   __notes__                    *BaseException.__notes__..exceptions.txt*
 
       A list of the notes of this exception, which were added with
       "add_note()". This attribute is created when "add_note()" is
@@ -136,23 +136,23 @@ exception BaseException               *BaseException..exceptions.txt;*
 
       New in version 3.11.
 
-exception Exception                       *Exception..exceptions.txt;*
+exception Exception                        *Exception..exceptions.txt*
 
    All built-in, non-system-exiting exceptions are derived from this
    class.  All user-defined exceptions should also be derived from
    this class.
 
-exception ArithmeticError           *ArithmeticError..exceptions.txt;*
+exception ArithmeticError            *ArithmeticError..exceptions.txt*
 
    The base class for those built-in exceptions that are raised for
    various arithmetic errors: "OverflowError", "ZeroDivisionError",
    "FloatingPointError".
 
-exception BufferError                   *BufferError..exceptions.txt;*
+exception BufferError                    *BufferError..exceptions.txt*
 
    Raised when a buffer related operation cannot be performed.
 
-exception LookupError                   *LookupError..exceptions.txt;*
+exception LookupError                    *LookupError..exceptions.txt*
 
    The base class for the exceptions that are raised when a key or
    index used on a mapping or sequence is invalid: "IndexError",
@@ -164,11 +164,11 @@ Concrete exceptions
 
 The following exceptions are the exceptions that are usually raised.
 
-exception AssertionError             *AssertionError..exceptions.txt;*
+exception AssertionError              *AssertionError..exceptions.txt*
 
    Raised when an "assert" statement fails.
 
-exception AttributeError             *AttributeError..exceptions.txt;*
+exception AttributeError              *AttributeError..exceptions.txt*
 
    Raised when an attribute reference (see Attribute references) or
    assignment fails.  (When an object does not support attribute
@@ -181,25 +181,25 @@ exception AttributeError             *AttributeError..exceptions.txt;*
 
    Changed in version 3.10: Added the "name" and "obj" attributes.
 
-exception EOFError                         *EOFError..exceptions.txt;*
+exception EOFError                          *EOFError..exceptions.txt*
 
    Raised when the "input()" function hits an end-of-file condition
    (EOF) without reading any data. (N.B.: the "io.IOBase.read()" and
    "io.IOBase.readline()" methods return an empty string when they hit
    EOF.)
 
-exception FloatingPointError     *FloatingPointError..exceptions.txt;*
+exception FloatingPointError      *FloatingPointError..exceptions.txt*
 
    Not currently used.
 
-exception GeneratorExit               *GeneratorExit..exceptions.txt;*
+exception GeneratorExit                *GeneratorExit..exceptions.txt*
 
    Raised when a _generator_ or _coroutine_ is closed; see
    "generator.close()" and "coroutine.close()".  It directly inherits
    from "BaseException" instead of "Exception" since it is technically
    not an error.
 
-exception ImportError                   *ImportError..exceptions.txt;*
+exception ImportError                    *ImportError..exceptions.txt*
 
    Raised when the "import" statement has troubles trying to load a
    module.  Also raised when the “from list” in "from ... import" has
@@ -212,7 +212,7 @@ exception ImportError                   *ImportError..exceptions.txt;*
 
    Changed in version 3.3: Added the "name" and "path" attributes.
 
-exception ModuleNotFoundError   *ModuleNotFoundError..exceptions.txt;*
+exception ModuleNotFoundError    *ModuleNotFoundError..exceptions.txt*
 
    A subclass of "ImportError" which is raised by "import" when a
    module could not be located.  It is also raised when "None" is
@@ -220,18 +220,18 @@ exception ModuleNotFoundError   *ModuleNotFoundError..exceptions.txt;*
 
    New in version 3.6.
 
-exception IndexError                     *IndexError..exceptions.txt;*
+exception IndexError                      *IndexError..exceptions.txt*
 
    Raised when a sequence subscript is out of range.  (Slice indices
    are silently truncated to fall in the allowed range; if an index is
    not an integer, "TypeError" is raised.)
 
-exception KeyError                         *KeyError..exceptions.txt;*
+exception KeyError                          *KeyError..exceptions.txt*
 
    Raised when a mapping (dictionary) key is not found in the set of
    existing keys.
 
-exception KeyboardInterrupt       *KeyboardInterrupt..exceptions.txt;*
+exception KeyboardInterrupt        *KeyboardInterrupt..exceptions.txt*
 
    Raised when the user hits the interrupt key (normally "Control-C"
    or "Delete").  During execution, a check for interrupts is made
@@ -248,7 +248,7 @@ exception KeyboardInterrupt       *KeyboardInterrupt..exceptions.txt;*
      the program as quickly as possible or avoid raising it entirely.
      (See Note on Signal Handlers and Exceptions.)
 
-exception MemoryError                   *MemoryError..exceptions.txt;*
+exception MemoryError                    *MemoryError..exceptions.txt*
 
    Raised when an operation runs out of memory but the situation may
    still be rescued (by deleting some objects).  The associated value
@@ -259,7 +259,7 @@ exception MemoryError                   *MemoryError..exceptions.txt;*
    nevertheless raises an exception so that a stack traceback can be
    printed, in case a run-away program was the cause.
 
-exception NameError                       *NameError..exceptions.txt;*
+exception NameError                        *NameError..exceptions.txt*
 
    Raised when a local or global name is not found.  This applies only
    to unqualified names.  The associated value is an error message
@@ -271,7 +271,7 @@ exception NameError                       *NameError..exceptions.txt;*
 
    Changed in version 3.10: Added the "name" attribute.
 
-exception NotImplementedError   *NotImplementedError..exceptions.txt;*
+exception NotImplementedError    *NotImplementedError..exceptions.txt*
 
    This exception is derived from "RuntimeError".  In user defined
    base classes, abstract methods should raise this exception when
@@ -291,7 +291,7 @@ exception NotImplementedError   *NotImplementedError..exceptions.txt;*
      interchangeable, even though they have similar names and
      purposes.  See "NotImplemented" for details on when to use it.
 
-exception OSError([arg])                    *OSError..exceptions.txt;*
+exception OSError([arg])                     *OSError..exceptions.txt*
 exception OSError(errno, strerror[, filename[, winerror[, filename2]]])
 
    This exception is raised when a system function returns a system-
@@ -311,11 +311,11 @@ exception OSError(errno, strerror[, filename[, winerror[, filename2]]])
    constructing "OSError" directly or via an alias, and is not
    inherited when subclassing.
 
-   errno                                 *OSError.errno..exceptions.txt;*
+   errno                                  *OSError.errno..exceptions.txt*
 
       A numeric error code from the C variable "errno".
 
-   winerror                           *OSError.winerror..exceptions.txt;*
+   winerror                            *OSError.winerror..exceptions.txt*
 
       Under Windows, this gives you the native Windows error code.
       The "errno" attribute is then an approximate translation, in
@@ -327,14 +327,14 @@ exception OSError(errno, strerror[, filename[, winerror[, filename2]]])
       platforms, the _winerror_ argument is ignored, and the
       "winerror" attribute does not exist.
 
-   strerror                           *OSError.strerror..exceptions.txt;*
+   strerror                            *OSError.strerror..exceptions.txt*
 
       The corresponding error message, as provided by the operating
       system.  It is formatted by the C functions "perror()" under
       POSIX, and "FormatMessage()" under Windows.
 
-   filename                           *OSError.filename..exceptions.txt;*
-   filename2                         *OSError.filename2..exceptions.txt;*
+   filename                            *OSError.filename..exceptions.txt*
+   filename2                          *OSError.filename2..exceptions.txt*
 
       For exceptions that involve a file system path (such as "open()"
       or "os.unlink()"), "filename" is the file name passed to the
@@ -353,7 +353,7 @@ exception OSError(errno, strerror[, filename[, winerror[, filename2]]])
    handler_. Also, the _filename2_ constructor argument and attribute
    was added.
 
-exception OverflowError               *OverflowError..exceptions.txt;*
+exception OverflowError                *OverflowError..exceptions.txt*
 
    Raised when the result of an arithmetic operation is too large to
    be represented.  This cannot occur for integers (which would rather
@@ -363,7 +363,7 @@ exception OverflowError               *OverflowError..exceptions.txt;*
    of floating point exception handling in C, most floating point
    operations are not checked.
 
-exception RecursionError             *RecursionError..exceptions.txt;*
+exception RecursionError              *RecursionError..exceptions.txt*
 
    This exception is derived from "RuntimeError".  It is raised when
    the interpreter detects that the maximum recursion depth (see
@@ -371,20 +371,20 @@ exception RecursionError             *RecursionError..exceptions.txt;*
 
    New in version 3.5: Previously, a plain "RuntimeError" was raised.
 
-exception ReferenceError             *ReferenceError..exceptions.txt;*
+exception ReferenceError              *ReferenceError..exceptions.txt*
 
    This exception is raised when a weak reference proxy, created by
    the "weakref.proxy()" function, is used to access an attribute of
    the referent after it has been garbage collected. For more
    information on weak references, see the "weakref" module.
 
-exception RuntimeError                 *RuntimeError..exceptions.txt;*
+exception RuntimeError                  *RuntimeError..exceptions.txt*
 
    Raised when an error is detected that doesn’t fall in any of the
    other categories.  The associated value is a string indicating what
    precisely went wrong.
 
-exception StopIteration               *StopIteration..exceptions.txt;*
+exception StopIteration                *StopIteration..exceptions.txt*
 
    Raised by built-in function "next()" and an _iterator_'s
    "__next__()" method to signal that there are no further items
@@ -413,14 +413,14 @@ exception StopIteration               *StopIteration..exceptions.txt;*
    a "StopIteration" error raised in a generator is transformed into a
    "RuntimeError".
 
-exception StopAsyncIteration     *StopAsyncIteration..exceptions.txt;*
+exception StopAsyncIteration      *StopAsyncIteration..exceptions.txt*
 
    Must be raised by "__anext__()" method of an _asynchronous
    iterator_ object to stop the iteration.
 
    New in version 3.5.
 
-                                        *SyntaxError..exceptions.txt;*
+                                         *SyntaxError..exceptions.txt*
 exception SyntaxError(message, details)
 
    Raised when the parser encounters a syntax error.  This may occur
@@ -432,30 +432,30 @@ exception SyntaxError(message, details)
    message. Details is a tuple whose members are also available as
    separate attributes.
 
-   filename                       *SyntaxError.filename..exceptions.txt;*
+   filename                        *SyntaxError.filename..exceptions.txt*
 
       The name of the file the syntax error occurred in.
 
-   lineno                           *SyntaxError.lineno..exceptions.txt;*
+   lineno                            *SyntaxError.lineno..exceptions.txt*
 
       Which line number in the file the error occurred in. This is
       1-indexed: the first line in the file has a "lineno" of 1.
 
-   offset                           *SyntaxError.offset..exceptions.txt;*
+   offset                            *SyntaxError.offset..exceptions.txt*
 
       The column in the line where the error occurred. This is
       1-indexed: the first character in the line has an "offset" of 1.
 
-   text                               *SyntaxError.text..exceptions.txt;*
+   text                                *SyntaxError.text..exceptions.txt*
 
       The source code text involved in the error.
 
-   end_lineno                   *SyntaxError.end_lineno..exceptions.txt;*
+   end_lineno                    *SyntaxError.end_lineno..exceptions.txt*
 
       Which line number in the file the error occurred ends in. This
       is 1-indexed: the first line in the file has a "lineno" of 1.
 
-   end_offset                   *SyntaxError.end_offset..exceptions.txt;*
+   end_offset                    *SyntaxError.end_offset..exceptions.txt*
 
       The column in the end line where the error occurred finishes.
       This is 1-indexed: the first character in the line has an
@@ -470,17 +470,17 @@ exception SyntaxError(message, details)
    Changed in version 3.10: Added the "end_lineno" and "end_offset"
    attributes.
 
-exception IndentationError         *IndentationError..exceptions.txt;*
+exception IndentationError          *IndentationError..exceptions.txt*
 
    Base class for syntax errors related to incorrect indentation.
    This is a subclass of "SyntaxError".
 
-exception TabError                         *TabError..exceptions.txt;*
+exception TabError                          *TabError..exceptions.txt*
 
    Raised when indentation contains an inconsistent use of tabs and
    spaces. This is a subclass of "IndentationError".
 
-exception SystemError                   *SystemError..exceptions.txt;*
+exception SystemError                    *SystemError..exceptions.txt*
 
    Raised when the interpreter finds an internal error, but the
    situation does not look so serious to cause it to abandon all hope.
@@ -494,7 +494,7 @@ exception SystemError                   *SystemError..exceptions.txt;*
    exception’s associated value) and if possible the source of the
    program that triggered the error.
 
-exception SystemExit                     *SystemExit..exceptions.txt;*
+exception SystemExit                      *SystemExit..exceptions.txt*
 
    This exception is raised by the "sys.exit()" function.  It inherits
    from "BaseException" instead of "Exception" so that it is not
@@ -516,12 +516,12 @@ exception SystemExit                     *SystemExit..exceptions.txt;*
    immediately (for example, in the child process after a call to
    "os.fork()").
 
-   code                                *SystemExit.code..exceptions.txt;*
+   code                                 *SystemExit.code..exceptions.txt*
 
       The exit status or error message that is passed to the
       constructor. (Defaults to "None".)
 
-exception TypeError                       *TypeError..exceptions.txt;*
+exception TypeError                        *TypeError..exceptions.txt*
 
    Raised when an operation or function is applied to an object of
    inappropriate type.  The associated value is a string giving
@@ -538,13 +538,13 @@ exception TypeError                       *TypeError..exceptions.txt;*
    arguments with the wrong value (e.g. a number outside expected
    boundaries) should result in a "ValueError".
 
-exception UnboundLocalError       *UnboundLocalError..exceptions.txt;*
+exception UnboundLocalError        *UnboundLocalError..exceptions.txt*
 
    Raised when a reference is made to a local variable in a function
    or method, but no value has been bound to that variable.  This is a
    subclass of "NameError".
 
-exception UnicodeError                 *UnicodeError..exceptions.txt;*
+exception UnicodeError                  *UnicodeError..exceptions.txt*
 
    Raised when a Unicode-related encoding or decoding error occurs.
    It is a subclass of "ValueError".
@@ -553,49 +553,49 @@ exception UnicodeError                 *UnicodeError..exceptions.txt;*
    decoding error.  For example, "err.object[err.start:err.end]" gives
    the particular invalid input that the codec failed on.
 
-   encoding                      *UnicodeError.encoding..exceptions.txt;*
+   encoding                       *UnicodeError.encoding..exceptions.txt*
 
       The name of the encoding that raised the error.
 
-   reason                          *UnicodeError.reason..exceptions.txt;*
+   reason                           *UnicodeError.reason..exceptions.txt*
 
       A string describing the specific codec error.
 
-   object                          *UnicodeError.object..exceptions.txt;*
+   object                           *UnicodeError.object..exceptions.txt*
 
       The object the codec was attempting to encode or decode.
 
-   start                            *UnicodeError.start..exceptions.txt;*
+   start                             *UnicodeError.start..exceptions.txt*
 
       The first index of invalid data in "object".
 
-   end                                *UnicodeError.end..exceptions.txt;*
+   end                                 *UnicodeError.end..exceptions.txt*
 
       The index after the last invalid data in "object".
 
-exception UnicodeEncodeError     *UnicodeEncodeError..exceptions.txt;*
+exception UnicodeEncodeError      *UnicodeEncodeError..exceptions.txt*
 
    Raised when a Unicode-related error occurs during encoding.  It is
    a subclass of "UnicodeError".
 
-exception UnicodeDecodeError     *UnicodeDecodeError..exceptions.txt;*
+exception UnicodeDecodeError      *UnicodeDecodeError..exceptions.txt*
 
    Raised when a Unicode-related error occurs during decoding.  It is
    a subclass of "UnicodeError".
 
-                              *UnicodeTranslateError..exceptions.txt;*
+                               *UnicodeTranslateError..exceptions.txt*
 exception UnicodeTranslateError
 
    Raised when a Unicode-related error occurs during translating.  It
    is a subclass of "UnicodeError".
 
-exception ValueError                     *ValueError..exceptions.txt;*
+exception ValueError                      *ValueError..exceptions.txt*
 
    Raised when an operation or function receives an argument that has
    the right type but an inappropriate value, and the situation is not
    described by a more precise exception such as "IndexError".
 
-exception ZeroDivisionError       *ZeroDivisionError..exceptions.txt;*
+exception ZeroDivisionError        *ZeroDivisionError..exceptions.txt*
 
    Raised when the second argument of a division or modulo operation
    is zero.  The associated value is a string indicating the type of
@@ -604,11 +604,11 @@ exception ZeroDivisionError       *ZeroDivisionError..exceptions.txt;*
 The following exceptions are kept for compatibility with previous
 versions; starting from Python 3.3, they are aliases of "OSError".
 
-exception EnvironmentError         *EnvironmentError..exceptions.txt;*
+exception EnvironmentError          *EnvironmentError..exceptions.txt*
 
-exception IOError                           *IOError..exceptions.txt;*
+exception IOError                            *IOError..exceptions.txt*
 
-exception WindowsError                 *WindowsError..exceptions.txt;*
+exception WindowsError                  *WindowsError..exceptions.txt*
 
    Only available on Windows.
 
@@ -619,7 +619,7 @@ OS exceptions
 The following exceptions are subclasses of "OSError", they get raised
 depending on the system error code.
 
-exception BlockingIOError           *BlockingIOError..exceptions.txt;*
+exception BlockingIOError            *BlockingIOError..exceptions.txt*
 
    Raised when an operation would block on an object (e.g. socket) set
    for non-blocking operation. Corresponds to "errno" "EAGAIN",
@@ -628,61 +628,61 @@ exception BlockingIOError           *BlockingIOError..exceptions.txt;*
    In addition to those of "OSError", "BlockingIOError" can have one
    more attribute:
 
-                 *BlockingIOError.characters_written..exceptions.txt;*
+                  *BlockingIOError.characters_written..exceptions.txt*
    characters_written
 
       An integer containing the number of characters written to the
       stream before it blocked.  This attribute is available when
       using the buffered I/O classes from the "io" module.
 
-exception ChildProcessError       *ChildProcessError..exceptions.txt;*
+exception ChildProcessError        *ChildProcessError..exceptions.txt*
 
    Raised when an operation on a child process failed. Corresponds to
    "errno" "ECHILD".
 
-exception ConnectionError           *ConnectionError..exceptions.txt;*
+exception ConnectionError            *ConnectionError..exceptions.txt*
 
    A base class for connection-related issues.
 
    Subclasses are "BrokenPipeError", "ConnectionAbortedError",
    "ConnectionRefusedError" and "ConnectionResetError".
 
-exception BrokenPipeError           *BrokenPipeError..exceptions.txt;*
+exception BrokenPipeError            *BrokenPipeError..exceptions.txt*
 
    A subclass of "ConnectionError", raised when trying to write on a
    pipe while the other end has been closed, or trying to write on a
    socket which has been shutdown for writing. Corresponds to "errno"
    "EPIPE" and "ESHUTDOWN".
 
-                             *ConnectionAbortedError..exceptions.txt;*
+                              *ConnectionAbortedError..exceptions.txt*
 exception ConnectionAbortedError
 
    A subclass of "ConnectionError", raised when a connection attempt
    is aborted by the peer. Corresponds to "errno" "ECONNABORTED".
 
-                             *ConnectionRefusedError..exceptions.txt;*
+                              *ConnectionRefusedError..exceptions.txt*
 exception ConnectionRefusedError
 
    A subclass of "ConnectionError", raised when a connection attempt
    is refused by the peer. Corresponds to "errno" "ECONNREFUSED".
 
-                               *ConnectionResetError..exceptions.txt;*
+                                *ConnectionResetError..exceptions.txt*
 exception ConnectionResetError
 
    A subclass of "ConnectionError", raised when a connection is reset
    by the peer. Corresponds to "errno" "ECONNRESET".
 
-exception FileExistsError           *FileExistsError..exceptions.txt;*
+exception FileExistsError            *FileExistsError..exceptions.txt*
 
    Raised when trying to create a file or directory which already
    exists. Corresponds to "errno" "EEXIST".
 
-exception FileNotFoundError       *FileNotFoundError..exceptions.txt;*
+exception FileNotFoundError        *FileNotFoundError..exceptions.txt*
 
    Raised when a file or directory is requested but doesn’t exist.
    Corresponds to "errno" "ENOENT".
 
-exception InterruptedError         *InterruptedError..exceptions.txt;*
+exception InterruptedError          *InterruptedError..exceptions.txt*
 
    Raised when a system call is interrupted by an incoming signal.
    Corresponds to "errno" "EINTR".
@@ -692,12 +692,12 @@ exception InterruptedError         *InterruptedError..exceptions.txt;*
    raises an exception (see **PEP 475** for the rationale), instead of
    raising "InterruptedError".
 
-exception IsADirectoryError       *IsADirectoryError..exceptions.txt;*
+exception IsADirectoryError        *IsADirectoryError..exceptions.txt*
 
    Raised when a file operation (such as "os.remove()") is requested
    on a directory. Corresponds to "errno" "EISDIR".
 
-exception NotADirectoryError     *NotADirectoryError..exceptions.txt;*
+exception NotADirectoryError      *NotADirectoryError..exceptions.txt*
 
    Raised when a directory operation (such as "os.listdir()") is
    requested on something which is not a directory.  On most POSIX
@@ -705,7 +705,7 @@ exception NotADirectoryError     *NotADirectoryError..exceptions.txt;*
    or traverse a non-directory file as if it were a directory.
    Corresponds to "errno" "ENOTDIR".
 
-exception PermissionError           *PermissionError..exceptions.txt;*
+exception PermissionError            *PermissionError..exceptions.txt*
 
    Raised when trying to run an operation without the adequate access
    rights - for example filesystem permissions. Corresponds to "errno"
@@ -714,12 +714,12 @@ exception PermissionError           *PermissionError..exceptions.txt;*
    Changed in version 3.11.1: WASI’s "ENOTCAPABLE" is now mapped to
    "PermissionError".
 
-exception ProcessLookupError     *ProcessLookupError..exceptions.txt;*
+exception ProcessLookupError      *ProcessLookupError..exceptions.txt*
 
    Raised when a given process doesn’t exist. Corresponds to "errno"
    "ESRCH".
 
-exception TimeoutError                 *TimeoutError..exceptions.txt;*
+exception TimeoutError                  *TimeoutError..exceptions.txt*
 
    Raised when a system function timed out at the system level.
    Corresponds to "errno" "ETIMEDOUT".
@@ -735,15 +735,15 @@ Warnings
 The following exceptions are used as warning categories; see the
 Warning Categories documentation for more details.
 
-exception Warning                           *Warning..exceptions.txt;*
+exception Warning                            *Warning..exceptions.txt*
 
    Base class for warning categories.
 
-exception UserWarning                   *UserWarning..exceptions.txt;*
+exception UserWarning                    *UserWarning..exceptions.txt*
 
    Base class for warnings generated by user code.
 
-exception DeprecationWarning     *DeprecationWarning..exceptions.txt;*
+exception DeprecationWarning      *DeprecationWarning..exceptions.txt*
 
    Base class for warnings about deprecated features when those
    warnings are intended for other Python developers.
@@ -754,7 +754,7 @@ exception DeprecationWarning     *DeprecationWarning..exceptions.txt;*
 
    The deprecation policy is described in **PEP 387**.
 
-                          *PendingDeprecationWarning..exceptions.txt;*
+                           *PendingDeprecationWarning..exceptions.txt*
 exception PendingDeprecationWarning
 
    Base class for warnings about features which are obsolete and
@@ -770,32 +770,32 @@ exception PendingDeprecationWarning
 
    The deprecation policy is described in **PEP 387**.
 
-exception SyntaxWarning               *SyntaxWarning..exceptions.txt;*
+exception SyntaxWarning                *SyntaxWarning..exceptions.txt*
 
    Base class for warnings about dubious syntax.
 
-exception RuntimeWarning             *RuntimeWarning..exceptions.txt;*
+exception RuntimeWarning              *RuntimeWarning..exceptions.txt*
 
    Base class for warnings about dubious runtime behavior.
 
-exception FutureWarning               *FutureWarning..exceptions.txt;*
+exception FutureWarning                *FutureWarning..exceptions.txt*
 
    Base class for warnings about deprecated features when those
    warnings are intended for end users of applications that are
    written in Python.
 
-exception ImportWarning               *ImportWarning..exceptions.txt;*
+exception ImportWarning                *ImportWarning..exceptions.txt*
 
    Base class for warnings about probable mistakes in module imports.
 
    Ignored by the default warning filters. Enabling the Python
    Development Mode shows this warning.
 
-exception UnicodeWarning             *UnicodeWarning..exceptions.txt;*
+exception UnicodeWarning              *UnicodeWarning..exceptions.txt*
 
    Base class for warnings related to Unicode.
 
-exception EncodingWarning           *EncodingWarning..exceptions.txt;*
+exception EncodingWarning            *EncodingWarning..exceptions.txt*
 
    Base class for warnings related to encodings.
 
@@ -803,11 +803,11 @@ exception EncodingWarning           *EncodingWarning..exceptions.txt;*
 
    New in version 3.10.
 
-exception BytesWarning                 *BytesWarning..exceptions.txt;*
+exception BytesWarning                  *BytesWarning..exceptions.txt*
 
    Base class for warnings related to "bytes" and "bytearray".
 
-exception ResourceWarning           *ResourceWarning..exceptions.txt;*
+exception ResourceWarning            *ResourceWarning..exceptions.txt*
 
    Base class for warnings related to resource usage.
 
@@ -826,10 +826,9 @@ can be handled with "except" like all other exceptions. In addition,
 they are recognised by "except*", which matches their subgroups based
 on the types of the contained exceptions.
 
-                                     *ExceptionGroup..exceptions.txt;*
-exception ExceptionGroup(msg, excs)
+exception ExceptionGroup(msg, excs)   *ExceptionGroup..exceptions.txt*
 
-                                 *BaseExceptionGroup..exceptions.txt;*
+                                  *BaseExceptionGroup..exceptions.txt*
 exception BaseExceptionGroup(msg, excs)
 
    Both of these exception types wrap the exceptions in the sequence
@@ -848,17 +847,17 @@ exception BaseExceptionGroup(msg, excs)
    raises a "TypeError" if any contained exception is not an
    "Exception" subclass.
 
-   message                  *BaseExceptionGroup.message..exceptions.txt;*
+   message                   *BaseExceptionGroup.message..exceptions.txt*
 
       The "msg" argument to the constructor. This is a read-only
       attribute.
 
-   exceptions            *BaseExceptionGroup.exceptions..exceptions.txt;*
+   exceptions             *BaseExceptionGroup.exceptions..exceptions.txt*
 
       A tuple of the exceptions in the "excs" sequence given to the
       constructor. This is a read-only attribute.
 
-   subgroup(condition)   *BaseExceptionGroup.subgroup()..exceptions.txt;*
+   subgroup(condition)    *BaseExceptionGroup.subgroup()..exceptions.txt*
 
       Returns an exception group that contains only the exceptions
       from the current group that match _condition_, or "None" if the
@@ -884,13 +883,13 @@ exception BaseExceptionGroup(msg, excs)
       New in version 3.13: "condition" can be any callable which is
       not a type object.
 
-   split(condition)         *BaseExceptionGroup.split()..exceptions.txt;*
+   split(condition)          *BaseExceptionGroup.split()..exceptions.txt*
 
       Like "subgroup()", but returns the pair "(match, rest)" where
       "match" is "subgroup(condition)" and "rest" is the remaining
       non-matching part.
 
-   derive(excs)            *BaseExceptionGroup.derive()..exceptions.txt;*
+   derive(excs)             *BaseExceptionGroup.derive()..exceptions.txt*
 
       Returns an exception group with the same "message", but which
       wraps the exceptions in "excs".

@@ -1,4 +1,4 @@
-*pty.txt;*                                    Last change: 2023 Sep 09
+*pty.txt;*                                    Last change: 2023 Sep 10
 
 "pty" — Pseudo-terminal utilities
 *********************************
@@ -17,7 +17,7 @@ other POSIX platforms but it’s not been thoroughly tested).
 
 The "pty" module defines the following functions:
 
-pty.fork()                                          *fork()..pty.txt;*
+pty.fork()                                           *fork()..pty.txt*
 
    Fork. Connect the child’s controlling terminal to a pseudo-
    terminal. Return value is "(pid, fd)". Note that the child  gets
@@ -26,14 +26,14 @@ pty.fork()                                          *fork()..pty.txt;*
    the child’s controlling terminal (and also to the child’s standard
    input and output).
 
-pty.openpty()                                    *openpty()..pty.txt;*
+pty.openpty()                                     *openpty()..pty.txt*
 
    Open a new pseudo-terminal pair, using "os.openpty()" if possible,
    or emulation code for generic Unix systems. Return a pair of file
    descriptors "(master, slave)", for the master and the slave end,
    respectively.
 
-pty.spawn(argv[, master_read[, stdin_read]])       *spawn()..pty.txt;*
+pty.spawn(argv[, master_read[, stdin_read]])        *spawn()..pty.txt*
 
    Spawn a process, and connect its controlling terminal with the
    current process’s standard io. This is often used to baffle

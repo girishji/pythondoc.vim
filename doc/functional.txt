@@ -1,4 +1,4 @@
-*functional.txt;*                             Last change: 2023 Sep 09
+*functional.txt;*                             Last change: 2023 Sep 10
 
 Functional Programming Modules
 ******************************

@@ -1,4 +1,4 @@
-*dialog.txt;*                                 Last change: 2023 Sep 09
+*dialog.txt;*                                 Last change: 2023 Sep 10
 
 Tkinter Dialogs
 ***************
@@ -15,29 +15,29 @@ The "tkinter.simpledialog" module contains convenience classes and
 functions for creating simple modal dialogs to get a value from the
 user.
 
-                                             *askfloat()..dialog.txt;*
+                                              *askfloat()..dialog.txt*
 tkinter.simpledialog.askfloat(title, prompt, **kw)
 
-                                           *askinteger()..dialog.txt;*
+                                            *askinteger()..dialog.txt*
 tkinter.simpledialog.askinteger(title, prompt, **kw)
 
-                                            *askstring()..dialog.txt;*
+                                             *askstring()..dialog.txt*
 tkinter.simpledialog.askstring(title, prompt, **kw)
 
    The above three functions provide dialogs that prompt the user to
    enter a value of the desired type.
 
-                                                 *Dialog..dialog.txt;*
+                                                  *Dialog..dialog.txt*
 class tkinter.simpledialog.Dialog(parent, title=None)
 
    The base class for custom dialogs.
 
-      body(master)                              *Dialog.body()..dialog.txt;*
+      body(master)                               *Dialog.body()..dialog.txt*
 
          Override to construct the dialog’s interface and return the
          widget that should have initial focus.
 
-      buttonbox()                          *Dialog.buttonbox()..dialog.txt;*
+      buttonbox()                           *Dialog.buttonbox()..dialog.txt*
 
          Default behaviour adds OK and Cancel buttons. Override for
          custom button layouts.
@@ -82,46 +82,46 @@ The below functions when called create a modal, native look-and-feel
 dialog, wait for the user’s selection, then return the selected
 value(s) or "None" to the caller.
 
-                                          *askopenfile()..dialog.txt;*
+                                           *askopenfile()..dialog.txt*
 tkinter.filedialog.askopenfile(mode='r', **options)
 
-                                         *askopenfiles()..dialog.txt;*
+                                          *askopenfiles()..dialog.txt*
 tkinter.filedialog.askopenfiles(mode='r', **options)
 
    The above two functions create an "Open" dialog and return the
    opened file object(s) in read-only mode.
 
-                                        *asksaveasfile()..dialog.txt;*
+                                         *asksaveasfile()..dialog.txt*
 tkinter.filedialog.asksaveasfile(mode='w', **options)
 
    Create a "SaveAs" dialog and return a file object opened in write-
    only mode.
 
-                                      *askopenfilename()..dialog.txt;*
+                                       *askopenfilename()..dialog.txt*
 tkinter.filedialog.askopenfilename(**options)
 
-                                     *askopenfilenames()..dialog.txt;*
+                                      *askopenfilenames()..dialog.txt*
 tkinter.filedialog.askopenfilenames(**options)
 
    The above two functions create an "Open" dialog and return the
    selected filename(s) that correspond to existing file(s).
 
-                                    *asksaveasfilename()..dialog.txt;*
+                                     *asksaveasfilename()..dialog.txt*
 tkinter.filedialog.asksaveasfilename(**options)
 
    Create a "SaveAs" dialog and return the selected filename.
 
-                                         *askdirectory()..dialog.txt;*
+                                          *askdirectory()..dialog.txt*
 tkinter.filedialog.askdirectory(**options)
 
       Prompt user to select a directory.
       Additional keyword option:
          _mustexist_ - determines if selection must be an existing directory.
 
-                                                   *Open..dialog.txt;*
+                                                    *Open..dialog.txt*
 class tkinter.filedialog.Open(master=None, **options)
 
-                                                 *SaveAs..dialog.txt;*
+                                                  *SaveAs..dialog.txt*
 class tkinter.filedialog.SaveAs(master=None, **options)
 
    The above two classes provide native dialog windows for saving and
@@ -133,7 +133,7 @@ The below classes are used for creating file/directory windows from
 scratch. These do not emulate the native look-and-feel of the
 platform.
 
-                                              *Directory..dialog.txt;*
+                                               *Directory..dialog.txt*
 class tkinter.filedialog.Directory(master=None, **options)
 
    Create a dialog prompting the user to select a directory.
@@ -143,88 +143,86 @@ Note:
   The _FileDialog_ class should be subclassed for custom event
   handling and behaviour.
 
-                                             *FileDialog..dialog.txt;*
+                                              *FileDialog..dialog.txt*
 class tkinter.filedialog.FileDialog(master, title=None)
 
    Create a basic file selection dialog.
 
-                            *FileDialog.cancel_command()..dialog.txt;*
-   cancel_command(event=None)
+   cancel_command(event=None)   *FileDialog.cancel_command()..dialog.txt*
 
       Trigger the termination of the dialog window.
 
-                         *FileDialog.dirs_double_event()..dialog.txt;*
+                          *FileDialog.dirs_double_event()..dialog.txt*
    dirs_double_event(event)
 
       Event handler for double-click event on directory.
 
-                         *FileDialog.dirs_select_event()..dialog.txt;*
+                          *FileDialog.dirs_select_event()..dialog.txt*
    dirs_select_event(event)
 
       Event handler for click event on directory.
 
-                        *FileDialog.files_double_event()..dialog.txt;*
+                         *FileDialog.files_double_event()..dialog.txt*
    files_double_event(event)
 
       Event handler for double-click event on file.
 
-                        *FileDialog.files_select_event()..dialog.txt;*
+                         *FileDialog.files_select_event()..dialog.txt*
    files_select_event(event)
 
       Event handler for single-click event on file.
 
-                            *FileDialog.filter_command()..dialog.txt;*
-   filter_command(event=None)
+   filter_command(event=None)   *FileDialog.filter_command()..dialog.txt*
 
       Filter the files by directory.
 
-   get_filter()                    *FileDialog.get_filter()..dialog.txt;*
+   get_filter()                     *FileDialog.get_filter()..dialog.txt*
 
       Retrieve the file filter currently in use.
 
-   get_selection()              *FileDialog.get_selection()..dialog.txt;*
+   get_selection()               *FileDialog.get_selection()..dialog.txt*
 
       Retrieve the currently selected item.
 
-                                        *FileDialog.go()..dialog.txt;*
+                                         *FileDialog.go()..dialog.txt*
    go(dir_or_file=os.curdir, pattern='*', default='', key=None)
 
       Render dialog and start event loop.
 
-   ok_event(event)                   *FileDialog.ok_event()..dialog.txt;*
+   ok_event(event)                    *FileDialog.ok_event()..dialog.txt*
 
       Exit dialog returning current selection.
 
-   quit(how=None)                        *FileDialog.quit()..dialog.txt;*
+   quit(how=None)                         *FileDialog.quit()..dialog.txt*
 
       Exit dialog returning filename, if any.
 
-   set_filter(dir, pat)            *FileDialog.set_filter()..dialog.txt;*
+   set_filter(dir, pat)             *FileDialog.set_filter()..dialog.txt*
 
       Set the file filter.
 
-   set_selection(file)          *FileDialog.set_selection()..dialog.txt;*
+   set_selection(file)           *FileDialog.set_selection()..dialog.txt*
 
       Update the current file selection to _file_.
 
-                                         *LoadFileDialog..dialog.txt;*
+                                          *LoadFileDialog..dialog.txt*
 class tkinter.filedialog.LoadFileDialog(master, title=None)
 
    A subclass of FileDialog that creates a dialog window for selecting
    an existing file.
 
-   ok_command()                *LoadFileDialog.ok_command()..dialog.txt;*
+   ok_command()                 *LoadFileDialog.ok_command()..dialog.txt*
 
       Test that a file is provided and that the selection indicates an
       already existing file.
 
-                                         *SaveFileDialog..dialog.txt;*
+                                          *SaveFileDialog..dialog.txt*
 class tkinter.filedialog.SaveFileDialog(master, title=None)
 
    A subclass of FileDialog that creates a dialog window for selecting
    a destination file.
 
-   ok_command()                *SaveFileDialog.ok_command()..dialog.txt;*
+   ok_command()                 *SaveFileDialog.ok_command()..dialog.txt*
 
       Test whether or not the selection points to a valid file that is
       not a directory. Confirmation is required if an already existing
@@ -243,7 +241,7 @@ the base class for dialogs defined in other supporting modules.
 
 class tkinter.commondialog.Dialog(master=None, **options)
 
-   show(color=None, **options)               *Dialog.show()..dialog.txt;*
+   show(color=None, **options)                *Dialog.show()..dialog.txt*
 
       Render the Dialog window.
 

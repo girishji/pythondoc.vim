@@ -1,4 +1,4 @@
-*queue.txt;*                                  Last change: 2023 Sep 09
+*queue.txt;*                                  Last change: 2023 Sep 10
 
 "queue" — A synchronized queue class
 ************************************
@@ -30,7 +30,7 @@ additional guarantees in exchange for the smaller functionality.
 
 The "queue" module defines the following classes and exceptions:
 
-class queue.Queue(maxsize=0)                       *Queue..queue.txt;*
+class queue.Queue(maxsize=0)                        *Queue..queue.txt*
 
    Constructor for a FIFO (first-in, first-out) queue.  _maxsize_ is
    an integer that sets the upperbound limit on the number of items
@@ -39,7 +39,7 @@ class queue.Queue(maxsize=0)                       *Queue..queue.txt;*
    _maxsize_ is less than or equal to zero, the queue size is
    infinite.
 
-class queue.LifoQueue(maxsize=0)               *LifoQueue..queue.txt;*
+class queue.LifoQueue(maxsize=0)                *LifoQueue..queue.txt*
 
    Constructor for a LIFO (last-in, first-out) queue.  _maxsize_ is an
    integer that sets the upperbound limit on the number of items that
@@ -47,7 +47,7 @@ class queue.LifoQueue(maxsize=0)               *LifoQueue..queue.txt;*
    has been reached, until queue items are consumed.  If _maxsize_ is
    less than or equal to zero, the queue size is infinite.
 
-class queue.PriorityQueue(maxsize=0)       *PriorityQueue..queue.txt;*
+class queue.PriorityQueue(maxsize=0)        *PriorityQueue..queue.txt*
 
    Constructor for a priority queue.  _maxsize_ is an integer that
    sets the upperbound limit on the number of items that can be placed
@@ -72,19 +72,19 @@ class queue.PriorityQueue(maxsize=0)       *PriorityQueue..queue.txt;*
           priority: int
           item: Any=field(compare=False)
 <
-class queue.SimpleQueue                      *SimpleQueue..queue.txt;*
+class queue.SimpleQueue                       *SimpleQueue..queue.txt*
 
    Constructor for an unbounded FIFO (first-in, first-out) queue.
    Simple queues lack advanced functionality such as task tracking.
 
    New in version 3.7.
 
-exception queue.Empty                              *Empty..queue.txt;*
+exception queue.Empty                               *Empty..queue.txt*
 
    Exception raised when non-blocking "get()" (or "get_nowait()") is
    called on a "Queue" object which is empty.
 
-exception queue.Full                                *Full..queue.txt;*
+exception queue.Full                                 *Full..queue.txt*
 
    Exception raised when non-blocking "put()" (or "put_nowait()") is
    called on a "Queue" object which is full.
@@ -96,27 +96,27 @@ Queue Objects
 Queue objects ("Queue", "LifoQueue", or "PriorityQueue") provide the
 public methods described below.
 
-Queue.qsize()                              *Queue.qsize()..queue.txt;*
+Queue.qsize()                               *Queue.qsize()..queue.txt*
 
    Return the approximate size of the queue.  Note, qsize() > 0
    doesn’t guarantee that a subsequent get() will not block, nor will
    qsize() < maxsize guarantee that put() will not block.
 
-Queue.empty()                              *Queue.empty()..queue.txt;*
+Queue.empty()                               *Queue.empty()..queue.txt*
 
    Return "True" if the queue is empty, "False" otherwise.  If empty()
    returns "True" it doesn’t guarantee that a subsequent call to put()
    will not block.  Similarly, if empty() returns "False" it doesn’t
    guarantee that a subsequent call to get() will not block.
 
-Queue.full()                                *Queue.full()..queue.txt;*
+Queue.full()                                 *Queue.full()..queue.txt*
 
    Return "True" if the queue is full, "False" otherwise.  If full()
    returns "True" it doesn’t guarantee that a subsequent call to get()
    will not block.  Similarly, if full() returns "False" it doesn’t
    guarantee that a subsequent call to put() will not block.
 
-Queue.put(item, block=True, timeout=None)    *Queue.put()..queue.txt;*
+Queue.put(item, block=True, timeout=None)     *Queue.put()..queue.txt*
 
    Put _item_ into the queue.  If optional args _block_ is true and
    _timeout_ is "None" (the default), block if necessary until a free
@@ -127,11 +127,11 @@ Queue.put(item, block=True, timeout=None)    *Queue.put()..queue.txt;*
    else raise the "Full" exception (_timeout_ is ignored in that
    case).
 
-Queue.put_nowait(item)                *Queue.put_nowait()..queue.txt;*
+Queue.put_nowait(item)                 *Queue.put_nowait()..queue.txt*
 
    Equivalent to "put(item, block=False)".
 
-Queue.get(block=True, timeout=None)          *Queue.get()..queue.txt;*
+Queue.get(block=True, timeout=None)           *Queue.get()..queue.txt*
 
    Remove and return an item from the queue.  If optional args _block_
    is true and _timeout_ is "None" (the default), block if necessary
@@ -147,14 +147,14 @@ Queue.get(block=True, timeout=None)          *Queue.get()..queue.txt;*
    exceptions can occur, and in particular a SIGINT will not trigger a
    "KeyboardInterrupt".
 
-Queue.get_nowait()                    *Queue.get_nowait()..queue.txt;*
+Queue.get_nowait()                     *Queue.get_nowait()..queue.txt*
 
    Equivalent to "get(False)".
 
 Two methods are offered to support tracking whether enqueued tasks
 have been fully processed by daemon consumer threads.
 
-Queue.task_done()                      *Queue.task_done()..queue.txt;*
+Queue.task_done()                       *Queue.task_done()..queue.txt*
 
    Indicate that a formerly enqueued task is complete.  Used by queue
    consumer threads.  For each "get()" used to fetch a task, a
@@ -168,7 +168,7 @@ Queue.task_done()                      *Queue.task_done()..queue.txt;*
    Raises a "ValueError" if called more times than there were items
    placed in the queue.
 
-Queue.join()                                *Queue.join()..queue.txt;*
+Queue.join()                                 *Queue.join()..queue.txt*
 
    Blocks until all items in the queue have been gotten and processed.
 
@@ -209,18 +209,18 @@ SimpleQueue Objects
 
 "SimpleQueue" objects provide the public methods described below.
 
-SimpleQueue.qsize()                  *SimpleQueue.qsize()..queue.txt;*
+SimpleQueue.qsize()                   *SimpleQueue.qsize()..queue.txt*
 
    Return the approximate size of the queue.  Note, qsize() > 0
    doesn’t guarantee that a subsequent get() will not block.
 
-SimpleQueue.empty()                  *SimpleQueue.empty()..queue.txt;*
+SimpleQueue.empty()                   *SimpleQueue.empty()..queue.txt*
 
    Return "True" if the queue is empty, "False" otherwise.  If empty()
    returns "False" it doesn’t guarantee that a subsequent call to
    get() will not block.
 
-                                       *SimpleQueue.put()..queue.txt;*
+                                        *SimpleQueue.put()..queue.txt*
 SimpleQueue.put(item, block=True, timeout=None)
 
    Put _item_ into the queue.  The method never blocks and always
@@ -235,12 +235,12 @@ SimpleQueue.put(item, block=True, timeout=None)
    This makes it appropriate for use in destructors such as "__del__"
    methods or "weakref" callbacks.
 
-SimpleQueue.put_nowait(item)    *SimpleQueue.put_nowait()..queue.txt;*
+SimpleQueue.put_nowait(item)     *SimpleQueue.put_nowait()..queue.txt*
 
    Equivalent to "put(item, block=False)", provided for compatibility
    with "Queue.put_nowait()".
 
-                                       *SimpleQueue.get()..queue.txt;*
+                                        *SimpleQueue.get()..queue.txt*
 SimpleQueue.get(block=True, timeout=None)
 
    Remove and return an item from the queue.  If optional args _block_
@@ -251,7 +251,7 @@ SimpleQueue.get(block=True, timeout=None)
    false), return an item if one is immediately available, else raise
    the "Empty" exception (_timeout_ is ignored in that case).
 
-SimpleQueue.get_nowait()        *SimpleQueue.get_nowait()..queue.txt;*
+SimpleQueue.get_nowait()         *SimpleQueue.get_nowait()..queue.txt*
 
    Equivalent to "get(False)".
 

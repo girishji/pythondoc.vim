@@ -1,4 +1,4 @@
-*time.txt;*                                   Last change: 2023 Sep 09
+*time.txt;*                                   Last change: 2023 Sep 10
 
 "time" — Time access and conversions
 ************************************
@@ -93,7 +93,7 @@ An explanation of some terminology and conventions is in order.
 Functions
 =========
 
-time.asctime([t])                               *asctime()..time.txt;*
+time.asctime([t])                                *asctime()..time.txt*
 
    Convert a tuple or "struct_time" representing a time as returned by
    "gmtime()" or "localtime()" to a string of the following form:
@@ -110,7 +110,7 @@ time.asctime([t])                               *asctime()..time.txt;*
      Unlike the C function of the same name, "asctime()" does not add
      a trailing newline.
 
-                                  *pthread_getcpuclockid()..time.txt;*
+                                   *pthread_getcpuclockid()..time.txt*
 time.pthread_getcpuclockid(thread_id)
 
    Return the _clk_id_ of the thread-specific CPU-time clock for the
@@ -131,7 +131,7 @@ time.pthread_getcpuclockid(thread_id)
 
    New in version 3.7.
 
-time.clock_getres(clk_id)                  *clock_getres()..time.txt;*
+time.clock_getres(clk_id)                   *clock_getres()..time.txt*
 
    Return the resolution (precision) of the specified clock _clk_id_.
    Refer to Clock ID Constants for a list of accepted values for
@@ -141,7 +141,7 @@ time.clock_getres(clk_id)                  *clock_getres()..time.txt;*
 
    New in version 3.3.
 
-time.clock_gettime(clk_id) -> float       *clock_gettime()..time.txt;*
+time.clock_gettime(clk_id) -> float        *clock_gettime()..time.txt*
 
    Return the time of the specified clock _clk_id_.  Refer to Clock ID
    Constants for a list of accepted values for _clk_id_.
@@ -153,7 +153,7 @@ time.clock_gettime(clk_id) -> float       *clock_gettime()..time.txt;*
 
    New in version 3.3.
 
-time.clock_gettime_ns(clk_id) -> int   *clock_gettime_ns()..time.txt;*
+time.clock_gettime_ns(clk_id) -> int    *clock_gettime_ns()..time.txt*
 
    Similar to "clock_gettime()" but return time as nanoseconds.
 
@@ -161,7 +161,7 @@ time.clock_gettime_ns(clk_id) -> int   *clock_gettime_ns()..time.txt;*
 
    New in version 3.7.
 
-time.clock_settime(clk_id, time: float)   *clock_settime()..time.txt;*
+time.clock_settime(clk_id, time: float)    *clock_settime()..time.txt*
 
    Set the time of the specified clock _clk_id_.  Currently,
    "CLOCK_REALTIME" is the only accepted value for _clk_id_.
@@ -173,7 +173,7 @@ time.clock_settime(clk_id, time: float)   *clock_settime()..time.txt;*
 
    New in version 3.3.
 
-                                       *clock_settime_ns()..time.txt;*
+                                        *clock_settime_ns()..time.txt*
 time.clock_settime_ns(clk_id, time: int)
 
    Similar to "clock_settime()" but set time with nanoseconds.
@@ -182,7 +182,7 @@ time.clock_settime_ns(clk_id, time: int)
 
    New in version 3.7.
 
-time.ctime([secs])                                *ctime()..time.txt;*
+time.ctime([secs])                                 *ctime()..time.txt*
 
    Convert a time expressed in seconds since the epoch to a string of
    a form: "'Sun Jun 20 23:21:05 1993'" representing local time. The
@@ -194,7 +194,7 @@ time.ctime([secs])                                *ctime()..time.txt;*
    "asctime(localtime(secs))". Locale information is not used by
    "ctime()".
 
-time.get_clock_info(name)                *get_clock_info()..time.txt;*
+time.get_clock_info(name)                 *get_clock_info()..time.txt*
 
    Get information on the specified clock as a namespace object.
    Supported clock names and the corresponding functions to read their
@@ -227,7 +227,7 @@ time.get_clock_info(name)                *get_clock_info()..time.txt;*
 
    New in version 3.3.
 
-time.gmtime([secs])                              *gmtime()..time.txt;*
+time.gmtime([secs])                               *gmtime()..time.txt*
 
    Convert a time expressed in seconds since the epoch to a
    "struct_time" in UTC in which the dst flag is always zero.  If
@@ -236,7 +236,7 @@ time.gmtime([secs])                              *gmtime()..time.txt;*
    for a description of the "struct_time" object. See
    "calendar.timegm()" for the inverse of this function.
 
-time.localtime([secs])                        *localtime()..time.txt;*
+time.localtime([secs])                         *localtime()..time.txt*
 
    Like "gmtime()" but converts to local time.  If _secs_ is not
    provided or "None", the current time as returned by "time()" is
@@ -249,7 +249,7 @@ time.localtime([secs])                        *localtime()..time.txt;*
    "localtime()" or "gmtime()" failure. It’s common for this to be
    restricted to years between 1970 and 2038.
 
-time.mktime(t)                                   *mktime()..time.txt;*
+time.mktime(t)                                    *mktime()..time.txt*
 
    This is the inverse function of "localtime()".  Its argument is the
    "struct_time" or full 9-tuple (since the dst flag is needed; use
@@ -261,7 +261,7 @@ time.mktime(t)                                   *mktime()..time.txt;*
    caught by Python or the underlying C libraries). The earliest date
    for which it can generate a time is platform-dependent.
 
-time.monotonic() -> float                     *monotonic()..time.txt;*
+time.monotonic() -> float                      *monotonic()..time.txt*
 
    Return the value (in fractional seconds) of a monotonic clock, i.e.
    a clock that cannot go backwards.  The clock is not affected by
@@ -279,13 +279,13 @@ time.monotonic() -> float                     *monotonic()..time.txt;*
 
    Changed in version 3.10: On macOS, the function is now system-wide.
 
-time.monotonic_ns() -> int                 *monotonic_ns()..time.txt;*
+time.monotonic_ns() -> int                  *monotonic_ns()..time.txt*
 
    Similar to "monotonic()", but return time as nanoseconds.
 
    New in version 3.7.
 
-time.perf_counter() -> float               *perf_counter()..time.txt;*
+time.perf_counter() -> float                *perf_counter()..time.txt*
 
    Return the value (in fractional seconds) of a performance counter,
    i.e. a clock with the highest available resolution to measure a
@@ -302,13 +302,13 @@ time.perf_counter() -> float               *perf_counter()..time.txt;*
    Changed in version 3.10: On Windows, the function is now system-
    wide.
 
-time.perf_counter_ns() -> int           *perf_counter_ns()..time.txt;*
+time.perf_counter_ns() -> int            *perf_counter_ns()..time.txt*
 
    Similar to "perf_counter()", but return time as nanoseconds.
 
    New in version 3.7.
 
-time.process_time() -> float               *process_time()..time.txt;*
+time.process_time() -> float                *process_time()..time.txt*
 
    Return the value (in fractional seconds) of the sum of the system
    and user CPU time of the current process.  It does not include time
@@ -321,13 +321,13 @@ time.process_time() -> float               *process_time()..time.txt;*
 
    New in version 3.3.
 
-time.process_time_ns() -> int           *process_time_ns()..time.txt;*
+time.process_time_ns() -> int            *process_time_ns()..time.txt*
 
    Similar to "process_time()" but return time as nanoseconds.
 
    New in version 3.7.
 
-time.sleep(secs)                                  *sleep()..time.txt;*
+time.sleep(secs)                                   *sleep()..time.txt*
 
    Suspend execution of the calling thread for the given number of
    seconds. The argument may be a floating point number to indicate a
@@ -368,7 +368,7 @@ time.sleep(secs)                                  *sleep()..time.txt;*
 
    Changed in version 3.13: Raises an auditing event.
 
-time.strftime(format[, t])                     *strftime()..time.txt;*
+time.strftime(format[, t])                      *strftime()..time.txt*
 
    Convert a tuple or "struct_time" representing a time as returned by
    "gmtime()" or "localtime()" to a string as specified by the
@@ -481,7 +481,7 @@ time.strftime(format[, t])                     *strftime()..time.txt;*
    directive in the following order; this is also not portable. The
    field width is normally 2 except for "%j" where it is 3.
 
-time.strptime(string[, format])                *strptime()..time.txt;*
+time.strptime(string[, format])                 *strptime()..time.txt*
 
    Parse a string representing a time according to a format.  The
    return value is a "struct_time" as returned by "gmtime()" or
@@ -515,7 +515,7 @@ time.strptime(string[, format])                *strptime()..time.txt;*
    independent of any platform and thus does not necessarily support
    all directives available that are not documented as supported.
 
-class time.struct_time                        *struct_time..time.txt;*
+class time.struct_time                         *struct_time..time.txt*
 
    The type of the time value sequence returned by "gmtime()",
    "localtime()", and "strptime()".  It is an object with a _named
@@ -561,7 +561,7 @@ class time.struct_time                        *struct_time..time.txt;*
    expecting a "struct_time", or having elements of the wrong type, a
    "TypeError" is raised.
 
-time.time() -> float                               *time()..time.txt;*
+time.time() -> float                                *time()..time.txt*
 
    Return the time in seconds since the epoch as a floating point
    number. The handling of leap seconds is platform dependent. On
@@ -585,14 +585,14 @@ time.time() -> float                               *time()..time.txt;*
    Use "time_ns()" to avoid the precision loss caused by the "float"
    type.
 
-time.time_ns() -> int                           *time_ns()..time.txt;*
+time.time_ns() -> int                            *time_ns()..time.txt*
 
    Similar to "time()" but returns time as an integer number of
    nanoseconds since the epoch.
 
    New in version 3.7.
 
-time.thread_time() -> float                 *thread_time()..time.txt;*
+time.thread_time() -> float                  *thread_time()..time.txt*
 
    Return the value (in fractional seconds) of the sum of the system
    and user CPU time of the current thread.  It does not include time
@@ -610,13 +610,13 @@ time.thread_time() -> float                 *thread_time()..time.txt;*
 
    New in version 3.7.
 
-time.thread_time_ns() -> int             *thread_time_ns()..time.txt;*
+time.thread_time_ns() -> int              *thread_time_ns()..time.txt*
 
    Similar to "thread_time()" but return time as nanoseconds.
 
    New in version 3.7.
 
-time.tzset()                                      *tzset()..time.txt;*
+time.tzset()                                       *tzset()..time.txt*
 
    Reset the time conversion rules used by the library routines. The
    environment variable "TZ" specifies how this is done. It will also
@@ -711,7 +711,7 @@ Clock ID Constants
 These constants are used as parameters for "clock_getres()" and
 "clock_gettime()".
 
-time.CLOCK_BOOTTIME                        *CLOCK_BOOTTIME..time.txt;*
+time.CLOCK_BOOTTIME                         *CLOCK_BOOTTIME..time.txt*
 
    Identical to "CLOCK_MONOTONIC", except it also includes any time
    that the system is suspended.
@@ -725,7 +725,7 @@ time.CLOCK_BOOTTIME                        *CLOCK_BOOTTIME..time.txt;*
 
    New in version 3.7.
 
-time.CLOCK_HIGHRES                          *CLOCK_HIGHRES..time.txt;*
+time.CLOCK_HIGHRES                           *CLOCK_HIGHRES..time.txt*
 
    The Solaris OS has a "CLOCK_HIGHRES" timer that attempts to use an
    optimal hardware source, and may give close to nanosecond
@@ -736,7 +736,7 @@ time.CLOCK_HIGHRES                          *CLOCK_HIGHRES..time.txt;*
 
    New in version 3.3.
 
-time.CLOCK_MONOTONIC                      *CLOCK_MONOTONIC..time.txt;*
+time.CLOCK_MONOTONIC                       *CLOCK_MONOTONIC..time.txt*
 
    Clock that cannot be set and represents monotonic time since some
    unspecified starting point.
@@ -745,7 +745,7 @@ time.CLOCK_MONOTONIC                      *CLOCK_MONOTONIC..time.txt;*
 
    New in version 3.3.
 
-time.CLOCK_MONOTONIC_RAW              *CLOCK_MONOTONIC_RAW..time.txt;*
+time.CLOCK_MONOTONIC_RAW               *CLOCK_MONOTONIC_RAW..time.txt*
 
    Similar to "CLOCK_MONOTONIC", but provides access to a raw
    hardware-based time that is not subject to NTP adjustments.
@@ -754,7 +754,7 @@ time.CLOCK_MONOTONIC_RAW              *CLOCK_MONOTONIC_RAW..time.txt;*
 
    New in version 3.3.
 
-time.CLOCK_PROCESS_CPUTIME_ID    *CLOCK_PROCESS_CPUTIME_ID..time.txt;*
+time.CLOCK_PROCESS_CPUTIME_ID     *CLOCK_PROCESS_CPUTIME_ID..time.txt*
 
    High-resolution per-process timer from the CPU.
 
@@ -762,7 +762,7 @@ time.CLOCK_PROCESS_CPUTIME_ID    *CLOCK_PROCESS_CPUTIME_ID..time.txt;*
 
    New in version 3.3.
 
-time.CLOCK_PROF                                *CLOCK_PROF..time.txt;*
+time.CLOCK_PROF                                 *CLOCK_PROF..time.txt*
 
    High-resolution per-process timer from the CPU.
 
@@ -770,7 +770,7 @@ time.CLOCK_PROF                                *CLOCK_PROF..time.txt;*
 
    New in version 3.7.
 
-time.CLOCK_TAI                                  *CLOCK_TAI..time.txt;*
+time.CLOCK_TAI                                   *CLOCK_TAI..time.txt*
 
    International Atomic Time
 
@@ -782,7 +782,7 @@ time.CLOCK_TAI                                  *CLOCK_TAI..time.txt;*
 
    New in version 3.9.
 
-time.CLOCK_THREAD_CPUTIME_ID      *CLOCK_THREAD_CPUTIME_ID..time.txt;*
+time.CLOCK_THREAD_CPUTIME_ID       *CLOCK_THREAD_CPUTIME_ID..time.txt*
 
    Thread-specific CPU-time clock.
 
@@ -790,7 +790,7 @@ time.CLOCK_THREAD_CPUTIME_ID      *CLOCK_THREAD_CPUTIME_ID..time.txt;*
 
    New in version 3.3.
 
-time.CLOCK_UPTIME                            *CLOCK_UPTIME..time.txt;*
+time.CLOCK_UPTIME                             *CLOCK_UPTIME..time.txt*
 
    Time whose absolute value is the time the system has been running
    and not suspended, providing accurate uptime measurement, both
@@ -800,7 +800,7 @@ time.CLOCK_UPTIME                            *CLOCK_UPTIME..time.txt;*
 
    New in version 3.7.
 
-time.CLOCK_UPTIME_RAW                    *CLOCK_UPTIME_RAW..time.txt;*
+time.CLOCK_UPTIME_RAW                     *CLOCK_UPTIME_RAW..time.txt*
 
    Clock that increments monotonically, tracking the time since an
    arbitrary point, unaffected by frequency or time adjustments and
@@ -813,7 +813,7 @@ time.CLOCK_UPTIME_RAW                    *CLOCK_UPTIME_RAW..time.txt;*
 The following constant is the only parameter that can be sent to
 "clock_settime()".
 
-time.CLOCK_REALTIME                        *CLOCK_REALTIME..time.txt;*
+time.CLOCK_REALTIME                         *CLOCK_REALTIME..time.txt*
 
    System-wide real-time clock.  Setting this clock requires
    appropriate privileges.
@@ -826,24 +826,24 @@ time.CLOCK_REALTIME                        *CLOCK_REALTIME..time.txt;*
 Timezone Constants
 ==================
 
-time.altzone                                      *altzone..time.txt;*
+time.altzone                                       *altzone..time.txt*
 
    The offset of the local DST timezone, in seconds west of UTC, if
    one is defined. This is negative if the local DST timezone is east
    of UTC (as in Western Europe, including the UK).  Only use this if
    "daylight" is nonzero.  See note below.
 
-time.daylight                                    *daylight..time.txt;*
+time.daylight                                     *daylight..time.txt*
 
    Nonzero if a DST timezone is defined.  See note below.
 
-time.timezone                                    *timezone..time.txt;*
+time.timezone                                     *timezone..time.txt*
 
    The offset of the local (non-DST) timezone, in seconds west of UTC
    (negative in most of Western Europe, positive in the US, zero in
    the UK).  See note below.
 
-time.tzname                                        *tzname..time.txt;*
+time.tzname                                         *tzname..time.txt*
 
    A tuple of two strings: the first is the name of the local non-DST
    timezone, the second is the name of the local DST timezone.  If no

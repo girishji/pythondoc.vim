@@ -1,4 +1,4 @@
-*howto-logging.txt;*                          Last change: 2023 Sep 09
+*howto-logging.txt;*                          Last change: 2023 Sep 10
 
 Logging HOWTO
 *************
@@ -546,7 +546,7 @@ likely subclass the formatter if your application needs special
 behavior.  The constructor takes three optional arguments – a message
 format string, a date format string and a style indicator.
 
-                    *logging.Formatter.__init__()..howto-logging.txt;*
+                     *logging.Formatter.__init__()..howto-logging.txt*
 logging.Formatter.__init__(fmt=None, datefmt=None, style='%')
 
 If there is no message format string, the default is to use the raw

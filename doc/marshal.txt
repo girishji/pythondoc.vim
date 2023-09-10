@@ -1,4 +1,4 @@
-*marshal.txt;*                                Last change: 2023 Sep 09
+*marshal.txt;*                                Last change: 2023 Sep 10
 
 "marshal" — Internal Python object serialization
 ************************************************
@@ -46,7 +46,7 @@ operating on bytes-like objects.
 
 The module defines these functions:
 
-marshal.dump(value, file[, version])            *dump()..marshal.txt;*
+marshal.dump(value, file[, version])             *dump()..marshal.txt*
 
    Write the value on the open file.  The value must be a supported
    type.  The file must be a writeable _binary file_.
@@ -62,7 +62,7 @@ marshal.dump(value, file[, version])            *dump()..marshal.txt;*
    Raises an auditing event "marshal.dumps" with arguments "value",
    "version".
 
-marshal.load(file)                              *load()..marshal.txt;*
+marshal.load(file)                               *load()..marshal.txt*
 
    Read one value from the open file and return it.  If no valid value
    is read (e.g. because the data has a different Python version’s
@@ -81,7 +81,7 @@ marshal.load(file)                              *load()..marshal.txt;*
    audit event for each code object. Now it raises a single
    "marshal.load" event for the entire load operation.
 
-marshal.dumps(value[, version])                *dumps()..marshal.txt;*
+marshal.dumps(value[, version])                 *dumps()..marshal.txt*
 
    Return the bytes object that would be written to a file by
    "dump(value, file)".  The value must be a supported type.  Raise a
@@ -94,7 +94,7 @@ marshal.dumps(value[, version])                *dumps()..marshal.txt;*
    Raises an auditing event "marshal.dumps" with arguments "value",
    "version".
 
-marshal.loads(bytes)                           *loads()..marshal.txt;*
+marshal.loads(bytes)                            *loads()..marshal.txt*
 
    Convert the _bytes-like object_ to a value.  If no valid value is
    found, raise "EOFError", "ValueError" or "TypeError".  Extra bytes
@@ -108,7 +108,7 @@ marshal.loads(bytes)                           *loads()..marshal.txt;*
 
 In addition, the following constants are defined:
 
-marshal.version                                *version..marshal.txt;*
+marshal.version                                 *version..marshal.txt*
 
    Indicates the format that the module uses. Version 0 is the
    historical format, version 1 shares interned strings and version 2

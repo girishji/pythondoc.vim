@@ -1,4 +1,4 @@
-*itertools.txt;*                              Last change: 2023 Sep 09
+*itertools.txt;*                              Last change: 2023 Sep 10
 
 "itertools" — Functions creating iterators for efficient looping
 ****************************************************************
@@ -105,7 +105,7 @@ The following module functions all construct and return iterators.
 Some provide streams of infinite length, so they should only be
 accessed by functions or loops that truncate the stream.
 
-                                        *accumulate()..itertools.txt;*
+                                         *accumulate()..itertools.txt*
 itertools.accumulate(iterable[, func, *, initial=None])
 
    Make an iterator that returns accumulated sums, or accumulated
@@ -167,7 +167,7 @@ itertools.accumulate(iterable[, func, *, initial=None])
 
    Changed in version 3.8: Added the optional _initial_ parameter.
 
-itertools.batched(iterable, n)             *batched()..itertools.txt;*
+itertools.batched(iterable, n)              *batched()..itertools.txt*
 
    Batch data from the _iterable_ into tuples of length _n_. The last
    batch may be shorter than _n_.
@@ -201,7 +201,7 @@ itertools.batched(iterable, n)             *batched()..itertools.txt;*
 <
    New in version 3.12.
 
-itertools.chain(*iterables)                  *chain()..itertools.txt;*
+itertools.chain(*iterables)                   *chain()..itertools.txt*
 
    Make an iterator that returns elements from the first iterable
    until it is exhausted, then proceeds to the next iterable, until
@@ -215,7 +215,7 @@ itertools.chain(*iterables)                  *chain()..itertools.txt;*
                   yield element
 <
 
-                               *chain.from_iterable()..itertools.txt;*
+                                *chain.from_iterable()..itertools.txt*
 classmethod chain.from_iterable(iterable)
 
    Alternate constructor for "chain()".  Gets chained inputs from a
@@ -228,7 +228,7 @@ classmethod chain.from_iterable(iterable)
               for element in it:
                   yield element
 <
-itertools.combinations(iterable, r)   *combinations()..itertools.txt;*
+itertools.combinations(iterable, r)    *combinations()..itertools.txt*
 
    Return _r_ length subsequences of elements from the input
    _iterable_.
@@ -279,7 +279,7 @@ itertools.combinations(iterable, r)   *combinations()..itertools.txt;*
    The number of items returned is "n! / r! / (n-r)!" when "0 <= r <=
    n" or zero when "r > n".
 
-                     *combinations_with_replacement()..itertools.txt;*
+                      *combinations_with_replacement()..itertools.txt*
 itertools.combinations_with_replacement(iterable, r)
 
    Return _r_ length subsequences of elements from the input
@@ -331,7 +331,7 @@ itertools.combinations_with_replacement(iterable, r)
 
    New in version 3.1.
 
-itertools.compress(data, selectors)       *compress()..itertools.txt;*
+itertools.compress(data, selectors)        *compress()..itertools.txt*
 
    Make an iterator that filters elements from _data_ returning only
    those that have a corresponding element in _selectors_ that
@@ -344,7 +344,7 @@ itertools.compress(data, selectors)       *compress()..itertools.txt;*
 <
    New in version 3.1.
 
-itertools.count(start=0, step=1)             *count()..itertools.txt;*
+itertools.count(start=0, step=1)              *count()..itertools.txt*
 
    Make an iterator that returns evenly spaced values starting with
    number _start_. Often used as an argument to "map()" to generate
@@ -366,7 +366,7 @@ itertools.count(start=0, step=1)             *count()..itertools.txt;*
    Changed in version 3.1: Added _step_ argument and allowed non-
    integer arguments.
 
-itertools.cycle(iterable)                    *cycle()..itertools.txt;*
+itertools.cycle(iterable)                     *cycle()..itertools.txt*
 
    Make an iterator returning elements from the iterable and saving a
    copy of each. When the iterable is exhausted, return elements from
@@ -385,7 +385,7 @@ itertools.cycle(iterable)                    *cycle()..itertools.txt;*
    Note, this member of the toolkit may require significant auxiliary
    storage (depending on the length of the iterable).
 
-                                         *dropwhile()..itertools.txt;*
+                                          *dropwhile()..itertools.txt*
 itertools.dropwhile(predicate, iterable)
 
    Make an iterator that drops elements from the iterable as long as
@@ -405,7 +405,7 @@ itertools.dropwhile(predicate, iterable)
               yield x
 <
 
-                                       *filterfalse()..itertools.txt;*
+                                        *filterfalse()..itertools.txt*
 itertools.filterfalse(predicate, iterable)
 
    Make an iterator that filters elements from iterable returning only
@@ -420,7 +420,7 @@ itertools.filterfalse(predicate, iterable)
               if not predicate(x):
                   yield x
 <
-itertools.groupby(iterable, key=None)      *groupby()..itertools.txt;*
+itertools.groupby(iterable, key=None)       *groupby()..itertools.txt*
 
    Make an iterator that returns consecutive keys and groups from the
    _iterable_. The _key_ is a function computing a key value for each
@@ -481,7 +481,7 @@ itertools.groupby(iterable, key=None)      *groupby()..itertools.txt;*
                       return
                   self.currkey = self.keyfunc(self.currvalue)
 <
-itertools.islice(iterable, stop)            *islice()..itertools.txt;*
+itertools.islice(iterable, stop)             *islice()..itertools.txt*
 itertools.islice(iterable, start, stop[, step])
 
    Make an iterator that returns selected elements from the iterable.
@@ -528,7 +528,7 @@ itertools.islice(iterable, start, stop[, step])
               for i, element in zip(range(i + 1, stop), iterable):
                   pass
 <
-itertools.pairwise(iterable)              *pairwise()..itertools.txt;*
+itertools.pairwise(iterable)               *pairwise()..itertools.txt*
 
    Return successive overlapping pairs taken from the input
    _iterable_.
@@ -547,7 +547,7 @@ itertools.pairwise(iterable)              *pairwise()..itertools.txt;*
 <
    New in version 3.10.
 
-                                      *permutations()..itertools.txt;*
+                                       *permutations()..itertools.txt*
 itertools.permutations(iterable, r=None)
 
    Return successive _r_ length permutations of elements in the
@@ -607,7 +607,7 @@ itertools.permutations(iterable, r=None)
    The number of items returned is "n! / (n-r)!" when "0 <= r <= n" or
    zero when "r > n".
 
-itertools.product(*iterables, repeat=1)    *product()..itertools.txt;*
+itertools.product(*iterables, repeat=1)     *product()..itertools.txt*
 
    Cartesian product of input iterables.
 
@@ -643,7 +643,7 @@ itertools.product(*iterables, repeat=1)    *product()..itertools.txt;*
    iterables, keeping pools of values in memory to generate the
    products.  Accordingly, it is only useful with finite inputs.
 
-itertools.repeat(object[, times])           *repeat()..itertools.txt;*
+itertools.repeat(object[, times])            *repeat()..itertools.txt*
 
    Make an iterator that returns _object_ over and over again. Runs
    indefinitely unless the _times_ argument is specified.
@@ -665,7 +665,7 @@ itertools.repeat(object[, times])           *repeat()..itertools.txt;*
       >>> list(map(pow, range(10), repeat(2)))
       [0, 1, 4, 9, 16, 25, 36, 49, 64, 81]
 <
-itertools.starmap(function, iterable)      *starmap()..itertools.txt;*
+itertools.starmap(function, iterable)       *starmap()..itertools.txt*
 
    Make an iterator that computes the function using arguments
    obtained from the iterable.  Used instead of "map()" when argument
@@ -682,7 +682,7 @@ itertools.starmap(function, iterable)      *starmap()..itertools.txt;*
               yield function(*args)
 <
 
-                                         *takewhile()..itertools.txt;*
+                                          *takewhile()..itertools.txt*
 itertools.takewhile(predicate, iterable)
 
    Make an iterator that returns elements from the iterable as long as
@@ -696,7 +696,7 @@ itertools.takewhile(predicate, iterable)
               else:
                   break
 <
-itertools.tee(iterable, n=2)                   *tee()..itertools.txt;*
+itertools.tee(iterable, n=2)                    *tee()..itertools.txt*
 
    Return _n_ independent iterators from a single iterable.
 
@@ -732,7 +732,7 @@ itertools.tee(iterable, n=2)                   *tee()..itertools.txt;*
    iterator uses most or all of the data before another iterator
    starts, it is faster to use "list()" instead of "tee()".
 
-                                       *zip_longest()..itertools.txt;*
+                                        *zip_longest()..itertools.txt*
 itertools.zip_longest(*iterables, fillvalue=None)
 
    Make an iterator that aggregates elements from each of the

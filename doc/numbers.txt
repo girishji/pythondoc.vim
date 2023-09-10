@@ -1,4 +1,4 @@
-*numbers.txt;*                                Last change: 2023 Sep 09
+*numbers.txt;*                                Last change: 2023 Sep 10
 
 "numbers" — Numeric abstract base classes
 *****************************************
@@ -12,7 +12,7 @@ _abstract base classes_ which progressively define more operations.
 None of the types defined in this module are intended to be
 instantiated.
 
-class numbers.Number                            *Number..numbers.txt;*
+class numbers.Number                             *Number..numbers.txt*
 
    The root of the numeric hierarchy. If you just want to check if an
    argument _x_ is a number, without caring what kind, use
@@ -22,7 +22,7 @@ class numbers.Number                            *Number..numbers.txt;*
 The numeric tower
 =================
 
-class numbers.Complex                          *Complex..numbers.txt;*
+class numbers.Complex                           *Complex..numbers.txt*
 
    Subclasses of this type describe complex numbers and include the
    operations that work on the built-in "complex" type. These are:
@@ -30,20 +30,20 @@ class numbers.Complex                          *Complex..numbers.txt;*
    "/", "**", "abs()", "conjugate()", "==", and "!=". All except "-"
    and "!=" are abstract.
 
-   real                                      *Complex.real..numbers.txt;*
+   real                                       *Complex.real..numbers.txt*
 
       Abstract. Retrieves the real component of this number.
 
-   imag                                      *Complex.imag..numbers.txt;*
+   imag                                       *Complex.imag..numbers.txt*
 
       Abstract. Retrieves the imaginary component of this number.
 
-   abstractmethod conjugate()         *Complex.conjugate()..numbers.txt;*
+   abstractmethod conjugate()          *Complex.conjugate()..numbers.txt*
 
       Abstract. Returns the complex conjugate. For example,
       "(1+3j).conjugate() == (1-3j)".
 
-class numbers.Real                                *Real..numbers.txt;*
+class numbers.Real                                 *Real..numbers.txt*
 
    To "Complex", "Real" adds the operations that work on real numbers.
 
@@ -54,7 +54,7 @@ class numbers.Real                                *Real..numbers.txt;*
    Real also provides defaults for "complex()", "real", "imag", and
    "conjugate()".
 
-class numbers.Rational                        *Rational..numbers.txt;*
+class numbers.Rational                         *Rational..numbers.txt*
 
    Subtypes "Real" and adds "numerator" and "denominator" properties.
    It also provides a default for "float()".
@@ -63,15 +63,15 @@ class numbers.Rational                        *Rational..numbers.txt;*
    "Integral" and should be in lowest terms with "denominator"
    positive.
 
-   numerator                           *Rational.numerator..numbers.txt;*
+   numerator                            *Rational.numerator..numbers.txt*
 
       Abstract.
 
-   denominator                       *Rational.denominator..numbers.txt;*
+   denominator                        *Rational.denominator..numbers.txt*
 
       Abstract.
 
-class numbers.Integral                        *Integral..numbers.txt;*
+class numbers.Integral                         *Integral..numbers.txt*
 
    Subtypes "Rational" and adds a conversion to "int".  Provides
    defaults for "float()", "numerator", and "denominator".  Adds

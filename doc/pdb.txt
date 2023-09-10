@@ -1,4 +1,4 @@
-*pdb.txt;*                                    Last change: 2023 Sep 09
+*pdb.txt;*                                    Last change: 2023 Sep 10
 
 "pdb" — The Python Debugger
 ***************************
@@ -114,7 +114,7 @@ The typical usage to inspect a crashed program is:
 The module defines the following functions; each enters the debugger
 in a slightly different way:
 
-pdb.run(statement, globals=None, locals=None)        *run()..pdb.txt;*
+pdb.run(statement, globals=None, locals=None)         *run()..pdb.txt*
 
    Execute the _statement_ (given as a string or a code object) under
    debugger control.  The debugger prompt appears before any code is
@@ -125,7 +125,7 @@ pdb.run(statement, globals=None, locals=None)        *run()..pdb.txt;*
    default the dictionary of the module "__main__" is used.  (See the
    explanation of the built-in "exec()" or "eval()" functions.)
 
-                                                 *runeval()..pdb.txt;*
+                                                  *runeval()..pdb.txt*
 pdb.runeval(expression, globals=None, locals=None)
 
    Evaluate the _expression_ (given as a string or a code object)
@@ -133,14 +133,14 @@ pdb.runeval(expression, globals=None, locals=None)
    value of the _expression_.  Otherwise this function is similar to
    "run()".
 
-pdb.runcall(function, *args, **kwds)             *runcall()..pdb.txt;*
+pdb.runcall(function, *args, **kwds)              *runcall()..pdb.txt*
 
    Call the _function_ (a function or method object, not a string)
    with the given arguments.  When "runcall()" returns, it returns
    whatever the function call returned.  The debugger prompt appears
    as soon as the function is entered.
 
-pdb.set_trace(*, header=None)                  *set_trace()..pdb.txt;*
+pdb.set_trace(*, header=None)                   *set_trace()..pdb.txt*
 
    Enter the debugger at the calling stack frame.  This is useful to
    hard-code a breakpoint at a given point in a program, even if the
@@ -150,14 +150,14 @@ pdb.set_trace(*, header=None)                  *set_trace()..pdb.txt;*
 
    Changed in version 3.7: The keyword-only argument _header_.
 
-pdb.post_mortem(traceback=None)              *post_mortem()..pdb.txt;*
+pdb.post_mortem(traceback=None)               *post_mortem()..pdb.txt*
 
    Enter post-mortem debugging of the given _traceback_ object.  If no
    _traceback_ is given, it uses the one of the exception that is
    currently being handled (an exception must be being handled if the
    default is to be used).
 
-pdb.pm()                                              *pm()..pdb.txt;*
+pdb.pm()                                               *pm()..pdb.txt*
 
    Enter post-mortem debugging of the exception found in
    "sys.last_exc".
@@ -166,7 +166,7 @@ The "run*" functions and "set_trace()" are aliases for instantiating
 the "Pdb" class and calling the method of the same name.  If you want
 to access further features, you have to do this yourself:
 
-                                                       *Pdb..pdb.txt;*
+                                                        *Pdb..pdb.txt*
 class pdb.Pdb(completekey='tab', stdin=None, stdout=None, skip=None, nosigint=False, readrc=True)
 
    "Pdb" is the debugger class.
@@ -200,12 +200,12 @@ class pdb.Pdb(completekey='tab', stdin=None, stdout=None, skip=None, nosigint=Fa
 
    Changed in version 3.6: The _readrc_ argument.
 
-   run(statement, globals=None, locals=None)        *Pdb.run()..pdb.txt;*
+   run(statement, globals=None, locals=None)         *Pdb.run()..pdb.txt*
 
-                                             *Pdb.runeval()..pdb.txt;*
+                                              *Pdb.runeval()..pdb.txt*
    runeval(expression, globals=None, locals=None)
-   runcall(function, *args, **kwds)             *Pdb.runcall()..pdb.txt;*
-   set_trace()                                *Pdb.set_trace()..pdb.txt;*
+   runcall(function, *args, **kwds)              *Pdb.runcall()..pdb.txt*
+   set_trace()                                 *Pdb.set_trace()..pdb.txt*
 
       See the documentation for the functions explained above.
 

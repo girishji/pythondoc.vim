@@ -1,4 +1,4 @@
-*zipapp.txt;*                                 Last change: 2023 Sep 09
+*zipapp.txt;*                                 Last change: 2023 Sep 10
 
 "zipapp" — Manage executable Python zip archives
 ************************************************
@@ -96,7 +96,7 @@ Python API
 
 The module defines two convenience functions:
 
-                                       *create_archive()..zipapp.txt;*
+                                        *create_archive()..zipapp.txt*
 zipapp.create_archive(source, target=None, interpreter=None, main=None, filter=None, compressed=False)
 
    Create an application archive from _source_.  The source can be any
@@ -169,7 +169,7 @@ zipapp.create_archive(source, target=None, interpreter=None, main=None, filter=N
 
    New in version 3.7: Added the _filter_ and _compressed_ arguments.
 
-zipapp.get_interpreter(archive)       *get_interpreter()..zipapp.txt;*
+zipapp.get_interpreter(archive)        *get_interpreter()..zipapp.txt*
 
    Return the interpreter specified in the "#!" line at the start of
    the archive.  If there is no "#!" line, return "None". The

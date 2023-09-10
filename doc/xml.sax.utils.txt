@@ -1,4 +1,4 @@
-*xmlsaxutils.txt;*                            Last change: 2023 Sep 09
+*xml.sax.utils.txt;*                          Last change: 2023 Sep 10
 
 "xml.sax.saxutils" — SAX Utilities
 **********************************
@@ -11,7 +11,7 @@ The module "xml.sax.saxutils" contains a number of classes and
 functions that are commonly useful when creating SAX applications,
 either in direct use, or as base classes.
 
-                                          *escape()..xmlsaxutils.txt;*
+                                         *escape()..xml.sax.utils.txt*
 xml.sax.saxutils.escape(data, entities={})
 
    Escape "'&'", "'<'", and "'>'" in a string of data.
@@ -28,7 +28,7 @@ xml.sax.saxutils.escape(data, entities={})
      be used directly in XML. Do not use this function as a general
      string translation function.
 
-                                        *unescape()..xmlsaxutils.txt;*
+                                       *unescape()..xml.sax.utils.txt*
 xml.sax.saxutils.unescape(data, entities={})
 
    Unescape "'&amp;'", "'&lt;'", and "'&gt;'" in a string of data.
@@ -39,7 +39,7 @@ xml.sax.saxutils.unescape(data, entities={})
    "'&amp'", "'&lt;'", and "'&gt;'" are always unescaped, even if
    _entities_ is provided.
 
-                                       *quoteattr()..xmlsaxutils.txt;*
+                                      *quoteattr()..xml.sax.utils.txt*
 xml.sax.saxutils.quoteattr(data, entities={})
 
    Similar to "escape()", but also prepares _data_ to be used as an
@@ -58,7 +58,7 @@ xml.sax.saxutils.quoteattr(data, entities={})
    This function is useful when generating attribute values for HTML
    or any SGML using the reference concrete syntax.
 
-                                      *XMLGenerator..xmlsaxutils.txt;*
+                                     *XMLGenerator..xml.sax.utils.txt*
 class xml.sax.saxutils.XMLGenerator(out=None, encoding='iso-8859-1', short_empty_elements=False)
 
    This class implements the "ContentHandler" interface by writing SAX
@@ -74,7 +74,7 @@ class xml.sax.saxutils.XMLGenerator(out=None, encoding='iso-8859-1', short_empty
 
    New in version 3.2: The _short_empty_elements_ parameter.
 
-                                     *XMLFilterBase..xmlsaxutils.txt;*
+                                    *XMLFilterBase..xml.sax.utils.txt*
 class xml.sax.saxutils.XMLFilterBase(base)
 
    This class is designed to sit between an "XMLReader" and the client
@@ -83,7 +83,7 @@ class xml.sax.saxutils.XMLFilterBase(base)
    but subclasses can override specific methods to modify the event
    stream or the configuration requests as they pass through.
 
-                            *prepare_input_source()..xmlsaxutils.txt;*
+                           *prepare_input_source()..xml.sax.utils.txt*
 xml.sax.saxutils.prepare_input_source(source, base='')
 
    This function takes an input source and an optional base URL and

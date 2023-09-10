@@ -1,4 +1,4 @@
-*compileall.txt;*                             Last change: 2023 Sep 09
+*compileall.txt;*                             Last change: 2023 Sep 10
 
 "compileall" — Byte-compile Python libraries
 ********************************************
@@ -151,7 +151,7 @@ will be used at runtime.
 Public functions
 ================
 
-                                      *compile_dir()..compileall.txt;*
+                                       *compile_dir()..compileall.txt*
 compileall.compile_dir(dir, maxlevels=sys.getrecursionlimit(), ddir=None, force=False, rx=None, quiet=0, legacy=False, optimize=-1, workers=1, invalidation_mode=None, *, stripdir=None, prependdir=None, limit_sl_dest=None, hardlink_dupes=False)
 
    Recursively descend the directory tree named by _dir_, compiling
@@ -237,7 +237,7 @@ compileall.compile_dir(dir, maxlevels=sys.getrecursionlimit(), ddir=None, force=
    _limit_sl_dest_ and _hardlink_dupes_ arguments. Default value of
    _maxlevels_ was changed from "10" to "sys.getrecursionlimit()"
 
-                                     *compile_file()..compileall.txt;*
+                                      *compile_file()..compileall.txt*
 compileall.compile_file(fullname, ddir=None, force=False, rx=None, quiet=0, legacy=False, optimize=-1, invalidation_mode=None, *, stripdir=None, prependdir=None, limit_sl_dest=None, hardlink_dupes=False)
 
    Compile the file with path _fullname_. Return a true value if the
@@ -300,7 +300,7 @@ compileall.compile_file(fullname, ddir=None, force=False, rx=None, quiet=0, lega
    Changed in version 3.9: Added _stripdir_, _prependdir_,
    _limit_sl_dest_ and _hardlink_dupes_ arguments.
 
-                                     *compile_path()..compileall.txt;*
+                                      *compile_path()..compileall.txt*
 compileall.compile_path(skip_curdir=True, maxlevels=0, force=False, quiet=0, legacy=False, optimize=-1, invalidation_mode=None)
 
    Byte-compile all the ".py" files found along "sys.path". Return a

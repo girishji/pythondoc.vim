@@ -1,4 +1,4 @@
-*xmldompulldom.txt;*                          Last change: 2023 Sep 09
+*xml.dom.pulldom.txt;*                        Last change: 2023 Sep 10
 
 "xml.dom.pulldom" — Support for building partial DOM trees
 **********************************************************
@@ -78,17 +78,17 @@ state (i.e. remembering where one is in the document at any given
 point) or to make use of the "DOMEventStream.expandNode()" method and
 switch to DOM-related processing.
 
-                                         *PullDom..xmldompulldom.txt;*
+                                        *PullDom..xml.dom.pulldom.txt*
 class xml.dom.pulldom.PullDom(documentFactory=None)
 
    Subclass of "xml.sax.handler.ContentHandler".
 
-                                         *SAX2DOM..xmldompulldom.txt;*
+                                        *SAX2DOM..xml.dom.pulldom.txt*
 class xml.dom.pulldom.SAX2DOM(documentFactory=None)
 
    Subclass of "xml.sax.handler.ContentHandler".
 
-                                         *parse()..xmldompulldom.txt;*
+                                        *parse()..xml.dom.pulldom.txt*
 xml.dom.pulldom.parse(stream_or_string, parser=None, bufsize=None)
 
    Return a "DOMEventStream" from the given input. _stream_or_string_
@@ -101,12 +101,12 @@ xml.dom.pulldom.parse(stream_or_string, parser=None, bufsize=None)
 If you have XML in a string, you can use the "parseString()" function
 instead:
 
-                                   *parseString()..xmldompulldom.txt;*
+                                  *parseString()..xml.dom.pulldom.txt*
 xml.dom.pulldom.parseString(string, parser=None)
 
    Return a "DOMEventStream" that represents the (Unicode) _string_.
 
-                                 *default_bufsize..xmldompulldom.txt;*
+                                *default_bufsize..xml.dom.pulldom.txt*
 xml.dom.pulldom.default_bufsize
 
    Default value for the _bufsize_ parameter to "parse()".
@@ -118,13 +118,13 @@ xml.dom.pulldom.default_bufsize
 DOMEventStream Objects
 ======================
 
-                                  *DOMEventStream..xmldompulldom.txt;*
+                                 *DOMEventStream..xml.dom.pulldom.txt*
 class xml.dom.pulldom.DOMEventStream(stream, parser, bufsize)
 
    Changed in version 3.11: Support for "__getitem__()" method has
    been removed.
 
-   getEvent()             *DOMEventStream.getEvent()..xmldompulldom.txt;*
+   getEvent()            *DOMEventStream.getEvent()..xml.dom.pulldom.txt*
 
       Return a tuple containing _event_ and the current _node_ as
       "xml.dom.minidom.Document" if event equals "START_DOCUMENT",
@@ -133,7 +133,7 @@ class xml.dom.pulldom.DOMEventStream(stream, parser, bufsize)
       "CHARACTERS". The current node does not contain information
       about its children, unless "expandNode()" is called.
 
-   expandNode(node)     *DOMEventStream.expandNode()..xmldompulldom.txt;*
+   expandNode(node)    *DOMEventStream.expandNode()..xml.dom.pulldom.txt*
 
       Expands all children of _node_ into _node_. Example:
 >
@@ -149,6 +149,6 @@ class xml.dom.pulldom.DOMEventStream(stream, parser, bufsize)
                  # Following statement prints node with all its children '<p>Some text <div>and more</div></p>'
                  print(node.toxml())
 <
-   reset()                   *DOMEventStream.reset()..xmldompulldom.txt;*
+   reset()                  *DOMEventStream.reset()..xml.dom.pulldom.txt*
 
 vim:tw=78:ts=8:ft=help:norl:

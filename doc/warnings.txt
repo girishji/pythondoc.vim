@@ -1,4 +1,4 @@
-*warnings.txt;*                               Last change: 2023 Sep 09
+*warnings.txt;*                               Last change: 2023 Sep 10
 
 "warnings" — Warning control
 ****************************
@@ -377,7 +377,7 @@ possible.
 Available Functions
 ===================
 
-                                               *warn()..warnings.txt;*
+                                                *warn()..warnings.txt*
 warnings.warn(message, category=None, stacklevel=1, source=None, \*, skip_file_prefixes=None)
 
    Issue a warning, or maybe ignore it or raise an exception.  The
@@ -432,7 +432,7 @@ warnings.warn(message, category=None, stacklevel=1, source=None, \*, skip_file_p
 
    Changed in version 3.12: Added _skip_file_prefixes_.
 
-                                      *warn_explicit()..warnings.txt;*
+                                       *warn_explicit()..warnings.txt*
 warnings.warn_explicit(message, category, filename, lineno, module=None, registry=None, module_globals=None, source=None)
 
    This is a low-level interface to the functionality of "warn()",
@@ -454,7 +454,7 @@ warnings.warn_explicit(message, category, filename, lineno, module=None, registr
 
    Changed in version 3.6: Add the _source_ parameter.
 
-                                        *showwarning()..warnings.txt;*
+                                         *showwarning()..warnings.txt*
 warnings.showwarning(message, category, filename, lineno, file=None, line=None)
 
    Write a warning to a file.  The default implementation calls
@@ -466,7 +466,7 @@ warnings.showwarning(message, category, filename, lineno, file=None, line=None)
    supplied, "showwarning()" will try to read the line specified by
    _filename_ and _lineno_.
 
-                                      *formatwarning()..warnings.txt;*
+                                       *formatwarning()..warnings.txt*
 warnings.formatwarning(message, category, filename, lineno, line=None)
 
    Format a warning the standard way.  This returns a string which may
@@ -475,7 +475,7 @@ warnings.formatwarning(message, category, filename, lineno, line=None)
    not supplied, "formatwarning()" will try to read the line specified
    by _filename_ and _lineno_.
 
-                                     *filterwarnings()..warnings.txt;*
+                                      *filterwarnings()..warnings.txt*
 warnings.filterwarnings(action, message='', category=Warning, module='', lineno=0, append=False)
 
    Insert an entry into the list of warnings filter specifications.
@@ -487,7 +487,7 @@ warnings.filterwarnings(action, message='', category=Warning, module='', lineno=
    if both match a particular warning.  Omitted arguments default to a
    value that matches everything.
 
-                                       *simplefilter()..warnings.txt;*
+                                        *simplefilter()..warnings.txt*
 warnings.simplefilter(action, category=Warning, lineno=0, append=False)
 
    Insert a simple entry into the list of warnings filter
@@ -496,7 +496,7 @@ warnings.simplefilter(action, category=Warning, lineno=0, append=False)
    filter inserted always matches any message in any module as long as
    the category and line number match.
 
-warnings.resetwarnings()              *resetwarnings()..warnings.txt;*
+warnings.resetwarnings()               *resetwarnings()..warnings.txt*
 
    Reset the warnings filter.  This discards the effect of all
    previous calls to "filterwarnings()", including that of the "-W"
@@ -506,7 +506,7 @@ warnings.resetwarnings()              *resetwarnings()..warnings.txt;*
 Available Context Managers
 ==========================
 
-                                       *catch_warnings..warnings.txt;*
+                                        *catch_warnings..warnings.txt*
 class warnings.catch_warnings(*, record=False, module=None, action=None, category=Warning, lineno=0, append=False)
 
    A context manager that copies and, upon exit, restores the warnings

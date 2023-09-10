@@ -1,4 +1,4 @@
-*stat.txt;*                                   Last change: 2023 Sep 09
+*stat.txt;*                                   Last change: 2023 Sep 10
 
 "stat" — Interpreting "stat()" results
 **************************************
@@ -18,48 +18,48 @@ implementation.
 The "stat" module defines the following functions to test for specific
 file types:
 
-stat.S_ISDIR(mode)                              *S_ISDIR()..stat.txt;*
+stat.S_ISDIR(mode)                               *S_ISDIR()..stat.txt*
 
    Return non-zero if the mode is from a directory.
 
-stat.S_ISCHR(mode)                              *S_ISCHR()..stat.txt;*
+stat.S_ISCHR(mode)                               *S_ISCHR()..stat.txt*
 
    Return non-zero if the mode is from a character special device
    file.
 
-stat.S_ISBLK(mode)                              *S_ISBLK()..stat.txt;*
+stat.S_ISBLK(mode)                               *S_ISBLK()..stat.txt*
 
    Return non-zero if the mode is from a block special device file.
 
-stat.S_ISREG(mode)                              *S_ISREG()..stat.txt;*
+stat.S_ISREG(mode)                               *S_ISREG()..stat.txt*
 
    Return non-zero if the mode is from a regular file.
 
-stat.S_ISFIFO(mode)                            *S_ISFIFO()..stat.txt;*
+stat.S_ISFIFO(mode)                             *S_ISFIFO()..stat.txt*
 
    Return non-zero if the mode is from a FIFO (named pipe).
 
-stat.S_ISLNK(mode)                              *S_ISLNK()..stat.txt;*
+stat.S_ISLNK(mode)                               *S_ISLNK()..stat.txt*
 
    Return non-zero if the mode is from a symbolic link.
 
-stat.S_ISSOCK(mode)                            *S_ISSOCK()..stat.txt;*
+stat.S_ISSOCK(mode)                             *S_ISSOCK()..stat.txt*
 
    Return non-zero if the mode is from a socket.
 
-stat.S_ISDOOR(mode)                            *S_ISDOOR()..stat.txt;*
+stat.S_ISDOOR(mode)                             *S_ISDOOR()..stat.txt*
 
    Return non-zero if the mode is from a door.
 
    New in version 3.4.
 
-stat.S_ISPORT(mode)                            *S_ISPORT()..stat.txt;*
+stat.S_ISPORT(mode)                             *S_ISPORT()..stat.txt*
 
    Return non-zero if the mode is from an event port.
 
    New in version 3.4.
 
-stat.S_ISWHT(mode)                              *S_ISWHT()..stat.txt;*
+stat.S_ISWHT(mode)                               *S_ISWHT()..stat.txt*
 
    Return non-zero if the mode is from a whiteout.
 
@@ -68,14 +68,14 @@ stat.S_ISWHT(mode)                              *S_ISWHT()..stat.txt;*
 Two additional functions are defined for more general manipulation of
 the file’s mode:
 
-stat.S_IMODE(mode)                              *S_IMODE()..stat.txt;*
+stat.S_IMODE(mode)                               *S_IMODE()..stat.txt*
 
    Return the portion of the file’s mode that can be set by
    "os.chmod()"—that is, the file’s permission bits, plus the sticky
    bit, set-group-id, and set-user-id bits (on systems that support
    them).
 
-stat.S_IFMT(mode)                                *S_IFMT()..stat.txt;*
+stat.S_IFMT(mode)                                 *S_IFMT()..stat.txt*
 
    Return the portion of the file’s mode that describes the file type
    (used by the "S_IS*()" functions above).
@@ -118,7 +118,7 @@ Example:
 An additional utility function is provided to convert a file’s mode in
 a human readable string:
 
-stat.filemode(mode)                            *filemode()..stat.txt;*
+stat.filemode(mode)                             *filemode()..stat.txt*
 
    Convert a file’s mode to a string of the form ‘-rwxrwxrwx’.
 
@@ -130,44 +130,44 @@ stat.filemode(mode)                            *filemode()..stat.txt;*
 All the variables below are simply symbolic indexes into the 10-tuple
 returned by "os.stat()", "os.fstat()" or "os.lstat()".
 
-stat.ST_MODE                                      *ST_MODE..stat.txt;*
+stat.ST_MODE                                       *ST_MODE..stat.txt*
 
    Inode protection mode.
 
-stat.ST_INO                                        *ST_INO..stat.txt;*
+stat.ST_INO                                         *ST_INO..stat.txt*
 
    Inode number.
 
-stat.ST_DEV                                        *ST_DEV..stat.txt;*
+stat.ST_DEV                                         *ST_DEV..stat.txt*
 
    Device inode resides on.
 
-stat.ST_NLINK                                    *ST_NLINK..stat.txt;*
+stat.ST_NLINK                                     *ST_NLINK..stat.txt*
 
    Number of links to the inode.
 
-stat.ST_UID                                        *ST_UID..stat.txt;*
+stat.ST_UID                                         *ST_UID..stat.txt*
 
    User id of the owner.
 
-stat.ST_GID                                        *ST_GID..stat.txt;*
+stat.ST_GID                                         *ST_GID..stat.txt*
 
    Group id of the owner.
 
-stat.ST_SIZE                                      *ST_SIZE..stat.txt;*
+stat.ST_SIZE                                       *ST_SIZE..stat.txt*
 
    Size in bytes of a plain file; amount of data waiting on some
    special files.
 
-stat.ST_ATIME                                    *ST_ATIME..stat.txt;*
+stat.ST_ATIME                                     *ST_ATIME..stat.txt*
 
    Time of last access.
 
-stat.ST_MTIME                                    *ST_MTIME..stat.txt;*
+stat.ST_MTIME                                     *ST_MTIME..stat.txt*
 
    Time of last modification.
 
-stat.ST_CTIME                                    *ST_CTIME..stat.txt;*
+stat.ST_CTIME                                     *ST_CTIME..stat.txt*
 
    The “ctime” as reported by the operating system.  On some systems
    (like Unix) is the time of the last metadata change, and, on others
@@ -189,47 +189,47 @@ The variables below define the flags used in the "ST_MODE" field.
 Use of the functions above is more portable than use of the first set
 of flags:
 
-stat.S_IFSOCK                                    *S_IFSOCK..stat.txt;*
+stat.S_IFSOCK                                     *S_IFSOCK..stat.txt*
 
    Socket.
 
-stat.S_IFLNK                                      *S_IFLNK..stat.txt;*
+stat.S_IFLNK                                       *S_IFLNK..stat.txt*
 
    Symbolic link.
 
-stat.S_IFREG                                      *S_IFREG..stat.txt;*
+stat.S_IFREG                                       *S_IFREG..stat.txt*
 
    Regular file.
 
-stat.S_IFBLK                                      *S_IFBLK..stat.txt;*
+stat.S_IFBLK                                       *S_IFBLK..stat.txt*
 
    Block device.
 
-stat.S_IFDIR                                      *S_IFDIR..stat.txt;*
+stat.S_IFDIR                                       *S_IFDIR..stat.txt*
 
    Directory.
 
-stat.S_IFCHR                                      *S_IFCHR..stat.txt;*
+stat.S_IFCHR                                       *S_IFCHR..stat.txt*
 
    Character device.
 
-stat.S_IFIFO                                      *S_IFIFO..stat.txt;*
+stat.S_IFIFO                                       *S_IFIFO..stat.txt*
 
    FIFO.
 
-stat.S_IFDOOR                                    *S_IFDOOR..stat.txt;*
+stat.S_IFDOOR                                     *S_IFDOOR..stat.txt*
 
    Door.
 
    New in version 3.4.
 
-stat.S_IFPORT                                    *S_IFPORT..stat.txt;*
+stat.S_IFPORT                                     *S_IFPORT..stat.txt*
 
    Event port.
 
    New in version 3.4.
 
-stat.S_IFWHT                                      *S_IFWHT..stat.txt;*
+stat.S_IFWHT                                       *S_IFWHT..stat.txt*
 
    Whiteout.
 
@@ -243,11 +243,11 @@ Note:
 The following flags can also be used in the _mode_ argument of
 "os.chmod()":
 
-stat.S_ISUID                                      *S_ISUID..stat.txt;*
+stat.S_ISUID                                       *S_ISUID..stat.txt*
 
    Set UID bit.
 
-stat.S_ISGID                                      *S_ISGID..stat.txt;*
+stat.S_ISGID                                       *S_ISGID..stat.txt*
 
    Set-group-ID bit.  This bit has several special uses.  For a
    directory it indicates that BSD semantics is to be used for that
@@ -258,127 +258,127 @@ stat.S_ISGID                                      *S_ISGID..stat.txt;*
    set, the set-group-ID bit indicates mandatory file/record locking
    (see also "S_ENFMT").
 
-stat.S_ISVTX                                      *S_ISVTX..stat.txt;*
+stat.S_ISVTX                                       *S_ISVTX..stat.txt*
 
    Sticky bit.  When this bit is set on a directory it means that a
    file in that directory can be renamed or deleted only by the owner
    of the file, by the owner of the directory, or by a privileged
    process.
 
-stat.S_IRWXU                                      *S_IRWXU..stat.txt;*
+stat.S_IRWXU                                       *S_IRWXU..stat.txt*
 
    Mask for file owner permissions.
 
-stat.S_IRUSR                                      *S_IRUSR..stat.txt;*
+stat.S_IRUSR                                       *S_IRUSR..stat.txt*
 
    Owner has read permission.
 
-stat.S_IWUSR                                      *S_IWUSR..stat.txt;*
+stat.S_IWUSR                                       *S_IWUSR..stat.txt*
 
    Owner has write permission.
 
-stat.S_IXUSR                                      *S_IXUSR..stat.txt;*
+stat.S_IXUSR                                       *S_IXUSR..stat.txt*
 
    Owner has execute permission.
 
-stat.S_IRWXG                                      *S_IRWXG..stat.txt;*
+stat.S_IRWXG                                       *S_IRWXG..stat.txt*
 
    Mask for group permissions.
 
-stat.S_IRGRP                                      *S_IRGRP..stat.txt;*
+stat.S_IRGRP                                       *S_IRGRP..stat.txt*
 
    Group has read permission.
 
-stat.S_IWGRP                                      *S_IWGRP..stat.txt;*
+stat.S_IWGRP                                       *S_IWGRP..stat.txt*
 
    Group has write permission.
 
-stat.S_IXGRP                                      *S_IXGRP..stat.txt;*
+stat.S_IXGRP                                       *S_IXGRP..stat.txt*
 
    Group has execute permission.
 
-stat.S_IRWXO                                      *S_IRWXO..stat.txt;*
+stat.S_IRWXO                                       *S_IRWXO..stat.txt*
 
    Mask for permissions for others (not in group).
 
-stat.S_IROTH                                      *S_IROTH..stat.txt;*
+stat.S_IROTH                                       *S_IROTH..stat.txt*
 
    Others have read permission.
 
-stat.S_IWOTH                                      *S_IWOTH..stat.txt;*
+stat.S_IWOTH                                       *S_IWOTH..stat.txt*
 
    Others have write permission.
 
-stat.S_IXOTH                                      *S_IXOTH..stat.txt;*
+stat.S_IXOTH                                       *S_IXOTH..stat.txt*
 
    Others have execute permission.
 
-stat.S_ENFMT                                      *S_ENFMT..stat.txt;*
+stat.S_ENFMT                                       *S_ENFMT..stat.txt*
 
    System V file locking enforcement.  This flag is shared with
    "S_ISGID": file/record locking is enforced on files that do not
    have the group execution bit ("S_IXGRP") set.
 
-stat.S_IREAD                                      *S_IREAD..stat.txt;*
+stat.S_IREAD                                       *S_IREAD..stat.txt*
 
    Unix V7 synonym for "S_IRUSR".
 
-stat.S_IWRITE                                    *S_IWRITE..stat.txt;*
+stat.S_IWRITE                                     *S_IWRITE..stat.txt*
 
    Unix V7 synonym for "S_IWUSR".
 
-stat.S_IEXEC                                      *S_IEXEC..stat.txt;*
+stat.S_IEXEC                                       *S_IEXEC..stat.txt*
 
    Unix V7 synonym for "S_IXUSR".
 
 The following flags can be used in the _flags_ argument of
 "os.chflags()":
 
-stat.UF_NODUMP                                  *UF_NODUMP..stat.txt;*
+stat.UF_NODUMP                                   *UF_NODUMP..stat.txt*
 
    Do not dump the file.
 
-stat.UF_IMMUTABLE                            *UF_IMMUTABLE..stat.txt;*
+stat.UF_IMMUTABLE                             *UF_IMMUTABLE..stat.txt*
 
    The file may not be changed.
 
-stat.UF_APPEND                                  *UF_APPEND..stat.txt;*
+stat.UF_APPEND                                   *UF_APPEND..stat.txt*
 
    The file may only be appended to.
 
-stat.UF_OPAQUE                                  *UF_OPAQUE..stat.txt;*
+stat.UF_OPAQUE                                   *UF_OPAQUE..stat.txt*
 
    The directory is opaque when viewed through a union stack.
 
-stat.UF_NOUNLINK                              *UF_NOUNLINK..stat.txt;*
+stat.UF_NOUNLINK                               *UF_NOUNLINK..stat.txt*
 
    The file may not be renamed or deleted.
 
-stat.UF_COMPRESSED                          *UF_COMPRESSED..stat.txt;*
+stat.UF_COMPRESSED                           *UF_COMPRESSED..stat.txt*
 
    The file is stored compressed (macOS 10.6+).
 
-stat.UF_HIDDEN                                  *UF_HIDDEN..stat.txt;*
+stat.UF_HIDDEN                                   *UF_HIDDEN..stat.txt*
 
    The file should not be displayed in a GUI (macOS 10.5+).
 
-stat.SF_ARCHIVED                              *SF_ARCHIVED..stat.txt;*
+stat.SF_ARCHIVED                               *SF_ARCHIVED..stat.txt*
 
    The file may be archived.
 
-stat.SF_IMMUTABLE                            *SF_IMMUTABLE..stat.txt;*
+stat.SF_IMMUTABLE                             *SF_IMMUTABLE..stat.txt*
 
    The file may not be changed.
 
-stat.SF_APPEND                                  *SF_APPEND..stat.txt;*
+stat.SF_APPEND                                   *SF_APPEND..stat.txt*
 
    The file may only be appended to.
 
-stat.SF_NOUNLINK                              *SF_NOUNLINK..stat.txt;*
+stat.SF_NOUNLINK                               *SF_NOUNLINK..stat.txt*
 
    The file may not be renamed or deleted.
 
-stat.SF_SNAPSHOT                              *SF_SNAPSHOT..stat.txt;*
+stat.SF_SNAPSHOT                               *SF_SNAPSHOT..stat.txt*
 
    The file is a snapshot file.
 
@@ -390,35 +390,33 @@ use when testing bits in the "st_file_attributes" member returned by
 "os.stat()". See the Windows API documentation for more detail on the
 meaning of these constants.
 
-stat.FILE_ATTRIBUTE_ARCHIVE        *FILE_ATTRIBUTE_ARCHIVE..stat.txt;*
+stat.FILE_ATTRIBUTE_ARCHIVE         *FILE_ATTRIBUTE_ARCHIVE..stat.txt*
+stat.FILE_ATTRIBUTE_COMPRESSED   *FILE_ATTRIBUTE_COMPRESSED..stat.txt*
+stat.FILE_ATTRIBUTE_DEVICE           *FILE_ATTRIBUTE_DEVICE..stat.txt*
+stat.FILE_ATTRIBUTE_DIRECTORY     *FILE_ATTRIBUTE_DIRECTORY..stat.txt*
+stat.FILE_ATTRIBUTE_ENCRYPTED     *FILE_ATTRIBUTE_ENCRYPTED..stat.txt*
+stat.FILE_ATTRIBUTE_HIDDEN           *FILE_ATTRIBUTE_HIDDEN..stat.txt*
 
-                                *FILE_ATTRIBUTE_COMPRESSED..stat.txt;*
-stat.FILE_ATTRIBUTE_COMPRESSED
-stat.FILE_ATTRIBUTE_DEVICE          *FILE_ATTRIBUTE_DEVICE..stat.txt;*
-stat.FILE_ATTRIBUTE_DIRECTORY    *FILE_ATTRIBUTE_DIRECTORY..stat.txt;*
-stat.FILE_ATTRIBUTE_ENCRYPTED    *FILE_ATTRIBUTE_ENCRYPTED..stat.txt;*
-stat.FILE_ATTRIBUTE_HIDDEN          *FILE_ATTRIBUTE_HIDDEN..stat.txt;*
-
-                          *FILE_ATTRIBUTE_INTEGRITY_STREAM..stat.txt;*
+                           *FILE_ATTRIBUTE_INTEGRITY_STREAM..stat.txt*
 stat.FILE_ATTRIBUTE_INTEGRITY_STREAM
-stat.FILE_ATTRIBUTE_NORMAL          *FILE_ATTRIBUTE_NORMAL..stat.txt;*
+stat.FILE_ATTRIBUTE_NORMAL           *FILE_ATTRIBUTE_NORMAL..stat.txt*
 
-                       *FILE_ATTRIBUTE_NOT_CONTENT_INDEXED..stat.txt;*
+                        *FILE_ATTRIBUTE_NOT_CONTENT_INDEXED..stat.txt*
 stat.FILE_ATTRIBUTE_NOT_CONTENT_INDEXED
 
-                             *FILE_ATTRIBUTE_NO_SCRUB_DATA..stat.txt;*
+                              *FILE_ATTRIBUTE_NO_SCRUB_DATA..stat.txt*
 stat.FILE_ATTRIBUTE_NO_SCRUB_DATA
-stat.FILE_ATTRIBUTE_OFFLINE        *FILE_ATTRIBUTE_OFFLINE..stat.txt;*
-stat.FILE_ATTRIBUTE_READONLY      *FILE_ATTRIBUTE_READONLY..stat.txt;*
+stat.FILE_ATTRIBUTE_OFFLINE         *FILE_ATTRIBUTE_OFFLINE..stat.txt*
+stat.FILE_ATTRIBUTE_READONLY       *FILE_ATTRIBUTE_READONLY..stat.txt*
 
-                             *FILE_ATTRIBUTE_REPARSE_POINT..stat.txt;*
+                              *FILE_ATTRIBUTE_REPARSE_POINT..stat.txt*
 stat.FILE_ATTRIBUTE_REPARSE_POINT
 
-                               *FILE_ATTRIBUTE_SPARSE_FILE..stat.txt;*
+                                *FILE_ATTRIBUTE_SPARSE_FILE..stat.txt*
 stat.FILE_ATTRIBUTE_SPARSE_FILE
-stat.FILE_ATTRIBUTE_SYSTEM          *FILE_ATTRIBUTE_SYSTEM..stat.txt;*
-stat.FILE_ATTRIBUTE_TEMPORARY    *FILE_ATTRIBUTE_TEMPORARY..stat.txt;*
-stat.FILE_ATTRIBUTE_VIRTUAL        *FILE_ATTRIBUTE_VIRTUAL..stat.txt;*
+stat.FILE_ATTRIBUTE_SYSTEM           *FILE_ATTRIBUTE_SYSTEM..stat.txt*
+stat.FILE_ATTRIBUTE_TEMPORARY     *FILE_ATTRIBUTE_TEMPORARY..stat.txt*
+stat.FILE_ATTRIBUTE_VIRTUAL         *FILE_ATTRIBUTE_VIRTUAL..stat.txt*
 
    New in version 3.5.
 
@@ -426,12 +424,12 @@ On Windows, the following constants are available for comparing
 against the "st_reparse_tag" member returned by "os.lstat()". These
 are well-known constants, but are not an exhaustive list.
 
-stat.IO_REPARSE_TAG_SYMLINK        *IO_REPARSE_TAG_SYMLINK..stat.txt;*
+stat.IO_REPARSE_TAG_SYMLINK         *IO_REPARSE_TAG_SYMLINK..stat.txt*
 
-                               *IO_REPARSE_TAG_MOUNT_POINT..stat.txt;*
+                                *IO_REPARSE_TAG_MOUNT_POINT..stat.txt*
 stat.IO_REPARSE_TAG_MOUNT_POINT
 
-                               *IO_REPARSE_TAG_APPEXECLINK..stat.txt;*
+                                *IO_REPARSE_TAG_APPEXECLINK..stat.txt*
 stat.IO_REPARSE_TAG_APPEXECLINK
 
    New in version 3.8.

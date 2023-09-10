@@ -1,4 +1,4 @@
-*asyncio-future.txt;*                         Last change: 2023 Sep 09
+*asyncio-future.txt;*                         Last change: 2023 Sep 10
 
 Futures
 *******
@@ -14,7 +14,7 @@ with high-level async/await code.
 Future Functions
 ================
 
-asyncio.isfuture(obj)                *isfuture()..asyncio-future.txt;*
+asyncio.isfuture(obj)                 *isfuture()..asyncio-future.txt*
 
    Return "True" if _obj_ is either of:
 
@@ -26,7 +26,7 @@ asyncio.isfuture(obj)                *isfuture()..asyncio-future.txt;*
 
    New in version 3.5.
 
-                                *ensure_future()..asyncio-future.txt;*
+                                 *ensure_future()..asyncio-future.txt*
 asyncio.ensure_future(obj, *, loop=None)
 
    Return:
@@ -56,7 +56,7 @@ asyncio.ensure_future(obj, *, loop=None)
    _obj_ is not a Future-like object and _loop_ is not specified and
    there is no running event loop.
 
-                                  *wrap_future()..asyncio-future.txt;*
+                                   *wrap_future()..asyncio-future.txt*
 asyncio.wrap_future(future, *, loop=None)
 
    Wrap a "concurrent.futures.Future" object in a "asyncio.Future"
@@ -70,7 +70,7 @@ asyncio.wrap_future(future, *, loop=None)
 Future Object
 =============
 
-class asyncio.Future(*, loop=None)       *Future..asyncio-future.txt;*
+class asyncio.Future(*, loop=None)        *Future..asyncio-future.txt*
 
    A Future represents an eventual result of an asynchronous
    operation.  Not thread-safe.
@@ -95,7 +95,7 @@ class asyncio.Future(*, loop=None)       *Future..asyncio-future.txt;*
    Deprecated since version 3.10: Deprecation warning is emitted if
    _loop_ is not specified and there is no running event loop.
 
-   result()                        *Future.result()..asyncio-future.txt;*
+   result()                         *Future.result()..asyncio-future.txt*
 
       Return the result of the Future.
 
@@ -111,14 +111,14 @@ class asyncio.Future(*, loop=None)       *Future..asyncio-future.txt;*
       If the Future’s result isn’t yet available, this method raises a
       "InvalidStateError" exception.
 
-   set_result(result)          *Future.set_result()..asyncio-future.txt;*
+   set_result(result)           *Future.set_result()..asyncio-future.txt*
 
       Mark the Future as _done_ and set its result.
 
       Raises a "InvalidStateError" error if the Future is already
       _done_.
 
-                         *Future.set_exception()..asyncio-future.txt;*
+                          *Future.set_exception()..asyncio-future.txt*
    set_exception(exception)
 
       Mark the Future as _done_ and set an exception.
@@ -126,7 +126,7 @@ class asyncio.Future(*, loop=None)       *Future..asyncio-future.txt;*
       Raises a "InvalidStateError" error if the Future is already
       _done_.
 
-   done()                            *Future.done()..asyncio-future.txt;*
+   done()                             *Future.done()..asyncio-future.txt*
 
       Return "True" if the Future is _done_.
 
@@ -134,7 +134,7 @@ class asyncio.Future(*, loop=None)       *Future..asyncio-future.txt;*
       or an exception set with "set_result()" or "set_exception()"
       calls.
 
-   cancelled()                  *Future.cancelled()..asyncio-future.txt;*
+   cancelled()                   *Future.cancelled()..asyncio-future.txt*
 
       Return "True" if the Future was _cancelled_.
 
@@ -145,7 +145,7 @@ class asyncio.Future(*, loop=None)       *Future..asyncio-future.txt;*
              fut.set_result(42)
 <
 
-                     *Future.add_done_callback()..asyncio-future.txt;*
+                      *Future.add_done_callback()..asyncio-future.txt*
    add_done_callback(callback, *, context=None)
 
       Add a callback to be run when the Future is _done_.
@@ -170,7 +170,7 @@ class asyncio.Future(*, loop=None)       *Future..asyncio-future.txt;*
       Changed in version 3.7: The _context_ keyword-only parameter was
       added. See **PEP 567** for more details.
 
-                  *Future.remove_done_callback()..asyncio-future.txt;*
+                   *Future.remove_done_callback()..asyncio-future.txt*
    remove_done_callback(callback)
 
       Remove _callback_ from the callbacks list.
@@ -178,7 +178,7 @@ class asyncio.Future(*, loop=None)       *Future..asyncio-future.txt;*
       Returns the number of callbacks removed, which is typically 1,
       unless a callback was added more than once.
 
-   cancel(msg=None)                *Future.cancel()..asyncio-future.txt;*
+   cancel(msg=None)                 *Future.cancel()..asyncio-future.txt*
 
       Cancel the Future and schedule callbacks.
 
@@ -188,7 +188,7 @@ class asyncio.Future(*, loop=None)       *Future..asyncio-future.txt;*
 
       Changed in version 3.9: Added the _msg_ parameter.
 
-   exception()                  *Future.exception()..asyncio-future.txt;*
+   exception()                   *Future.exception()..asyncio-future.txt*
 
       Return the exception that was set on this Future.
 
@@ -201,7 +201,7 @@ class asyncio.Future(*, loop=None)       *Future..asyncio-future.txt;*
       If the Future isn’t _done_ yet, this method raises an
       "InvalidStateError" exception.
 
-   get_loop()                    *Future.get_loop()..asyncio-future.txt;*
+   get_loop()                     *Future.get_loop()..asyncio-future.txt*
 
       Return the event loop the Future object is bound to.
 

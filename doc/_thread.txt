@@ -1,4 +1,4 @@
-*_thread.txt;*                                Last change: 2023 Sep 09
+*_thread.txt;*                                Last change: 2023 Sep 10
 
 "_thread" — Low-level threading API
 ***********************************
@@ -17,18 +17,18 @@ always available.
 
 This module defines the following constants and functions:
 
-exception _thread.error                          *error.._thread.txt;*
+exception _thread.error                           *error.._thread.txt*
 
    Raised on thread-specific errors.
 
    Changed in version 3.3: This is now a synonym of the built-in
    "RuntimeError".
 
-_thread.LockType                              *LockType.._thread.txt;*
+_thread.LockType                               *LockType.._thread.txt*
 
    This is the type of lock objects.
 
-                                    *start_new_thread().._thread.txt;*
+                                     *start_new_thread().._thread.txt*
 _thread.start_new_thread(function, args[, kwargs])
 
    Start a new thread and return its identifier.  The thread executes
@@ -53,7 +53,7 @@ _thread.start_new_thread(function, args[, kwargs])
    Changed in version 3.8: "sys.unraisablehook()" is now used to
    handle unhandled exceptions.
 
-                                      *interrupt_main().._thread.txt;*
+                                       *interrupt_main().._thread.txt*
 _thread.interrupt_main(signum=signal.SIGINT, /)
 
    Simulate the effect of a signal arriving in the main thread. A
@@ -76,17 +76,17 @@ _thread.interrupt_main(signum=signal.SIGINT, /)
      to the associated handler (if it exists). If you want to truly
      emit the signal, use "signal.raise_signal()".
 
-_thread.exit()                                  *exit().._thread.txt;*
+_thread.exit()                                   *exit().._thread.txt*
 
    Raise the "SystemExit" exception.  When not caught, this will cause
    the thread to exit silently.
 
-_thread.allocate_lock()                *allocate_lock().._thread.txt;*
+_thread.allocate_lock()                 *allocate_lock().._thread.txt*
 
    Return a new lock object.  Methods of locks are described below.
    The lock is initially unlocked.
 
-_thread.get_ident()                        *get_ident().._thread.txt;*
+_thread.get_ident()                         *get_ident().._thread.txt*
 
    Return the ‘thread identifier’ of the current thread.  This is a
    nonzero integer.  Its value has no direct meaning; it is intended
@@ -94,7 +94,7 @@ _thread.get_ident()                        *get_ident().._thread.txt;*
    specific data.  Thread identifiers may be recycled when a thread
    exits and another thread is created.
 
-_thread.get_native_id()                *get_native_id().._thread.txt;*
+_thread.get_native_id()                 *get_native_id().._thread.txt*
 
    Return the native integral Thread ID of the current thread assigned
    by the kernel. This is a non-negative integer. Its value may be
@@ -107,7 +107,7 @@ _thread.get_native_id()                *get_native_id().._thread.txt;*
 
    New in version 3.8.
 
-_thread.stack_size([size])                *stack_size().._thread.txt;*
+_thread.stack_size([size])                 *stack_size().._thread.txt*
 
    Return the thread stack size used when creating new threads.  The
    optional _size_ argument specifies the stack size to be used for
@@ -130,7 +130,7 @@ _thread.stack_size([size])                *stack_size().._thread.txt;*
 
    Unix platforms with POSIX threads support.
 
-_thread.TIMEOUT_MAX                        *TIMEOUT_MAX.._thread.txt;*
+_thread.TIMEOUT_MAX                         *TIMEOUT_MAX.._thread.txt*
 
    The maximum value allowed for the _timeout_ parameter of
    "Lock.acquire". Specifying a timeout greater than this value will
@@ -140,7 +140,7 @@ _thread.TIMEOUT_MAX                        *TIMEOUT_MAX.._thread.txt;*
 
 Lock objects have the following methods:
 
-                                        *lock.acquire().._thread.txt;*
+                                         *lock.acquire().._thread.txt*
 lock.acquire(blocking=True, timeout=-1)
 
    Without any optional argument, this method acquires the lock
@@ -166,12 +166,12 @@ lock.acquire(blocking=True, timeout=-1)
    Changed in version 3.2: Lock acquires can now be interrupted by
    signals on POSIX.
 
-lock.release()                          *lock.release().._thread.txt;*
+lock.release()                           *lock.release().._thread.txt*
 
    Releases the lock.  The lock must have been acquired earlier, but
    not necessarily by the same thread.
 
-lock.locked()                            *lock.locked().._thread.txt;*
+lock.locked()                             *lock.locked().._thread.txt*
 
    Return the status of the lock: "True" if it has been acquired by
    some thread, "False" if not.

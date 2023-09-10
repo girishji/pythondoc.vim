@@ -1,4 +1,4 @@
-*codeop.txt;*                                 Last change: 2023 Sep 09
+*codeop.txt;*                                 Last change: 2023 Sep 10
 
 "codeop" — Compile Python code
 ******************************
@@ -26,7 +26,7 @@ a way of doing them both.
 
 To do just the former:
 
-                                      *compile_command()..codeop.txt;*
+                                       *compile_command()..codeop.txt*
 codeop.compile_command(source, filename='<input>', symbol='single')
 
    Tries to compile _source_, which should be a string of Python code
@@ -53,7 +53,7 @@ codeop.compile_command(source, filename='<input>', symbol='single')
      be followed by arbitrary garbage. This will be fixed once the API
      for the parser is better.
 
-class codeop.Compile                            *Compile..codeop.txt;*
+class codeop.Compile                             *Compile..codeop.txt*
 
    Instances of this class have "__call__()" methods identical in
    signature to the built-in function "compile()", but with the
@@ -61,7 +61,7 @@ class codeop.Compile                            *Compile..codeop.txt;*
    "__future__" statement, the instance ‘remembers’ and compiles all
    subsequent program texts with the statement in force.
 
-class codeop.CommandCompiler            *CommandCompiler..codeop.txt;*
+class codeop.CommandCompiler             *CommandCompiler..codeop.txt*
 
    Instances of this class have "__call__()" methods identical in
    signature to "compile_command()"; the difference is that if the

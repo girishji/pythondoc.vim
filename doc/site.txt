@@ -1,4 +1,4 @@
-*site.txt;*                                   Last change: 2023 Sep 09
+*site.txt;*                                   Last change: 2023 Sep 10
 
 "site" — Site-specific configuration hook
 *****************************************
@@ -137,11 +137,11 @@ automatic.
 Module contents
 ===============
 
-site.PREFIXES                                    *PREFIXES..site.txt;*
+site.PREFIXES                                     *PREFIXES..site.txt*
 
    A list of prefixes for site-packages directories.
 
-site.ENABLE_USER_SITE                    *ENABLE_USER_SITE..site.txt;*
+site.ENABLE_USER_SITE                     *ENABLE_USER_SITE..site.txt*
 
    Flag showing the status of the user site-packages directory.
    "True" means that it is enabled and was added to "sys.path".
@@ -150,7 +150,7 @@ site.ENABLE_USER_SITE                    *ENABLE_USER_SITE..site.txt;*
    reasons (mismatch between user or group id and effective id) or by
    an administrator.
 
-site.USER_SITE                                  *USER_SITE..site.txt;*
+site.USER_SITE                                   *USER_SITE..site.txt*
 
    Path to the user site-packages for the running Python.  Can be
    "None" if "getusersitepackages()" hasn’t been called yet.  Default
@@ -161,7 +161,7 @@ site.USER_SITE                                  *USER_SITE..site.txt;*
    directory is a site directory, which means that ".pth" files in it
    will be processed.
 
-site.USER_BASE                                  *USER_BASE..site.txt;*
+site.USER_BASE                                   *USER_BASE..site.txt*
 
    Path to the base directory for the user site-packages.  Can be
    "None" if "getuserbase()" hasn’t been called yet.  Default value is
@@ -172,7 +172,7 @@ site.USER_BASE                                  *USER_BASE..site.txt;*
    modules, etc. for the user installation scheme. See also
    "PYTHONUSERBASE".
 
-site.main()                                        *main()..site.txt;*
+site.main()                                         *main()..site.txt*
 
    Adds all the standard site-specific directories to the module
    search path.  This function is called automatically when this
@@ -182,18 +182,18 @@ site.main()                                        *main()..site.txt;*
    Changed in version 3.3: This function used to be called
    unconditionally.
 
-site.addsitedir(sitedir, known_paths=None)   *addsitedir()..site.txt;*
+site.addsitedir(sitedir, known_paths=None)    *addsitedir()..site.txt*
 
    Add a directory to sys.path and process its ".pth" files.
    Typically used in "sitecustomize" or "usercustomize" (see above).
 
-site.getsitepackages()                  *getsitepackages()..site.txt;*
+site.getsitepackages()                   *getsitepackages()..site.txt*
 
    Return a list containing all global site-packages directories.
 
    New in version 3.2.
 
-site.getuserbase()                          *getuserbase()..site.txt;*
+site.getuserbase()                           *getuserbase()..site.txt*
 
    Return the path of the user base directory, "USER_BASE".  If it is
    not initialized yet, this function will also set it, respecting
@@ -201,7 +201,7 @@ site.getuserbase()                          *getuserbase()..site.txt;*
 
    New in version 3.2.
 
-site.getusersitepackages()          *getusersitepackages()..site.txt;*
+site.getusersitepackages()           *getusersitepackages()..site.txt*
 
    Return the path of the user-specific site-packages directory,
    "USER_SITE".  If it is not initialized yet, this function will also

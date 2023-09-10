@@ -1,4 +1,4 @@
-*py_compile.txt;*                             Last change: 2023 Sep 09
+*py_compile.txt;*                             Last change: 2023 Sep 10
 
 "py_compile" — Compile Python source files
 ******************************************
@@ -16,13 +16,12 @@ modules for shared use, especially if some of the users may not have
 permission to write the byte-code cache files in the directory
 containing the source code.
 
-                                     *PyCompileError..py_compile.txt;*
-exception py_compile.PyCompileError
+exception py_compile.PyCompileError   *PyCompileError..py_compile.txt*
 
    Exception raised when an error occurs while attempting to compile
    the file.
 
-                                          *compile()..py_compile.txt;*
+                                           *compile()..py_compile.txt*
 py_compile.compile(file, cfile=None, dfile=None, doraise=False, optimize=-1, invalidation_mode=PycInvalidationMode.TIMESTAMP, quiet=0)
 
    Compile a source file to byte-code and write out the byte-code
@@ -88,7 +87,7 @@ py_compile.compile(file, cfile=None, dfile=None, doraise=False, optimize=-1, inv
 
    Changed in version 3.8: The _quiet_ parameter was added.
 
-                                *PycInvalidationMode..py_compile.txt;*
+                                 *PycInvalidationMode..py_compile.txt*
 class py_compile.PycInvalidationMode
 
    A enumeration of possible methods the interpreter can use to
@@ -99,20 +98,20 @@ class py_compile.PycInvalidationMode
 
    New in version 3.7.
 
-   TIMESTAMP             *PycInvalidationMode.TIMESTAMP..py_compile.txt;*
+   TIMESTAMP              *PycInvalidationMode.TIMESTAMP..py_compile.txt*
 
       The ".pyc" file includes the timestamp and size of the source
       file, which Python will compare against the metadata of the
       source file at runtime to determine if the ".pyc" file needs to
       be regenerated.
 
-   CHECKED_HASH       *PycInvalidationMode.CHECKED_HASH..py_compile.txt;*
+   CHECKED_HASH        *PycInvalidationMode.CHECKED_HASH..py_compile.txt*
 
       The ".pyc" file includes a hash of the source file content,
       which Python will compare against the source at runtime to
       determine if the ".pyc" file needs to be regenerated.
 
-   UNCHECKED_HASH   *PycInvalidationMode.UNCHECKED_HASH..py_compile.txt;*
+   UNCHECKED_HASH    *PycInvalidationMode.UNCHECKED_HASH..py_compile.txt*
 
       Like "CHECKED_HASH", the ".pyc" file includes a hash of the
       source file content. However, Python will at runtime assume the

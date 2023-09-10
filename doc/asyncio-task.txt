@@ -1,4 +1,4 @@
-*asyncio-task.txt;*                           Last change: 2023 Sep 09
+*asyncio-task.txt;*                           Last change: 2023 Sep 10
 
 Coroutines and Tasks
 ********************
@@ -254,7 +254,7 @@ Creating Tasks
 
 ======================================================================
 
-                                    *create_task()..asyncio-task.txt;*
+                                     *create_task()..asyncio-task.txt*
 asyncio.create_task(coro, *, name=None, context=None)
 
    Wrap the _coro_ coroutine into a "Task" and schedule its execution.
@@ -335,7 +335,7 @@ Task Groups
 Task groups combine a task creation API with a convenient and reliable
 way to wait for all tasks in the group to finish.
 
-class asyncio.TaskGroup                 *TaskGroup..asyncio-task.txt;*
+class asyncio.TaskGroup                  *TaskGroup..asyncio-task.txt*
 
    An asynchronous context manager holding a group of tasks. Tasks can
    be added to the group using "create_task()". All tasks are awaited
@@ -343,7 +343,7 @@ class asyncio.TaskGroup                 *TaskGroup..asyncio-task.txt;*
 
    New in version 3.11.
 
-                          *TaskGroup.create_task()..asyncio-task.txt;*
+                           *TaskGroup.create_task()..asyncio-task.txt*
    create_task(coro, *, name=None, context=None)
 
       Create a task in this task group. The signature matches that of
@@ -397,7 +397,7 @@ in the exception group. The same special case is made for
 Sleeping
 ========
 
-                                          *sleep()..asyncio-task.txt;*
+                                           *sleep()..asyncio-task.txt*
 coroutine asyncio.sleep(delay, result=None)
 
    Block for _delay_ seconds.
@@ -437,7 +437,7 @@ coroutine asyncio.sleep(delay, result=None)
 Running Tasks Concurrently
 ==========================
 
-                                         *gather()..asyncio-task.txt;*
+                                          *gather()..asyncio-task.txt*
 awaitable asyncio.gather(*aws, return_exceptions=False)
 
    Run awaitable objects in the _aws_ sequence _concurrently_.
@@ -534,7 +534,7 @@ awaitable asyncio.gather(*aws, return_exceptions=False)
 Eager Task Factory
 ==================
 
-                             *eager_task_factory()..asyncio-task.txt;*
+                              *eager_task_factory()..asyncio-task.txt*
 asyncio.eager_task_factory(loop, coro, *, name=None, context=None)
 
    A task factory for eager task execution.
@@ -560,7 +560,7 @@ asyncio.eager_task_factory(loop, coro, *, name=None, context=None)
 
    New in version 3.12.
 
-                      *create_eager_task_factory()..asyncio-task.txt;*
+                       *create_eager_task_factory()..asyncio-task.txt*
 asyncio.create_eager_task_factory(custom_task_constructor)
 
    Create an eager task factory, similar to "eager_task_factory()",
@@ -580,7 +580,7 @@ asyncio.create_eager_task_factory(custom_task_constructor)
 Shielding From Cancellation
 ===========================
 
-awaitable asyncio.shield(aw)             *shield()..asyncio-task.txt;*
+awaitable asyncio.shield(aw)              *shield()..asyncio-task.txt*
 
    Protect an awaitable object from being "cancelled".
 
@@ -630,7 +630,7 @@ awaitable asyncio.shield(aw)             *shield()..asyncio-task.txt;*
 Timeouts
 ========
 
-asyncio.timeout(delay)                  *timeout()..asyncio-task.txt;*
+asyncio.timeout(delay)                   *timeout()..asyncio-task.txt*
 
    Return an asynchronous context manager that can be used to limit
    the amount of time spent waiting on something.
@@ -675,7 +675,7 @@ asyncio.timeout(delay)                  *timeout()..asyncio-task.txt;*
    The context manager produced by "asyncio.timeout()" can be
    rescheduled to a different deadline and inspected.
 
-   class asyncio.Timeout(when)               *Timeout..asyncio-task.txt;*
+   class asyncio.Timeout(when)                *Timeout..asyncio-task.txt*
 
       An asynchronous context manager for cancelling overdue
       coroutines.
@@ -688,17 +688,17 @@ asyncio.timeout(delay)                  *timeout()..asyncio-task.txt;*
       * If "when < loop.time()", the timeout will trigger on the next
         iteration of the event loop.
 
-         when() -> float | None             *Timeout.when()..asyncio-task.txt;*
+         when() -> float | None              *Timeout.when()..asyncio-task.txt*
 
             Return the current deadline, or "None" if the current
             deadline is not set.
 
-                             *Timeout.reschedule()..asyncio-task.txt;*
+                              *Timeout.reschedule()..asyncio-task.txt*
          reschedule(when: float | None)
 
             Reschedule the timeout.
 
-         expired() -> bool               *Timeout.expired()..asyncio-task.txt;*
+         expired() -> bool                *Timeout.expired()..asyncio-task.txt*
 
             Return whether the context manager has exceeded its
             deadline (expired).
@@ -724,7 +724,7 @@ asyncio.timeout(delay)                  *timeout()..asyncio-task.txt;*
 
    New in version 3.11.
 
-asyncio.timeout_at(when)             *timeout_at()..asyncio-task.txt;*
+asyncio.timeout_at(when)              *timeout_at()..asyncio-task.txt*
 
    Similar to "asyncio.timeout()", except _when_ is the absolute time
    to stop waiting, or "None".
@@ -744,7 +744,7 @@ asyncio.timeout_at(when)             *timeout_at()..asyncio-task.txt;*
 <
    New in version 3.11.
 
-                                       *wait_for()..asyncio-task.txt;*
+                                        *wait_for()..asyncio-task.txt*
 coroutine asyncio.wait_for(aw, timeout)
 
    Wait for the _aw_ awaitable to complete with a timeout.
@@ -797,7 +797,7 @@ coroutine asyncio.wait_for(aw, timeout)
 Waiting Primitives
 ==================
 
-                                           *wait()..asyncio-task.txt;*
+                                            *wait()..asyncio-task.txt*
 coroutine asyncio.wait(aws, *, timeout=None, return_when=ALL_COMPLETED)
 
    Run "Future" and "Task" instances in the _aws_ iterable
@@ -848,7 +848,7 @@ coroutine asyncio.wait(aws, *, timeout=None, return_when=ALL_COMPLETED)
    Changed in version 3.12: Added support for generators yielding
    tasks.
 
-                                   *as_completed()..asyncio-task.txt;*
+                                    *as_completed()..asyncio-task.txt*
 asyncio.as_completed(aws, *, timeout=None)
 
    Run awaitable objects in the _aws_ iterable concurrently.  Return
@@ -878,7 +878,7 @@ asyncio.as_completed(aws, *, timeout=None)
 Running in Threads
 ==================
 
-                                      *to_thread()..asyncio-task.txt;*
+                                       *to_thread()..asyncio-task.txt*
 coroutine asyncio.to_thread(func, /, *args, **kwargs)
 
    Asynchronously run function _func_ in a separate thread.
@@ -940,7 +940,7 @@ coroutine asyncio.to_thread(func, /, *args, **kwargs)
 Scheduling From Other Threads
 =============================
 
-                       *run_coroutine_threadsafe()..asyncio-task.txt;*
+                        *run_coroutine_threadsafe()..asyncio-task.txt*
 asyncio.run_coroutine_threadsafe(coro, loop)
 
    Submit a coroutine to the given event loop.  Thread-safe.
@@ -986,7 +986,7 @@ asyncio.run_coroutine_threadsafe(coro, loop)
 Introspection
 =============
 
-asyncio.current_task(loop=None)    *current_task()..asyncio-task.txt;*
+asyncio.current_task(loop=None)     *current_task()..asyncio-task.txt*
 
    Return the currently running "Task" instance, or "None" if no task
    is running.
@@ -996,7 +996,7 @@ asyncio.current_task(loop=None)    *current_task()..asyncio-task.txt;*
 
    New in version 3.7.
 
-asyncio.all_tasks(loop=None)          *all_tasks()..asyncio-task.txt;*
+asyncio.all_tasks(loop=None)           *all_tasks()..asyncio-task.txt*
 
    Return a set of not yet finished "Task" objects run by the loop.
 
@@ -1005,7 +1005,7 @@ asyncio.all_tasks(loop=None)          *all_tasks()..asyncio-task.txt;*
 
    New in version 3.7.
 
-asyncio.iscoroutine(obj)            *iscoroutine()..asyncio-task.txt;*
+asyncio.iscoroutine(obj)             *iscoroutine()..asyncio-task.txt*
 
    Return "True" if _obj_ is a coroutine object.
 
@@ -1015,7 +1015,7 @@ asyncio.iscoroutine(obj)            *iscoroutine()..asyncio-task.txt;*
 Task Object
 ===========
 
-                                             *Task..asyncio-task.txt;*
+                                              *Task..asyncio-task.txt*
 class asyncio.Task(coro, *, loop=None, name=None, context=None, eager_start=False)
 
    A "Future-like" object that runs a Python coroutine.  Not thread-
@@ -1070,14 +1070,14 @@ class asyncio.Task(coro, *, loop=None, name=None, context=None, eager_start=Fals
 
    Changed in version 3.12: Added the _eager_start_ parameter.
 
-   done()                                *Task.done()..asyncio-task.txt;*
+   done()                                 *Task.done()..asyncio-task.txt*
 
       Return "True" if the Task is _done_.
 
       A Task is _done_ when the wrapped coroutine either returned a
       value, raised an exception, or the Task was cancelled.
 
-   result()                            *Task.result()..asyncio-task.txt;*
+   result()                             *Task.result()..asyncio-task.txt*
 
       Return the result of the Task.
 
@@ -1091,7 +1091,7 @@ class asyncio.Task(coro, *, loop=None, name=None, context=None, eager_start=Fals
       If the Task’s result isn’t yet available, this method raises a
       "InvalidStateError" exception.
 
-   exception()                      *Task.exception()..asyncio-task.txt;*
+   exception()                       *Task.exception()..asyncio-task.txt*
 
       Return the exception of the Task.
 
@@ -1105,7 +1105,7 @@ class asyncio.Task(coro, *, loop=None, name=None, context=None, eager_start=Fals
       If the Task isn’t _done_ yet, this method raises an
       "InvalidStateError" exception.
 
-                         *Task.add_done_callback()..asyncio-task.txt;*
+                          *Task.add_done_callback()..asyncio-task.txt*
    add_done_callback(callback, *, context=None)
 
       Add a callback to be run when the Task is _done_.
@@ -1116,7 +1116,7 @@ class asyncio.Task(coro, *, loop=None, name=None, context=None, eager_start=Fals
       See the documentation of "Future.add_done_callback()" for more
       details.
 
-                      *Task.remove_done_callback()..asyncio-task.txt;*
+                       *Task.remove_done_callback()..asyncio-task.txt*
    remove_done_callback(callback)
 
       Remove _callback_ from the callbacks list.
@@ -1127,7 +1127,7 @@ class asyncio.Task(coro, *, loop=None, name=None, context=None, eager_start=Fals
       See the documentation of "Future.remove_done_callback()" for
       more details.
 
-   get_stack(*, limit=None)         *Task.get_stack()..asyncio-task.txt;*
+   get_stack(*, limit=None)          *Task.get_stack()..asyncio-task.txt*
 
       Return the list of stack frames for this Task.
 
@@ -1148,7 +1148,7 @@ class asyncio.Task(coro, *, loop=None, name=None, context=None, eager_start=Fals
       are returned, but the oldest frames of a traceback are returned.
       (This matches the behavior of the traceback module.)
 
-                               *Task.print_stack()..asyncio-task.txt;*
+                                *Task.print_stack()..asyncio-task.txt*
    print_stack(*, limit=None, file=None)
 
       Print the stack or traceback for this Task.
@@ -1161,7 +1161,7 @@ class asyncio.Task(coro, *, loop=None, name=None, context=None, eager_start=Fals
       The _file_ argument is an I/O stream to which the output is
       written; by default output is written to "sys.stdout".
 
-   get_coro()                        *Task.get_coro()..asyncio-task.txt;*
+   get_coro()                         *Task.get_coro()..asyncio-task.txt*
 
       Return the coroutine object wrapped by the "Task".
 
@@ -1175,14 +1175,14 @@ class asyncio.Task(coro, *, loop=None, name=None, context=None, eager_start=Fals
       Changed in version 3.12: Newly added eager task execution means
       result may be "None".
 
-   get_context()                  *Task.get_context()..asyncio-task.txt;*
+   get_context()                   *Task.get_context()..asyncio-task.txt*
 
       Return the "contextvars.Context" object associated with the
       task.
 
       New in version 3.12.
 
-   get_name()                        *Task.get_name()..asyncio-task.txt;*
+   get_name()                         *Task.get_name()..asyncio-task.txt*
 
       Return the name of the Task.
 
@@ -1192,7 +1192,7 @@ class asyncio.Task(coro, *, loop=None, name=None, context=None, eager_start=Fals
 
       New in version 3.8.
 
-   set_name(value)                   *Task.set_name()..asyncio-task.txt;*
+   set_name(value)                    *Task.set_name()..asyncio-task.txt*
 
       Set the name of the Task.
 
@@ -1204,7 +1204,7 @@ class asyncio.Task(coro, *, loop=None, name=None, context=None, eager_start=Fals
 
       New in version 3.8.
 
-   cancel(msg=None)                    *Task.cancel()..asyncio-task.txt;*
+   cancel(msg=None)                     *Task.cancel()..asyncio-task.txt*
 
       Request the Task to be cancelled.
 
@@ -1263,7 +1263,7 @@ class asyncio.Task(coro, *, loop=None, name=None, context=None, eager_start=Fals
          #     cancel_me(): after sleep
          #     main(): cancel_me is cancelled now
 <
-   cancelled()                      *Task.cancelled()..asyncio-task.txt;*
+   cancelled()                       *Task.cancelled()..asyncio-task.txt*
 
       Return "True" if the Task is _cancelled_.
 
@@ -1271,7 +1271,7 @@ class asyncio.Task(coro, *, loop=None, name=None, context=None, eager_start=Fals
       "cancel()" and the wrapped coroutine propagated the
       "CancelledError" exception thrown into it.
 
-   uncancel()                        *Task.uncancel()..asyncio-task.txt;*
+   uncancel()                         *Task.uncancel()..asyncio-task.txt*
 
       Decrement the count of cancellation requests to this Task.
 
@@ -1310,7 +1310,7 @@ class asyncio.Task(coro, *, loop=None, name=None, context=None, eager_start=Fals
       catching "CancelledError", it needs to call this method to
       remove the cancellation state.
 
-   cancelling()                    *Task.cancelling()..asyncio-task.txt;*
+   cancelling()                     *Task.cancelling()..asyncio-task.txt*
 
       Return the number of pending cancellation requests to this Task,
       i.e., the number of calls to "cancel()" less the number of

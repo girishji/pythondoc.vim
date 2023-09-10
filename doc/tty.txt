@@ -1,4 +1,4 @@
-*tty.txt;*                                    Last change: 2023 Sep 09
+*tty.txt;*                                    Last change: 2023 Sep 10
 
 "tty" — Terminal control functions
 **********************************
@@ -14,28 +14,28 @@ Because it requires the "termios" module, it will work only on Unix.
 
 The "tty" module defines the following functions:
 
-tty.cfmakeraw(mode)                            *cfmakeraw()..tty.txt;*
+tty.cfmakeraw(mode)                             *cfmakeraw()..tty.txt*
 
    Convert the tty attribute list _mode_, which is a list like the one
    returned by "termios.tcgetattr()", to that of a tty in raw mode.
 
    New in version 3.12.
 
-tty.cfmakecbreak(mode)                      *cfmakecbreak()..tty.txt;*
+tty.cfmakecbreak(mode)                       *cfmakecbreak()..tty.txt*
 
    Convert the tty attribute list _mode_, which is a list like the one
    returned by "termios.tcgetattr()", to that of a tty in cbreak mode.
 
    New in version 3.12.
 
-tty.setraw(fd, when=termios.TCSAFLUSH)            *setraw()..tty.txt;*
+tty.setraw(fd, when=termios.TCSAFLUSH)             *setraw()..tty.txt*
 
    Change the mode of the file descriptor _fd_ to raw. If _when_ is
    omitted, it defaults to "termios.TCSAFLUSH", and is passed to
    "termios.tcsetattr()". The return value of "termios.tcgetattr()" is
    saved before setting _fd_ to raw mode; this value is returned.
 
-tty.setcbreak(fd, when=termios.TCSAFLUSH)      *setcbreak()..tty.txt;*
+tty.setcbreak(fd, when=termios.TCSAFLUSH)       *setcbreak()..tty.txt*
 
    Change the mode of file descriptor _fd_ to cbreak. If _when_ is
    omitted, it defaults to "termios.TCSAFLUSH", and is passed to

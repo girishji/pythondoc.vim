@@ -1,4 +1,4 @@
-*csv.txt;*                                    Last change: 2023 Sep 09
+*csv.txt;*                                    Last change: 2023 Sep 10
 
 "csv" — CSV File Reading and Writing
 ************************************
@@ -43,7 +43,7 @@ Module Contents
 
 The "csv" module defines the following functions:
 
-                                                  *reader()..csv.txt;*
+                                                   *reader()..csv.txt*
 csv.reader(csvfile, dialect='excel', **fmtparams)
 
    Return a reader object which will iterate over lines in the given
@@ -77,7 +77,7 @@ csv.reader(csvfile, dialect='excel', **fmtparams)
       Spam, Lovely Spam, Wonderful Spam
 <
 
-                                                  *writer()..csv.txt;*
+                                                   *writer()..csv.txt*
 csv.writer(csvfile, dialect='excel', **fmtparams)
 
    Return a writer object responsible for converting the user’s data
@@ -109,7 +109,7 @@ csv.writer(csvfile, dialect='excel', **fmtparams)
           spamwriter.writerow(['Spam', 'Lovely Spam', 'Wonderful Spam'])
 <
 
-                                        *register_dialect()..csv.txt;*
+                                         *register_dialect()..csv.txt*
 csv.register_dialect(name[, dialect[, **fmtparams]])
 
    Associate _dialect_ with _name_.  _name_ must be a string. The
@@ -119,30 +119,30 @@ csv.register_dialect(name[, dialect[, **fmtparams]])
    details about dialects and formatting parameters, see section
    Dialects and Formatting Parameters.
 
-csv.unregister_dialect(name)          *unregister_dialect()..csv.txt;*
+csv.unregister_dialect(name)           *unregister_dialect()..csv.txt*
 
    Delete the dialect associated with _name_ from the dialect
    registry.  An "Error" is raised if _name_ is not a registered
    dialect name.
 
-csv.get_dialect(name)                        *get_dialect()..csv.txt;*
+csv.get_dialect(name)                         *get_dialect()..csv.txt*
 
    Return the dialect associated with _name_.  An "Error" is raised if
    _name_ is not a registered dialect name.  This function returns an
    immutable "Dialect".
 
-csv.list_dialects()                        *list_dialects()..csv.txt;*
+csv.list_dialects()                         *list_dialects()..csv.txt*
 
    Return the names of all registered dialects.
 
-csv.field_size_limit([new_limit])       *field_size_limit()..csv.txt;*
+csv.field_size_limit([new_limit])        *field_size_limit()..csv.txt*
 
    Returns the current maximum field size allowed by the parser. If
    _new_limit_ is given, this becomes the new limit.
 
 The "csv" module defines the following classes:
 
-                                                *DictReader..csv.txt;*
+                                                 *DictReader..csv.txt*
 class csv.DictReader(f, fieldnames=None, restkey=None, restval=None, dialect='excel', *args, **kwds)
 
    Create an object that operates like a regular reader but maps the
@@ -186,7 +186,7 @@ class csv.DictReader(f, fieldnames=None, restkey=None, restval=None, dialect='ex
       {'first_name': 'John', 'last_name': 'Cleese'}
 <
 
-                                                *DictWriter..csv.txt;*
+                                                 *DictWriter..csv.txt*
 class csv.DictWriter(f, fieldnames, restval='', extrasaction='raise', dialect='excel', *args, **kwds)
 
    Create an object which operates like a regular writer but maps
@@ -222,7 +222,7 @@ class csv.DictWriter(f, fieldnames, restval='', extrasaction='raise', dialect='e
           writer.writerow({'first_name': 'Lovely', 'last_name': 'Spam'})
           writer.writerow({'first_name': 'Wonderful', 'last_name': 'Spam'})
 <
-class csv.Dialect                                  *Dialect..csv.txt;*
+class csv.Dialect                                   *Dialect..csv.txt*
 
    The "Dialect" class is a container class whose attributes contain
    information for how to handle doublequotes, whitespace, delimiters,
@@ -240,19 +240,19 @@ class csv.Dialect                                  *Dialect..csv.txt;*
           writer = csv.writer(csvfile, dialect='unix')
                                        ^^^^^^^^^^^^^^
 <
-class csv.excel                                      *excel..csv.txt;*
+class csv.excel                                       *excel..csv.txt*
 
    The "excel" class defines the usual properties of an Excel-
    generated CSV file.  It is registered with the dialect name
    "'excel'".
 
-class csv.excel_tab                              *excel_tab..csv.txt;*
+class csv.excel_tab                               *excel_tab..csv.txt*
 
    The "excel_tab" class defines the usual properties of an Excel-
    generated TAB-delimited file.  It is registered with the dialect
    name "'excel-tab'".
 
-class csv.unix_dialect                        *unix_dialect..csv.txt;*
+class csv.unix_dialect                         *unix_dialect..csv.txt*
 
    The "unix_dialect" class defines the usual properties of a CSV file
    generated on UNIX systems, i.e. using "'\n'" as line terminator and
@@ -261,20 +261,20 @@ class csv.unix_dialect                        *unix_dialect..csv.txt;*
 
    New in version 3.2.
 
-class csv.Sniffer                                  *Sniffer..csv.txt;*
+class csv.Sniffer                                   *Sniffer..csv.txt*
 
    The "Sniffer" class is used to deduce the format of a CSV file.
 
    The "Sniffer" class provides two methods:
 
-   sniff(sample, delimiters=None)             *Sniffer.sniff()..csv.txt;*
+   sniff(sample, delimiters=None)              *Sniffer.sniff()..csv.txt*
 
       Analyze the given _sample_ and return a "Dialect" subclass
       reflecting the parameters found.  If the optional _delimiters_
       parameter is given, it is interpreted as a string containing
       possible valid delimiter characters.
 
-   has_header(sample)                    *Sniffer.has_header()..csv.txt;*
+   has_header(sample)                     *Sniffer.has_header()..csv.txt*
 
       Analyze the sample text (presumed to be in CSV format) and
       return "True" if the first row appears to be a series of column
@@ -305,24 +305,24 @@ An example for "Sniffer" use:
 <
 The "csv" module defines the following constants:
 
-csv.QUOTE_ALL                                    *QUOTE_ALL..csv.txt;*
+csv.QUOTE_ALL                                     *QUOTE_ALL..csv.txt*
 
    Instructs "writer" objects to quote all fields.
 
-csv.QUOTE_MINIMAL                            *QUOTE_MINIMAL..csv.txt;*
+csv.QUOTE_MINIMAL                             *QUOTE_MINIMAL..csv.txt*
 
    Instructs "writer" objects to only quote those fields which contain
    special characters such as _delimiter_, _quotechar_ or any of the
    characters in _lineterminator_.
 
-csv.QUOTE_NONNUMERIC                      *QUOTE_NONNUMERIC..csv.txt;*
+csv.QUOTE_NONNUMERIC                       *QUOTE_NONNUMERIC..csv.txt*
 
    Instructs "writer" objects to quote all non-numeric fields.
 
    Instructs "reader" objects to convert all non-quoted fields to type
    _float_.
 
-csv.QUOTE_NONE                                  *QUOTE_NONE..csv.txt;*
+csv.QUOTE_NONE                                   *QUOTE_NONE..csv.txt*
 
    Instructs "writer" objects to never quote fields.  When the current
    _delimiter_ occurs in output data it is preceded by the current
@@ -333,7 +333,7 @@ csv.QUOTE_NONE                                  *QUOTE_NONE..csv.txt;*
    Instructs "reader" objects to perform no special processing of
    quote characters.
 
-csv.QUOTE_NOTNULL                            *QUOTE_NOTNULL..csv.txt;*
+csv.QUOTE_NOTNULL                             *QUOTE_NOTNULL..csv.txt*
 
    Instructs "writer" objects to quote all fields which are not
    "None".  This is similar to "QUOTE_ALL", except that if a field
@@ -342,7 +342,7 @@ csv.QUOTE_NOTNULL                            *QUOTE_NOTNULL..csv.txt;*
    Instructs "reader" objects to interpret an empty (unquoted) field
    as None and to otherwise behave as "QUOTE_ALL".
 
-csv.QUOTE_STRINGS                            *QUOTE_STRINGS..csv.txt;*
+csv.QUOTE_STRINGS                             *QUOTE_STRINGS..csv.txt*
 
    Instructs "writer" objects to always place quotes around fields
    which are strings.  This is similar to "QUOTE_NONNUMERIC", except
@@ -354,7 +354,7 @@ csv.QUOTE_STRINGS                            *QUOTE_STRINGS..csv.txt;*
 
 The "csv" module defines the following exception:
 
-exception csv.Error                                  *Error..csv.txt;*
+exception csv.Error                                   *Error..csv.txt*
 
    Raised by any of the functions when an error is detected.
 
@@ -374,12 +374,12 @@ attributes defined below for the "Dialect" class.
 
 Dialects support the following attributes:
 
-Dialect.delimiter                        *Dialect.delimiter..csv.txt;*
+Dialect.delimiter                         *Dialect.delimiter..csv.txt*
 
    A one-character string used to separate fields.  It defaults to
    "','".
 
-Dialect.doublequote                    *Dialect.doublequote..csv.txt;*
+Dialect.doublequote                     *Dialect.doublequote..csv.txt*
 
    Controls how instances of _quotechar_ appearing inside a field
    should themselves be quoted.  When "True", the character is
@@ -389,7 +389,7 @@ Dialect.doublequote                    *Dialect.doublequote..csv.txt;*
    On output, if _doublequote_ is "False" and no _escapechar_ is set,
    "Error" is raised if a _quotechar_ is found in a field.
 
-Dialect.escapechar                      *Dialect.escapechar..csv.txt;*
+Dialect.escapechar                       *Dialect.escapechar..csv.txt*
 
    A one-character string used by the writer to escape the _delimiter_
    if _quoting_ is set to "QUOTE_NONE" and the _quotechar_ if
@@ -399,7 +399,7 @@ Dialect.escapechar                      *Dialect.escapechar..csv.txt;*
 
    Changed in version 3.11: An empty _escapechar_ is not allowed.
 
-Dialect.lineterminator              *Dialect.lineterminator..csv.txt;*
+Dialect.lineterminator               *Dialect.lineterminator..csv.txt*
 
    The string used to terminate lines produced by the "writer". It
    defaults to "'\r\n'".
@@ -410,7 +410,7 @@ Dialect.lineterminator              *Dialect.lineterminator..csv.txt;*
      as end-of-line, and ignores _lineterminator_. This behavior may
      change in the future.
 
-Dialect.quotechar                        *Dialect.quotechar..csv.txt;*
+Dialect.quotechar                         *Dialect.quotechar..csv.txt*
 
    A one-character string used to quote fields containing special
    characters, such as the _delimiter_ or _quotechar_, or which
@@ -418,19 +418,19 @@ Dialect.quotechar                        *Dialect.quotechar..csv.txt;*
 
    Changed in version 3.11: An empty _quotechar_ is not allowed.
 
-Dialect.quoting                            *Dialect.quoting..csv.txt;*
+Dialect.quoting                             *Dialect.quoting..csv.txt*
 
    Controls when quotes should be generated by the writer and
    recognised by the reader.  It can take on any of the "QUOTE_*"
    constants (see section Module Contents) and defaults to
    "QUOTE_MINIMAL".
 
-Dialect.skipinitialspace          *Dialect.skipinitialspace..csv.txt;*
+Dialect.skipinitialspace           *Dialect.skipinitialspace..csv.txt*
 
    When "True", spaces immediately following the _delimiter_ are
    ignored. The default is "False".
 
-Dialect.strict                              *Dialect.strict..csv.txt;*
+Dialect.strict                               *Dialect.strict..csv.txt*
 
    When "True", raise exception "Error" on bad CSV input. The default
    is "False".
@@ -442,7 +442,7 @@ Reader Objects
 Reader objects ("DictReader" instances and objects returned by the
 "reader()" function) have the following public methods:
 
-csvreader.__next__()                  *csvreader.__next__()..csv.txt;*
+csvreader.__next__()                   *csvreader.__next__()..csv.txt*
 
    Return the next row of the reader’s iterable object as a list (if
    the object was returned from "reader()") or a dict (if it is a
@@ -451,11 +451,11 @@ csvreader.__next__()                  *csvreader.__next__()..csv.txt;*
 
 Reader objects have the following public attributes:
 
-csvreader.dialect                        *csvreader.dialect..csv.txt;*
+csvreader.dialect                         *csvreader.dialect..csv.txt*
 
    A read-only description of the dialect in use by the parser.
 
-csvreader.line_num                      *csvreader.line_num..csv.txt;*
+csvreader.line_num                       *csvreader.line_num..csv.txt*
 
    The number of lines read from the source iterator. This is not the
    same as the number of records returned, as records can span
@@ -463,7 +463,7 @@ csvreader.line_num                      *csvreader.line_num..csv.txt;*
 
 DictReader objects have the following public attribute:
 
-DictReader.fieldnames                *DictReader.fieldnames..csv.txt;*
+DictReader.fieldnames                 *DictReader.fieldnames..csv.txt*
 
    If not passed as a parameter when creating the object, this
    attribute is initialized upon first access or when the first record
@@ -482,7 +482,7 @@ numbers are written out surrounded by parens. This may cause some
 problems for other programs which read CSV files (assuming they
 support complex numbers at all).
 
-csvwriter.writerow(row)               *csvwriter.writerow()..csv.txt;*
+csvwriter.writerow(row)                *csvwriter.writerow()..csv.txt*
 
    Write the _row_ parameter to the writer’s file object, formatted
    according to the current "Dialect". Return the return value of the
@@ -490,7 +490,7 @@ csvwriter.writerow(row)               *csvwriter.writerow()..csv.txt;*
 
    Changed in version 3.5: Added support of arbitrary iterables.
 
-csvwriter.writerows(rows)            *csvwriter.writerows()..csv.txt;*
+csvwriter.writerows(rows)             *csvwriter.writerows()..csv.txt*
 
    Write all elements in _rows_ (an iterable of _row_ objects as
    described above) to the writer’s file object, formatted according
@@ -498,13 +498,13 @@ csvwriter.writerows(rows)            *csvwriter.writerows()..csv.txt;*
 
 Writer objects have the following public attribute:
 
-csvwriter.dialect                        *csvwriter.dialect..csv.txt;*
+csvwriter.dialect                         *csvwriter.dialect..csv.txt*
 
    A read-only description of the dialect in use by the writer.
 
 DictWriter objects have the following public method:
 
-DictWriter.writeheader()          *DictWriter.writeheader()..csv.txt;*
+DictWriter.writeheader()           *DictWriter.writeheader()..csv.txt*
 
    Write a row with the field names (as specified in the constructor)
    to the writer’s file object, formatted according to the current

@@ -1,4 +1,4 @@
-*allos.txt;*                                  Last change: 2023 Sep 09
+*allos.txt;*                                  Last change: 2023 Sep 10
 
 Generic Operating System Services
 *********************************

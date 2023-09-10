@@ -1,4 +1,4 @@
-*pyexpat.txt;*                                Last change: 2023 Sep 09
+*pyexpat.txt;*                                Last change: 2023 Sep 10
 
 "xml.parsers.expat" — Fast XML parsing using Expat
 **************************************************
@@ -24,27 +24,27 @@ parser.  Direct use of the "pyexpat" module is deprecated.
 
 This module provides one exception and one type object:
 
-exception xml.parsers.expat.ExpatError      *ExpatError..pyexpat.txt;*
+exception xml.parsers.expat.ExpatError       *ExpatError..pyexpat.txt*
 
    The exception raised when Expat reports an error.  See section
    ExpatError Exceptions for more information on interpreting Expat
    errors.
 
-exception xml.parsers.expat.error                *error..pyexpat.txt;*
+exception xml.parsers.expat.error                 *error..pyexpat.txt*
 
    Alias for "ExpatError".
 
-xml.parsers.expat.XMLParserType          *XMLParserType..pyexpat.txt;*
+xml.parsers.expat.XMLParserType           *XMLParserType..pyexpat.txt*
 
    The type of the return values from the "ParserCreate()" function.
 
 The "xml.parsers.expat" module contains two functions:
 
-xml.parsers.expat.ErrorString(errno)     *ErrorString()..pyexpat.txt;*
+xml.parsers.expat.ErrorString(errno)      *ErrorString()..pyexpat.txt*
 
    Returns an explanatory string for a given error number _errno_.
 
-                                        *ParserCreate()..pyexpat.txt;*
+                                         *ParserCreate()..pyexpat.txt*
 xml.parsers.expat.ParserCreate(encoding=None, namespace_separator=None)
 
    Creates and returns a new "xmlparser" object.   _encoding_, if
@@ -100,7 +100,7 @@ XMLParser Objects
 
 "xmlparser" objects have the following methods:
 
-xmlparser.Parse(data[, isfinal])     *xmlparser.Parse()..pyexpat.txt;*
+xmlparser.Parse(data[, isfinal])      *xmlparser.Parse()..pyexpat.txt*
 
    Parses the contents of the string _data_, calling the appropriate
    handler functions to process the parsed data.  _isfinal_ must be
@@ -108,13 +108,13 @@ xmlparser.Parse(data[, isfinal])     *xmlparser.Parse()..pyexpat.txt;*
    single file in fragments, not the submission of multiple files.
    _data_ can be the empty string at any time.
 
-xmlparser.ParseFile(file)        *xmlparser.ParseFile()..pyexpat.txt;*
+xmlparser.ParseFile(file)         *xmlparser.ParseFile()..pyexpat.txt*
 
    Parse XML data reading from the object _file_.  _file_ only needs
    to provide the "read(nbytes)" method, returning the empty string
    when there’s no more data.
 
-xmlparser.SetBase(base)            *xmlparser.SetBase()..pyexpat.txt;*
+xmlparser.SetBase(base)             *xmlparser.SetBase()..pyexpat.txt*
 
    Sets the base to be used for resolving relative URIs in system
    identifiers in declarations.  Resolving relative identifiers is
@@ -123,12 +123,12 @@ xmlparser.SetBase(base)            *xmlparser.SetBase()..pyexpat.txt;*
    "NotationDeclHandler()", and "UnparsedEntityDeclHandler()"
    functions.
 
-xmlparser.GetBase()                *xmlparser.GetBase()..pyexpat.txt;*
+xmlparser.GetBase()                 *xmlparser.GetBase()..pyexpat.txt*
 
    Returns a string containing the base set by a previous call to
    "SetBase()", or "None" if  "SetBase()" hasn’t been called.
 
-                           *xmlparser.GetInputContext()..pyexpat.txt;*
+                            *xmlparser.GetInputContext()..pyexpat.txt*
 xmlparser.GetInputContext()
 
    Returns the input data that generated the current event as a
@@ -136,7 +136,7 @@ xmlparser.GetInputContext()
    the text. When called while an event handler is not active, the
    return value is "None".
 
-                *xmlparser.ExternalEntityParserCreate()..pyexpat.txt;*
+                 *xmlparser.ExternalEntityParserCreate()..pyexpat.txt*
 xmlparser.ExternalEntityParserCreate(context[, encoding])
 
    Create a “child” parser which can be used to parse an external
@@ -146,7 +146,7 @@ xmlparser.ExternalEntityParserCreate(context[, encoding])
    child parser is created with the "ordered_attributes" and
    "specified_attributes" set to the values of this parser.
 
-                     *xmlparser.SetParamEntityParsing()..pyexpat.txt;*
+                      *xmlparser.SetParamEntityParsing()..pyexpat.txt*
 xmlparser.SetParamEntityParsing(flag)
 
    Control parsing of parameter entities (including the external DTD
@@ -156,7 +156,7 @@ xmlparser.SetParamEntityParsing(flag)
    "XML_PARAM_ENTITY_PARSING_ALWAYS".  Return true if setting the flag
    was successful.
 
-                             *xmlparser.UseForeignDTD()..pyexpat.txt;*
+                              *xmlparser.UseForeignDTD()..pyexpat.txt*
 xmlparser.UseForeignDTD([flag])
 
    Calling this with a true value for _flag_ (the default) will cause
@@ -178,13 +178,13 @@ xmlparser.UseForeignDTD([flag])
 
 "xmlparser" objects have the following attributes:
 
-xmlparser.buffer_size            *xmlparser.buffer_size..pyexpat.txt;*
+xmlparser.buffer_size             *xmlparser.buffer_size..pyexpat.txt*
 
    The size of the buffer used when "buffer_text" is true. A new
    buffer size can be set by assigning a new integer value to this
    attribute. When the size is changed, the buffer will be flushed.
 
-xmlparser.buffer_text            *xmlparser.buffer_text..pyexpat.txt;*
+xmlparser.buffer_text             *xmlparser.buffer_text..pyexpat.txt*
 
    Setting this to true causes the "xmlparser" object to buffer
    textual content returned by Expat to avoid multiple calls to the
@@ -193,13 +193,13 @@ xmlparser.buffer_text            *xmlparser.buffer_text..pyexpat.txt;*
    character data into chunks at every line ending.  This attribute is
    false by default, and may be changed at any time.
 
-xmlparser.buffer_used            *xmlparser.buffer_used..pyexpat.txt;*
+xmlparser.buffer_used             *xmlparser.buffer_used..pyexpat.txt*
 
    If "buffer_text" is enabled, the number of bytes stored in the
    buffer. These bytes represent UTF-8 encoded text.  This attribute
    has no meaningful interpretation when "buffer_text" is false.
 
-                          *xmlparser.ordered_attributes..pyexpat.txt;*
+                           *xmlparser.ordered_attributes..pyexpat.txt*
 xmlparser.ordered_attributes
 
    Setting this attribute to a non-zero integer causes the attributes
@@ -210,7 +210,7 @@ xmlparser.ordered_attributes
    format.)  By default, this attribute is false; it may be changed at
    any time.
 
-                        *xmlparser.specified_attributes..pyexpat.txt;*
+                         *xmlparser.specified_attributes..pyexpat.txt*
 xmlparser.specified_attributes
 
    If set to a non-zero integer, the parser will report only those
@@ -226,22 +226,22 @@ error encountered by an "xmlparser" object, and will only have correct
 values once a call to "Parse()" or "ParseFile()" has raised an
 "xml.parsers.expat.ExpatError" exception.
 
-xmlparser.ErrorByteIndex      *xmlparser.ErrorByteIndex..pyexpat.txt;*
+xmlparser.ErrorByteIndex       *xmlparser.ErrorByteIndex..pyexpat.txt*
 
    Byte index at which an error occurred.
 
-xmlparser.ErrorCode                *xmlparser.ErrorCode..pyexpat.txt;*
+xmlparser.ErrorCode                 *xmlparser.ErrorCode..pyexpat.txt*
 
    Numeric code specifying the problem.  This value can be passed to
    the "ErrorString()" function, or compared to one of the constants
    defined in the "errors" object.
 
-                           *xmlparser.ErrorColumnNumber..pyexpat.txt;*
+                            *xmlparser.ErrorColumnNumber..pyexpat.txt*
 xmlparser.ErrorColumnNumber
 
    Column number at which an error occurred.
 
-xmlparser.ErrorLineNumber    *xmlparser.ErrorLineNumber..pyexpat.txt;*
+xmlparser.ErrorLineNumber     *xmlparser.ErrorLineNumber..pyexpat.txt*
 
    Line number at which an error occurred.
 
@@ -252,17 +252,16 @@ characters that generated the event.  When called outside of a
 callback, the position indicated will be just past the last parse
 event (regardless of whether there was an associated callback).
 
-                            *xmlparser.CurrentByteIndex..pyexpat.txt;*
-xmlparser.CurrentByteIndex
+xmlparser.CurrentByteIndex   *xmlparser.CurrentByteIndex..pyexpat.txt*
 
    Current byte index in the parser input.
 
-                         *xmlparser.CurrentColumnNumber..pyexpat.txt;*
+                          *xmlparser.CurrentColumnNumber..pyexpat.txt*
 xmlparser.CurrentColumnNumber
 
    Current column number in the parser input.
 
-                           *xmlparser.CurrentLineNumber..pyexpat.txt;*
+                            *xmlparser.CurrentLineNumber..pyexpat.txt*
 xmlparser.CurrentLineNumber
 
    Current line number in the parser input.
@@ -273,7 +272,7 @@ must be taken from the following list, and _func_ must be a callable
 object accepting the correct number of arguments.  The arguments are
 all strings, unless otherwise stated.
 
-                            *xmlparser.XmlDeclHandler()..pyexpat.txt;*
+                             *xmlparser.XmlDeclHandler()..pyexpat.txt*
 xmlparser.XmlDeclHandler(version, encoding, standalone)
 
    Called when the XML declaration is parsed.  The XML declaration is
@@ -285,7 +284,7 @@ xmlparser.XmlDeclHandler(version, encoding, standalone)
    the standalone clause was omitted. This is only available with
    Expat version 1.95.0 or newer.
 
-                   *xmlparser.StartDoctypeDeclHandler()..pyexpat.txt;*
+                    *xmlparser.StartDoctypeDeclHandler()..pyexpat.txt*
 xmlparser.StartDoctypeDeclHandler(doctypeName, systemId, publicId, has_internal_subset)
 
    Called when Expat begins parsing the document type declaration
@@ -296,20 +295,20 @@ xmlparser.StartDoctypeDeclHandler(doctypeName, systemId, publicId, has_internal_
    internal document declaration subset. This requires Expat version
    1.2 or newer.
 
-                     *xmlparser.EndDoctypeDeclHandler()..pyexpat.txt;*
+                      *xmlparser.EndDoctypeDeclHandler()..pyexpat.txt*
 xmlparser.EndDoctypeDeclHandler()
 
    Called when Expat is done parsing the document type declaration.
    This requires Expat version 1.2 or newer.
 
-                        *xmlparser.ElementDeclHandler()..pyexpat.txt;*
+                         *xmlparser.ElementDeclHandler()..pyexpat.txt*
 xmlparser.ElementDeclHandler(name, model)
 
    Called once for each element type declaration.  _name_ is the name
    of the element type, and _model_ is a representation of the content
    model.
 
-                        *xmlparser.AttlistDeclHandler()..pyexpat.txt;*
+                         *xmlparser.AttlistDeclHandler()..pyexpat.txt*
 xmlparser.AttlistDeclHandler(elname, attname, type, default, required)
 
    Called for each declared attribute for an element type.  If an
@@ -325,7 +324,7 @@ xmlparser.AttlistDeclHandler(elname, attname, type, default, required)
    _required_ will be true. This requires Expat version 1.95.0 or
    newer.
 
-                       *xmlparser.StartElementHandler()..pyexpat.txt;*
+                        *xmlparser.StartElementHandler()..pyexpat.txt*
 xmlparser.StartElementHandler(name, attributes)
 
    Called for the start of every element.  _name_ is a string
@@ -334,17 +333,17 @@ xmlparser.StartElementHandler(name, attributes)
    "ordered_attributes" for a full description). Otherwise it’s a
    dictionary mapping names to values.
 
-                         *xmlparser.EndElementHandler()..pyexpat.txt;*
+                          *xmlparser.EndElementHandler()..pyexpat.txt*
 xmlparser.EndElementHandler(name)
 
    Called for the end of every element.
 
-              *xmlparser.ProcessingInstructionHandler()..pyexpat.txt;*
+               *xmlparser.ProcessingInstructionHandler()..pyexpat.txt*
 xmlparser.ProcessingInstructionHandler(target, data)
 
    Called for every processing instruction.
 
-                      *xmlparser.CharacterDataHandler()..pyexpat.txt;*
+                       *xmlparser.CharacterDataHandler()..pyexpat.txt*
 xmlparser.CharacterDataHandler(data)
 
    Called for character data.  This will be called for normal
@@ -353,7 +352,7 @@ xmlparser.CharacterDataHandler(data)
    "StartCdataSectionHandler", "EndCdataSectionHandler", and
    "ElementDeclHandler" callbacks to collect the required information.
 
-                 *xmlparser.UnparsedEntityDeclHandler()..pyexpat.txt;*
+                  *xmlparser.UnparsedEntityDeclHandler()..pyexpat.txt*
 xmlparser.UnparsedEntityDeclHandler(entityName, base, systemId, publicId, notationName)
 
    Called for unparsed (NDATA) entity declarations.  This is only
@@ -361,7 +360,7 @@ xmlparser.UnparsedEntityDeclHandler(entityName, base, systemId, publicId, notati
    versions, use "EntityDeclHandler" instead.  (The underlying
    function in the Expat library has been declared obsolete.)
 
-                         *xmlparser.EntityDeclHandler()..pyexpat.txt;*
+                          *xmlparser.EntityDeclHandler()..pyexpat.txt*
 xmlparser.EntityDeclHandler(entityName, is_parameter_entity, value, base, systemId, publicId, notationName)
 
    Called for all entity declarations.  For parameter and internal
@@ -374,21 +373,21 @@ xmlparser.EntityDeclHandler(entityName, is_parameter_entity, value, base, system
    to be concerned with general entities). This is only available
    starting with version 1.95.0 of the Expat library.
 
-                       *xmlparser.NotationDeclHandler()..pyexpat.txt;*
+                        *xmlparser.NotationDeclHandler()..pyexpat.txt*
 xmlparser.NotationDeclHandler(notationName, base, systemId, publicId)
 
    Called for notation declarations.  _notationName_, _base_, and
    _systemId_, and _publicId_ are strings if given.  If the public
    identifier is omitted, _publicId_ will be "None".
 
-                 *xmlparser.StartNamespaceDeclHandler()..pyexpat.txt;*
+                  *xmlparser.StartNamespaceDeclHandler()..pyexpat.txt*
 xmlparser.StartNamespaceDeclHandler(prefix, uri)
 
    Called when an element contains a namespace declaration.  Namespace
    declarations are processed before the "StartElementHandler" is
    called for the element on which declarations are placed.
 
-                   *xmlparser.EndNamespaceDeclHandler()..pyexpat.txt;*
+                    *xmlparser.EndNamespaceDeclHandler()..pyexpat.txt*
 xmlparser.EndNamespaceDeclHandler(prefix)
 
    Called when the closing tag is reached for an element  that
@@ -399,25 +398,25 @@ xmlparser.EndNamespaceDeclHandler(prefix)
    handler are made after the corresponding "EndElementHandler" for
    the end of the element.
 
-                            *xmlparser.CommentHandler()..pyexpat.txt;*
+                             *xmlparser.CommentHandler()..pyexpat.txt*
 xmlparser.CommentHandler(data)
 
    Called for comments.  _data_ is the text of the comment, excluding
    the leading "'<!-""-'" and trailing "'-""->'".
 
-                  *xmlparser.StartCdataSectionHandler()..pyexpat.txt;*
+                   *xmlparser.StartCdataSectionHandler()..pyexpat.txt*
 xmlparser.StartCdataSectionHandler()
 
    Called at the start of a CDATA section.  This and
    "EndCdataSectionHandler" are needed to be able to identify the
    syntactical start and end for CDATA sections.
 
-                    *xmlparser.EndCdataSectionHandler()..pyexpat.txt;*
+                     *xmlparser.EndCdataSectionHandler()..pyexpat.txt*
 xmlparser.EndCdataSectionHandler()
 
    Called at the end of a CDATA section.
 
-                            *xmlparser.DefaultHandler()..pyexpat.txt;*
+                             *xmlparser.DefaultHandler()..pyexpat.txt*
 xmlparser.DefaultHandler(data)
 
    Called for any characters in the XML document for which no
@@ -425,14 +424,14 @@ xmlparser.DefaultHandler(data)
    are part of a construct which could be reported, but for which no
    handler has been supplied.
 
-                      *xmlparser.DefaultHandlerExpand()..pyexpat.txt;*
+                       *xmlparser.DefaultHandlerExpand()..pyexpat.txt*
 xmlparser.DefaultHandlerExpand(data)
 
    This is the same as the "DefaultHandler()",  but doesn’t inhibit
    expansion of internal entities. The entity reference will not be
    passed to the default handler.
 
-                      *xmlparser.NotStandaloneHandler()..pyexpat.txt;*
+                       *xmlparser.NotStandaloneHandler()..pyexpat.txt*
 xmlparser.NotStandaloneHandler()
 
    Called if the XML document hasn’t been declared as being a
@@ -443,7 +442,7 @@ xmlparser.NotStandaloneHandler()
    "XML_ERROR_NOT_STANDALONE" error.  If this handler is not set, no
    exception is raised by the parser for this condition.
 
-                  *xmlparser.ExternalEntityRefHandler()..pyexpat.txt;*
+                   *xmlparser.ExternalEntityRefHandler()..pyexpat.txt*
 xmlparser.ExternalEntityRefHandler(context, base, systemId, publicId)
 
    Called for references to external entities.  _base_ is the current
@@ -470,7 +469,7 @@ ExpatError Exceptions
 
 "ExpatError" exceptions have a number of interesting attributes:
 
-ExpatError.code                        *ExpatError.code..pyexpat.txt;*
+ExpatError.code                         *ExpatError.code..pyexpat.txt*
 
    Expat’s internal error number for the specific error.  The
    "errors.messages" dictionary maps these error numbers to Expat’s
@@ -488,12 +487,12 @@ ExpatError.code                        *ExpatError.code..pyexpat.txt;*
    dictionary "codes" mapping these messages back to the error codes,
    see below.
 
-ExpatError.lineno                    *ExpatError.lineno..pyexpat.txt;*
+ExpatError.lineno                     *ExpatError.lineno..pyexpat.txt*
 
    Line number on which the error was detected.  The first line is
    numbered "1".
 
-ExpatError.offset                    *ExpatError.offset..pyexpat.txt;*
+ExpatError.offset                     *ExpatError.offset..pyexpat.txt*
 
    Character offset into the line where the error occurred.  The first
    column is numbered "0".
@@ -553,29 +552,28 @@ two groups: the model type group and the quantifier group.
 
 The constants in the model type group are:
 
-xml.parsers.expat.model.XML_CTYPE_ANY    *XML_CTYPE_ANY..pyexpat.txt;*
+xml.parsers.expat.model.XML_CTYPE_ANY     *XML_CTYPE_ANY..pyexpat.txt*
 
    The element named by the model name was declared to have a content
    model of "ANY".
 
-                                      *XML_CTYPE_CHOICE..pyexpat.txt;*
+                                       *XML_CTYPE_CHOICE..pyexpat.txt*
 xml.parsers.expat.model.XML_CTYPE_CHOICE
 
    The named element allows a choice from a number of options; this is
    used for content models such as "(A | B | C)".
 
-                                       *XML_CTYPE_EMPTY..pyexpat.txt;*
+                                        *XML_CTYPE_EMPTY..pyexpat.txt*
 xml.parsers.expat.model.XML_CTYPE_EMPTY
 
    Elements which are declared to be "EMPTY" have this model type.
 
-                                       *XML_CTYPE_MIXED..pyexpat.txt;*
+                                        *XML_CTYPE_MIXED..pyexpat.txt*
 xml.parsers.expat.model.XML_CTYPE_MIXED
 
-                                        *XML_CTYPE_NAME..pyexpat.txt;*
-xml.parsers.expat.model.XML_CTYPE_NAME
+xml.parsers.expat.model.XML_CTYPE_NAME   *XML_CTYPE_NAME..pyexpat.txt*
 
-xml.parsers.expat.model.XML_CTYPE_SEQ    *XML_CTYPE_SEQ..pyexpat.txt;*
+xml.parsers.expat.model.XML_CTYPE_SEQ     *XML_CTYPE_SEQ..pyexpat.txt*
 
    Models which represent a series of models which follow one after
    the other are indicated with this model type.  This is used for
@@ -583,24 +581,22 @@ xml.parsers.expat.model.XML_CTYPE_SEQ    *XML_CTYPE_SEQ..pyexpat.txt;*
 
 The constants in the quantifier group are:
 
-                                       *XML_CQUANT_NONE..pyexpat.txt;*
+                                        *XML_CQUANT_NONE..pyexpat.txt*
 xml.parsers.expat.model.XML_CQUANT_NONE
 
    No modifier is given, so it can appear exactly once, as for "A".
 
-                                        *XML_CQUANT_OPT..pyexpat.txt;*
-xml.parsers.expat.model.XML_CQUANT_OPT
+xml.parsers.expat.model.XML_CQUANT_OPT   *XML_CQUANT_OPT..pyexpat.txt*
 
    The model is optional: it can appear once or not at all, as for
    "A?".
 
-                                       *XML_CQUANT_PLUS..pyexpat.txt;*
+                                        *XML_CQUANT_PLUS..pyexpat.txt*
 xml.parsers.expat.model.XML_CQUANT_PLUS
 
    The model must occur one or more times (like "A+").
 
-                                        *XML_CQUANT_REP..pyexpat.txt;*
-xml.parsers.expat.model.XML_CQUANT_REP
+xml.parsers.expat.model.XML_CQUANT_REP   *XML_CQUANT_REP..pyexpat.txt*
 
    The model must occur zero or more times, as for "A*".
 
@@ -618,142 +614,142 @@ _code_, you do this by comparing its "code" attribute with
 
 The "errors" module has the following attributes:
 
-xml.parsers.expat.errors.codes                   *codes..pyexpat.txt;*
+xml.parsers.expat.errors.codes                    *codes..pyexpat.txt*
 
    A dictionary mapping string descriptions to their error codes.
 
    New in version 3.2.
 
-xml.parsers.expat.errors.messages             *messages..pyexpat.txt;*
+xml.parsers.expat.errors.messages              *messages..pyexpat.txt*
 
    A dictionary mapping numeric error codes to their string
    descriptions.
 
    New in version 3.2.
 
-                                *XML_ERROR_ASYNC_ENTITY..pyexpat.txt;*
+                                 *XML_ERROR_ASYNC_ENTITY..pyexpat.txt*
 xml.parsers.expat.errors.XML_ERROR_ASYNC_ENTITY
 
-               *XML_ERROR_ATTRIBUTE_EXTERNAL_ENTITY_REF..pyexpat.txt;*
+                *XML_ERROR_ATTRIBUTE_EXTERNAL_ENTITY_REF..pyexpat.txt*
 xml.parsers.expat.errors.XML_ERROR_ATTRIBUTE_EXTERNAL_ENTITY_REF
 
    An entity reference in an attribute value referred to an external
    entity instead of an internal entity.
 
-                                *XML_ERROR_BAD_CHAR_REF..pyexpat.txt;*
+                                 *XML_ERROR_BAD_CHAR_REF..pyexpat.txt*
 xml.parsers.expat.errors.XML_ERROR_BAD_CHAR_REF
 
    A character reference referred to a character which is illegal in
    XML (for example, character "0", or ‘"&#0;"’).
 
-                           *XML_ERROR_BINARY_ENTITY_REF..pyexpat.txt;*
+                            *XML_ERROR_BINARY_ENTITY_REF..pyexpat.txt*
 xml.parsers.expat.errors.XML_ERROR_BINARY_ENTITY_REF
 
    An entity reference referred to an entity which was declared with a
    notation, so cannot be parsed.
 
-                         *XML_ERROR_DUPLICATE_ATTRIBUTE..pyexpat.txt;*
+                          *XML_ERROR_DUPLICATE_ATTRIBUTE..pyexpat.txt*
 xml.parsers.expat.errors.XML_ERROR_DUPLICATE_ATTRIBUTE
 
    An attribute was used more than once in a start tag.
 
-                          *XML_ERROR_INCORRECT_ENCODING..pyexpat.txt;*
+                           *XML_ERROR_INCORRECT_ENCODING..pyexpat.txt*
 xml.parsers.expat.errors.XML_ERROR_INCORRECT_ENCODING
 
-                               *XML_ERROR_INVALID_TOKEN..pyexpat.txt;*
+                                *XML_ERROR_INVALID_TOKEN..pyexpat.txt*
 xml.parsers.expat.errors.XML_ERROR_INVALID_TOKEN
 
    Raised when an input byte could not properly be assigned to a
    character; for example, a NUL byte (value "0") in a UTF-8 input
    stream.
 
-                      *XML_ERROR_JUNK_AFTER_DOC_ELEMENT..pyexpat.txt;*
+                       *XML_ERROR_JUNK_AFTER_DOC_ELEMENT..pyexpat.txt*
 xml.parsers.expat.errors.XML_ERROR_JUNK_AFTER_DOC_ELEMENT
 
    Something other than whitespace occurred after the document
    element.
 
-                            *XML_ERROR_MISPLACED_XML_PI..pyexpat.txt;*
+                             *XML_ERROR_MISPLACED_XML_PI..pyexpat.txt*
 xml.parsers.expat.errors.XML_ERROR_MISPLACED_XML_PI
 
    An XML declaration was found somewhere other than the start of the
    input data.
 
-                                 *XML_ERROR_NO_ELEMENTS..pyexpat.txt;*
+                                  *XML_ERROR_NO_ELEMENTS..pyexpat.txt*
 xml.parsers.expat.errors.XML_ERROR_NO_ELEMENTS
 
    The document contains no elements (XML requires all documents to
    contain exactly one top-level element)..
 
-                                   *XML_ERROR_NO_MEMORY..pyexpat.txt;*
+                                    *XML_ERROR_NO_MEMORY..pyexpat.txt*
 xml.parsers.expat.errors.XML_ERROR_NO_MEMORY
 
    Expat was not able to allocate memory internally.
 
-                            *XML_ERROR_PARAM_ENTITY_REF..pyexpat.txt;*
+                             *XML_ERROR_PARAM_ENTITY_REF..pyexpat.txt*
 xml.parsers.expat.errors.XML_ERROR_PARAM_ENTITY_REF
 
    A parameter entity reference was found where it was not allowed.
 
-                                *XML_ERROR_PARTIAL_CHAR..pyexpat.txt;*
+                                 *XML_ERROR_PARTIAL_CHAR..pyexpat.txt*
 xml.parsers.expat.errors.XML_ERROR_PARTIAL_CHAR
 
    An incomplete character was found in the input.
 
-                        *XML_ERROR_RECURSIVE_ENTITY_REF..pyexpat.txt;*
+                         *XML_ERROR_RECURSIVE_ENTITY_REF..pyexpat.txt*
 xml.parsers.expat.errors.XML_ERROR_RECURSIVE_ENTITY_REF
 
    An entity reference contained another reference to the same entity;
    possibly via a different name, and possibly indirectly.
 
-                                      *XML_ERROR_SYNTAX..pyexpat.txt;*
+                                       *XML_ERROR_SYNTAX..pyexpat.txt*
 xml.parsers.expat.errors.XML_ERROR_SYNTAX
 
    Some unspecified syntax error was encountered.
 
-                                *XML_ERROR_TAG_MISMATCH..pyexpat.txt;*
+                                 *XML_ERROR_TAG_MISMATCH..pyexpat.txt*
 xml.parsers.expat.errors.XML_ERROR_TAG_MISMATCH
 
    An end tag did not match the innermost open start tag.
 
-                              *XML_ERROR_UNCLOSED_TOKEN..pyexpat.txt;*
+                               *XML_ERROR_UNCLOSED_TOKEN..pyexpat.txt*
 xml.parsers.expat.errors.XML_ERROR_UNCLOSED_TOKEN
 
    Some token (such as a start tag) was not closed before the end of
    the stream or the next token was encountered.
 
-                            *XML_ERROR_UNDEFINED_ENTITY..pyexpat.txt;*
+                             *XML_ERROR_UNDEFINED_ENTITY..pyexpat.txt*
 xml.parsers.expat.errors.XML_ERROR_UNDEFINED_ENTITY
 
    A reference was made to an entity which was not defined.
 
-                            *XML_ERROR_UNKNOWN_ENCODING..pyexpat.txt;*
+                             *XML_ERROR_UNKNOWN_ENCODING..pyexpat.txt*
 xml.parsers.expat.errors.XML_ERROR_UNKNOWN_ENCODING
 
    The document encoding is not supported by Expat.
 
-                      *XML_ERROR_UNCLOSED_CDATA_SECTION..pyexpat.txt;*
+                       *XML_ERROR_UNCLOSED_CDATA_SECTION..pyexpat.txt*
 xml.parsers.expat.errors.XML_ERROR_UNCLOSED_CDATA_SECTION
 
    A CDATA marked section was not closed.
 
-                    *XML_ERROR_EXTERNAL_ENTITY_HANDLING..pyexpat.txt;*
+                     *XML_ERROR_EXTERNAL_ENTITY_HANDLING..pyexpat.txt*
 xml.parsers.expat.errors.XML_ERROR_EXTERNAL_ENTITY_HANDLING
 
-                              *XML_ERROR_NOT_STANDALONE..pyexpat.txt;*
+                               *XML_ERROR_NOT_STANDALONE..pyexpat.txt*
 xml.parsers.expat.errors.XML_ERROR_NOT_STANDALONE
 
    The parser determined that the document was not “standalone” though
    it declared itself to be in the XML declaration, and the
    "NotStandaloneHandler" was set and returned "0".
 
-                            *XML_ERROR_UNEXPECTED_STATE..pyexpat.txt;*
+                             *XML_ERROR_UNEXPECTED_STATE..pyexpat.txt*
 xml.parsers.expat.errors.XML_ERROR_UNEXPECTED_STATE
 
-                       *XML_ERROR_ENTITY_DECLARED_IN_PE..pyexpat.txt;*
+                        *XML_ERROR_ENTITY_DECLARED_IN_PE..pyexpat.txt*
 xml.parsers.expat.errors.XML_ERROR_ENTITY_DECLARED_IN_PE
 
-                    *XML_ERROR_FEATURE_REQUIRES_XML_DTD..pyexpat.txt;*
+                     *XML_ERROR_FEATURE_REQUIRES_XML_DTD..pyexpat.txt*
 xml.parsers.expat.errors.XML_ERROR_FEATURE_REQUIRES_XML_DTD
 
    An operation was requested that requires DTD support to be compiled
@@ -761,103 +757,103 @@ xml.parsers.expat.errors.XML_ERROR_FEATURE_REQUIRES_XML_DTD
    never be reported by a standard build of the "xml.parsers.expat"
    module.
 
-            *XML_ERROR_CANT_CHANGE_FEATURE_ONCE_PARSING..pyexpat.txt;*
+             *XML_ERROR_CANT_CHANGE_FEATURE_ONCE_PARSING..pyexpat.txt*
 xml.parsers.expat.errors.XML_ERROR_CANT_CHANGE_FEATURE_ONCE_PARSING
 
    A behavioral change was requested after parsing started that can
    only be changed before parsing has started.  This is (currently)
    only raised by "UseForeignDTD()".
 
-                              *XML_ERROR_UNBOUND_PREFIX..pyexpat.txt;*
+                               *XML_ERROR_UNBOUND_PREFIX..pyexpat.txt*
 xml.parsers.expat.errors.XML_ERROR_UNBOUND_PREFIX
 
    An undeclared prefix was found when namespace processing was
    enabled.
 
-                          *XML_ERROR_UNDECLARING_PREFIX..pyexpat.txt;*
+                           *XML_ERROR_UNDECLARING_PREFIX..pyexpat.txt*
 xml.parsers.expat.errors.XML_ERROR_UNDECLARING_PREFIX
 
    The document attempted to remove the namespace declaration
    associated with a prefix.
 
-                               *XML_ERROR_INCOMPLETE_PE..pyexpat.txt;*
+                                *XML_ERROR_INCOMPLETE_PE..pyexpat.txt*
 xml.parsers.expat.errors.XML_ERROR_INCOMPLETE_PE
 
    A parameter entity contained incomplete markup.
 
-                                    *XML_ERROR_XML_DECL..pyexpat.txt;*
+                                     *XML_ERROR_XML_DECL..pyexpat.txt*
 xml.parsers.expat.errors.XML_ERROR_XML_DECL
 
    The document contained no document element at all.
 
-                                   *XML_ERROR_TEXT_DECL..pyexpat.txt;*
+                                    *XML_ERROR_TEXT_DECL..pyexpat.txt*
 xml.parsers.expat.errors.XML_ERROR_TEXT_DECL
 
    There was an error parsing a text declaration in an external
    entity.
 
-                                    *XML_ERROR_PUBLICID..pyexpat.txt;*
+                                     *XML_ERROR_PUBLICID..pyexpat.txt*
 xml.parsers.expat.errors.XML_ERROR_PUBLICID
 
    Characters were found in the public id that are not allowed.
 
-                                   *XML_ERROR_SUSPENDED..pyexpat.txt;*
+                                    *XML_ERROR_SUSPENDED..pyexpat.txt*
 xml.parsers.expat.errors.XML_ERROR_SUSPENDED
 
    The requested operation was made on a suspended parser, but isn’t
    allowed.  This includes attempts to provide additional input or to
    stop the parser.
 
-                               *XML_ERROR_NOT_SUSPENDED..pyexpat.txt;*
+                                *XML_ERROR_NOT_SUSPENDED..pyexpat.txt*
 xml.parsers.expat.errors.XML_ERROR_NOT_SUSPENDED
 
    An attempt to resume the parser was made when the parser had not
    been suspended.
 
-                                     *XML_ERROR_ABORTED..pyexpat.txt;*
+                                      *XML_ERROR_ABORTED..pyexpat.txt*
 xml.parsers.expat.errors.XML_ERROR_ABORTED
 
    This should not be reported to Python applications.
 
-                                    *XML_ERROR_FINISHED..pyexpat.txt;*
+                                     *XML_ERROR_FINISHED..pyexpat.txt*
 xml.parsers.expat.errors.XML_ERROR_FINISHED
 
    The requested operation was made on a parser which was finished
    parsing input, but isn’t allowed.  This includes attempts to
    provide additional input or to stop the parser.
 
-                                  *XML_ERROR_SUSPEND_PE..pyexpat.txt;*
+                                   *XML_ERROR_SUSPEND_PE..pyexpat.txt*
 xml.parsers.expat.errors.XML_ERROR_SUSPEND_PE
 
-                         *XML_ERROR_RESERVED_PREFIX_XML..pyexpat.txt;*
+                          *XML_ERROR_RESERVED_PREFIX_XML..pyexpat.txt*
 xml.parsers.expat.errors.XML_ERROR_RESERVED_PREFIX_XML
 
    An attempt was made to undeclare reserved namespace prefix "xml" or
    to bind it to another namespace URI.
 
-                       *XML_ERROR_RESERVED_PREFIX_XMLNS..pyexpat.txt;*
+                        *XML_ERROR_RESERVED_PREFIX_XMLNS..pyexpat.txt*
 xml.parsers.expat.errors.XML_ERROR_RESERVED_PREFIX_XMLNS
 
    An attempt was made to declare or undeclare reserved namespace
    prefix "xmlns".
 
-                      *XML_ERROR_RESERVED_NAMESPACE_URI..pyexpat.txt;*
+                       *XML_ERROR_RESERVED_NAMESPACE_URI..pyexpat.txt*
 xml.parsers.expat.errors.XML_ERROR_RESERVED_NAMESPACE_URI
 
    An attempt was made to bind the URI of one the reserved namespace
    prefixes "xml" and "xmlns" to another namespace prefix.
 
-                            *XML_ERROR_INVALID_ARGUMENT..pyexpat.txt;*
+                             *XML_ERROR_INVALID_ARGUMENT..pyexpat.txt*
 xml.parsers.expat.errors.XML_ERROR_INVALID_ARGUMENT
 
    This should not be reported to Python applications.
 
-                                   *XML_ERROR_NO_BUFFER..pyexpat.txt;*
+                                    *XML_ERROR_NO_BUFFER..pyexpat.txt*
 xml.parsers.expat.errors.XML_ERROR_NO_BUFFER
 
    This should not be reported to Python applications.
 
-                  *XML_ERROR_AMPLIFICATION_LIMIT_BREACH..pyexpat.txt;*
+                   *XML_ERROR_AMPLIFICATION_LIMIT_BREACH..pyexpat.txt*
 xml.parsers.expat.errors.XML_ERROR_AMPLIFICATION_LIMIT_BREACH
 
    The limit on input amplification factor (from DTD and entities) has

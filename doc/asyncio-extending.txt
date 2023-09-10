@@ -1,4 +1,4 @@
-*asyncio-extending.txt;*                      Last change: 2023 Sep 09
+*asyncio-extending.txt;*                      Last change: 2023 Sep 10
 
 Extending
 *********
@@ -45,14 +45,14 @@ optimized code for free.
 
 For this purpose the following, _private_ constructors are listed:
 
-                           *Future.__init__()..asyncio-extending.txt;*
+                            *Future.__init__()..asyncio-extending.txt*
 Future.__init__(*, loop=None)
 
    Create a built-in future instance.
 
    _loop_ is an optional event loop instance.
 
-                             *Task.__init__()..asyncio-extending.txt;*
+                              *Task.__init__()..asyncio-extending.txt*
 Task.__init__(coro, *, loop=None, name=None, context=None)
 
    Create a built-in task instance.
@@ -70,21 +70,21 @@ A third party task implementation should call the following functions
 to keep a task visible by "asyncio.all_tasks()" and
 "asyncio.current_task()":
 
-                            *_register_task()..asyncio-extending.txt;*
+                             *_register_task()..asyncio-extending.txt*
 asyncio._register_task(task)
 
    Register a new _task_ as managed by _asyncio_.
 
    Call the function from a task constructor.
 
-                          *_unregister_task()..asyncio-extending.txt;*
+                           *_unregister_task()..asyncio-extending.txt*
 asyncio._unregister_task(task)
 
    Unregister a _task_ from _asyncio_ internal structures.
 
    The function should be called when a task is about to finish.
 
-                               *_enter_task()..asyncio-extending.txt;*
+                                *_enter_task()..asyncio-extending.txt*
 asyncio._enter_task(loop, task)
 
    Switch the current task to the _task_ argument.
@@ -92,7 +92,7 @@ asyncio._enter_task(loop, task)
    Call the function just before executing a portion of embedded
    _coroutine_ ("coroutine.send()" or "coroutine.throw()").
 
-                               *_leave_task()..asyncio-extending.txt;*
+                                *_leave_task()..asyncio-extending.txt*
 asyncio._leave_task(loop, task)
 
    Switch the current task back from _task_ to "None".

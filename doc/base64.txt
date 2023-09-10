@@ -1,4 +1,4 @@
-*base64.txt;*                                 Last change: 2023 Sep 09
+*base64.txt;*                                 Last change: 2023 Sep 10
 
 "base64" — Base16, Base32, Base64, Base85 Data Encodings
 ********************************************************
@@ -41,7 +41,7 @@ support added.
 
 The modern interface provides:
 
-base64.b64encode(s, altchars=None)          *b64encode()..base64.txt;*
+base64.b64encode(s, altchars=None)           *b64encode()..base64.txt*
 
    Encode the _bytes-like object_ _s_ using Base64 and return the
    encoded "bytes".
@@ -56,7 +56,7 @@ base64.b64encode(s, altchars=None)          *b64encode()..base64.txt;*
    not 2.  Raises a "TypeError" if _altchars_ is not a _bytes-like
    object_.
 
-                                            *b64decode()..base64.txt;*
+                                             *b64decode()..base64.txt*
 base64.b64decode(s, altchars=None, validate=False)
 
    Decode the Base64 encoded _bytes-like object_ or ASCII string _s_
@@ -81,36 +81,36 @@ base64.b64decode(s, altchars=None, validate=False)
    May assert or raise a "ValueError" if the length of _altchars_ is
    not 2.
 
-base64.standard_b64encode(s)       *standard_b64encode()..base64.txt;*
+base64.standard_b64encode(s)        *standard_b64encode()..base64.txt*
 
    Encode _bytes-like object_ _s_ using the standard Base64 alphabet
    and return the encoded "bytes".
 
-base64.standard_b64decode(s)       *standard_b64decode()..base64.txt;*
+base64.standard_b64decode(s)        *standard_b64decode()..base64.txt*
 
    Decode _bytes-like object_ or ASCII string _s_ using the standard
    Base64 alphabet and return the decoded "bytes".
 
-base64.urlsafe_b64encode(s)         *urlsafe_b64encode()..base64.txt;*
+base64.urlsafe_b64encode(s)          *urlsafe_b64encode()..base64.txt*
 
    Encode _bytes-like object_ _s_ using the URL- and filesystem-safe
    alphabet, which substitutes "-" instead of "+" and "_" instead of
    "/" in the standard Base64 alphabet, and return the encoded
    "bytes".  The result can still contain "=".
 
-base64.urlsafe_b64decode(s)         *urlsafe_b64decode()..base64.txt;*
+base64.urlsafe_b64decode(s)          *urlsafe_b64decode()..base64.txt*
 
    Decode _bytes-like object_ or ASCII string _s_ using the URL- and
    filesystem-safe alphabet, which substitutes "-" instead of "+" and
    "_" instead of "/" in the standard Base64 alphabet, and return the
    decoded "bytes".
 
-base64.b32encode(s)                         *b32encode()..base64.txt;*
+base64.b32encode(s)                          *b32encode()..base64.txt*
 
    Encode the _bytes-like object_ _s_ using Base32 and return the
    encoded "bytes".
 
-                                            *b32decode()..base64.txt;*
+                                             *b32decode()..base64.txt*
 base64.b32decode(s, casefold=False, map01=None)
 
    Decode the Base32 encoded _bytes-like object_ or ASCII string _s_
@@ -131,14 +131,14 @@ base64.b32decode(s, casefold=False, map01=None)
    A "binascii.Error" is raised if _s_ is incorrectly padded or if
    there are non-alphabet characters present in the input.
 
-base64.b32hexencode(s)                   *b32hexencode()..base64.txt;*
+base64.b32hexencode(s)                    *b32hexencode()..base64.txt*
 
    Similar to "b32encode()" but uses the Extended Hex Alphabet, as
    defined in **RFC 4648**.
 
    New in version 3.10.
 
-base64.b32hexdecode(s, casefold=False)   *b32hexdecode()..base64.txt;*
+base64.b32hexdecode(s, casefold=False)    *b32hexdecode()..base64.txt*
 
    Similar to "b32decode()" but uses the Extended Hex Alphabet, as
    defined in **RFC 4648**.
@@ -150,12 +150,12 @@ base64.b32hexdecode(s, casefold=False)   *b32hexdecode()..base64.txt;*
 
    New in version 3.10.
 
-base64.b16encode(s)                         *b16encode()..base64.txt;*
+base64.b16encode(s)                          *b16encode()..base64.txt*
 
    Encode the _bytes-like object_ _s_ using Base16 and return the
    encoded "bytes".
 
-base64.b16decode(s, casefold=False)         *b16decode()..base64.txt;*
+base64.b16decode(s, casefold=False)          *b16decode()..base64.txt*
 
    Decode the Base16 encoded _bytes-like object_ or ASCII string _s_
    and return the decoded "bytes".
@@ -167,7 +167,7 @@ base64.b16decode(s, casefold=False)         *b16decode()..base64.txt;*
    A "binascii.Error" is raised if _s_ is incorrectly padded or if
    there are non-alphabet characters present in the input.
 
-                                            *a85encode()..base64.txt;*
+                                             *a85encode()..base64.txt*
 base64.a85encode(b, *, foldspaces=False, wrapcol=0, pad=False, adobe=False)
 
    Encode the _bytes-like object_ _b_ using Ascii85 and return the
@@ -190,7 +190,7 @@ base64.a85encode(b, *, foldspaces=False, wrapcol=0, pad=False, adobe=False)
 
    New in version 3.4.
 
-                                            *a85decode()..base64.txt;*
+                                             *a85decode()..base64.txt*
 base64.a85decode(b, *, foldspaces=False, adobe=False, ignorechars=b' \t\n\r\x0b')
 
    Decode the Ascii85 encoded _bytes-like object_ or ASCII string _b_
@@ -211,7 +211,7 @@ base64.a85decode(b, *, foldspaces=False, adobe=False, ignorechars=b' \t\n\r\x0b'
 
    New in version 3.4.
 
-base64.b85encode(b, pad=False)              *b85encode()..base64.txt;*
+base64.b85encode(b, pad=False)               *b85encode()..base64.txt*
 
    Encode the _bytes-like object_ _b_ using base85 (as used in e.g.
    git-style binary diffs) and return the encoded "bytes".
@@ -221,7 +221,7 @@ base64.b85encode(b, pad=False)              *b85encode()..base64.txt;*
 
    New in version 3.4.
 
-base64.b85decode(b)                         *b85decode()..base64.txt;*
+base64.b85decode(b)                          *b85decode()..base64.txt*
 
    Decode the base85-encoded _bytes-like object_ or ASCII string _b_
    and return the decoded "bytes".  Padding is implicitly removed, if
@@ -231,21 +231,21 @@ base64.b85decode(b)                         *b85decode()..base64.txt;*
 
 The legacy interface:
 
-base64.decode(input, output)                   *decode()..base64.txt;*
+base64.decode(input, output)                    *decode()..base64.txt*
 
    Decode the contents of the binary _input_ file and write the
    resulting binary data to the _output_ file. _input_ and _output_
    must be _file objects_. _input_ will be read until
    "input.readline()" returns an empty bytes object.
 
-base64.decodebytes(s)                     *decodebytes()..base64.txt;*
+base64.decodebytes(s)                      *decodebytes()..base64.txt*
 
    Decode the _bytes-like object_ _s_, which must contain one or more
    lines of base64 encoded data, and return the decoded "bytes".
 
    New in version 3.1.
 
-base64.encode(input, output)                   *encode()..base64.txt;*
+base64.encode(input, output)                    *encode()..base64.txt*
 
    Encode the contents of the binary _input_ file and write the
    resulting base64 encoded data to the _output_ file. _input_ and
@@ -255,7 +255,7 @@ base64.encode(input, output)                   *encode()..base64.txt;*
    well as ensuring that the output always ends with a newline, as per
    **RFC 2045** (MIME).
 
-base64.encodebytes(s)                     *encodebytes()..base64.txt;*
+base64.encodebytes(s)                      *encodebytes()..base64.txt*
 
    Encode the _bytes-like object_ _s_, which can contain arbitrary
    binary data, and return "bytes" containing the base64-encoded data,

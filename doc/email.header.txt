@@ -1,4 +1,4 @@
-*emailheader.txt;*                            Last change: 2023 Sep 09
+*email.header.txt;*                           Last change: 2023 Sep 10
 
 "email.header": Internationalized headers
 *****************************************
@@ -56,7 +56,7 @@ this header using the embedded ISO-8859-1 character.
 
 Here is the "Header" class description:
 
-                                            *Header..emailheader.txt;*
+                                            *Header..email.header.txt*
 class email.header.Header(s=None, charset=None, maxlinelen=None, header_name=None, continuation_ws=' ', errors='strict')
 
    Create a MIME-compliant header that can contain strings in
@@ -92,7 +92,7 @@ class email.header.Header(s=None, charset=None, maxlinelen=None, header_name=Non
    Optional _errors_ is passed straight through to the "append()"
    method.
 
-                                   *Header.append()..emailheader.txt;*
+                                   *Header.append()..email.header.txt*
    append(s, charset=None, errors='strict')
 
       Append the string _s_ to the MIME header.
@@ -119,7 +119,7 @@ class email.header.Header(s=None, charset=None, maxlinelen=None, header_name=Non
       Optional _errors_ is passed as the errors argument to the decode
       call if _s_ is a byte string.
 
-                                   *Header.encode()..emailheader.txt;*
+                                   *Header.encode()..email.header.txt*
    encode(splitchars=';, \t', maxlinelen=None, linesep='\n')
 
       Encode a message header into an RFC-compliant format, possibly
@@ -151,7 +151,7 @@ class email.header.Header(s=None, charset=None, maxlinelen=None, header_name=Non
    The "Header" class also provides a number of methods to support
    standard operators and built-in functions.
 
-   __str__()                         *Header.__str__()..emailheader.txt;*
+   __str__()                         *Header.__str__()..email.header.txt*
 
       Returns an approximation of the "Header" as a string, using an
       unlimited line length.  All pieces are converted to unicode
@@ -162,12 +162,12 @@ class email.header.Header(s=None, charset=None, maxlinelen=None, header_name=Non
       Changed in version 3.2: Added handling for the "'unknown-8bit'"
       charset.
 
-   __eq__(other)                      *Header.__eq__()..emailheader.txt;*
+   __eq__(other)                      *Header.__eq__()..email.header.txt*
 
       This method allows you to compare two "Header" instances for
       equality.
 
-   __ne__(other)                      *Header.__ne__()..emailheader.txt;*
+   __ne__(other)                      *Header.__ne__()..email.header.txt*
 
       This method allows you to compare two "Header" instances for
       inequality.
@@ -175,7 +175,7 @@ class email.header.Header(s=None, charset=None, maxlinelen=None, header_name=Non
 The "email.header" module also provides the following convenient
 functions.
 
-                                   *decode_header()..emailheader.txt;*
+                                   *decode_header()..email.header.txt*
 email.header.decode_header(header)
 
    Decode a message header value without converting the character set.
@@ -194,7 +194,7 @@ email.header.decode_header(header)
       [(b'p\xf6stal', 'iso-8859-1')]
 <
 
-                                     *make_header()..emailheader.txt;*
+                                     *make_header()..email.header.txt*
 email.header.make_header(decoded_seq, maxlinelen=None, header_name=None, continuation_ws=' ')
 
    Create a "Header" instance from a sequence of pairs as returned by

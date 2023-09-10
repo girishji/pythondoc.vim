@@ -1,4 +1,4 @@
-*contextvars.txt;*                            Last change: 2023 Sep 09
+*contextvars.txt;*                            Last change: 2023 Sep 10
 
 "contextvars" — Context Variables
 *********************************
@@ -23,7 +23,7 @@ New in version 3.7.
 Context Variables
 =================
 
-                                        *ContextVar..contextvars.txt;*
+                                         *ContextVar..contextvars.txt*
 class contextvars.ContextVar(name[, *, default])
 
    This class is used to declare a new Context Variable, e.g.:
@@ -42,13 +42,13 @@ class contextvars.ContextVar(name[, *, default])
    references to context variables which prevents context variables
    from being properly garbage collected.
 
-   name                               *ContextVar.name..contextvars.txt;*
+   name                                *ContextVar.name..contextvars.txt*
 
       The name of the variable.  This is a read-only property.
 
       New in version 3.7.1.
 
-   get([default])                    *ContextVar.get()..contextvars.txt;*
+   get([default])                     *ContextVar.get()..contextvars.txt*
 
       Return a value for the context variable for the current context.
 
@@ -63,7 +63,7 @@ class contextvars.ContextVar(name[, *, default])
 
       * raise a "LookupError".
 
-   set(value)                        *ContextVar.set()..contextvars.txt;*
+   set(value)                         *ContextVar.set()..contextvars.txt*
 
       Call to set a new value for the context variable in the current
       context.
@@ -75,7 +75,7 @@ class contextvars.ContextVar(name[, *, default])
       variable to its previous value via the "ContextVar.reset()"
       method.
 
-   reset(token)                    *ContextVar.reset()..contextvars.txt;*
+   reset(token)                     *ContextVar.reset()..contextvars.txt*
 
       Reset the context variable to the value it had before the
       "ContextVar.set()" that created the _token_ was used.
@@ -91,26 +91,26 @@ class contextvars.ContextVar(name[, *, default])
          # After the reset call the var has no value again, so
          # var.get() would raise a LookupError.
 <
-class contextvars.Token                      *Token..contextvars.txt;*
+class contextvars.Token                       *Token..contextvars.txt*
 
    _Token_ objects are returned by the "ContextVar.set()" method. They
    can be passed to the "ContextVar.reset()" method to revert the
    value of the variable to what it was before the corresponding
    _set_.
 
-   var                                      *Token.var..contextvars.txt;*
+   var                                       *Token.var..contextvars.txt*
 
       A read-only property.  Points to the "ContextVar" object that
       created the token.
 
-   old_value                          *Token.old_value..contextvars.txt;*
+   old_value                           *Token.old_value..contextvars.txt*
 
       A read-only property.  Set to the value the variable had before
       the "ContextVar.set()" method call that created the token. It
       points to "Token.MISSING" if the variable was not set before the
       call.
 
-   MISSING                              *Token.MISSING..contextvars.txt;*
+   MISSING                               *Token.MISSING..contextvars.txt*
 
       A marker object used by "Token.old_value".
 
@@ -118,7 +118,7 @@ class contextvars.Token                      *Token..contextvars.txt;*
 Manual Context Management
 =========================
 
-contextvars.copy_context()          *copy_context()..contextvars.txt;*
+contextvars.copy_context()           *copy_context()..contextvars.txt*
 
    Returns a copy of the current "Context" object.
 
@@ -132,7 +132,7 @@ contextvars.copy_context()          *copy_context()..contextvars.txt;*
    contexts with a few context variables and for contexts that have a
    lot of them.
 
-class contextvars.Context                  *Context..contextvars.txt;*
+class contextvars.Context                   *Context..contextvars.txt*
 
    A mapping of "ContextVars" to their values.
 
@@ -145,7 +145,7 @@ class contextvars.Context                  *Context..contextvars.txt;*
 
    Context implements the "collections.abc.Mapping" interface.
 
-   run(callable, *args, **kwargs)       *Context.run()..contextvars.txt;*
+   run(callable, *args, **kwargs)        *Context.run()..contextvars.txt*
 
       Execute "callable(*args, **kwargs)" code in the context object
       the _run_ method is called on.  Return the result of the
@@ -184,7 +184,7 @@ class contextvars.Context                  *Context..contextvars.txt;*
       context object from more than one OS thread, or when called
       recursively.
 
-   copy()                              *Context.copy()..contextvars.txt;*
+   copy()                               *Context.copy()..contextvars.txt*
 
       Return a shallow copy of the context object.
 
@@ -199,7 +199,7 @@ class contextvars.Context                  *Context..contextvars.txt;*
       variable is not set in the context object, a "KeyError" is
       raised.
 
-   get(var[, default])                  *Context.get()..contextvars.txt;*
+   get(var[, default])                   *Context.get()..contextvars.txt*
 
       Return the value for _var_ if _var_ has the value in the context
       object.  Return _default_ otherwise.  If _default_ is not given,
@@ -214,15 +214,15 @@ class contextvars.Context                  *Context..contextvars.txt;*
 
       Return the number of variables set in the context object.
 
-   keys()                              *Context.keys()..contextvars.txt;*
+   keys()                               *Context.keys()..contextvars.txt*
 
       Return a list of all variables in the context object.
 
-   values()                          *Context.values()..contextvars.txt;*
+   values()                           *Context.values()..contextvars.txt*
 
       Return a list of all variables’ values in the context object.
 
-   items()                            *Context.items()..contextvars.txt;*
+   items()                             *Context.items()..contextvars.txt*
 
       Return a list of 2-tuples containing all variables and their
       values in the context object.

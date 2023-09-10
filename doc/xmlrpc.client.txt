@@ -1,4 +1,4 @@
-*xmlrpcclient.txt;*                           Last change: 2023 Sep 09
+*xmlrpc.client.txt;*                          Last change: 2023 Sep 10
 
 "xmlrpc.client" — XML-RPC client access
 ***************************************
@@ -29,7 +29,7 @@ This module does not work or is not available on WebAssembly platforms
 "wasm32-emscripten" and "wasm32-wasi". See WebAssembly platforms for
 more information.
 
-                                      *ServerProxy..xmlrpcclient.txt;*
+                                      *ServerProxy..xmlrpc.client.txt*
 class xmlrpc.client.ServerProxy(uri, transport=None, encoding=None, verbose=False, allow_none=False, use_datetime=False, use_builtin_types=False, *, headers=(), context=None)
 
    A "ServerProxy" instance is an object that manages communication
@@ -165,13 +165,13 @@ either returned data in a conformant type or a "Fault" or
 Servers that support the XML introspection API support some common
 methods grouped under the reserved "system" attribute:
 
-                 *ServerProxy.system.listMethods()..xmlrpcclient.txt;*
+                 *ServerProxy.system.listMethods()..xmlrpc.client.txt*
 ServerProxy.system.listMethods()
 
    This method returns a list of strings, one for each (non-system)
    method supported by the XML-RPC server.
 
-             *ServerProxy.system.methodSignature()..xmlrpcclient.txt;*
+             *ServerProxy.system.methodSignature()..xmlrpc.client.txt*
 ServerProxy.system.methodSignature(name)
 
    This method takes one parameter, the name of a method implemented
@@ -193,7 +193,7 @@ ServerProxy.system.methodSignature(name)
    returned. In Python this means that the type of the returned  value
    will be something other than list.
 
-                  *ServerProxy.system.methodHelp()..xmlrpcclient.txt;*
+                  *ServerProxy.system.methodHelp()..xmlrpc.client.txt*
 ServerProxy.system.methodHelp(name)
 
    This method takes one parameter, the name of a method implemented
@@ -229,18 +229,18 @@ The client code for the preceding server:
 DateTime Objects
 ================
 
-class xmlrpc.client.DateTime             *DateTime..xmlrpcclient.txt;*
+class xmlrpc.client.DateTime             *DateTime..xmlrpc.client.txt*
 
    This class may be initialized with seconds since the epoch, a time
    tuple, an ISO 8601 time/date string, or a "datetime.datetime"
    instance.  It has the following methods, supported mainly for
    internal use by the marshalling/unmarshalling code:
 
-   decode(string)                  *DateTime.decode()..xmlrpcclient.txt;*
+   decode(string)                  *DateTime.decode()..xmlrpc.client.txt*
 
       Accept a string as the instance’s new time value.
 
-   encode(out)                     *DateTime.encode()..xmlrpcclient.txt;*
+   encode(out)                     *DateTime.encode()..xmlrpc.client.txt*
 
       Write the XML-RPC encoding of this "DateTime" item to the _out_
       stream object.
@@ -279,13 +279,13 @@ The client code for the preceding server:
 Binary Objects
 ==============
 
-class xmlrpc.client.Binary                 *Binary..xmlrpcclient.txt;*
+class xmlrpc.client.Binary                 *Binary..xmlrpc.client.txt*
 
    This class may be initialized from bytes data (which may include
    NULs). The primary access to the content of a "Binary" object is
    provided by an attribute:
 
-   data                                  *Binary.data..xmlrpcclient.txt;*
+   data                                  *Binary.data..xmlrpc.client.txt*
 
       The binary data encapsulated by the "Binary" instance.  The data
       is provided as a "bytes" object.
@@ -293,12 +293,12 @@ class xmlrpc.client.Binary                 *Binary..xmlrpcclient.txt;*
    "Binary" objects have the following methods, supported mainly for
    internal use by the marshalling/unmarshalling code:
 
-   decode(bytes)                     *Binary.decode()..xmlrpcclient.txt;*
+   decode(bytes)                     *Binary.decode()..xmlrpc.client.txt*
 
       Accept a base64 "bytes" object and decode it as the instance’s
       new data.
 
-   encode(out)                       *Binary.encode()..xmlrpcclient.txt;*
+   encode(out)                       *Binary.encode()..xmlrpc.client.txt*
 
       Write the XML-RPC base 64 encoding of this binary item to the
       _out_ stream object.
@@ -338,16 +338,16 @@ The client gets the image and saves it to a file:
 Fault Objects
 =============
 
-class xmlrpc.client.Fault                   *Fault..xmlrpcclient.txt;*
+class xmlrpc.client.Fault                   *Fault..xmlrpc.client.txt*
 
    A "Fault" object encapsulates the content of an XML-RPC fault tag.
    Fault objects have the following attributes:
 
-   faultCode                         *Fault.faultCode..xmlrpcclient.txt;*
+   faultCode                         *Fault.faultCode..xmlrpc.client.txt*
 
       An int indicating the fault type.
 
-   faultString                     *Fault.faultString..xmlrpcclient.txt;*
+   faultString                     *Fault.faultString..xmlrpc.client.txt*
 
       A string containing a diagnostic message associated with the
       fault.
@@ -384,26 +384,26 @@ The client code for the preceding server:
 ProtocolError Objects
 =====================
 
-class xmlrpc.client.ProtocolError   *ProtocolError..xmlrpcclient.txt;*
+class xmlrpc.client.ProtocolError   *ProtocolError..xmlrpc.client.txt*
 
    A "ProtocolError" object describes a protocol error in the
    underlying transport layer (such as a 404 ‘not found’ error if the
    server named by the URI does not exist).  It has the following
    attributes:
 
-   url                             *ProtocolError.url..xmlrpcclient.txt;*
+   url                             *ProtocolError.url..xmlrpc.client.txt*
 
       The URI or URL that triggered the error.
 
-   errcode                     *ProtocolError.errcode..xmlrpcclient.txt;*
+   errcode                     *ProtocolError.errcode..xmlrpc.client.txt*
 
       The error code.
 
-   errmsg                       *ProtocolError.errmsg..xmlrpcclient.txt;*
+   errmsg                       *ProtocolError.errmsg..xmlrpc.client.txt*
 
       The error message or diagnostic string.
 
-   headers                     *ProtocolError.headers..xmlrpcclient.txt;*
+   headers                     *ProtocolError.headers..xmlrpc.client.txt*
 
       A dict containing the headers of the HTTP/HTTPS request that
       triggered the error.
@@ -432,7 +432,7 @@ MultiCall Objects
 The "MultiCall" object provides a way to encapsulate multiple calls to
 a remote server into a single request [1].
 
-class xmlrpc.client.MultiCall(server)   *MultiCall..xmlrpcclient.txt;*
+class xmlrpc.client.MultiCall(server)   *MultiCall..xmlrpc.client.txt*
 
    Create an object used to boxcar method calls. _server_ is the
    eventual target of the call. Calls can be made to the result
@@ -487,7 +487,7 @@ The client code for the preceding server:
 Convenience Functions
 =====================
 
-                                          *dumps()..xmlrpcclient.txt;*
+                                          *dumps()..xmlrpc.client.txt*
 xmlrpc.client.dumps(params, methodname=None, methodresponse=None, encoding=None, allow_none=False)
 
    Convert _params_ into an XML-RPC request. or into a response if
@@ -499,7 +499,7 @@ xmlrpc.client.dumps(params, methodname=None, methodresponse=None, encoding=None,
    Python’s "None" value cannot be used in standard XML-RPC; to allow
    using it via an extension,  provide a true value for _allow_none_.
 
-                                          *loads()..xmlrpcclient.txt;*
+                                          *loads()..xmlrpc.client.txt*
 xmlrpc.client.loads(data, use_datetime=False, use_builtin_types=False)
 
    Convert an XML-RPC request or response into Python objects, a

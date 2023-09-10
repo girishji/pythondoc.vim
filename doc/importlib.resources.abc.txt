@@ -1,4 +1,4 @@
-*importlibresourcesabc.txt;*                  Last change: 2023 Sep 09
+*importlib.resources.abc.txt;*                Last change: 2023 Sep 10
 
 "importlib.resources.abc" – Abstract base classes for resources
 ***************************************************************
@@ -9,7 +9,7 @@
 
 New in version 3.11.
 
-                          *ResourceReader..importlibresourcesabc.txt;*
+                         *ResourceReader..importlib.resources.abc.txt*
 class importlib.resources.abc.ResourceReader
 
    _Superseded by TraversableResources_
@@ -47,7 +47,7 @@ class importlib.resources.abc.ResourceReader
    Deprecated since version 3.12, will be removed in version 3.14: Use
    "importlib.resources.abc.TraversableResources" instead.
 
-          *ResourceReader.open_resource()..importlibresourcesabc.txt;*
+         *ResourceReader.open_resource()..importlib.resources.abc.txt*
    abstractmethod open_resource(resource)
 
       Returns an opened, _file-like object_ for binary reading of the
@@ -55,7 +55,7 @@ class importlib.resources.abc.ResourceReader
 
       If the resource cannot be found, "FileNotFoundError" is raised.
 
-          *ResourceReader.resource_path()..importlibresourcesabc.txt;*
+         *ResourceReader.resource_path()..importlib.resources.abc.txt*
    abstractmethod resource_path(resource)
 
       Returns the file system path to the _resource_.
@@ -63,13 +63,13 @@ class importlib.resources.abc.ResourceReader
       If the resource does not concretely exist on the file system,
       raise "FileNotFoundError".
 
-            *ResourceReader.is_resource()..importlibresourcesabc.txt;*
+           *ResourceReader.is_resource()..importlib.resources.abc.txt*
    abstractmethod is_resource(name)
 
       Returns "True" if the named _name_ is considered a resource.
       "FileNotFoundError" is raised if _name_ does not exist.
 
-               *ResourceReader.contents()..importlibresourcesabc.txt;*
+              *ResourceReader.contents()..importlib.resources.abc.txt*
    abstractmethod contents()
 
       Returns an _iterable_ of strings over the contents of the
@@ -86,7 +86,7 @@ class importlib.resources.abc.ResourceReader
 
       The abstract method returns an iterable of no items.
 
-                             *Traversable..importlibresourcesabc.txt;*
+                            *Traversable..importlib.resources.abc.txt*
 class importlib.resources.abc.Traversable
 
    An object with a subset of "pathlib.Path" methods suitable for
@@ -100,37 +100,37 @@ class importlib.resources.abc.Traversable
    Deprecated since version 3.12, will be removed in version 3.14: Use
    "importlib.resources.abc.Traversable" instead.
 
-   name                    *Traversable.name..importlibresourcesabc.txt;*
+   name                   *Traversable.name..importlib.resources.abc.txt*
 
       Abstract. The base name of this object without any parent
       references.
 
-                   *Traversable.iterdir()..importlibresourcesabc.txt;*
+                  *Traversable.iterdir()..importlib.resources.abc.txt*
    abstractmethod iterdir()
 
       Yield Traversable objects in self.
 
-                    *Traversable.is_dir()..importlibresourcesabc.txt;*
+                   *Traversable.is_dir()..importlib.resources.abc.txt*
    abstractmethod is_dir()
 
       Return True if self is a directory.
 
-                   *Traversable.is_file()..importlibresourcesabc.txt;*
+                  *Traversable.is_file()..importlib.resources.abc.txt*
    abstractmethod is_file()
 
       Return True if self is a file.
 
-                  *Traversable.joinpath()..importlibresourcesabc.txt;*
+                 *Traversable.joinpath()..importlib.resources.abc.txt*
    abstractmethod joinpath(child)
 
       Return Traversable child in self.
 
-               *Traversable.__truediv__()..importlibresourcesabc.txt;*
+              *Traversable.__truediv__()..importlib.resources.abc.txt*
    abstractmethod __truediv__(child)
 
       Return Traversable child in self.
 
-                      *Traversable.open()..importlibresourcesabc.txt;*
+                     *Traversable.open()..importlib.resources.abc.txt*
    abstractmethod open(mode='r', *args, **kwargs)
 
       _mode_ may be ‘r’ or ‘rb’ to open as text or binary. Return a
@@ -139,16 +139,16 @@ class importlib.resources.abc.Traversable
       When opening as text, accepts encoding parameters such as those
       accepted by "io.TextIOWrapper".
 
-   read_bytes()    *Traversable.read_bytes()..importlibresourcesabc.txt;*
+   read_bytes()   *Traversable.read_bytes()..importlib.resources.abc.txt*
 
       Read contents of self as bytes.
 
-                 *Traversable.read_text()..importlibresourcesabc.txt;*
+                *Traversable.read_text()..importlib.resources.abc.txt*
    read_text(encoding=None)
 
       Read contents of self as text.
 
-                    *TraversableResources..importlibresourcesabc.txt;*
+                   *TraversableResources..importlib.resources.abc.txt*
 class importlib.resources.abc.TraversableResources
 
    An abstract base class for resource readers capable of serving the
@@ -165,7 +165,7 @@ class importlib.resources.abc.TraversableResources
    Deprecated since version 3.12, will be removed in version 3.14: Use
    "importlib.resources.abc.TraversableResources" instead.
 
-            *TraversableResources.files()..importlibresourcesabc.txt;*
+           *TraversableResources.files()..importlib.resources.abc.txt*
    abstractmethod files()
 
       Returns a "importlib.resources.abc.Traversable" object for the

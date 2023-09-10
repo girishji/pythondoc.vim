@@ -1,4 +1,4 @@
-*zoneinfo.txt;*                               Last change: 2023 Sep 09
+*zoneinfo.txt;*                               Last change: 2023 Sep 10
 
 "zoneinfo" — IANA time zone support
 ***********************************
@@ -172,7 +172,7 @@ access to the system time zones).
 The "ZoneInfo" class
 ====================
 
-class zoneinfo.ZoneInfo(key)                 *ZoneInfo..zoneinfo.txt;*
+class zoneinfo.ZoneInfo(key)                  *ZoneInfo..zoneinfo.txt*
 
    A concrete "datetime.tzinfo" subclass that represents an IANA time
    zone specified by the string "key". Calls to the primary
@@ -194,7 +194,7 @@ class zoneinfo.ZoneInfo(key)                 *ZoneInfo..zoneinfo.txt;*
 
 The "ZoneInfo" class has two alternate constructors:
 
-                                 *ZoneInfo.from_file()..zoneinfo.txt;*
+                                  *ZoneInfo.from_file()..zoneinfo.txt*
 classmethod ZoneInfo.from_file(fobj, /, key=None)
 
    Constructs a "ZoneInfo" object from a file-like object returning
@@ -208,7 +208,7 @@ classmethod ZoneInfo.from_file(fobj, /, key=None)
    Objects created via this constructor cannot be pickled (see
    pickling).
 
-                                  *ZoneInfo.no_cache()..zoneinfo.txt;*
+                                   *ZoneInfo.no_cache()..zoneinfo.txt*
 classmethod ZoneInfo.no_cache(key)
 
    An alternate constructor that bypasses the constructor’s cache. It
@@ -227,7 +227,7 @@ classmethod ZoneInfo.no_cache(key)
 
 The following class methods are also available:
 
-                               *ZoneInfo.clear_cache()..zoneinfo.txt;*
+                                *ZoneInfo.clear_cache()..zoneinfo.txt*
 classmethod ZoneInfo.clear_cache(*, only_keys=None)
 
    A method for invalidating the cache on the "ZoneInfo" class. If no
@@ -247,7 +247,7 @@ classmethod ZoneInfo.clear_cache(*, only_keys=None)
 
 The class has one attribute:
 
-ZoneInfo.key                             *ZoneInfo.key..zoneinfo.txt;*
+ZoneInfo.key                              *ZoneInfo.key..zoneinfo.txt*
 
    This is a read-only _attribute_ that returns the value of "key"
    passed to the constructor, which should be a lookup key in the IANA
@@ -342,8 +342,7 @@ environment with a different version of the time zone data.
 Functions
 =========
 
-                                *available_timezones()..zoneinfo.txt;*
-zoneinfo.available_timezones()
+zoneinfo.available_timezones()   *available_timezones()..zoneinfo.txt*
 
    Get a set containing all the valid keys for IANA time zones
    available anywhere on the time zone path. This is recalculated on
@@ -366,7 +365,7 @@ zoneinfo.available_timezones()
      (the Unicode Common Locale Data Repository) to get more user-
      friendly strings. See also the cautionary note on "ZoneInfo.key".
 
-zoneinfo.reset_tzpath(to=None)         *reset_tzpath()..zoneinfo.txt;*
+zoneinfo.reset_tzpath(to=None)          *reset_tzpath()..zoneinfo.txt*
 
    Sets or resets the time zone search path ("TZPATH") for the module.
    When called with no arguments, "TZPATH" is set to the default
@@ -384,7 +383,7 @@ zoneinfo.reset_tzpath(to=None)         *reset_tzpath()..zoneinfo.txt;*
 Globals
 =======
 
-zoneinfo.TZPATH                                *TZPATH..zoneinfo.txt;*
+zoneinfo.TZPATH                                 *TZPATH..zoneinfo.txt*
 
    A read-only sequence representing the time zone search path – when
    constructing a "ZoneInfo" from a key, the key is joined to each
@@ -405,14 +404,14 @@ zoneinfo.TZPATH                                *TZPATH..zoneinfo.txt;*
 Exceptions and warnings
 =======================
 
-                                *ZoneInfoNotFoundError..zoneinfo.txt;*
+                                 *ZoneInfoNotFoundError..zoneinfo.txt*
 exception zoneinfo.ZoneInfoNotFoundError
 
    Raised when construction of a "ZoneInfo" object fails because the
    specified key could not be found on the system. This is a subclass
    of "KeyError".
 
-                                 *InvalidTZPathWarning..zoneinfo.txt;*
+                                  *InvalidTZPathWarning..zoneinfo.txt*
 exception zoneinfo.InvalidTZPathWarning
 
    Raised when "PYTHONTZPATH" contains an invalid component that will

@@ -1,4 +1,4 @@
-*filecmp.txt;*                                Last change: 2023 Sep 09
+*filecmp.txt;*                                Last change: 2023 Sep 10
 
 "filecmp" — File and Directory Comparisons
 ******************************************
@@ -13,7 +13,7 @@ comparing files, see also the "difflib" module.
 
 The "filecmp" module defines the following functions:
 
-filecmp.cmp(f1, f2, shallow=True)                *cmp()..filecmp.txt;*
+filecmp.cmp(f1, f2, shallow=True)                 *cmp()..filecmp.txt*
 
    Compare the files named _f1_ and _f2_, returning "True" if they
    seem equal, "False" otherwise.
@@ -33,7 +33,7 @@ filecmp.cmp(f1, f2, shallow=True)                *cmp()..filecmp.txt;*
    the file changes.  The entire cache may be cleared using
    "clear_cache()".
 
-                                            *cmpfiles()..filecmp.txt;*
+                                             *cmpfiles()..filecmp.txt*
 filecmp.cmpfiles(dir1, dir2, common, shallow=True)
 
    Compare the files in the two directories _dir1_ and _dir2_ whose
@@ -54,7 +54,7 @@ filecmp.cmpfiles(dir1, dir2, common, shallow=True)
    with "b/c" and "a/d/e" with "b/d/e".  "'c'" and "'d/e'" will each
    be in one of the three returned lists.
 
-filecmp.clear_cache()                    *clear_cache()..filecmp.txt;*
+filecmp.clear_cache()                     *clear_cache()..filecmp.txt*
 
    Clear the filecmp cache. This may be useful if a file is compared
    so quickly after it is modified that it is within the mtime
@@ -66,7 +66,7 @@ filecmp.clear_cache()                    *clear_cache()..filecmp.txt;*
 The "dircmp" class
 ==================
 
-                                                *dircmp..filecmp.txt;*
+                                                 *dircmp..filecmp.txt*
 class filecmp.dircmp(a, b, ignore=None, hide=None)
 
    Construct a new directory comparison object, to compare the
@@ -79,17 +79,17 @@ class filecmp.dircmp(a, b, ignore=None, hide=None)
 
    The "dircmp" class provides the following methods:
 
-   report()                               *dircmp.report()..filecmp.txt;*
+   report()                                *dircmp.report()..filecmp.txt*
 
       Print (to "sys.stdout") a comparison between _a_ and _b_.
 
-                       *dircmp.report_partial_closure()..filecmp.txt;*
+                        *dircmp.report_partial_closure()..filecmp.txt*
    report_partial_closure()
 
       Print a comparison between _a_ and _b_ and common immediate
       subdirectories.
 
-   report_full_closure()     *dircmp.report_full_closure()..filecmp.txt;*
+   report_full_closure()      *dircmp.report_full_closure()..filecmp.txt*
 
       Print a comparison between _a_ and _b_ and common subdirectories
       (recursively).
@@ -102,65 +102,65 @@ class filecmp.dircmp(a, b, ignore=None, hide=None)
    lazily, so there is no speed penalty if only those attributes which
    are lightweight to compute are used.
 
-   left                                       *dircmp.left..filecmp.txt;*
+   left                                        *dircmp.left..filecmp.txt*
 
       The directory _a_.
 
-   right                                     *dircmp.right..filecmp.txt;*
+   right                                      *dircmp.right..filecmp.txt*
 
       The directory _b_.
 
-   left_list                             *dircmp.left_list..filecmp.txt;*
+   left_list                              *dircmp.left_list..filecmp.txt*
 
       Files and subdirectories in _a_, filtered by _hide_ and
       _ignore_.
 
-   right_list                           *dircmp.right_list..filecmp.txt;*
+   right_list                            *dircmp.right_list..filecmp.txt*
 
       Files and subdirectories in _b_, filtered by _hide_ and
       _ignore_.
 
-   common                                   *dircmp.common..filecmp.txt;*
+   common                                    *dircmp.common..filecmp.txt*
 
       Files and subdirectories in both _a_ and _b_.
 
-   left_only                             *dircmp.left_only..filecmp.txt;*
+   left_only                              *dircmp.left_only..filecmp.txt*
 
       Files and subdirectories only in _a_.
 
-   right_only                           *dircmp.right_only..filecmp.txt;*
+   right_only                            *dircmp.right_only..filecmp.txt*
 
       Files and subdirectories only in _b_.
 
-   common_dirs                         *dircmp.common_dirs..filecmp.txt;*
+   common_dirs                          *dircmp.common_dirs..filecmp.txt*
 
       Subdirectories in both _a_ and _b_.
 
-   common_files                       *dircmp.common_files..filecmp.txt;*
+   common_files                        *dircmp.common_files..filecmp.txt*
 
       Files in both _a_ and _b_.
 
-   common_funny                       *dircmp.common_funny..filecmp.txt;*
+   common_funny                        *dircmp.common_funny..filecmp.txt*
 
       Names in both _a_ and _b_, such that the type differs between
       the directories, or names for which "os.stat()" reports an
       error.
 
-   same_files                           *dircmp.same_files..filecmp.txt;*
+   same_files                            *dircmp.same_files..filecmp.txt*
 
       Files which are identical in both _a_ and _b_, using the class’s
       file comparison operator.
 
-   diff_files                           *dircmp.diff_files..filecmp.txt;*
+   diff_files                            *dircmp.diff_files..filecmp.txt*
 
       Files which are in both _a_ and _b_, whose contents differ
       according to the class’s file comparison operator.
 
-   funny_files                         *dircmp.funny_files..filecmp.txt;*
+   funny_files                          *dircmp.funny_files..filecmp.txt*
 
       Files which are in both _a_ and _b_, but could not be compared.
 
-   subdirs                                 *dircmp.subdirs..filecmp.txt;*
+   subdirs                                  *dircmp.subdirs..filecmp.txt*
 
       A dictionary mapping names in "common_dirs" to "dircmp"
       instances (or MyDirCmp instances if this instance is of type
@@ -170,7 +170,7 @@ class filecmp.dircmp(a, b, ignore=None, hide=None)
       instances. Now entries are the same type as _self_, if _self_ is
       a subclass of "dircmp".
 
-filecmp.DEFAULT_IGNORES                *DEFAULT_IGNORES..filecmp.txt;*
+filecmp.DEFAULT_IGNORES                 *DEFAULT_IGNORES..filecmp.txt*
 
    New in version 3.4.
 

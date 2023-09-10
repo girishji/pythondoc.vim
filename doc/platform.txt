@@ -1,4 +1,4 @@
-*platform.txt;*                               Last change: 2023 Sep 09
+*platform.txt;*                               Last change: 2023 Sep 10
 
 "platform" —  Access to underlying platform’s identifying data
 **************************************************************
@@ -16,7 +16,7 @@ Note:
 Cross Platform
 ==============
 
-                                       *architecture()..platform.txt;*
+                                        *architecture()..platform.txt*
 platform.architecture(executable=sys.executable, bits='', linkage='')
 
    Queries the given executable (defaults to the Python interpreter
@@ -47,17 +47,17 @@ platform.architecture(executable=sys.executable, bits='', linkage='')
 >
         is_64bits = sys.maxsize > 2**32
 <
-platform.machine()                          *machine()..platform.txt;*
+platform.machine()                           *machine()..platform.txt*
 
    Returns the machine type, e.g. "'AMD64'". An empty string is
    returned if the value cannot be determined.
 
-platform.node()                                *node()..platform.txt;*
+platform.node()                                 *node()..platform.txt*
 
    Returns the computer’s network name (may not be fully qualified!).
    An empty string is returned if the value cannot be determined.
 
-                                           *platform()..platform.txt;*
+                                            *platform()..platform.txt*
 platform.platform(aliased=False, terse=False)
 
    Returns a single string identifying the underlying platform with as
@@ -79,7 +79,7 @@ platform.platform(aliased=False, terse=False)
    "mac_ver()", if it returns a non-empty release string, to get the
    macOS version rather than the darwin version.
 
-platform.processor()                      *processor()..platform.txt;*
+platform.processor()                       *processor()..platform.txt*
 
    Returns the (real) processor name, e.g. "'amdk6'".
 
@@ -87,39 +87,39 @@ platform.processor()                      *processor()..platform.txt;*
    that many platforms do not provide this information or simply
    return the same value as for "machine()".  NetBSD does this.
 
-platform.python_build()                *python_build()..platform.txt;*
+platform.python_build()                 *python_build()..platform.txt*
 
    Returns a tuple "(buildno, builddate)" stating the Python build
    number and date as strings.
 
-platform.python_compiler()          *python_compiler()..platform.txt;*
+platform.python_compiler()           *python_compiler()..platform.txt*
 
    Returns a string identifying the compiler used for compiling
    Python.
 
-platform.python_branch()              *python_branch()..platform.txt;*
+platform.python_branch()               *python_branch()..platform.txt*
 
    Returns a string identifying the Python implementation SCM branch.
 
-                              *python_implementation()..platform.txt;*
+                               *python_implementation()..platform.txt*
 platform.python_implementation()
 
    Returns a string identifying the Python implementation. Possible
    return values are: ‘CPython’, ‘IronPython’, ‘Jython’, ‘PyPy’.
 
-platform.python_revision()          *python_revision()..platform.txt;*
+platform.python_revision()           *python_revision()..platform.txt*
 
    Returns a string identifying the Python implementation SCM
    revision.
 
-platform.python_version()            *python_version()..platform.txt;*
+platform.python_version()             *python_version()..platform.txt*
 
    Returns the Python version as string "'major.minor.patchlevel'".
 
    Note that unlike the Python "sys.version", the returned value will
    always include the patchlevel (it defaults to 0).
 
-                               *python_version_tuple()..platform.txt;*
+                                *python_version_tuple()..platform.txt*
 platform.python_version_tuple()
 
    Returns the Python version as tuple "(major, minor, patchlevel)" of
@@ -128,30 +128,30 @@ platform.python_version_tuple()
    Note that unlike the Python "sys.version", the returned value will
    always include the patchlevel (it defaults to "'0'").
 
-platform.release()                          *release()..platform.txt;*
+platform.release()                           *release()..platform.txt*
 
    Returns the system’s release, e.g. "'2.2.0'" or "'NT'". An empty
    string is returned if the value cannot be determined.
 
-platform.system()                            *system()..platform.txt;*
+platform.system()                             *system()..platform.txt*
 
    Returns the system/OS name, such as "'Linux'", "'Darwin'",
    "'Java'", "'Windows'". An empty string is returned if the value
    cannot be determined.
 
-                                       *system_alias()..platform.txt;*
+                                        *system_alias()..platform.txt*
 platform.system_alias(system, release, version)
 
    Returns "(system, release, version)" aliased to common marketing
    names used for some systems.  It also does some reordering of the
    information in some cases where it would otherwise cause confusion.
 
-platform.version()                          *version()..platform.txt;*
+platform.version()                           *version()..platform.txt*
 
    Returns the system’s release version, e.g. "'#3 on degas'". An
    empty string is returned if the value cannot be determined.
 
-platform.uname()                              *uname()..platform.txt;*
+platform.uname()                               *uname()..platform.txt*
 
    Fairly portable uname interface. Returns a "namedtuple()"
    containing six attributes: "system", "node", "release", "version",
@@ -174,7 +174,7 @@ platform.uname()                              *uname()..platform.txt;*
 Java Platform
 =============
 
-                                           *java_ver()..platform.txt;*
+                                            *java_ver()..platform.txt*
 platform.java_ver(release='', vendor='', vminfo=('', '', ''), osinfo=('', '', ''))
 
    Version interface for Jython.
@@ -189,7 +189,7 @@ platform.java_ver(release='', vendor='', vminfo=('', '', ''), osinfo=('', '', ''
 Windows Platform
 ================
 
-                                          *win32_ver()..platform.txt;*
+                                           *win32_ver()..platform.txt*
 platform.win32_ver(release='', version='', csd='', ptype='')
 
    Get additional version information from the Windows Registry and
@@ -205,7 +205,7 @@ platform.win32_ver(release='', version='', csd='', ptype='')
    It could also state _‘Checked’_ which means the OS version uses
    debugging code, i.e. code that checks arguments, ranges, etc.
 
-platform.win32_edition()              *win32_edition()..platform.txt;*
+platform.win32_edition()               *win32_edition()..platform.txt*
 
    Returns a string representing the current Windows edition, or
    "None" if the value cannot be determined.  Possible values include
@@ -214,7 +214,7 @@ platform.win32_edition()              *win32_edition()..platform.txt;*
 
    New in version 3.8.
 
-platform.win32_is_iot()                *win32_is_iot()..platform.txt;*
+platform.win32_is_iot()                 *win32_is_iot()..platform.txt*
 
    Return "True" if the Windows edition returned by "win32_edition()"
    is recognized as an IoT edition.
@@ -225,7 +225,7 @@ platform.win32_is_iot()                *win32_is_iot()..platform.txt;*
 macOS Platform
 ==============
 
-                                            *mac_ver()..platform.txt;*
+                                             *mac_ver()..platform.txt*
 platform.mac_ver(release='', versioninfo=('', '', ''), machine='')
 
    Get macOS version information and return it as tuple "(release,
@@ -239,7 +239,7 @@ platform.mac_ver(release='', versioninfo=('', '', ''), machine='')
 Unix Platforms
 ==============
 
-                                           *libc_ver()..platform.txt;*
+                                            *libc_ver()..platform.txt*
 platform.libc_ver(executable=sys.executable, lib='', version='', chunksize=16384)
 
    Tries to determine the libc version against which the file
@@ -257,7 +257,7 @@ platform.libc_ver(executable=sys.executable, lib='', version='', chunksize=16384
 Linux Platforms
 ===============
 
-                             *freedesktop_os_release()..platform.txt;*
+                              *freedesktop_os_release()..platform.txt*
 platform.freedesktop_os_release()
 
    Get operating system identification from "os-release" file and

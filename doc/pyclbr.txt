@@ -1,4 +1,4 @@
-*pyclbr.txt;*                                 Last change: 2023 Sep 09
+*pyclbr.txt;*                                 Last change: 2023 Sep 10
 
 "pyclbr" — Python module browser support
 ****************************************
@@ -16,7 +16,7 @@ code. This restriction makes it impossible to use this module with
 modules not implemented in Python, including all standard and optional
 extension modules.
 
-pyclbr.readmodule(module, path=None)       *readmodule()..pyclbr.txt;*
+pyclbr.readmodule(module, path=None)        *readmodule()..pyclbr.txt*
 
    Return a dictionary mapping module-level class names to class
    descriptors.  If possible, descriptors for imported base classes
@@ -28,7 +28,7 @@ pyclbr.readmodule(module, path=None)       *readmodule()..pyclbr.txt;*
    This function is the original interface and is only kept for back
    compatibility.  It returns a filtered version of the following.
 
-                                        *readmodule_ex()..pyclbr.txt;*
+                                         *readmodule_ex()..pyclbr.txt*
 pyclbr.readmodule_ex(module, path=None)
 
    Return a dictionary-based tree containing a function or class
@@ -56,36 +56,36 @@ Function Objects
 Class "Function" instances describe functions defined by def
 statements.  They have the following attributes:
 
-Function.file                             *Function.file..pyclbr.txt;*
+Function.file                              *Function.file..pyclbr.txt*
 
    Name of the file in which the function is defined.
 
-Function.module                         *Function.module..pyclbr.txt;*
+Function.module                          *Function.module..pyclbr.txt*
 
    The name of the module defining the function described.
 
-Function.name                             *Function.name..pyclbr.txt;*
+Function.name                              *Function.name..pyclbr.txt*
 
    The name of the function.
 
-Function.lineno                         *Function.lineno..pyclbr.txt;*
+Function.lineno                          *Function.lineno..pyclbr.txt*
 
    The line number in the file where the definition starts.
 
-Function.parent                         *Function.parent..pyclbr.txt;*
+Function.parent                          *Function.parent..pyclbr.txt*
 
    For top-level functions, None.  For nested functions, the parent.
 
    New in version 3.7.
 
-Function.children                     *Function.children..pyclbr.txt;*
+Function.children                      *Function.children..pyclbr.txt*
 
    A dictionary mapping names to descriptors for nested functions and
    classes.
 
    New in version 3.7.
 
-Function.is_async                     *Function.is_async..pyclbr.txt;*
+Function.is_async                      *Function.is_async..pyclbr.txt*
 
    "True" for functions that are defined with the "async" prefix,
    "False" otherwise.
@@ -99,36 +99,36 @@ Class Objects
 Class "Class" instances describe classes defined by class statements.
 They have the same attributes as Functions and two more.
 
-Class.file                                   *Class.file..pyclbr.txt;*
+Class.file                                    *Class.file..pyclbr.txt*
 
    Name of the file in which the class is defined.
 
-Class.module                               *Class.module..pyclbr.txt;*
+Class.module                                *Class.module..pyclbr.txt*
 
    The name of the module defining the class described.
 
-Class.name                                   *Class.name..pyclbr.txt;*
+Class.name                                    *Class.name..pyclbr.txt*
 
    The name of the class.
 
-Class.lineno                               *Class.lineno..pyclbr.txt;*
+Class.lineno                                *Class.lineno..pyclbr.txt*
 
    The line number in the file where the definition starts.
 
-Class.parent                               *Class.parent..pyclbr.txt;*
+Class.parent                                *Class.parent..pyclbr.txt*
 
    For top-level classes, None.  For nested classes, the parent.
 
    New in version 3.7.
 
-Class.children                           *Class.children..pyclbr.txt;*
+Class.children                            *Class.children..pyclbr.txt*
 
    A dictionary mapping names to descriptors for nested functions and
    classes.
 
    New in version 3.7.
 
-Class.super                                 *Class.super..pyclbr.txt;*
+Class.super                                  *Class.super..pyclbr.txt*
 
    A list of "Class" objects which describe the immediate base classes
    of the class being described.  Classes which are named as
@@ -136,7 +136,7 @@ Class.super                                 *Class.super..pyclbr.txt;*
    are listed as a string with the class name instead of as "Class"
    objects.
 
-Class.methods                             *Class.methods..pyclbr.txt;*
+Class.methods                              *Class.methods..pyclbr.txt*
 
    A dictionary mapping method names to line numbers.  This can be
    derived from the newer children dictionary, but remains for back-

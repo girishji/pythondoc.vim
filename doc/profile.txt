@@ -1,4 +1,4 @@
-*profile.txt;*                                Last change: 2023 Sep 09
+*profile.txt;*                                Last change: 2023 Sep 10
 
 The Python Profilers
 ********************
@@ -208,7 +208,7 @@ interface (implemented using "cmd") and interactive help.
 Both the "profile" and "cProfile" modules provide the following
 functions:
 
-profile.run(command, filename=None, sort=-1)     *run()..profile.txt;*
+profile.run(command, filename=None, sort=-1)      *run()..profile.txt*
 
    This function takes a single argument that can be passed to the
    "exec()" function, and an optional file name.  In all cases this
@@ -222,7 +222,7 @@ profile.run(command, filename=None, sort=-1)     *run()..profile.txt;*
    specified, it is passed to this "Stats" instance to control how the
    results are sorted.
 
-                                              *runctx()..profile.txt;*
+                                               *runctx()..profile.txt*
 profile.runctx(command, globals, locals, filename=None, sort=-1)
 
    This function is similar to "run()", with added arguments to supply
@@ -233,7 +233,7 @@ profile.runctx(command, globals, locals, filename=None, sort=-1)
 <
    and gathers profiling statistics as in the "run()" function above.
 
-                                               *Profile..profile.txt;*
+                                                *Profile..profile.txt*
 class profile.Profile(timer=None, timeunit=0.0, subcalls=True, builtins=True)
 
    This class is normally only used if more precise control over
@@ -275,38 +275,38 @@ class profile.Profile(timer=None, timeunit=0.0, subcalls=True, builtins=True)
 <
    Changed in version 3.8: Added context manager support.
 
-   enable()                              *Profile.enable()..profile.txt;*
+   enable()                               *Profile.enable()..profile.txt*
 
       Start collecting profiling data. Only in "cProfile".
 
-   disable()                            *Profile.disable()..profile.txt;*
+   disable()                             *Profile.disable()..profile.txt*
 
       Stop collecting profiling data. Only in "cProfile".
 
-   create_stats()                  *Profile.create_stats()..profile.txt;*
+   create_stats()                   *Profile.create_stats()..profile.txt*
 
       Stop collecting profiling data and record the results internally
       as the current profile.
 
-   print_stats(sort=-1)             *Profile.print_stats()..profile.txt;*
+   print_stats(sort=-1)              *Profile.print_stats()..profile.txt*
 
       Create a "Stats" object based on the current profile and print
       the results to stdout.
 
-   dump_stats(filename)              *Profile.dump_stats()..profile.txt;*
+   dump_stats(filename)               *Profile.dump_stats()..profile.txt*
 
       Write the results of the current profile to _filename_.
 
-   run(cmd)                                 *Profile.run()..profile.txt;*
+   run(cmd)                                  *Profile.run()..profile.txt*
 
       Profile the cmd via "exec()".
 
-   runctx(cmd, globals, locals)          *Profile.runctx()..profile.txt;*
+   runctx(cmd, globals, locals)           *Profile.runctx()..profile.txt*
 
       Profile the cmd via "exec()" with the specified global and local
       environment.
 
-   runcall(func, /, *args, **kwargs)    *Profile.runcall()..profile.txt;*
+   runcall(func, /, *args, **kwargs)     *Profile.runcall()..profile.txt*
 
       Profile "func(*args, **kwargs)"
 
@@ -321,7 +321,7 @@ The "Stats" Class
 
 Analysis of the profiler data is done using the "Stats" class.
 
-                                                 *Stats..profile.txt;*
+                                                  *Stats..profile.txt*
 class pstats.Stats(*filenames or profile, stream=sys.stdout)
 
    This class constructor creates an instance of a “statistics object”
@@ -346,7 +346,7 @@ class pstats.Stats(*filenames or profile, stream=sys.stdout)
 
    "Stats" objects have the following methods:
 
-   strip_dirs()                        *Stats.strip_dirs()..profile.txt;*
+   strip_dirs()                         *Stats.strip_dirs()..profile.txt*
 
       This method for the "Stats" class removes all leading path
       information from file names.  It is very useful in reducing the
@@ -360,7 +360,7 @@ class pstats.Stats(*filenames or profile, stream=sys.stdout)
       name), then the statistics for these two entries are accumulated
       into a single entry.
 
-   add(*filenames)                            *Stats.add()..profile.txt;*
+   add(*filenames)                             *Stats.add()..profile.txt*
 
       This method of the "Stats" class accumulates additional
       profiling information into the current profiling object.  Its
@@ -369,7 +369,7 @@ class pstats.Stats(*filenames or profile, stream=sys.stdout)
       identically named (re: file, line, name) functions are
       automatically accumulated into single function statistics.
 
-   dump_stats(filename)                *Stats.dump_stats()..profile.txt;*
+   dump_stats(filename)                 *Stats.dump_stats()..profile.txt*
 
       Save the data loaded into the "Stats" object to a file named
       _filename_.  The file is created if it does not exist, and is
@@ -377,7 +377,7 @@ class pstats.Stats(*filenames or profile, stream=sys.stdout)
       method of the same name on the "profile.Profile" and
       "cProfile.Profile" classes.
 
-   sort_stats(*keys)                   *Stats.sort_stats()..profile.txt;*
+   sort_stats(*keys)                    *Stats.sort_stats()..profile.txt*
 
       This method modifies the "Stats" object by sorting it according
       to the supplied criteria.  The argument can be either a string
@@ -451,14 +451,14 @@ class pstats.Stats(*filenames or profile, stream=sys.stdout)
 
       New in version 3.7: Added the SortKey enum.
 
-   reverse_order()                  *Stats.reverse_order()..profile.txt;*
+   reverse_order()                   *Stats.reverse_order()..profile.txt*
 
       This method for the "Stats" class reverses the ordering of the
       basic list within the object.  Note that by default ascending vs
       descending order is properly selected based on the sort key of
       choice.
 
-   print_stats(*restrictions)         *Stats.print_stats()..profile.txt;*
+   print_stats(*restrictions)          *Stats.print_stats()..profile.txt*
 
       This method for the "Stats" class prints out a report as
       described in the "profile.run()" definition.
@@ -488,7 +488,7 @@ class pstats.Stats(*filenames or profile, stream=sys.stdout)
       would limit the list to all functions having file names
       ".*foo:", and then proceed to only print the first 10% of them.
 
-   print_callers(*restrictions)     *Stats.print_callers()..profile.txt;*
+   print_callers(*restrictions)      *Stats.print_callers()..profile.txt*
 
       This method for the "Stats" class prints a list of all functions
       that called each function in the profiled database.  The
@@ -507,7 +507,7 @@ class pstats.Stats(*filenames or profile, stream=sys.stdout)
         cumulative times spent in the current function while it was
         invoked by this specific caller.
 
-   print_callees(*restrictions)     *Stats.print_callees()..profile.txt;*
+   print_callees(*restrictions)      *Stats.print_callees()..profile.txt*
 
       This method for the "Stats" class prints a list of all function
       that were called by the indicated function.  Aside from this
@@ -515,7 +515,7 @@ class pstats.Stats(*filenames or profile, stream=sys.stdout)
       the arguments and ordering are identical to the
       "print_callers()" method.
 
-   get_stats_profile()          *Stats.get_stats_profile()..profile.txt;*
+   get_stats_profile()           *Stats.get_stats_profile()..profile.txt*
 
       This method returns an instance of StatsProfile, which contains
       a mapping of function names to instances of FunctionProfile.

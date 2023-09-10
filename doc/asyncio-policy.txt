@@ -1,4 +1,4 @@
-*asyncio-policy.txt;*                         Last change: 2023 Sep 09
+*asyncio-policy.txt;*                         Last change: 2023 Sep 10
 
 Policies
 ********
@@ -26,12 +26,12 @@ Getting and Setting the Policy
 The following functions can be used to get and set the policy for the
 current process:
 
-                        *get_event_loop_policy()..asyncio-policy.txt;*
+                         *get_event_loop_policy()..asyncio-policy.txt*
 asyncio.get_event_loop_policy()
 
    Return the current process-wide policy.
 
-                        *set_event_loop_policy()..asyncio-policy.txt;*
+                         *set_event_loop_policy()..asyncio-policy.txt*
 asyncio.set_event_loop_policy(policy)
 
    Set the current process-wide policy to _policy_.
@@ -44,12 +44,12 @@ Policy Objects
 
 The abstract event loop policy base class is defined as follows:
 
-                        *AbstractEventLoopPolicy..asyncio-policy.txt;*
+                         *AbstractEventLoopPolicy..asyncio-policy.txt*
 class asyncio.AbstractEventLoopPolicy
 
    An abstract base class for asyncio policies.
 
-       *AbstractEventLoopPolicy.get_event_loop()..asyncio-policy.txt;*
+        *AbstractEventLoopPolicy.get_event_loop()..asyncio-policy.txt*
    get_event_loop()
 
       Get the event loop for the current context.
@@ -61,19 +61,19 @@ class asyncio.AbstractEventLoopPolicy
 
       Changed in version 3.6.
 
-       *AbstractEventLoopPolicy.set_event_loop()..asyncio-policy.txt;*
+        *AbstractEventLoopPolicy.set_event_loop()..asyncio-policy.txt*
    set_event_loop(loop)
 
       Set the event loop for the current context to _loop_.
 
-       *AbstractEventLoopPolicy.new_event_loop()..asyncio-policy.txt;*
+        *AbstractEventLoopPolicy.new_event_loop()..asyncio-policy.txt*
    new_event_loop()
 
       Create and return a new event loop object.
 
       This method should never return "None".
 
-    *AbstractEventLoopPolicy.get_child_watcher()..asyncio-policy.txt;*
+     *AbstractEventLoopPolicy.get_child_watcher()..asyncio-policy.txt*
    get_child_watcher()
 
       Get a child process watcher object.
@@ -85,7 +85,7 @@ class asyncio.AbstractEventLoopPolicy
 
       Deprecated since version 3.12.
 
-    *AbstractEventLoopPolicy.set_child_watcher()..asyncio-policy.txt;*
+     *AbstractEventLoopPolicy.set_child_watcher()..asyncio-policy.txt*
    set_child_watcher(watcher)
 
       Set the current child process watcher to _watcher_.
@@ -96,7 +96,7 @@ class asyncio.AbstractEventLoopPolicy
 
 asyncio ships with the following built-in policies:
 
-                         *DefaultEventLoopPolicy..asyncio-policy.txt;*
+                          *DefaultEventLoopPolicy..asyncio-policy.txt*
 class asyncio.DefaultEventLoopPolicy
 
    The default asyncio policy.  Uses "SelectorEventLoop" on Unix and
@@ -113,7 +113,7 @@ class asyncio.DefaultEventLoopPolicy
    no current event loop set and it decides to create one. In some
    future Python release this will become an error.
 
-                 *WindowsSelectorEventLoopPolicy..asyncio-policy.txt;*
+                  *WindowsSelectorEventLoopPolicy..asyncio-policy.txt*
 class asyncio.WindowsSelectorEventLoopPolicy
 
    An alternative event loop policy that uses the "SelectorEventLoop"
@@ -121,7 +121,7 @@ class asyncio.WindowsSelectorEventLoopPolicy
 
    Availability: Windows.
 
-                 *WindowsProactorEventLoopPolicy..asyncio-policy.txt;*
+                  *WindowsProactorEventLoopPolicy..asyncio-policy.txt*
 class asyncio.WindowsProactorEventLoopPolicy
 
    An alternative event loop policy that uses the "ProactorEventLoop"
@@ -151,14 +151,14 @@ See also the Subprocess and Threads section.
 The following two functions can be used to customize the child process
 watcher implementation used by the asyncio event loop:
 
-                            *get_child_watcher()..asyncio-policy.txt;*
+                             *get_child_watcher()..asyncio-policy.txt*
 asyncio.get_child_watcher()
 
    Return the current child watcher for the current policy.
 
    Deprecated since version 3.12.
 
-                            *set_child_watcher()..asyncio-policy.txt;*
+                             *set_child_watcher()..asyncio-policy.txt*
 asyncio.set_child_watcher(watcher)
 
    Set the current child watcher to _watcher_ for the current policy.
@@ -173,11 +173,11 @@ Note:
   child watchers.  For such event loops, using "set_child_watcher()"
   might be prohibited or have no effect.
 
-                           *AbstractChildWatcher..asyncio-policy.txt;*
+                            *AbstractChildWatcher..asyncio-policy.txt*
 class asyncio.AbstractChildWatcher
 
 
-       *AbstractChildWatcher.add_child_handler()..asyncio-policy.txt;*
+        *AbstractChildWatcher.add_child_handler()..asyncio-policy.txt*
    add_child_handler(pid, callback, *args)
 
       Register a new child handler.
@@ -189,7 +189,7 @@ class asyncio.AbstractChildWatcher
 
       The _callback_ callable must be thread-safe.
 
-    *AbstractChildWatcher.remove_child_handler()..asyncio-policy.txt;*
+     *AbstractChildWatcher.remove_child_handler()..asyncio-policy.txt*
    remove_child_handler(pid)
 
       Removes the handler for process with PID equal to _pid_.
@@ -197,7 +197,7 @@ class asyncio.AbstractChildWatcher
       The function returns "True" if the handler was successfully
       removed, "False" if there was nothing to remove.
 
-             *AbstractChildWatcher.attach_loop()..asyncio-policy.txt;*
+              *AbstractChildWatcher.attach_loop()..asyncio-policy.txt*
    attach_loop(loop)
 
       Attach the watcher to an event loop.
@@ -207,7 +207,7 @@ class asyncio.AbstractChildWatcher
 
       Note: loop may be "None".
 
-   is_active()    *AbstractChildWatcher.is_active()..asyncio-policy.txt;*
+   is_active()     *AbstractChildWatcher.is_active()..asyncio-policy.txt*
 
       Return "True" if the watcher is ready to use.
 
@@ -216,7 +216,7 @@ class asyncio.AbstractChildWatcher
 
       New in version 3.8.
 
-   close()            *AbstractChildWatcher.close()..asyncio-policy.txt;*
+   close()             *AbstractChildWatcher.close()..asyncio-policy.txt*
 
       Close the watcher.
 
@@ -225,7 +225,7 @@ class asyncio.AbstractChildWatcher
 
    Deprecated since version 3.12.
 
-                           *ThreadedChildWatcher..asyncio-policy.txt;*
+                            *ThreadedChildWatcher..asyncio-policy.txt*
 class asyncio.ThreadedChildWatcher
 
    This implementation starts a new waiting thread for every
@@ -242,7 +242,7 @@ class asyncio.ThreadedChildWatcher
 
    New in version 3.8.
 
-                          *MultiLoopChildWatcher..asyncio-policy.txt;*
+                           *MultiLoopChildWatcher..asyncio-policy.txt*
 class asyncio.MultiLoopChildWatcher
 
    This implementation registers a "SIGCHLD" signal handler on
@@ -263,7 +263,7 @@ class asyncio.MultiLoopChildWatcher
 
    Deprecated since version 3.12.
 
-                               *SafeChildWatcher..asyncio-policy.txt;*
+                                *SafeChildWatcher..asyncio-policy.txt*
 class asyncio.SafeChildWatcher
 
    This implementation uses active event loop from the main thread to
@@ -280,7 +280,7 @@ class asyncio.SafeChildWatcher
 
    Deprecated since version 3.12.
 
-                               *FastChildWatcher..asyncio-policy.txt;*
+                                *FastChildWatcher..asyncio-policy.txt*
 class asyncio.FastChildWatcher
 
    This implementation reaps every terminated processes by calling
@@ -295,7 +295,7 @@ class asyncio.FastChildWatcher
 
    Deprecated since version 3.12.
 
-                              *PidfdChildWatcher..asyncio-policy.txt;*
+                               *PidfdChildWatcher..asyncio-policy.txt*
 class asyncio.PidfdChildWatcher
 
    This implementation polls process file descriptors (pidfds) to

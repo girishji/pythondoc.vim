@@ -1,4 +1,4 @@
-*unittest.txt;*                               Last change: 2023 Sep 09
+*unittest.txt;*                               Last change: 2023 Sep 10
 
 "unittest" — Unit testing framework
 ***********************************
@@ -586,28 +586,27 @@ attribute:
 The following decorators and exception implement test skipping and
 expected failures:
 
-@unittest.skip(reason)                         *skip()..unittest.txt;*
+@unittest.skip(reason)                          *skip()..unittest.txt*
 
    Unconditionally skip the decorated test.  _reason_ should describe
    why the test is being skipped.
 
-@unittest.skipIf(condition, reason)          *skipIf()..unittest.txt;*
+@unittest.skipIf(condition, reason)           *skipIf()..unittest.txt*
 
    Skip the decorated test if _condition_ is true.
 
-                                         *skipUnless()..unittest.txt;*
-@unittest.skipUnless(condition, reason)
+@unittest.skipUnless(condition, reason)   *skipUnless()..unittest.txt*
 
    Skip the decorated test unless _condition_ is true.
 
-@unittest.expectedFailure           *expectedFailure()..unittest.txt;*
+@unittest.expectedFailure            *expectedFailure()..unittest.txt*
 
    Mark the test as an expected failure or error.  If the test fails
    or errors in the test function itself (rather than in one of the
    _test fixture_ methods) then it will be considered a success.  If
    the test passes, it will be considered a failure.
 
-exception unittest.SkipTest(reason)          *SkipTest..unittest.txt;*
+exception unittest.SkipTest(reason)           *SkipTest..unittest.txt*
 
    This exception is raised to skip a test.
 
@@ -695,7 +694,7 @@ This section describes in depth the API of "unittest".
 Test cases
 ----------
 
-                                             *TestCase..unittest.txt;*
+                                              *TestCase..unittest.txt*
 class unittest.TestCase(methodName='runTest')
 
    Instances of the "TestCase" class represent the logical test units
@@ -721,7 +720,7 @@ class unittest.TestCase(methodName='runTest')
 
    Methods in the first group (running the test) are:
 
-   setUp()                              *TestCase.setUp()..unittest.txt;*
+   setUp()                               *TestCase.setUp()..unittest.txt*
 
       Method called to prepare the test fixture.  This is called
       immediately before calling the test method; other than
@@ -729,7 +728,7 @@ class unittest.TestCase(methodName='runTest')
       method will be considered an error rather than a test failure.
       The default implementation does nothing.
 
-   tearDown()                        *TestCase.tearDown()..unittest.txt;*
+   tearDown()                         *TestCase.tearDown()..unittest.txt*
 
       Method called immediately after the test method has been called
       and the result recorded.  This is called even if the test method
@@ -742,7 +741,7 @@ class unittest.TestCase(methodName='runTest')
       "setUp()" succeeds, regardless of the outcome of the test
       method. The default implementation does nothing.
 
-   setUpClass()                    *TestCase.setUpClass()..unittest.txt;*
+   setUpClass()                     *TestCase.setUpClass()..unittest.txt*
 
       A class method called before tests in an individual class are
       run. "setUpClass" is called with the class as the only argument
@@ -756,7 +755,7 @@ class unittest.TestCase(methodName='runTest')
 
       New in version 3.2.
 
-   tearDownClass()              *TestCase.tearDownClass()..unittest.txt;*
+   tearDownClass()               *TestCase.tearDownClass()..unittest.txt*
 
       A class method called after tests in an individual class have
       run. "tearDownClass" is called with the class as the only
@@ -770,7 +769,7 @@ class unittest.TestCase(methodName='runTest')
 
       New in version 3.2.
 
-   run(result=None)                       *TestCase.run()..unittest.txt;*
+   run(result=None)                        *TestCase.run()..unittest.txt*
 
       Run the test, collecting the result into the "TestResult" object
       passed as _result_.  If _result_ is omitted or "None", a
@@ -784,7 +783,7 @@ class unittest.TestCase(methodName='runTest')
       Changed in version 3.3: Previous versions of "run" did not
       return the result. Neither did calling an instance.
 
-   skipTest(reason)                  *TestCase.skipTest()..unittest.txt;*
+   skipTest(reason)                   *TestCase.skipTest()..unittest.txt*
 
       Calling this during a test method or "setUp()" skips the current
       test.  See Skipping tests and expected failures for more
@@ -792,7 +791,7 @@ class unittest.TestCase(methodName='runTest')
 
       New in version 3.1.
 
-   subTest(msg=None, **params)        *TestCase.subTest()..unittest.txt;*
+   subTest(msg=None, **params)         *TestCase.subTest()..unittest.txt*
 
       Return a context manager which executes the enclosed code block
       as a subtest.  _msg_ and _params_ are optional, arbitrary values
@@ -807,7 +806,7 @@ class unittest.TestCase(methodName='runTest')
 
       New in version 3.4.
 
-   debug()                              *TestCase.debug()..unittest.txt;*
+   debug()                               *TestCase.debug()..unittest.txt*
 
       Run the test without collecting the result.  This allows
       exceptions raised by the test to be propagated to the caller,
@@ -851,7 +850,7 @@ class unittest.TestCase(methodName='runTest')
    "assertRaises()", "assertRaisesRegex()", "assertWarns()",
    "assertWarnsRegex()" only when they are used as a context manager.
 
-                               *TestCase.assertEqual()..unittest.txt;*
+                                *TestCase.assertEqual()..unittest.txt*
    assertEqual(first, second, msg=None)
 
       Test that _first_ and _second_ are equal.  If the values do not
@@ -870,14 +869,14 @@ class unittest.TestCase(methodName='runTest')
       Changed in version 3.2: "assertMultiLineEqual()" added as the
       default type equality function for comparing strings.
 
-                            *TestCase.assertNotEqual()..unittest.txt;*
+                             *TestCase.assertNotEqual()..unittest.txt*
    assertNotEqual(first, second, msg=None)
 
       Test that _first_ and _second_ are not equal.  If the values do
       compare equal, the test will fail.
 
-   assertTrue(expr, msg=None)      *TestCase.assertTrue()..unittest.txt;*
-   assertFalse(expr, msg=None)    *TestCase.assertFalse()..unittest.txt;*
+   assertTrue(expr, msg=None)       *TestCase.assertTrue()..unittest.txt*
+   assertFalse(expr, msg=None)     *TestCase.assertFalse()..unittest.txt*
 
       Test that _expr_ is true (or false).
 
@@ -888,40 +887,39 @@ class unittest.TestCase(methodName='runTest')
       == b)"), because they provide a better error message in case of
       failure.
 
-                                  *TestCase.assertIs()..unittest.txt;*
+                                   *TestCase.assertIs()..unittest.txt*
    assertIs(first, second, msg=None)
 
-                               *TestCase.assertIsNot()..unittest.txt;*
+                                *TestCase.assertIsNot()..unittest.txt*
    assertIsNot(first, second, msg=None)
 
       Test that _first_ and _second_ are (or are not) the same object.
 
       New in version 3.1.
 
-                              *TestCase.assertIsNone()..unittest.txt;*
-   assertIsNone(expr, msg=None)
+   assertIsNone(expr, msg=None)   *TestCase.assertIsNone()..unittest.txt*
 
-                           *TestCase.assertIsNotNone()..unittest.txt;*
+                            *TestCase.assertIsNotNone()..unittest.txt*
    assertIsNotNone(expr, msg=None)
 
       Test that _expr_ is (or is not) "None".
 
       New in version 3.1.
 
-                                  *TestCase.assertIn()..unittest.txt;*
+                                   *TestCase.assertIn()..unittest.txt*
    assertIn(member, container, msg=None)
 
-                               *TestCase.assertNotIn()..unittest.txt;*
+                                *TestCase.assertNotIn()..unittest.txt*
    assertNotIn(member, container, msg=None)
 
       Test that _member_ is (or is not) in _container_.
 
       New in version 3.1.
 
-                          *TestCase.assertIsInstance()..unittest.txt;*
+                           *TestCase.assertIsInstance()..unittest.txt*
    assertIsInstance(obj, cls, msg=None)
 
-                       *TestCase.assertNotIsInstance()..unittest.txt;*
+                        *TestCase.assertNotIsInstance()..unittest.txt*
    assertNotIsInstance(obj, cls, msg=None)
 
       Test that _obj_ is (or is not) an instance of _cls_ (which can
@@ -954,7 +952,7 @@ class unittest.TestCase(methodName='runTest')
    |                                                           | _logger_ with minimum _level_          |              |
    +-----------------------------------------------------------+----------------------------------------+--------------+
 
-                              *TestCase.assertRaises()..unittest.txt;*
+                               *TestCase.assertRaises()..unittest.txt*
    assertRaises(exception, callable, *args, **kwds)
    assertRaises(exception, *, msg=None)
 
@@ -994,7 +992,7 @@ class unittest.TestCase(methodName='runTest')
       Changed in version 3.3: Added the _msg_ keyword argument when
       used as a context manager.
 
-                         *TestCase.assertRaisesRegex()..unittest.txt;*
+                          *TestCase.assertRaisesRegex()..unittest.txt*
    assertRaisesRegex(exception, regex, callable, *args, **kwds)
    assertRaisesRegex(exception, regex, *, msg=None)
 
@@ -1018,7 +1016,7 @@ class unittest.TestCase(methodName='runTest')
       Changed in version 3.3: Added the _msg_ keyword argument when
       used as a context manager.
 
-                               *TestCase.assertWarns()..unittest.txt;*
+                                *TestCase.assertWarns()..unittest.txt*
    assertWarns(warning, callable, *args, **kwds)
    assertWarns(warning, *, msg=None)
 
@@ -1059,7 +1057,7 @@ class unittest.TestCase(methodName='runTest')
       Changed in version 3.3: Added the _msg_ keyword argument when
       used as a context manager.
 
-                          *TestCase.assertWarnsRegex()..unittest.txt;*
+                           *TestCase.assertWarnsRegex()..unittest.txt*
    assertWarnsRegex(warning, regex, callable, *args, **kwds)
    assertWarnsRegex(warning, regex, *, msg=None)
 
@@ -1082,7 +1080,7 @@ class unittest.TestCase(methodName='runTest')
       Changed in version 3.3: Added the _msg_ keyword argument when
       used as a context manager.
 
-                                *TestCase.assertLogs()..unittest.txt;*
+                                 *TestCase.assertLogs()..unittest.txt*
    assertLogs(logger=None, level=None)
 
       A context manager to test that at least one message is logged on
@@ -1106,12 +1104,12 @@ class unittest.TestCase(methodName='runTest')
       which keeps tracks of the matching log messages.  It has two
       attributes:
 
-      records                              *TestCase.records..unittest.txt;*
+      records                               *TestCase.records..unittest.txt*
 
          A list of "logging.LogRecord" objects of the matching log
          messages.
 
-      output                                *TestCase.output..unittest.txt;*
+      output                                 *TestCase.output..unittest.txt*
 
          A list of "str" objects with the formatted output of matching
          messages.
@@ -1126,7 +1124,7 @@ class unittest.TestCase(methodName='runTest')
 <
       New in version 3.4.
 
-                              *TestCase.assertNoLogs()..unittest.txt;*
+                               *TestCase.assertNoLogs()..unittest.txt*
    assertNoLogs(logger=None, level=None)
 
       A context manager to test that no messages are logged on the
@@ -1173,10 +1171,10 @@ class unittest.TestCase(methodName='runTest')
    |                                         | regardless of their order.       |                |
    +-----------------------------------------+----------------------------------+----------------+
 
-                         *TestCase.assertAlmostEqual()..unittest.txt;*
+                          *TestCase.assertAlmostEqual()..unittest.txt*
    assertAlmostEqual(first, second, places=7, msg=None, delta=None)
 
-                      *TestCase.assertNotAlmostEqual()..unittest.txt;*
+                       *TestCase.assertNotAlmostEqual()..unittest.txt*
    assertNotAlmostEqual(first, second, places=7, msg=None, delta=None)
 
       Test that _first_ and _second_ are approximately (or not
@@ -1197,16 +1195,16 @@ class unittest.TestCase(methodName='runTest')
       "assertNotAlmostEqual()" automatically fails if the objects
       compare equal.  Added the _delta_ keyword argument.
 
-                             *TestCase.assertGreater()..unittest.txt;*
+                              *TestCase.assertGreater()..unittest.txt*
    assertGreater(first, second, msg=None)
 
-                        *TestCase.assertGreaterEqual()..unittest.txt;*
+                         *TestCase.assertGreaterEqual()..unittest.txt*
    assertGreaterEqual(first, second, msg=None)
 
-                                *TestCase.assertLess()..unittest.txt;*
+                                 *TestCase.assertLess()..unittest.txt*
    assertLess(first, second, msg=None)
 
-                           *TestCase.assertLessEqual()..unittest.txt;*
+                            *TestCase.assertLessEqual()..unittest.txt*
    assertLessEqual(first, second, msg=None)
 
       Test that _first_ is respectively >, >=, < or <= than _second_
@@ -1217,10 +1215,10 @@ class unittest.TestCase(methodName='runTest')
 <
       New in version 3.1.
 
-                               *TestCase.assertRegex()..unittest.txt;*
+                                *TestCase.assertRegex()..unittest.txt*
    assertRegex(text, regex, msg=None)
 
-                            *TestCase.assertNotRegex()..unittest.txt;*
+                             *TestCase.assertNotRegex()..unittest.txt*
    assertNotRegex(text, regex, msg=None)
 
       Test that a _regex_ search matches (or does not match) _text_.
@@ -1237,7 +1235,7 @@ class unittest.TestCase(methodName='runTest')
 
       New in version 3.2: "assertNotRegex()".
 
-                          *TestCase.assertCountEqual()..unittest.txt;*
+                           *TestCase.assertCountEqual()..unittest.txt*
    assertCountEqual(first, second, msg=None)
 
       Test that sequence _first_ contains the same elements as
@@ -1259,7 +1257,7 @@ class unittest.TestCase(methodName='runTest')
    it’s also possible to register new methods using
    "addTypeEqualityFunc()":
 
-                       *TestCase.addTypeEqualityFunc()..unittest.txt;*
+                        *TestCase.addTypeEqualityFunc()..unittest.txt*
    addTypeEqualityFunc(typeobj, function)
 
       Registers a type-specific method called by "assertEqual()" to
@@ -1294,7 +1292,7 @@ class unittest.TestCase(methodName='runTest')
    | "assertDictEqual(a, b)"                   | dicts                         | 3.1            |
    +-------------------------------------------+-------------------------------+----------------+
 
-                      *TestCase.assertMultiLineEqual()..unittest.txt;*
+                       *TestCase.assertMultiLineEqual()..unittest.txt*
    assertMultiLineEqual(first, second, msg=None)
 
       Test that the multiline string _first_ is equal to the string
@@ -1305,7 +1303,7 @@ class unittest.TestCase(methodName='runTest')
 
       New in version 3.1.
 
-                       *TestCase.assertSequenceEqual()..unittest.txt;*
+                        *TestCase.assertSequenceEqual()..unittest.txt*
    assertSequenceEqual(first, second, msg=None, seq_type=None)
 
       Tests that two sequences are equal.  If a _seq_type_ is
@@ -1319,10 +1317,10 @@ class unittest.TestCase(methodName='runTest')
 
       New in version 3.1.
 
-                           *TestCase.assertListEqual()..unittest.txt;*
+                            *TestCase.assertListEqual()..unittest.txt*
    assertListEqual(first, second, msg=None)
 
-                          *TestCase.assertTupleEqual()..unittest.txt;*
+                           *TestCase.assertTupleEqual()..unittest.txt*
    assertTupleEqual(first, second, msg=None)
 
       Tests that two lists or tuples are equal.  If not, an error
@@ -1333,7 +1331,7 @@ class unittest.TestCase(methodName='runTest')
 
       New in version 3.1.
 
-                            *TestCase.assertSetEqual()..unittest.txt;*
+                             *TestCase.assertSetEqual()..unittest.txt*
    assertSetEqual(first, second, msg=None)
 
       Tests that two sets are equal.  If not, an error message is
@@ -1346,7 +1344,7 @@ class unittest.TestCase(methodName='runTest')
 
       New in version 3.1.
 
-                           *TestCase.assertDictEqual()..unittest.txt;*
+                            *TestCase.assertDictEqual()..unittest.txt*
    assertDictEqual(first, second, msg=None)
 
       Test that two dictionaries are equal.  If not, an error message
@@ -1359,12 +1357,12 @@ class unittest.TestCase(methodName='runTest')
    Finally the "TestCase" provides the following methods and
    attributes:
 
-   fail(msg=None)                        *TestCase.fail()..unittest.txt;*
+   fail(msg=None)                         *TestCase.fail()..unittest.txt*
 
       Signals a test failure unconditionally, with _msg_ or "None" for
       the error message.
 
-   failureException            *TestCase.failureException..unittest.txt;*
+   failureException             *TestCase.failureException..unittest.txt*
 
       This class attribute gives the exception raised by the test
       method.  If a test framework needs to use a specialized
@@ -1373,7 +1371,7 @@ class unittest.TestCase(methodName='runTest')
       framework.  The initial value of this attribute is
       "AssertionError".
 
-   longMessage                      *TestCase.longMessage..unittest.txt;*
+   longMessage                       *TestCase.longMessage..unittest.txt*
 
       This class attribute determines what happens when a custom
       failure message is passed as the msg argument to an assertXYY
@@ -1390,7 +1388,7 @@ class unittest.TestCase(methodName='runTest')
 
       New in version 3.1.
 
-   maxDiff                              *TestCase.maxDiff..unittest.txt;*
+   maxDiff                               *TestCase.maxDiff..unittest.txt*
 
       This attribute controls the maximum length of diffs output by
       assert methods that report diffs on failure. It defaults to 80*8
@@ -1407,12 +1405,12 @@ class unittest.TestCase(methodName='runTest')
    Testing frameworks can use the following methods to collect
    information on the test:
 
-   countTestCases()            *TestCase.countTestCases()..unittest.txt;*
+   countTestCases()             *TestCase.countTestCases()..unittest.txt*
 
       Return the number of tests represented by this test object.  For
       "TestCase" instances, this will always be "1".
 
-   defaultTestResult()      *TestCase.defaultTestResult()..unittest.txt;*
+   defaultTestResult()       *TestCase.defaultTestResult()..unittest.txt*
 
       Return an instance of the test result class that should be used
       for this test case class (if no other result instance is
@@ -1422,13 +1420,13 @@ class unittest.TestCase(methodName='runTest')
       "TestResult"; subclasses of "TestCase" should override this as
       necessary.
 
-   id()                                    *TestCase.id()..unittest.txt;*
+   id()                                     *TestCase.id()..unittest.txt*
 
       Return a string identifying the specific test case.  This is
       usually the full name of the test method, including the module
       and class name.
 
-   shortDescription()        *TestCase.shortDescription()..unittest.txt;*
+   shortDescription()         *TestCase.shortDescription()..unittest.txt*
 
       Returns a description of the test, or "None" if no description
       has been provided.  The default implementation of this method
@@ -1441,7 +1439,7 @@ class unittest.TestCase(methodName='runTest')
       extensions and adding the test name was moved to the
       "TextTestResult" in Python 3.2.
 
-                                *TestCase.addCleanup()..unittest.txt;*
+                                 *TestCase.addCleanup()..unittest.txt*
    addCleanup(function, /, *args, **kwargs)
 
       Add a function to be called after "tearDown()" to cleanup
@@ -1455,7 +1453,7 @@ class unittest.TestCase(methodName='runTest')
 
       New in version 3.1.
 
-   enterContext(cm)              *TestCase.enterContext()..unittest.txt;*
+   enterContext(cm)               *TestCase.enterContext()..unittest.txt*
 
       Enter the supplied _context manager_.  If successful, also add
       its "__exit__()" method as a cleanup function by "addCleanup()"
@@ -1463,7 +1461,7 @@ class unittest.TestCase(methodName='runTest')
 
       New in version 3.11.
 
-   doCleanups()                    *TestCase.doCleanups()..unittest.txt;*
+   doCleanups()                     *TestCase.doCleanups()..unittest.txt*
 
       This method is called unconditionally after "tearDown()", or
       after "setUp()" if "setUp()" raises an exception.
@@ -1478,7 +1476,7 @@ class unittest.TestCase(methodName='runTest')
 
       New in version 3.1.
 
-                           *TestCase.addClassCleanup()..unittest.txt;*
+                            *TestCase.addClassCleanup()..unittest.txt*
    classmethod addClassCleanup(function, /, *args, **kwargs)
 
       Add a function to be called after "tearDownClass()" to cleanup
@@ -1492,7 +1490,7 @@ class unittest.TestCase(methodName='runTest')
 
       New in version 3.8.
 
-                         *TestCase.enterClassContext()..unittest.txt;*
+                          *TestCase.enterClassContext()..unittest.txt*
    classmethod enterClassContext(cm)
 
       Enter the supplied _context manager_.  If successful, also add
@@ -1502,7 +1500,7 @@ class unittest.TestCase(methodName='runTest')
 
       New in version 3.11.
 
-                           *TestCase.doClassCleanups()..unittest.txt;*
+                            *TestCase.doClassCleanups()..unittest.txt*
    classmethod doClassCleanups()
 
       This method is called unconditionally after "tearDownClass()",
@@ -1518,7 +1516,7 @@ class unittest.TestCase(methodName='runTest')
 
       New in version 3.8.
 
-                              *IsolatedAsyncioTestCase..unittest.txt;*
+                               *IsolatedAsyncioTestCase..unittest.txt*
 class unittest.IsolatedAsyncioTestCase(methodName='runTest')
 
    This class provides an API similar to "TestCase" and also accepts
@@ -1526,7 +1524,7 @@ class unittest.IsolatedAsyncioTestCase(methodName='runTest')
 
    New in version 3.8.
 
-                 *IsolatedAsyncioTestCase.asyncSetUp()..unittest.txt;*
+                  *IsolatedAsyncioTestCase.asyncSetUp()..unittest.txt*
    coroutine asyncSetUp()
 
       Method called to prepare the test fixture. This is called after
@@ -1535,7 +1533,7 @@ class unittest.IsolatedAsyncioTestCase(methodName='runTest')
       raised by this method will be considered an error rather than a
       test failure. The default implementation does nothing.
 
-              *IsolatedAsyncioTestCase.asyncTearDown()..unittest.txt;*
+               *IsolatedAsyncioTestCase.asyncTearDown()..unittest.txt*
    coroutine asyncTearDown()
 
       Method called immediately after the test method has been called
@@ -1550,13 +1548,13 @@ class unittest.IsolatedAsyncioTestCase(methodName='runTest')
       regardless of the outcome of the test method. The default
       implementation does nothing.
 
-            *IsolatedAsyncioTestCase.addAsyncCleanup()..unittest.txt;*
+             *IsolatedAsyncioTestCase.addAsyncCleanup()..unittest.txt*
    addAsyncCleanup(function, /, *args, **kwargs)
 
       This method accepts a coroutine that can be used as a cleanup
       function.
 
-          *IsolatedAsyncioTestCase.enterAsyncContext()..unittest.txt;*
+           *IsolatedAsyncioTestCase.enterAsyncContext()..unittest.txt*
    coroutine enterAsyncContext(cm)
 
       Enter the supplied _asynchronous context manager_.  If
@@ -1566,7 +1564,7 @@ class unittest.IsolatedAsyncioTestCase(methodName='runTest')
 
       New in version 3.11.
 
-   run(result=None)        *IsolatedAsyncioTestCase.run()..unittest.txt;*
+   run(result=None)         *IsolatedAsyncioTestCase.run()..unittest.txt*
 
       Sets up a new event loop to run the test, collecting the result
       into the "TestResult" object passed as _result_.  If _result_ is
@@ -1615,7 +1613,7 @@ class unittest.IsolatedAsyncioTestCase(methodName='runTest')
    "asyncSetUp", "test_response", "asyncTearDown", "tearDown",
    "cleanup"]".
 
-                                     *FunctionTestCase..unittest.txt;*
+                                      *FunctionTestCase..unittest.txt*
 class unittest.FunctionTestCase(testFunc, setUp=None, tearDown=None, description=None)
 
    This class implements the portion of the "TestCase" interface which
@@ -1628,7 +1626,7 @@ class unittest.FunctionTestCase(testFunc, setUp=None, tearDown=None, description
 Grouping tests
 --------------
 
-class unittest.TestSuite(tests=())          *TestSuite..unittest.txt;*
+class unittest.TestSuite(tests=())           *TestSuite..unittest.txt*
 
    This class represents an aggregation of individual test cases and
    test suites. The class presents the interface needed by the test
@@ -1647,11 +1645,11 @@ class unittest.TestSuite(tests=())          *TestSuite..unittest.txt;*
    Some additional methods are available to add tests to "TestSuite"
    instances:
 
-   addTest(test)                     *TestSuite.addTest()..unittest.txt;*
+   addTest(test)                      *TestSuite.addTest()..unittest.txt*
 
       Add a "TestCase" or "TestSuite" to the suite.
 
-   addTests(tests)                  *TestSuite.addTests()..unittest.txt;*
+   addTests(tests)                   *TestSuite.addTests()..unittest.txt*
 
       Add all the tests from an iterable of "TestCase" and "TestSuite"
       instances to this test suite.
@@ -1661,26 +1659,26 @@ class unittest.TestSuite(tests=())          *TestSuite..unittest.txt;*
 
    "TestSuite" shares the following methods with "TestCase":
 
-   run(result)                           *TestSuite.run()..unittest.txt;*
+   run(result)                            *TestSuite.run()..unittest.txt*
 
       Run the tests associated with this suite, collecting the result
       into the test result object passed as _result_.  Note that
       unlike "TestCase.run()", "TestSuite.run()" requires the result
       object to be passed in.
 
-   debug()                             *TestSuite.debug()..unittest.txt;*
+   debug()                              *TestSuite.debug()..unittest.txt*
 
       Run the tests associated with this suite without collecting the
       result. This allows exceptions raised by the test to be
       propagated to the caller and can be used to support running
       tests under a debugger.
 
-   countTestCases()           *TestSuite.countTestCases()..unittest.txt;*
+   countTestCases()            *TestSuite.countTestCases()..unittest.txt*
 
       Return the number of tests represented by this test object,
       including all individual tests and sub-suites.
 
-   __iter__()                       *TestSuite.__iter__()..unittest.txt;*
+   __iter__()                        *TestSuite.__iter__()..unittest.txt*
 
       Tests grouped by a "TestSuite" are always accessed by iteration.
       Subclasses can lazily provide tests by overriding "__iter__()".
@@ -1709,7 +1707,7 @@ class unittest.TestSuite(tests=())          *TestSuite..unittest.txt;*
 Loading and running tests
 -------------------------
 
-class unittest.TestLoader                  *TestLoader..unittest.txt;*
+class unittest.TestLoader                   *TestLoader..unittest.txt*
 
    The "TestLoader" class is used to create test suites from classes
    and modules.  Normally, there is no need to create an instance of
@@ -1720,7 +1718,7 @@ class unittest.TestLoader                  *TestLoader..unittest.txt;*
 
    "TestLoader" objects have the following attributes:
 
-   errors                              *TestLoader.errors..unittest.txt;*
+   errors                               *TestLoader.errors..unittest.txt*
 
       A list of the non-fatal errors encountered while loading tests.
       Not reset by the loader at any point. Fatal errors are signalled
@@ -1732,7 +1730,7 @@ class unittest.TestLoader                  *TestLoader..unittest.txt;*
 
    "TestLoader" objects have the following methods:
 
-                   *TestLoader.loadTestsFromTestCase()..unittest.txt;*
+                    *TestLoader.loadTestsFromTestCase()..unittest.txt*
    loadTestsFromTestCase(testCaseClass)
 
       Return a suite of all test cases contained in the
@@ -1744,7 +1742,7 @@ class unittest.TestLoader                  *TestLoader..unittest.txt;*
       methods, but the "runTest()" method is implemented, a single
       test case is created for that method instead.
 
-                     *TestLoader.loadTestsFromModule()..unittest.txt;*
+                      *TestLoader.loadTestsFromModule()..unittest.txt*
    loadTestsFromModule(module, *, pattern=None)
 
       Return a suite of all test cases contained in the given module.
@@ -1774,7 +1772,7 @@ class unittest.TestLoader                  *TestLoader..unittest.txt;*
       Changed in version 3.12: The undocumented and unofficial
       _use_load_tests_ parameter has been removed.
 
-                       *TestLoader.loadTestsFromName()..unittest.txt;*
+                        *TestLoader.loadTestsFromName()..unittest.txt*
    loadTestsFromName(name, module=None)
 
       Return a suite of all test cases given a string specifier.
@@ -1806,20 +1804,20 @@ class unittest.TestLoader                  *TestLoader..unittest.txt;*
       that error when run will be returned. These errors are included
       in the errors accumulated by self.errors.
 
-                      *TestLoader.loadTestsFromNames()..unittest.txt;*
+                       *TestLoader.loadTestsFromNames()..unittest.txt*
    loadTestsFromNames(names, module=None)
 
       Similar to "loadTestsFromName()", but takes a sequence of names
       rather than a single name.  The return value is a test suite
       which supports all the tests defined for each name.
 
-                        *TestLoader.getTestCaseNames()..unittest.txt;*
+                         *TestLoader.getTestCaseNames()..unittest.txt*
    getTestCaseNames(testCaseClass)
 
       Return a sorted sequence of method names found within
       _testCaseClass_; this should be a subclass of "TestCase".
 
-                                *TestLoader.discover()..unittest.txt;*
+                                 *TestLoader.discover()..unittest.txt*
    discover(start_dir, pattern='test*.py', top_level_dir=None)
 
       Find all the test modules by recursing into subdirectories from
@@ -1881,7 +1879,7 @@ class unittest.TestLoader                  *TestLoader..unittest.txt;*
    The following attributes of a "TestLoader" can be configured either
    by subclassing or assignment on an instance:
 
-   testMethodPrefix          *TestLoader.testMethodPrefix..unittest.txt;*
+   testMethodPrefix           *TestLoader.testMethodPrefix..unittest.txt*
 
       String giving the prefix of method names which will be
       interpreted as test methods.  The default value is "'test'".
@@ -1889,13 +1887,12 @@ class unittest.TestLoader                  *TestLoader..unittest.txt;*
       This affects "getTestCaseNames()" and all the "loadTestsFrom*()"
       methods.
 
-                      *TestLoader.sortTestMethodsUsing..unittest.txt;*
-   sortTestMethodsUsing
+   sortTestMethodsUsing   *TestLoader.sortTestMethodsUsing..unittest.txt*
 
       Function to be used to compare method names when sorting them in
       "getTestCaseNames()" and all the "loadTestsFrom*()" methods.
 
-   suiteClass                      *TestLoader.suiteClass..unittest.txt;*
+   suiteClass                       *TestLoader.suiteClass..unittest.txt*
 
       Callable object that constructs a test suite from a list of
       tests. No methods on the resulting object are needed.  The
@@ -1903,7 +1900,7 @@ class unittest.TestLoader                  *TestLoader..unittest.txt;*
 
       This affects all the "loadTestsFrom*()" methods.
 
-   testNamePatterns          *TestLoader.testNamePatterns..unittest.txt;*
+   testNamePatterns           *TestLoader.testNamePatterns..unittest.txt*
 
       List of Unix shell-style wildcard test name patterns that test
       methods have to match to be included in test suites (see "-k"
@@ -1920,7 +1917,7 @@ class unittest.TestLoader                  *TestLoader..unittest.txt;*
 
       New in version 3.7.
 
-class unittest.TestResult                  *TestResult..unittest.txt;*
+class unittest.TestResult                   *TestResult..unittest.txt*
 
    This class is used to compile information about which tests have
    succeeded and which have failed.
@@ -1938,54 +1935,54 @@ class unittest.TestResult                  *TestResult..unittest.txt;*
    "TestResult" instances have the following attributes that will be
    of interest when inspecting the results of running a set of tests:
 
-   errors                              *TestResult.errors..unittest.txt;*
+   errors                               *TestResult.errors..unittest.txt*
 
       A list containing 2-tuples of "TestCase" instances and strings
       holding formatted tracebacks. Each tuple represents a test which
       raised an unexpected exception.
 
-   failures                          *TestResult.failures..unittest.txt;*
+   failures                           *TestResult.failures..unittest.txt*
 
       A list containing 2-tuples of "TestCase" instances and strings
       holding formatted tracebacks. Each tuple represents a test where
       a failure was explicitly signalled using the
       "TestCase.assert*()" methods.
 
-   skipped                            *TestResult.skipped..unittest.txt;*
+   skipped                             *TestResult.skipped..unittest.txt*
 
       A list containing 2-tuples of "TestCase" instances and strings
       holding the reason for skipping the test.
 
       New in version 3.1.
 
-   expectedFailures          *TestResult.expectedFailures..unittest.txt;*
+   expectedFailures           *TestResult.expectedFailures..unittest.txt*
 
       A list containing 2-tuples of "TestCase" instances and strings
       holding formatted tracebacks.  Each tuple represents an expected
       failure or error of the test case.
 
-   unexpectedSuccesses    *TestResult.unexpectedSuccesses..unittest.txt;*
+   unexpectedSuccesses     *TestResult.unexpectedSuccesses..unittest.txt*
 
       A list containing "TestCase" instances that were marked as
       expected failures, but succeeded.
 
-   collectedDurations      *TestResult.collectedDurations..unittest.txt;*
+   collectedDurations       *TestResult.collectedDurations..unittest.txt*
 
       A list containing 2-tuples of test case names and floats
       representing the elapsed time of each test which was run.
 
       New in version 3.12.
 
-   shouldStop                      *TestResult.shouldStop..unittest.txt;*
+   shouldStop                       *TestResult.shouldStop..unittest.txt*
 
       Set to "True" when the execution of tests should stop by
       "stop()".
 
-   testsRun                          *TestResult.testsRun..unittest.txt;*
+   testsRun                           *TestResult.testsRun..unittest.txt*
 
       The total number of tests run so far.
 
-   buffer                              *TestResult.buffer..unittest.txt;*
+   buffer                               *TestResult.buffer..unittest.txt*
 
       If set to true, "sys.stdout" and "sys.stderr" will be buffered
       in between "startTest()" and "stopTest()" being called.
@@ -1995,20 +1992,20 @@ class unittest.TestResult                  *TestResult..unittest.txt;*
 
       New in version 3.2.
 
-   failfast                          *TestResult.failfast..unittest.txt;*
+   failfast                           *TestResult.failfast..unittest.txt*
 
       If set to true "stop()" will be called on the first failure or
       error, halting the test run.
 
       New in version 3.2.
 
-   tb_locals                        *TestResult.tb_locals..unittest.txt;*
+   tb_locals                         *TestResult.tb_locals..unittest.txt*
 
       If set to true then local variables will be shown in tracebacks.
 
       New in version 3.5.
 
-   wasSuccessful()            *TestResult.wasSuccessful()..unittest.txt;*
+   wasSuccessful()             *TestResult.wasSuccessful()..unittest.txt*
 
       Return "True" if all tests run so far have passed, otherwise
       returns "False".
@@ -2017,7 +2014,7 @@ class unittest.TestResult                  *TestResult..unittest.txt;*
       "unexpectedSuccesses" from tests marked with the
       "expectedFailure()" decorator.
 
-   stop()                              *TestResult.stop()..unittest.txt;*
+   stop()                               *TestResult.stop()..unittest.txt*
 
       This method can be called to signal that the set of tests being
       run should be aborted by setting the "shouldStop" attribute to
@@ -2035,28 +2032,28 @@ class unittest.TestResult                  *TestResult..unittest.txt;*
    particularly useful in building tools which support interactive
    reporting while tests are being run.
 
-   startTest(test)                *TestResult.startTest()..unittest.txt;*
+   startTest(test)                 *TestResult.startTest()..unittest.txt*
 
       Called when the test case _test_ is about to be run.
 
-   stopTest(test)                  *TestResult.stopTest()..unittest.txt;*
+   stopTest(test)                   *TestResult.stopTest()..unittest.txt*
 
       Called after the test case _test_ has been executed, regardless
       of the outcome.
 
-   startTestRun()              *TestResult.startTestRun()..unittest.txt;*
+   startTestRun()               *TestResult.startTestRun()..unittest.txt*
 
       Called once before any tests are executed.
 
       New in version 3.1.
 
-   stopTestRun()                *TestResult.stopTestRun()..unittest.txt;*
+   stopTestRun()                 *TestResult.stopTestRun()..unittest.txt*
 
       Called once after all tests are executed.
 
       New in version 3.1.
 
-   addError(test, err)             *TestResult.addError()..unittest.txt;*
+   addError(test, err)              *TestResult.addError()..unittest.txt*
 
       Called when the test case _test_ raises an unexpected exception.
       _err_ is a tuple of the form returned by "sys.exc_info()":
@@ -2066,7 +2063,7 @@ class unittest.TestResult                  *TestResult..unittest.txt;*
       formatted_err)" to the instance’s "errors" attribute, where
       _formatted_err_ is a formatted traceback derived from _err_.
 
-   addFailure(test, err)         *TestResult.addFailure()..unittest.txt;*
+   addFailure(test, err)          *TestResult.addFailure()..unittest.txt*
 
       Called when the test case _test_ signals a failure. _err_ is a
       tuple of the form returned by "sys.exc_info()": "(type, value,
@@ -2076,13 +2073,13 @@ class unittest.TestResult                  *TestResult..unittest.txt;*
       formatted_err)" to the instance’s "failures" attribute, where
       _formatted_err_ is a formatted traceback derived from _err_.
 
-   addSuccess(test)              *TestResult.addSuccess()..unittest.txt;*
+   addSuccess(test)               *TestResult.addSuccess()..unittest.txt*
 
       Called when the test case _test_ succeeds.
 
       The default implementation does nothing.
 
-   addSkip(test, reason)            *TestResult.addSkip()..unittest.txt;*
+   addSkip(test, reason)             *TestResult.addSkip()..unittest.txt*
 
       Called when the test case _test_ is skipped.  _reason_ is the
       reason the test gave for skipping.
@@ -2090,7 +2087,7 @@ class unittest.TestResult                  *TestResult..unittest.txt;*
       The default implementation appends a tuple "(test, reason)" to
       the instance’s "skipped" attribute.
 
-                      *TestResult.addExpectedFailure()..unittest.txt;*
+                       *TestResult.addExpectedFailure()..unittest.txt*
    addExpectedFailure(test, err)
 
       Called when the test case _test_ fails or errors, but was marked
@@ -2101,7 +2098,7 @@ class unittest.TestResult                  *TestResult..unittest.txt;*
       where _formatted_err_ is a formatted traceback derived from
       _err_.
 
-                    *TestResult.addUnexpectedSuccess()..unittest.txt;*
+                     *TestResult.addUnexpectedSuccess()..unittest.txt*
    addUnexpectedSuccess(test)
 
       Called when the test case _test_ was marked with the
@@ -2110,7 +2107,7 @@ class unittest.TestResult                  *TestResult..unittest.txt;*
       The default implementation appends the test to the instance’s
       "unexpectedSuccesses" attribute.
 
-                              *TestResult.addSubTest()..unittest.txt;*
+                               *TestResult.addSubTest()..unittest.txt*
    addSubTest(test, subtest, outcome)
 
       Called when a subtest finishes.  _test_ is the test case
@@ -2126,7 +2123,7 @@ class unittest.TestResult                  *TestResult..unittest.txt;*
 
       New in version 3.4.
 
-   addDuration(test, elapsed)   *TestResult.addDuration()..unittest.txt;*
+   addDuration(test, elapsed)    *TestResult.addDuration()..unittest.txt*
 
       Called when the test case finishes.  _elapsed_ is the time
       represented in seconds, and it includes the execution of cleanup
@@ -2134,7 +2131,7 @@ class unittest.TestResult                  *TestResult..unittest.txt;*
 
       New in version 3.12.
 
-                                       *TextTestResult..unittest.txt;*
+                                        *TextTestResult..unittest.txt*
 class unittest.TextTestResult(stream, descriptions, verbosity, *, durations=None)
 
    A concrete implementation of "TestResult" used by the
@@ -2145,13 +2142,13 @@ class unittest.TextTestResult(stream, descriptions, verbosity, *, durations=None
 
    New in version 3.12: Added _durations_ keyword argument.
 
-unittest.defaultTestLoader          *defaultTestLoader..unittest.txt;*
+unittest.defaultTestLoader           *defaultTestLoader..unittest.txt*
 
    Instance of the "TestLoader" class intended to be shared.  If no
    customization of the "TestLoader" is needed, this instance can be
    used instead of repeatedly creating new instances.
 
-                                       *TextTestRunner..unittest.txt;*
+                                        *TextTestRunner..unittest.txt*
 class unittest.TextTestRunner(stream=None, descriptions=True, verbosity=1, failfast=False, buffer=False, resultclass=None, warnings=None, *, tb_locals=False, durations=None)
 
    A basic test runner implementation that outputs results to a
@@ -2177,7 +2174,7 @@ class unittest.TextTestRunner(stream=None, descriptions=True, verbosity=1, failf
 
    Changed in version 3.12: Added the _durations_ parameter.
 
-   _makeResult()            *TextTestRunner._makeResult()..unittest.txt;*
+   _makeResult()             *TextTestRunner._makeResult()..unittest.txt*
 
       This method returns the instance of "TestResult" used by
       "run()". It is not intended to be called directly, but can be
@@ -2190,14 +2187,14 @@ class unittest.TextTestRunner(stream=None, descriptions=True, verbosity=1, failf
 >
          stream, descriptions, verbosity
 <
-   run(test)                        *TextTestRunner.run()..unittest.txt;*
+   run(test)                         *TextTestRunner.run()..unittest.txt*
 
       This method is the main public interface to the
       "TextTestRunner". This method takes a "TestSuite" or "TestCase"
       instance. A "TestResult" is created by calling "_makeResult()"
       and the test(s) are run and the results printed to stdout.
 
-                                               *main()..unittest.txt;*
+                                                *main()..unittest.txt*
 unittest.main(module='__main__', defaultTest=None, argv=None, testRunner=None, testLoader=unittest.defaultTestLoader, exit=True, verbosity=1, failfast=None, catchbreak=None, buffer=None, warnings=None)
 
    A command-line program that loads a set of tests from _module_ and
@@ -2412,7 +2409,7 @@ reported as having been skipped instead of as an error.
 To add cleanup code that must be run even in the case of an exception,
 use "addModuleCleanup":
 
-                                   *addModuleCleanup()..unittest.txt;*
+                                    *addModuleCleanup()..unittest.txt*
 unittest.addModuleCleanup(function, /, *args, **kwargs)
 
    Add a function to be called after "tearDownModule()" to cleanup
@@ -2426,7 +2423,7 @@ unittest.addModuleCleanup(function, /, *args, **kwargs)
 
    New in version 3.8.
 
-                                 *enterModuleContext()..unittest.txt;*
+                                  *enterModuleContext()..unittest.txt*
 classmethod unittest.enterModuleContext(cm)
 
    Enter the supplied _context manager_.  If successful, also add its
@@ -2435,7 +2432,7 @@ classmethod unittest.enterModuleContext(cm)
 
    New in version 3.11.
 
-unittest.doModuleCleanups()        *doModuleCleanups()..unittest.txt;*
+unittest.doModuleCleanups()         *doModuleCleanups()..unittest.txt*
 
    This function is called unconditionally after "tearDownModule()",
    or after "setUpModule()" if "setUpModule()" raises an exception.
@@ -2476,13 +2473,13 @@ used.
 There are a few utility functions for framework authors to enable
 control-c handling functionality within test frameworks.
 
-unittest.installHandler()            *installHandler()..unittest.txt;*
+unittest.installHandler()             *installHandler()..unittest.txt*
 
    Install the control-c handler. When a "signal.SIGINT" is received
    (usually in response to the user pressing control-c) all registered
    results have "stop()" called.
 
-unittest.registerResult(result)      *registerResult()..unittest.txt;*
+unittest.registerResult(result)       *registerResult()..unittest.txt*
 
    Register a "TestResult" object for control-c handling. Registering
    a result stores a weak reference to it, so it doesn’t prevent the
@@ -2493,13 +2490,13 @@ unittest.registerResult(result)      *registerResult()..unittest.txt;*
    register all results they create independently of whether or not
    handling is enabled.
 
-unittest.removeResult(result)          *removeResult()..unittest.txt;*
+unittest.removeResult(result)           *removeResult()..unittest.txt*
 
    Remove a registered result. Once a result has been removed then
    "stop()" will no longer be called on that result object in response
    to a control-c.
 
-                                      *removeHandler()..unittest.txt;*
+                                       *removeHandler()..unittest.txt*
 unittest.removeHandler(function=None)
 
    When called without arguments this function removes the control-c

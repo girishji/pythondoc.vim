@@ -1,4 +1,4 @@
-*modulefinder.txt;*                           Last change: 2023 Sep 09
+*modulefinder.txt;*                           Last change: 2023 Sep 10
 
 "modulefinder" — Find modules used by a script
 **********************************************
@@ -13,19 +13,19 @@ can also be run as a script, giving the filename of a Python script as
 its argument, after which a report of the imported modules will be
 printed.
 
-                                 *AddPackagePath()..modulefinder.txt;*
+                                  *AddPackagePath()..modulefinder.txt*
 modulefinder.AddPackagePath(pkg_name, path)
 
    Record that the package named _pkg_name_ can be found in the
    specified _path_.
 
-                                 *ReplacePackage()..modulefinder.txt;*
+                                  *ReplacePackage()..modulefinder.txt*
 modulefinder.ReplacePackage(oldname, newname)
 
    Allows specifying that the module named _oldname_ is in fact the
    package named _newname_.
 
-                                     *ModuleFinder..modulefinder.txt;*
+                                      *ModuleFinder..modulefinder.txt*
 class modulefinder.ModuleFinder(path=None, debug=0, excludes=[], replace_paths=[])
 
    This class provides "run_script()" and "report()" methods to
@@ -37,18 +37,18 @@ class modulefinder.ModuleFinder(path=None, debug=0, excludes=[], replace_paths=[
    analysis. _replace_paths_ is a list of "(oldpath, newpath)" tuples
    that will be replaced in module paths.
 
-   report()                    *ModuleFinder.report()..modulefinder.txt;*
+   report()                     *ModuleFinder.report()..modulefinder.txt*
 
       Print a report to standard output that lists the modules
       imported by the script and their paths, as well as modules that
       are missing or seem to be missing.
 
-   run_script(pathname)    *ModuleFinder.run_script()..modulefinder.txt;*
+   run_script(pathname)     *ModuleFinder.run_script()..modulefinder.txt*
 
       Analyze the contents of the _pathname_ file, which must contain
       Python code.
 
-   modules                      *ModuleFinder.modules..modulefinder.txt;*
+   modules                       *ModuleFinder.modules..modulefinder.txt*
 
       A dictionary mapping module names to modules. See Example usage
       of ModuleFinder.

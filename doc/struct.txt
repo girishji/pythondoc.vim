@@ -1,4 +1,4 @@
-*struct.txt;*                                 Last change: 2023 Sep 09
+*struct.txt;*                                 Last change: 2023 Sep 10
 
 "struct" — Interpret bytes as packed binary data
 ************************************************
@@ -40,18 +40,18 @@ Functions and Exceptions
 
 The module defines the following exception and functions:
 
-exception struct.error                            *error..struct.txt;*
+exception struct.error                             *error..struct.txt*
 
    Exception raised on various occasions; argument is a string
    describing what is wrong.
 
-struct.pack(format, v1, v2, ...)                 *pack()..struct.txt;*
+struct.pack(format, v1, v2, ...)                  *pack()..struct.txt*
 
    Return a bytes object containing the values _v1_, _v2_, … packed
    according to the format string _format_.  The arguments must match
    the values required by the format exactly.
 
-                                            *pack_into()..struct.txt;*
+                                             *pack_into()..struct.txt*
 struct.pack_into(format, buffer, offset, v1, v2, ...)
 
    Pack the values _v1_, _v2_, … according to the format string
@@ -59,7 +59,7 @@ struct.pack_into(format, buffer, offset, v1, v2, ...)
    _buffer_ starting at position _offset_.  Note that _offset_ is a
    required argument.
 
-struct.unpack(format, buffer)                  *unpack()..struct.txt;*
+struct.unpack(format, buffer)                   *unpack()..struct.txt*
 
    Unpack from the buffer _buffer_ (presumably packed by "pack(format,
    ...)") according to the format string _format_.  The result is a
@@ -67,7 +67,7 @@ struct.unpack(format, buffer)                  *unpack()..struct.txt;*
    bytes must match the size required by the format, as reflected by
    "calcsize()".
 
-                                          *unpack_from()..struct.txt;*
+                                           *unpack_from()..struct.txt*
 struct.unpack_from(format, /, buffer, offset=0)
 
    Unpack from _buffer_ starting at position _offset_, according to
@@ -76,7 +76,7 @@ struct.unpack_from(format, /, buffer, offset=0)
    position _offset_, must be at least the size required by the
    format, as reflected by "calcsize()".
 
-struct.iter_unpack(format, buffer)        *iter_unpack()..struct.txt;*
+struct.iter_unpack(format, buffer)         *iter_unpack()..struct.txt*
 
    Iteratively unpack from the buffer _buffer_ according to the format
    string _format_.  This function returns an iterator which will read
@@ -88,7 +88,7 @@ struct.iter_unpack(format, buffer)        *iter_unpack()..struct.txt;*
 
    New in version 3.4.
 
-struct.calcsize(format)                      *calcsize()..struct.txt;*
+struct.calcsize(format)                       *calcsize()..struct.txt*
 
    Return the size of the struct (and hence of the bytes object
    produced by "pack(format, ...)") corresponding to the format string
@@ -492,7 +492,7 @@ Classes
 
 The "struct" module also defines the following type:
 
-class struct.Struct(format)                      *Struct..struct.txt;*
+class struct.Struct(format)                       *Struct..struct.txt*
 
    Return a new Struct object which writes and reads binary data
    according to the format string _format_.  Creating a "Struct"
@@ -510,43 +510,43 @@ class struct.Struct(format)                      *Struct..struct.txt;*
    Compiled Struct objects support the following methods and
    attributes:
 
-   pack(v1, v2, ...)                         *Struct.pack()..struct.txt;*
+   pack(v1, v2, ...)                          *Struct.pack()..struct.txt*
 
       Identical to the "pack()" function, using the compiled format.
       ("len(result)" will equal "size".)
 
-                                     *Struct.pack_into()..struct.txt;*
+                                      *Struct.pack_into()..struct.txt*
    pack_into(buffer, offset, v1, v2, ...)
 
       Identical to the "pack_into()" function, using the compiled
       format.
 
-   unpack(buffer)                          *Struct.unpack()..struct.txt;*
+   unpack(buffer)                           *Struct.unpack()..struct.txt*
 
       Identical to the "unpack()" function, using the compiled format.
       The buffer’s size in bytes must equal "size".
 
-   unpack_from(buffer, offset=0)      *Struct.unpack_from()..struct.txt;*
+   unpack_from(buffer, offset=0)       *Struct.unpack_from()..struct.txt*
 
       Identical to the "unpack_from()" function, using the compiled
       format. The buffer’s size in bytes, starting at position
       _offset_, must be at least "size".
 
-   iter_unpack(buffer)                *Struct.iter_unpack()..struct.txt;*
+   iter_unpack(buffer)                 *Struct.iter_unpack()..struct.txt*
 
       Identical to the "iter_unpack()" function, using the compiled
       format. The buffer’s size in bytes must be a multiple of "size".
 
       New in version 3.4.
 
-   format                                    *Struct.format..struct.txt;*
+   format                                     *Struct.format..struct.txt*
 
       The format string used to construct this Struct object.
 
       Changed in version 3.7: The format string type is now "str"
       instead of "bytes".
 
-   size                                        *Struct.size..struct.txt;*
+   size                                         *Struct.size..struct.txt*
 
       The calculated size of the struct (and hence of the bytes object
       produced by the "pack()" method) corresponding to "format".

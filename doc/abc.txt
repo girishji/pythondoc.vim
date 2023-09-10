@@ -1,4 +1,4 @@
-*abc.txt;*                                    Last change: 2023 Sep 09
+*abc.txt;*                                    Last change: 2023 Sep 10
 
 "abc" — Abstract Base Classes
 *****************************
@@ -22,7 +22,7 @@ example, if it is _hashable_ or if it is a mapping.
 This module provides the metaclass "ABCMeta" for defining ABCs and a
 helper class "ABC" to alternatively define ABCs through inheritance:
 
-class abc.ABC                                          *ABC..abc.txt;*
+class abc.ABC                                           *ABC..abc.txt*
 
    A helper class that has "ABCMeta" as its metaclass.  With this
    class, an abstract base class can be created by simply deriving
@@ -47,7 +47,7 @@ class abc.ABC                                          *ABC..abc.txt;*
 <
    New in version 3.4.
 
-class abc.ABCMeta                                  *ABCMeta..abc.txt;*
+class abc.ABCMeta                                   *ABCMeta..abc.txt*
 
    Metaclass for defining Abstract Base Classes (ABCs).
 
@@ -64,7 +64,7 @@ class abc.ABCMeta                                  *ABCMeta..abc.txt;*
    Classes created with a metaclass of "ABCMeta" have the following
    method:
 
-   register(subclass)                      *ABCMeta.register()..abc.txt;*
+   register(subclass)                       *ABCMeta.register()..abc.txt*
 
       Register _subclass_ as a “virtual subclass” of this ABC. For
       example:
@@ -87,7 +87,7 @@ class abc.ABCMeta                                  *ABCMeta..abc.txt;*
 
    You can also override this method in an abstract base class:
 
-   __subclasshook__(subclass)      *ABCMeta.__subclasshook__()..abc.txt;*
+   __subclasshook__(subclass)       *ABCMeta.__subclasshook__()..abc.txt*
 
       (Must be defined as a class method.)
 
@@ -154,7 +154,7 @@ class abc.ABCMeta                                  *ABCMeta..abc.txt;*
 
 The "abc" module also provides the following decorator:
 
-@abc.abstractmethod                       *abstractmethod()..abc.txt;*
+@abc.abstractmethod                        *abstractmethod()..abc.txt*
 
    A decorator indicating abstract methods.
 
@@ -230,7 +230,7 @@ The "abc" module also provides the following decorator:
 
 The "abc" module also supports the following legacy decorators:
 
-@abc.abstractclassmethod             *abstractclassmethod()..abc.txt;*
+@abc.abstractclassmethod              *abstractclassmethod()..abc.txt*
 
    New in version 3.2.
 
@@ -251,7 +251,7 @@ The "abc" module also supports the following legacy decorators:
           def my_abstract_classmethod(cls, arg):
               ...
 <
-@abc.abstractstaticmethod           *abstractstaticmethod()..abc.txt;*
+@abc.abstractstaticmethod            *abstractstaticmethod()..abc.txt*
 
    New in version 3.2.
 
@@ -272,7 +272,7 @@ The "abc" module also supports the following legacy decorators:
           def my_abstract_staticmethod(arg):
               ...
 <
-@abc.abstractproperty                   *abstractproperty()..abc.txt;*
+@abc.abstractproperty                    *abstractproperty()..abc.txt*
 
    Deprecated since version 3.3: It is now possible to use "property",
    "property.getter()", "property.setter()" and "property.deleter()"
@@ -315,7 +315,7 @@ The "abc" module also supports the following legacy decorators:
 <
 The "abc" module also provides the following functions:
 
-abc.get_cache_token()                    *get_cache_token()..abc.txt;*
+abc.get_cache_token()                     *get_cache_token()..abc.txt*
 
    Returns the current abstract base class cache token.
 
@@ -326,7 +326,7 @@ abc.get_cache_token()                    *get_cache_token()..abc.txt;*
 
    New in version 3.4.
 
-abc.update_abstractmethods(cls)   *update_abstractmethods()..abc.txt;*
+abc.update_abstractmethods(cls)    *update_abstractmethods()..abc.txt*
 
    A function to recalculate an abstract class’s abstraction status.
    This function should be called if a class’s abstract methods have

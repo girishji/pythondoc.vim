@@ -1,4 +1,4 @@
-*shutil.txt;*                                 Last change: 2023 Sep 09
+*shutil.txt;*                                 Last change: 2023 Sep 10
 
 "shutil" — High-level file operations
 *************************************
@@ -26,8 +26,7 @@ Warning:
 Directory and files operations
 ==============================
 
-                                          *copyfileobj()..shutil.txt;*
-shutil.copyfileobj(fsrc, fdst[, length])
+shutil.copyfileobj(fsrc, fdst[, length])   *copyfileobj()..shutil.txt*
 
    Copy the contents of the file-like object _fsrc_ to the file-like
    object _fdst_. The integer _length_, if given, is the buffer size.
@@ -38,7 +37,7 @@ shutil.copyfileobj(fsrc, fdst[, length])
    only the contents from the current file position to the end of the
    file will be copied.
 
-                                             *copyfile()..shutil.txt;*
+                                              *copyfile()..shutil.txt*
 shutil.copyfile(src, dst, *, follow_symlinks=True)
 
    Copy the contents (no metadata) of the file named _src_ to a file
@@ -73,14 +72,14 @@ shutil.copyfile(src, dst, *, follow_symlinks=True)
    used internally in order to copy the file more efficiently. See
    Platform-dependent efficient copy operations section.
 
-exception shutil.SameFileError            *SameFileError..shutil.txt;*
+exception shutil.SameFileError             *SameFileError..shutil.txt*
 
    This exception is raised if source and destination in "copyfile()"
    are the same file.
 
    New in version 3.4.
 
-                                             *copymode()..shutil.txt;*
+                                              *copymode()..shutil.txt*
 shutil.copymode(src, dst, *, follow_symlinks=True)
 
    Copy the permission bits from _src_ to _dst_.  The file contents,
@@ -98,7 +97,7 @@ shutil.copymode(src, dst, *, follow_symlinks=True)
 
    Changed in version 3.3: Added _follow_symlinks_ argument.
 
-                                             *copystat()..shutil.txt;*
+                                              *copystat()..shutil.txt*
 shutil.copystat(src, dst, *, follow_symlinks=True)
 
    Copy the permission bits, last access time, last modification time,
@@ -142,7 +141,7 @@ shutil.copystat(src, dst, *, follow_symlinks=True)
    Changed in version 3.3: Added _follow_symlinks_ argument and
    support for Linux extended attributes.
 
-shutil.copy(src, dst, *, follow_symlinks=True)   *copy()..shutil.txt;*
+shutil.copy(src, dst, *, follow_symlinks=True)    *copy()..shutil.txt*
 
    Copies the file _src_ to the file or directory _dst_.  _src_ and
    _dst_ should be _path-like objects_ or strings.  If _dst_ specifies
@@ -173,7 +172,7 @@ shutil.copy(src, dst, *, follow_symlinks=True)   *copy()..shutil.txt;*
    used internally in order to copy the file more efficiently. See
    Platform-dependent efficient copy operations section.
 
-                                                *copy2()..shutil.txt;*
+                                                 *copy2()..shutil.txt*
 shutil.copy2(src, dst, *, follow_symlinks=True)
 
    Identical to "copy()" except that "copy2()" also attempts to
@@ -205,14 +204,14 @@ shutil.copy2(src, dst, *, follow_symlinks=True)
    used internally in order to copy the file more efficiently. See
    Platform-dependent efficient copy operations section.
 
-shutil.ignore_patterns(*patterns)     *ignore_patterns()..shutil.txt;*
+shutil.ignore_patterns(*patterns)      *ignore_patterns()..shutil.txt*
 
    This factory function creates a function that can be used as a
    callable for "copytree()"'s _ignore_ argument, ignoring files and
    directories that match one of the glob-style _patterns_ provided.
    See the example below.
 
-                                             *copytree()..shutil.txt;*
+                                              *copytree()..shutil.txt*
 shutil.copytree(src, dst, symlinks=False, ignore=None, copy_function=copy2, ignore_dangling_symlinks=False, dirs_exist_ok=False)
 
    Recursively copy an entire directory tree rooted at _src_ to a
@@ -278,7 +277,7 @@ shutil.copytree(src, dst, symlinks=False, ignore=None, copy_function=copy2, igno
 
    New in version 3.8: The _dirs_exist_ok_ parameter.
 
-                                               *rmtree()..shutil.txt;*
+                                                *rmtree()..shutil.txt*
 shutil.rmtree(path, ignore_errors=False, onerror=None, *, onexc=None, dir_fd=None)
 
    Delete an entire directory tree; _path_ must point to a directory
@@ -329,7 +328,7 @@ shutil.rmtree(path, ignore_errors=False, onerror=None, *, onexc=None, dir_fd=Non
    Changed in version 3.12: Added the _onexc_ parameter, deprecated
    _onerror_.
 
-                          *rmtree.avoids_symlink_attacks..shutil.txt;*
+                           *rmtree.avoids_symlink_attacks..shutil.txt*
    rmtree.avoids_symlink_attacks
 
       Indicates whether the current platform and implementation
@@ -339,7 +338,7 @@ shutil.rmtree(path, ignore_errors=False, onerror=None, *, onexc=None, dir_fd=Non
 
       New in version 3.3.
 
-shutil.move(src, dst, copy_function=copy2)       *move()..shutil.txt;*
+shutil.move(src, dst, copy_function=copy2)        *move()..shutil.txt*
 
    Recursively move a file or directory (_src_) to another location
    (_dst_) and return the destination.
@@ -379,7 +378,7 @@ shutil.move(src, dst, copy_function=copy2)       *move()..shutil.txt;*
    Changed in version 3.9: Accepts a _path-like object_ for both _src_
    and _dst_.
 
-shutil.disk_usage(path)                    *disk_usage()..shutil.txt;*
+shutil.disk_usage(path)                     *disk_usage()..shutil.txt*
 
    Return disk usage statistics about the given path as a _named
    tuple_ with the attributes _total_, _used_ and _free_, which are
@@ -400,7 +399,7 @@ shutil.disk_usage(path)                    *disk_usage()..shutil.txt;*
 
    Availability: Unix, Windows.
 
-shutil.chown(path, user=None, group=None)       *chown()..shutil.txt;*
+shutil.chown(path, user=None, group=None)        *chown()..shutil.txt*
 
    Change owner _user_ and/or _group_ of the given _path_.
 
@@ -416,7 +415,7 @@ shutil.chown(path, user=None, group=None)       *chown()..shutil.txt;*
 
    New in version 3.3.
 
-                                                *which()..shutil.txt;*
+                                                 *which()..shutil.txt*
 shutil.which(cmd, mode=os.F_OK | os.X_OK, path=None)
 
    Return the path to an executable which would be run if the given
@@ -465,7 +464,7 @@ shutil.which(cmd, mode=os.F_OK | os.X_OK, path=None)
    directory component or ends with an extension that is in "PATHEXT";
    and filenames that have no extension can now be found.
 
-exception shutil.Error                            *Error..shutil.txt;*
+exception shutil.Error                             *Error..shutil.txt*
 
    This exception collects exceptions that are raised during a multi-
    file operation. For "copytree()", the exception argument is a list
@@ -550,7 +549,7 @@ Changed in version 3.5: Added support for the _xztar_ format.
 High-level utilities to create and read compressed and archived files
 are also provided.  They rely on the "zipfile" and "tarfile" modules.
 
-                                         *make_archive()..shutil.txt;*
+                                          *make_archive()..shutil.txt*
 shutil.make_archive(base_name, format[, root_dir[, base_dir[, verbose[, dry_run[, owner[, group[, logger]]]]]]])
 
    Create an archive file (such as zip or tar) and return its name.
@@ -604,7 +603,7 @@ shutil.make_archive(base_name, format[, root_dir[, base_dir[, verbose[, dry_run[
    Changed in version 3.10.6: This function is now made thread-safe
    during creation of standard ".zip" and tar archives.
 
-shutil.get_archive_formats()      *get_archive_formats()..shutil.txt;*
+shutil.get_archive_formats()       *get_archive_formats()..shutil.txt*
 
    Return a list of supported formats for archiving. Each element of
    the returned sequence is a tuple "(name, description)".
@@ -625,7 +624,7 @@ shutil.get_archive_formats()      *get_archive_formats()..shutil.txt;*
    You can register new formats or provide your own archiver for any
    existing formats, by using "register_archive_format()".
 
-                              *register_archive_format()..shutil.txt;*
+                               *register_archive_format()..shutil.txt*
 shutil.register_archive_format(name, function[, extra_args[, description]])
 
    Register an archiver for the format _name_.
@@ -653,13 +652,13 @@ shutil.register_archive_format(name, function[, extra_args[, description]])
    Changed in version 3.12: Added support for functions supporting the
    _root_dir_ argument.
 
-                            *unregister_archive_format()..shutil.txt;*
+                             *unregister_archive_format()..shutil.txt*
 shutil.unregister_archive_format(name)
 
    Remove the archive format _name_ from the list of supported
    formats.
 
-                                       *unpack_archive()..shutil.txt;*
+                                        *unpack_archive()..shutil.txt*
 shutil.unpack_archive(filename[, extract_dir[, format[, filter]]])
 
    Unpack an archive. _filename_ is the full path of the archive.
@@ -698,7 +697,7 @@ shutil.unpack_archive(filename[, extract_dir[, format[, filter]]])
 
    Changed in version 3.12: Added the _filter_ argument.
 
-                               *register_unpack_format()..shutil.txt;*
+                                *register_unpack_format()..shutil.txt*
 shutil.register_unpack_format(name, extensions, function[, extra_args[, description]])
 
    Registers an unpack format. _name_ is the name of the format and
@@ -722,12 +721,12 @@ shutil.register_unpack_format(name, extensions, function[, extra_args[, descript
    _description_ can be provided to describe the format, and will be
    returned by the "get_unpack_formats()" function.
 
-                             *unregister_unpack_format()..shutil.txt;*
+                              *unregister_unpack_format()..shutil.txt*
 shutil.unregister_unpack_format(name)
 
    Unregister an unpack format. _name_ is the name of the format.
 
-shutil.get_unpack_formats()        *get_unpack_formats()..shutil.txt;*
+shutil.get_unpack_formats()         *get_unpack_formats()..shutil.txt*
 
    Return a list of all registered formats for unpacking. Each element
    of the returned sequence is a tuple "(name, extensions,
@@ -815,7 +814,7 @@ Listing the files in the resulting archive gives us:
 Querying the size of the output terminal
 ========================================
 
-                                    *get_terminal_size()..shutil.txt;*
+                                     *get_terminal_size()..shutil.txt*
 shutil.get_terminal_size(fallback=(columns, lines))
 
    Get the size of the terminal window.

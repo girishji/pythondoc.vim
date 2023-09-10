@@ -1,4 +1,4 @@
-*difflib.txt;*                                Last change: 2023 Sep 09
+*difflib.txt;*                                Last change: 2023 Sep 10
 
 "difflib" — Helpers for computing deltas
 ****************************************
@@ -13,7 +13,7 @@ information about file differences in various formats, including HTML
 and context and unified diffs. For comparing directories and files,
 see also, the "filecmp" module.
 
-class difflib.SequenceMatcher          *SequenceMatcher..difflib.txt;*
+class difflib.SequenceMatcher           *SequenceMatcher..difflib.txt*
 
    This is a flexible class for comparing pairs of sequences of any
    type, so long as the sequence elements are _hashable_.  The basic
@@ -47,7 +47,7 @@ class difflib.SequenceMatcher          *SequenceMatcher..difflib.txt;*
 
    New in version 3.2: The _autojunk_ parameter.
 
-class difflib.Differ                            *Differ..difflib.txt;*
+class difflib.Differ                             *Differ..difflib.txt*
 
    This is a class for comparing sequences of lines of text, and
    producing human-readable differences or deltas.  Differ uses
@@ -74,7 +74,7 @@ class difflib.Differ                            *Differ..difflib.txt;*
    lines can be confusing if the sequences contain whitespace
    characters, such as spaces, tabs or line breaks.
 
-class difflib.HtmlDiff                        *HtmlDiff..difflib.txt;*
+class difflib.HtmlDiff                         *HtmlDiff..difflib.txt*
 
    This class can be used to create an HTML table (or a complete HTML
    file containing the table) showing a side by side, line by line
@@ -84,7 +84,7 @@ class difflib.HtmlDiff                        *HtmlDiff..difflib.txt;*
 
    The constructor for this class is:
 
-                                   *HtmlDiff.__init__()..difflib.txt;*
+                                    *HtmlDiff.__init__()..difflib.txt*
    __init__(tabsize=8, wrapcolumn=None, linejunk=None, charjunk=IS_CHARACTER_JUNK)
 
       Initializes instance of "HtmlDiff".
@@ -103,7 +103,7 @@ class difflib.HtmlDiff                        *HtmlDiff..difflib.txt;*
 
    The following methods are public:
 
-                                  *HtmlDiff.make_file()..difflib.txt;*
+                                   *HtmlDiff.make_file()..difflib.txt*
    make_file(fromlines, tolines, fromdesc='', todesc='', context=False, numlines=5, *, charset='utf-8')
 
       Compares _fromlines_ and _tolines_ (lists of strings) and
@@ -137,7 +137,7 @@ class difflib.HtmlDiff                        *HtmlDiff..difflib.txt;*
       added.  The default charset of HTML document changed from
       "'ISO-8859-1'" to "'utf-8'".
 
-                                 *HtmlDiff.make_table()..difflib.txt;*
+                                  *HtmlDiff.make_table()..difflib.txt*
    make_table(fromlines, tolines, fromdesc='', todesc='', context=False, numlines=5)
 
       Compares _fromlines_ and _tolines_ (lists of strings) and
@@ -148,7 +148,7 @@ class difflib.HtmlDiff                        *HtmlDiff..difflib.txt;*
       The arguments for this method are the same as those for the
       "make_file()" method.
 
-                                        *context_diff()..difflib.txt;*
+                                         *context_diff()..difflib.txt*
 difflib.context_diff(a, b, fromfile='', tofile='', fromfiledate='', tofiledate='', n=3, lineterm='\n')
 
    Compare _a_ and _b_ (lists of strings); return a delta (a
@@ -194,7 +194,7 @@ difflib.context_diff(a, b, fromfile='', tofile='', fromfiledate='', tofiledate='
    See A command-line interface to difflib for a more detailed
    example.
 
-                                   *get_close_matches()..difflib.txt;*
+                                    *get_close_matches()..difflib.txt*
 difflib.get_close_matches(word, possibilities, n=3, cutoff=0.6)
 
    Return a list of the best “good enough” matches.  _word_ is a
@@ -222,7 +222,7 @@ difflib.get_close_matches(word, possibilities, n=3, cutoff=0.6)
    >>> get_close_matches('accept', keyword.kwlist)
    ['except']
 
-                                               *ndiff()..difflib.txt;*
+                                                *ndiff()..difflib.txt*
 difflib.ndiff(a, b, linejunk=None, charjunk=IS_CHARACTER_JUNK)
 
    Compare _a_ and _b_ (lists of strings); return a "Differ"-style
@@ -259,7 +259,7 @@ difflib.ndiff(a, b, linejunk=None, charjunk=IS_CHARACTER_JUNK)
    + tree
    + emu
 
-difflib.restore(sequence, which)             *restore()..difflib.txt;*
+difflib.restore(sequence, which)              *restore()..difflib.txt*
 
    Return one of the two sequences that generated a delta.
 
@@ -281,7 +281,7 @@ difflib.restore(sequence, which)             *restore()..difflib.txt;*
    tree
    emu
 
-                                        *unified_diff()..difflib.txt;*
+                                         *unified_diff()..difflib.txt*
 difflib.unified_diff(a, b, fromfile='', tofile='', fromfiledate='', tofiledate='', n=3, lineterm='\n')
 
    Compare _a_ and _b_ (lists of strings); return a delta (a
@@ -324,7 +324,7 @@ difflib.unified_diff(a, b, fromfile='', tofile='', fromfiledate='', tofiledate='
    See A command-line interface to difflib for a more detailed
    example.
 
-                                          *diff_bytes()..difflib.txt;*
+                                           *diff_bytes()..difflib.txt*
 difflib.diff_bytes(dfunc, a, b, fromfile=b'', tofile=b'', fromfiledate=b'', tofiledate=b'', n=3, lineterm=b'\n')
 
    Compare _a_ and _b_ (lists of bytes objects) using _dfunc_; yield a
@@ -342,14 +342,14 @@ difflib.diff_bytes(dfunc, a, b, fromfile=b'', tofile=b'', fromfiledate=b'', tofi
 
    New in version 3.5.
 
-difflib.IS_LINE_JUNK(line)              *IS_LINE_JUNK()..difflib.txt;*
+difflib.IS_LINE_JUNK(line)               *IS_LINE_JUNK()..difflib.txt*
 
    Return "True" for ignorable lines.  The line _line_ is ignorable if
    _line_ is blank or contains a single "'#'", otherwise it is not
    ignorable.  Used as a default for parameter _linejunk_ in "ndiff()"
    in older versions.
 
-difflib.IS_CHARACTER_JUNK(ch)      *IS_CHARACTER_JUNK()..difflib.txt;*
+difflib.IS_CHARACTER_JUNK(ch)       *IS_CHARACTER_JUNK()..difflib.txt*
 
    Return "True" for ignorable characters.  The character _ch_ is
    ignorable if _ch_ is a space or tab, otherwise it is not ignorable.
@@ -400,7 +400,7 @@ class difflib.SequenceMatcher(isjunk=None, a='', b='', autojunk=True)
 
    "SequenceMatcher" objects have the following methods:
 
-   set_seqs(a, b)              *SequenceMatcher.set_seqs()..difflib.txt;*
+   set_seqs(a, b)               *SequenceMatcher.set_seqs()..difflib.txt*
 
       Set the two sequences to be compared.
 
@@ -410,17 +410,17 @@ class difflib.SequenceMatcher(isjunk=None, a='', b='', autojunk=True)
    once and call "set_seq1()" repeatedly, once for each of the other
    sequences.
 
-   set_seq1(a)                 *SequenceMatcher.set_seq1()..difflib.txt;*
+   set_seq1(a)                  *SequenceMatcher.set_seq1()..difflib.txt*
 
       Set the first sequence to be compared.  The second sequence to
       be compared is not changed.
 
-   set_seq2(b)                 *SequenceMatcher.set_seq2()..difflib.txt;*
+   set_seq2(b)                  *SequenceMatcher.set_seq2()..difflib.txt*
 
       Set the second sequence to be compared.  The first sequence to
       be compared is not changed.
 
-                  *SequenceMatcher.find_longest_match()..difflib.txt;*
+                   *SequenceMatcher.find_longest_match()..difflib.txt*
    find_longest_match(alo=0, ahi=None, blo=0, bhi=None)
 
       Find longest matching block in "a[alo:ahi]" and "b[blo:bhi]".
@@ -462,7 +462,7 @@ class difflib.SequenceMatcher(isjunk=None, a='', b='', autojunk=True)
 
       Changed in version 3.9: Added default arguments.
 
-                 *SequenceMatcher.get_matching_blocks()..difflib.txt;*
+                  *SequenceMatcher.get_matching_blocks()..difflib.txt*
    get_matching_blocks()
 
       Return list of triples describing non-overlapping matching
@@ -481,7 +481,7 @@ class difflib.SequenceMatcher(isjunk=None, a='', b='', autojunk=True)
          >>> s.get_matching_blocks()
          [Match(a=0, b=0, size=2), Match(a=3, b=2, size=2), Match(a=5, b=4, size=0)]
 <
-   get_opcodes()            *SequenceMatcher.get_opcodes()..difflib.txt;*
+   get_opcodes()             *SequenceMatcher.get_opcodes()..difflib.txt*
 
       Return list of 5-tuples describing how to turn _a_ into _b_.
       Each tuple is of the form "(tag, i1, i2, j1, j2)".  The first
@@ -521,7 +521,7 @@ class difflib.SequenceMatcher(isjunk=None, a='', b='', autojunk=True)
          insert    a[6:6] --> b[5:6]       '' --> 'f'
 <
 
-                 *SequenceMatcher.get_grouped_opcodes()..difflib.txt;*
+                  *SequenceMatcher.get_grouped_opcodes()..difflib.txt*
    get_grouped_opcodes(n=3)
 
       Return a _generator_ of groups with up to _n_ lines of context.
@@ -532,7 +532,7 @@ class difflib.SequenceMatcher(isjunk=None, a='', b='', autojunk=True)
 
       The groups are returned in the same format as "get_opcodes()".
 
-   ratio()                        *SequenceMatcher.ratio()..difflib.txt;*
+   ratio()                         *SequenceMatcher.ratio()..difflib.txt*
 
       Return a measure of the sequences’ similarity as a float in the
       range [0, 1].
@@ -558,12 +558,11 @@ class difflib.SequenceMatcher(isjunk=None, a='', b='', autojunk=True)
            >>> SequenceMatcher(None, 'diet', 'tide').ratio()
            0.5
 <
-   quick_ratio()            *SequenceMatcher.quick_ratio()..difflib.txt;*
+   quick_ratio()             *SequenceMatcher.quick_ratio()..difflib.txt*
 
       Return an upper bound on "ratio()" relatively quickly.
 
-                    *SequenceMatcher.real_quick_ratio()..difflib.txt;*
-   real_quick_ratio()
+   real_quick_ratio()   *SequenceMatcher.real_quick_ratio()..difflib.txt*
 
       Return an upper bound on "ratio()" very quickly.
 
@@ -661,7 +660,7 @@ class difflib.Differ(linejunk=None, charjunk=None)
 
    "Differ" objects are used (deltas generated) via a single method:
 
-   compare(a, b)                         *Differ.compare()..difflib.txt;*
+   compare(a, b)                          *Differ.compare()..difflib.txt*
 
       Compare two sequences of lines, and generate the delta (a
       sequence of lines).

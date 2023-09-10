@@ -1,4 +1,4 @@
-*xmldom.txt;*                                 Last change: 2023 Sep 09
+*xml.dom.txt;*                                Last change: 2023 Sep 10
 
 "xml.dom" — The Document Object Model API
 *****************************************
@@ -74,7 +74,7 @@ Module Contents
 
 The "xml.dom" contains the following functions:
 
-                            *registerDOMImplementation()..xmldom.txt;*
+                            *registerDOMImplementation()..xml.dom.txt*
 xml.dom.registerDOMImplementation(name, factory)
 
    Register the _factory_ function with the name _name_.  The factory
@@ -84,7 +84,7 @@ xml.dom.registerDOMImplementation(name, factory)
    for the specific implementation (e.g. if that implementation
    supports some customization).
 
-                                 *getDOMImplementation()..xmldom.txt;*
+                                 *getDOMImplementation()..xml.dom.txt*
 xml.dom.getDOMImplementation(name=None, features=())
 
    Return a suitable DOM implementation. The _name_ is either well-
@@ -102,25 +102,25 @@ xml.dom.getDOMImplementation(name=None, features=())
 
 Some convenience constants are also provided:
 
-xml.dom.EMPTY_NAMESPACE                 *EMPTY_NAMESPACE..xmldom.txt;*
+xml.dom.EMPTY_NAMESPACE                 *EMPTY_NAMESPACE..xml.dom.txt*
 
    The value used to indicate that no namespace is associated with a
    node in the DOM.  This is typically found as the "namespaceURI" of
    a node, or used as the _namespaceURI_ parameter to a namespaces-
    specific method.
 
-xml.dom.XML_NAMESPACE                     *XML_NAMESPACE..xmldom.txt;*
+xml.dom.XML_NAMESPACE                     *XML_NAMESPACE..xml.dom.txt*
 
    The namespace URI associated with the reserved prefix "xml", as
    defined by Namespaces in XML (section 4).
 
-xml.dom.XMLNS_NAMESPACE                 *XMLNS_NAMESPACE..xmldom.txt;*
+xml.dom.XMLNS_NAMESPACE                 *XMLNS_NAMESPACE..xml.dom.txt*
 
    The namespace URI for namespace declarations, as defined by
    Document Object Model (DOM) Level 2 Core Specification (section
    1.1.8).
 
-xml.dom.XHTML_NAMESPACE                 *XHTML_NAMESPACE..xmldom.txt;*
+xml.dom.XHTML_NAMESPACE                 *XHTML_NAMESPACE..xml.dom.txt*
 
    The URI of the XHTML namespace as defined by XHTML 1.0: The
    Extensible HyperText Markup Language (section 3.1.1).
@@ -192,13 +192,13 @@ determine the availability of particular features in the DOM they are
 using. DOM Level 2 added the ability to create new "Document" and
 "DocumentType" objects using the "DOMImplementation" as well.
 
-                         *DOMImplementation.hasFeature()..xmldom.txt;*
+                         *DOMImplementation.hasFeature()..xml.dom.txt*
 DOMImplementation.hasFeature(feature, version)
 
    Return "True" if the feature identified by the pair of strings
    _feature_ and _version_ is implemented.
 
-                     *DOMImplementation.createDocument()..xmldom.txt;*
+                     *DOMImplementation.createDocument()..xml.dom.txt*
 DOMImplementation.createDocument(namespaceUri, qualifiedName, doctype)
 
    Return a new "Document" object (the root of the DOM), with a child
@@ -208,7 +208,7 @@ DOMImplementation.createDocument(namespaceUri, qualifiedName, doctype)
    API, the first two arguments can also be "None" in order to
    indicate that no "Element" child is to be created.
 
-                 *DOMImplementation.createDocumentType()..xmldom.txt;*
+                 *DOMImplementation.createDocumentType()..xml.dom.txt*
 DOMImplementation.createDocumentType(qualifiedName, publicId, systemId)
 
    Return a new "DocumentType" object that encapsulates the given
@@ -221,7 +221,7 @@ Node Objects
 
 All of the components of an XML document are subclasses of "Node".
 
-Node.nodeType                             *Node.nodeType..xmldom.txt;*
+Node.nodeType                             *Node.nodeType..xml.dom.txt*
 
    An integer representing the node type.  Symbolic constants for the
    types are on the "Node" object: "ELEMENT_NODE", "ATTRIBUTE_NODE",
@@ -230,7 +230,7 @@ Node.nodeType                             *Node.nodeType..xmldom.txt;*
    "DOCUMENT_TYPE_NODE", "NOTATION_NODE". This is a read-only
    attribute.
 
-Node.parentNode                         *Node.parentNode..xmldom.txt;*
+Node.parentNode                         *Node.parentNode..xml.dom.txt*
 
    The parent of the current node, or "None" for the document node.
    The value is always a "Node" object or "None".  For "Element"
@@ -238,13 +238,13 @@ Node.parentNode                         *Node.parentNode..xmldom.txt;*
    element, in which case it will be the "Document" object. For "Attr"
    nodes, this is always "None". This is a read-only attribute.
 
-Node.attributes                         *Node.attributes..xmldom.txt;*
+Node.attributes                         *Node.attributes..xml.dom.txt*
 
    A "NamedNodeMap" of attribute objects.  Only elements have actual
    values for this; others provide "None" for this attribute. This is
    a read-only attribute.
 
-Node.previousSibling               *Node.previousSibling..xmldom.txt;*
+Node.previousSibling               *Node.previousSibling..xml.dom.txt*
 
    The node that immediately precedes this one with the same parent.
    For instance the element with an end-tag that comes just before the
@@ -254,44 +254,44 @@ Node.previousSibling               *Node.previousSibling..xmldom.txt;*
    parent, this attribute will be "None". This is a read-only
    attribute.
 
-Node.nextSibling                       *Node.nextSibling..xmldom.txt;*
+Node.nextSibling                       *Node.nextSibling..xml.dom.txt*
 
    The node that immediately follows this one with the same parent.
    See also "previousSibling".  If this is the last child of the
    parent, this attribute will be "None". This is a read-only
    attribute.
 
-Node.childNodes                         *Node.childNodes..xmldom.txt;*
+Node.childNodes                         *Node.childNodes..xml.dom.txt*
 
    A list of nodes contained within this node. This is a read-only
    attribute.
 
-Node.firstChild                         *Node.firstChild..xmldom.txt;*
+Node.firstChild                         *Node.firstChild..xml.dom.txt*
 
    The first child of the node, if there are any, or "None". This is a
    read-only attribute.
 
-Node.lastChild                           *Node.lastChild..xmldom.txt;*
+Node.lastChild                           *Node.lastChild..xml.dom.txt*
 
    The last child of the node, if there are any, or "None". This is a
    read-only attribute.
 
-Node.localName                           *Node.localName..xmldom.txt;*
+Node.localName                           *Node.localName..xml.dom.txt*
 
    The part of the "tagName" following the colon if there is one, else
    the entire "tagName".  The value is a string.
 
-Node.prefix                                 *Node.prefix..xmldom.txt;*
+Node.prefix                                 *Node.prefix..xml.dom.txt*
 
    The part of the "tagName" preceding the colon if there is one, else
    the empty string.  The value is a string, or "None".
 
-Node.namespaceURI                     *Node.namespaceURI..xmldom.txt;*
+Node.namespaceURI                     *Node.namespaceURI..xml.dom.txt*
 
    The namespace associated with the element name.  This will be a
    string or "None".  This is a read-only attribute.
 
-Node.nodeName                             *Node.nodeName..xmldom.txt;*
+Node.nodeName                             *Node.nodeName..xml.dom.txt*
 
    This has a different meaning for each node type; see the DOM
    specification for details.  You can always get the information you
@@ -300,21 +300,21 @@ Node.nodeName                             *Node.nodeName..xmldom.txt;*
    types, the value of this attribute will be either a string or
    "None".  This is a read-only attribute.
 
-Node.nodeValue                           *Node.nodeValue..xmldom.txt;*
+Node.nodeValue                           *Node.nodeValue..xml.dom.txt*
 
    This has a different meaning for each node type; see the DOM
    specification for details.  The situation is similar to that with
    "nodeName".  The value is a string or "None".
 
-Node.hasAttributes()               *Node.hasAttributes()..xmldom.txt;*
+Node.hasAttributes()               *Node.hasAttributes()..xml.dom.txt*
 
    Return "True" if the node has any attributes.
 
-Node.hasChildNodes()               *Node.hasChildNodes()..xmldom.txt;*
+Node.hasChildNodes()               *Node.hasChildNodes()..xml.dom.txt*
 
    Return "True" if the node has any child nodes.
 
-Node.isSameNode(other)                *Node.isSameNode()..xmldom.txt;*
+Node.isSameNode(other)                *Node.isSameNode()..xml.dom.txt*
 
    Return "True" if _other_ refers to the same node as this node. This
    is especially useful for DOM implementations which use any sort of
@@ -329,13 +329,13 @@ Node.isSameNode(other)                *Node.isSameNode()..xmldom.txt;*
      affect this method in the Python DOM interface (though any new
      W3C API for this would also be supported).
 
-Node.appendChild(newChild)           *Node.appendChild()..xmldom.txt;*
+Node.appendChild(newChild)           *Node.appendChild()..xml.dom.txt*
 
    Add a new child node to this node at the end of the list of
    children, returning _newChild_. If the node was already in the
    tree, it is removed first.
 
-                                    *Node.insertBefore()..xmldom.txt;*
+                                    *Node.insertBefore()..xml.dom.txt*
 Node.insertBefore(newChild, refChild)
 
    Insert a new child node before an existing child.  It must be the
@@ -343,26 +343,26 @@ Node.insertBefore(newChild, refChild)
    is raised. _newChild_ is returned. If _refChild_ is "None", it
    inserts _newChild_ at the end of the children’s list.
 
-Node.removeChild(oldChild)           *Node.removeChild()..xmldom.txt;*
+Node.removeChild(oldChild)           *Node.removeChild()..xml.dom.txt*
 
    Remove a child node.  _oldChild_ must be a child of this node; if
    not, "ValueError" is raised.  _oldChild_ is returned on success.
    If _oldChild_ will not be used further, its "unlink()" method
    should be called.
 
-                                    *Node.replaceChild()..xmldom.txt;*
+                                    *Node.replaceChild()..xml.dom.txt*
 Node.replaceChild(newChild, oldChild)
 
    Replace an existing node with a new node. It must be the case that
    _oldChild_ is a child of this node; if not, "ValueError" is raised.
 
-Node.normalize()                       *Node.normalize()..xmldom.txt;*
+Node.normalize()                       *Node.normalize()..xml.dom.txt*
 
    Join adjacent text nodes so that all stretches of text are stored
    as single "Text" instances.  This simplifies processing text from a
    DOM tree for many applications.
 
-Node.cloneNode(deep)                   *Node.cloneNode()..xmldom.txt;*
+Node.cloneNode(deep)                   *Node.cloneNode()..xml.dom.txt*
 
    Clone this node.  Setting _deep_ means to clone all child nodes as
    well.  This returns the clone.
@@ -380,13 +380,13 @@ provides one as its list of child nodes, and the
 The DOM Level 2 recommendation defines one method and one attribute
 for these objects:
 
-NodeList.item(i)                        *NodeList.item()..xmldom.txt;*
+NodeList.item(i)                        *NodeList.item()..xml.dom.txt*
 
    Return the _i_’th item from the sequence, if there is one, or
    "None".  The index _i_ is not allowed to be less than zero or
    greater than or equal to the length of the sequence.
 
-NodeList.length                         *NodeList.length..xmldom.txt;*
+NodeList.length                         *NodeList.length..xml.dom.txt*
 
    The number of nodes in the sequence.
 
@@ -416,29 +416,29 @@ instead of an instance of this interface.
 "DocumentType" is a specialization of "Node", and adds the following
 attributes:
 
-DocumentType.publicId             *DocumentType.publicId..xmldom.txt;*
+DocumentType.publicId             *DocumentType.publicId..xml.dom.txt*
 
    The public identifier for the external subset of the document type
    definition. This will be a string or "None".
 
-DocumentType.systemId             *DocumentType.systemId..xmldom.txt;*
+DocumentType.systemId             *DocumentType.systemId..xml.dom.txt*
 
    The system identifier for the external subset of the document type
    definition. This will be a URI as a string, or "None".
 
-                            *DocumentType.internalSubset..xmldom.txt;*
+                            *DocumentType.internalSubset..xml.dom.txt*
 DocumentType.internalSubset
 
    A string giving the complete internal subset from the document.
    This does not include the brackets which enclose the subset.  If
    the document has no internal subset, this should be "None".
 
-DocumentType.name                     *DocumentType.name..xmldom.txt;*
+DocumentType.name                     *DocumentType.name..xml.dom.txt*
 
    The name of the root element as given in the "DOCTYPE" declaration,
    if present.
 
-DocumentType.entities             *DocumentType.entities..xmldom.txt;*
+DocumentType.entities             *DocumentType.entities..xml.dom.txt*
 
    This is a "NamedNodeMap" giving the definitions of external
    entities. For entity names defined more than once, only the first
@@ -446,7 +446,7 @@ DocumentType.entities             *DocumentType.entities..xmldom.txt;*
    recommendation).  This may be "None" if the information is not
    provided by the parser, or if no entities are defined.
 
-DocumentType.notations           *DocumentType.notations..xmldom.txt;*
+DocumentType.notations           *DocumentType.notations..xml.dom.txt*
 
    This is a "NamedNodeMap" giving the definitions of notations. For
    notation names defined more than once, only the first definition is
@@ -462,11 +462,11 @@ A "Document" represents an entire XML document, including its
 constituent elements, attributes, processing instructions, comments
 etc.  Remember that it inherits properties from "Node".
 
-Document.documentElement       *Document.documentElement..xmldom.txt;*
+Document.documentElement       *Document.documentElement..xml.dom.txt*
 
    The one and only root element of the document.
 
-                               *Document.createElement()..xmldom.txt;*
+                               *Document.createElement()..xml.dom.txt*
 Document.createElement(tagName)
 
    Create and return a new element node.  The element is not inserted
@@ -474,7 +474,7 @@ Document.createElement(tagName)
    insert it with one of the other methods such as "insertBefore()" or
    "appendChild()".
 
-                             *Document.createElementNS()..xmldom.txt;*
+                             *Document.createElementNS()..xml.dom.txt*
 Document.createElementNS(namespaceURI, tagName)
 
    Create and return a new element with a namespace.  The _tagName_
@@ -482,27 +482,27 @@ Document.createElementNS(namespaceURI, tagName)
    when it is created.  You need to explicitly insert it with one of
    the other methods such as "insertBefore()" or "appendChild()".
 
-                              *Document.createTextNode()..xmldom.txt;*
+                              *Document.createTextNode()..xml.dom.txt*
 Document.createTextNode(data)
 
    Create and return a text node containing the data passed as a
    parameter.  As with the other creation methods, this one does not
    insert the node into the tree.
 
-Document.createComment(data)   *Document.createComment()..xmldom.txt;*
+Document.createComment(data)   *Document.createComment()..xml.dom.txt*
 
    Create and return a comment node containing the data passed as a
    parameter.  As with the other creation methods, this one does not
    insert the node into the tree.
 
-                 *Document.createProcessingInstruction()..xmldom.txt;*
+                 *Document.createProcessingInstruction()..xml.dom.txt*
 Document.createProcessingInstruction(target, data)
 
    Create and return a processing instruction node containing the
    _target_ and _data_ passed as parameters.  As with the other
    creation methods, this one does not insert the node into the tree.
 
-                             *Document.createAttribute()..xmldom.txt;*
+                             *Document.createAttribute()..xml.dom.txt*
 Document.createAttribute(name)
 
    Create and return an attribute node.  This method does not
@@ -510,7 +510,7 @@ Document.createAttribute(name)
    use "setAttributeNode()" on the appropriate "Element" object to use
    the newly created attribute instance.
 
-                           *Document.createAttributeNS()..xmldom.txt;*
+                           *Document.createAttributeNS()..xml.dom.txt*
 Document.createAttributeNS(namespaceURI, qualifiedName)
 
    Create and return an attribute node with a namespace.  The
@@ -519,13 +519,13 @@ Document.createAttributeNS(namespaceURI, qualifiedName)
    "setAttributeNode()" on the appropriate "Element" object to use the
    newly created attribute instance.
 
-                        *Document.getElementsByTagName()..xmldom.txt;*
+                        *Document.getElementsByTagName()..xml.dom.txt*
 Document.getElementsByTagName(tagName)
 
    Search for all descendants (direct children, children’s children,
    etc.) with a particular element type name.
 
-                      *Document.getElementsByTagNameNS()..xmldom.txt;*
+                      *Document.getElementsByTagNameNS()..xml.dom.txt*
 Document.getElementsByTagNameNS(namespaceURI, localName)
 
    Search for all descendants (direct children, children’s children,
@@ -539,79 +539,79 @@ Element Objects
 "Element" is a subclass of "Node", so inherits all the attributes of
 that class.
 
-Element.tagName                         *Element.tagName..xmldom.txt;*
+Element.tagName                         *Element.tagName..xml.dom.txt*
 
    The element type name.  In a namespace-using document it may have
    colons in it. The value is a string.
 
-                         *Element.getElementsByTagName()..xmldom.txt;*
+                         *Element.getElementsByTagName()..xml.dom.txt*
 Element.getElementsByTagName(tagName)
 
    Same as equivalent method in the "Document" class.
 
-                       *Element.getElementsByTagNameNS()..xmldom.txt;*
+                       *Element.getElementsByTagNameNS()..xml.dom.txt*
 Element.getElementsByTagNameNS(namespaceURI, localName)
 
    Same as equivalent method in the "Document" class.
 
-Element.hasAttribute(name)       *Element.hasAttribute()..xmldom.txt;*
+Element.hasAttribute(name)       *Element.hasAttribute()..xml.dom.txt*
 
    Return "True" if the element has an attribute named by _name_.
 
-                               *Element.hasAttributeNS()..xmldom.txt;*
+                               *Element.hasAttributeNS()..xml.dom.txt*
 Element.hasAttributeNS(namespaceURI, localName)
 
    Return "True" if the element has an attribute named by
    _namespaceURI_ and _localName_.
 
-Element.getAttribute(name)       *Element.getAttribute()..xmldom.txt;*
+Element.getAttribute(name)       *Element.getAttribute()..xml.dom.txt*
 
    Return the value of the attribute named by _name_ as a string. If
    no such attribute exists, an empty string is returned, as if the
    attribute had no value.
 
-                             *Element.getAttributeNode()..xmldom.txt;*
+                             *Element.getAttributeNode()..xml.dom.txt*
 Element.getAttributeNode(attrname)
 
    Return the "Attr" node for the attribute named by _attrname_.
 
-                               *Element.getAttributeNS()..xmldom.txt;*
+                               *Element.getAttributeNS()..xml.dom.txt*
 Element.getAttributeNS(namespaceURI, localName)
 
    Return the value of the attribute named by _namespaceURI_ and
    _localName_ as a string. If no such attribute exists, an empty
    string is returned, as if the attribute had no value.
 
-                           *Element.getAttributeNodeNS()..xmldom.txt;*
+                           *Element.getAttributeNodeNS()..xml.dom.txt*
 Element.getAttributeNodeNS(namespaceURI, localName)
 
    Return an attribute value as a node, given a _namespaceURI_ and
    _localName_.
 
-                              *Element.removeAttribute()..xmldom.txt;*
+                              *Element.removeAttribute()..xml.dom.txt*
 Element.removeAttribute(name)
 
    Remove an attribute by name.  If there is no matching attribute, a
    "NotFoundErr" is raised.
 
-                          *Element.removeAttributeNode()..xmldom.txt;*
+                          *Element.removeAttributeNode()..xml.dom.txt*
 Element.removeAttributeNode(oldAttr)
 
    Remove and return _oldAttr_ from the attribute list, if present. If
    _oldAttr_ is not present, "NotFoundErr" is raised.
 
-                            *Element.removeAttributeNS()..xmldom.txt;*
+                            *Element.removeAttributeNS()..xml.dom.txt*
 Element.removeAttributeNS(namespaceURI, localName)
 
    Remove an attribute by name.  Note that it uses a localName, not a
    qname.  No exception is raised if there is no matching attribute.
 
-                                 *Element.setAttribute()..xmldom.txt;*
+                                 *Element.setAttribute()..xml.dom.txt*
 Element.setAttribute(name, value)
 
    Set an attribute value from a string.
 
-                             *Element.setAttributeNode()..xmldom.txt;*
+                             *Element.setAttributeNode()..xml.dom.txt*
 Element.setAttributeNode(newAttr)
 
    Add a new attribute node to the element, replacing an existing
@@ -619,7 +619,7 @@ Element.setAttributeNode(newAttr)
    replacement occurs, the old attribute node will be returned.  If
    _newAttr_ is already in use, "InuseAttributeErr" will be raised.
 
-                           *Element.setAttributeNodeNS()..xmldom.txt;*
+                           *Element.setAttributeNodeNS()..xml.dom.txt*
 Element.setAttributeNodeNS(newAttr)
 
    Add a new attribute node to the element, replacing an existing
@@ -628,7 +628,7 @@ Element.setAttributeNodeNS(newAttr)
    will be returned.  If _newAttr_ is already in use,
    "InuseAttributeErr" will be raised.
 
-                               *Element.setAttributeNS()..xmldom.txt;*
+                               *Element.setAttributeNS()..xml.dom.txt*
 Element.setAttributeNS(namespaceURI, qname, value)
 
    Set an attribute value from a string, given a _namespaceURI_ and a
@@ -641,22 +641,22 @@ Attr Objects
 
 "Attr" inherits from "Node", so inherits all its attributes.
 
-Attr.name                                     *Attr.name..xmldom.txt;*
+Attr.name                                     *Attr.name..xml.dom.txt*
 
    The attribute name. In a namespace-using document it may include a
    colon.
 
-Attr.localName                           *Attr.localName..xmldom.txt;*
+Attr.localName                           *Attr.localName..xml.dom.txt*
 
    The part of the name following the colon if there is one, else the
    entire name. This is a read-only attribute.
 
-Attr.prefix                                 *Attr.prefix..xmldom.txt;*
+Attr.prefix                                 *Attr.prefix..xml.dom.txt*
 
    The part of the name preceding the colon if there is one, else the
    empty string.
 
-Attr.value                                   *Attr.value..xmldom.txt;*
+Attr.value                                   *Attr.value..xml.dom.txt*
 
    The text value of the attribute.  This is a synonym for the
    "nodeValue" attribute.
@@ -667,11 +667,11 @@ NamedNodeMap Objects
 
 "NamedNodeMap" does _not_ inherit from "Node".
 
-NamedNodeMap.length                 *NamedNodeMap.length..xmldom.txt;*
+NamedNodeMap.length                 *NamedNodeMap.length..xml.dom.txt*
 
    The length of the attribute list.
 
-NamedNodeMap.item(index)            *NamedNodeMap.item()..xmldom.txt;*
+NamedNodeMap.item(index)            *NamedNodeMap.item()..xml.dom.txt*
 
    Return an attribute with a particular index.  The order you get the
    attributes in is arbitrary but will be consistent for the life of a
@@ -689,7 +689,7 @@ Comment Objects
 "Comment" represents a comment in the XML document.  It is a subclass
 of "Node", but cannot have child nodes.
 
-Comment.data                               *Comment.data..xmldom.txt;*
+Comment.data                               *Comment.data..xml.dom.txt*
 
    The content of the comment as a string.  The attribute contains all
    characters between the leading "<!-""-" and trailing "-""->", but
@@ -708,7 +708,7 @@ provide different values for the "nodeType" attribute.
 These interfaces extend the "Node" interface.  They cannot have child
 nodes.
 
-Text.data                                     *Text.data..xmldom.txt;*
+Text.data                                     *Text.data..xml.dom.txt*
 
    The content of the text node as a string.
 
@@ -728,13 +728,13 @@ ProcessingInstruction Objects
 Represents a processing instruction in the XML document; this inherits
 from the "Node" interface and cannot have child nodes.
 
-                           *ProcessingInstruction.target..xmldom.txt;*
+                           *ProcessingInstruction.target..xml.dom.txt*
 ProcessingInstruction.target
 
    The content of the processing instruction up to the first
    whitespace character. This is a read-only attribute.
 
-ProcessingInstruction.data   *ProcessingInstruction.data..xmldom.txt;*
+ProcessingInstruction.data   *ProcessingInstruction.data..xml.dom.txt*
 
    The content of the processing instruction following the first
    whitespace character.
@@ -755,39 +755,39 @@ exception codes defined by the DOM.  The implementations must raise
 the appropriate specific exception, each of which carries the
 appropriate value for the "code" attribute.
 
-exception xml.dom.DOMException             *DOMException..xmldom.txt;*
+exception xml.dom.DOMException             *DOMException..xml.dom.txt*
 
    Base exception class used for all specific DOM exceptions.  This
    exception class cannot be directly instantiated.
 
-exception xml.dom.DomstringSizeErr     *DomstringSizeErr..xmldom.txt;*
+exception xml.dom.DomstringSizeErr     *DomstringSizeErr..xml.dom.txt*
 
    Raised when a specified range of text does not fit into a string.
    This is not known to be used in the Python DOM implementations, but
    may be received from DOM implementations not written in Python.
 
-                                    *HierarchyRequestErr..xmldom.txt;*
+                                    *HierarchyRequestErr..xml.dom.txt*
 exception xml.dom.HierarchyRequestErr
 
    Raised when an attempt is made to insert a node where the node type
    is not allowed.
 
-exception xml.dom.IndexSizeErr             *IndexSizeErr..xmldom.txt;*
+exception xml.dom.IndexSizeErr             *IndexSizeErr..xml.dom.txt*
 
    Raised when an index or size parameter to a method is negative or
    exceeds the allowed values.
 
-exception xml.dom.InuseAttributeErr   *InuseAttributeErr..xmldom.txt;*
+exception xml.dom.InuseAttributeErr   *InuseAttributeErr..xml.dom.txt*
 
    Raised when an attempt is made to insert an "Attr" node that is
    already present elsewhere in the document.
 
-exception xml.dom.InvalidAccessErr     *InvalidAccessErr..xmldom.txt;*
+exception xml.dom.InvalidAccessErr     *InvalidAccessErr..xml.dom.txt*
 
    Raised if a parameter or an operation is not supported on the
    underlying object.
 
-                                    *InvalidCharacterErr..xmldom.txt;*
+                                    *InvalidCharacterErr..xml.dom.txt*
 exception xml.dom.InvalidCharacterErr
 
    This exception is raised when a string parameter contains a
@@ -796,49 +796,49 @@ exception xml.dom.InvalidCharacterErr
    "Element" node with a space in the element type name will cause
    this error to be raised.
 
-                                 *InvalidModificationErr..xmldom.txt;*
+                                 *InvalidModificationErr..xml.dom.txt*
 exception xml.dom.InvalidModificationErr
 
    Raised when an attempt is made to modify the type of a node.
 
-exception xml.dom.InvalidStateErr       *InvalidStateErr..xmldom.txt;*
+exception xml.dom.InvalidStateErr       *InvalidStateErr..xml.dom.txt*
 
    Raised when an attempt is made to use an object that is not defined
    or is no longer usable.
 
-exception xml.dom.NamespaceErr             *NamespaceErr..xmldom.txt;*
+exception xml.dom.NamespaceErr             *NamespaceErr..xml.dom.txt*
 
    If an attempt is made to change any object in a way that is not
    permitted with regard to the Namespaces in XML recommendation, this
    exception is raised.
 
-exception xml.dom.NotFoundErr               *NotFoundErr..xmldom.txt;*
+exception xml.dom.NotFoundErr               *NotFoundErr..xml.dom.txt*
 
    Exception when a node does not exist in the referenced context.
    For example, "NamedNodeMap.removeNamedItem()" will raise this if
    the node passed in does not exist in the map.
 
-exception xml.dom.NotSupportedErr       *NotSupportedErr..xmldom.txt;*
+exception xml.dom.NotSupportedErr       *NotSupportedErr..xml.dom.txt*
 
    Raised when the implementation does not support the requested type
    of object or operation.
 
-exception xml.dom.NoDataAllowedErr     *NoDataAllowedErr..xmldom.txt;*
+exception xml.dom.NoDataAllowedErr     *NoDataAllowedErr..xml.dom.txt*
 
    This is raised if data is specified for a node which does not
    support data.
 
-                               *NoModificationAllowedErr..xmldom.txt;*
+                               *NoModificationAllowedErr..xml.dom.txt*
 exception xml.dom.NoModificationAllowedErr
 
    Raised on attempts to modify an object where modifications are not
    allowed (such as for read-only nodes).
 
-exception xml.dom.SyntaxErr                   *SyntaxErr..xmldom.txt;*
+exception xml.dom.SyntaxErr                   *SyntaxErr..xml.dom.txt*
 
    Raised when an invalid or illegal string is specified.
 
-exception xml.dom.WrongDocumentErr     *WrongDocumentErr..xmldom.txt;*
+exception xml.dom.WrongDocumentErr     *WrongDocumentErr..xml.dom.txt*
 
    Raised when a node is inserted in a different document than it
    currently belongs to, and the implementation does not support

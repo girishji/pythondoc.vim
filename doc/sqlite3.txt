@@ -1,4 +1,4 @@
-*sqlite3.txt;*                                Last change: 2023 Sep 09
+*sqlite3.txt;*                                Last change: 2023 Sep 10
 
 "sqlite3" — DB-API 2.0 interface for SQLite databases
 *****************************************************
@@ -187,7 +187,7 @@ Reference
 Module functions
 ----------------
 
-                                             *connect()..sqlite3.txt;*
+                                              *connect()..sqlite3.txt*
 sqlite3.connect(database, timeout=5.0, detect_types=0, isolation_level='DEFERRED', check_same_thread=True, factory=sqlite3.Connection, cached_statements=128, uri=False, *, autocommit=sqlite3.LEGACY_TRANSACTION_CONTROL)
 
    Open a connection to an SQLite database.
@@ -277,7 +277,7 @@ sqlite3.connect(database, timeout=5.0, detect_types=0, isolation_level='DEFERRED
    _factory_, _cached_statements_, and _uri_ is deprecated. They will
    become keyword-only parameters in Python 3.15.
 
-                                  *complete_statement()..sqlite3.txt;*
+                                   *complete_statement()..sqlite3.txt*
 sqlite3.complete_statement(statement)
 
    Return "True" if the string _statement_ appears to contain one or
@@ -299,7 +299,7 @@ sqlite3.complete_statement(statement)
 
    See "runsource()" in Lib/sqlite3/__main__.py for real-world use.
 
-                          *enable_callback_tracebacks()..sqlite3.txt;*
+                           *enable_callback_tracebacks()..sqlite3.txt*
 sqlite3.enable_callback_tracebacks(flag, /)
 
    Enable or disable callback tracebacks. By default you will not get
@@ -328,7 +328,7 @@ sqlite3.enable_callback_tracebacks(flag, /)
       Error message: None
 <
 
-                                    *register_adapter()..sqlite3.txt;*
+                                     *register_adapter()..sqlite3.txt*
 sqlite3.register_adapter(type, adapter, /)
 
    Register an _adapter_ _callable_ to adapt the Python type _type_
@@ -336,7 +336,7 @@ sqlite3.register_adapter(type, adapter, /)
    type _type_ as its sole argument, and must return a value of a type
    that SQLite natively understands.
 
-                                  *register_converter()..sqlite3.txt;*
+                                   *register_converter()..sqlite3.txt*
 sqlite3.register_converter(typename, converter, /)
 
    Register the _converter_ _callable_ to convert SQLite objects of
@@ -353,14 +353,14 @@ sqlite3.register_converter(typename, converter, /)
 Module constants
 ----------------
 
-                            *LEGACY_TRANSACTION_CONTROL..sqlite3.txt;*
+                             *LEGACY_TRANSACTION_CONTROL..sqlite3.txt*
 sqlite3.LEGACY_TRANSACTION_CONTROL
 
    Set "autocommit" to this constant to select old style (pre-Python
    3.12) transaction control behaviour. See Transaction control via
    the isolation_level attribute for more information.
 
-sqlite3.PARSE_COLNAMES                  *PARSE_COLNAMES..sqlite3.txt;*
+sqlite3.PARSE_COLNAMES                   *PARSE_COLNAMES..sqlite3.txt*
 
    Pass this flag value to the _detect_types_ parameter of "connect()"
    to look up a converter function by using the type name, parsed from
@@ -372,7 +372,7 @@ sqlite3.PARSE_COLNAMES                  *PARSE_COLNAMES..sqlite3.txt;*
    This flag may be combined with "PARSE_DECLTYPES" using the "|"
    (bitwise or) operator.
 
-sqlite3.PARSE_DECLTYPES                *PARSE_DECLTYPES..sqlite3.txt;*
+sqlite3.PARSE_DECLTYPES                 *PARSE_DECLTYPES..sqlite3.txt*
 
    Pass this flag value to the _detect_types_ parameter of "connect()"
    to look up a converter function using the declared types for each
@@ -389,9 +389,9 @@ sqlite3.PARSE_DECLTYPES                *PARSE_DECLTYPES..sqlite3.txt;*
    This flag may be combined with "PARSE_COLNAMES" using the "|"
    (bitwise or) operator.
 
-sqlite3.SQLITE_OK                            *SQLITE_OK..sqlite3.txt;*
-sqlite3.SQLITE_DENY                        *SQLITE_DENY..sqlite3.txt;*
-sqlite3.SQLITE_IGNORE                    *SQLITE_IGNORE..sqlite3.txt;*
+sqlite3.SQLITE_OK                             *SQLITE_OK..sqlite3.txt*
+sqlite3.SQLITE_DENY                         *SQLITE_DENY..sqlite3.txt*
+sqlite3.SQLITE_IGNORE                     *SQLITE_IGNORE..sqlite3.txt*
 
    Flags that should be returned by the _authorizer_callback_
    _callable_ passed to "Connection.set_authorizer()", to indicate
@@ -403,12 +403,12 @@ sqlite3.SQLITE_IGNORE                    *SQLITE_IGNORE..sqlite3.txt;*
 
    * The column should be treated as a "NULL" value ("SQLITE_IGNORE")
 
-sqlite3.apilevel                              *apilevel..sqlite3.txt;*
+sqlite3.apilevel                               *apilevel..sqlite3.txt*
 
    String constant stating the supported DB-API level. Required by the
    DB-API. Hard-coded to ""2.0"".
 
-sqlite3.paramstyle                          *paramstyle..sqlite3.txt;*
+sqlite3.paramstyle                           *paramstyle..sqlite3.txt*
 
    String constant stating the type of parameter marker formatting
    expected by the "sqlite3" module. Required by the DB-API. Hard-
@@ -418,16 +418,16 @@ sqlite3.paramstyle                          *paramstyle..sqlite3.txt;*
 
      The "named" DB-API parameter style is also supported.
 
-sqlite3.sqlite_version                  *sqlite_version..sqlite3.txt;*
+sqlite3.sqlite_version                   *sqlite_version..sqlite3.txt*
 
    Version number of the runtime SQLite library as a "string".
 
-sqlite3.sqlite_version_info        *sqlite_version_info..sqlite3.txt;*
+sqlite3.sqlite_version_info         *sqlite_version_info..sqlite3.txt*
 
    Version number of the runtime SQLite library as a "tuple" of
    "integers".
 
-sqlite3.threadsafety                      *threadsafety..sqlite3.txt;*
+sqlite3.threadsafety                       *threadsafety..sqlite3.txt*
 
    Integer constant required by the DB-API 2.0, stating the level of
    thread safety the "sqlite3" module supports. This attribute is set
@@ -464,7 +464,7 @@ sqlite3.threadsafety                      *threadsafety..sqlite3.txt;*
    Changed in version 3.11: Set _threadsafety_ dynamically instead of
    hard-coding it to "1".
 
-sqlite3.version                                *version..sqlite3.txt;*
+sqlite3.version                                 *version..sqlite3.txt*
 
    Version number of this module as a "string". This is not the
    version of the SQLite library.
@@ -474,7 +474,7 @@ sqlite3.version                                *version..sqlite3.txt;*
    package, a third-party library which used to upstream changes to
    "sqlite3". Today, it carries no meaning or practical value.
 
-sqlite3.version_info                      *version_info..sqlite3.txt;*
+sqlite3.version_info                       *version_info..sqlite3.txt*
 
    Version number of this module as a "tuple" of "integers". This is
    not the version of the SQLite library.
@@ -484,52 +484,52 @@ sqlite3.version_info                      *version_info..sqlite3.txt;*
    package, a third-party library which used to upstream changes to
    "sqlite3". Today, it carries no meaning or practical value.
 
-                             *SQLITE_DBCONFIG_DEFENSIVE..sqlite3.txt;*
+                              *SQLITE_DBCONFIG_DEFENSIVE..sqlite3.txt*
 sqlite3.SQLITE_DBCONFIG_DEFENSIVE
 
-                               *SQLITE_DBCONFIG_DQS_DDL..sqlite3.txt;*
+                                *SQLITE_DBCONFIG_DQS_DDL..sqlite3.txt*
 sqlite3.SQLITE_DBCONFIG_DQS_DDL
 
-                               *SQLITE_DBCONFIG_DQS_DML..sqlite3.txt;*
+                                *SQLITE_DBCONFIG_DQS_DML..sqlite3.txt*
 sqlite3.SQLITE_DBCONFIG_DQS_DML
 
-                           *SQLITE_DBCONFIG_ENABLE_FKEY..sqlite3.txt;*
+                            *SQLITE_DBCONFIG_ENABLE_FKEY..sqlite3.txt*
 sqlite3.SQLITE_DBCONFIG_ENABLE_FKEY
 
-                 *SQLITE_DBCONFIG_ENABLE_FTS3_TOKENIZER..sqlite3.txt;*
+                  *SQLITE_DBCONFIG_ENABLE_FTS3_TOKENIZER..sqlite3.txt*
 sqlite3.SQLITE_DBCONFIG_ENABLE_FTS3_TOKENIZER
 
-                 *SQLITE_DBCONFIG_ENABLE_LOAD_EXTENSION..sqlite3.txt;*
+                  *SQLITE_DBCONFIG_ENABLE_LOAD_EXTENSION..sqlite3.txt*
 sqlite3.SQLITE_DBCONFIG_ENABLE_LOAD_EXTENSION
 
-                           *SQLITE_DBCONFIG_ENABLE_QPSG..sqlite3.txt;*
+                            *SQLITE_DBCONFIG_ENABLE_QPSG..sqlite3.txt*
 sqlite3.SQLITE_DBCONFIG_ENABLE_QPSG
 
-                        *SQLITE_DBCONFIG_ENABLE_TRIGGER..sqlite3.txt;*
+                         *SQLITE_DBCONFIG_ENABLE_TRIGGER..sqlite3.txt*
 sqlite3.SQLITE_DBCONFIG_ENABLE_TRIGGER
 
-                           *SQLITE_DBCONFIG_ENABLE_VIEW..sqlite3.txt;*
+                            *SQLITE_DBCONFIG_ENABLE_VIEW..sqlite3.txt*
 sqlite3.SQLITE_DBCONFIG_ENABLE_VIEW
 
-                    *SQLITE_DBCONFIG_LEGACY_ALTER_TABLE..sqlite3.txt;*
+                     *SQLITE_DBCONFIG_LEGACY_ALTER_TABLE..sqlite3.txt*
 sqlite3.SQLITE_DBCONFIG_LEGACY_ALTER_TABLE
 
-                    *SQLITE_DBCONFIG_LEGACY_FILE_FORMAT..sqlite3.txt;*
+                     *SQLITE_DBCONFIG_LEGACY_FILE_FORMAT..sqlite3.txt*
 sqlite3.SQLITE_DBCONFIG_LEGACY_FILE_FORMAT
 
-                      *SQLITE_DBCONFIG_NO_CKPT_ON_CLOSE..sqlite3.txt;*
+                       *SQLITE_DBCONFIG_NO_CKPT_ON_CLOSE..sqlite3.txt*
 sqlite3.SQLITE_DBCONFIG_NO_CKPT_ON_CLOSE
 
-                        *SQLITE_DBCONFIG_RESET_DATABASE..sqlite3.txt;*
+                         *SQLITE_DBCONFIG_RESET_DATABASE..sqlite3.txt*
 sqlite3.SQLITE_DBCONFIG_RESET_DATABASE
 
-                           *SQLITE_DBCONFIG_TRIGGER_EQP..sqlite3.txt;*
+                            *SQLITE_DBCONFIG_TRIGGER_EQP..sqlite3.txt*
 sqlite3.SQLITE_DBCONFIG_TRIGGER_EQP
 
-                        *SQLITE_DBCONFIG_TRUSTED_SCHEMA..sqlite3.txt;*
+                         *SQLITE_DBCONFIG_TRUSTED_SCHEMA..sqlite3.txt*
 sqlite3.SQLITE_DBCONFIG_TRUSTED_SCHEMA
 
-                       *SQLITE_DBCONFIG_WRITABLE_SCHEMA..sqlite3.txt;*
+                        *SQLITE_DBCONFIG_WRITABLE_SCHEMA..sqlite3.txt*
 sqlite3.SQLITE_DBCONFIG_WRITABLE_SCHEMA
 
    These constants are used for the "Connection.setconfig()" and
@@ -549,7 +549,7 @@ sqlite3.SQLITE_DBCONFIG_WRITABLE_SCHEMA
 Connection objects
 ------------------
 
-class sqlite3.Connection                    *Connection..sqlite3.txt;*
+class sqlite3.Connection                     *Connection..sqlite3.txt*
 
    Each open SQLite database is represented by a "Connection" object,
    which is created using "sqlite3.connect()". Their main purpose is
@@ -567,13 +567,13 @@ class sqlite3.Connection                    *Connection..sqlite3.txt;*
    An SQLite database connection has the following attributes and
    methods:
 
-   cursor(factory=Cursor)             *Connection.cursor()..sqlite3.txt;*
+   cursor(factory=Cursor)              *Connection.cursor()..sqlite3.txt*
 
       Create and return a "Cursor" object. The cursor method accepts a
       single optional parameter _factory_. If supplied, this must be a
       _callable_ returning an instance of "Cursor" or its subclasses.
 
-                                 *Connection.blobopen()..sqlite3.txt;*
+                                  *Connection.blobopen()..sqlite3.txt*
    blobopen(table, column, row, /, *, readonly=False, name='main')
 
       Open a "Blob" handle to an existing BLOB (Binary Large OBject).
@@ -609,7 +609,7 @@ class sqlite3.Connection                    *Connection..sqlite3.txt;*
 
       New in version 3.11.
 
-   commit()                           *Connection.commit()..sqlite3.txt;*
+   commit()                            *Connection.commit()..sqlite3.txt*
 
       Commit any pending transaction to the database. If "autocommit"
       is "True", or there is no open transaction, this method does
@@ -617,7 +617,7 @@ class sqlite3.Connection                    *Connection..sqlite3.txt;*
       implicitly opened if a pending transaction was committed by this
       method.
 
-   rollback()                       *Connection.rollback()..sqlite3.txt;*
+   rollback()                        *Connection.rollback()..sqlite3.txt*
 
       Roll back to the start of any pending transaction. If
       "autocommit" is "True", or there is no open transaction, this
@@ -625,7 +625,7 @@ class sqlite3.Connection                    *Connection..sqlite3.txt;*
       transaction is implicitly opened if a pending transaction was
       rolled back by this method.
 
-   close()                             *Connection.close()..sqlite3.txt;*
+   close()                              *Connection.close()..sqlite3.txt*
 
       Close the database connection. If "autocommit" is "False", any
       pending transaction is implicitly rolled back. If "autocommit"
@@ -633,24 +633,24 @@ class sqlite3.Connection                    *Connection..sqlite3.txt;*
       transaction control is executed. Make sure to "commit()" before
       closing to avoid losing pending changes.
 
-   execute(sql, parameters=(), /)    *Connection.execute()..sqlite3.txt;*
+   execute(sql, parameters=(), /)     *Connection.execute()..sqlite3.txt*
 
       Create a new "Cursor" object and call "execute()" on it with the
       given _sql_ and _parameters_. Return the new cursor object.
 
-                              *Connection.executemany()..sqlite3.txt;*
+                               *Connection.executemany()..sqlite3.txt*
    executemany(sql, parameters, /)
 
       Create a new "Cursor" object and call "executemany()" on it with
       the given _sql_ and _parameters_. Return the new cursor object.
 
-                            *Connection.executescript()..sqlite3.txt;*
+                             *Connection.executescript()..sqlite3.txt*
    executescript(sql_script, /)
 
       Create a new "Cursor" object and call "executescript()" on it
       with the given _sql_script_. Return the new cursor object.
 
-                          *Connection.create_function()..sqlite3.txt;*
+                           *Connection.create_function()..sqlite3.txt*
    create_function(name, narg, func, *, deterministic=False)
 
       Create or remove a user-defined SQL function.
@@ -687,7 +687,7 @@ class sqlite3.Connection                    *Connection..sqlite3.txt;*
       keyword arguments is deprecated. These parameters will become
       positional-only in Python 3.15.
 
-                         *Connection.create_aggregate()..sqlite3.txt;*
+                          *Connection.create_aggregate()..sqlite3.txt*
    create_aggregate(name, n_arg, aggregate_class)
 
       Create or remove a user-defined SQL aggregate function.
@@ -739,7 +739,7 @@ class sqlite3.Connection                    *Connection..sqlite3.txt;*
       _aggregate_class_ as keyword arguments is deprecated. These
       parameters will become positional-only in Python 3.15.
 
-                   *Connection.create_window_function()..sqlite3.txt;*
+                    *Connection.create_window_function()..sqlite3.txt*
    create_window_function(name, num_params, aggregate_class, /)
 
       Create or remove a user-defined aggregate window function.
@@ -825,7 +825,7 @@ class sqlite3.Connection                    *Connection..sqlite3.txt;*
          print(cur.fetchall())
 <
 
-                         *Connection.create_collation()..sqlite3.txt;*
+                          *Connection.create_collation()..sqlite3.txt*
    create_collation(name, callable, /)
 
       Create a collation named _name_ using the collating function
@@ -863,13 +863,13 @@ class sqlite3.Connection                    *Connection..sqlite3.txt;*
       Changed in version 3.11: The collation name can contain any
       Unicode character.  Earlier, only ASCII characters were allowed.
 
-   interrupt()                     *Connection.interrupt()..sqlite3.txt;*
+   interrupt()                      *Connection.interrupt()..sqlite3.txt*
 
       Call this method from a different thread to abort any queries
       that might be executing on the connection. Aborted queries will
       raise an "OperationalError".
 
-                           *Connection.set_authorizer()..sqlite3.txt;*
+                            *Connection.set_authorizer()..sqlite3.txt*
    set_authorizer(authorizer_callback)
 
       Register _callable_ _authorizer_callback_ to be invoked for each
@@ -903,7 +903,7 @@ class sqlite3.Connection                    *Connection..sqlite3.txt;*
       deprecated. The parameter will become positional-only in Python
       3.15.
 
-                     *Connection.set_progress_handler()..sqlite3.txt;*
+                      *Connection.set_progress_handler()..sqlite3.txt*
    set_progress_handler(progress_handler, n)
 
       Register _callable_ _progress_handler_ to be invoked for every
@@ -924,7 +924,7 @@ class sqlite3.Connection                    *Connection..sqlite3.txt;*
       deprecated. The parameter will become positional-only in Python
       3.15.
 
-                       *Connection.set_trace_callback()..sqlite3.txt;*
+                        *Connection.set_trace_callback()..sqlite3.txt*
    set_trace_callback(trace_callback)
 
       Register _callable_ _trace_callback_ to be invoked for each SQL
@@ -954,7 +954,7 @@ class sqlite3.Connection                    *Connection..sqlite3.txt;*
       Passing _trace_callback_ as a keyword argument to is deprecated.
       The parameter will become positional-only in Python 3.15.
 
-                    *Connection.enable_load_extension()..sqlite3.txt;*
+                     *Connection.enable_load_extension()..sqlite3.txt*
    enable_load_extension(enabled, /)
 
       Enable the SQLite engine to load SQLite extensions from shared
@@ -1005,7 +1005,7 @@ class sqlite3.Connection                    *Connection..sqlite3.txt;*
          con.close()
 <
 
-                           *Connection.load_extension()..sqlite3.txt;*
+                            *Connection.load_extension()..sqlite3.txt*
    load_extension(path, /, *, entrypoint=None)
 
       Load an SQLite extension from a shared library. Enable extension
@@ -1030,7 +1030,7 @@ class sqlite3.Connection                    *Connection..sqlite3.txt;*
 
       New in version 3.12: The _entrypoint_ parameter.
 
-   iterdump()                       *Connection.iterdump()..sqlite3.txt;*
+   iterdump()                        *Connection.iterdump()..sqlite3.txt*
 
       Return an _iterator_ to dump the database as SQL source code.
       Useful when saving an in-memory database for later restoration.
@@ -1046,7 +1046,7 @@ class sqlite3.Connection                    *Connection..sqlite3.txt;*
          con.close()
 <
 
-                                   *Connection.backup()..sqlite3.txt;*
+                                    *Connection.backup()..sqlite3.txt*
    backup(target, *, pages=-1, progress=None, name='main', sleep=0.250)
 
       Create a backup of an SQLite database.
@@ -1097,7 +1097,7 @@ class sqlite3.Connection                    *Connection..sqlite3.txt;*
 <
       New in version 3.7.
 
-   getlimit(category, /)            *Connection.getlimit()..sqlite3.txt;*
+   getlimit(category, /)             *Connection.getlimit()..sqlite3.txt*
 
       Get a connection runtime limit.
 
@@ -1120,7 +1120,7 @@ class sqlite3.Connection                    *Connection..sqlite3.txt;*
 <
       New in version 3.11.
 
-   setlimit(category, limit, /)     *Connection.setlimit()..sqlite3.txt;*
+   setlimit(category, limit, /)      *Connection.setlimit()..sqlite3.txt*
 
       Set a connection runtime limit. Attempts to increase a limit
       above its hard upper bound are silently truncated to the hard
@@ -1150,7 +1150,7 @@ class sqlite3.Connection                    *Connection..sqlite3.txt;*
 <
       New in version 3.11.
 
-   getconfig(op, /)                *Connection.getconfig()..sqlite3.txt;*
+   getconfig(op, /)                 *Connection.getconfig()..sqlite3.txt*
 
       Query a boolean connection configuration option.
 
@@ -1162,7 +1162,7 @@ class sqlite3.Connection                    *Connection..sqlite3.txt;*
 
       New in version 3.12.
 
-   setconfig(op, enable=True, /)   *Connection.setconfig()..sqlite3.txt;*
+   setconfig(op, enable=True, /)    *Connection.setconfig()..sqlite3.txt*
 
       Set a boolean connection configuration option.
 
@@ -1175,7 +1175,7 @@ class sqlite3.Connection                    *Connection..sqlite3.txt;*
 
       New in version 3.12.
 
-   serialize(*, name='main')       *Connection.serialize()..sqlite3.txt;*
+   serialize(*, name='main')        *Connection.serialize()..sqlite3.txt*
 
       Serialize a database into a "bytes" object.  For an ordinary on-
       disk database file, the serialization is just a copy of the disk
@@ -1197,7 +1197,7 @@ class sqlite3.Connection                    *Connection..sqlite3.txt;*
 
       New in version 3.11.
 
-                              *Connection.deserialize()..sqlite3.txt;*
+                               *Connection.deserialize()..sqlite3.txt*
    deserialize(data, /, *, name='main')
 
       Deserialize a "serialized" database into a "Connection". This
@@ -1229,7 +1229,7 @@ class sqlite3.Connection                    *Connection..sqlite3.txt;*
 
       New in version 3.11.
 
-   autocommit                       *Connection.autocommit..sqlite3.txt;*
+   autocommit                        *Connection.autocommit..sqlite3.txt*
 
       This attribute controls **PEP 249**-compliant transaction
       behaviour. "autocommit" has three allowed values:
@@ -1262,7 +1262,7 @@ class sqlite3.Connection                    *Connection..sqlite3.txt;*
 
       New in version 3.12.
 
-   in_transaction               *Connection.in_transaction..sqlite3.txt;*
+   in_transaction                *Connection.in_transaction..sqlite3.txt*
 
       This read-only attribute corresponds to the low-level SQLite
       autocommit mode.
@@ -1272,7 +1272,7 @@ class sqlite3.Connection                    *Connection..sqlite3.txt;*
 
       New in version 3.2.
 
-   isolation_level             *Connection.isolation_level..sqlite3.txt;*
+   isolation_level              *Connection.isolation_level..sqlite3.txt*
 
       Controls the legacy transaction handling mode of "sqlite3". If
       set to "None", transactions are never implicitly opened. If set
@@ -1291,7 +1291,7 @@ class sqlite3.Connection                    *Connection..sqlite3.txt;*
         has no effect unless "autocommit" is set to
         "LEGACY_TRANSACTION_CONTROL" (the default).
 
-   row_factory                     *Connection.row_factory..sqlite3.txt;*
+   row_factory                      *Connection.row_factory..sqlite3.txt*
 
       The initial "row_factory" for "Cursor" objects created from this
       connection. Assigning to this attribute does not affect the
@@ -1301,7 +1301,7 @@ class sqlite3.Connection                    *Connection..sqlite3.txt;*
 
       See How to create and use row factories for more details.
 
-   text_factory                   *Connection.text_factory..sqlite3.txt;*
+   text_factory                    *Connection.text_factory..sqlite3.txt*
 
       A _callable_ that accepts a "bytes" parameter and returns a text
       representation of it. The callable is invoked for SQLite values
@@ -1339,7 +1339,7 @@ class sqlite3.Connection                    *Connection..sqlite3.txt;*
 
          con.close()
 <
-   total_changes                 *Connection.total_changes..sqlite3.txt;*
+   total_changes                  *Connection.total_changes..sqlite3.txt*
 
       Return the total number of database rows that have been
       modified, inserted, or deleted since the database connection was
@@ -1361,11 +1361,11 @@ Cursor objects
       for row in cur.execute("SELECT t FROM data"):
           print(row)
 <
-class sqlite3.Cursor                            *Cursor..sqlite3.txt;*
+class sqlite3.Cursor                             *Cursor..sqlite3.txt*
 
    A "Cursor" instance has the following attributes and methods.
 
-   execute(sql, parameters=(), /)        *Cursor.execute()..sqlite3.txt;*
+   execute(sql, parameters=(), /)         *Cursor.execute()..sqlite3.txt*
 
       Execute SQL a single SQL statement, optionally binding Python
       values using placeholders.
@@ -1396,7 +1396,7 @@ class sqlite3.Cursor                            *Cursor..sqlite3.txt;*
 
       Use "executescript()" to execute multiple SQL statements.
 
-   executemany(sql, parameters, /)   *Cursor.executemany()..sqlite3.txt;*
+   executemany(sql, parameters, /)    *Cursor.executemany()..sqlite3.txt*
 
       For every item in _parameters_, repeatedly execute the
       parameterized DML (Data Manipulation Language) SQL statement
@@ -1435,7 +1435,7 @@ class sqlite3.Cursor                            *Cursor..sqlite3.txt;*
       Starting with Python 3.14, "ProgrammingError" will be raised
       instead.
 
-   executescript(sql_script, /)    *Cursor.executescript()..sqlite3.txt;*
+   executescript(sql_script, /)     *Cursor.executescript()..sqlite3.txt*
 
       Execute the SQL statements in _sql_script_. If the "autocommit"
       is "LEGACY_TRANSACTION_CONTROL" and there is a pending
@@ -1456,13 +1456,13 @@ class sqlite3.Cursor                            *Cursor..sqlite3.txt;*
              COMMIT;
          """)
 <
-   fetchone()                           *Cursor.fetchone()..sqlite3.txt;*
+   fetchone()                            *Cursor.fetchone()..sqlite3.txt*
 
       If "row_factory" is "None", return the next row query result set
       as a "tuple". Else, pass it to the row factory and return its
       result. Return "None" if no more data is available.
 
-   fetchmany(size=cursor.arraysize)    *Cursor.fetchmany()..sqlite3.txt;*
+   fetchmany(size=cursor.arraysize)     *Cursor.fetchmany()..sqlite3.txt*
 
       Return the next set of rows of a query result as a "list".
       Return an empty list if no more rows are available.
@@ -1478,14 +1478,14 @@ class sqlite3.Cursor                            *Cursor..sqlite3.txt;*
       then it is best for it to retain the same value from one
       "fetchmany()" call to the next.
 
-   fetchall()                           *Cursor.fetchall()..sqlite3.txt;*
+   fetchall()                            *Cursor.fetchall()..sqlite3.txt*
 
       Return all (remaining) rows of a query result as a "list".
       Return an empty list if no rows are available. Note that the
       "arraysize" attribute can affect the performance of this
       operation.
 
-   close()                                 *Cursor.close()..sqlite3.txt;*
+   close()                                  *Cursor.close()..sqlite3.txt*
 
       Close the cursor now (rather than whenever "__del__" is called).
 
@@ -1493,22 +1493,22 @@ class sqlite3.Cursor                            *Cursor..sqlite3.txt;*
       "ProgrammingError" exception will be raised if any operation is
       attempted with the cursor.
 
-   setinputsizes(sizes, /)         *Cursor.setinputsizes()..sqlite3.txt;*
+   setinputsizes(sizes, /)          *Cursor.setinputsizes()..sqlite3.txt*
 
       Required by the DB-API. Does nothing in "sqlite3".
 
-                                *Cursor.setoutputsize()..sqlite3.txt;*
+                                 *Cursor.setoutputsize()..sqlite3.txt*
    setoutputsize(size, column=None, /)
 
       Required by the DB-API. Does nothing in "sqlite3".
 
-   arraysize                             *Cursor.arraysize..sqlite3.txt;*
+   arraysize                              *Cursor.arraysize..sqlite3.txt*
 
       Read/write attribute that controls the number of rows returned
       by "fetchmany()". The default value is 1 which means a single
       row would be fetched per call.
 
-   connection                           *Cursor.connection..sqlite3.txt;*
+   connection                            *Cursor.connection..sqlite3.txt*
 
       Read-only attribute that provides the SQLite database
       "Connection" belonging to the cursor.  A "Cursor" object created
@@ -1520,7 +1520,7 @@ class sqlite3.Cursor                            *Cursor..sqlite3.txt;*
          >>> cur.connection == con
          True
 <
-   description                         *Cursor.description..sqlite3.txt;*
+   description                          *Cursor.description..sqlite3.txt*
 
       Read-only attribute that provides the column names of the last
       query. To remain compatible with the Python DB API, it returns a
@@ -1530,7 +1530,7 @@ class sqlite3.Cursor                            *Cursor..sqlite3.txt;*
       It is set for "SELECT" statements without any matching rows as
       well.
 
-   lastrowid                             *Cursor.lastrowid..sqlite3.txt;*
+   lastrowid                              *Cursor.lastrowid..sqlite3.txt*
 
       Read-only attribute that provides the row id of the last
       inserted row. It is only updated after successful "INSERT" or
@@ -1546,7 +1546,7 @@ class sqlite3.Cursor                            *Cursor..sqlite3.txt;*
       Changed in version 3.6: Added support for the "REPLACE"
       statement.
 
-   rowcount                               *Cursor.rowcount..sqlite3.txt;*
+   rowcount                                *Cursor.rowcount..sqlite3.txt*
 
       Read-only attribute that provides the number of modified rows
       for "INSERT", "UPDATE", "DELETE", and "REPLACE" statements; is
@@ -1556,7 +1556,7 @@ class sqlite3.Cursor                            *Cursor..sqlite3.txt;*
       completion. This means that any resulting rows must be fetched
       in order for "rowcount" to be updated.
 
-   row_factory                         *Cursor.row_factory..sqlite3.txt;*
+   row_factory                          *Cursor.row_factory..sqlite3.txt*
 
       Control how a row fetched from this "Cursor" is represented. If
       "None", a row is represented as a "tuple". Can be set to the
@@ -1574,7 +1574,7 @@ class sqlite3.Cursor                            *Cursor..sqlite3.txt;*
 Row objects
 -----------
 
-class sqlite3.Row                                  *Row..sqlite3.txt;*
+class sqlite3.Row                                   *Row..sqlite3.txt*
 
    A "Row" instance serves as a highly optimized "row_factory" for
    "Connection" objects. It supports iteration, equality testing,
@@ -1585,7 +1585,7 @@ class sqlite3.Row                                  *Row..sqlite3.txt;*
 
    See How to create and use row factories for more details.
 
-   keys()                                      *Row.keys()..sqlite3.txt;*
+   keys()                                       *Row.keys()..sqlite3.txt*
 
       Return a "list" of column names as "strings". Immediately after
       a query, it is the first member of each tuple in
@@ -1599,7 +1599,7 @@ Blob objects
 
 New in version 3.11.
 
-class sqlite3.Blob                                *Blob..sqlite3.txt;*
+class sqlite3.Blob                                 *Blob..sqlite3.txt*
 
    A "Blob" instance is a _file-like object_ that can read and write
    data in an SQLite BLOB (Binary Large OBject). Call "len(blob)" to
@@ -1627,7 +1627,7 @@ class sqlite3.Blob                                *Blob..sqlite3.txt;*
 
       print(greeting)  # outputs "b'Hello, world!'"
 <
-   close()                                   *Blob.close()..sqlite3.txt;*
+   close()                                    *Blob.close()..sqlite3.txt*
 
       Close the blob.
 
@@ -1635,24 +1635,24 @@ class sqlite3.Blob                                *Blob..sqlite3.txt;*
       (or subclass) exception will be raised if any further operation
       is attempted with the blob.
 
-   read(length=-1, /)                         *Blob.read()..sqlite3.txt;*
+   read(length=-1, /)                          *Blob.read()..sqlite3.txt*
 
       Read _length_ bytes of data from the blob at the current offset
       position. If the end of the blob is reached, the data up to EOF
       (End of File) will be returned.  When _length_ is not specified,
       or is negative, "read()" will read until the end of the blob.
 
-   write(data, /)                            *Blob.write()..sqlite3.txt;*
+   write(data, /)                             *Blob.write()..sqlite3.txt*
 
       Write _data_ to the blob at the current offset.  This function
       cannot change the blob length.  Writing beyond the end of the
       blob will raise "ValueError".
 
-   tell()                                     *Blob.tell()..sqlite3.txt;*
+   tell()                                      *Blob.tell()..sqlite3.txt*
 
       Return the current access position of the blob.
 
-   seek(offset, origin=os.SEEK_SET, /)        *Blob.seek()..sqlite3.txt;*
+   seek(offset, origin=os.SEEK_SET, /)         *Blob.seek()..sqlite3.txt*
 
       Set the current access position of the blob to _offset_.  The
       _origin_ argument defaults to "os.SEEK_SET" (absolute blob
@@ -1664,7 +1664,7 @@ class sqlite3.Blob                                *Blob..sqlite3.txt;*
 PrepareProtocol objects
 -----------------------
 
-class sqlite3.PrepareProtocol          *PrepareProtocol..sqlite3.txt;*
+class sqlite3.PrepareProtocol           *PrepareProtocol..sqlite3.txt*
 
    The PrepareProtocol type’s single purpose is to act as a **PEP
    246** style adaption protocol for objects that can adapt themselves
@@ -1676,14 +1676,14 @@ Exceptions
 
 The exception hierarchy is defined by the DB-API 2.0 (**PEP 249**).
 
-exception sqlite3.Warning                      *Warning..sqlite3.txt;*
+exception sqlite3.Warning                       *Warning..sqlite3.txt*
 
    This exception is not currently raised by the "sqlite3" module, but
    may be raised by applications using "sqlite3", for example if a
    user-defined function truncates data while inserting. "Warning" is
    a subclass of "Exception".
 
-exception sqlite3.Error                          *Error..sqlite3.txt;*
+exception sqlite3.Error                           *Error..sqlite3.txt*
 
    The base class of the other exceptions in this module. Use this to
    catch all errors with one single "except" statement. "Error" is a
@@ -1692,38 +1692,38 @@ exception sqlite3.Error                          *Error..sqlite3.txt;*
    If the exception originated from within the SQLite library, the
    following two attributes are added to the exception:
 
-   sqlite_errorcode                *Error.sqlite_errorcode..sqlite3.txt;*
+   sqlite_errorcode                 *Error.sqlite_errorcode..sqlite3.txt*
 
       The numeric error code from the SQLite API
 
       New in version 3.11.
 
-   sqlite_errorname                *Error.sqlite_errorname..sqlite3.txt;*
+   sqlite_errorname                 *Error.sqlite_errorname..sqlite3.txt*
 
       The symbolic name of the numeric error code from the SQLite API
 
       New in version 3.11.
 
-exception sqlite3.InterfaceError        *InterfaceError..sqlite3.txt;*
+exception sqlite3.InterfaceError         *InterfaceError..sqlite3.txt*
 
    Exception raised for misuse of the low-level SQLite C API. In other
    words, if this exception is raised, it probably indicates a bug in
    the "sqlite3" module. "InterfaceError" is a subclass of "Error".
 
-exception sqlite3.DatabaseError          *DatabaseError..sqlite3.txt;*
+exception sqlite3.DatabaseError           *DatabaseError..sqlite3.txt*
 
    Exception raised for errors that are related to the database. This
    serves as the base exception for several types of database errors.
    It is only raised implicitly through the specialised subclasses.
    "DatabaseError" is a subclass of "Error".
 
-exception sqlite3.DataError                  *DataError..sqlite3.txt;*
+exception sqlite3.DataError                   *DataError..sqlite3.txt*
 
    Exception raised for errors caused by problems with the processed
    data, like numeric values out of range, and strings which are too
    long. "DataError" is a subclass of "DatabaseError".
 
-exception sqlite3.OperationalError    *OperationalError..sqlite3.txt;*
+exception sqlite3.OperationalError     *OperationalError..sqlite3.txt*
 
    Exception raised for errors that are related to the database’s
    operation, and not necessarily under the control of the programmer.
@@ -1731,27 +1731,26 @@ exception sqlite3.OperationalError    *OperationalError..sqlite3.txt;*
    not be processed. "OperationalError" is a subclass of
    "DatabaseError".
 
-exception sqlite3.IntegrityError        *IntegrityError..sqlite3.txt;*
+exception sqlite3.IntegrityError         *IntegrityError..sqlite3.txt*
 
    Exception raised when the relational integrity of the database is
    affected, e.g. a foreign key check fails.  It is a subclass of
    "DatabaseError".
 
-exception sqlite3.InternalError          *InternalError..sqlite3.txt;*
+exception sqlite3.InternalError           *InternalError..sqlite3.txt*
 
    Exception raised when SQLite encounters an internal error. If this
    is raised, it may indicate that there is a problem with the runtime
    SQLite library. "InternalError" is a subclass of "DatabaseError".
 
-exception sqlite3.ProgrammingError    *ProgrammingError..sqlite3.txt;*
+exception sqlite3.ProgrammingError     *ProgrammingError..sqlite3.txt*
 
    Exception raised for "sqlite3" API programming errors, for example
    supplying the wrong number of bindings to a query, or trying to
    operate on a closed "Connection". "ProgrammingError" is a subclass
    of "DatabaseError".
 
-                                     *NotSupportedError..sqlite3.txt;*
-exception sqlite3.NotSupportedError
+exception sqlite3.NotSupportedError   *NotSupportedError..sqlite3.txt*
 
    Exception raised in case a method or database API is not supported
    by the underlying SQLite library. For example, setting

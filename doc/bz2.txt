@@ -1,4 +1,4 @@
-*bz2.txt;*                                    Last change: 2023 Sep 09
+*bz2.txt;*                                    Last change: 2023 Sep 10
 
 "bz2" — Support for **bzip2** compression
 *****************************************
@@ -25,7 +25,7 @@ The "bz2" module contains:
 (De)compression of files
 ========================
 
-                                                    *open()..bz2.txt;*
+                                                     *open()..bz2.txt*
 bz2.open(filename, mode='rb', compresslevel=9, encoding=None, errors=None, newline=None)
 
    Open a bzip2-compressed file in binary or text mode, returning a
@@ -58,7 +58,7 @@ bz2.open(filename, mode='rb', compresslevel=9, encoding=None, errors=None, newli
 
    Changed in version 3.6: Accepts a _path-like object_.
 
-                                                   *BZ2File..bz2.txt;*
+                                                    *BZ2File..bz2.txt*
 class bz2.BZ2File(filename, mode='r', *, compresslevel=9)
 
    Open a bzip2-compressed file in binary mode.
@@ -90,7 +90,7 @@ class bz2.BZ2File(filename, mode='r', *, compresslevel=9)
 
    "BZ2File" also provides the following method:
 
-   peek([n])                                   *BZ2File.peek()..bz2.txt;*
+   peek([n])                                    *BZ2File.peek()..bz2.txt*
 
       Return buffered data without advancing the file position. At
       least one byte of data will be returned (unless at EOF). The
@@ -137,7 +137,7 @@ class bz2.BZ2File(filename, mode='r', *, compresslevel=9)
 Incremental (de)compression
 ===========================
 
-class bz2.BZ2Compressor(compresslevel=9)     *BZ2Compressor..bz2.txt;*
+class bz2.BZ2Compressor(compresslevel=9)      *BZ2Compressor..bz2.txt*
 
    Create a new compressor object. This object may be used to compress
    data incrementally. For one-shot compression, use the "compress()"
@@ -146,7 +146,7 @@ class bz2.BZ2Compressor(compresslevel=9)     *BZ2Compressor..bz2.txt;*
    _compresslevel_, if given, must be an integer between "1" and "9".
    The default is "9".
 
-   compress(data)                    *BZ2Compressor.compress()..bz2.txt;*
+   compress(data)                     *BZ2Compressor.compress()..bz2.txt*
 
       Provide data to the compressor object. Returns a chunk of
       compressed data if possible, or an empty byte string otherwise.
@@ -154,7 +154,7 @@ class bz2.BZ2Compressor(compresslevel=9)     *BZ2Compressor..bz2.txt;*
       When you have finished providing data to the compressor, call
       the "flush()" method to finish the compression process.
 
-   flush()                              *BZ2Compressor.flush()..bz2.txt;*
+   flush()                               *BZ2Compressor.flush()..bz2.txt*
 
       Finish the compression process. Returns the compressed data left
       in internal buffers.
@@ -162,7 +162,7 @@ class bz2.BZ2Compressor(compresslevel=9)     *BZ2Compressor..bz2.txt;*
       The compressor object may not be used after this method has been
       called.
 
-class bz2.BZ2Decompressor                  *BZ2Decompressor..bz2.txt;*
+class bz2.BZ2Decompressor                   *BZ2Decompressor..bz2.txt*
 
    Create a new decompressor object. This object may be used to
    decompress data incrementally. For one-shot compression, use the
@@ -176,7 +176,7 @@ class bz2.BZ2Decompressor                  *BZ2Decompressor..bz2.txt;*
      "BZ2Decompressor", you must use a new decompressor for each
      stream.
 
-                              *BZ2Decompressor.decompress()..bz2.txt;*
+                               *BZ2Decompressor.decompress()..bz2.txt*
    decompress(data, max_length=-1)
 
       Decompress _data_ (a _bytes-like object_), returning
@@ -202,20 +202,20 @@ class bz2.BZ2Decompressor                  *BZ2Decompressor..bz2.txt;*
 
       Changed in version 3.5: Added the _max_length_ parameter.
 
-   eof                                    *BZ2Decompressor.eof..bz2.txt;*
+   eof                                     *BZ2Decompressor.eof..bz2.txt*
 
       "True" if the end-of-stream marker has been reached.
 
       New in version 3.3.
 
-   unused_data                    *BZ2Decompressor.unused_data..bz2.txt;*
+   unused_data                     *BZ2Decompressor.unused_data..bz2.txt*
 
       Data found after the end of the compressed stream.
 
       If this attribute is accessed before the end of the stream has
       been reached, its value will be "b''".
 
-   needs_input                    *BZ2Decompressor.needs_input..bz2.txt;*
+   needs_input                     *BZ2Decompressor.needs_input..bz2.txt*
 
       "False" if the "decompress()" method can provide more
       decompressed data before requiring new uncompressed input.
@@ -226,7 +226,7 @@ class bz2.BZ2Decompressor                  *BZ2Decompressor..bz2.txt;*
 One-shot (de)compression
 ========================
 
-bz2.compress(data, compresslevel=9)             *compress()..bz2.txt;*
+bz2.compress(data, compresslevel=9)              *compress()..bz2.txt*
 
    Compress _data_, a _bytes-like object_.
 
@@ -235,7 +235,7 @@ bz2.compress(data, compresslevel=9)             *compress()..bz2.txt;*
 
    For incremental compression, use a "BZ2Compressor" instead.
 
-bz2.decompress(data)                          *decompress()..bz2.txt;*
+bz2.decompress(data)                           *decompress()..bz2.txt*
 
    Decompress _data_, a _bytes-like object_.
 

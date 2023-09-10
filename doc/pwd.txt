@@ -1,4 +1,4 @@
-*pwd.txt;*                                    Last change: 2023 Sep 09
+*pwd.txt;*                                    Last change: 2023 Sep 10
 
 "pwd" — The password database
 *****************************
@@ -51,15 +51,15 @@ Note:
 
 It defines the following items:
 
-pwd.getpwuid(uid)                               *getpwuid()..pwd.txt;*
+pwd.getpwuid(uid)                                *getpwuid()..pwd.txt*
 
    Return the password database entry for the given numeric user ID.
 
-pwd.getpwnam(name)                              *getpwnam()..pwd.txt;*
+pwd.getpwnam(name)                               *getpwnam()..pwd.txt*
 
    Return the password database entry for the given user name.
 
-pwd.getpwall()                                  *getpwall()..pwd.txt;*
+pwd.getpwall()                                   *getpwall()..pwd.txt*
 
    Return a list of all available password database entries, in
    arbitrary order.

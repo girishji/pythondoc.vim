@@ -1,4 +1,4 @@
-*smtplib.txt;*                                Last change: 2023 Sep 09
+*smtplib.txt;*                                Last change: 2023 Sep 10
 
 "smtplib" — SMTP protocol client
 ********************************
@@ -19,7 +19,7 @@ This module does not work or is not available on WebAssembly platforms
 "wasm32-emscripten" and "wasm32-wasi". See WebAssembly platforms for
 more information.
 
-                                                  *SMTP..smtplib.txt;*
+                                                   *SMTP..smtplib.txt*
 class smtplib.SMTP(host='', port=0, local_hostname=None[, timeout], source_address=None)
 
    An "SMTP" instance encapsulates an SMTP connection.  It has methods
@@ -71,7 +71,7 @@ class smtplib.SMTP(host='', port=0, local_hostname=None[, timeout], source_addre
    zero, it will raise a "ValueError" to prevent the creation of a
    non-blocking socket.
 
-                                              *SMTP_SSL..smtplib.txt;*
+                                               *SMTP_SSL..smtplib.txt*
 class smtplib.SMTP_SSL(host='', port=0, local_hostname=None, *[, timeout], context=None, source_address=None)
 
    An "SMTP_SSL" instance behaves exactly the same as instances of
@@ -101,7 +101,7 @@ class smtplib.SMTP_SSL(host='', port=0, local_hostname=None, *[, timeout], conte
    Changed in version 3.12: The deprecated _keyfile_ and _certfile_
    parameters have been removed.
 
-                                                  *LMTP..smtplib.txt;*
+                                                   *LMTP..smtplib.txt*
 class smtplib.LMTP(host='', port=LMTP_PORT, local_hostname=None, source_address=None[, timeout])
 
    The LMTP protocol, which is very similar to ESMTP, is heavily based
@@ -120,21 +120,21 @@ class smtplib.LMTP(host='', port=LMTP_PORT, local_hostname=None, source_address=
 
 A nice selection of exceptions is defined as well:
 
-exception smtplib.SMTPException          *SMTPException..smtplib.txt;*
+exception smtplib.SMTPException           *SMTPException..smtplib.txt*
 
    Subclass of "OSError" that is the base exception class for all the
    other exceptions provided by this module.
 
    Changed in version 3.4: SMTPException became subclass of "OSError"
 
-                                *SMTPServerDisconnected..smtplib.txt;*
+                                 *SMTPServerDisconnected..smtplib.txt*
 exception smtplib.SMTPServerDisconnected
 
    This exception is raised when the server unexpectedly disconnects,
    or when an attempt is made to use the "SMTP" instance before
    connecting it to a server.
 
-                                 *SMTPResponseException..smtplib.txt;*
+                                  *SMTPResponseException..smtplib.txt*
 exception smtplib.SMTPResponseException
 
    Base class for all exceptions that include an SMTP error code.
@@ -143,41 +143,40 @@ exception smtplib.SMTPResponseException
    "smtp_code" attribute of the error, and the "smtp_error" attribute
    is set to the error message.
 
-                                     *SMTPSenderRefused..smtplib.txt;*
-exception smtplib.SMTPSenderRefused
+exception smtplib.SMTPSenderRefused   *SMTPSenderRefused..smtplib.txt*
 
    Sender address refused.  In addition to the attributes set by on
    all "SMTPResponseException" exceptions, this sets ‘sender’ to the
    string that the SMTP server refused.
 
-                                 *SMTPRecipientsRefused..smtplib.txt;*
+                                  *SMTPRecipientsRefused..smtplib.txt*
 exception smtplib.SMTPRecipientsRefused
 
    All recipient addresses refused.  The errors for each recipient are
    accessible through the attribute "recipients", which is a
    dictionary of exactly the same sort as "SMTP.sendmail()" returns.
 
-exception smtplib.SMTPDataError          *SMTPDataError..smtplib.txt;*
+exception smtplib.SMTPDataError           *SMTPDataError..smtplib.txt*
 
    The SMTP server refused to accept the message data.
 
-exception smtplib.SMTPConnectError    *SMTPConnectError..smtplib.txt;*
+exception smtplib.SMTPConnectError     *SMTPConnectError..smtplib.txt*
 
    Error occurred during establishment of a connection  with the
    server.
 
-exception smtplib.SMTPHeloError          *SMTPHeloError..smtplib.txt;*
+exception smtplib.SMTPHeloError           *SMTPHeloError..smtplib.txt*
 
    The server refused our "HELO" message.
 
-                                 *SMTPNotSupportedError..smtplib.txt;*
+                                  *SMTPNotSupportedError..smtplib.txt*
 exception smtplib.SMTPNotSupportedError
 
    The command or option attempted is not supported by the server.
 
    New in version 3.5.
 
-                               *SMTPAuthenticationError..smtplib.txt;*
+                                *SMTPAuthenticationError..smtplib.txt*
 exception smtplib.SMTPAuthenticationError
 
    SMTP authentication went wrong.  Most probably the server didn’t
@@ -201,7 +200,7 @@ SMTP Objects
 
 An "SMTP" instance has the following methods:
 
-SMTP.set_debuglevel(level)       *SMTP.set_debuglevel()..smtplib.txt;*
+SMTP.set_debuglevel(level)        *SMTP.set_debuglevel()..smtplib.txt*
 
    Set the debug output level.  A value of 1 or "True" for _level_
    results in debug messages for connection and for all messages sent
@@ -210,7 +209,7 @@ SMTP.set_debuglevel(level)       *SMTP.set_debuglevel()..smtplib.txt;*
 
    Changed in version 3.5: Added debuglevel 2.
 
-SMTP.docmd(cmd, args='')                  *SMTP.docmd()..smtplib.txt;*
+SMTP.docmd(cmd, args='')                   *SMTP.docmd()..smtplib.txt*
 
    Send a command _cmd_ to the server.  The optional argument _args_
    is simply concatenated to the command, separated by a space.
@@ -226,8 +225,7 @@ SMTP.docmd(cmd, args='')                  *SMTP.docmd()..smtplib.txt;*
    If the connection to the server is lost while waiting for the
    reply, "SMTPServerDisconnected" will be raised.
 
-                                        *SMTP.connect()..smtplib.txt;*
-SMTP.connect(host='localhost', port=0)
+SMTP.connect(host='localhost', port=0)   *SMTP.connect()..smtplib.txt*
 
    Connect to a host on a given port.  The defaults are to connect to
    the local host at the standard SMTP port (25). If the hostname ends
@@ -241,7 +239,7 @@ SMTP.connect(host='localhost', port=0)
    Raises an auditing event "smtplib.connect" with arguments "self",
    "host", "port".
 
-SMTP.helo(name='')                         *SMTP.helo()..smtplib.txt;*
+SMTP.helo(name='')                          *SMTP.helo()..smtplib.txt*
 
    Identify yourself to the SMTP server using "HELO".  The hostname
    argument defaults to the fully qualified domain name of the local
@@ -252,7 +250,7 @@ SMTP.helo(name='')                         *SMTP.helo()..smtplib.txt;*
    explicitly. It will be implicitly called by the "sendmail()" when
    necessary.
 
-SMTP.ehlo(name='')                         *SMTP.ehlo()..smtplib.txt;*
+SMTP.ehlo(name='')                          *SMTP.ehlo()..smtplib.txt*
 
    Identify yourself to an ESMTP server using "EHLO".  The hostname
    argument defaults to the fully qualified domain name of the local
@@ -268,7 +266,7 @@ SMTP.ehlo(name='')                         *SMTP.ehlo()..smtplib.txt;*
    not be necessary to call this method explicitly.  It will be
    implicitly called by "sendmail()" when necessary.
 
-                         *SMTP.ehlo_or_helo_if_needed()..smtplib.txt;*
+                          *SMTP.ehlo_or_helo_if_needed()..smtplib.txt*
 SMTP.ehlo_or_helo_if_needed()
 
    This method calls "ehlo()" and/or "helo()" if there has been no
@@ -278,12 +276,12 @@ SMTP.ehlo_or_helo_if_needed()
    "SMTPHeloError"
       The server didn’t reply properly to the "HELO" greeting.
 
-SMTP.has_extn(name)                    *SMTP.has_extn()..smtplib.txt;*
+SMTP.has_extn(name)                     *SMTP.has_extn()..smtplib.txt*
 
    Return "True" if _name_ is in the set of SMTP service extensions
    returned by the server, "False" otherwise. Case is ignored.
 
-SMTP.verify(address)                     *SMTP.verify()..smtplib.txt;*
+SMTP.verify(address)                      *SMTP.verify()..smtplib.txt*
 
    Check the validity of an address on this server using SMTP "VRFY".
    Returns a tuple consisting of code 250 and a full **RFC 822**
@@ -295,7 +293,7 @@ SMTP.verify(address)                     *SMTP.verify()..smtplib.txt;*
 
      Many sites disable SMTP "VRFY" in order to foil spammers.
 
-                                          *SMTP.login()..smtplib.txt;*
+                                           *SMTP.login()..smtplib.txt*
 SMTP.login(user, password, *, initial_response_ok=True)
 
    Log in on an SMTP server that requires authentication. The
@@ -330,7 +328,7 @@ SMTP.login(user, password, *, initial_response_ok=True)
    Changed in version 3.5: "SMTPNotSupportedError" may be raised, and
    the _initial_response_ok_ parameter was added.
 
-                                           *SMTP.auth()..smtplib.txt;*
+                                            *SMTP.auth()..smtplib.txt*
 SMTP.auth(mechanism, authobject, *, initial_response_ok=True)
 
    Issue an "SMTP" "AUTH" command for the specified authentication
@@ -374,7 +372,7 @@ SMTP.auth(mechanism, authobject, *, initial_response_ok=True)
 
    New in version 3.5.
 
-SMTP.starttls(*, context=None)         *SMTP.starttls()..smtplib.txt;*
+SMTP.starttls(*, context=None)          *SMTP.starttls()..smtplib.txt*
 
    Put the SMTP connection in TLS (Transport Layer Security) mode.
    All SMTP commands that follow will be encrypted.  You should then
@@ -412,7 +410,7 @@ SMTP.starttls(*, context=None)         *SMTP.starttls()..smtplib.txt;*
    support is now the "SMTPNotSupportedError" subclass instead of the
    base "SMTPException".
 
-                                       *SMTP.sendmail()..smtplib.txt;*
+                                        *SMTP.sendmail()..smtplib.txt*
 SMTP.sendmail(from_addr, to_addrs, msg, mail_options=(), rcpt_options=())
 
    Send mail.  The required arguments are an **RFC 822** from-address
@@ -487,7 +485,7 @@ SMTP.sendmail(from_addr, to_addrs, msg, mail_options=(), rcpt_options=())
    "SMTPNotSupportedError" may be raised if "SMTPUTF8" is specified
    but the server does not support it.
 
-                                   *SMTP.send_message()..smtplib.txt;*
+                                    *SMTP.send_message()..smtplib.txt*
 SMTP.send_message(msg, from_addr=None, to_addrs=None, mail_options=(), rcpt_options=())
 
    This is a convenience method for calling "sendmail()" with the
@@ -523,7 +521,7 @@ SMTP.send_message(msg, from_addr=None, to_addrs=None, mail_options=(), rcpt_opti
    New in version 3.5: Support for internationalized addresses
    ("SMTPUTF8").
 
-SMTP.quit()                                *SMTP.quit()..smtplib.txt;*
+SMTP.quit()                                 *SMTP.quit()..smtplib.txt*
 
    Terminate the SMTP session and close the connection.  Return the
    result of the SMTP "QUIT" command.

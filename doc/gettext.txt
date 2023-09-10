@@ -1,4 +1,4 @@
-*gettext.txt;*                                Last change: 2023 Sep 09
+*gettext.txt;*                                Last change: 2023 Sep 10
 
 "gettext" — Multilingual internationalization services
 ******************************************************
@@ -30,7 +30,7 @@ language dependent on the locale of your user.  If you are localizing
 a Python module, or if your application needs to switch languages on
 the fly, you probably want to use the class-based API instead.
 
-                                      *bindtextdomain()..gettext.txt;*
+                                       *bindtextdomain()..gettext.txt*
 gettext.bindtextdomain(domain, localedir=None)
 
    Bind the _domain_ to the locale directory _localedir_.  More
@@ -43,25 +43,25 @@ gettext.bindtextdomain(domain, localedir=None)
    If _localedir_ is omitted or "None", then the current binding for
    _domain_ is returned. [1]
 
-gettext.textdomain(domain=None)           *textdomain()..gettext.txt;*
+gettext.textdomain(domain=None)            *textdomain()..gettext.txt*
 
    Change or query the current global domain.  If _domain_ is "None",
    then the current global domain is returned, otherwise the global
    domain is set to _domain_, which is returned.
 
-gettext.gettext(message)                     *gettext()..gettext.txt;*
+gettext.gettext(message)                      *gettext()..gettext.txt*
 
    Return the localized translation of _message_, based on the current
    global domain, language, and locale directory.  This function is
    usually aliased as "_()" in the local namespace (see examples
    below).
 
-gettext.dgettext(domain, message)           *dgettext()..gettext.txt;*
+gettext.dgettext(domain, message)            *dgettext()..gettext.txt*
 
    Like "gettext()", but look the message up in the specified
    _domain_.
 
-gettext.ngettext(singular, plural, n)       *ngettext()..gettext.txt;*
+gettext.ngettext(singular, plural, n)        *ngettext()..gettext.txt*
 
    Like "gettext()", but consider plural forms. If a translation is
    found, apply the plural formula to _n_, and return the resulting
@@ -75,21 +75,21 @@ gettext.ngettext(singular, plural, n)       *ngettext()..gettext.txt;*
    gettext documentation for the precise syntax to be used in ".po"
    files and the formulas for a variety of languages.
 
-                                           *dngettext()..gettext.txt;*
+                                            *dngettext()..gettext.txt*
 gettext.dngettext(domain, singular, plural, n)
 
    Like "ngettext()", but look the message up in the specified
    _domain_.
 
-gettext.pgettext(context, message)          *pgettext()..gettext.txt;*
+gettext.pgettext(context, message)           *pgettext()..gettext.txt*
 
-                                           *dpgettext()..gettext.txt;*
+                                            *dpgettext()..gettext.txt*
 gettext.dpgettext(domain, context, message)
 
-                                           *npgettext()..gettext.txt;*
+                                            *npgettext()..gettext.txt*
 gettext.npgettext(context, singular, plural, n)
 
-                                          *dnpgettext()..gettext.txt;*
+                                           *dnpgettext()..gettext.txt*
 gettext.dnpgettext(domain, context, singular, plural, n)
 
    Similar to the corresponding functions without the "p" in the
@@ -123,7 +123,7 @@ parsing of GNU ".mo" format files, and has methods for returning
 strings. Instances of this class can also install themselves in the
 built-in namespace as the function "_()".
 
-                                                *find()..gettext.txt;*
+                                                 *find()..gettext.txt*
 gettext.find(domain, localedir=None, languages=None, all=False)
 
    This function implements the standard ".mo" file search algorithm.
@@ -152,7 +152,7 @@ gettext.find(domain, localedir=None, languages=None, all=False)
    returns a list of all file names, in the order in which they appear
    in the languages list or the environment variables.
 
-                                         *translation()..gettext.txt;*
+                                          *translation()..gettext.txt*
 gettext.translation(domain, localedir=None, languages=None, class_=None, fallback=False)
 
    Return a "*Translations" instance based on the _domain_,
@@ -178,7 +178,7 @@ gettext.translation(domain, localedir=None, languages=None, class_=None, fallbac
 
    Changed in version 3.11: _codeset_ parameter is removed.
 
-                                             *install()..gettext.txt;*
+                                              *install()..gettext.txt*
 gettext.install(domain, localedir=None, *, names=None)
 
    This installs the function "_()" in Python’s builtins namespace,
@@ -211,7 +211,7 @@ this provides the basic interface you can use to write your own
 specialized translation classes.  Here are the methods of
 "NullTranslations":
 
-                                      *NullTranslations..gettext.txt;*
+                                       *NullTranslations..gettext.txt*
 class gettext.NullTranslations(fp=None)
 
    Takes an optional _file object_ _fp_, which is ignored by the base
@@ -220,33 +220,33 @@ class gettext.NullTranslations(fp=None)
    __fallback_, which is set through "add_fallback()".  It then calls
    "self._parse(fp)" if _fp_ is not "None".
 
-   _parse(fp)                   *NullTranslations._parse()..gettext.txt;*
+   _parse(fp)                    *NullTranslations._parse()..gettext.txt*
 
       No-op in the base class, this method takes file object _fp_, and
       reads the data from the file, initializing its message catalog.
       If you have an unsupported message catalog file format, you
       should override this method to parse your format.
 
-                       *NullTranslations.add_fallback()..gettext.txt;*
+                        *NullTranslations.add_fallback()..gettext.txt*
    add_fallback(fallback)
 
       Add _fallback_ as the fallback object for the current
       translation object. A translation object should consult the
       fallback if it cannot provide a translation for a given message.
 
-   gettext(message)            *NullTranslations.gettext()..gettext.txt;*
+   gettext(message)             *NullTranslations.gettext()..gettext.txt*
 
       If a fallback has been set, forward "gettext()" to the fallback.
       Otherwise, return _message_.  Overridden in derived classes.
 
-                           *NullTranslations.ngettext()..gettext.txt;*
+                            *NullTranslations.ngettext()..gettext.txt*
    ngettext(singular, plural, n)
 
       If a fallback has been set, forward "ngettext()" to the
       fallback. Otherwise, return _singular_ if _n_ is 1; return
       _plural_ otherwise. Overridden in derived classes.
 
-                           *NullTranslations.pgettext()..gettext.txt;*
+                            *NullTranslations.pgettext()..gettext.txt*
    pgettext(context, message)
 
       If a fallback has been set, forward "pgettext()" to the
@@ -255,7 +255,7 @@ class gettext.NullTranslations(fp=None)
 
       New in version 3.8.
 
-                          *NullTranslations.npgettext()..gettext.txt;*
+                           *NullTranslations.npgettext()..gettext.txt*
    npgettext(context, singular, plural, n)
 
       If a fallback has been set, forward "npgettext()" to the
@@ -264,16 +264,16 @@ class gettext.NullTranslations(fp=None)
 
       New in version 3.8.
 
-   info()                         *NullTranslations.info()..gettext.txt;*
+   info()                          *NullTranslations.info()..gettext.txt*
 
       Return the “protected” "_info" variable, a dictionary containing
       the metadata found in the message catalog file.
 
-   charset()                   *NullTranslations.charset()..gettext.txt;*
+   charset()                    *NullTranslations.charset()..gettext.txt*
 
       Return the encoding of the message catalog file.
 
-   install(names=None)         *NullTranslations.install()..gettext.txt;*
+   install(names=None)          *NullTranslations.install()..gettext.txt*
 
       This method installs "gettext()" into the built-in namespace,
       binding it to "_".
@@ -330,12 +330,12 @@ If the ".mo" file’s magic number is invalid, the major version number
 is unexpected, or if other problems occur while reading the file,
 instantiating a "GNUTranslations" class can raise "OSError".
 
-class gettext.GNUTranslations          *GNUTranslations..gettext.txt;*
+class gettext.GNUTranslations           *GNUTranslations..gettext.txt*
 
    The following methods are overridden from the base class
    implementation:
 
-   gettext(message)             *GNUTranslations.gettext()..gettext.txt;*
+   gettext(message)              *GNUTranslations.gettext()..gettext.txt*
 
       Look up the _message_ id in the catalog and return the
       corresponding message string, as a Unicode string.  If there is
@@ -343,7 +343,7 @@ class gettext.GNUTranslations          *GNUTranslations..gettext.txt;*
       been set, the look up is forwarded to the fallback’s "gettext()"
       method.  Otherwise, the _message_ id is returned.
 
-                            *GNUTranslations.ngettext()..gettext.txt;*
+                             *GNUTranslations.ngettext()..gettext.txt*
    ngettext(singular, plural, n)
 
       Do a plural-forms lookup of a message id.  _singular_ is used as
@@ -365,9 +365,7 @@ class gettext.GNUTranslations          *GNUTranslations..gettext.txt;*
              'There are %(num)d files in this directory',
              n) % {'num': n}
 <
-
-                            *GNUTranslations.pgettext()..gettext.txt;*
-   pgettext(context, message)
+   pgettext(context, message)   *GNUTranslations.pgettext()..gettext.txt*
 
       Look up the _context_ and _message_ id in the catalog and return
       the corresponding message string, as a Unicode string.  If there
@@ -378,7 +376,7 @@ class gettext.GNUTranslations          *GNUTranslations..gettext.txt;*
 
       New in version 3.8.
 
-                           *GNUTranslations.npgettext()..gettext.txt;*
+                            *GNUTranslations.npgettext()..gettext.txt*
    npgettext(context, singular, plural, n)
 
       Do a plural-forms lookup of a message id.  _singular_ is used as

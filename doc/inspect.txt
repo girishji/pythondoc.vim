@@ -1,4 +1,4 @@
-*inspect.txt;*                                Last change: 2023 Sep 09
+*inspect.txt;*                                Last change: 2023 Sep 10
 
 "inspect" — Inspect live objects
 ********************************
@@ -232,7 +232,7 @@ Changed in version 3.7: Add "cr_origin" attribute to coroutines.
 
 Changed in version 3.10: Add "__builtins__" attribute to functions.
 
-inspect.getmembers(object[, predicate])   *getmembers()..inspect.txt;*
+inspect.getmembers(object[, predicate])    *getmembers()..inspect.txt*
 
    Return all the members of an object in a list of "(name, value)"
    pairs sorted by name. If the optional _predicate_ argument—which
@@ -246,7 +246,7 @@ inspect.getmembers(object[, predicate])   *getmembers()..inspect.txt;*
      metaclass when the argument is a class and those attributes have
      been listed in the metaclass’ custom "__dir__()".
 
-                                   *getmembers_static()..inspect.txt;*
+                                    *getmembers_static()..inspect.txt*
 inspect.getmembers_static(object[, predicate])
 
    Return all the members of an object in a list of "(name, value)"
@@ -264,7 +264,7 @@ inspect.getmembers_static(object[, predicate])
 
    New in version 3.11.
 
-inspect.getmodulename(path)            *getmodulename()..inspect.txt;*
+inspect.getmodulename(path)             *getmodulename()..inspect.txt*
 
    Return the name of the module named by the file _path_, without
    including the names of enclosing packages. The file extension is
@@ -280,25 +280,25 @@ inspect.getmodulename(path)            *getmodulename()..inspect.txt;*
    Changed in version 3.3: The function is based directly on
    "importlib".
 
-inspect.ismodule(object)                    *ismodule()..inspect.txt;*
+inspect.ismodule(object)                     *ismodule()..inspect.txt*
 
    Return "True" if the object is a module.
 
-inspect.isclass(object)                      *isclass()..inspect.txt;*
+inspect.isclass(object)                       *isclass()..inspect.txt*
 
    Return "True" if the object is a class, whether built-in or created
    in Python code.
 
-inspect.ismethod(object)                    *ismethod()..inspect.txt;*
+inspect.ismethod(object)                     *ismethod()..inspect.txt*
 
    Return "True" if the object is a bound method written in Python.
 
-inspect.isfunction(object)                *isfunction()..inspect.txt;*
+inspect.isfunction(object)                 *isfunction()..inspect.txt*
 
    Return "True" if the object is a Python function, which includes
    functions created by a _lambda_ expression.
 
-                                 *isgeneratorfunction()..inspect.txt;*
+                                  *isgeneratorfunction()..inspect.txt*
 inspect.isgeneratorfunction(object)
 
    Return "True" if the object is a Python generator function.
@@ -307,11 +307,11 @@ inspect.isgeneratorfunction(object)
    now return "True" if the wrapped function is a Python generator
    function.
 
-inspect.isgenerator(object)              *isgenerator()..inspect.txt;*
+inspect.isgenerator(object)               *isgenerator()..inspect.txt*
 
    Return "True" if the object is a generator.
 
-                                 *iscoroutinefunction()..inspect.txt;*
+                                  *iscoroutinefunction()..inspect.txt*
 inspect.iscoroutinefunction(object)
 
    Return "True" if the object is a _coroutine function_ (a function
@@ -328,7 +328,7 @@ inspect.iscoroutinefunction(object)
    Changed in version 3.12: Sync functions marked with
    "markcoroutinefunction()" now return "True".
 
-                               *markcoroutinefunction()..inspect.txt;*
+                                *markcoroutinefunction()..inspect.txt*
 inspect.markcoroutinefunction(func)
 
    Decorator to mark a callable as a _coroutine function_ if it would
@@ -344,14 +344,14 @@ inspect.markcoroutinefunction(func)
 
    New in version 3.12.
 
-inspect.iscoroutine(object)              *iscoroutine()..inspect.txt;*
+inspect.iscoroutine(object)               *iscoroutine()..inspect.txt*
 
    Return "True" if the object is a _coroutine_ created by an "async
    def" function.
 
    New in version 3.5.
 
-inspect.isawaitable(object)              *isawaitable()..inspect.txt;*
+inspect.isawaitable(object)               *isawaitable()..inspect.txt*
 
    Return "True" if the object can be used in "await" expression.
 
@@ -369,7 +369,7 @@ inspect.isawaitable(object)              *isawaitable()..inspect.txt;*
 <
    New in version 3.5.
 
-                                  *isasyncgenfunction()..inspect.txt;*
+                                   *isasyncgenfunction()..inspect.txt*
 inspect.isasyncgenfunction(object)
 
    Return "True" if the object is an _asynchronous generator_
@@ -387,31 +387,31 @@ inspect.isasyncgenfunction(object)
    now return "True" if the wrapped function is a _asynchronous
    generator_ function.
 
-inspect.isasyncgen(object)                *isasyncgen()..inspect.txt;*
+inspect.isasyncgen(object)                 *isasyncgen()..inspect.txt*
 
    Return "True" if the object is an _asynchronous generator iterator_
    created by an _asynchronous generator_ function.
 
    New in version 3.6.
 
-inspect.istraceback(object)              *istraceback()..inspect.txt;*
+inspect.istraceback(object)               *istraceback()..inspect.txt*
 
    Return "True" if the object is a traceback.
 
-inspect.isframe(object)                      *isframe()..inspect.txt;*
+inspect.isframe(object)                       *isframe()..inspect.txt*
 
    Return "True" if the object is a frame.
 
-inspect.iscode(object)                        *iscode()..inspect.txt;*
+inspect.iscode(object)                         *iscode()..inspect.txt*
 
    Return "True" if the object is a code.
 
-inspect.isbuiltin(object)                  *isbuiltin()..inspect.txt;*
+inspect.isbuiltin(object)                   *isbuiltin()..inspect.txt*
 
    Return "True" if the object is a built-in function or a bound
    built-in method.
 
-inspect.ismethodwrapper(object)      *ismethodwrapper()..inspect.txt;*
+inspect.ismethodwrapper(object)       *ismethodwrapper()..inspect.txt*
 
    Return "True" if the type of object is a "MethodWrapperType".
 
@@ -420,16 +420,16 @@ inspect.ismethodwrapper(object)      *ismethodwrapper()..inspect.txt;*
 
    New in version 3.11.
 
-inspect.isroutine(object)                  *isroutine()..inspect.txt;*
+inspect.isroutine(object)                   *isroutine()..inspect.txt*
 
    Return "True" if the object is a user-defined or built-in function
    or method.
 
-inspect.isabstract(object)                *isabstract()..inspect.txt;*
+inspect.isabstract(object)                 *isabstract()..inspect.txt*
 
    Return "True" if the object is an abstract base class.
 
-                                  *ismethoddescriptor()..inspect.txt;*
+                                   *ismethoddescriptor()..inspect.txt*
 inspect.ismethoddescriptor(object)
 
    Return "True" if the object is a method descriptor, but not if
@@ -447,7 +447,7 @@ inspect.ismethoddescriptor(object)
    having the "__func__" attribute (etc) when an object passes
    "ismethod()".
 
-inspect.isdatadescriptor(object)    *isdatadescriptor()..inspect.txt;*
+inspect.isdatadescriptor(object)     *isdatadescriptor()..inspect.txt*
 
    Return "True" if the object is a data descriptor.
 
@@ -459,7 +459,7 @@ inspect.isdatadescriptor(object)    *isdatadescriptor()..inspect.txt;*
    "__name__" and "__doc__" attributes (properties, getsets, and
    members have both of these attributes), but this is not guaranteed.
 
-                                  *isgetsetdescriptor()..inspect.txt;*
+                                   *isgetsetdescriptor()..inspect.txt*
 inspect.isgetsetdescriptor(object)
 
    Return "True" if the object is a getset descriptor.
@@ -469,7 +469,7 @@ inspect.isgetsetdescriptor(object)
    implementations without such types, this method will always return
    "False".
 
-                                  *ismemberdescriptor()..inspect.txt;*
+                                   *ismemberdescriptor()..inspect.txt*
 inspect.ismemberdescriptor(object)
 
    Return "True" if the object is a member descriptor.
@@ -483,7 +483,7 @@ inspect.ismemberdescriptor(object)
 Retrieving source code
 ======================
 
-inspect.getdoc(object)                        *getdoc()..inspect.txt;*
+inspect.getdoc(object)                         *getdoc()..inspect.txt*
 
    Get the documentation string for an object, cleaned up with
    "cleandoc()". If the documentation string for an object is not
@@ -495,7 +495,7 @@ inspect.getdoc(object)                        *getdoc()..inspect.txt;*
    Changed in version 3.5: Documentation strings are now inherited if
    not overridden.
 
-inspect.getcomments(object)              *getcomments()..inspect.txt;*
+inspect.getcomments(object)               *getcomments()..inspect.txt*
 
    Return in a single string any lines of comments immediately
    preceding the object’s source code (for a class, function, or
@@ -504,25 +504,25 @@ inspect.getcomments(object)              *getcomments()..inspect.txt;*
    "None".  This could happen if the object has been defined in C or
    the interactive shell.
 
-inspect.getfile(object)                      *getfile()..inspect.txt;*
+inspect.getfile(object)                       *getfile()..inspect.txt*
 
    Return the name of the (text or binary) file in which an object was
    defined. This will fail with a "TypeError" if the object is a
    built-in module, class, or function.
 
-inspect.getmodule(object)                  *getmodule()..inspect.txt;*
+inspect.getmodule(object)                   *getmodule()..inspect.txt*
 
    Try to guess which module an object was defined in. Return "None"
    if the module cannot be determined.
 
-inspect.getsourcefile(object)          *getsourcefile()..inspect.txt;*
+inspect.getsourcefile(object)           *getsourcefile()..inspect.txt*
 
    Return the name of the Python source file in which an object was
    defined or "None" if no way can be identified to get the source.
    This will fail with a "TypeError" if the object is a built-in
    module, class, or function.
 
-inspect.getsourcelines(object)        *getsourcelines()..inspect.txt;*
+inspect.getsourcelines(object)         *getsourcelines()..inspect.txt*
 
    Return a list of source lines and starting line number for an
    object. The argument may be a module, class, method, function,
@@ -536,7 +536,7 @@ inspect.getsourcelines(object)        *getsourcelines()..inspect.txt;*
    Changed in version 3.3: "OSError" is raised instead of "IOError",
    now an alias of the former.
 
-inspect.getsource(object)                  *getsource()..inspect.txt;*
+inspect.getsource(object)                   *getsource()..inspect.txt*
 
    Return the text of the source code for an object. The argument may
    be a module, class, method, function, traceback, frame, or code
@@ -548,7 +548,7 @@ inspect.getsource(object)                  *getsource()..inspect.txt;*
    Changed in version 3.3: "OSError" is raised instead of "IOError",
    now an alias of the former.
 
-inspect.cleandoc(doc)                       *cleandoc()..inspect.txt;*
+inspect.cleandoc(doc)                        *cleandoc()..inspect.txt*
 
    Clean up indentation from docstrings that are indented to line up
    with blocks of code.
@@ -568,7 +568,7 @@ The Signature object represents the call signature of a callable
 object and its return annotation.  To retrieve a Signature object, use
 the "signature()" function.
 
-                                           *signature()..inspect.txt;*
+                                            *signature()..inspect.txt*
 inspect.signature(callable, *, follow_wrapped=True, globals=None, locals=None, eval_str=False)
 
    Return a "Signature" object for the given "callable":
@@ -624,7 +624,7 @@ inspect.signature(callable, *, follow_wrapped=True, globals=None, locals=None, e
      in functions defined in C provide no metadata about their
      arguments.
 
-                                             *Signature..inspect.txt;*
+                                              *Signature..inspect.txt*
 class inspect.Signature(parameters=None, *, return_annotation=Signature.empty)
 
    A Signature object represents the call signature of a function and
@@ -646,12 +646,12 @@ class inspect.Signature(parameters=None, *, return_annotation=Signature.empty)
    Changed in version 3.5: Signature objects are picklable and
    _hashable_.
 
-   empty                                  *Signature.empty..inspect.txt;*
+   empty                                   *Signature.empty..inspect.txt*
 
       A special class-level marker to specify absence of a return
       annotation.
 
-   parameters                        *Signature.parameters..inspect.txt;*
+   parameters                         *Signature.parameters..inspect.txt*
 
       An ordered mapping of parameters’ names to the corresponding
       "Parameter" objects.  Parameters appear in strict definition
@@ -662,19 +662,19 @@ class inspect.Signature(parameters=None, *, return_annotation=Signature.empty)
       of version 3.7, although in practice this order had always been
       preserved in Python 3.
 
-   return_annotation          *Signature.return_annotation..inspect.txt;*
+   return_annotation           *Signature.return_annotation..inspect.txt*
 
       The “return” annotation for the callable.  If the callable has
       no “return” annotation, this attribute is set to
       "Signature.empty".
 
-   bind(*args, **kwargs)                 *Signature.bind()..inspect.txt;*
+   bind(*args, **kwargs)                  *Signature.bind()..inspect.txt*
 
       Create a mapping from positional and keyword arguments to
       parameters. Returns "BoundArguments" if "*args" and "**kwargs"
       match the signature, or raises a "TypeError".
 
-                              *Signature.bind_partial()..inspect.txt;*
+                               *Signature.bind_partial()..inspect.txt*
    bind_partial(*args, **kwargs)
 
       Works the same way as "Signature.bind()", but allows the
@@ -683,7 +683,7 @@ class inspect.Signature(parameters=None, *, return_annotation=Signature.empty)
       raises a "TypeError" if the passed arguments do not match the
       signature.
 
-                                   *Signature.replace()..inspect.txt;*
+                                    *Signature.replace()..inspect.txt*
    replace(*[, parameters][, return_annotation])
 
       Create a new Signature instance based on the instance
@@ -704,7 +704,7 @@ class inspect.Signature(parameters=None, *, return_annotation=Signature.empty)
       Signature objects are also supported by generic function
       "copy.replace()".
 
-                             *Signature.from_callable()..inspect.txt;*
+                              *Signature.from_callable()..inspect.txt*
    classmethod from_callable(obj, *, follow_wrapped=True, globalns=None, localns=None)
 
       Return a "Signature" (or its subclass) object for a given
@@ -724,7 +724,7 @@ class inspect.Signature(parameters=None, *, return_annotation=Signature.empty)
 
       New in version 3.10: "globalns" and "localns" parameters.
 
-                                             *Parameter..inspect.txt;*
+                                              *Parameter..inspect.txt*
 class inspect.Parameter(name, kind, *, default=Parameter.empty, annotation=Parameter.empty)
 
    Parameter objects are _immutable_.  Instead of modifying a
@@ -734,12 +734,12 @@ class inspect.Parameter(name, kind, *, default=Parameter.empty, annotation=Param
    Changed in version 3.5: Parameter objects are picklable and
    _hashable_.
 
-   empty                                  *Parameter.empty..inspect.txt;*
+   empty                                   *Parameter.empty..inspect.txt*
 
       A special class-level marker to specify absence of default
       values and annotations.
 
-   name                                    *Parameter.name..inspect.txt;*
+   name                                     *Parameter.name..inspect.txt*
 
       The name of the parameter as a string.  The name must be a valid
       Python identifier.
@@ -751,17 +751,17 @@ class inspect.Parameter(name, kind, *, default=Parameter.empty, annotation=Param
       Changed in version 3.6: These parameter names are exposed by
       this module as names like "implicit0".
 
-   default                              *Parameter.default..inspect.txt;*
+   default                               *Parameter.default..inspect.txt*
 
       The default value for the parameter.  If the parameter has no
       default value, this attribute is set to "Parameter.empty".
 
-   annotation                        *Parameter.annotation..inspect.txt;*
+   annotation                         *Parameter.annotation..inspect.txt*
 
       The annotation for the parameter.  If the parameter has no
       annotation, this attribute is set to "Parameter.empty".
 
-   kind                                    *Parameter.kind..inspect.txt;*
+   kind                                     *Parameter.kind..inspect.txt*
 
       Describes how argument values are bound to the parameter.  The
       possible values are accessible via "Parameter" (like
@@ -810,7 +810,7 @@ class inspect.Parameter(name, kind, *, default=Parameter.empty, annotation=Param
          ...         print('Parameter:', param)
          Parameter: c
 <
-   kind.description            *Parameter.kind.description..inspect.txt;*
+   kind.description             *Parameter.kind.description..inspect.txt*
 
       Describes a enum value of Parameter.kind.
 
@@ -830,7 +830,7 @@ class inspect.Parameter(name, kind, *, default=Parameter.empty, annotation=Param
          keyword-only
 <
 
-                                   *Parameter.replace()..inspect.txt;*
+                                    *Parameter.replace()..inspect.txt*
    replace(*[, name][, kind][, default][, annotation])
 
       Create a new Parameter instance based on the instance replaced
@@ -856,12 +856,12 @@ class inspect.Parameter(name, kind, *, default=Parameter.empty, annotation=Param
    allowed to have "name" set to "None" if their "kind" was set to
    "POSITIONAL_ONLY". This is no longer permitted.
 
-class inspect.BoundArguments            *BoundArguments..inspect.txt;*
+class inspect.BoundArguments             *BoundArguments..inspect.txt*
 
    Result of a "Signature.bind()" or "Signature.bind_partial()" call.
    Holds the mapping of arguments to the function’s parameters.
 
-   arguments                     *BoundArguments.arguments..inspect.txt;*
+   arguments                      *BoundArguments.arguments..inspect.txt*
 
       A mutable mapping of parameters’ names to arguments’ values.
       Contains only explicitly bound arguments.  Changes in
@@ -880,21 +880,21 @@ class inspect.BoundArguments            *BoundArguments..inspect.txt;*
       Changed in version 3.9: "arguments" is now of type "dict".
       Formerly, it was of type "collections.OrderedDict".
 
-   args                               *BoundArguments.args..inspect.txt;*
+   args                                *BoundArguments.args..inspect.txt*
 
       A tuple of positional arguments values.  Dynamically computed
       from the "arguments" attribute.
 
-   kwargs                           *BoundArguments.kwargs..inspect.txt;*
+   kwargs                            *BoundArguments.kwargs..inspect.txt*
 
       A dict of keyword arguments values.  Dynamically computed from
       the "arguments" attribute.
 
-   signature                     *BoundArguments.signature..inspect.txt;*
+   signature                      *BoundArguments.signature..inspect.txt*
 
       A reference to the parent "Signature" object.
 
-   apply_defaults()       *BoundArguments.apply_defaults()..inspect.txt;*
+   apply_defaults()        *BoundArguments.apply_defaults()..inspect.txt*
 
       Set default values for missing arguments.
 
@@ -930,7 +930,7 @@ See also:
 Classes and functions
 =====================
 
-                                        *getclasstree()..inspect.txt;*
+                                         *getclasstree()..inspect.txt*
 inspect.getclasstree(classes, unique=False)
 
    Arrange the given list of classes into a hierarchy of nested lists.
@@ -942,7 +942,7 @@ inspect.getclasstree(classes, unique=False)
    classes using multiple inheritance and their descendants will
    appear multiple times.
 
-inspect.getfullargspec(func)          *getfullargspec()..inspect.txt;*
+inspect.getfullargspec(func)           *getfullargspec()..inspect.txt*
 
    Get the names and default values of a Python function’s parameters.
    A _named tuple_ is returned:
@@ -987,7 +987,7 @@ inspect.getfullargspec(func)          *getfullargspec()..inspect.txt;*
    version 3.7, although in practice this order had always been
    preserved in Python 3.
 
-inspect.getargvalues(frame)             *getargvalues()..inspect.txt;*
+inspect.getargvalues(frame)              *getargvalues()..inspect.txt*
 
    Get information about arguments passed into a particular frame.  A
    _named tuple_ "ArgInfo(args, varargs, keywords, locals)" is
@@ -1000,7 +1000,7 @@ inspect.getargvalues(frame)             *getargvalues()..inspect.txt;*
      This function was inadvertently marked as deprecated in Python
      3.5.
 
-                                     *formatargvalues()..inspect.txt;*
+                                      *formatargvalues()..inspect.txt*
 inspect.formatargvalues(args[, varargs, varkw, locals, formatarg, formatvarargs, formatvarkw, formatvalue])
 
    Format a pretty argument spec from the four values returned by
@@ -1013,7 +1013,7 @@ inspect.formatargvalues(args[, varargs, varkw, locals, formatarg, formatvarargs,
      This function was inadvertently marked as deprecated in Python
      3.5.
 
-inspect.getmro(cls)                           *getmro()..inspect.txt;*
+inspect.getmro(cls)                            *getmro()..inspect.txt*
 
    Return a tuple of class cls’s base classes, including cls, in
    method resolution order.  No class appears more than once in this
@@ -1021,7 +1021,7 @@ inspect.getmro(cls)                           *getmro()..inspect.txt;*
    Unless a very peculiar user-defined metatype is in use, cls will be
    the first element of the tuple.
 
-                                         *getcallargs()..inspect.txt;*
+                                          *getcallargs()..inspect.txt*
 inspect.getcallargs(func, /, *args, **kwds)
 
    Bind the _args_ and _kwds_ to the argument names of the Python
@@ -1052,7 +1052,7 @@ inspect.getcallargs(func, /, *args, **kwds)
    Deprecated since version 3.5: Use "Signature.bind()" and
    "Signature.bind_partial()" instead.
 
-inspect.getclosurevars(func)          *getclosurevars()..inspect.txt;*
+inspect.getclosurevars(func)           *getclosurevars()..inspect.txt*
 
    Get the mapping of external name references in a Python function or
    method _func_ to their current values. A _named tuple_
@@ -1067,7 +1067,7 @@ inspect.getclosurevars(func)          *getclosurevars()..inspect.txt;*
 
    New in version 3.3.
 
-inspect.unwrap(func, *, stop=None)            *unwrap()..inspect.txt;*
+inspect.unwrap(func, *, stop=None)             *unwrap()..inspect.txt*
 
    Get the object wrapped by _func_. It follows the chain of
    "__wrapped__" attributes returning the last object in the chain.
@@ -1084,7 +1084,7 @@ inspect.unwrap(func, *, stop=None)            *unwrap()..inspect.txt;*
 
    New in version 3.4.
 
-                                     *get_annotations()..inspect.txt;*
+                                      *get_annotations()..inspect.txt*
 inspect.get_annotations(obj, *, globals=None, locals=None, eval_str=False)
 
    Compute the annotations dict for an object.
@@ -1155,38 +1155,38 @@ backwards compatibility these objects allow tuple-like operations on
 all attributes except "positions". This behavior is considered
 deprecated and may be removed in the future.
 
-class inspect.FrameInfo                      *FrameInfo..inspect.txt;*
+class inspect.FrameInfo                       *FrameInfo..inspect.txt*
 
-   frame                                  *FrameInfo.frame..inspect.txt;*
+   frame                                   *FrameInfo.frame..inspect.txt*
 
       The frame object that the record corresponds to.
 
-   filename                            *FrameInfo.filename..inspect.txt;*
+   filename                             *FrameInfo.filename..inspect.txt*
 
       The file name associated with the code being executed by the
       frame this record corresponds to.
 
-   lineno                                *FrameInfo.lineno..inspect.txt;*
+   lineno                                 *FrameInfo.lineno..inspect.txt*
 
       The line number of the current line associated with the code
       being executed by the frame this record corresponds to.
 
-   function                            *FrameInfo.function..inspect.txt;*
+   function                             *FrameInfo.function..inspect.txt*
 
       The function name that is being executed by the frame this
       record corresponds to.
 
-   code_context                    *FrameInfo.code_context..inspect.txt;*
+   code_context                     *FrameInfo.code_context..inspect.txt*
 
       A list of lines of context from the source code that’s being
       executed by the frame this record corresponds to.
 
-   index                                  *FrameInfo.index..inspect.txt;*
+   index                                   *FrameInfo.index..inspect.txt*
 
       The index of the current line being executed in the
       "code_context" list.
 
-   positions                          *FrameInfo.positions..inspect.txt;*
+   positions                           *FrameInfo.positions..inspect.txt*
 
       A "dis.Positions" object containing the start line number, end
       line number, start column offset, and end column offset
@@ -1199,34 +1199,34 @@ class inspect.FrameInfo                      *FrameInfo..inspect.txt;*
    Changed in version 3.11: "FrameInfo" is now a class instance (that
    is backwards compatible with the previous _named tuple_).
 
-class inspect.Traceback                      *Traceback..inspect.txt;*
+class inspect.Traceback                       *Traceback..inspect.txt*
 
-   filename                            *Traceback.filename..inspect.txt;*
+   filename                             *Traceback.filename..inspect.txt*
 
       The file name associated with the code being executed by the
       frame this traceback corresponds to.
 
-   lineno                                *Traceback.lineno..inspect.txt;*
+   lineno                                 *Traceback.lineno..inspect.txt*
 
       The line number of the current line associated with the code
       being executed by the frame this traceback corresponds to.
 
-   function                            *Traceback.function..inspect.txt;*
+   function                             *Traceback.function..inspect.txt*
 
       The function name that is being executed by the frame this
       traceback corresponds to.
 
-   code_context                    *Traceback.code_context..inspect.txt;*
+   code_context                     *Traceback.code_context..inspect.txt*
 
       A list of lines of context from the source code that’s being
       executed by the frame this traceback corresponds to.
 
-   index                                  *Traceback.index..inspect.txt;*
+   index                                   *Traceback.index..inspect.txt*
 
       The index of the current line being executed in the
       "code_context" list.
 
-   positions                          *Traceback.positions..inspect.txt;*
+   positions                           *Traceback.positions..inspect.txt*
 
       A "dis.Positions" object containing the start line number, end
       line number, start column offset, and end column offset
@@ -1268,8 +1268,7 @@ The optional _context_ argument supported by most of these functions
 specifies the number of lines of context to return, which are centered
 around the current line.
 
-                                        *getframeinfo()..inspect.txt;*
-inspect.getframeinfo(frame, context=1)
+inspect.getframeinfo(frame, context=1)   *getframeinfo()..inspect.txt*
 
    Get information about a frame or traceback object.  A "Traceback"
    object is returned.
@@ -1277,7 +1276,7 @@ inspect.getframeinfo(frame, context=1)
    Changed in version 3.11: A "Traceback" object is returned instead
    of a named tuple.
 
-                                      *getouterframes()..inspect.txt;*
+                                       *getouterframes()..inspect.txt*
 inspect.getouterframes(frame, context=1)
 
    Get a list of "FrameInfo" objects for a frame and all outer frames.
@@ -1290,7 +1289,7 @@ inspect.getouterframes(frame, context=1)
 
    Changed in version 3.11: A list of "FrameInfo" objects is returned.
 
-                                      *getinnerframes()..inspect.txt;*
+                                       *getinnerframes()..inspect.txt*
 inspect.getinnerframes(traceback, context=1)
 
    Get a list of "FrameInfo" objects for a traceback’s frame and all
@@ -1303,7 +1302,7 @@ inspect.getinnerframes(traceback, context=1)
 
    Changed in version 3.11: A list of "FrameInfo" objects is returned.
 
-inspect.currentframe()                  *currentframe()..inspect.txt;*
+inspect.currentframe()                   *currentframe()..inspect.txt*
 
    Return the frame object for the caller’s stack frame.
 
@@ -1313,7 +1312,7 @@ inspect.currentframe()                  *currentframe()..inspect.txt;*
    implementation without Python stack frame support this function
    returns "None".
 
-inspect.stack(context=1)                       *stack()..inspect.txt;*
+inspect.stack(context=1)                        *stack()..inspect.txt*
 
    Return a list of "FrameInfo" objects for the caller’s stack.  The
    first entry in the returned list represents the caller; the last
@@ -1324,7 +1323,7 @@ inspect.stack(context=1)                       *stack()..inspect.txt;*
 
    Changed in version 3.11: A list of "FrameInfo" objects is returned.
 
-inspect.trace(context=1)                       *trace()..inspect.txt;*
+inspect.trace(context=1)                        *trace()..inspect.txt*
 
    Return a list of "FrameInfo" objects for the stack between the
    current frame and the frame in which an exception currently being
@@ -1350,7 +1349,7 @@ tools, this can be inconvenient. "getattr_static()" has the same
 signature as "getattr()" but avoids executing code when it fetches
 attributes.
 
-                                      *getattr_static()..inspect.txt;*
+                                       *getattr_static()..inspect.txt*
 inspect.getattr_static(obj, attr, default=None)
 
    Retrieve attributes without triggering dynamic lookup via the
@@ -1406,7 +1405,7 @@ executing, is waiting to start or resume or execution, or has already
 terminated. "getgeneratorstate()" allows the current state of a
 generator to be determined easily.
 
-                                   *getgeneratorstate()..inspect.txt;*
+                                    *getgeneratorstate()..inspect.txt*
 inspect.getgeneratorstate(generator)
 
    Get current state of a generator-iterator.
@@ -1422,7 +1421,7 @@ inspect.getgeneratorstate(generator)
 
    New in version 3.2.
 
-                                   *getcoroutinestate()..inspect.txt;*
+                                    *getcoroutinestate()..inspect.txt*
 inspect.getcoroutinestate(coroutine)
 
    Get current state of a coroutine object.  The function is intended
@@ -1441,7 +1440,7 @@ inspect.getcoroutinestate(coroutine)
 
    New in version 3.5.
 
-inspect.getasyncgenstate(agen)      *getasyncgenstate()..inspect.txt;*
+inspect.getasyncgenstate(agen)       *getasyncgenstate()..inspect.txt*
 
    Get current state of an asynchronous generator object.  The
    function is intended to be used with asynchronous iterator objects
@@ -1464,7 +1463,7 @@ The current internal state of the generator can also be queried. This
 is mostly useful for testing purposes, to ensure that internal state
 is being updated as expected:
 
-                                  *getgeneratorlocals()..inspect.txt;*
+                                   *getgeneratorlocals()..inspect.txt*
 inspect.getgeneratorlocals(generator)
 
    Get the mapping of live local variables in _generator_ to their
@@ -1484,7 +1483,7 @@ inspect.getgeneratorlocals(generator)
 
    New in version 3.3.
 
-                                  *getcoroutinelocals()..inspect.txt;*
+                                   *getcoroutinelocals()..inspect.txt*
 inspect.getcoroutinelocals(coroutine)
 
    This function is analogous to "getgeneratorlocals()", but works for
@@ -1492,7 +1491,7 @@ inspect.getcoroutinelocals(coroutine)
 
    New in version 3.5.
 
-inspect.getasyncgenlocals(agen)    *getasyncgenlocals()..inspect.txt;*
+inspect.getasyncgenlocals(agen)     *getasyncgenlocals()..inspect.txt*
 
    This function is analogous to "getgeneratorlocals()", but works for
    asynchronous generator objects created by "async def" functions
@@ -1507,33 +1506,33 @@ Code Objects Bit Flags
 Python code objects have a "co_flags" attribute, which is a bitmap of
 the following flags:
 
-inspect.CO_OPTIMIZED                      *CO_OPTIMIZED..inspect.txt;*
+inspect.CO_OPTIMIZED                       *CO_OPTIMIZED..inspect.txt*
 
    The code object is optimized, using fast locals.
 
-inspect.CO_NEWLOCALS                      *CO_NEWLOCALS..inspect.txt;*
+inspect.CO_NEWLOCALS                       *CO_NEWLOCALS..inspect.txt*
 
    If set, a new dict will be created for the frame’s "f_locals" when
    the code object is executed.
 
-inspect.CO_VARARGS                          *CO_VARARGS..inspect.txt;*
+inspect.CO_VARARGS                           *CO_VARARGS..inspect.txt*
 
    The code object has a variable positional parameter ("*args"-like).
 
-inspect.CO_VARKEYWORDS                  *CO_VARKEYWORDS..inspect.txt;*
+inspect.CO_VARKEYWORDS                   *CO_VARKEYWORDS..inspect.txt*
 
    The code object has a variable keyword parameter ("**kwargs"-like).
 
-inspect.CO_NESTED                            *CO_NESTED..inspect.txt;*
+inspect.CO_NESTED                             *CO_NESTED..inspect.txt*
 
    The flag is set when the code object is a nested function.
 
-inspect.CO_GENERATOR                      *CO_GENERATOR..inspect.txt;*
+inspect.CO_GENERATOR                       *CO_GENERATOR..inspect.txt*
 
    The flag is set when the code object is a generator function, i.e.
    a generator object is returned when the code object is executed.
 
-inspect.CO_COROUTINE                      *CO_COROUTINE..inspect.txt;*
+inspect.CO_COROUTINE                       *CO_COROUTINE..inspect.txt*
 
    The flag is set when the code object is a coroutine function. When
    the code object is executed it returns a coroutine object. See
@@ -1541,7 +1540,7 @@ inspect.CO_COROUTINE                      *CO_COROUTINE..inspect.txt;*
 
    New in version 3.5.
 
-inspect.CO_ITERABLE_COROUTINE    *CO_ITERABLE_COROUTINE..inspect.txt;*
+inspect.CO_ITERABLE_COROUTINE     *CO_ITERABLE_COROUTINE..inspect.txt*
 
    The flag is used to transform generators into generator-based
    coroutines.  Generator objects with this flag can be used in
@@ -1550,7 +1549,7 @@ inspect.CO_ITERABLE_COROUTINE    *CO_ITERABLE_COROUTINE..inspect.txt;*
 
    New in version 3.5.
 
-inspect.CO_ASYNC_GENERATOR          *CO_ASYNC_GENERATOR..inspect.txt;*
+inspect.CO_ASYNC_GENERATOR           *CO_ASYNC_GENERATOR..inspect.txt*
 
    The flag is set when the code object is an asynchronous generator
    function.  When the code object is executed it returns an
@@ -1570,7 +1569,7 @@ Note:
 Buffer flags
 ============
 
-class inspect.BufferFlags                  *BufferFlags..inspect.txt;*
+class inspect.BufferFlags                   *BufferFlags..inspect.txt*
 
    This is an "enum.IntFlag" that represents the flags that can be
    passed to the "__buffer__()" method of objects implementing the
@@ -1578,43 +1577,43 @@ class inspect.BufferFlags                  *BufferFlags..inspect.txt;*
 
    The meaning of the flags is explained at Buffer request types.
 
-   SIMPLE                              *BufferFlags.SIMPLE..inspect.txt;*
+   SIMPLE                               *BufferFlags.SIMPLE..inspect.txt*
 
-   WRITABLE                          *BufferFlags.WRITABLE..inspect.txt;*
+   WRITABLE                           *BufferFlags.WRITABLE..inspect.txt*
 
-   FORMAT                              *BufferFlags.FORMAT..inspect.txt;*
+   FORMAT                               *BufferFlags.FORMAT..inspect.txt*
 
-   ND                                      *BufferFlags.ND..inspect.txt;*
+   ND                                       *BufferFlags.ND..inspect.txt*
 
-   STRIDES                            *BufferFlags.STRIDES..inspect.txt;*
+   STRIDES                             *BufferFlags.STRIDES..inspect.txt*
 
-   C_CONTIGUOUS                  *BufferFlags.C_CONTIGUOUS..inspect.txt;*
+   C_CONTIGUOUS                   *BufferFlags.C_CONTIGUOUS..inspect.txt*
 
-   F_CONTIGUOUS                  *BufferFlags.F_CONTIGUOUS..inspect.txt;*
+   F_CONTIGUOUS                   *BufferFlags.F_CONTIGUOUS..inspect.txt*
 
-   ANY_CONTIGUOUS              *BufferFlags.ANY_CONTIGUOUS..inspect.txt;*
+   ANY_CONTIGUOUS               *BufferFlags.ANY_CONTIGUOUS..inspect.txt*
 
-   INDIRECT                          *BufferFlags.INDIRECT..inspect.txt;*
+   INDIRECT                           *BufferFlags.INDIRECT..inspect.txt*
 
-   CONTIG                              *BufferFlags.CONTIG..inspect.txt;*
+   CONTIG                               *BufferFlags.CONTIG..inspect.txt*
 
-   CONTIG_RO                        *BufferFlags.CONTIG_RO..inspect.txt;*
+   CONTIG_RO                         *BufferFlags.CONTIG_RO..inspect.txt*
 
-   STRIDED                            *BufferFlags.STRIDED..inspect.txt;*
+   STRIDED                             *BufferFlags.STRIDED..inspect.txt*
 
-   STRIDED_RO                      *BufferFlags.STRIDED_RO..inspect.txt;*
+   STRIDED_RO                       *BufferFlags.STRIDED_RO..inspect.txt*
 
-   RECORDS                            *BufferFlags.RECORDS..inspect.txt;*
+   RECORDS                             *BufferFlags.RECORDS..inspect.txt*
 
-   RECORDS_RO                      *BufferFlags.RECORDS_RO..inspect.txt;*
+   RECORDS_RO                       *BufferFlags.RECORDS_RO..inspect.txt*
 
-   FULL                                  *BufferFlags.FULL..inspect.txt;*
+   FULL                                   *BufferFlags.FULL..inspect.txt*
 
-   FULL_RO                            *BufferFlags.FULL_RO..inspect.txt;*
+   FULL_RO                             *BufferFlags.FULL_RO..inspect.txt*
 
-   READ                                  *BufferFlags.READ..inspect.txt;*
+   READ                                   *BufferFlags.READ..inspect.txt*
 
-   WRITE                                *BufferFlags.WRITE..inspect.txt;*
+   WRITE                                 *BufferFlags.WRITE..inspect.txt*
 
    New in version 3.12.
 

@@ -1,4 +1,4 @@
-*tkinter.txt;*                                Last change: 2023 Sep 09
+*tkinter.txt;*                                Last change: 2023 Sep 10
 
 "tkinter" — Python interface to Tcl/Tk
 **************************************
@@ -131,7 +131,7 @@ API:
    from tkinter import ttk
 <
 
-                                                    *Tk..tkinter.txt;*
+                                                     *Tk..tkinter.txt*
 class tkinter.Tk(screenName=None, baseName=None, className='Tk', useTk=True, sync=False, use=None)
 
    Construct a toplevel Tk widget, which is usually the main window of
@@ -179,14 +179,14 @@ class tkinter.Tk(screenName=None, baseName=None, className='Tk', useTk=True, syn
    path for the profile files is the "HOME" environment variable or,
    if that isn’t defined, then "os.curdir".
 
-   tk                                               *Tk.tk..tkinter.txt;*
+   tk                                                *Tk.tk..tkinter.txt*
 
       The Tk application object created by instantiating "Tk".  This
       provides access to the Tcl interpreter.  Each widget that is
       attached the same instance of "Tk" has the same value for its
       "tk" attribute.
 
-   master                                       *Tk.master..tkinter.txt;*
+   master                                        *Tk.master..tkinter.txt*
 
       The widget object that contains this widget.  For "Tk", the
       _master_ is "None" because it is the main window.  The terms
@@ -197,13 +197,13 @@ class tkinter.Tk(screenName=None, baseName=None, className='Tk', useTk=True, syn
       like relationship while _master_/_slave_ reflects the container
       structure.
 
-   children                                   *Tk.children..tkinter.txt;*
+   children                                    *Tk.children..tkinter.txt*
 
       The immediate descendants of this widget as a "dict" with the
       child widget names as the keys and the child instance objects as
       the values.
 
-                                                 *Tcl()..tkinter.txt;*
+                                                  *Tcl()..tkinter.txt*
 tkinter.Tcl(screenName=None, baseName=None, className='Tk', useTk=False)
 
    The "Tcl()" function is a factory function which creates an object
@@ -1022,7 +1022,7 @@ number of bytes. For sockets, the "recv()" or "recvfrom()" methods
 will work fine; for other files, use raw reads or
 "os.read(file.fileno(), maxbytecount)".
 
-                         *Widget.tk.createfilehandler()..tkinter.txt;*
+                          *Widget.tk.createfilehandler()..tkinter.txt*
 Widget.tk.createfilehandler(file, mask, func)
 
    Registers the file handler callback function _func_. The _file_
@@ -1034,14 +1034,14 @@ Widget.tk.createfilehandler(file, mask, func)
       callback(file, mask)
 <
 
-                         *Widget.tk.deletefilehandler()..tkinter.txt;*
+                          *Widget.tk.deletefilehandler()..tkinter.txt*
 Widget.tk.deletefilehandler(file)
 
    Unregisters a file handler.
 
-tkinter.READABLE                              *READABLE..tkinter.txt;*
-tkinter.WRITABLE                              *WRITABLE..tkinter.txt;*
-tkinter.EXCEPTION                            *EXCEPTION..tkinter.txt;*
+tkinter.READABLE                               *READABLE..tkinter.txt*
+tkinter.WRITABLE                               *WRITABLE..tkinter.txt*
+tkinter.EXCEPTION                             *EXCEPTION..tkinter.txt*
 
    Constants used in the _mask_ arguments.
 

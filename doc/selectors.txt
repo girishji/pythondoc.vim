@@ -1,4 +1,4 @@
-*selectors.txt;*                              Last change: 2023 Sep 09
+*selectors.txt;*                              Last change: 2023 Sep 10
 
 "selectors" — High-level I/O multiplexing
 *****************************************
@@ -71,30 +71,30 @@ combination of the modules constants below:
    | selectors.EVENT_WRITE   | Available for write                             |
    +-------------------------+-------------------------------------------------+
 
-class selectors.SelectorKey              *SelectorKey..selectors.txt;*
+class selectors.SelectorKey               *SelectorKey..selectors.txt*
 
    A "SelectorKey" is a "namedtuple" used to associate a file object
    to its underlying file descriptor, selected event mask and attached
    data. It is returned by several "BaseSelector" methods.
 
-   fileobj                          *SelectorKey.fileobj..selectors.txt;*
+   fileobj                           *SelectorKey.fileobj..selectors.txt*
 
       File object registered.
 
-   fd                                    *SelectorKey.fd..selectors.txt;*
+   fd                                     *SelectorKey.fd..selectors.txt*
 
       Underlying file descriptor.
 
-   events                            *SelectorKey.events..selectors.txt;*
+   events                             *SelectorKey.events..selectors.txt*
 
       Events that must be waited for on this file object.
 
-   data                                *SelectorKey.data..selectors.txt;*
+   data                                 *SelectorKey.data..selectors.txt*
 
       Optional opaque data associated to this file object: for
       example, this could be used to store a per-client session ID.
 
-class selectors.BaseSelector            *BaseSelector..selectors.txt;*
+class selectors.BaseSelector             *BaseSelector..selectors.txt*
 
    A "BaseSelector" is used to wait for I/O event readiness on
    multiple file objects. It supports file stream registration,
@@ -106,7 +106,7 @@ class selectors.BaseSelector            *BaseSelector..selectors.txt;*
    "BaseSelector" and its concrete implementations support the
    _context manager_ protocol.
 
-                             *BaseSelector.register()..selectors.txt;*
+                              *BaseSelector.register()..selectors.txt*
    abstractmethod register(fileobj, events, data=None)
 
       Register a file object for selection, monitoring it for I/O
@@ -121,7 +121,7 @@ class selectors.BaseSelector            *BaseSelector..selectors.txt;*
       "ValueError" in case of invalid event mask or file descriptor,
       or "KeyError" if the file object is already registered.
 
-                           *BaseSelector.unregister()..selectors.txt;*
+                            *BaseSelector.unregister()..selectors.txt*
    abstractmethod unregister(fileobj)
 
       Unregister a file object from selection, removing it from
@@ -135,7 +135,7 @@ class selectors.BaseSelector            *BaseSelector..selectors.txt;*
       "ValueError" if _fileobj_ is invalid (e.g. it has no "fileno()"
       method or its "fileno()" method has an invalid return value).
 
-                               *BaseSelector.modify()..selectors.txt;*
+                                *BaseSelector.modify()..selectors.txt*
    modify(fileobj, events, data=None)
 
       Change a registered file object’s monitored events or attached
@@ -149,7 +149,7 @@ class selectors.BaseSelector            *BaseSelector..selectors.txt;*
       "ValueError" in case of invalid event mask or file descriptor,
       or "KeyError" if the file object is not registered.
 
-                               *BaseSelector.select()..selectors.txt;*
+                                *BaseSelector.select()..selectors.txt*
    abstractmethod select(timeout=None)
 
       Wait until some registered file objects become ready, or the
@@ -179,14 +179,14 @@ class selectors.BaseSelector            *BaseSelector..selectors.txt;*
       rationale), instead of returning an empty list of events before
       the timeout.
 
-   close()                         *BaseSelector.close()..selectors.txt;*
+   close()                          *BaseSelector.close()..selectors.txt*
 
       Close the selector.
 
       This must be called to make sure that any underlying resource is
       freed. The selector shall not be used once it has been closed.
 
-   get_key(fileobj)              *BaseSelector.get_key()..selectors.txt;*
+   get_key(fileobj)               *BaseSelector.get_key()..selectors.txt*
 
       Return the key associated with a registered file object.
 
@@ -194,52 +194,52 @@ class selectors.BaseSelector            *BaseSelector..selectors.txt;*
       object, or raises "KeyError" if the file object is not
       registered.
 
-   abstractmethod get_map()      *BaseSelector.get_map()..selectors.txt;*
+   abstractmethod get_map()       *BaseSelector.get_map()..selectors.txt*
 
       Return a mapping of file objects to selector keys.
 
       This returns a "Mapping" instance mapping registered file
       objects to their associated "SelectorKey" instance.
 
-class selectors.DefaultSelector      *DefaultSelector..selectors.txt;*
+class selectors.DefaultSelector       *DefaultSelector..selectors.txt*
 
    The default selector class, using the most efficient implementation
    available on the current platform. This should be the default
    choice for most users.
 
-class selectors.SelectSelector        *SelectSelector..selectors.txt;*
+class selectors.SelectSelector         *SelectSelector..selectors.txt*
 
    "select.select()"-based selector.
 
-class selectors.PollSelector            *PollSelector..selectors.txt;*
+class selectors.PollSelector             *PollSelector..selectors.txt*
 
    "select.poll()"-based selector.
 
-class selectors.EpollSelector          *EpollSelector..selectors.txt;*
+class selectors.EpollSelector           *EpollSelector..selectors.txt*
 
    "select.epoll()"-based selector.
 
-   fileno()                      *EpollSelector.fileno()..selectors.txt;*
+   fileno()                       *EpollSelector.fileno()..selectors.txt*
 
       This returns the file descriptor used by the underlying
       "select.epoll()" object.
 
-class selectors.DevpollSelector      *DevpollSelector..selectors.txt;*
+class selectors.DevpollSelector       *DevpollSelector..selectors.txt*
 
    "select.devpoll()"-based selector.
 
-   fileno()                    *DevpollSelector.fileno()..selectors.txt;*
+   fileno()                     *DevpollSelector.fileno()..selectors.txt*
 
       This returns the file descriptor used by the underlying
       "select.devpoll()" object.
 
    New in version 3.5.
 
-class selectors.KqueueSelector        *KqueueSelector..selectors.txt;*
+class selectors.KqueueSelector         *KqueueSelector..selectors.txt*
 
    "select.kqueue()"-based selector.
 
-   fileno()                     *KqueueSelector.fileno()..selectors.txt;*
+   fileno()                      *KqueueSelector.fileno()..selectors.txt*
 
       This returns the file descriptor used by the underlying
       "select.kqueue()" object.

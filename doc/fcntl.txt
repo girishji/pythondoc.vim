@@ -1,4 +1,4 @@
-*fcntl.txt;*                                  Last change: 2023 Sep 09
+*fcntl.txt;*                                  Last change: 2023 Sep 10
 
 "fcntl" — The "fcntl" and "ioctl" system calls
 **********************************************
@@ -51,7 +51,7 @@ as “copy-on-write”.
 
 The module defines the following functions:
 
-fcntl.fcntl(fd, cmd, arg=0)                      *fcntl()..fcntl.txt;*
+fcntl.fcntl(fd, cmd, arg=0)                       *fcntl()..fcntl.txt*
 
    Perform the operation _cmd_ on file descriptor _fd_ (file objects
    providing a "fileno()" method are accepted as well).  The values
@@ -76,7 +76,7 @@ fcntl.fcntl(fd, cmd, arg=0)                      *fcntl()..fcntl.txt;*
    Raises an auditing event "fcntl.fcntl" with arguments "fd", "cmd",
    "arg".
 
-                                                 *ioctl()..fcntl.txt;*
+                                                  *ioctl()..fcntl.txt*
 fcntl.ioctl(fd, request, arg=0, mutate_flag=True)
 
    This function is identical to the "fcntl()" function, except that
@@ -130,7 +130,7 @@ fcntl.ioctl(fd, request, arg=0, mutate_flag=True)
    Raises an auditing event "fcntl.ioctl" with arguments "fd",
    "request", "arg".
 
-fcntl.flock(fd, operation)                       *flock()..fcntl.txt;*
+fcntl.flock(fd, operation)                        *flock()..fcntl.txt*
 
    Perform the lock operation _operation_ on file descriptor _fd_
    (file objects providing a "fileno()" method are accepted as well).
@@ -142,7 +142,7 @@ fcntl.flock(fd, operation)                       *flock()..fcntl.txt;*
    Raises an auditing event "fcntl.flock" with arguments "fd",
    "operation".
 
-fcntl.lockf(fd, cmd, len=0, start=0, whence=0)   *lockf()..fcntl.txt;*
+fcntl.lockf(fd, cmd, len=0, start=0, whence=0)    *lockf()..fcntl.txt*
 
    This is essentially a wrapper around the "fcntl()" locking calls.
    _fd_ is the file descriptor (file objects providing a "fileno()"

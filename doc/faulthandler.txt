@@ -1,4 +1,4 @@
-*faulthandler.txt;*                           Last change: 2023 Sep 09
+*faulthandler.txt;*                           Last change: 2023 Sep 10
 
 "faulthandler" — Dump the Python traceback
 ******************************************
@@ -59,7 +59,7 @@ See also:
 Dumping the traceback
 =====================
 
-                                 *dump_traceback()..faulthandler.txt;*
+                                  *dump_traceback()..faulthandler.txt*
 faulthandler.dump_traceback(file=sys.stderr, all_threads=True)
 
    Dump the tracebacks of all threads into _file_. If _all_threads_ is
@@ -77,7 +77,7 @@ faulthandler.dump_traceback(file=sys.stderr, all_threads=True)
 Fault handler state
 ===================
 
-                                         *enable()..faulthandler.txt;*
+                                          *enable()..faulthandler.txt*
 faulthandler.enable(file=sys.stderr, all_threads=True)
 
    Enable the fault handler: install handlers for the "SIGSEGV",
@@ -97,12 +97,12 @@ faulthandler.enable(file=sys.stderr, all_threads=True)
    Changed in version 3.10: The dump now mentions if a garbage
    collector collection is running if _all_threads_ is true.
 
-faulthandler.disable()                  *disable()..faulthandler.txt;*
+faulthandler.disable()                   *disable()..faulthandler.txt*
 
    Disable the fault handler: uninstall the signal handlers installed
    by "enable()".
 
-faulthandler.is_enabled()            *is_enabled()..faulthandler.txt;*
+faulthandler.is_enabled()             *is_enabled()..faulthandler.txt*
 
    Check if the fault handler is enabled.
 
@@ -110,7 +110,7 @@ faulthandler.is_enabled()            *is_enabled()..faulthandler.txt;*
 Dumping the tracebacks after a timeout
 ======================================
 
-                           *dump_traceback_later()..faulthandler.txt;*
+                            *dump_traceback_later()..faulthandler.txt*
 faulthandler.dump_traceback_later(timeout, repeat=False, file=sys.stderr, exit=False)
 
    Dump the tracebacks of all threads, after a timeout of _timeout_
@@ -132,7 +132,7 @@ faulthandler.dump_traceback_later(timeout, repeat=False, file=sys.stderr, exit=F
    Changed in version 3.5: Added support for passing file descriptor
    to this function.
 
-                    *cancel_dump_traceback_later()..faulthandler.txt;*
+                     *cancel_dump_traceback_later()..faulthandler.txt*
 faulthandler.cancel_dump_traceback_later()
 
    Cancel the last call to "dump_traceback_later()".
@@ -141,7 +141,7 @@ faulthandler.cancel_dump_traceback_later()
 Dumping the traceback on a user signal
 ======================================
 
-                                       *register()..faulthandler.txt;*
+                                        *register()..faulthandler.txt*
 faulthandler.register(signum, file=sys.stderr, all_threads=True, chain=False)
 
    Register a user signal: install a handler for the _signum_ signal
@@ -157,7 +157,7 @@ faulthandler.register(signum, file=sys.stderr, all_threads=True, chain=False)
    Changed in version 3.5: Added support for passing file descriptor
    to this function.
 
-faulthandler.unregister(signum)      *unregister()..faulthandler.txt;*
+faulthandler.unregister(signum)       *unregister()..faulthandler.txt*
 
    Unregister a user signal: uninstall the handler of the _signum_
    signal installed by "register()". Return "True" if the signal was

@@ -1,4 +1,4 @@
-*socketserver.txt;*                           Last change: 2023 Sep 09
+*socketserver.txt;*                           Last change: 2023 Sep 10
 
 "socketserver" — A framework for network servers
 ************************************************
@@ -18,7 +18,7 @@ more information.
 
 There are four basic concrete server classes:
 
-                                        *TCPServer..socketserver.txt;*
+                                         *TCPServer..socketserver.txt*
 class socketserver.TCPServer(server_address, RequestHandlerClass, bind_and_activate=True)
 
    This uses the internet TCP protocol, which provides for continuous
@@ -27,17 +27,17 @@ class socketserver.TCPServer(server_address, RequestHandlerClass, bind_and_activ
    to invoke "server_bind()" and "server_activate()".  The other
    parameters are passed to the "BaseServer" base class.
 
-                                        *UDPServer..socketserver.txt;*
+                                         *UDPServer..socketserver.txt*
 class socketserver.UDPServer(server_address, RequestHandlerClass, bind_and_activate=True)
 
    This uses datagrams, which are discrete packets of information that
    may arrive out of order or be lost while in transit.  The
    parameters are the same as for "TCPServer".
 
-                                 *UnixStreamServer..socketserver.txt;*
+                                  *UnixStreamServer..socketserver.txt*
 class socketserver.UnixStreamServer(server_address, RequestHandlerClass, bind_and_activate=True)
 
-                               *UnixDatagramServer..socketserver.txt;*
+                                *UnixDatagramServer..socketserver.txt*
 class socketserver.UnixDatagramServer(server_address, RequestHandlerClass, bind_and_activate=True)
 
    These more infrequently used classes are similar to the TCP and UDP
@@ -101,10 +101,8 @@ Note that "UnixDatagramServer" derives from "UDPServer", not from
 "UnixStreamServer" — the only difference between an IP and a Unix
 server is the address family.
 
-class socketserver.ForkingMixIn      *ForkingMixIn..socketserver.txt;*
-
-                                   *ThreadingMixIn..socketserver.txt;*
-class socketserver.ThreadingMixIn
+class socketserver.ForkingMixIn       *ForkingMixIn..socketserver.txt*
+class socketserver.ThreadingMixIn   *ThreadingMixIn..socketserver.txt*
 
    Forking and threading versions of each type of server can be
    created using these mix-in classes.  For instance,
@@ -136,28 +134,28 @@ class socketserver.ThreadingMixIn
    "socketserver.ForkingMixIn.block_on_close" class attribute to opt-
    in for the pre-3.7 behaviour.
 
-                                 *ForkingTCPServer..socketserver.txt;*
+                                  *ForkingTCPServer..socketserver.txt*
 class socketserver.ForkingTCPServer
 
-                                 *ForkingUDPServer..socketserver.txt;*
+                                  *ForkingUDPServer..socketserver.txt*
 class socketserver.ForkingUDPServer
 
-                               *ThreadingTCPServer..socketserver.txt;*
+                                *ThreadingTCPServer..socketserver.txt*
 class socketserver.ThreadingTCPServer
 
-                               *ThreadingUDPServer..socketserver.txt;*
+                                *ThreadingUDPServer..socketserver.txt*
 class socketserver.ThreadingUDPServer
 
-                          *ForkingUnixStreamServer..socketserver.txt;*
+                           *ForkingUnixStreamServer..socketserver.txt*
 class socketserver.ForkingUnixStreamServer
 
-                        *ForkingUnixDatagramServer..socketserver.txt;*
+                         *ForkingUnixDatagramServer..socketserver.txt*
 class socketserver.ForkingUnixDatagramServer
 
-                        *ThreadingUnixStreamServer..socketserver.txt;*
+                         *ThreadingUnixStreamServer..socketserver.txt*
 class socketserver.ThreadingUnixStreamServer
 
-                      *ThreadingUnixDatagramServer..socketserver.txt;*
+                       *ThreadingUnixDatagramServer..socketserver.txt*
 class socketserver.ThreadingUnixDatagramServer
 
    These classes are pre-defined using the mix-in classes.
@@ -207,7 +205,7 @@ threads or subprocesses cannot be used).
 Server Objects
 ==============
 
-                                       *BaseServer..socketserver.txt;*
+                                        *BaseServer..socketserver.txt*
 class socketserver.BaseServer(server_address, RequestHandlerClass)
 
    This is the superclass of all Server objects in the module.  It
@@ -216,14 +214,14 @@ class socketserver.BaseServer(server_address, RequestHandlerClass)
    stored in the respective "server_address" and "RequestHandlerClass"
    attributes.
 
-   fileno()                      *BaseServer.fileno()..socketserver.txt;*
+   fileno()                       *BaseServer.fileno()..socketserver.txt*
 
       Return an integer file descriptor for the socket on which the
       server is listening.  This function is most commonly passed to
       "selectors", to allow monitoring multiple servers in the same
       process.
 
-   handle_request()      *BaseServer.handle_request()..socketserver.txt;*
+   handle_request()       *BaseServer.handle_request()..socketserver.txt*
 
       Process a single request.  This function calls the following
       methods in order: "get_request()", "verify_request()", and
@@ -233,7 +231,7 @@ class socketserver.BaseServer(server_address, RequestHandlerClass)
       received within "timeout" seconds, "handle_timeout()" will be
       called and "handle_request()" will return.
 
-                       *BaseServer.serve_forever()..socketserver.txt;*
+                        *BaseServer.serve_forever()..socketserver.txt*
    serve_forever(poll_interval=0.5)
 
       Handle requests until an explicit "shutdown()" request.  Poll
@@ -246,7 +244,7 @@ class socketserver.BaseServer(server_address, RequestHandlerClass)
       Changed in version 3.3: Added "service_actions" call to the
       "serve_forever" method.
 
-   service_actions()    *BaseServer.service_actions()..socketserver.txt;*
+   service_actions()     *BaseServer.service_actions()..socketserver.txt*
 
       This is called in the "serve_forever()" loop. This method can be
       overridden by subclasses or mixin classes to perform actions
@@ -254,28 +252,28 @@ class socketserver.BaseServer(server_address, RequestHandlerClass)
 
       New in version 3.3.
 
-   shutdown()                  *BaseServer.shutdown()..socketserver.txt;*
+   shutdown()                   *BaseServer.shutdown()..socketserver.txt*
 
       Tell the "serve_forever()" loop to stop and wait until it does.
       "shutdown()" must be called while "serve_forever()" is running
       in a different thread otherwise it will deadlock.
 
-   server_close()          *BaseServer.server_close()..socketserver.txt;*
+   server_close()           *BaseServer.server_close()..socketserver.txt*
 
       Clean up the server. May be overridden.
 
-   address_family          *BaseServer.address_family..socketserver.txt;*
+   address_family           *BaseServer.address_family..socketserver.txt*
 
       The family of protocols to which the server’s socket belongs.
       Common examples are "socket.AF_INET" and "socket.AF_UNIX".
 
-                   *BaseServer.RequestHandlerClass..socketserver.txt;*
+                    *BaseServer.RequestHandlerClass..socketserver.txt*
    RequestHandlerClass
 
       The user-provided request handler class; an instance of this
       class is created for each request.
 
-   server_address          *BaseServer.server_address..socketserver.txt;*
+   server_address           *BaseServer.server_address..socketserver.txt*
 
       The address on which the server is listening.  The format of
       addresses varies depending on the protocol family; see the
@@ -284,22 +282,21 @@ class socketserver.BaseServer(server_address, RequestHandlerClass)
       address, and an integer port number: "('127.0.0.1', 80)", for
       example.
 
-   socket                          *BaseServer.socket..socketserver.txt;*
+   socket                           *BaseServer.socket..socketserver.txt*
 
       The socket object on which the server will listen for incoming
       requests.
 
    The server classes support the following class variables:
 
-                   *BaseServer.allow_reuse_address..socketserver.txt;*
+                    *BaseServer.allow_reuse_address..socketserver.txt*
    allow_reuse_address
 
       Whether the server will allow the reuse of an address.  This
       defaults to "False", and can be set in subclasses to change the
       policy.
 
-                    *BaseServer.request_queue_size..socketserver.txt;*
-   request_queue_size
+   request_queue_size   *BaseServer.request_queue_size..socketserver.txt*
 
       The size of the request queue.  If it takes a long time to
       process a single request, any requests that arrive while the
@@ -309,12 +306,12 @@ class socketserver.BaseServer(server_address, RequestHandlerClass)
       default value is usually 5, but this can be overridden by
       subclasses.
 
-   socket_type                *BaseServer.socket_type..socketserver.txt;*
+   socket_type                 *BaseServer.socket_type..socketserver.txt*
 
       The type of socket used by the server; "socket.SOCK_STREAM" and
       "socket.SOCK_DGRAM" are two common values.
 
-   timeout                        *BaseServer.timeout..socketserver.txt;*
+   timeout                         *BaseServer.timeout..socketserver.txt*
 
       Timeout duration, measured in seconds, or "None" if no timeout
       is desired.  If "handle_request()" receives no incoming requests
@@ -325,19 +322,19 @@ class socketserver.BaseServer(server_address, RequestHandlerClass)
    subclasses of base server classes like "TCPServer"; these methods
    aren’t useful to external users of the server object.
 
-                      *BaseServer.finish_request()..socketserver.txt;*
+                       *BaseServer.finish_request()..socketserver.txt*
    finish_request(request, client_address)
 
       Actually processes the request by instantiating
       "RequestHandlerClass" and calling its "handle()" method.
 
-   get_request()            *BaseServer.get_request()..socketserver.txt;*
+   get_request()             *BaseServer.get_request()..socketserver.txt*
 
       Must accept a request from the socket, and return a 2-tuple
       containing the _new_ socket object to be used to communicate
       with the client, and the client’s address.
 
-                        *BaseServer.handle_error()..socketserver.txt;*
+                         *BaseServer.handle_error()..socketserver.txt*
    handle_error(request, client_address)
 
       This function is called if the "handle()" method of a
@@ -348,7 +345,7 @@ class socketserver.BaseServer(server_address, RequestHandlerClass)
       Changed in version 3.6: Now only called for exceptions derived
       from the "Exception" class.
 
-   handle_timeout()      *BaseServer.handle_timeout()..socketserver.txt;*
+   handle_timeout()       *BaseServer.handle_timeout()..socketserver.txt*
 
       This function is called when the "timeout" attribute has been
       set to a value other than "None" and the timeout period has
@@ -357,7 +354,7 @@ class socketserver.BaseServer(server_address, RequestHandlerClass)
       that have exited, while in threading servers this method does
       nothing.
 
-                     *BaseServer.process_request()..socketserver.txt;*
+                      *BaseServer.process_request()..socketserver.txt*
    process_request(request, client_address)
 
       Calls "finish_request()" to create an instance of the
@@ -365,18 +362,18 @@ class socketserver.BaseServer(server_address, RequestHandlerClass)
       new process or thread to handle the request; the "ForkingMixIn"
       and "ThreadingMixIn" classes do this.
 
-   server_activate()    *BaseServer.server_activate()..socketserver.txt;*
+   server_activate()     *BaseServer.server_activate()..socketserver.txt*
 
       Called by the server’s constructor to activate the server.  The
       default behavior for a TCP server just invokes "listen()" on the
       server’s socket.  May be overridden.
 
-   server_bind()            *BaseServer.server_bind()..socketserver.txt;*
+   server_bind()             *BaseServer.server_bind()..socketserver.txt*
 
       Called by the server’s constructor to bind the socket to the
       desired address. May be overridden.
 
-                      *BaseServer.verify_request()..socketserver.txt;*
+                       *BaseServer.verify_request()..socketserver.txt*
    verify_request(request, client_address)
 
       Must return a Boolean value; if the value is "True", the request
@@ -393,7 +390,7 @@ class socketserver.BaseServer(server_address, RequestHandlerClass)
 Request Handler Objects
 =======================
 
-                               *BaseRequestHandler..socketserver.txt;*
+                                *BaseRequestHandler..socketserver.txt*
 class socketserver.BaseRequestHandler
 
    This is the superclass of all request handler objects.  It defines
@@ -402,13 +399,13 @@ class socketserver.BaseRequestHandler
    other methods.  A new instance of the subclass is created for each
    request.
 
-   setup()                *BaseRequestHandler.setup()..socketserver.txt;*
+   setup()                 *BaseRequestHandler.setup()..socketserver.txt*
 
       Called before the "handle()" method to perform any
       initialization actions required.  The default implementation
       does nothing.
 
-   handle()              *BaseRequestHandler.handle()..socketserver.txt;*
+   handle()               *BaseRequestHandler.handle()..socketserver.txt*
 
       This function must do all the work required to service a
       request.  The default implementation does nothing.  Several
@@ -422,16 +419,16 @@ class socketserver.BaseRequestHandler
       object; for datagram services, "self.request" is a pair of
       string and socket.
 
-   finish()              *BaseRequestHandler.finish()..socketserver.txt;*
+   finish()               *BaseRequestHandler.finish()..socketserver.txt*
 
       Called after the "handle()" method to perform any clean-up
       actions required.  The default implementation does nothing.  If
       "setup()" raises an exception, this function will not be called.
 
-                             *StreamRequestHandler..socketserver.txt;*
+                              *StreamRequestHandler..socketserver.txt*
 class socketserver.StreamRequestHandler
 
-                           *DatagramRequestHandler..socketserver.txt;*
+                            *DatagramRequestHandler..socketserver.txt*
 class socketserver.DatagramRequestHandler
 
    These "BaseRequestHandler" subclasses override the "setup()" and

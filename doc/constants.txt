@@ -1,28 +1,28 @@
-*constants.txt;*                              Last change: 2023 Sep 09
+*constants.txt;*                              Last change: 2023 Sep 10
 
 Built-in Constants
 ******************
 
 A small number of constants live in the built-in namespace.  They are:
 
-False                                          *False..constants.txt;*
+False                                           *False..constants.txt*
 
    The false value of the "bool" type. Assignments to "False" are
    illegal and raise a "SyntaxError".
 
-True                                            *True..constants.txt;*
+True                                             *True..constants.txt*
 
    The true value of the "bool" type. Assignments to "True" are
    illegal and raise a "SyntaxError".
 
-None                                            *None..constants.txt;*
+None                                             *None..constants.txt*
 
    An object frequently used to represent the absence of a value, as
    when default arguments are not passed to a function. Assignments to
    "None" are illegal and raise a "SyntaxError". "None" is the sole
    instance of the "NoneType" type.
 
-NotImplemented                        *NotImplemented..constants.txt;*
+NotImplemented                         *NotImplemented..constants.txt*
 
    A special value which should be returned by the binary special
    methods (e.g. "__eq__()", "__lt__()", "__add__()", "__rsub__()",
@@ -56,14 +56,14 @@ NotImplemented                        *NotImplemented..constants.txt;*
    will emit a "DeprecationWarning". It will raise a "TypeError" in a
    future version of Python.
 
-Ellipsis                                    *Ellipsis..constants.txt;*
+Ellipsis                                     *Ellipsis..constants.txt*
 
    The same as the ellipsis literal “"..."”. Special value used mostly
    in conjunction with extended slicing syntax for user-defined
    container data types. "Ellipsis" is the sole instance of the
    "types.EllipsisType" type.
 
-__debug__                                  *__debug__..constants.txt;*
+__debug__                                   *__debug__..constants.txt*
 
    This constant is true if Python was not started with an "-O"
    option. See also the "assert" statement.
@@ -83,20 +83,20 @@ except if the "-S" command-line option is given) adds several
 constants to the built-in namespace.  They are useful for the
 interactive interpreter shell and should not be used in programs.
 
-quit(code=None)                                 *quit..constants.txt;*
-exit(code=None)                                 *exit..constants.txt;*
+quit(code=None)                                  *quit..constants.txt*
+exit(code=None)                                  *exit..constants.txt*
 
    Objects that when printed, print a message like “Use quit() or
    Ctrl-D (i.e. EOF) to exit”, and when called, raise "SystemExit"
    with the specified exit code.
 
-copyright                                  *copyright..constants.txt;*
-credits                                      *credits..constants.txt;*
+copyright                                   *copyright..constants.txt*
+credits                                       *credits..constants.txt*
 
    Objects that when printed or called, print the text of copyright or
    credits, respectively.
 
-license                                      *license..constants.txt;*
+license                                       *license..constants.txt*
 
    Object that when printed, prints the message “Type license() to see
    the full license text”, and when called, displays the full license

@@ -1,4 +1,4 @@
-*sys.txt;*                                    Last change: 2023 Sep 09
+*sys.txt;*                                    Last change: 2023 Sep 10
 
 "sys" — System-specific parameters and functions
 ************************************************
@@ -9,7 +9,7 @@ This module provides access to some variables used or maintained by
 the interpreter and to functions that interact strongly with the
 interpreter. It is always available.
 
-sys.abiflags                                      *abiflags..sys.txt;*
+sys.abiflags                                       *abiflags..sys.txt*
 
    On POSIX systems where Python was built with the standard
    "configure" script, this contains the ABI flags as specified by
@@ -20,7 +20,7 @@ sys.abiflags                                      *abiflags..sys.txt;*
 
    New in version 3.2.
 
-sys.addaudithook(hook)                      *addaudithook()..sys.txt;*
+sys.addaudithook(hook)                       *addaudithook()..sys.txt*
 
    Append the callable _hook_ to the list of active auditing hooks for
    the current (sub)interpreter.
@@ -63,7 +63,7 @@ sys.addaudithook(hook)                      *addaudithook()..sys.txt;*
    "__cantrace__" member that is set to a true value. Otherwise, trace
    functions will skip the hook.
 
-sys.argv                                              *argv..sys.txt;*
+sys.argv                                               *argv..sys.txt*
 
    The list of command line arguments passed to a Python script.
    "argv[0]" is the script name (it is operating system dependent
@@ -84,7 +84,7 @@ sys.argv                                              *argv..sys.txt;*
      “surrogateescape” error handler. When you need original bytes,
      you can get it by "[os.fsencode(arg) for arg in sys.argv]".
 
-sys.audit(event, *args)                            *audit()..sys.txt;*
+sys.audit(event, *args)                             *audit()..sys.txt*
 
    Raise an auditing event and trigger any active auditing hooks.
    _event_ is a string identifying the event, and _args_ may contain
@@ -114,7 +114,7 @@ sys.audit(event, *args)                            *audit()..sys.txt;*
 
    New in version 3.8.
 
-sys.base_exec_prefix                      *base_exec_prefix..sys.txt;*
+sys.base_exec_prefix                       *base_exec_prefix..sys.txt*
 
    Set during Python startup, before "site.py" is run, to the same
    value as "exec_prefix". If not running in a virtual environment,
@@ -127,7 +127,7 @@ sys.base_exec_prefix                      *base_exec_prefix..sys.txt;*
 
    New in version 3.3.
 
-sys.base_prefix                                *base_prefix..sys.txt;*
+sys.base_prefix                                 *base_prefix..sys.txt*
 
    Set during Python startup, before "site.py" is run, to the same
    value as "prefix". If not running in a virtual environment, the
@@ -140,14 +140,14 @@ sys.base_prefix                                *base_prefix..sys.txt;*
 
    New in version 3.3.
 
-sys.byteorder                                    *byteorder..sys.txt;*
+sys.byteorder                                     *byteorder..sys.txt*
 
    An indicator of the native byte order.  This will have the value
    "'big'" on big-endian (most-significant byte first) platforms, and
    "'little'" on little-endian (least-significant byte first)
    platforms.
 
-sys.builtin_module_names              *builtin_module_names..sys.txt;*
+sys.builtin_module_names               *builtin_module_names..sys.txt*
 
    A tuple of strings containing the names of all modules that are
    compiled into this Python interpreter.  (This information is not
@@ -156,18 +156,18 @@ sys.builtin_module_names              *builtin_module_names..sys.txt;*
 
    See also the "sys.stdlib_module_names" list.
 
-sys.call_tracing(func, args)                *call_tracing()..sys.txt;*
+sys.call_tracing(func, args)                 *call_tracing()..sys.txt*
 
    Call "func(*args)", while tracing is enabled.  The tracing state is
    saved, and restored afterwards.  This is intended to be called from
    a debugger from a checkpoint, to recursively debug some other code.
 
-sys.copyright                                    *copyright..sys.txt;*
+sys.copyright                                     *copyright..sys.txt*
 
    A string containing the copyright pertaining to the Python
    interpreter.
 
-sys._clear_type_cache()                *_clear_type_cache()..sys.txt;*
+sys._clear_type_cache()                 *_clear_type_cache()..sys.txt*
 
    Clear the internal type cache. The type cache is used to speed up
    attribute and method lookups. Use the function _only_ to drop
@@ -176,7 +176,7 @@ sys._clear_type_cache()                *_clear_type_cache()..sys.txt;*
    This function should be used for internal and specialized purposes
    only.
 
-sys._current_frames()                    *_current_frames()..sys.txt;*
+sys._current_frames()                     *_current_frames()..sys.txt*
 
    Return a dictionary mapping each thread’s identifier to the topmost
    stack frame currently active in that thread at the time the
@@ -195,7 +195,7 @@ sys._current_frames()                    *_current_frames()..sys.txt;*
 
    Raises an auditing event "sys._current_frames" with no arguments.
 
-sys._current_exceptions()            *_current_exceptions()..sys.txt;*
+sys._current_exceptions()             *_current_exceptions()..sys.txt*
 
    Return a dictionary mapping each thread’s identifier to the topmost
    exception currently active in that thread at the time the function
@@ -214,7 +214,7 @@ sys._current_exceptions()            *_current_exceptions()..sys.txt;*
    single exception instance, rather than a 3-tuple as returned from
    "sys.exc_info()".
 
-sys.breakpointhook()                      *breakpointhook()..sys.txt;*
+sys.breakpointhook()                       *breakpointhook()..sys.txt*
 
    This hook function is called by built-in "breakpoint()".  By
    default, it drops you into the "pdb" debugger, but it can be set to
@@ -250,7 +250,7 @@ sys.breakpointhook()                      *breakpointhook()..sys.txt;*
 
    New in version 3.7.
 
-sys._debugmallocstats()                *_debugmallocstats()..sys.txt;*
+sys._debugmallocstats()                 *_debugmallocstats()..sys.txt*
 
    Print low-level information to stderr about the state of CPython’s
    memory allocator.
@@ -265,13 +265,13 @@ sys._debugmallocstats()                *_debugmallocstats()..sys.txt;*
    CPython.  The exact output format is not defined here, and may
    change.
 
-sys.dllhandle                                    *dllhandle..sys.txt;*
+sys.dllhandle                                     *dllhandle..sys.txt*
 
    Integer specifying the handle of the Python DLL.
 
    Availability: Windows.
 
-sys.displayhook(value)                       *displayhook()..sys.txt;*
+sys.displayhook(value)                        *displayhook()..sys.txt*
 
    If _value_ is not "None", this function prints "repr(value)" to
    "sys.stdout", and saves _value_ in "builtins._". If "repr(value)"
@@ -307,7 +307,7 @@ sys.displayhook(value)                       *displayhook()..sys.txt;*
    Changed in version 3.2: Use "'backslashreplace'" error handler on
    "UnicodeEncodeError".
 
-sys.dont_write_bytecode                *dont_write_bytecode..sys.txt;*
+sys.dont_write_bytecode                 *dont_write_bytecode..sys.txt*
 
    If this is true, Python won’t try to write ".pyc" files on the
    import of source modules.  This value is initially set to "True" or
@@ -315,28 +315,28 @@ sys.dont_write_bytecode                *dont_write_bytecode..sys.txt;*
    "PYTHONDONTWRITEBYTECODE" environment variable, but you can set it
    yourself to control bytecode file generation.
 
-sys._emscripten_info                      *_emscripten_info..sys.txt;*
+sys._emscripten_info                       *_emscripten_info..sys.txt*
 
    A _named tuple_ holding information about the environment on the
    _wasm32-emscripten_ platform. The named tuple is provisional and
    may change in the future.
 
-                       *_emscripten_info.emscripten_version..sys.txt;*
+                        *_emscripten_info.emscripten_version..sys.txt*
    _emscripten_info.emscripten_version
 
       Emscripten version as tuple of ints (major, minor, micro), e.g.
       "(3, 1, 8)".
 
-   _emscripten_info.runtime          *_emscripten_info.runtime..sys.txt;*
+   _emscripten_info.runtime           *_emscripten_info.runtime..sys.txt*
 
       Runtime string, e.g. browser user agent, "'Node.js v14.18.2'",
       or "'UNKNOWN'".
 
-   _emscripten_info.pthreads        *_emscripten_info.pthreads..sys.txt;*
+   _emscripten_info.pthreads         *_emscripten_info.pthreads..sys.txt*
 
       "True" if Python is compiled with Emscripten pthreads support.
 
-                            *_emscripten_info.shared_memory..sys.txt;*
+                             *_emscripten_info.shared_memory..sys.txt*
    _emscripten_info.shared_memory
 
       "True" if Python is compiled with shared memory support.
@@ -345,7 +345,7 @@ sys._emscripten_info                      *_emscripten_info..sys.txt;*
 
    New in version 3.11.
 
-sys.pycache_prefix                          *pycache_prefix..sys.txt;*
+sys.pycache_prefix                           *pycache_prefix..sys.txt*
 
    If this is set (not "None"), Python will write bytecode-cache
    ".pyc" files to (and read them from) a parallel directory tree
@@ -366,7 +366,7 @@ sys.pycache_prefix                          *pycache_prefix..sys.txt;*
 
    New in version 3.8.
 
-sys.excepthook(type, value, traceback)        *excepthook()..sys.txt;*
+sys.excepthook(type, value, traceback)         *excepthook()..sys.txt*
 
    This function prints out a given traceback and exception to
    "sys.stderr".
@@ -393,10 +393,10 @@ sys.excepthook(type, value, traceback)        *excepthook()..sys.txt;*
      and the "threading.excepthook()" function handles exception
      raised by "threading.Thread.run()".
 
-sys.__breakpointhook__                  *__breakpointhook__..sys.txt;*
-sys.__displayhook__                        *__displayhook__..sys.txt;*
-sys.__excepthook__                          *__excepthook__..sys.txt;*
-sys.__unraisablehook__                  *__unraisablehook__..sys.txt;*
+sys.__breakpointhook__                   *__breakpointhook__..sys.txt*
+sys.__displayhook__                         *__displayhook__..sys.txt*
+sys.__excepthook__                           *__excepthook__..sys.txt*
+sys.__unraisablehook__                   *__unraisablehook__..sys.txt*
 
    These objects contain the original values of "breakpointhook",
    "displayhook", "excepthook", and "unraisablehook" at the start of
@@ -409,7 +409,7 @@ sys.__unraisablehook__                  *__unraisablehook__..sys.txt;*
 
    New in version 3.8: __unraisablehook__
 
-sys.exception()                                *exception()..sys.txt;*
+sys.exception()                                 *exception()..sys.txt*
 
    This function, when called while an exception handler is executing
    (such as an "except" or "except*" clause), returns the exception
@@ -421,7 +421,7 @@ sys.exception()                                *exception()..sys.txt;*
 
    New in version 3.11.
 
-sys.exc_info()                                  *exc_info()..sys.txt;*
+sys.exc_info()                                   *exc_info()..sys.txt*
 
    This function returns the old-style representation of the handled
    exception. If an exception "e" is currently handled (so
@@ -440,7 +440,7 @@ sys.exc_info()                                  *exc_info()..sys.txt;*
    exception is modified while it is being handled, the changes are
    reflected in the results of subsequent calls to "exc_info()".
 
-sys.exec_prefix                                *exec_prefix..sys.txt;*
+sys.exec_prefix                                 *exec_prefix..sys.txt*
 
    A string giving the site-specific directory prefix where the
    platform-dependent Python files are installed; by default, this is
@@ -459,14 +459,14 @@ sys.exec_prefix                                *exec_prefix..sys.txt;*
      the Python installation will still be available, via
      "base_exec_prefix".
 
-sys.executable                                  *executable..sys.txt;*
+sys.executable                                   *executable..sys.txt*
 
    A string giving the absolute path of the executable binary for the
    Python interpreter, on systems where this makes sense. If Python is
    unable to retrieve the real path to its executable,
    "sys.executable" will be an empty string or "None".
 
-sys.exit([arg])                                     *exit()..sys.txt;*
+sys.exit([arg])                                      *exit()..sys.txt*
 
    Raise a "SystemExit" exception, signaling an intention to exit the
    interpreter.
@@ -496,7 +496,7 @@ sys.exit([arg])                                     *exit()..sys.txt;*
    flushing buffered data in the standard streams), the exit status is
    changed to 120.
 
-sys.flags                                            *flags..sys.txt;*
+sys.flags                                             *flags..sys.txt*
 
    The _named tuple_ _flags_ exposes the status of command line flags.
    The attributes are read only.
@@ -563,7 +563,7 @@ sys.flags                                            *flags..sys.txt;*
 
    Changed in version 3.11: Added the "int_max_str_digits" attribute.
 
-sys.float_info                                  *float_info..sys.txt;*
+sys.float_info                                   *float_info..sys.txt*
 
    A _named tuple_ holding information about the float type. It
    contains low level information about the precision and internal
@@ -656,7 +656,7 @@ sys.float_info                                  *float_info..sys.txt;*
       >>> format(float(s), '.16g')  # conversion changes value
       '9876543211234568'
 <
-sys.float_repr_style                      *float_repr_style..sys.txt;*
+sys.float_repr_style                       *float_repr_style..sys.txt*
 
    A string indicating how the "repr()" function behaves for floats.
    If the string has value "'short'" then for a finite float "x",
@@ -668,7 +668,7 @@ sys.float_repr_style                      *float_repr_style..sys.txt;*
 
    New in version 3.1.
 
-sys.getallocatedblocks()              *getallocatedblocks()..sys.txt;*
+sys.getallocatedblocks()               *getallocatedblocks()..sys.txt*
 
    Return the number of memory blocks currently allocated by the
    interpreter, regardless of their size.  This function is mainly
@@ -682,13 +682,13 @@ sys.getallocatedblocks()              *getallocatedblocks()..sys.txt;*
 
    New in version 3.4.
 
-sys.getunicodeinternedsize()      *getunicodeinternedsize()..sys.txt;*
+sys.getunicodeinternedsize()       *getunicodeinternedsize()..sys.txt*
 
    Return the number of unicode objects that have been interned.
 
    New in version 3.12.
 
-sys.getandroidapilevel()              *getandroidapilevel()..sys.txt;*
+sys.getandroidapilevel()               *getandroidapilevel()..sys.txt*
 
    Return the build time API version of Android as an integer.
 
@@ -696,12 +696,12 @@ sys.getandroidapilevel()              *getandroidapilevel()..sys.txt;*
 
    New in version 3.7.
 
-sys.getdefaultencoding()              *getdefaultencoding()..sys.txt;*
+sys.getdefaultencoding()               *getdefaultencoding()..sys.txt*
 
    Return the name of the current default string encoding used by the
    Unicode implementation.
 
-sys.getdlopenflags()                      *getdlopenflags()..sys.txt;*
+sys.getdlopenflags()                       *getdlopenflags()..sys.txt*
 
    Return the current value of the flags that are used for "dlopen()"
    calls.  Symbolic names for the flag values can be found in the "os"
@@ -709,7 +709,7 @@ sys.getdlopenflags()                      *getdlopenflags()..sys.txt;*
 
    Availability: Unix.
 
-sys.getfilesystemencoding()        *getfilesystemencoding()..sys.txt;*
+sys.getfilesystemencoding()         *getfilesystemencoding()..sys.txt*
 
    Get the _filesystem encoding_: the encoding used with the
    _filesystem error handler_ to convert between Unicode filenames and
@@ -740,7 +740,7 @@ sys.getfilesystemencoding()        *getfilesystemencoding()..sys.txt;*
    Changed in version 3.7: Return "'utf-8'" if the Python UTF-8 Mode
    is enabled.
 
-                               *getfilesystemencodeerrors()..sys.txt;*
+                                *getfilesystemencodeerrors()..sys.txt*
 sys.getfilesystemencodeerrors()
 
    Get the _filesystem error handler_: the error handler used with the
@@ -758,14 +758,14 @@ sys.getfilesystemencodeerrors()
 
    New in version 3.6.
 
-sys.get_int_max_str_digits()      *get_int_max_str_digits()..sys.txt;*
+sys.get_int_max_str_digits()       *get_int_max_str_digits()..sys.txt*
 
    Returns the current value for the integer string conversion length
    limitation. See also "set_int_max_str_digits()".
 
    New in version 3.11.
 
-sys.getrefcount(object)                      *getrefcount()..sys.txt;*
+sys.getrefcount(object)                       *getrefcount()..sys.txt*
 
    Return the reference count of the _object_.  The count returned is
    generally one higher than you might expect, because it includes the
@@ -780,14 +780,14 @@ sys.getrefcount(object)                      *getrefcount()..sys.txt;*
    Changed in version 3.12: Immortal objects have very large refcounts
    that do not match the actual number of references to the object.
 
-sys.getrecursionlimit()                *getrecursionlimit()..sys.txt;*
+sys.getrecursionlimit()                 *getrecursionlimit()..sys.txt*
 
    Return the current value of the recursion limit, the maximum depth
    of the Python interpreter stack.  This limit prevents infinite
    recursion from causing an overflow of the C stack and crashing
    Python.  It can be set by "setrecursionlimit()".
 
-sys.getsizeof(object[, default])               *getsizeof()..sys.txt;*
+sys.getsizeof(object[, default])                *getsizeof()..sys.txt*
 
    Return the size of an object in bytes. The object can be any type
    of object. All built-in objects will return correct results, but
@@ -808,14 +808,14 @@ sys.getsizeof(object[, default])               *getsizeof()..sys.txt;*
    See recursive sizeof recipe for an example of using "getsizeof()"
    recursively to find the size of containers and all their contents.
 
-sys.getswitchinterval()                *getswitchinterval()..sys.txt;*
+sys.getswitchinterval()                 *getswitchinterval()..sys.txt*
 
    Return the interpreter’s “thread switch interval”; see
    "setswitchinterval()".
 
    New in version 3.2.
 
-sys._getframe([depth])                         *_getframe()..sys.txt;*
+sys._getframe([depth])                          *_getframe()..sys.txt*
 
    Return a frame object from the call stack.  If optional integer
    _depth_ is given, return the frame object that many calls below the
@@ -829,7 +829,7 @@ sys._getframe([depth])                         *_getframe()..sys.txt;*
    internal and specialized purposes only. It is not guaranteed to
    exist in all implementations of Python.
 
-sys._getframemodulename([depth])     *_getframemodulename()..sys.txt;*
+sys._getframemodulename([depth])      *_getframemodulename()..sys.txt*
 
    Return the name of a module from the call stack.  If optional
    integer _depth_ is given, return the module that many calls below
@@ -844,11 +844,11 @@ sys._getframemodulename([depth])     *_getframemodulename()..sys.txt;*
    internal and specialized purposes only. It is not guaranteed to
    exist in all implementations of Python.
 
-sys.getprofile()                              *getprofile()..sys.txt;*
+sys.getprofile()                               *getprofile()..sys.txt*
 
    Get the profiler function as set by "setprofile()".
 
-sys.gettrace()                                  *gettrace()..sys.txt;*
+sys.gettrace()                                   *gettrace()..sys.txt*
 
    Get the trace function as set by "settrace()".
 
@@ -858,7 +858,7 @@ sys.gettrace()                                  *gettrace()..sys.txt;*
    rather than part of the language definition, and thus may not be
    available in all Python implementations.
 
-sys.getwindowsversion()                *getwindowsversion()..sys.txt;*
+sys.getwindowsversion()                 *getwindowsversion()..sys.txt*
 
    Return a named tuple describing the Windows version currently
    running.  The named elements are _major_, _minor_, _build_,
@@ -910,7 +910,7 @@ sys.getwindowsversion()                *getwindowsversion()..sys.txt;*
 
    Changed in version 3.6: Added _platform_version_
 
-sys.get_asyncgen_hooks()              *get_asyncgen_hooks()..sys.txt;*
+sys.get_asyncgen_hooks()               *get_asyncgen_hooks()..sys.txt*
 
    Returns an _asyncgen_hooks_ object, which is similar to a
    "namedtuple" of the form "(firstiter, finalizer)", where
@@ -926,7 +926,7 @@ sys.get_asyncgen_hooks()              *get_asyncgen_hooks()..sys.txt;*
      This function has been added on a provisional basis (see **PEP
      411** for details.)
 
-                     *get_coroutine_origin_tracking_depth()..sys.txt;*
+                      *get_coroutine_origin_tracking_depth()..sys.txt*
 sys.get_coroutine_origin_tracking_depth()
 
    Get the current coroutine origin tracking depth, as set by
@@ -939,42 +939,42 @@ sys.get_coroutine_origin_tracking_depth()
      This function has been added on a provisional basis (see **PEP
      411** for details.)  Use it only for debugging purposes.
 
-sys.hash_info                                    *hash_info..sys.txt;*
+sys.hash_info                                     *hash_info..sys.txt*
 
    A _named tuple_ giving parameters of the numeric hash
    implementation.  For more details about hashing of numeric types,
    see Hashing of numeric types.
 
-   hash_info.width                            *hash_info.width..sys.txt;*
+   hash_info.width                             *hash_info.width..sys.txt*
 
       The width in bits used for hash values
 
-   hash_info.modulus                        *hash_info.modulus..sys.txt;*
+   hash_info.modulus                         *hash_info.modulus..sys.txt*
 
       The prime modulus P used for numeric hash scheme
 
-   hash_info.inf                                *hash_info.inf..sys.txt;*
+   hash_info.inf                                 *hash_info.inf..sys.txt*
 
       The hash value returned for a positive infinity
 
-   hash_info.nan                                *hash_info.nan..sys.txt;*
+   hash_info.nan                                 *hash_info.nan..sys.txt*
 
       (This attribute is no longer used)
 
-   hash_info.imag                              *hash_info.imag..sys.txt;*
+   hash_info.imag                               *hash_info.imag..sys.txt*
 
       The multiplier used for the imaginary part of a complex number
 
-   hash_info.algorithm                    *hash_info.algorithm..sys.txt;*
+   hash_info.algorithm                     *hash_info.algorithm..sys.txt*
 
       The name of the algorithm for hashing of str, bytes, and
       memoryview
 
-   hash_info.hash_bits                    *hash_info.hash_bits..sys.txt;*
+   hash_info.hash_bits                     *hash_info.hash_bits..sys.txt*
 
       The internal output size of the hash algorithm
 
-   hash_info.seed_bits                    *hash_info.seed_bits..sys.txt;*
+   hash_info.seed_bits                     *hash_info.seed_bits..sys.txt*
 
       The size of the seed key of the hash algorithm
 
@@ -983,7 +983,7 @@ sys.hash_info                                    *hash_info..sys.txt;*
    Changed in version 3.4: Added _algorithm_, _hash_bits_ and
    _seed_bits_
 
-sys.hexversion                                  *hexversion..sys.txt;*
+sys.hexversion                                   *hexversion..sys.txt*
 
    The version number encoded as a single integer.  This is guaranteed
    to increase with each version, including proper support for non-
@@ -1005,7 +1005,7 @@ sys.hexversion                                  *hexversion..sys.txt;*
    More details of "hexversion" can be found at API and ABI
    Versioning.
 
-sys.implementation                          *implementation..sys.txt;*
+sys.implementation                           *implementation..sys.txt*
 
    An object containing information about the implementation of the
    currently running Python interpreter.  The following attributes are
@@ -1050,27 +1050,27 @@ sys.implementation                          *implementation..sys.txt;*
      The addition of new required attributes must go through the
      normal PEP process. See **PEP 421** for more information.
 
-sys.int_info                                      *int_info..sys.txt;*
+sys.int_info                                       *int_info..sys.txt*
 
    A _named tuple_ that holds information about Python’s internal
    representation of integers.  The attributes are read only.
 
-   int_info.bits_per_digit            *int_info.bits_per_digit..sys.txt;*
+   int_info.bits_per_digit             *int_info.bits_per_digit..sys.txt*
 
       The number of bits held in each digit. Python integers are
       stored internally in base "2**int_info.bits_per_digit".
 
-   int_info.sizeof_digit                *int_info.sizeof_digit..sys.txt;*
+   int_info.sizeof_digit                 *int_info.sizeof_digit..sys.txt*
 
       The size in bytes of the C type used to represent a digit.
 
-                           *int_info.default_max_str_digits..sys.txt;*
+                            *int_info.default_max_str_digits..sys.txt*
    int_info.default_max_str_digits
 
       The default value for "sys.get_int_max_str_digits()" when it is
       not otherwise explicitly configured.
 
-                       *int_info.str_digits_check_threshold..sys.txt;*
+                        *int_info.str_digits_check_threshold..sys.txt*
    int_info.str_digits_check_threshold
 
       The minimum non-zero value for "sys.set_int_max_str_digits()",
@@ -1081,7 +1081,7 @@ sys.int_info                                      *int_info..sys.txt;*
    Changed in version 3.11: Added "default_max_str_digits" and
    "str_digits_check_threshold".
 
-sys.__interactivehook__                *__interactivehook__..sys.txt;*
+sys.__interactivehook__                 *__interactivehook__..sys.txt*
 
    When this attribute exists, its value is automatically called (with
    no arguments) when the interpreter is launched in interactive mode.
@@ -1093,7 +1093,7 @@ sys.__interactivehook__                *__interactivehook__..sys.txt;*
 
    New in version 3.4.
 
-sys.intern(string)                                *intern()..sys.txt;*
+sys.intern(string)                                 *intern()..sys.txt*
 
    Enter _string_ in the table of “interned” strings and return the
    interned string – which is _string_ itself or a copy. Interning
@@ -1108,14 +1108,14 @@ sys.intern(string)                                *intern()..sys.txt;*
    Interned strings are not immortal; you must keep a reference to the
    return value of "intern()" around to benefit from it.
 
-sys.is_finalizing()                        *is_finalizing()..sys.txt;*
+sys.is_finalizing()                         *is_finalizing()..sys.txt*
 
    Return "True" if the main Python interpreter is _shutting down_.
    Return "False" otherwise.
 
    New in version 3.5.
 
-sys.last_exc                                      *last_exc..sys.txt;*
+sys.last_exc                                       *last_exc..sys.txt*
 
    This variable is not always defined; it is set to the exception
    instance when an exception is not handled and the interpreter
@@ -1128,21 +1128,21 @@ sys.last_exc                                      *last_exc..sys.txt;*
 
    New in version 3.12.
 
-sys.last_type                                    *last_type..sys.txt;*
-sys.last_value                                  *last_value..sys.txt;*
-sys.last_traceback                          *last_traceback..sys.txt;*
+sys.last_type                                     *last_type..sys.txt*
+sys.last_value                                   *last_value..sys.txt*
+sys.last_traceback                           *last_traceback..sys.txt*
 
    These three variables are deprecated; use "sys.last_exc" instead.
    They hold the legacy representation of "sys.last_exc", as returned
    from "exc_info()" above.
 
-sys.maxsize                                        *maxsize..sys.txt;*
+sys.maxsize                                         *maxsize..sys.txt*
 
    An integer giving the maximum value a variable of type "Py_ssize_t"
    can take.  It’s usually "2**31 - 1" on a 32-bit platform and "2**63
    - 1" on a 64-bit platform.
 
-sys.maxunicode                                  *maxunicode..sys.txt;*
+sys.maxunicode                                   *maxunicode..sys.txt*
 
    An integer giving the value of the largest Unicode code point, i.e.
    "1114111" ("0x10FFFF" in hexadecimal).
@@ -1152,7 +1152,7 @@ sys.maxunicode                                  *maxunicode..sys.txt;*
    option that specified whether Unicode characters were stored as
    UCS-2 or UCS-4.
 
-sys.meta_path                                    *meta_path..sys.txt;*
+sys.meta_path                                     *meta_path..sys.txt*
 
    A list of _meta path finder_ objects that have their "find_spec()"
    methods called to see if one of the objects can find the module to
@@ -1179,7 +1179,7 @@ sys.meta_path                                    *meta_path..sys.txt;*
    called "find_module()". This is still called as a fallback if a
    "meta_path" entry doesn’t have a "find_spec()" method.
 
-sys.modules                                        *modules..sys.txt;*
+sys.modules                                         *modules..sys.txt*
 
    This is a dictionary that maps module names to modules which have
    already been loaded.  This can be manipulated to force reloading of
@@ -1191,7 +1191,7 @@ sys.modules                                        *modules..sys.txt;*
    during iteration as a side effect of code or activity in other
    threads.
 
-sys.orig_argv                                    *orig_argv..sys.txt;*
+sys.orig_argv                                     *orig_argv..sys.txt*
 
    The list of the original command line arguments passed to the
    Python executable.
@@ -1200,7 +1200,7 @@ sys.orig_argv                                    *orig_argv..sys.txt;*
 
    New in version 3.10.
 
-sys.path                                              *path..sys.txt;*
+sys.path                                               *path..sys.txt*
 
    A list of strings that specifies the search path for modules.
    Initialized from the environment variable "PYTHONPATH", plus an
@@ -1231,7 +1231,7 @@ sys.path                                              *path..sys.txt;*
      * Module "site" This describes how to use .pth files to extend
        "sys.path".
 
-sys.path_hooks                                  *path_hooks..sys.txt;*
+sys.path_hooks                                   *path_hooks..sys.txt*
 
    A list of callables that take a path argument to try to create a
    _finder_ for the path. If a finder can be created, it is to be
@@ -1239,7 +1239,7 @@ sys.path_hooks                                  *path_hooks..sys.txt;*
 
    Originally specified in **PEP 302**.
 
-sys.path_importer_cache                *path_importer_cache..sys.txt;*
+sys.path_importer_cache                 *path_importer_cache..sys.txt*
 
    A dictionary acting as a cache for _finder_ objects. The keys are
    paths that have been passed to "sys.path_hooks" and the values are
@@ -1248,7 +1248,7 @@ sys.path_importer_cache                *path_importer_cache..sys.txt;*
 
    Originally specified in **PEP 302**.
 
-sys.platform                                      *platform..sys.txt;*
+sys.platform                                       *platform..sys.txt*
 
    This string contains a platform identifier that can be used to
    append platform-specific components to "sys.path", for instance.
@@ -1307,7 +1307,7 @@ sys.platform                                      *platform..sys.txt;*
      The "platform" module provides detailed checks for the system’s
      identity.
 
-sys.platlibdir                                  *platlibdir..sys.txt;*
+sys.platlibdir                                   *platlibdir..sys.txt*
 
    Name of the platform-specific library directory. It is used to
    build the path of standard library and the paths of installed
@@ -1332,7 +1332,7 @@ sys.platlibdir                                  *platlibdir..sys.txt;*
 
    New in version 3.9.
 
-sys.prefix                                          *prefix..sys.txt;*
+sys.prefix                                           *prefix..sys.txt*
 
    A string giving the site-specific directory prefix where the
    platform independent Python files are installed; on Unix, the
@@ -1347,8 +1347,8 @@ sys.prefix                                          *prefix..sys.txt;*
      the Python installation will still be available, via
      "base_prefix".
 
-sys.ps1                                                *ps1..sys.txt;*
-sys.ps2                                                *ps2..sys.txt;*
+sys.ps1                                                 *ps1..sys.txt*
+sys.ps2                                                 *ps2..sys.txt*
 
    Strings specifying the primary and secondary prompt of the
    interpreter.  These are only defined if the interpreter is in
@@ -1358,7 +1358,7 @@ sys.ps2                                                *ps2..sys.txt;*
    prepares to read a new interactive command; this can be used to
    implement a dynamic prompt.
 
-sys.setdlopenflags(n)                     *setdlopenflags()..sys.txt;*
+sys.setdlopenflags(n)                      *setdlopenflags()..sys.txt*
 
    Set the flags used by the interpreter for "dlopen()" calls, such as
    when the interpreter loads extension modules.  Among other things,
@@ -1371,7 +1371,7 @@ sys.setdlopenflags(n)                     *setdlopenflags()..sys.txt;*
 
    Availability: Unix.
 
-                                  *set_int_max_str_digits()..sys.txt;*
+                                   *set_int_max_str_digits()..sys.txt*
 sys.set_int_max_str_digits(maxdigits)
 
    Set the integer string conversion length limitation used by this
@@ -1379,7 +1379,7 @@ sys.set_int_max_str_digits(maxdigits)
 
    New in version 3.11.
 
-sys.setprofile(profilefunc)                   *setprofile()..sys.txt;*
+sys.setprofile(profilefunc)                    *setprofile()..sys.txt*
 
    Set the system’s profile function, which allows you to implement a
    Python source code profiler in Python.  See chapter The Python
@@ -1425,7 +1425,7 @@ sys.setprofile(profilefunc)                   *setprofile()..sys.txt;*
       A C function has raised an exception.  _arg_ is the C function
       object.
 
-sys.setrecursionlimit(limit)           *setrecursionlimit()..sys.txt;*
+sys.setrecursionlimit(limit)            *setrecursionlimit()..sys.txt*
 
    Set the maximum depth of the Python interpreter stack to _limit_.
    This limit prevents infinite recursion from causing an overflow of
@@ -1442,7 +1442,7 @@ sys.setrecursionlimit(limit)           *setrecursionlimit()..sys.txt;*
    Changed in version 3.5.1: A "RecursionError" exception is now
    raised if the new limit is too low at the current recursion depth.
 
-sys.setswitchinterval(interval)        *setswitchinterval()..sys.txt;*
+sys.setswitchinterval(interval)         *setswitchinterval()..sys.txt*
 
    Set the interpreter’s thread switch interval (in seconds).  This
    floating-point value determines the ideal duration of the
@@ -1455,7 +1455,7 @@ sys.setswitchinterval(interval)        *setswitchinterval()..sys.txt;*
 
    New in version 3.2.
 
-sys.settrace(tracefunc)                         *settrace()..sys.txt;*
+sys.settrace(tracefunc)                          *settrace()..sys.txt*
 
    Set the system’s trace function, which allows you to implement a
    Python source code debugger in Python.  The function is thread-
@@ -1544,7 +1544,7 @@ sys.settrace(tracefunc)                         *settrace()..sys.txt;*
    Changed in version 3.7: "'opcode'" event type added;
    "f_trace_lines" and "f_trace_opcodes" attributes added to frames
 
-                                      *set_asyncgen_hooks()..sys.txt;*
+                                       *set_asyncgen_hooks()..sys.txt*
 sys.set_asyncgen_hooks(firstiter, finalizer)
 
    Accepts two optional keyword arguments which are callables that
@@ -1571,7 +1571,7 @@ sys.set_asyncgen_hooks(firstiter, finalizer)
      This function has been added on a provisional basis (see **PEP
      411** for details.)
 
-                     *set_coroutine_origin_tracking_depth()..sys.txt;*
+                      *set_coroutine_origin_tracking_depth()..sys.txt*
 sys.set_coroutine_origin_tracking_depth(depth)
 
    Allows enabling or disabling coroutine origin tracking. When
@@ -1594,7 +1594,7 @@ sys.set_coroutine_origin_tracking_depth(depth)
      This function has been added on a provisional basis (see **PEP
      411** for details.)  Use it only for debugging purposes.
 
-                               *activate_stack_trampoline()..sys.txt;*
+                                *activate_stack_trampoline()..sys.txt*
 sys.activate_stack_trampoline(backend, /)
 
    Activate the stack profiler trampoline _backend_. The only
@@ -1610,7 +1610,7 @@ sys.activate_stack_trampoline(backend, /)
 
      * https://perf.wiki.kernel.org
 
-                             *deactivate_stack_trampoline()..sys.txt;*
+                              *deactivate_stack_trampoline()..sys.txt*
 sys.deactivate_stack_trampoline()
 
    Deactivate the current stack profiler trampoline backend.
@@ -1621,7 +1621,7 @@ sys.deactivate_stack_trampoline()
 
    New in version 3.12.
 
-                              *is_stack_trampoline_active()..sys.txt;*
+                               *is_stack_trampoline_active()..sys.txt*
 sys.is_stack_trampoline_active()
 
    Return "True" if a stack profiler trampoline is active.
@@ -1630,7 +1630,7 @@ sys.is_stack_trampoline_active()
 
    New in version 3.12.
 
-                          *_enablelegacywindowsfsencoding()..sys.txt;*
+                           *_enablelegacywindowsfsencoding()..sys.txt*
 sys._enablelegacywindowsfsencoding()
 
    Changes the _filesystem encoding and error handler_ to ‘mbcs’ and
@@ -1647,9 +1647,9 @@ sys._enablelegacywindowsfsencoding()
 
    New in version 3.6: See **PEP 529** for more details.
 
-sys.stdin                                            *stdin..sys.txt;*
-sys.stdout                                          *stdout..sys.txt;*
-sys.stderr                                          *stderr..sys.txt;*
+sys.stdin                                             *stdin..sys.txt*
+sys.stdout                                           *stdout..sys.txt*
+sys.stderr                                           *stderr..sys.txt*
 
    _File objects_ used by the interpreter for standard input, output
    and errors:
@@ -1709,9 +1709,9 @@ sys.stderr                                          *stderr..sys.txt;*
      may be replaced with file-like objects like "io.StringIO" which
      do not support the :attr:!buffer` attribute.
 
-sys.__stdin__                                    *__stdin__..sys.txt;*
-sys.__stdout__                                  *__stdout__..sys.txt;*
-sys.__stderr__                                  *__stderr__..sys.txt;*
+sys.__stdin__                                     *__stdin__..sys.txt*
+sys.__stdout__                                   *__stdout__..sys.txt*
+sys.__stderr__                                   *__stderr__..sys.txt*
 
    These objects contain the original values of "stdin", "stderr" and
    "stdout" at the start of the program.  They are used during
@@ -1732,7 +1732,7 @@ sys.__stderr__                                  *__stderr__..sys.txt;*
      aren’t connected to a console and Python apps started with
      **pythonw**.
 
-sys.stdlib_module_names                *stdlib_module_names..sys.txt;*
+sys.stdlib_module_names                 *stdlib_module_names..sys.txt*
 
    A frozenset of strings containing the names of standard library
    modules.
@@ -1751,12 +1751,12 @@ sys.stdlib_module_names                *stdlib_module_names..sys.txt;*
 
    New in version 3.10.
 
-sys.thread_info                                *thread_info..sys.txt;*
+sys.thread_info                                 *thread_info..sys.txt*
 
    A _named tuple_ holding information about the thread
    implementation.
 
-   thread_info.name                          *thread_info.name..sys.txt;*
+   thread_info.name                           *thread_info.name..sys.txt*
 
       The name of the thread implementation:
 
@@ -1769,7 +1769,7 @@ sys.thread_info                                *thread_info..sys.txt;*
 
       * ""solaris"": Solaris threads
 
-   thread_info.lock                          *thread_info.lock..sys.txt;*
+   thread_info.lock                           *thread_info.lock..sys.txt*
 
       The name of the lock implementation:
 
@@ -1779,14 +1779,14 @@ sys.thread_info                                *thread_info..sys.txt;*
 
       * "None" if this information is unknown
 
-   thread_info.version                    *thread_info.version..sys.txt;*
+   thread_info.version                     *thread_info.version..sys.txt*
 
       The name and version of the thread library. It is a string, or
       "None" if this information is unknown.
 
    New in version 3.3.
 
-sys.tracebacklimit                          *tracebacklimit..sys.txt;*
+sys.tracebacklimit                           *tracebacklimit..sys.txt*
 
    When this variable is set to an integer value, it determines the
    maximum number of levels of traceback information printed when an
@@ -1794,7 +1794,7 @@ sys.tracebacklimit                          *tracebacklimit..sys.txt;*
    or less, all traceback information is suppressed and only the
    exception type and value are printed.
 
-sys.unraisablehook(unraisable, /)         *unraisablehook()..sys.txt;*
+sys.unraisablehook(unraisable, /)          *unraisablehook()..sys.txt*
 
    Handle an unraisable exception.
 
@@ -1839,7 +1839,7 @@ sys.unraisablehook(unraisable, /)         *unraisablehook()..sys.txt;*
 
    New in version 3.8.
 
-sys.version                                        *version..sys.txt;*
+sys.version                                         *version..sys.txt*
 
    A string containing the version number of the Python interpreter
    plus additional information on the build number and compiler used.
@@ -1847,13 +1847,13 @@ sys.version                                        *version..sys.txt;*
    started.  Do not extract version information out of it, rather, use
    "version_info" and the functions provided by the "platform" module.
 
-sys.api_version                                *api_version..sys.txt;*
+sys.api_version                                 *api_version..sys.txt*
 
    The C API version for this interpreter.  Programmers may find this
    useful when debugging version conflicts between Python and
    extension modules.
 
-sys.version_info                              *version_info..sys.txt;*
+sys.version_info                               *version_info..sys.txt*
 
    A tuple containing the five components of the version number:
    _major_, _minor_, _micro_, _releaselevel_, and _serial_.  All
@@ -1866,13 +1866,13 @@ sys.version_info                              *version_info..sys.txt;*
 
    Changed in version 3.1: Added named component attributes.
 
-sys.warnoptions                                *warnoptions..sys.txt;*
+sys.warnoptions                                 *warnoptions..sys.txt*
 
    This is an implementation detail of the warnings framework; do not
    modify this value.  Refer to the "warnings" module for more
    information on the warnings framework.
 
-sys.winver                                          *winver..sys.txt;*
+sys.winver                                           *winver..sys.txt*
 
    The version number used to form registry keys on Windows platforms.
    This is stored as string resource 1000 in the Python DLL.  The
@@ -1883,13 +1883,13 @@ sys.winver                                          *winver..sys.txt;*
 
    Availability: Windows.
 
-sys.monitoring                                  *monitoring..sys.txt;*
+sys.monitoring                                   *monitoring..sys.txt*
 
    Namespace containing functions and constants for register callbacks
    and controlling monitoring events. See  "sys.monitoring" for
    details.
 
-sys._xoptions                                    *_xoptions..sys.txt;*
+sys._xoptions                                     *_xoptions..sys.txt*
 
    A dictionary of the various implementation-specific flags passed
    through the "-X" command-line option.  Option names are either

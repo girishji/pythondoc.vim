@@ -1,4 +1,4 @@
-*emailcontentmanager.txt;*                    Last change: 2023 Sep 09
+*email.contentmanager.txt;*                   Last change: 2023 Sep 10
 
 "email.contentmanager": Managing MIME Content
 *********************************************
@@ -9,7 +9,7 @@
 
 New in version 3.6: [1]
 
-                            *ContentManager..emailcontentmanager.txt;*
+                            *ContentManager..email.contentmanager.txt*
 class email.contentmanager.ContentManager
 
    Base class for content managers.  Provides the standard registry
@@ -17,7 +17,7 @@ class email.contentmanager.ContentManager
    representations, as well as the "get_content" and "set_content"
    dispatch methods.
 
-              *ContentManager.get_content()..emailcontentmanager.txt;*
+              *ContentManager.get_content()..email.contentmanager.txt*
    get_content(msg, *args, **kw)
 
       Look up a handler function based on the "mimetype" of _msg_ (see
@@ -39,7 +39,7 @@ class email.contentmanager.ContentManager
       If none of these keys produce a handler, raise a "KeyError" for
       the full MIME type.
 
-              *ContentManager.set_content()..emailcontentmanager.txt;*
+              *ContentManager.set_content()..email.contentmanager.txt*
    set_content(msg, obj, *args, **kw)
 
       If the "maintype" is "multipart", raise a "TypeError"; otherwise
@@ -73,13 +73,13 @@ class email.contentmanager.ContentManager
       Also add a _MIME-Version_ header if one is not present (see also
       "MIMEPart").
 
-          *ContentManager.add_get_handler()..emailcontentmanager.txt;*
+          *ContentManager.add_get_handler()..email.contentmanager.txt*
    add_get_handler(key, handler)
 
       Record the function _handler_ as the handler for _key_.  For the
       possible values of _key_, see "get_content()".
 
-          *ContentManager.add_set_handler()..emailcontentmanager.txt;*
+          *ContentManager.add_set_handler()..email.contentmanager.txt*
    add_set_handler(typekey, handler)
 
       Record _handler_ as the function to call when an object of a
@@ -95,7 +95,7 @@ manager, "raw_data_manager", although more may be added in the future.
 "raw_data_manager" is the "content_manager" provided by "EmailPolicy"
 and its derivatives.
 
-                          *raw_data_manager..emailcontentmanager.txt;*
+                          *raw_data_manager..email.contentmanager.txt*
 email.contentmanager.raw_data_manager
 
    This content manager provides only a minimum interface beyond that
@@ -109,7 +109,7 @@ email.contentmanager.raw_data_manager
    various "add_" methods, thereby simplifying the creation of
    multipart messages.
 
-                             *get_content()..emailcontentmanager.txt;*
+                             *get_content()..email.contentmanager.txt*
    email.contentmanager.get_content(msg, errors='replace')
 
       Return the payload of the part as either a string (for "text"
@@ -120,7 +120,7 @@ email.contentmanager.raw_data_manager
       handler when decoding the payload to unicode.  The default error
       handler is "replace".
 
-                             *set_content()..emailcontentmanager.txt;*
+                             *set_content()..email.contentmanager.txt*
    email.contentmanager.set_content(msg, <'str'>, subtype="plain", charset='utf-8', cte=None, disposition=None, filename=None, cid=None, params=None, headers=None)
    email.contentmanager.set_content(msg, <'bytes'>, maintype, subtype, cte="base64", disposition=None, filename=None, cid=None, params=None, headers=None)
    email.contentmanager.set_content(msg, <'EmailMessage'>, cte=None, disposition=None, filename=None, cid=None, params=None, headers=None)

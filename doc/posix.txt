@@ -1,4 +1,4 @@
-*posix.txt;*                                  Last change: 2023 Sep 09
+*posix.txt;*                                  Last change: 2023 Sep 10
 
 "posix" — The most common POSIX system calls
 ********************************************
@@ -54,7 +54,7 @@ Notable Module Contents
 In addition to many functions described in the "os" module
 documentation, "posix" defines the following data item:
 
-posix.environ                                    *environ..posix.txt;*
+posix.environ                                     *environ..posix.txt*
 
    A dictionary representing the string environment at the time the
    interpreter was started. Keys and values are bytes on Unix and str

@@ -1,4 +1,4 @@
-*cmath.txt;*                                  Last change: 2023 Sep 09
+*cmath.txt;*                                  Last change: 2023 Sep 10
 
 "cmath" — Mathematical functions for complex numbers
 ****************************************************
@@ -58,7 +58,7 @@ segment that joins the origin to _z_.
 The following functions can be used to convert from the native
 rectangular coordinates to polar coordinates and back.
 
-cmath.phase(x)                                   *phase()..cmath.txt;*
+cmath.phase(x)                                    *phase()..cmath.txt*
 
    Return the phase of _x_ (also known as the _argument_ of _x_), as a
    float. "phase(x)" is equivalent to "math.atan2(x.imag, x.real)".
@@ -78,13 +78,13 @@ Note:
   using the built-in "abs()" function.  There is no separate "cmath"
   module function for this operation.
 
-cmath.polar(x)                                   *polar()..cmath.txt;*
+cmath.polar(x)                                    *polar()..cmath.txt*
 
    Return the representation of _x_ in polar coordinates.  Returns a
    pair "(r, phi)" where _r_ is the modulus of _x_ and phi is the
    phase of _x_.  "polar(x)" is equivalent to "(abs(x), phase(x))".
 
-cmath.rect(r, phi)                                *rect()..cmath.txt;*
+cmath.rect(r, phi)                                 *rect()..cmath.txt*
 
    Return the complex number _x_ with polar coordinates _r_ and _phi_.
    Equivalent to "r * (math.cos(phi) + math.sin(phi)*1j)".
@@ -93,23 +93,23 @@ cmath.rect(r, phi)                                *rect()..cmath.txt;*
 Power and logarithmic functions
 ===============================
 
-cmath.exp(x)                                       *exp()..cmath.txt;*
+cmath.exp(x)                                        *exp()..cmath.txt*
 
    Return _e_ raised to the power _x_, where _e_ is the base of
    natural logarithms.
 
-cmath.log(x[, base])                               *log()..cmath.txt;*
+cmath.log(x[, base])                                *log()..cmath.txt*
 
    Returns the logarithm of _x_ to the given _base_. If the _base_ is
    not specified, returns the natural logarithm of _x_. There is one
    branch cut, from 0 along the negative real axis to -∞.
 
-cmath.log10(x)                                   *log10()..cmath.txt;*
+cmath.log10(x)                                    *log10()..cmath.txt*
 
    Return the base-10 logarithm of _x_. This has the same branch cut
    as "log()".
 
-cmath.sqrt(x)                                     *sqrt()..cmath.txt;*
+cmath.sqrt(x)                                      *sqrt()..cmath.txt*
 
    Return the square root of _x_. This has the same branch cut as
    "log()".
@@ -118,32 +118,32 @@ cmath.sqrt(x)                                     *sqrt()..cmath.txt;*
 Trigonometric functions
 =======================
 
-cmath.acos(x)                                     *acos()..cmath.txt;*
+cmath.acos(x)                                      *acos()..cmath.txt*
 
    Return the arc cosine of _x_. There are two branch cuts: One
    extends right from 1 along the real axis to ∞. The other extends
    left from -1 along the real axis to -∞.
 
-cmath.asin(x)                                     *asin()..cmath.txt;*
+cmath.asin(x)                                      *asin()..cmath.txt*
 
    Return the arc sine of _x_. This has the same branch cuts as
    "acos()".
 
-cmath.atan(x)                                     *atan()..cmath.txt;*
+cmath.atan(x)                                      *atan()..cmath.txt*
 
    Return the arc tangent of _x_. There are two branch cuts: One
    extends from "1j" along the imaginary axis to "∞j". The other
    extends from "-1j" along the imaginary axis to "-∞j".
 
-cmath.cos(x)                                       *cos()..cmath.txt;*
+cmath.cos(x)                                        *cos()..cmath.txt*
 
    Return the cosine of _x_.
 
-cmath.sin(x)                                       *sin()..cmath.txt;*
+cmath.sin(x)                                        *sin()..cmath.txt*
 
    Return the sine of _x_.
 
-cmath.tan(x)                                       *tan()..cmath.txt;*
+cmath.tan(x)                                        *tan()..cmath.txt*
 
    Return the tangent of _x_.
 
@@ -151,32 +151,32 @@ cmath.tan(x)                                       *tan()..cmath.txt;*
 Hyperbolic functions
 ====================
 
-cmath.acosh(x)                                   *acosh()..cmath.txt;*
+cmath.acosh(x)                                    *acosh()..cmath.txt*
 
    Return the inverse hyperbolic cosine of _x_. There is one branch
    cut, extending left from 1 along the real axis to -∞.
 
-cmath.asinh(x)                                   *asinh()..cmath.txt;*
+cmath.asinh(x)                                    *asinh()..cmath.txt*
 
    Return the inverse hyperbolic sine of _x_. There are two branch
    cuts: One extends from "1j" along the imaginary axis to "∞j".  The
    other extends from "-1j" along the imaginary axis to "-∞j".
 
-cmath.atanh(x)                                   *atanh()..cmath.txt;*
+cmath.atanh(x)                                    *atanh()..cmath.txt*
 
    Return the inverse hyperbolic tangent of _x_. There are two branch
    cuts: One extends from "1" along the real axis to "∞". The other
    extends from "-1" along the real axis to "-∞".
 
-cmath.cosh(x)                                     *cosh()..cmath.txt;*
+cmath.cosh(x)                                      *cosh()..cmath.txt*
 
    Return the hyperbolic cosine of _x_.
 
-cmath.sinh(x)                                     *sinh()..cmath.txt;*
+cmath.sinh(x)                                      *sinh()..cmath.txt*
 
    Return the hyperbolic sine of _x_.
 
-cmath.tanh(x)                                     *tanh()..cmath.txt;*
+cmath.tanh(x)                                      *tanh()..cmath.txt*
 
    Return the hyperbolic tangent of _x_.
 
@@ -184,24 +184,24 @@ cmath.tanh(x)                                     *tanh()..cmath.txt;*
 Classification functions
 ========================
 
-cmath.isfinite(x)                             *isfinite()..cmath.txt;*
+cmath.isfinite(x)                              *isfinite()..cmath.txt*
 
    Return "True" if both the real and imaginary parts of _x_ are
    finite, and "False" otherwise.
 
    New in version 3.2.
 
-cmath.isinf(x)                                   *isinf()..cmath.txt;*
+cmath.isinf(x)                                    *isinf()..cmath.txt*
 
    Return "True" if either the real or the imaginary part of _x_ is an
    infinity, and "False" otherwise.
 
-cmath.isnan(x)                                   *isnan()..cmath.txt;*
+cmath.isnan(x)                                    *isnan()..cmath.txt*
 
    Return "True" if either the real or the imaginary part of _x_ is a
    NaN, and "False" otherwise.
 
-                                               *isclose()..cmath.txt;*
+                                                *isclose()..cmath.txt*
 cmath.isclose(a, b, *, rel_tol=1e-09, abs_tol=0.0)
 
    Return "True" if the values _a_ and _b_ are close to each other and
@@ -236,41 +236,41 @@ cmath.isclose(a, b, *, rel_tol=1e-09, abs_tol=0.0)
 Constants
 =========
 
-cmath.pi                                              *pi..cmath.txt;*
+cmath.pi                                               *pi..cmath.txt*
 
    The mathematical constant _π_, as a float.
 
-cmath.e                                                *e..cmath.txt;*
+cmath.e                                                 *e..cmath.txt*
 
    The mathematical constant _e_, as a float.
 
-cmath.tau                                            *tau..cmath.txt;*
+cmath.tau                                             *tau..cmath.txt*
 
    The mathematical constant _τ_, as a float.
 
    New in version 3.6.
 
-cmath.inf                                            *inf..cmath.txt;*
+cmath.inf                                             *inf..cmath.txt*
 
    Floating-point positive infinity. Equivalent to "float('inf')".
 
    New in version 3.6.
 
-cmath.infj                                          *infj..cmath.txt;*
+cmath.infj                                           *infj..cmath.txt*
 
    Complex number with zero real part and positive infinity imaginary
    part. Equivalent to "complex(0.0, float('inf'))".
 
    New in version 3.6.
 
-cmath.nan                                            *nan..cmath.txt;*
+cmath.nan                                             *nan..cmath.txt*
 
    A floating-point “not a number” (NaN) value.  Equivalent to
    "float('nan')".
 
    New in version 3.6.
 
-cmath.nanj                                          *nanj..cmath.txt;*
+cmath.nanj                                           *nanj..cmath.txt*
 
    Complex number with zero real part and NaN imaginary part.
    Equivalent to "complex(0.0, float('nan'))".

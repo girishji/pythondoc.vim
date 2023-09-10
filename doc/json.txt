@@ -1,4 +1,4 @@
-*json.txt;*                                   Last change: 2023 Sep 09
+*json.txt;*                                   Last change: 2023 Sep 10
 
 "json" — JSON encoder and decoder
 *********************************
@@ -139,7 +139,7 @@ Note:
 Basic Usage
 ===========
 
-                                                   *dump()..json.txt;*
+                                                    *dump()..json.txt*
 json.dump(obj, fp, *, skipkeys=False, ensure_ascii=True, check_circular=True, allow_nan=True, cls=None, indent=None, separators=None, default=None, sort_keys=False, **kw)
 
    Serialize _obj_ as a JSON formatted stream to _fp_ (a
@@ -208,7 +208,7 @@ json.dump(obj, fp, *, skipkeys=False, ensure_ascii=True, check_circular=True, al
      trying to serialize multiple objects with repeated calls to
      "dump()" using the same _fp_ will result in an invalid JSON file.
 
-                                                  *dumps()..json.txt;*
+                                                   *dumps()..json.txt*
 json.dumps(obj, *, skipkeys=False, ensure_ascii=True, check_circular=True, allow_nan=True, cls=None, indent=None, separators=None, default=None, sort_keys=False, **kw)
 
    Serialize _obj_ to a JSON formatted "str" using this conversion
@@ -223,7 +223,7 @@ json.dumps(obj, *, skipkeys=False, ensure_ascii=True, check_circular=True, allow
      dictionary, the dictionary may not equal the original one. That
      is, "loads(dumps(x)) != x" if x has non-string keys.
 
-                                                   *load()..json.txt;*
+                                                    *load()..json.txt*
 json.load(fp, *, cls=None, object_hook=None, parse_float=None, parse_int=None, parse_constant=None, object_pairs_hook=None, **kw)
 
    Deserialize _fp_ (a ".read()"-supporting _text file_ or _binary
@@ -281,7 +281,7 @@ json.load(fp, *, cls=None, object_hook=None, parse_float=None, parse_int=None, p
    Changed in version 3.6: _fp_ can now be a _binary file_. The input
    encoding should be UTF-8, UTF-16 or UTF-32.
 
-                                                  *loads()..json.txt;*
+                                                   *loads()..json.txt*
 json.loads(s, *, cls=None, object_hook=None, parse_float=None, parse_int=None, parse_constant=None, object_pairs_hook=None, **kw)
 
    Deserialize _s_ (a "str", "bytes" or "bytearray" instance
@@ -303,7 +303,7 @@ json.loads(s, *, cls=None, object_hook=None, parse_float=None, parse_int=None, p
 Encoders and Decoders
 =====================
 
-                                              *JSONDecoder..json.txt;*
+                                               *JSONDecoder..json.txt*
 class json.JSONDecoder(*, object_hook=None, parse_float=None, parse_int=None, parse_constant=None, strict=True, object_pairs_hook=None)
 
    Simple JSON decoder.
@@ -372,7 +372,7 @@ class json.JSONDecoder(*, object_hook=None, parse_float=None, parse_int=None, pa
 
    Changed in version 3.6: All parameters are now keyword-only.
 
-   decode(s)                            *JSONDecoder.decode()..json.txt;*
+   decode(s)                             *JSONDecoder.decode()..json.txt*
 
       Return the Python representation of _s_ (a "str" instance
       containing a JSON document).
@@ -380,7 +380,7 @@ class json.JSONDecoder(*, object_hook=None, parse_float=None, parse_int=None, pa
       "JSONDecodeError" will be raised if the given JSON document is
       not valid.
 
-   raw_decode(s)                    *JSONDecoder.raw_decode()..json.txt;*
+   raw_decode(s)                     *JSONDecoder.raw_decode()..json.txt*
 
       Decode a JSON document from _s_ (a "str" beginning with a JSON
       document) and return a 2-tuple of the Python representation and
@@ -389,7 +389,7 @@ class json.JSONDecoder(*, object_hook=None, parse_float=None, parse_int=None, pa
       This can be used to decode a JSON document from a string that
       may have extraneous data at the end.
 
-                                              *JSONEncoder..json.txt;*
+                                               *JSONEncoder..json.txt*
 class json.JSONEncoder(*, skipkeys=False, ensure_ascii=True, check_circular=True, allow_nan=True, sort_keys=False, indent=None, separators=None, default=None)
 
    Extensible JSON encoder for Python data structures.
@@ -473,7 +473,7 @@ class json.JSONEncoder(*, skipkeys=False, ensure_ascii=True, check_circular=True
 
    Changed in version 3.6: All parameters are now keyword-only.
 
-   default(o)                          *JSONEncoder.default()..json.txt;*
+   default(o)                           *JSONEncoder.default()..json.txt*
 
       Implement this method in a subclass such that it returns a
       serializable object for _o_, or calls the base implementation
@@ -492,7 +492,7 @@ class json.JSONEncoder(*, skipkeys=False, ensure_ascii=True, check_circular=True
             # Let the base class default method raise the TypeError
             return json.JSONEncoder.default(self, o)
 <
-   encode(o)                            *JSONEncoder.encode()..json.txt;*
+   encode(o)                             *JSONEncoder.encode()..json.txt*
 
       Return a JSON string representation of a Python data structure,
       _o_.  For example:
@@ -500,7 +500,7 @@ class json.JSONEncoder(*, skipkeys=False, ensure_ascii=True, check_circular=True
          >>> json.JSONEncoder().encode({"foo": ["bar", "baz"]})
          '{"foo": ["bar", "baz"]}'
 <
-   iterencode(o)                    *JSONEncoder.iterencode()..json.txt;*
+   iterencode(o)                     *JSONEncoder.iterencode()..json.txt*
 
       Encode the given object, _o_, and yield each string
       representation as available.  For example:
@@ -512,28 +512,28 @@ class json.JSONEncoder(*, skipkeys=False, ensure_ascii=True, check_circular=True
 Exceptions
 ==========
 
-                                          *JSONDecodeError..json.txt;*
+                                           *JSONDecodeError..json.txt*
 exception json.JSONDecodeError(msg, doc, pos)
 
    Subclass of "ValueError" with the following additional attributes:
 
-   msg                                   *JSONDecodeError.msg..json.txt;*
+   msg                                    *JSONDecodeError.msg..json.txt*
 
       The unformatted error message.
 
-   doc                                   *JSONDecodeError.doc..json.txt;*
+   doc                                    *JSONDecodeError.doc..json.txt*
 
       The JSON document being parsed.
 
-   pos                                   *JSONDecodeError.pos..json.txt;*
+   pos                                    *JSONDecodeError.pos..json.txt*
 
       The start index of _doc_ where parsing failed.
 
-   lineno                             *JSONDecodeError.lineno..json.txt;*
+   lineno                              *JSONDecodeError.lineno..json.txt*
 
       The line corresponding to _pos_.
 
-   colno                               *JSONDecodeError.colno..json.txt;*
+   colno                                *JSONDecodeError.colno..json.txt*
 
       The column corresponding to _pos_.
 

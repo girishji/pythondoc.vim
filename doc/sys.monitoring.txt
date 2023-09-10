@@ -1,4 +1,4 @@
-*sysmonitoring.txt;*                          Last change: 2023 Sep 09
+*sys.monitoring.txt;*                         Last change: 2023 Sep 10
 
 "sys.monitoring" — Execution event monitoring
 *********************************************
@@ -43,18 +43,18 @@ identifier. Identifiers are integers in the range 0 to 5.
 Registering and using tools
 ---------------------------
 
-                                   *use_tool_id()..sysmonitoring.txt;*
+                                   *use_tool_id()..sys.monitoring.txt*
 sys.monitoring.use_tool_id(id: int, name: str) -> None
 
    Must be called before "id" can be used. "id" must be in the range 0
    to 5 inclusive. Raises a "ValueError" if "id" is in use.
 
-                                  *free_tool_id()..sysmonitoring.txt;*
+                                  *free_tool_id()..sys.monitoring.txt*
 sys.monitoring.free_tool_id(id: int) -> None
 
    Should be called once a tool no longer requires "id".
 
-                                      *get_tool()..sysmonitoring.txt;*
+                                      *get_tool()..sys.monitoring.txt*
 sys.monitoring.get_tool(id: int) -> str | None
 
    Returns the name of the tool if "id" is in use, otherwise it
@@ -238,12 +238,12 @@ Setting events globally
 Events can be controlled globally by modifying the set of events being
 monitored.
 
-                                    *get_events()..sysmonitoring.txt;*
+                                    *get_events()..sys.monitoring.txt*
 sys.monitoring.get_events(tool_id: int) -> int
 
    Returns the "int" representing all the active events.
 
-                                    *set_events()..sysmonitoring.txt;*
+                                    *set_events()..sys.monitoring.txt*
 sys.monitoring.set_events(tool_id: int, event_set: int)
 
    Activates all events which are set in "event_set". Raises a
@@ -257,12 +257,12 @@ Per code object events
 
 Events can also be controlled on a per code object basis.
 
-                              *get_local_events()..sysmonitoring.txt;*
+                              *get_local_events()..sys.monitoring.txt*
 sys.monitoring.get_local_events(tool_id: int, code: CodeType) -> int
 
    Returns all the local events for "code"
 
-                              *set_local_events()..sysmonitoring.txt;*
+                              *set_local_events()..sys.monitoring.txt*
 sys.monitoring.set_local_events(tool_id: int, code: CodeType, event_set: int)
 
    Activates all the local events for "code" which are set in
@@ -292,7 +292,7 @@ Registering callback functions
 
 To register a callable for events call
 
-                             *register_callback()..sysmonitoring.txt;*
+                             *register_callback()..sys.monitoring.txt*
 sys.monitoring.register_callback(tool_id: int, event: int, func: Callable | None) -> Callable | None
 
    Registers the callable "func" for the "event" with the given

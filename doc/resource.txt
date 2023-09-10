@@ -1,4 +1,4 @@
-*resource.txt;*                               Last change: 2023 Sep 09
+*resource.txt;*                               Last change: 2023 Sep 10
 
 "resource" — Resource usage information
 ***************************************
@@ -20,7 +20,7 @@ children.
 
 An "OSError" is raised on syscall failure.
 
-exception resource.error                        *error..resource.txt;*
+exception resource.error                         *error..resource.txt*
 
    A deprecated alias of "OSError".
 
@@ -45,18 +45,18 @@ below are supported when the underlying operating system supports
 them; resources which cannot be checked or controlled by the operating
 system are not defined in this module for those platforms.
 
-resource.RLIM_INFINITY                  *RLIM_INFINITY..resource.txt;*
+resource.RLIM_INFINITY                   *RLIM_INFINITY..resource.txt*
 
    Constant used to represent the limit for an unlimited resource.
 
-resource.getrlimit(resource)              *getrlimit()..resource.txt;*
+resource.getrlimit(resource)               *getrlimit()..resource.txt*
 
    Returns a tuple "(soft, hard)" with the current soft and hard
    limits of _resource_. Raises "ValueError" if an invalid resource is
    specified, or "error" if the underlying system call fails
    unexpectedly.
 
-resource.setrlimit(resource, limits)      *setrlimit()..resource.txt;*
+resource.setrlimit(resource, limits)       *setrlimit()..resource.txt*
 
    Sets new limits of consumption of _resource_. The _limits_ argument
    must be a tuple "(soft, hard)" of two integers describing the new
@@ -80,7 +80,7 @@ resource.setrlimit(resource, limits)      *setrlimit()..resource.txt;*
    Raises an auditing event "resource.setrlimit" with arguments
    "resource", "limits".
 
-resource.prlimit(pid, resource[, limits])   *prlimit()..resource.txt;*
+resource.prlimit(pid, resource[, limits])    *prlimit()..resource.txt*
 
    Combines "setrlimit()" and "getrlimit()" in one function and
    supports to get and set the resources limits of an arbitrary
@@ -115,14 +115,14 @@ the same resource.  This module does not attempt to mask platform
 differences — symbols not defined for a platform will not be available
 from this module on that platform.
 
-resource.RLIMIT_CORE                      *RLIMIT_CORE..resource.txt;*
+resource.RLIMIT_CORE                       *RLIMIT_CORE..resource.txt*
 
    The maximum size (in bytes) of a core file that the current process
    can create. This may result in the creation of a partial core file
    if a larger core would be required to contain the entire process
    image.
 
-resource.RLIMIT_CPU                        *RLIMIT_CPU..resource.txt;*
+resource.RLIMIT_CPU                         *RLIMIT_CPU..resource.txt*
 
    The maximum amount of processor time (in seconds) that a process
    can use. If this limit is exceeded, a "SIGXCPU" signal is sent to
@@ -130,52 +130,52 @@ resource.RLIMIT_CPU                        *RLIMIT_CPU..resource.txt;*
    about how to catch this signal and do something useful, e.g. flush
    open files to disk.)
 
-resource.RLIMIT_FSIZE                    *RLIMIT_FSIZE..resource.txt;*
+resource.RLIMIT_FSIZE                     *RLIMIT_FSIZE..resource.txt*
 
    The maximum size of a file which the process may create.
 
-resource.RLIMIT_DATA                      *RLIMIT_DATA..resource.txt;*
+resource.RLIMIT_DATA                       *RLIMIT_DATA..resource.txt*
 
    The maximum size (in bytes) of the process’s heap.
 
-resource.RLIMIT_STACK                    *RLIMIT_STACK..resource.txt;*
+resource.RLIMIT_STACK                     *RLIMIT_STACK..resource.txt*
 
    The maximum size (in bytes) of the call stack for the current
    process.  This only affects the stack of the main thread in a
    multi-threaded process.
 
-resource.RLIMIT_RSS                        *RLIMIT_RSS..resource.txt;*
+resource.RLIMIT_RSS                         *RLIMIT_RSS..resource.txt*
 
    The maximum resident set size that should be made available to the
    process.
 
-resource.RLIMIT_NPROC                    *RLIMIT_NPROC..resource.txt;*
+resource.RLIMIT_NPROC                     *RLIMIT_NPROC..resource.txt*
 
    The maximum number of processes the current process may create.
 
-resource.RLIMIT_NOFILE                  *RLIMIT_NOFILE..resource.txt;*
+resource.RLIMIT_NOFILE                   *RLIMIT_NOFILE..resource.txt*
 
    The maximum number of open file descriptors for the current
    process.
 
-resource.RLIMIT_OFILE                    *RLIMIT_OFILE..resource.txt;*
+resource.RLIMIT_OFILE                     *RLIMIT_OFILE..resource.txt*
 
    The BSD name for "RLIMIT_NOFILE".
 
-resource.RLIMIT_MEMLOCK                *RLIMIT_MEMLOCK..resource.txt;*
+resource.RLIMIT_MEMLOCK                 *RLIMIT_MEMLOCK..resource.txt*
 
    The maximum address space which may be locked in memory.
 
-resource.RLIMIT_VMEM                      *RLIMIT_VMEM..resource.txt;*
+resource.RLIMIT_VMEM                       *RLIMIT_VMEM..resource.txt*
 
    The largest area of mapped memory which the process may occupy.
 
-resource.RLIMIT_AS                          *RLIMIT_AS..resource.txt;*
+resource.RLIMIT_AS                           *RLIMIT_AS..resource.txt*
 
    The maximum area (in bytes) of address space which may be taken by
    the process.
 
-resource.RLIMIT_MSGQUEUE              *RLIMIT_MSGQUEUE..resource.txt;*
+resource.RLIMIT_MSGQUEUE               *RLIMIT_MSGQUEUE..resource.txt*
 
    The number of bytes that can be allocated for POSIX message queues.
 
@@ -183,7 +183,7 @@ resource.RLIMIT_MSGQUEUE              *RLIMIT_MSGQUEUE..resource.txt;*
 
    New in version 3.4.
 
-resource.RLIMIT_NICE                      *RLIMIT_NICE..resource.txt;*
+resource.RLIMIT_NICE                       *RLIMIT_NICE..resource.txt*
 
    The ceiling for the process’s nice level (calculated as 20 -
    rlim_cur).
@@ -192,7 +192,7 @@ resource.RLIMIT_NICE                      *RLIMIT_NICE..resource.txt;*
 
    New in version 3.4.
 
-resource.RLIMIT_RTPRIO                  *RLIMIT_RTPRIO..resource.txt;*
+resource.RLIMIT_RTPRIO                   *RLIMIT_RTPRIO..resource.txt*
 
    The ceiling of the real-time priority.
 
@@ -200,7 +200,7 @@ resource.RLIMIT_RTPRIO                  *RLIMIT_RTPRIO..resource.txt;*
 
    New in version 3.4.
 
-resource.RLIMIT_RTTIME                  *RLIMIT_RTTIME..resource.txt;*
+resource.RLIMIT_RTTIME                   *RLIMIT_RTTIME..resource.txt*
 
    The time limit (in microseconds) on CPU time that a process can
    spend under real-time scheduling without making a blocking syscall.
@@ -209,7 +209,7 @@ resource.RLIMIT_RTTIME                  *RLIMIT_RTTIME..resource.txt;*
 
    New in version 3.4.
 
-resource.RLIMIT_SIGPENDING          *RLIMIT_SIGPENDING..resource.txt;*
+resource.RLIMIT_SIGPENDING           *RLIMIT_SIGPENDING..resource.txt*
 
    The number of signals which the process may queue.
 
@@ -217,7 +217,7 @@ resource.RLIMIT_SIGPENDING          *RLIMIT_SIGPENDING..resource.txt;*
 
    New in version 3.4.
 
-resource.RLIMIT_SBSIZE                  *RLIMIT_SBSIZE..resource.txt;*
+resource.RLIMIT_SBSIZE                   *RLIMIT_SBSIZE..resource.txt*
 
    The maximum size (in bytes) of socket buffer usage for this user.
    This limits the amount of network memory, and hence the amount of
@@ -227,7 +227,7 @@ resource.RLIMIT_SBSIZE                  *RLIMIT_SBSIZE..resource.txt;*
 
    New in version 3.4.
 
-resource.RLIMIT_SWAP                      *RLIMIT_SWAP..resource.txt;*
+resource.RLIMIT_SWAP                       *RLIMIT_SWAP..resource.txt*
 
    The maximum size (in bytes) of the swap space that may be reserved
    or used by all of this user id’s processes. This limit is enforced
@@ -238,7 +238,7 @@ resource.RLIMIT_SWAP                      *RLIMIT_SWAP..resource.txt;*
 
    New in version 3.4.
 
-resource.RLIMIT_NPTS                      *RLIMIT_NPTS..resource.txt;*
+resource.RLIMIT_NPTS                       *RLIMIT_NPTS..resource.txt*
 
    The maximum number of pseudo-terminals created by this user id.
 
@@ -246,7 +246,7 @@ resource.RLIMIT_NPTS                      *RLIMIT_NPTS..resource.txt;*
 
    New in version 3.4.
 
-resource.RLIMIT_KQUEUES                *RLIMIT_KQUEUES..resource.txt;*
+resource.RLIMIT_KQUEUES                 *RLIMIT_KQUEUES..resource.txt*
 
    The maximum number of kqueues this user id is allowed to create.
 
@@ -260,7 +260,7 @@ Resource Usage
 
 These functions are used to retrieve resource usage information:
 
-resource.getrusage(who)                   *getrusage()..resource.txt;*
+resource.getrusage(who)                    *getrusage()..resource.txt*
 
    This function returns an object that describes the resources
    consumed by either the current process or its children, as
@@ -337,7 +337,7 @@ resource.getrusage(who)                   *getrusage()..resource.txt;*
    parameter is specified. It may also raise "error" exception in
    unusual circumstances.
 
-resource.getpagesize()                  *getpagesize()..resource.txt;*
+resource.getpagesize()                   *getpagesize()..resource.txt*
 
    Returns the number of bytes in a system page. (This need not be the
    same as the hardware page size.)
@@ -346,25 +346,25 @@ The following "RUSAGE_*" symbols are passed to the "getrusage()"
 function to specify which processes information should be provided
 for.
 
-resource.RUSAGE_SELF                      *RUSAGE_SELF..resource.txt;*
+resource.RUSAGE_SELF                       *RUSAGE_SELF..resource.txt*
 
    Pass to "getrusage()" to request resources consumed by the calling
    process, which is the sum of resources used by all threads in the
    process.
 
-resource.RUSAGE_CHILDREN              *RUSAGE_CHILDREN..resource.txt;*
+resource.RUSAGE_CHILDREN               *RUSAGE_CHILDREN..resource.txt*
 
    Pass to "getrusage()" to request resources consumed by child
    processes of the calling process which have been terminated and
    waited for.
 
-resource.RUSAGE_BOTH                      *RUSAGE_BOTH..resource.txt;*
+resource.RUSAGE_BOTH                       *RUSAGE_BOTH..resource.txt*
 
    Pass to "getrusage()" to request resources consumed by both the
    current process and child processes.  May not be available on all
    systems.
 
-resource.RUSAGE_THREAD                  *RUSAGE_THREAD..resource.txt;*
+resource.RUSAGE_THREAD                   *RUSAGE_THREAD..resource.txt*
 
    Pass to "getrusage()" to request resources consumed by the current
    thread.  May not be available on all systems.

@@ -1,4 +1,4 @@
-*reprlib.txt;*                                Last change: 2023 Sep 09
+*reprlib.txt;*                                Last change: 2023 Sep 10
 
 "reprlib" — Alternate "repr()" implementation
 *********************************************
@@ -14,7 +14,7 @@ well.
 
 This module provides a class, an instance, and a function:
 
-                                                  *Repr..reprlib.txt;*
+                                                   *Repr..reprlib.txt*
 class reprlib.Repr(*, maxlevel=6, maxtuple=6, maxlist=6, maxarray=5, maxdict=4, maxset=6, maxfrozenset=6, maxdeque=6, maxstring=30, maxlong=40, maxother=30, fillvalue='...', indent=None)
 
    Class which provides formatting services useful in implementing
@@ -39,14 +39,14 @@ class reprlib.Repr(*, maxlevel=6, maxtuple=6, maxlist=6, maxarray=5, maxdict=4, 
    Changed in version 3.12: Allow attributes to be set via keyword
    arguments.
 
-reprlib.aRepr                                    *aRepr..reprlib.txt;*
+reprlib.aRepr                                     *aRepr..reprlib.txt*
 
    This is an instance of "Repr" which is used to provide the "repr()"
    function described below.  Changing the attributes of this object
    will affect the size limits used by "repr()" and the Python
    debugger.
 
-reprlib.repr(obj)                               *repr()..reprlib.txt;*
+reprlib.repr(obj)                                *repr()..reprlib.txt*
 
    This is the "repr()" method of "aRepr".  It returns a string
    similar to that returned by the built-in function of the same name,
@@ -56,7 +56,7 @@ In addition to size-limiting tools, the module also provides a
 decorator for detecting recursive calls to "__repr__()" and
 substituting a placeholder string instead.
 
-                                      *recursive_repr()..reprlib.txt;*
+                                       *recursive_repr()..reprlib.txt*
 @reprlib.recursive_repr(fillvalue='...')
 
    Decorator for "__repr__()" methods to detect recursive calls within
@@ -86,36 +86,36 @@ Repr Objects
 provide size limits for the representations of different object types,
 and methods which format specific object types.
 
-Repr.fillvalue                          *Repr.fillvalue..reprlib.txt;*
+Repr.fillvalue                           *Repr.fillvalue..reprlib.txt*
 
    This string is displayed for recursive references. It defaults to
    "...".
 
    New in version 3.11.
 
-Repr.maxlevel                            *Repr.maxlevel..reprlib.txt;*
+Repr.maxlevel                             *Repr.maxlevel..reprlib.txt*
 
    Depth limit on the creation of recursive representations.  The
    default is "6".
 
-Repr.maxdict                              *Repr.maxdict..reprlib.txt;*
-Repr.maxlist                              *Repr.maxlist..reprlib.txt;*
-Repr.maxtuple                            *Repr.maxtuple..reprlib.txt;*
-Repr.maxset                                *Repr.maxset..reprlib.txt;*
-Repr.maxfrozenset                    *Repr.maxfrozenset..reprlib.txt;*
-Repr.maxdeque                            *Repr.maxdeque..reprlib.txt;*
-Repr.maxarray                            *Repr.maxarray..reprlib.txt;*
+Repr.maxdict                               *Repr.maxdict..reprlib.txt*
+Repr.maxlist                               *Repr.maxlist..reprlib.txt*
+Repr.maxtuple                             *Repr.maxtuple..reprlib.txt*
+Repr.maxset                                 *Repr.maxset..reprlib.txt*
+Repr.maxfrozenset                     *Repr.maxfrozenset..reprlib.txt*
+Repr.maxdeque                             *Repr.maxdeque..reprlib.txt*
+Repr.maxarray                             *Repr.maxarray..reprlib.txt*
 
    Limits on the number of entries represented for the named object
    type.  The default is "4" for "maxdict", "5" for "maxarray", and
    "6" for the others.
 
-Repr.maxlong                              *Repr.maxlong..reprlib.txt;*
+Repr.maxlong                               *Repr.maxlong..reprlib.txt*
 
    Maximum number of characters in the representation for an integer.
    Digits are dropped from the middle.  The default is "40".
 
-Repr.maxstring                          *Repr.maxstring..reprlib.txt;*
+Repr.maxstring                           *Repr.maxstring..reprlib.txt*
 
    Limit on the number of characters in the representation of the
    string.  Note that the “normal” representation of the string is
@@ -123,13 +123,13 @@ Repr.maxstring                          *Repr.maxstring..reprlib.txt;*
    representation, these may be mangled when the representation is
    shortened.  The default is "30".
 
-Repr.maxother                            *Repr.maxother..reprlib.txt;*
+Repr.maxother                             *Repr.maxother..reprlib.txt*
 
    This limit is used to control the size of object types for which no
    specific formatting method is available on the "Repr" object. It is
    applied in a similar manner as "maxstring".  The default is "20".
 
-Repr.indent                                *Repr.indent..reprlib.txt;*
+Repr.indent                                 *Repr.indent..reprlib.txt*
 
    If this attribute is set to "None" (the default), the output is
    formatted with no line breaks or indentation, like the standard
@@ -182,12 +182,12 @@ Repr.indent                                *Repr.indent..reprlib.txt;*
 <
    New in version 3.12.
 
-Repr.repr(obj)                             *Repr.repr()..reprlib.txt;*
+Repr.repr(obj)                              *Repr.repr()..reprlib.txt*
 
    The equivalent to the built-in "repr()" that uses the formatting
    imposed by the instance.
 
-Repr.repr1(obj, level)                    *Repr.repr1()..reprlib.txt;*
+Repr.repr1(obj, level)                     *Repr.repr1()..reprlib.txt*
 
    Recursive implementation used by "repr()".  This uses the type of
    _obj_ to determine which formatting method to call, passing it
@@ -195,7 +195,7 @@ Repr.repr1(obj, level)                    *Repr.repr1()..reprlib.txt;*
    to perform recursive formatting, with "level - 1" for the value of
    _level_ in the recursive  call.
 
-Repr.repr_TYPE(obj, level)            *Repr.repr_TYPE()..reprlib.txt;*
+Repr.repr_TYPE(obj, level)             *Repr.repr_TYPE()..reprlib.txt*
 
    Formatting methods for specific types are implemented as methods
    with a name based on the type name.  In the method name, **TYPE**

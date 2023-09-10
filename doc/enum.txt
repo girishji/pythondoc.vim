@@ -1,4 +1,4 @@
-*enum.txt;*                                   Last change: 2023 Sep 09
+*enum.txt;*                                   Last change: 2023 Sep 10
 
 "enum" — Support for enumerations
 *********************************
@@ -169,7 +169,7 @@ New in version 3.11: "StrEnum", "EnumCheck", "ReprEnum",
 Data Types
 ==========
 
-class enum.EnumType                              *EnumType..enum.txt;*
+class enum.EnumType                               *EnumType..enum.txt*
 
    _EnumType_ is the _metaclass_ for _enum_ enumerations.  It is
    possible to subclass _EnumType_ – see Subclassing EnumType for
@@ -180,7 +180,7 @@ class enum.EnumType                              *EnumType..enum.txt;*
    final _enum_, as well as creating the enum members, properly
    handling duplicates, providing iteration over the enum class, etc.
 
-                                      *EnumType.__call__()..enum.txt;*
+                                       *EnumType.__call__()..enum.txt*
    __call__(cls, value, names=None, \*, module=None, qualname=None, type=None, start=1, boundary=None)
 
       This method is called in two different ways:
@@ -222,7 +222,7 @@ class enum.EnumType                              *EnumType..enum.txt;*
               How to handle out-of-range values from bit operations
               ("Flag" only).
 
-   __contains__(cls, member)         *EnumType.__contains__()..enum.txt;*
+   __contains__(cls, member)          *EnumType.__contains__()..enum.txt*
 
       Returns "True" if member belongs to the "cls":
 >
@@ -236,7 +236,7 @@ class enum.EnumType                              *EnumType..enum.txt;*
         and not just members; until then, a "TypeError" will be raised
         if a non-Enum-member is used in a containment check.
 
-   __dir__(cls)                           *EnumType.__dir__()..enum.txt;*
+   __dir__(cls)                            *EnumType.__dir__()..enum.txt*
 
       Returns "['__class__', '__doc__', '__members__', '__module__']"
       and the names of the members in _cls_:
@@ -244,7 +244,7 @@ class enum.EnumType                              *EnumType..enum.txt;*
          >>> dir(Color)
          ['BLUE', 'GREEN', 'RED', '__class__', '__contains__', '__doc__', '__getitem__', '__init_subclass__', '__iter__', '__len__', '__members__', '__module__', '__name__', '__qualname__']
 <
-   __getitem__(cls, name)             *EnumType.__getitem__()..enum.txt;*
+   __getitem__(cls, name)              *EnumType.__getitem__()..enum.txt*
 
       Returns the Enum member in _cls_ matching _name_, or raises a
       "KeyError":
@@ -252,21 +252,21 @@ class enum.EnumType                              *EnumType..enum.txt;*
          >>> Color['BLUE']
          <Color.BLUE: 3>
 <
-   __iter__(cls)                         *EnumType.__iter__()..enum.txt;*
+   __iter__(cls)                          *EnumType.__iter__()..enum.txt*
 
       Returns each member in _cls_ in definition order:
 >
          >>> list(Color)
          [<Color.RED: 1>, <Color.GREEN: 2>, <Color.BLUE: 3>]
 <
-   __len__(cls)                           *EnumType.__len__()..enum.txt;*
+   __len__(cls)                            *EnumType.__len__()..enum.txt*
 
       Returns the number of member in _cls_:
 >
          >>> len(Color)
          3
 <
-   __reversed__(cls)                 *EnumType.__reversed__()..enum.txt;*
+   __reversed__(cls)                  *EnumType.__reversed__()..enum.txt*
 
       Returns each member in _cls_ in reverse definition order:
 >
@@ -276,18 +276,18 @@ class enum.EnumType                              *EnumType..enum.txt;*
    New in version 3.11: Before 3.11 "enum" used "EnumMeta" type, which
    is kept as an alias.
 
-class enum.Enum                                      *Enum..enum.txt;*
+class enum.Enum                                       *Enum..enum.txt*
 
    _Enum_ is the base class for all _enum_ enumerations.
 
-   name                                            *Enum.name..enum.txt;*
+   name                                             *Enum.name..enum.txt*
 
       The name used to define the "Enum" member:
 >
          >>> Color.BLUE.name
          'BLUE'
 <
-   value                                          *Enum.value..enum.txt;*
+   value                                           *Enum.value..enum.txt*
 
       The value given to the "Enum" member:
 >
@@ -301,7 +301,7 @@ class enum.Enum                                      *Enum..enum.txt;*
         instances and an appropriate value will be chosen for you.
         See "auto" for the details.
 
-   _ignore_                                    *Enum._ignore_..enum.txt;*
+   _ignore_                                     *Enum._ignore_..enum.txt*
 
       "_ignore_" is only used during creation and is removed from the
       enumeration once creation is complete.
@@ -310,7 +310,7 @@ class enum.Enum                                      *Enum..enum.txt;*
       whose names will also be removed from the completed enumeration.
       See TimePeriod for an example.
 
-   __dir__(self)                              *Enum.__dir__()..enum.txt;*
+   __dir__(self)                               *Enum.__dir__()..enum.txt*
 
       Returns "['__class__', '__doc__', '__module__', 'name',
       'value']" and any public methods defined on _self.__class___:
@@ -332,7 +332,7 @@ class enum.Enum                                      *Enum..enum.txt;*
          ['__class__', '__doc__', '__eq__', '__hash__', '__module__', 'name', 'today', 'value']
 <
 
-                             *Enum._generate_next_value_()..enum.txt;*
+                              *Enum._generate_next_value_()..enum.txt*
    _generate_next_value_(name, start, count, last_values)
 
          name:
@@ -362,14 +362,12 @@ class enum.Enum                                      *Enum..enum.txt;*
          >>> PowersOfThree.SECOND.value
          9
 <
-
-                                 *Enum.__init_subclass__()..enum.txt;*
-   __init_subclass__(cls, \**kwds)
+   __init_subclass__(cls, \**kwds)   *Enum.__init_subclass__()..enum.txt*
 
       A _classmethod_ that is used to further configure subsequent
       subclasses. By default, does nothing.
 
-   _missing_(cls, value)                    *Enum._missing_()..enum.txt;*
+   _missing_(cls, value)                     *Enum._missing_()..enum.txt*
 
       A _classmethod_ for looking up values not found in _cls_.  By
       default it does nothing, but can be overridden to implement
@@ -392,7 +390,7 @@ class enum.Enum                                      *Enum..enum.txt;*
          >>> Build('deBUG')
          <Build.DEBUG: 'debug'>
 <
-   __repr__(self)                            *Enum.__repr__()..enum.txt;*
+   __repr__(self)                             *Enum.__repr__()..enum.txt*
 
       Returns the string used for _repr()_ calls.  By default, returns
       the _Enum_ name, member name, and value, but can be overridden:
@@ -408,7 +406,7 @@ class enum.Enum                                      *Enum..enum.txt;*
          >>> OtherStyle.ALTERNATE, str(OtherStyle.ALTERNATE), f"{OtherStyle.ALTERNATE}"
          (OtherStyle.ALTERNATE, 'OtherStyle.ALTERNATE', 'OtherStyle.ALTERNATE')
 <
-   __str__(self)                              *Enum.__str__()..enum.txt;*
+   __str__(self)                               *Enum.__str__()..enum.txt*
 
       Returns the string used for _str()_ calls.  By default, returns
       the _Enum_ name and member name, but can be overridden:
@@ -423,7 +421,7 @@ class enum.Enum                                      *Enum..enum.txt;*
          >>> OtherStyle.ALTERNATE, str(OtherStyle.ALTERNATE), f"{OtherStyle.ALTERNATE}"
          (<OtherStyle.ALTERNATE: 1>, 'ALTERNATE', 'ALTERNATE')
 <
-   __format__(self)                        *Enum.__format__()..enum.txt;*
+   __format__(self)                         *Enum.__format__()..enum.txt*
 
       Returns the string used for _format()_ and _f-string_ calls.  By
       default, returns "__str__()" return value, but can be
@@ -446,7 +444,7 @@ class enum.Enum                                      *Enum..enum.txt;*
 
    Changed in version 3.12: Added Dataclass support
 
-class enum.IntEnum                                *IntEnum..enum.txt;*
+class enum.IntEnum                                 *IntEnum..enum.txt*
 
    _IntEnum_ is the same as _Enum_, but its members are also integers
    and can be used anywhere that an integer can be used.  If any
@@ -477,7 +475,7 @@ class enum.IntEnum                                *IntEnum..enum.txt;*
    better support the _replacement of existing constants_ use-case.
    "__format__()" was already "int.__format__()" for that same reason.
 
-class enum.StrEnum                                *StrEnum..enum.txt;*
+class enum.StrEnum                                 *StrEnum..enum.txt*
 
    _StrEnum_ is the same as _Enum_, but its members are also strings
    and can be used in most of the same places that a string can be
@@ -504,13 +502,13 @@ class enum.StrEnum                                *StrEnum..enum.txt;*
 
    New in version 3.11.
 
-class enum.Flag                                      *Flag..enum.txt;*
+class enum.Flag                                       *Flag..enum.txt*
 
    _Flag_ members support the bitwise operators "&" (_AND_), "|"
    (_OR_), "^" (_XOR_), and "~" (_INVERT_); the results of those
    operators are members of the enumeration.
 
-   __contains__(self, value)             *Flag.__contains__()..enum.txt;*
+   __contains__(self, value)              *Flag.__contains__()..enum.txt*
 
       Returns _True_ if value is in self:
 >
@@ -564,14 +562,14 @@ class enum.Flag                                      *Flag..enum.txt;*
          >>> bool(black)
          False
 <
-   __or__(self, other)                         *Flag.__or__()..enum.txt;*
+   __or__(self, other)                          *Flag.__or__()..enum.txt*
 
       Returns current flag binary or’ed with other:
 >
          >>> Color.RED | Color.GREEN
          <Color.RED|GREEN: 3>
 <
-   __and__(self, other)                       *Flag.__and__()..enum.txt;*
+   __and__(self, other)                        *Flag.__and__()..enum.txt*
 
       Returns current flag binary and’ed with other:
 >
@@ -580,7 +578,7 @@ class enum.Flag                                      *Flag..enum.txt;*
          >>> purple & Color.GREEN
          <Color: 0>
 <
-   __xor__(self, other)                       *Flag.__xor__()..enum.txt;*
+   __xor__(self, other)                        *Flag.__xor__()..enum.txt*
 
       Returns current flag binary xor’ed with other:
 >
@@ -600,7 +598,7 @@ class enum.Flag                                      *Flag..enum.txt;*
          >>> ~Color.RED
          <Color.GREEN|BLUE: 6>
 <
-   _numeric_repr_()                    *Flag._numeric_repr_()..enum.txt;*
+   _numeric_repr_()                     *Flag._numeric_repr_()..enum.txt*
 
       Function used to format any remaining unnamed numeric values.
       Default is the value’s repr; common choices are "hex()" and
@@ -617,7 +615,7 @@ class enum.Flag                                      *Flag..enum.txt;*
    >>> Color(0) 
    <Color: 0>
 
-class enum.IntFlag                                *IntFlag..enum.txt;*
+class enum.IntFlag                                 *IntFlag..enum.txt*
 
    _IntFlag_ is the same as _Flag_, but its members are also integers
    and can be used anywhere that an integer can be used.
@@ -663,7 +661,7 @@ class enum.IntFlag                                *IntFlag..enum.txt;*
    is the union of all flags not in the given flag, rather than a
    negative value. This matches the existing "Flag" behavior.
 
-class enum.ReprEnum                              *ReprEnum..enum.txt;*
+class enum.ReprEnum                               *ReprEnum..enum.txt*
 
    "ReprEnum" uses the "repr()" of "Enum", but the "str()" of the
    mixed-in data type:
@@ -677,13 +675,13 @@ class enum.ReprEnum                              *ReprEnum..enum.txt;*
 
    New in version 3.11.
 
-class enum.EnumCheck                            *EnumCheck..enum.txt;*
+class enum.EnumCheck                             *EnumCheck..enum.txt*
 
    _EnumCheck_ contains the options used by the "verify()" decorator
    to ensure various constraints; failed constraints result in a
    "ValueError".
 
-   UNIQUE                                   *EnumCheck.UNIQUE..enum.txt;*
+   UNIQUE                                    *EnumCheck.UNIQUE..enum.txt*
 
       Ensure that each value has only one name:
 >
@@ -698,7 +696,7 @@ class enum.EnumCheck                            *EnumCheck..enum.txt;*
          ...
          ValueError: aliases found in <enum 'Color'>: CRIMSON -> RED
 <
-   CONTINUOUS                           *EnumCheck.CONTINUOUS..enum.txt;*
+   CONTINUOUS                            *EnumCheck.CONTINUOUS..enum.txt*
 
       Ensure that there are no missing values between the lowest-
       valued member and the highest-valued member:
@@ -713,7 +711,7 @@ class enum.EnumCheck                            *EnumCheck..enum.txt;*
          ...
          ValueError: invalid enum 'Color': missing values 3, 4
 <
-   NAMED_FLAGS                         *EnumCheck.NAMED_FLAGS..enum.txt;*
+   NAMED_FLAGS                          *EnumCheck.NAMED_FLAGS..enum.txt*
 
       Ensure that any flag groups/masks contain only named flags –
       useful when values are specified instead of being generated by
@@ -738,12 +736,12 @@ class enum.EnumCheck                            *EnumCheck..enum.txt;*
 
    New in version 3.11.
 
-class enum.FlagBoundary                      *FlagBoundary..enum.txt;*
+class enum.FlagBoundary                       *FlagBoundary..enum.txt*
 
    _FlagBoundary_ controls how out-of-range values are handled in
    _Flag_ and its subclasses.
 
-   STRICT                                *FlagBoundary.STRICT..enum.txt;*
+   STRICT                                 *FlagBoundary.STRICT..enum.txt*
 
       Out-of-range values cause a "ValueError" to be raised. This is
       the default for "Flag":
@@ -761,7 +759,7 @@ class enum.FlagBoundary                      *FlagBoundary..enum.txt;*
              given 0b0 10100
            allowed 0b0 00111
 <
-   CONFORM                              *FlagBoundary.CONFORM..enum.txt;*
+   CONFORM                               *FlagBoundary.CONFORM..enum.txt*
 
       Out-of-range values have invalid values removed, leaving a valid
       _Flag_ value:
@@ -775,7 +773,7 @@ class enum.FlagBoundary                      *FlagBoundary..enum.txt;*
          >>> ConformFlag(2**2 + 2**4)
          <ConformFlag.BLUE: 4>
 <
-   EJECT                                  *FlagBoundary.EJECT..enum.txt;*
+   EJECT                                   *FlagBoundary.EJECT..enum.txt*
 
       Out-of-range values lose their _Flag_ membership and revert to
       "int".
@@ -789,7 +787,7 @@ class enum.FlagBoundary                      *FlagBoundary..enum.txt;*
       >>> EjectFlag(2**2 + 2**4)
       20
 
-   KEEP                                    *FlagBoundary.KEEP..enum.txt;*
+   KEEP                                     *FlagBoundary.KEEP..enum.txt*
 
       Out-of-range values are kept, and the _Flag_ membership is kept.
       This is the default for "IntFlag":
@@ -856,7 +854,7 @@ New in version 3.7: "_ignore_"
 Utilities and Decorators
 ========================
 
-class enum.auto                                      *auto..enum.txt;*
+class enum.auto                                       *auto..enum.txt*
 
    _auto_ can be used in place of a value.  If used, the _Enum_
    machinery will call an _Enum_’s "_generate_next_value_()" to get an
@@ -891,7 +889,7 @@ class enum.auto                                      *auto..enum.txt;*
      the highest member value incremented by 1, and will fail if any
      member is an incompatible type.
 
-@enum.property                                 *property()..enum.txt;*
+@enum.property                                  *property()..enum.txt*
 
    A decorator similar to the built-in _property_, but specifically
    for enumerations.  It allows member attributes to have the same
@@ -906,7 +904,7 @@ class enum.auto                                      *auto..enum.txt;*
 
    New in version 3.11.
 
-@enum.unique                                     *unique()..enum.txt;*
+@enum.unique                                      *unique()..enum.txt*
 
    A "class" decorator specifically for enumerations.  It searches an
    enumeration’s "__members__", gathering any aliases it finds; if any
@@ -924,7 +922,7 @@ class enum.auto                                      *auto..enum.txt;*
       ...
       ValueError: duplicate values found in <enum 'Mistake'>: FOUR -> THREE
 <
-@enum.verify                                     *verify()..enum.txt;*
+@enum.verify                                      *verify()..enum.txt*
 
    A "class" decorator specifically for enumerations.  Members from
    "EnumCheck" are used to specify which constraints should be checked
@@ -932,19 +930,19 @@ class enum.auto                                      *auto..enum.txt;*
 
    New in version 3.11.
 
-@enum.member                                     *member()..enum.txt;*
+@enum.member                                      *member()..enum.txt*
 
    A decorator for use in enums: its target will become a member.
 
    New in version 3.11.
 
-@enum.nonmember                               *nonmember()..enum.txt;*
+@enum.nonmember                                *nonmember()..enum.txt*
 
    A decorator for use in enums: its target will not become a member.
 
    New in version 3.11.
 
-@enum.global_enum                           *global_enum()..enum.txt;*
+@enum.global_enum                            *global_enum()..enum.txt*
 
    A decorator to change the "str()" and "repr()" of an enum to show
    its members as belonging to the module instead of its class. Should
@@ -953,7 +951,7 @@ class enum.auto                                      *auto..enum.txt;*
 
    New in version 3.11.
 
-enum.show_flag_values(value)           *show_flag_values()..enum.txt;*
+enum.show_flag_values(value)            *show_flag_values()..enum.txt*
 
    Return a list of all power-of-two integers contained in a flag
    _value_.

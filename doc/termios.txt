@@ -1,4 +1,4 @@
-*termios.txt;*                                Last change: 2023 Sep 09
+*termios.txt;*                                Last change: 2023 Sep 10
 
 "termios" — POSIX style tty control
 ***********************************
@@ -23,7 +23,7 @@ information on using these terminal control interfaces.
 
 The module defines the following functions:
 
-termios.tcgetattr(fd)                      *tcgetattr()..termios.txt;*
+termios.tcgetattr(fd)                       *tcgetattr()..termios.txt*
 
    Return a list containing the tty attributes for file descriptor
    _fd_, as follows: "[iflag, oflag, cflag, lflag, ispeed, ospeed,
@@ -34,7 +34,7 @@ termios.tcgetattr(fd)                      *tcgetattr()..termios.txt;*
    in the _cc_ array must be done using the symbolic constants defined
    in the "termios" module.
 
-termios.tcsetattr(fd, when, attributes)    *tcsetattr()..termios.txt;*
+termios.tcsetattr(fd, when, attributes)     *tcsetattr()..termios.txt*
 
    Set the tty attributes for file descriptor _fd_ from the
    _attributes_, which is a list like the one returned by
@@ -44,31 +44,31 @@ termios.tcsetattr(fd, when, attributes)    *tcsetattr()..termios.txt;*
    after transmitting all queued output and discarding all queued
    input.
 
-termios.tcsendbreak(fd, duration)        *tcsendbreak()..termios.txt;*
+termios.tcsendbreak(fd, duration)         *tcsendbreak()..termios.txt*
 
    Send a break on file descriptor _fd_.  A zero _duration_ sends a
    break for 0.25–0.5 seconds; a nonzero _duration_ has a system
    dependent meaning.
 
-termios.tcdrain(fd)                          *tcdrain()..termios.txt;*
+termios.tcdrain(fd)                           *tcdrain()..termios.txt*
 
    Wait until all output written to file descriptor _fd_ has been
    transmitted.
 
-termios.tcflush(fd, queue)                   *tcflush()..termios.txt;*
+termios.tcflush(fd, queue)                    *tcflush()..termios.txt*
 
    Discard queued data on file descriptor _fd_.  The _queue_ selector
    specifies which queue: "TCIFLUSH" for the input queue, "TCOFLUSH"
    for the output queue, or "TCIOFLUSH" for both queues.
 
-termios.tcflow(fd, action)                    *tcflow()..termios.txt;*
+termios.tcflow(fd, action)                     *tcflow()..termios.txt*
 
    Suspend or resume input or output on file descriptor _fd_.  The
    _action_ argument can be "TCOOFF" to suspend output, "TCOON" to
    restart output, "TCIOFF" to suspend input, or "TCION" to restart
    input.
 
-termios.tcgetwinsize(fd)                *tcgetwinsize()..termios.txt;*
+termios.tcgetwinsize(fd)                 *tcgetwinsize()..termios.txt*
 
    Return a tuple "(ws_row, ws_col)" containing the tty window size
    for file descriptor _fd_. Requires "termios.TIOCGWINSZ" or
@@ -76,7 +76,7 @@ termios.tcgetwinsize(fd)                *tcgetwinsize()..termios.txt;*
 
    New in version 3.11.
 
-termios.tcsetwinsize(fd, winsize)       *tcsetwinsize()..termios.txt;*
+termios.tcsetwinsize(fd, winsize)        *tcsetwinsize()..termios.txt*
 
    Set the tty window size for file descriptor _fd_ from _winsize_,
    which is a two-item tuple "(ws_row, ws_col)" like the one returned

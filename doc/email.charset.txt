@@ -1,4 +1,4 @@
-*emailcharset.txt;*                           Last change: 2023 Sep 09
+*email.charset.txt;*                          Last change: 2023 Sep 10
 
 "email.charset": Representing character sets
 ********************************************
@@ -21,7 +21,7 @@ other modules within the "email" package.
 
 Import this class from the "email.charset" module.
 
-                                          *Charset..emailcharset.txt;*
+                                          *Charset..email.charset.txt*
 class email.charset.Charset(input_charset=DEFAULT_CHARSET)
 
    Map character sets to their email properties.
@@ -51,13 +51,13 @@ class email.charset.Charset(input_charset=DEFAULT_CHARSET)
 
    "Charset" instances have the following data attributes:
 
-   input_charset               *Charset.input_charset..emailcharset.txt;*
+   input_charset               *Charset.input_charset..email.charset.txt*
 
       The initial character set specified.  Common aliases are
       converted to their _official_ email names (e.g. "latin_1" is
       converted to "iso-8859-1").  Defaults to 7-bit "us-ascii".
 
-   header_encoding           *Charset.header_encoding..emailcharset.txt;*
+   header_encoding           *Charset.header_encoding..email.charset.txt*
 
       If the character set must be encoded before it can be used in an
       email header, this attribute will be set to "charset.QP" (for
@@ -65,27 +65,27 @@ class email.charset.Charset(input_charset=DEFAULT_CHARSET)
       "charset.SHORTEST" for the shortest of QP or BASE64 encoding.
       Otherwise, it will be "None".
 
-   body_encoding               *Charset.body_encoding..emailcharset.txt;*
+   body_encoding               *Charset.body_encoding..email.charset.txt*
 
       Same as _header_encoding_, but describes the encoding for the
       mail message’s body, which indeed may be different than the
       header encoding. "charset.SHORTEST" is not allowed for
       _body_encoding_.
 
-   output_charset             *Charset.output_charset..emailcharset.txt;*
+   output_charset             *Charset.output_charset..email.charset.txt*
 
       Some character sets must be converted before they can be used in
       email headers or bodies.  If the _input_charset_ is one of them,
       this attribute will contain the name of the character set output
       will be converted to. Otherwise, it will be "None".
 
-   input_codec                   *Charset.input_codec..emailcharset.txt;*
+   input_codec                   *Charset.input_codec..email.charset.txt*
 
       The name of the Python codec used to convert the _input_charset_
       to Unicode.  If no conversion codec is necessary, this attribute
       will be "None".
 
-   output_codec                 *Charset.output_codec..emailcharset.txt;*
+   output_codec                 *Charset.output_codec..email.charset.txt*
 
       The name of the Python codec used to convert Unicode to the
       _output_charset_.  If no conversion codec is necessary, this
@@ -93,7 +93,7 @@ class email.charset.Charset(input_charset=DEFAULT_CHARSET)
 
    "Charset" instances also have the following methods:
 
-   get_body_encoding()   *Charset.get_body_encoding()..emailcharset.txt;*
+   get_body_encoding()   *Charset.get_body_encoding()..email.charset.txt*
 
       Return the content transfer encoding used for body encoding.
 
@@ -108,7 +108,7 @@ class email.charset.Charset(input_charset=DEFAULT_CHARSET)
       "QP", returns the string "base64" if _body_encoding_ is
       "BASE64", and returns the string "7bit" otherwise.
 
-                     *Charset.get_output_charset()..emailcharset.txt;*
+                     *Charset.get_output_charset()..email.charset.txt*
    get_output_charset()
 
       Return the output character set.
@@ -116,14 +116,14 @@ class email.charset.Charset(input_charset=DEFAULT_CHARSET)
       This is the _output_charset_ attribute if that is not "None",
       otherwise it is _input_charset_.
 
-   header_encode(string)     *Charset.header_encode()..emailcharset.txt;*
+   header_encode(string)     *Charset.header_encode()..email.charset.txt*
 
       Header-encode the string _string_.
 
       The type of encoding (base64 or quoted-printable) will be based
       on the _header_encoding_ attribute.
 
-                    *Charset.header_encode_lines()..emailcharset.txt;*
+                    *Charset.header_encode_lines()..email.charset.txt*
    header_encode_lines(string, maxlengths)
 
       Header-encode a _string_ by converting it first to bytes.
@@ -133,7 +133,7 @@ class email.charset.Charset(input_charset=DEFAULT_CHARSET)
       _maxlengths_, which must be an iterator: each element returned
       from this iterator will provide the next maximum line length.
 
-   body_encode(string)         *Charset.body_encode()..emailcharset.txt;*
+   body_encode(string)         *Charset.body_encode()..email.charset.txt*
 
       Body-encode the string _string_.
 
@@ -143,17 +143,17 @@ class email.charset.Charset(input_charset=DEFAULT_CHARSET)
    The "Charset" class also provides a number of methods to support
    standard operations and built-in functions.
 
-   __str__()                       *Charset.__str__()..emailcharset.txt;*
+   __str__()                       *Charset.__str__()..email.charset.txt*
 
       Returns _input_charset_ as a string coerced to lower case.
       "__repr__()" is an alias for "__str__()".
 
-   __eq__(other)                    *Charset.__eq__()..emailcharset.txt;*
+   __eq__(other)                    *Charset.__eq__()..email.charset.txt*
 
       This method allows you to compare two "Charset" instances for
       equality.
 
-   __ne__(other)                    *Charset.__ne__()..emailcharset.txt;*
+   __ne__(other)                    *Charset.__ne__()..email.charset.txt*
 
       This method allows you to compare two "Charset" instances for
       inequality.
@@ -162,7 +162,7 @@ The "email.charset" module also provides the following functions for
 adding new entries to the global character set, alias, and codec
 registries:
 
-                                    *add_charset()..emailcharset.txt;*
+                                    *add_charset()..email.charset.txt*
 email.charset.add_charset(charset, header_enc=None, body_enc=None, output_charset=None)
 
    Add character properties to the global registry.
@@ -190,7 +190,7 @@ email.charset.add_charset(charset, header_enc=None, body_enc=None, output_charse
    The global character set registry is kept in the module global
    dictionary "CHARSETS".
 
-                                      *add_alias()..emailcharset.txt;*
+                                      *add_alias()..email.charset.txt*
 email.charset.add_alias(alias, canonical)
 
    Add a character set alias.  _alias_ is the alias name, e.g.
@@ -200,7 +200,7 @@ email.charset.add_alias(alias, canonical)
    The global charset alias registry is kept in the module global
    dictionary "ALIASES".
 
-                                      *add_codec()..emailcharset.txt;*
+                                      *add_codec()..email.charset.txt*
 email.charset.add_codec(charset, codecname)
 
    Add a codec that map characters in the given character set to and

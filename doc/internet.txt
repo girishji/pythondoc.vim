@@ -1,4 +1,4 @@
-*internet.txt;*                               Last change: 2023 Sep 09
+*internet.txt;*                               Last change: 2023 Sep 10
 
 Internet Protocols and Support
 ******************************

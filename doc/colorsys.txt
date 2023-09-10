@@ -1,4 +1,4 @@
-*colorsys.txt;*                               Last change: 2023 Sep 09
+*colorsys.txt;*                               Last change: 2023 Sep 10
 
 "colorsys" — Conversions between color systems
 **********************************************
@@ -24,27 +24,27 @@ See also:
 
 The "colorsys" module defines the following functions:
 
-colorsys.rgb_to_yiq(r, g, b)             *rgb_to_yiq()..colorsys.txt;*
+colorsys.rgb_to_yiq(r, g, b)              *rgb_to_yiq()..colorsys.txt*
 
    Convert the color from RGB coordinates to YIQ coordinates.
 
-colorsys.yiq_to_rgb(y, i, q)             *yiq_to_rgb()..colorsys.txt;*
+colorsys.yiq_to_rgb(y, i, q)              *yiq_to_rgb()..colorsys.txt*
 
    Convert the color from YIQ coordinates to RGB coordinates.
 
-colorsys.rgb_to_hls(r, g, b)             *rgb_to_hls()..colorsys.txt;*
+colorsys.rgb_to_hls(r, g, b)              *rgb_to_hls()..colorsys.txt*
 
    Convert the color from RGB coordinates to HLS coordinates.
 
-colorsys.hls_to_rgb(h, l, s)             *hls_to_rgb()..colorsys.txt;*
+colorsys.hls_to_rgb(h, l, s)              *hls_to_rgb()..colorsys.txt*
 
    Convert the color from HLS coordinates to RGB coordinates.
 
-colorsys.rgb_to_hsv(r, g, b)             *rgb_to_hsv()..colorsys.txt;*
+colorsys.rgb_to_hsv(r, g, b)              *rgb_to_hsv()..colorsys.txt*
 
    Convert the color from RGB coordinates to HSV coordinates.
 
-colorsys.hsv_to_rgb(h, s, v)             *hsv_to_rgb()..colorsys.txt;*
+colorsys.hsv_to_rgb(h, s, v)              *hsv_to_rgb()..colorsys.txt*
 
    Convert the color from HSV coordinates to RGB coordinates.
 

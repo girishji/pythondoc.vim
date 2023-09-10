@@ -1,4 +1,4 @@
-*importlibmetadata.txt;*                      Last change: 2023 Sep 09
+*importlib.metadata.txt;*                     Last change: 2023 Sep 10
 
 "importlib.metadata" – Accessing package metadata
 *************************************************

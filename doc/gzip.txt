@@ -1,4 +1,4 @@
-*gzip.txt;*                                   Last change: 2023 Sep 09
+*gzip.txt;*                                   Last change: 2023 Sep 10
 
 "gzip" — Support for **gzip** files
 ***********************************
@@ -24,7 +24,7 @@ Note that additional file formats which can be decompressed by the
 
 The module defines the following items:
 
-                                                   *open()..gzip.txt;*
+                                                    *open()..gzip.txt*
 gzip.open(filename, mode='rb', compresslevel=9, encoding=None, errors=None, newline=None)
 
    Open a gzip-compressed file in binary or text mode, returning a
@@ -59,7 +59,7 @@ gzip.open(filename, mode='rb', compresslevel=9, encoding=None, errors=None, newl
 
    Changed in version 3.6: Accepts a _path-like object_.
 
-exception gzip.BadGzipFile                    *BadGzipFile..gzip.txt;*
+exception gzip.BadGzipFile                     *BadGzipFile..gzip.txt*
 
    An exception raised for invalid gzip files.  It inherits "OSError".
    "EOFError" and "zlib.error" can also be raised for invalid gzip
@@ -67,7 +67,7 @@ exception gzip.BadGzipFile                    *BadGzipFile..gzip.txt;*
 
    New in version 3.8.
 
-                                                 *GzipFile..gzip.txt;*
+                                                  *GzipFile..gzip.txt*
 class gzip.GzipFile(filename=None, mode=None, compresslevel=9, fileobj=None, mtime=None)
 
    Constructor for the "GzipFile" class, which simulates most of the
@@ -121,7 +121,7 @@ class gzip.GzipFile(filename=None, mode=None, compresslevel=9, fileobj=None, mti
 
    "GzipFile" also provides the following method and attribute:
 
-   peek(n)                                   *GzipFile.peek()..gzip.txt;*
+   peek(n)                                    *GzipFile.peek()..gzip.txt*
 
       Read _n_ uncompressed bytes without advancing the file position.
       At most one single read on the compressed stream is done to
@@ -137,7 +137,7 @@ class gzip.GzipFile(filename=None, mode=None, compresslevel=9, fileobj=None, mti
 
       New in version 3.2.
 
-   mtime                                      *GzipFile.mtime..gzip.txt;*
+   mtime                                       *GzipFile.mtime..gzip.txt*
 
       When decompressing, the value of the last modification time
       field in the most recently read header may be read from this
@@ -150,7 +150,7 @@ class gzip.GzipFile(filename=None, mode=None, compresslevel=9, fileobj=None, mti
       "time.time()" and the "st_mtime" attribute of the object
       returned by "os.stat()".
 
-   name                                        *GzipFile.name..gzip.txt;*
+   name                                         *GzipFile.name..gzip.txt*
 
       The path to the gzip file on disk, as a "str" or "bytes".
       Equivalent to the output of "os.fspath()" on the original input
@@ -180,7 +180,7 @@ class gzip.GzipFile(filename=None, mode=None, compresslevel=9, fileobj=None, mti
    Deprecated since version 3.9: Opening "GzipFile" for writing
    without specifying the _mode_ argument is deprecated.
 
-                                               *compress()..gzip.txt;*
+                                                *compress()..gzip.txt*
 gzip.compress(data, compresslevel=9, *, mtime=None)
 
    Compress the _data_, returning a "bytes" object containing the
@@ -198,7 +198,7 @@ gzip.compress(data, compresslevel=9, *, mtime=None)
    at once instead of in a streamed fashion. Calls with _mtime_ set to
    "0" are delegated to "zlib.compress()" for better speed.
 
-gzip.decompress(data)                        *decompress()..gzip.txt;*
+gzip.decompress(data)                         *decompress()..gzip.txt*
 
    Decompress the _data_, returning a "bytes" object containing the
    uncompressed data. This function is capable of decompressing multi-

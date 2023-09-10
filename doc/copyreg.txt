@@ -1,4 +1,4 @@
-*copyreg.txt;*                                Last change: 2023 Sep 09
+*copyreg.txt;*                                Last change: 2023 Sep 10
 
 "copyreg" — Register "pickle" support functions
 ***********************************************
@@ -14,13 +14,13 @@ configuration information about object constructors which are not
 classes. Such constructors may be factory functions or class
 instances.
 
-copyreg.constructor(object)              *constructor()..copyreg.txt;*
+copyreg.constructor(object)               *constructor()..copyreg.txt*
 
    Declares _object_ to be a valid constructor.  If _object_ is not
    callable (and hence not valid as a constructor), raises
    "TypeError".
 
-                                              *pickle()..copyreg.txt;*
+                                               *pickle()..copyreg.txt*
 copyreg.pickle(type, function, constructor_ob=None)
 
    Declares that _function_ should be used as a “reduction” function

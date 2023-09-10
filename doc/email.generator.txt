@@ -1,4 +1,4 @@
-*emailgenerator.txt;*                         Last change: 2023 Sep 09
+*email.generator.txt;*                        Last change: 2023 Sep 10
 
 "email.generator": Generating MIME documents
 ********************************************
@@ -39,7 +39,7 @@ To accommodate reproducible processing of SMIME-signed messages
 "Generator" disables header folding for message parts of type
 "multipart/signed" and all subparts.
 
-                                 *BytesGenerator..emailgenerator.txt;*
+                                 *BytesGenerator..email.generator.txt*
 class email.generator.BytesGenerator(outfp, mangle_from_=None, maxheaderlen=None, *, policy=None)
 
    Return a "BytesGenerator" object that will write any message
@@ -75,7 +75,7 @@ class email.generator.BytesGenerator(outfp, mangle_from_=None, maxheaderlen=None
    Changed in version 3.6: The default behavior of the _mangle_from__
    and _maxheaderlen_ parameters is to follow the policy.
 
-                       *BytesGenerator.flatten()..emailgenerator.txt;*
+                       *BytesGenerator.flatten()..email.generator.txt*
    flatten(msg, unixfrom=False, linesep=None)
 
       Print the textual representation of the message object structure
@@ -106,13 +106,13 @@ class email.generator.BytesGenerator(outfp, mangle_from_=None, maxheaderlen=None
       between all the lines of the flattened message.  If _linesep_ is
       "None" (the default), use the value specified in the _policy_.
 
-   clone(fp)                *BytesGenerator.clone()..emailgenerator.txt;*
+   clone(fp)                *BytesGenerator.clone()..email.generator.txt*
 
       Return an independent clone of this "BytesGenerator" instance
       with the exact same option settings, and _fp_ as the new
       _outfp_.
 
-   write(s)                 *BytesGenerator.write()..emailgenerator.txt;*
+   write(s)                 *BytesGenerator.write()..email.generator.txt*
 
       Encode _s_ using the "ASCII" codec and the "surrogateescape"
       error handler, and pass it to the _write_ method of the _outfp_
@@ -131,7 +131,7 @@ think of this as "Generator" serializing to an I/O stream that is not
 “8 bit clean”.  In other words, most applications will want to be
 using "BytesGenerator", and not "Generator".
 
-                                      *Generator..emailgenerator.txt;*
+                                      *Generator..email.generator.txt*
 class email.generator.Generator(outfp, mangle_from_=None, maxheaderlen=None, *, policy=None)
 
    Return a "Generator" object that will write any message provided to
@@ -164,7 +164,7 @@ class email.generator.Generator(outfp, mangle_from_=None, maxheaderlen=None, *, 
    Changed in version 3.6: The default behavior of the _mangle_from__
    and _maxheaderlen_ parameters is to follow the policy.
 
-                            *Generator.flatten()..emailgenerator.txt;*
+                            *Generator.flatten()..email.generator.txt*
    flatten(msg, unixfrom=False, linesep=None)
 
       Print the textual representation of the message object structure
@@ -195,12 +195,12 @@ class email.generator.Generator(outfp, mangle_from_=None, maxheaderlen=None, *, 
       Changed in version 3.2: Added support for re-encoding "8bit"
       message bodies, and the _linesep_ argument.
 
-   clone(fp)                     *Generator.clone()..emailgenerator.txt;*
+   clone(fp)                     *Generator.clone()..email.generator.txt*
 
       Return an independent clone of this "Generator" instance with
       the exact same options, and _fp_ as the new _outfp_.
 
-   write(s)                      *Generator.write()..emailgenerator.txt;*
+   write(s)                      *Generator.write()..email.generator.txt*
 
       Write _s_ to the _write_ method of the _outfp_ passed to the
       "Generator"’s constructor.  This provides just enough file-like
@@ -218,7 +218,7 @@ that non-_text_ parts are not serialized, but are instead represented
 in the output stream by a string derived from a template filled in
 with information about the part.
 
-                               *DecodedGenerator..emailgenerator.txt;*
+                               *DecodedGenerator..email.generator.txt*
 class email.generator.DecodedGenerator(outfp, mangle_from_=None, maxheaderlen=None, fmt=None, *, policy=None)
 
    Act like "Generator", except that for any subpart of the message

@@ -1,4 +1,4 @@
-*zipimport.txt;*                              Last change: 2023 Sep 09
+*zipimport.txt;*                              Last change: 2023 Sep 10
 
 "zipimport" — Import modules from Zip archives
 **********************************************
@@ -49,7 +49,7 @@ See also:
 
 This module defines an exception:
 
-exception zipimport.ZipImportError    *ZipImportError..zipimport.txt;*
+exception zipimport.ZipImportError     *ZipImportError..zipimport.txt*
 
    Exception raised by zipimporter objects. It’s a subclass of
    "ImportError", so it can be caught as "ImportError", too.
@@ -60,7 +60,7 @@ zipimporter Objects
 
 "zipimporter" is the class for importing ZIP files.
 
-                                         *zipimporter..zipimport.txt;*
+                                          *zipimporter..zipimport.txt*
 class zipimport.zipimporter(archivepath)
 
    Create a new zipimporter instance. _archivepath_ must be a path to
@@ -76,20 +76,20 @@ class zipimport.zipimporter(archivepath)
    "find_module()", deprecated in 3.10 are now removed.  Use
    "find_spec()" instead.
 
-   create_module(spec)      *zipimporter.create_module()..zipimport.txt;*
+   create_module(spec)       *zipimporter.create_module()..zipimport.txt*
 
       Implementation of "importlib.abc.Loader.create_module()" that
       returns "None" to explicitly request the default semantics.
 
       New in version 3.10.
 
-   exec_module(module)        *zipimporter.exec_module()..zipimport.txt;*
+   exec_module(module)         *zipimporter.exec_module()..zipimport.txt*
 
       Implementation of "importlib.abc.Loader.exec_module()".
 
       New in version 3.10.
 
-                             *zipimporter.find_spec()..zipimport.txt;*
+                              *zipimporter.find_spec()..zipimport.txt*
    find_spec(fullname, target=None)
 
       An implementation of
@@ -97,12 +97,12 @@ class zipimport.zipimporter(archivepath)
 
       New in version 3.10.
 
-   get_code(fullname)            *zipimporter.get_code()..zipimport.txt;*
+   get_code(fullname)             *zipimporter.get_code()..zipimport.txt*
 
       Return the code object for the specified module. Raise
       "ZipImportError" if the module couldn’t be imported.
 
-   get_data(pathname)            *zipimporter.get_data()..zipimport.txt;*
+   get_data(pathname)             *zipimporter.get_data()..zipimport.txt*
 
       Return the data associated with _pathname_. Raise "OSError" if
       the file wasn’t found.
@@ -110,7 +110,7 @@ class zipimport.zipimporter(archivepath)
       Changed in version 3.3: "IOError" used to be raised instead of
       "OSError".
 
-   get_filename(fullname)    *zipimporter.get_filename()..zipimport.txt;*
+   get_filename(fullname)     *zipimporter.get_filename()..zipimport.txt*
 
       Return the value "__file__" would be set to if the specified
       module was imported. Raise "ZipImportError" if the module
@@ -118,19 +118,19 @@ class zipimport.zipimporter(archivepath)
 
       New in version 3.1.
 
-   get_source(fullname)        *zipimporter.get_source()..zipimport.txt;*
+   get_source(fullname)         *zipimporter.get_source()..zipimport.txt*
 
       Return the source code for the specified module. Raise
       "ZipImportError" if the module couldn’t be found, return "None"
       if the archive does contain the module, but has no source for
       it.
 
-   is_package(fullname)        *zipimporter.is_package()..zipimport.txt;*
+   is_package(fullname)         *zipimporter.is_package()..zipimport.txt*
 
       Return "True" if the module specified by _fullname_ is a
       package. Raise "ZipImportError" if the module couldn’t be found.
 
-   load_module(fullname)      *zipimporter.load_module()..zipimport.txt;*
+   load_module(fullname)       *zipimporter.load_module()..zipimport.txt*
 
       Load the module specified by _fullname_. _fullname_ must be the
       fully qualified (dotted) module name. Returns the imported
@@ -138,20 +138,19 @@ class zipimport.zipimporter(archivepath)
 
       Deprecated since version 3.10: Use "exec_module()" instead.
 
-                     *zipimporter.invalidate_caches()..zipimport.txt;*
-   invalidate_caches()
+   invalidate_caches()   *zipimporter.invalidate_caches()..zipimport.txt*
 
       Clear out the internal cache of information about files found
       within the ZIP archive.
 
       New in version 3.10.
 
-   archive                          *zipimporter.archive..zipimport.txt;*
+   archive                           *zipimporter.archive..zipimport.txt*
 
       The file name of the importer’s associated ZIP file, without a
       possible subpath.
 
-   prefix                            *zipimporter.prefix..zipimport.txt;*
+   prefix                             *zipimporter.prefix..zipimport.txt*
 
       The subpath within the ZIP file where modules are searched.
       This is the empty string for zipimporter objects which point to

@@ -1,4 +1,4 @@
-*binascii.txt;*                               Last change: 2023 Sep 09
+*binascii.txt;*                               Last change: 2023 Sep 10
 
 "binascii" — Convert between binary and ASCII
 *********************************************
@@ -24,13 +24,13 @@ Note:
 
 The "binascii" module defines the following functions:
 
-binascii.a2b_uu(string)                      *a2b_uu()..binascii.txt;*
+binascii.a2b_uu(string)                       *a2b_uu()..binascii.txt*
 
    Convert a single line of uuencoded data back to binary and return
    the binary data. Lines normally contain 45 (binary) bytes, except
    for the last line. Line data may be followed by whitespace.
 
-binascii.b2a_uu(data, *, backtick=False)     *b2a_uu()..binascii.txt;*
+binascii.b2a_uu(data, *, backtick=False)      *b2a_uu()..binascii.txt*
 
    Convert binary data to a line of ASCII characters, the return value
    is the converted line, including a newline char. The length of
@@ -39,7 +39,7 @@ binascii.b2a_uu(data, *, backtick=False)     *b2a_uu()..binascii.txt;*
 
    Changed in version 3.7: Added the _backtick_ parameter.
 
-                                         *a2b_base64()..binascii.txt;*
+                                          *a2b_base64()..binascii.txt*
 binascii.a2b_base64(string, /, *, strict_mode=False)
 
    Convert a block of base64 data back to binary and return the binary
@@ -60,7 +60,7 @@ binascii.a2b_base64(string, /, *, strict_mode=False)
 
    Changed in version 3.11: Added the _strict_mode_ parameter.
 
-                                         *b2a_base64()..binascii.txt;*
+                                          *b2a_base64()..binascii.txt*
 binascii.b2a_base64(data, *, newline=True)
 
    Convert binary data to a line of ASCII characters in base64 coding.
@@ -70,14 +70,14 @@ binascii.b2a_base64(data, *, newline=True)
 
    Changed in version 3.6: Added the _newline_ parameter.
 
-binascii.a2b_qp(data, header=False)          *a2b_qp()..binascii.txt;*
+binascii.a2b_qp(data, header=False)           *a2b_qp()..binascii.txt*
 
    Convert a block of quoted-printable data back to binary and return
    the binary data. More than one line may be passed at a time. If the
    optional argument _header_ is present and true, underscores will be
    decoded as spaces.
 
-                                             *b2a_qp()..binascii.txt;*
+                                              *b2a_qp()..binascii.txt*
 binascii.b2a_qp(data, quotetabs=False, istext=True, header=False)
 
    Convert binary data to a line(s) of ASCII characters in quoted-
@@ -91,14 +91,14 @@ binascii.b2a_qp(data, quotetabs=False, istext=True, header=False)
    characters will be encoded as well; otherwise linefeed conversion
    might corrupt the binary data stream.
 
-binascii.crc_hqx(data, value)               *crc_hqx()..binascii.txt;*
+binascii.crc_hqx(data, value)                *crc_hqx()..binascii.txt*
 
    Compute a 16-bit CRC value of _data_, starting with _value_ as the
    initial CRC, and return the result.  This uses the CRC-CCITT
    polynomial _x_^16 + _x_^12 + _x_^5 + 1, often represented as
    0x1021.  This CRC is used in the binhex4 format.
 
-binascii.crc32(data[, value])                 *crc32()..binascii.txt;*
+binascii.crc32(data[, value])                  *crc32()..binascii.txt*
 
    Compute CRC-32, the unsigned 32-bit checksum of _data_, starting
    with an initial CRC of _value_.  The default initial CRC is zero.
@@ -114,10 +114,10 @@ binascii.crc32(data[, value])                 *crc32()..binascii.txt;*
 <
    Changed in version 3.0: The result is always unsigned.
 
-                                            *b2a_hex()..binascii.txt;*
+                                             *b2a_hex()..binascii.txt*
 binascii.b2a_hex(data[, sep[, bytes_per_sep=1]])
 
-                                            *hexlify()..binascii.txt;*
+                                             *hexlify()..binascii.txt*
 binascii.hexlify(data[, sep[, bytes_per_sep=1]])
 
    Return the hexadecimal representation of the binary _data_.  Every
@@ -147,8 +147,8 @@ binascii.hexlify(data[, sep[, bytes_per_sep=1]])
    Changed in version 3.8: The _sep_ and _bytes_per_sep_ parameters
    were added.
 
-binascii.a2b_hex(hexstr)                    *a2b_hex()..binascii.txt;*
-binascii.unhexlify(hexstr)                *unhexlify()..binascii.txt;*
+binascii.a2b_hex(hexstr)                     *a2b_hex()..binascii.txt*
+binascii.unhexlify(hexstr)                 *unhexlify()..binascii.txt*
 
    Return the binary data represented by the hexadecimal string
    _hexstr_.  This function is the inverse of "b2a_hex()". _hexstr_
@@ -159,11 +159,11 @@ binascii.unhexlify(hexstr)                *unhexlify()..binascii.txt;*
    more liberal towards whitespace) is also accessible using the
    "bytes.fromhex()" class method.
 
-exception binascii.Error                        *Error..binascii.txt;*
+exception binascii.Error                         *Error..binascii.txt*
 
    Exception raised on errors. These are usually programming errors.
 
-exception binascii.Incomplete              *Incomplete..binascii.txt;*
+exception binascii.Incomplete               *Incomplete..binascii.txt*
 
    Exception raised on incomplete data. These are usually not
    programming errors, but may be handled by reading a little more

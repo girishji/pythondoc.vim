@@ -1,4 +1,4 @@
-*traceback.txt;*                              Last change: 2023 Sep 09
+*traceback.txt;*                              Last change: 2023 Sep 10
 
 "traceback" — Print or retrieve a stack traceback
 *************************************************
@@ -28,7 +28,7 @@ See also:
 
 The module defines the following functions:
 
-                                          *print_tb()..traceback.txt;*
+                                           *print_tb()..traceback.txt*
 traceback.print_tb(tb, limit=None, file=None)
 
    Print up to _limit_ stack trace entries from traceback object _tb_
@@ -40,7 +40,7 @@ traceback.print_tb(tb, limit=None, file=None)
 
    Changed in version 3.5: Added negative _limit_ support.
 
-                                   *print_exception()..traceback.txt;*
+                                    *print_exception()..traceback.txt*
 traceback.print_exception(exc, /[, value, tb], limit=None, file=None, chain=True)
 
    Print exception information and stack trace entries from traceback
@@ -73,20 +73,20 @@ traceback.print_exception(exc, /[, value, tb], limit=None, file=None, chain=True
    Changed in version 3.10: The _etype_ parameter has been renamed to
    _exc_ and is now positional-only.
 
-                                         *print_exc()..traceback.txt;*
+                                          *print_exc()..traceback.txt*
 traceback.print_exc(limit=None, file=None, chain=True)
 
    This is a shorthand for "print_exception(sys.exception(), limit,
    file, chain)".
 
-                                        *print_last()..traceback.txt;*
+                                         *print_last()..traceback.txt*
 traceback.print_last(limit=None, file=None, chain=True)
 
    This is a shorthand for "print_exception(sys.last_exc, limit, file,
    chain)".  In general it will work only after an exception has
    reached an interactive prompt (see "sys.last_exc").
 
-                                       *print_stack()..traceback.txt;*
+                                        *print_stack()..traceback.txt*
 traceback.print_stack(f=None, limit=None, file=None)
 
    Print up to _limit_ stack trace entries (starting from the
@@ -98,7 +98,7 @@ traceback.print_stack(f=None, limit=None, file=None)
 
    Changed in version 3.5: Added negative _limit_ support.
 
-traceback.extract_tb(tb, limit=None)    *extract_tb()..traceback.txt;*
+traceback.extract_tb(tb, limit=None)     *extract_tb()..traceback.txt*
 
    Return a "StackSummary" object representing a list of “pre-
    processed” stack trace entries extracted from the traceback object
@@ -110,15 +110,14 @@ traceback.extract_tb(tb, limit=None)    *extract_tb()..traceback.txt;*
    trace.  The "line" is a string with leading and trailing whitespace
    stripped; if the source is not available it is "None".
 
-                                     *extract_stack()..traceback.txt;*
+                                      *extract_stack()..traceback.txt*
 traceback.extract_stack(f=None, limit=None)
 
    Extract the raw traceback from the current stack frame.  The return
    value has the same format as for "extract_tb()".  The optional _f_
    and _limit_ arguments have the same meaning as for "print_stack()".
 
-                                       *format_list()..traceback.txt;*
-traceback.format_list(extracted_list)
+traceback.format_list(extracted_list)   *format_list()..traceback.txt*
 
    Given a list of tuples or "FrameSummary" objects as returned by
    "extract_tb()" or "extract_stack()", return a list of strings ready
@@ -127,7 +126,7 @@ traceback.format_list(extracted_list)
    a newline; the strings may contain internal newlines as well, for
    those items whose source text line is not "None".
 
-                             *format_exception_only()..traceback.txt;*
+                              *format_exception_only()..traceback.txt*
 traceback.format_exception_only(exc, /[, value])
 
    Format the exception part of a traceback using an exception value
@@ -146,7 +145,7 @@ traceback.format_exception_only(exc, /[, value])
    Changed in version 3.10: The _etype_ parameter has been renamed to
    _exc_ and is now positional-only.
 
-                                  *format_exception()..traceback.txt;*
+                                   *format_exception()..traceback.txt*
 traceback.format_exception(exc, /[, value, tb], limit=None, chain=True)
 
    Format a stack trace and the exception information.  The arguments
@@ -162,29 +161,29 @@ traceback.format_exception(exc, /[, value, tb], limit=None, chain=True)
    Changed in version 3.10: This function’s behavior and signature
    were modified to match "print_exception()".
 
-                                        *format_exc()..traceback.txt;*
+                                         *format_exc()..traceback.txt*
 traceback.format_exc(limit=None, chain=True)
 
    This is like "print_exc(limit)" but returns a string instead of
    printing to a file.
 
-traceback.format_tb(tb, limit=None)      *format_tb()..traceback.txt;*
+traceback.format_tb(tb, limit=None)       *format_tb()..traceback.txt*
 
    A shorthand for "format_list(extract_tb(tb, limit))".
 
-                                      *format_stack()..traceback.txt;*
+                                       *format_stack()..traceback.txt*
 traceback.format_stack(f=None, limit=None)
 
    A shorthand for "format_list(extract_stack(f, limit))".
 
-traceback.clear_frames(tb)            *clear_frames()..traceback.txt;*
+traceback.clear_frames(tb)             *clear_frames()..traceback.txt*
 
    Clears the local variables of all the stack frames in a traceback
    _tb_ by calling the "clear()" method of each frame object.
 
    New in version 3.4.
 
-traceback.walk_stack(f)                 *walk_stack()..traceback.txt;*
+traceback.walk_stack(f)                  *walk_stack()..traceback.txt*
 
    Walk a stack following "f.f_back" from the given frame, yielding
    the frame and line number for each frame. If _f_ is "None", the
@@ -193,7 +192,7 @@ traceback.walk_stack(f)                 *walk_stack()..traceback.txt;*
 
    New in version 3.5.
 
-traceback.walk_tb(tb)                      *walk_tb()..traceback.txt;*
+traceback.walk_tb(tb)                       *walk_tb()..traceback.txt*
 
    Walk a traceback following "tb_next" yielding the frame and line
    number for each frame. This helper is used with
@@ -212,7 +211,7 @@ New in version 3.5.
 "TracebackException" objects are created from actual exceptions to
 capture data for later printing in a lightweight fashion.
 
-                                  *TracebackException..traceback.txt;*
+                                   *TracebackException..traceback.txt*
 class traceback.TracebackException(exc_type, exc_value, exc_traceback, *, limit=None, lookup_lines=True, capture_locals=False, compact=False, max_group_width=15, max_group_depth=10)
 
    Capture an exception for later rendering. _limit_, _lookup_lines_
@@ -232,15 +231,15 @@ class traceback.TracebackException(exc_type, exc_value, exc_traceback, *, limit=
    a single exception group’s exceptions array. The formatted output
    is truncated when either limit is exceeded.
 
-   __cause__               *TracebackException.__cause__..traceback.txt;*
+   __cause__                *TracebackException.__cause__..traceback.txt*
 
       A "TracebackException" of the original "__cause__".
 
-   __context__           *TracebackException.__context__..traceback.txt;*
+   __context__            *TracebackException.__context__..traceback.txt*
 
       A "TracebackException" of the original "__context__".
 
-   exceptions             *TracebackException.exceptions..traceback.txt;*
+   exceptions              *TracebackException.exceptions..traceback.txt*
 
       If "self" represents an "ExceptionGroup", this field holds a
       list of "TracebackException" instances representing the nested
@@ -248,12 +247,12 @@ class traceback.TracebackException(exc_type, exc_value, exc_traceback, *, limit=
 
       New in version 3.11.
 
-             *TracebackException.__suppress_context__..traceback.txt;*
+              *TracebackException.__suppress_context__..traceback.txt*
    __suppress_context__
 
       The "__suppress_context__" value from the original exception.
 
-   __notes__               *TracebackException.__notes__..traceback.txt;*
+   __notes__                *TracebackException.__notes__..traceback.txt*
 
       The "__notes__" value from the original exception, or "None" if
       the exception does not have any notes. If it is not "None" is it
@@ -261,50 +260,50 @@ class traceback.TracebackException(exc_type, exc_value, exc_traceback, *, limit=
 
       New in version 3.11.
 
-   stack                       *TracebackException.stack..traceback.txt;*
+   stack                        *TracebackException.stack..traceback.txt*
 
       A "StackSummary" representing the traceback.
 
-   exc_type                 *TracebackException.exc_type..traceback.txt;*
+   exc_type                  *TracebackException.exc_type..traceback.txt*
 
       The class of the original traceback.
 
-   filename                 *TracebackException.filename..traceback.txt;*
+   filename                  *TracebackException.filename..traceback.txt*
 
       For syntax errors - the file name where the error occurred.
 
-   lineno                     *TracebackException.lineno..traceback.txt;*
+   lineno                      *TracebackException.lineno..traceback.txt*
 
       For syntax errors - the line number where the error occurred.
 
-   end_lineno             *TracebackException.end_lineno..traceback.txt;*
+   end_lineno              *TracebackException.end_lineno..traceback.txt*
 
       For syntax errors - the end line number where the error
       occurred. Can be "None" if not present.
 
       New in version 3.10.
 
-   text                         *TracebackException.text..traceback.txt;*
+   text                          *TracebackException.text..traceback.txt*
 
       For syntax errors - the text where the error occurred.
 
-   offset                     *TracebackException.offset..traceback.txt;*
+   offset                      *TracebackException.offset..traceback.txt*
 
       For syntax errors - the offset into the text where the error
       occurred.
 
-   end_offset             *TracebackException.end_offset..traceback.txt;*
+   end_offset              *TracebackException.end_offset..traceback.txt*
 
       For syntax errors - the end offset into the text where the error
       occurred. Can be "None" if not present.
 
       New in version 3.10.
 
-   msg                           *TracebackException.msg..traceback.txt;*
+   msg                            *TracebackException.msg..traceback.txt*
 
       For syntax errors - the compiler error message.
 
-                 *TracebackException.from_exception()..traceback.txt;*
+                  *TracebackException.from_exception()..traceback.txt*
    classmethod from_exception(exc, *, limit=None, lookup_lines=True, capture_locals=False)
 
       Capture an exception for later rendering. _limit_,
@@ -314,7 +313,7 @@ class traceback.TracebackException(exc_type, exc_value, exc_traceback, *, limit=
       Note that when locals are captured, they are also shown in the
       traceback.
 
-                          *TracebackException.print()..traceback.txt;*
+                           *TracebackException.print()..traceback.txt*
    print(*, file=None, chain=True)
 
       Print to _file_ (default "sys.stderr") the exception information
@@ -322,7 +321,7 @@ class traceback.TracebackException(exc_type, exc_value, exc_traceback, *, limit=
 
       New in version 3.11.
 
-   format(*, chain=True)    *TracebackException.format()..traceback.txt;*
+   format(*, chain=True)     *TracebackException.format()..traceback.txt*
 
       Format the exception.
 
@@ -337,7 +336,7 @@ class traceback.TracebackException(exc_type, exc_value, exc_traceback, *, limit=
       The message indicating which exception occurred is always the
       last string in the output.
 
-          *TracebackException.format_exception_only()..traceback.txt;*
+           *TracebackException.format_exception_only()..traceback.txt*
    format_exception_only(*, show_group=False)
 
       Format the exception part of the traceback.
@@ -372,10 +371,10 @@ New in version 3.5.
 
 "StackSummary" objects represent a call stack ready for formatting.
 
-class traceback.StackSummary            *StackSummary..traceback.txt;*
+class traceback.StackSummary             *StackSummary..traceback.txt*
 
 
-                              *StackSummary.extract()..traceback.txt;*
+                               *StackSummary.extract()..traceback.txt*
    classmethod extract(frame_gen, *, limit=None, lookup_lines=True, capture_locals=False)
 
       Construct a "StackSummary" object from a frame generator (such
@@ -393,7 +392,7 @@ class traceback.StackSummary            *StackSummary..traceback.txt;*
       local variable (when _capture_locals_ is "True") are no longer
       propagated to the caller.
 
-                            *StackSummary.from_list()..traceback.txt;*
+                             *StackSummary.from_list()..traceback.txt*
    classmethod from_list(a_list)
 
       Construct a "StackSummary" object from a supplied list of
@@ -401,7 +400,7 @@ class traceback.StackSummary            *StackSummary..traceback.txt;*
       should be a 4-tuple with filename, lineno, name, line as the
       elements.
 
-   format()                       *StackSummary.format()..traceback.txt;*
+   format()                        *StackSummary.format()..traceback.txt*
 
       Returns a list of strings ready for printing.  Each string in
       the resulting list corresponds to a single frame from the stack.
@@ -415,7 +414,7 @@ class traceback.StackSummary            *StackSummary..traceback.txt;*
       Changed in version 3.6: Long sequences of repeated frames are
       now abbreviated.
 
-                 *StackSummary.format_frame_summary()..traceback.txt;*
+                  *StackSummary.format_frame_summary()..traceback.txt*
    format_frame_summary(frame_summary)
 
       Returns a string for printing one of the frames involved in the
@@ -433,7 +432,7 @@ New in version 3.5.
 
 A "FrameSummary" object represents a single frame in a traceback.
 
-                                        *FrameSummary..traceback.txt;*
+                                         *FrameSummary..traceback.txt*
 class traceback.FrameSummary(filename, lineno, name, lookup_line=True, locals=None, line=None)
 
    Represent a single frame in the traceback or stack that is being

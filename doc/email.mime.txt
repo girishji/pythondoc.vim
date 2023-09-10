@@ -1,4 +1,4 @@
-*emailmime.txt;*                              Last change: 2023 Sep 09
+*email.mime.txt;*                             Last change: 2023 Sep 10
 
 "email.mime": Creating email and MIME objects from scratch
 **********************************************************
@@ -27,7 +27,7 @@ subclasses to make things easier.
 
 Here are the classes:
 
-                                            *MIMEBase..emailmime.txt;*
+                                            *MIMEBase..email.mime.txt*
 class email.mime.base.MIMEBase(_maintype, _subtype, *, policy=compat32, **_params)
 
    Module: "email.mime.base"
@@ -51,7 +51,7 @@ class email.mime.base.MIMEBase(_maintype, _subtype, *, policy=compat32, **_param
 
    Changed in version 3.6: Added _policy_ keyword-only parameter.
 
-                                    *MIMENonMultipart..emailmime.txt;*
+                                    *MIMENonMultipart..email.mime.txt*
 class email.mime.nonmultipart.MIMENonMultipart
 
    Module: "email.mime.nonmultipart"
@@ -62,7 +62,7 @@ class email.mime.nonmultipart.MIMENonMultipart
    only makes sense for _multipart_ messages.  If "attach()" is
    called, a "MultipartConversionError" exception is raised.
 
-                                       *MIMEMultipart..emailmime.txt;*
+                                       *MIMEMultipart..email.mime.txt*
 class email.mime.multipart.MIMEMultipart(_subtype='mixed', boundary=None, _subparts=None, *, policy=compat32, **_params)
 
    Module: "email.mime.multipart"
@@ -90,7 +90,7 @@ class email.mime.multipart.MIMEMultipart(_subtype='mixed', boundary=None, _subpa
 
    Changed in version 3.6: Added _policy_ keyword-only parameter.
 
-                                     *MIMEApplication..emailmime.txt;*
+                                     *MIMEApplication..email.mime.txt*
 class email.mime.application.MIMEApplication(_data, _subtype='octet-stream', _encoder=email.encoders.encode_base64, *, policy=compat32, **_params)
 
    Module: "email.mime.application"
@@ -117,7 +117,7 @@ class email.mime.application.MIMEApplication(_data, _subtype='octet-stream', _en
 
    Changed in version 3.6: Added _policy_ keyword-only parameter.
 
-                                           *MIMEAudio..emailmime.txt;*
+                                           *MIMEAudio..email.mime.txt*
 class email.mime.audio.MIMEAudio(_audiodata, _subtype=None, _encoder=email.encoders.encode_base64, *, policy=compat32, **_params)
 
    Module: "email.mime.audio"
@@ -147,7 +147,7 @@ class email.mime.audio.MIMEAudio(_audiodata, _subtype=None, _encoder=email.encod
 
    Changed in version 3.6: Added _policy_ keyword-only parameter.
 
-                                           *MIMEImage..emailmime.txt;*
+                                           *MIMEImage..email.mime.txt*
 class email.mime.image.MIMEImage(_imagedata, _subtype=None, _encoder=email.encoders.encode_base64, *, policy=compat32, **_params)
 
    Module: "email.mime.image"
@@ -178,7 +178,7 @@ class email.mime.image.MIMEImage(_imagedata, _subtype=None, _encoder=email.encod
 
    Changed in version 3.6: Added _policy_ keyword-only parameter.
 
-                                         *MIMEMessage..emailmime.txt;*
+                                         *MIMEMessage..email.mime.txt*
 class email.mime.message.MIMEMessage(_msg, _subtype='rfc822', *, policy=compat32)
 
    Module: "email.mime.message"
@@ -195,7 +195,7 @@ class email.mime.message.MIMEMessage(_msg, _subtype='rfc822', *, policy=compat32
 
    Changed in version 3.6: Added _policy_ keyword-only parameter.
 
-                                            *MIMEText..emailmime.txt;*
+                                            *MIMEText..email.mime.txt*
 class email.mime.text.MIMEText(_text, _subtype='plain', _charset=None, *, policy=compat32)
 
    Module: "email.mime.text"

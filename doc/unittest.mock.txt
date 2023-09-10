@@ -1,4 +1,4 @@
-*unittestmock.txt;*                           Last change: 2023 Sep 09
+*unittest.mock.txt;*                          Last change: 2023 Sep 10
 
 "unittest.mock" — mock object library
 *************************************
@@ -194,7 +194,7 @@ in a particular module with a "Mock" object. By default "patch()" will
 create a "MagicMock" for you. You can specify an alternative class of
 "Mock" using the _new_callable_ argument to "patch()".
 
-                                             *Mock..unittestmock.txt;*
+                                             *Mock..unittest.mock.txt*
 class unittest.mock.Mock(spec=None, side_effect=None, return_value=DEFAULT, wraps=None, name=None, spec_set=None, unsafe=False, **kwargs)
 
    Create a new "Mock" object. "Mock" takes several optional arguments
@@ -261,7 +261,7 @@ class unittest.mock.Mock(spec=None, side_effect=None, return_value=DEFAULT, wrap
    will be used to set attributes on the mock after it is created. See
    the "configure_mock()" method for details.
 
-   assert_called()              *Mock.assert_called()..unittestmock.txt;*
+   assert_called()              *Mock.assert_called()..unittest.mock.txt*
 
       Assert that the mock was called at least once.
 
@@ -272,7 +272,7 @@ class unittest.mock.Mock(spec=None, side_effect=None, return_value=DEFAULT, wrap
 
       New in version 3.6.
 
-   assert_called_once()    *Mock.assert_called_once()..unittestmock.txt;*
+   assert_called_once()    *Mock.assert_called_once()..unittest.mock.txt*
 
       Assert that the mock was called exactly once.
 
@@ -289,7 +289,7 @@ class unittest.mock.Mock(spec=None, side_effect=None, return_value=DEFAULT, wrap
 
       New in version 3.6.
 
-                        *Mock.assert_called_with()..unittestmock.txt;*
+                        *Mock.assert_called_with()..unittest.mock.txt*
    assert_called_with(*args, **kwargs)
 
       This method is a convenient way of asserting that the last call
@@ -300,7 +300,7 @@ class unittest.mock.Mock(spec=None, side_effect=None, return_value=DEFAULT, wrap
       <Mock name='mock.method()' id='...'>
       >>> mock.method.assert_called_with(1, 2, 3, test='wow')
 
-                   *Mock.assert_called_once_with()..unittestmock.txt;*
+                   *Mock.assert_called_once_with()..unittest.mock.txt*
    assert_called_once_with(*args, **kwargs)
 
       Assert that the mock was called exactly once and that call was
@@ -315,7 +315,7 @@ class unittest.mock.Mock(spec=None, side_effect=None, return_value=DEFAULT, wrap
         ...
       AssertionError: Expected 'mock' to be called once. Called 2 times.
 
-                           *Mock.assert_any_call()..unittestmock.txt;*
+                           *Mock.assert_any_call()..unittest.mock.txt*
    assert_any_call(*args, **kwargs)
 
       assert the mock has been called with the specified arguments.
@@ -330,7 +330,7 @@ class unittest.mock.Mock(spec=None, side_effect=None, return_value=DEFAULT, wrap
       >>> mock('some', 'thing', 'else')
       >>> mock.assert_any_call(1, 2, arg='thing')
 
-                          *Mock.assert_has_calls()..unittestmock.txt;*
+                          *Mock.assert_has_calls()..unittest.mock.txt*
    assert_has_calls(calls, any_order=False)
 
       assert the mock has been called with the specified calls. The
@@ -352,7 +352,7 @@ class unittest.mock.Mock(spec=None, side_effect=None, return_value=DEFAULT, wrap
       >>> calls = [call(4), call(2), call(3)]
       >>> mock.assert_has_calls(calls, any_order=True)
 
-   assert_not_called()      *Mock.assert_not_called()..unittestmock.txt;*
+   assert_not_called()      *Mock.assert_not_called()..unittest.mock.txt*
 
       Assert the mock was never called.
 
@@ -366,7 +366,7 @@ class unittest.mock.Mock(spec=None, side_effect=None, return_value=DEFAULT, wrap
 
       New in version 3.5.
 
-                                *Mock.reset_mock()..unittestmock.txt;*
+                                *Mock.reset_mock()..unittest.mock.txt*
    reset_mock(*, return_value=False, side_effect=False)
 
       The reset_mock method resets all the call attributes on a mock
@@ -395,7 +395,7 @@ class unittest.mock.Mock(spec=None, side_effect=None, return_value=DEFAULT, wrap
 
         _return_value_, and "side_effect" are keyword-only arguments.
 
-                             *Mock.mock_add_spec()..unittestmock.txt;*
+                             *Mock.mock_add_spec()..unittest.mock.txt*
    mock_add_spec(spec, spec_set=False)
 
       Add a spec to a mock. _spec_ can either be an object or a list
@@ -405,13 +405,13 @@ class unittest.mock.Mock(spec=None, side_effect=None, return_value=DEFAULT, wrap
       If _spec_set_ is true then only attributes on the spec can be
       set.
 
-   attach_mock(mock, attribute)   *Mock.attach_mock()..unittestmock.txt;*
+   attach_mock(mock, attribute)   *Mock.attach_mock()..unittest.mock.txt*
 
       Attach a mock as an attribute of this one, replacing its name
       and parent. Calls to the attached mock will be recorded in the
       "method_calls" and "mock_calls" attributes of this one.
 
-   configure_mock(**kwargs)    *Mock.configure_mock()..unittestmock.txt;*
+   configure_mock(**kwargs)    *Mock.configure_mock()..unittest.mock.txt*
 
       Set attributes on the mock through keyword arguments.
 
@@ -445,7 +445,7 @@ class unittest.mock.Mock(spec=None, side_effect=None, return_value=DEFAULT, wrap
       "configure_mock()" exists to make it easier to do configuration
       after the mock has been created.
 
-   __dir__()                          *Mock.__dir__()..unittestmock.txt;*
+   __dir__()                          *Mock.__dir__()..unittest.mock.txt*
 
       "Mock" objects limit the results of "dir(some_mock)" to useful
       results. For mocks with a _spec_ this includes all the permitted
@@ -454,7 +454,7 @@ class unittest.mock.Mock(spec=None, side_effect=None, return_value=DEFAULT, wrap
       See "FILTER_DIR" for what this filtering does, and how to switch
       it off.
 
-   _get_child_mock(**kw)      *Mock._get_child_mock()..unittestmock.txt;*
+   _get_child_mock(**kw)      *Mock._get_child_mock()..unittest.mock.txt*
 
       Create the child mocks for attributes and return value. By
       default child mocks will be the same type as the parent.
@@ -464,7 +464,7 @@ class unittest.mock.Mock(spec=None, side_effect=None, return_value=DEFAULT, wrap
       For non-callable mocks the callable variant will be used (rather
       than any custom subclass).
 
-   called                                *Mock.called..unittestmock.txt;*
+   called                                *Mock.called..unittest.mock.txt*
 
       A boolean representing whether or not the mock object has been
       called:
@@ -476,7 +476,7 @@ class unittest.mock.Mock(spec=None, side_effect=None, return_value=DEFAULT, wrap
       >>> mock.called
       True
 
-   call_count                        *Mock.call_count..unittestmock.txt;*
+   call_count                        *Mock.call_count..unittest.mock.txt*
 
       An integer telling you how many times the mock object has been
       called:
@@ -489,7 +489,7 @@ class unittest.mock.Mock(spec=None, side_effect=None, return_value=DEFAULT, wrap
       >>> mock.call_count
       2
 
-   return_value                    *Mock.return_value..unittestmock.txt;*
+   return_value                    *Mock.return_value..unittest.mock.txt*
 
       Set this to configure the value returned by calling the mock:
 
@@ -515,7 +515,7 @@ class unittest.mock.Mock(spec=None, side_effect=None, return_value=DEFAULT, wrap
       >>> mock()
       3
 
-   side_effect                      *Mock.side_effect..unittestmock.txt;*
+   side_effect                      *Mock.side_effect..unittest.mock.txt*
 
       This can either be a function to be called when the mock is
       called, an iterable or an exception (class or instance) to be
@@ -582,7 +582,7 @@ class unittest.mock.Mock(spec=None, side_effect=None, return_value=DEFAULT, wrap
       >>> m()
       3
 
-   call_args                          *Mock.call_args..unittestmock.txt;*
+   call_args                          *Mock.call_args..unittest.mock.txt*
 
       This is either "None" (if the mock hasn’t been called), or the
       arguments that the mock was last called with. This will be in
@@ -624,7 +624,7 @@ class unittest.mock.Mock(spec=None, side_effect=None, return_value=DEFAULT, wrap
 
       Changed in version 3.8: Added "args" and "kwargs" properties.
 
-   call_args_list                *Mock.call_args_list..unittestmock.txt;*
+   call_args_list                *Mock.call_args_list..unittest.mock.txt*
 
       This is a list of all the calls made to the mock object in
       sequence (so the length of the list is the number of times it
@@ -646,7 +646,7 @@ class unittest.mock.Mock(spec=None, side_effect=None, return_value=DEFAULT, wrap
       unpacked as tuples to get at the individual arguments. See calls
       as tuples.
 
-   method_calls                    *Mock.method_calls..unittestmock.txt;*
+   method_calls                    *Mock.method_calls..unittest.mock.txt*
 
       As well as tracking calls to themselves, mocks also track calls
       to methods and attributes, and _their_ methods and attributes:
@@ -663,7 +663,7 @@ class unittest.mock.Mock(spec=None, side_effect=None, return_value=DEFAULT, wrap
       unpacked as tuples to get at the individual arguments. See calls
       as tuples.
 
-   mock_calls                        *Mock.mock_calls..unittestmock.txt;*
+   mock_calls                        *Mock.mock_calls..unittest.mock.txt*
 
       "mock_calls" records _all_ calls to the mock object, its
       methods, magic methods _and_ return value mocks.
@@ -701,7 +701,7 @@ class unittest.mock.Mock(spec=None, side_effect=None, return_value=DEFAULT, wrap
         >>> mock.mock_calls[-1] == call.top(a=-1).bottom()
         True
 
-   __class__                          *Mock.__class__..unittestmock.txt;*
+   __class__                          *Mock.__class__..unittest.mock.txt*
 
       Normally the "__class__" attribute of an object will return its
       type. For a mock object with a "spec", "__class__" returns the
@@ -721,7 +721,7 @@ class unittest.mock.Mock(spec=None, side_effect=None, return_value=DEFAULT, wrap
       >>> isinstance(mock, dict)
       True
 
-                                  *NonCallableMock..unittestmock.txt;*
+                                  *NonCallableMock..unittest.mock.txt*
 class unittest.mock.NonCallableMock(spec=None, wraps=None, name=None, spec_set=None, **kwargs)
 
    A non-callable version of "Mock". The constructor parameters have
@@ -787,7 +787,7 @@ will also apply to method calls on the mock object.
    Changed in version 3.4: Added signature introspection on specced
    and autospecced mock objects.
 
-                                     *PropertyMock..unittestmock.txt;*
+                                     *PropertyMock..unittest.mock.txt*
 class unittest.mock.PropertyMock(*args, **kwargs)
 
    A mock intended to be used as a property, or other descriptor, on a
@@ -827,7 +827,7 @@ the mock type object:
    >>> p.assert_called_once_with()
 <
 
-                                        *AsyncMock..unittestmock.txt;*
+                                        *AsyncMock..unittest.mock.txt*
 class unittest.mock.AsyncMock(spec=None, side_effect=None, return_value=DEFAULT, wraps=None, name=None, spec_set=None, unsafe=False, **kwargs)
 
    An asynchronous version of "MagicMock". The "AsyncMock" object will
@@ -895,7 +895,7 @@ class unittest.mock.AsyncMock(spec=None, side_effect=None, return_value=DEFAULT,
 
    New in version 3.8.
 
-   assert_awaited()       *AsyncMock.assert_awaited()..unittestmock.txt;*
+   assert_awaited()       *AsyncMock.assert_awaited()..unittest.mock.txt*
 
       Assert that the mock was awaited at least once. Note that this
       is separate from the object having been called, the "await"
@@ -915,7 +915,7 @@ class unittest.mock.AsyncMock(spec=None, side_effect=None, return_value=DEFAULT,
       >>> asyncio.run(main(coroutine_mock))
       >>> mock.assert_awaited()
 
-                  *AsyncMock.assert_awaited_once()..unittestmock.txt;*
+                  *AsyncMock.assert_awaited_once()..unittest.mock.txt*
    assert_awaited_once()
 
       Assert that the mock was awaited exactly once.
@@ -932,7 +932,7 @@ class unittest.mock.AsyncMock(spec=None, side_effect=None, return_value=DEFAULT,
       ...
       AssertionError: Expected mock to have been awaited once. Awaited 2 times.
 
-                  *AsyncMock.assert_awaited_with()..unittestmock.txt;*
+                  *AsyncMock.assert_awaited_with()..unittest.mock.txt*
    assert_awaited_with(*args, **kwargs)
 
       Assert that the last await was with the specified arguments.
@@ -950,7 +950,7 @@ class unittest.mock.AsyncMock(spec=None, side_effect=None, return_value=DEFAULT,
       Expected: mock('other')
       Actual: mock('foo', bar='bar')
 
-             *AsyncMock.assert_awaited_once_with()..unittestmock.txt;*
+             *AsyncMock.assert_awaited_once_with()..unittest.mock.txt*
    assert_awaited_once_with(*args, **kwargs)
 
       Assert that the mock was awaited exactly once and with the
@@ -968,7 +968,7 @@ class unittest.mock.AsyncMock(spec=None, side_effect=None, return_value=DEFAULT,
       ...
       AssertionError: Expected mock to have been awaited once. Awaited 2 times.
 
-                     *AsyncMock.assert_any_await()..unittestmock.txt;*
+                     *AsyncMock.assert_any_await()..unittest.mock.txt*
    assert_any_await(*args, **kwargs)
 
       Assert the mock has ever been awaited with the specified
@@ -986,7 +986,7 @@ class unittest.mock.AsyncMock(spec=None, side_effect=None, return_value=DEFAULT,
       ...
       AssertionError: mock('other') await not found
 
-                    *AsyncMock.assert_has_awaits()..unittestmock.txt;*
+                    *AsyncMock.assert_has_awaits()..unittest.mock.txt*
    assert_has_awaits(calls, any_order=False)
 
       Assert the mock has been awaited with the specified calls. The
@@ -1013,7 +1013,7 @@ class unittest.mock.AsyncMock(spec=None, side_effect=None, return_value=DEFAULT,
       >>> asyncio.run(main('bar'))
       >>> mock.assert_has_awaits(calls)
 
-                   *AsyncMock.assert_not_awaited()..unittestmock.txt;*
+                   *AsyncMock.assert_not_awaited()..unittest.mock.txt*
    assert_not_awaited()
 
       Assert that the mock was never awaited.
@@ -1021,13 +1021,13 @@ class unittest.mock.AsyncMock(spec=None, side_effect=None, return_value=DEFAULT,
       >>> mock = AsyncMock()
       >>> mock.assert_not_awaited()
 
-                           *AsyncMock.reset_mock()..unittestmock.txt;*
+                           *AsyncMock.reset_mock()..unittest.mock.txt*
    reset_mock(*args, **kwargs)
 
       See "Mock.reset_mock()". Also sets "await_count" to 0,
       "await_args" to None, and clears the "await_args_list".
 
-   await_count                 *AsyncMock.await_count..unittestmock.txt;*
+   await_count                 *AsyncMock.await_count..unittest.mock.txt*
 
       An integer keeping track of how many times the mock object has
       been awaited.
@@ -1043,7 +1043,7 @@ class unittest.mock.AsyncMock(spec=None, side_effect=None, return_value=DEFAULT,
       >>> mock.await_count
       2
 
-   await_args                   *AsyncMock.await_args..unittestmock.txt;*
+   await_args                   *AsyncMock.await_args..unittest.mock.txt*
 
       This is either "None" (if the mock hasn’t been awaited), or the
       arguments that the mock was last awaited with. Functions the
@@ -1061,7 +1061,7 @@ class unittest.mock.AsyncMock(spec=None, side_effect=None, return_value=DEFAULT,
       >>> mock.await_args
       call('bar')
 
-   await_args_list         *AsyncMock.await_args_list..unittestmock.txt;*
+   await_args_list         *AsyncMock.await_args_list..unittest.mock.txt*
 
       This is a list of all the awaits made to the mock object in
       sequence (so the length of the list is the number of times it
@@ -1081,7 +1081,7 @@ class unittest.mock.AsyncMock(spec=None, side_effect=None, return_value=DEFAULT,
       >>> mock.await_args_list
       [call('foo'), call('bar')]
 
-                                    *ThreadingMock..unittestmock.txt;*
+                                    *ThreadingMock..unittest.mock.txt*
 class unittest.mock.ThreadingMock(spec=None, side_effect=None, return_value=DEFAULT, wraps=None, name=None, spec_set=None, unsafe=False, *, timeout=UNSET, **kwargs)
 
    A version of "MagicMock" for multithreading tests. The
@@ -1095,7 +1095,7 @@ class unittest.mock.ThreadingMock(spec=None, side_effect=None, return_value=DEFA
    You can configure the global default timeout by setting
    "ThreadingMock.DEFAULT_TIMEOUT".
 
-                *ThreadingMock.wait_until_called()..unittestmock.txt;*
+                *ThreadingMock.wait_until_called()..unittest.mock.txt*
    wait_until_called(*, timeout=UNSET)
 
       Waits until the mock is called.
@@ -1110,7 +1110,7 @@ class unittest.mock.ThreadingMock(spec=None, side_effect=None, return_value=DEFA
       >>> mock.wait_until_called(timeout=1)
       >>> thread.join()
 
-         *ThreadingMock.wait_until_any_call_with()..unittestmock.txt;*
+         *ThreadingMock.wait_until_any_call_with()..unittest.mock.txt*
    wait_until_any_call_with(*args, **kwargs)
 
       Waits until the the mock is called with the specified arguments.
@@ -1124,7 +1124,7 @@ class unittest.mock.ThreadingMock(spec=None, side_effect=None, return_value=DEFA
       >>> mock.wait_until_any_call_with("arg1", "arg2", arg="thing")
       >>> thread.join()
 
-   DEFAULT_TIMEOUT     *ThreadingMock.DEFAULT_TIMEOUT..unittestmock.txt;*
+   DEFAULT_TIMEOUT     *ThreadingMock.DEFAULT_TIMEOUT..unittest.mock.txt*
 
       Global default timeout in seconds to create instances of
       "ThreadingMock".
@@ -1369,7 +1369,7 @@ Note:
   The key is to do the patching in the right namespace. See the
   section where to patch.
 
-                                          *patch()..unittestmock.txt;*
+                                          *patch()..unittest.mock.txt*
 unittest.mock.patch(target, new=DEFAULT, spec=None, create=False, spec_set=None, autospec=None, new_callable=None, **kwargs)
 
    "patch()" acts as a function decorator, class decorator or a
@@ -1581,7 +1581,7 @@ target is an async function.
 patch.object
 ------------
 
-                                   *patch.object()..unittestmock.txt;*
+                                   *patch.object()..unittest.mock.txt*
 patch.object(target, attribute, new=DEFAULT, spec=None, create=False, spec_set=None, autospec=None, new_callable=None, **kwargs)
 
    patch the named member (_attribute_) on an object (_target_) with a
@@ -1618,7 +1618,7 @@ same meaning as they do for "patch()".
 patch.dict
 ----------
 
-                                     *patch.dict()..unittestmock.txt;*
+                                     *patch.dict()..unittest.mock.txt*
 patch.dict(in_dict, values=(), clear=False, **kwargs)
 
    Patch a dictionary, or dictionary like object, and restore the
@@ -1734,7 +1734,7 @@ This corresponds to the magic methods "__getitem__()",
 patch.multiple
 --------------
 
-                                 *patch.multiple()..unittestmock.txt;*
+                                 *patch.multiple()..unittest.mock.txt*
 patch.multiple(target, spec=None, create=False, spec_set=None, autospec=None, new_callable=None, **kwargs)
 
    Perform multiple patches in a single call. It takes the object to
@@ -1867,7 +1867,7 @@ Caution:
 It is also possible to stop all patches which have been started by
 using "patch.stopall()".
 
-patch.stopall()                   *patch.stopall()..unittestmock.txt;*
+patch.stopall()                   *patch.stopall()..unittest.mock.txt*
 
    Stop all active patches. Only stops patches started with "start".
 
@@ -2115,7 +2115,7 @@ Magic Mock
 There are two "MagicMock" variants: "MagicMock" and
 "NonCallableMagicMock".
 
-                                        *MagicMock..unittestmock.txt;*
+                                        *MagicMock..unittest.mock.txt*
 class unittest.mock.MagicMock(*args, **kw)
 
    "MagicMock" is a subclass of "Mock" with default implementations of
@@ -2127,7 +2127,7 @@ class unittest.mock.MagicMock(*args, **kw)
    If you use the _spec_ or _spec_set_ arguments then _only_ magic
    methods that exist in the spec will be created.
 
-                             *NonCallableMagicMock..unittestmock.txt;*
+                             *NonCallableMagicMock..unittest.mock.txt*
 class unittest.mock.NonCallableMagicMock(*args, **kw)
 
    A non-callable version of "MagicMock".
@@ -2271,7 +2271,7 @@ Helpers
 sentinel
 --------
 
-unittest.mock.sentinel                   *sentinel..unittestmock.txt;*
+unittest.mock.sentinel                   *sentinel..unittest.mock.txt*
 
    The "sentinel" object provides a convenient way of providing unique
    objects for your tests.
@@ -2305,7 +2305,7 @@ sentinel.some_object
 DEFAULT
 -------
 
-unittest.mock.DEFAULT                     *DEFAULT..unittestmock.txt;*
+unittest.mock.DEFAULT                     *DEFAULT..unittest.mock.txt*
 
    The "DEFAULT" object is a pre-created sentinel (actually
    "sentinel.DEFAULT"). It can be used by "side_effect" functions to
@@ -2315,7 +2315,7 @@ unittest.mock.DEFAULT                     *DEFAULT..unittestmock.txt;*
 call
 ----
 
-unittest.mock.call(*args, **kwargs)        *call()..unittestmock.txt;*
+unittest.mock.call(*args, **kwargs)        *call()..unittest.mock.txt*
 
    "call()" is a helper object for making simpler assertions, for
    comparing with "call_args", "call_args_list", "mock_calls" and
@@ -2328,7 +2328,7 @@ unittest.mock.call(*args, **kwargs)        *call()..unittestmock.txt;*
    >>> m.call_args_list == [call(1, 2, a='foo', b='bar'), call()]
    True
 
-call.call_list()                 *call.call_list()..unittestmock.txt;*
+call.call_list()                 *call.call_list()..unittest.mock.txt*
 
    For a call object that represents multiple calls, "call_list()"
    returns a list of all the intermediate calls as well as the final
@@ -2401,7 +2401,7 @@ True
 create_autospec
 ---------------
 
-                                *create_autospec()..unittestmock.txt;*
+                                *create_autospec()..unittest.mock.txt*
 unittest.mock.create_autospec(spec, spec_set=False, instance=False, **kwargs)
 
    Create a mock object using another object as a spec. Attributes on
@@ -2433,7 +2433,7 @@ if the target is an async function.
 ANY
 ---
 
-unittest.mock.ANY                             *ANY..unittestmock.txt;*
+unittest.mock.ANY                             *ANY..unittest.mock.txt*
 
 Sometimes you may need to make assertions about _some_ of the
 arguments in a call to mock, but either not care about some of the
@@ -2463,7 +2463,7 @@ True
 FILTER_DIR
 ----------
 
-unittest.mock.FILTER_DIR               *FILTER_DIR..unittestmock.txt;*
+unittest.mock.FILTER_DIR               *FILTER_DIR..unittest.mock.txt*
 
 "FILTER_DIR" is a module level variable that controls the way mock
 objects respond to "dir()". The default is "True", which uses the
@@ -2521,7 +2521,7 @@ irrespective of "mock.FILTER_DIR".
 mock_open
 ---------
 
-                                      *mock_open()..unittestmock.txt;*
+                                      *mock_open()..unittest.mock.txt*
 unittest.mock.mock_open(mock=None, read_data=None)
 
    A helper function to create a mock to replace the use of "open()".
@@ -2825,7 +2825,7 @@ argument:
 Sealing mocks
 -------------
 
-unittest.mock.seal(mock)                   *seal()..unittestmock.txt;*
+unittest.mock.seal(mock)                   *seal()..unittest.mock.txt*
 
    Seal will disable the automatic creation of mocks when accessing an
    attribute of the mock being sealed or any of its attributes that

@@ -1,4 +1,4 @@
-*urllibrobotparser.txt;*                      Last change: 2023 Sep 09
+*urllib.robotparser.txt;*                     Last change: 2023 Sep 10
 
 "urllib.robotparser" —  Parser for robots.txt
 *********************************************
@@ -13,43 +13,43 @@ on the web site that published the "robots.txt" file.  For more
 details on the structure of "robots.txt" files, see
 http://www.robotstxt.org/orig.html.
 
-                             *RobotFileParser..urllibrobotparser.txt;*
+                             *RobotFileParser..urllib.robotparser.txt*
 class urllib.robotparser.RobotFileParser(url='')
 
    This class provides methods to read, parse and answer questions
    about the "robots.txt" file at _url_.
 
-   set_url(url)       *RobotFileParser.set_url()..urllibrobotparser.txt;*
+   set_url(url)       *RobotFileParser.set_url()..urllib.robotparser.txt*
 
       Sets the URL referring to a "robots.txt" file.
 
-   read()                *RobotFileParser.read()..urllibrobotparser.txt;*
+   read()                *RobotFileParser.read()..urllib.robotparser.txt*
 
       Reads the "robots.txt" URL and feeds it to the parser.
 
-   parse(lines)         *RobotFileParser.parse()..urllibrobotparser.txt;*
+   parse(lines)         *RobotFileParser.parse()..urllib.robotparser.txt*
 
       Parses the lines argument.
 
-                 *RobotFileParser.can_fetch()..urllibrobotparser.txt;*
+                 *RobotFileParser.can_fetch()..urllib.robotparser.txt*
    can_fetch(useragent, url)
 
       Returns "True" if the _useragent_ is allowed to fetch the _url_
       according to the rules contained in the parsed "robots.txt"
       file.
 
-   mtime()              *RobotFileParser.mtime()..urllibrobotparser.txt;*
+   mtime()              *RobotFileParser.mtime()..urllib.robotparser.txt*
 
       Returns the time the "robots.txt" file was last fetched.  This
       is useful for long-running web spiders that need to check for
       new "robots.txt" files periodically.
 
-   modified()        *RobotFileParser.modified()..urllibrobotparser.txt;*
+   modified()        *RobotFileParser.modified()..urllib.robotparser.txt*
 
       Sets the time the "robots.txt" file was last fetched to the
       current time.
 
-               *RobotFileParser.crawl_delay()..urllibrobotparser.txt;*
+               *RobotFileParser.crawl_delay()..urllib.robotparser.txt*
    crawl_delay(useragent)
 
       Returns the value of the "Crawl-delay" parameter from
@@ -60,7 +60,7 @@ class urllib.robotparser.RobotFileParser(url='')
 
       New in version 3.6.
 
-              *RobotFileParser.request_rate()..urllibrobotparser.txt;*
+              *RobotFileParser.request_rate()..urllib.robotparser.txt*
    request_rate(useragent)
 
       Returns the contents of the "Request-rate" parameter from
@@ -71,7 +71,7 @@ class urllib.robotparser.RobotFileParser(url='')
 
       New in version 3.6.
 
-   site_maps()      *RobotFileParser.site_maps()..urllibrobotparser.txt;*
+   site_maps()      *RobotFileParser.site_maps()..urllib.robotparser.txt*
 
       Returns the contents of the "Sitemap" parameter from
       "robots.txt" in the form of a "list()". If there is no such

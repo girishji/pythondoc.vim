@@ -1,4 +1,4 @@
-*asyncio-sync.txt;*                           Last change: 2023 Sep 09
+*asyncio-sync.txt;*                           Last change: 2023 Sep 10
 
 Synchronization Primitives
 **************************
@@ -37,7 +37,7 @@ asyncio has the following basic synchronization primitives:
 Lock
 ====
 
-class asyncio.Lock                           *Lock..asyncio-sync.txt;*
+class asyncio.Lock                            *Lock..asyncio-sync.txt*
 
    Implements a mutex lock for asyncio tasks.  Not thread-safe.
 
@@ -65,7 +65,7 @@ class asyncio.Lock                           *Lock..asyncio-sync.txt;*
 <
    Changed in version 3.10: Removed the _loop_ parameter.
 
-   coroutine acquire()                *Lock.acquire()..asyncio-sync.txt;*
+   coroutine acquire()                 *Lock.acquire()..asyncio-sync.txt*
 
       Acquire the lock.
 
@@ -79,7 +79,7 @@ class asyncio.Lock                           *Lock..asyncio-sync.txt;*
       Acquiring a lock is _fair_: the coroutine that proceeds will be
       the first coroutine that started waiting on the lock.
 
-   release()                          *Lock.release()..asyncio-sync.txt;*
+   release()                           *Lock.release()..asyncio-sync.txt*
 
       Release the lock.
 
@@ -87,7 +87,7 @@ class asyncio.Lock                           *Lock..asyncio-sync.txt;*
 
       If the lock is _unlocked_, a "RuntimeError" is raised.
 
-   locked()                            *Lock.locked()..asyncio-sync.txt;*
+   locked()                             *Lock.locked()..asyncio-sync.txt*
 
       Return "True" if the lock is _locked_.
 
@@ -95,7 +95,7 @@ class asyncio.Lock                           *Lock..asyncio-sync.txt;*
 Event
 =====
 
-class asyncio.Event                         *Event..asyncio-sync.txt;*
+class asyncio.Event                          *Event..asyncio-sync.txt*
 
    An event object.  Not thread-safe.
 
@@ -132,28 +132,28 @@ class asyncio.Event                         *Event..asyncio-sync.txt;*
 
       asyncio.run(main())
 <
-   coroutine wait()                     *Event.wait()..asyncio-sync.txt;*
+   coroutine wait()                      *Event.wait()..asyncio-sync.txt*
 
       Wait until the event is set.
 
       If the event is set, return "True" immediately. Otherwise block
       until another task calls "set()".
 
-   set()                                 *Event.set()..asyncio-sync.txt;*
+   set()                                  *Event.set()..asyncio-sync.txt*
 
       Set the event.
 
       All tasks waiting for event to be set will be immediately
       awakened.
 
-   clear()                             *Event.clear()..asyncio-sync.txt;*
+   clear()                              *Event.clear()..asyncio-sync.txt*
 
       Clear (unset) the event.
 
       Tasks awaiting on "wait()" will now block until the "set()"
       method is called again.
 
-   is_set()                           *Event.is_set()..asyncio-sync.txt;*
+   is_set()                            *Event.is_set()..asyncio-sync.txt*
 
       Return "True" if the event is set.
 
@@ -161,7 +161,7 @@ class asyncio.Event                         *Event..asyncio-sync.txt;*
 Condition
 =========
 
-class asyncio.Condition(lock=None)      *Condition..asyncio-sync.txt;*
+class asyncio.Condition(lock=None)       *Condition..asyncio-sync.txt*
 
    A Condition object.  Not thread-safe.
 
@@ -199,14 +199,14 @@ class asyncio.Condition(lock=None)      *Condition..asyncio-sync.txt;*
       finally:
           cond.release()
 <
-   coroutine acquire()           *Condition.acquire()..asyncio-sync.txt;*
+   coroutine acquire()            *Condition.acquire()..asyncio-sync.txt*
 
       Acquire the underlying lock.
 
       This method waits until the underlying lock is _unlocked_, sets
       it to _locked_ and returns "True".
 
-   notify(n=1)                    *Condition.notify()..asyncio-sync.txt;*
+   notify(n=1)                     *Condition.notify()..asyncio-sync.txt*
 
       Wake up at most _n_ tasks (1 by default) waiting on this
       condition.  The method is no-op if no tasks are waiting.
@@ -215,11 +215,11 @@ class asyncio.Condition(lock=None)      *Condition..asyncio-sync.txt;*
       released shortly after.  If called with an _unlocked_ lock a
       "RuntimeError" error is raised.
 
-   locked()                       *Condition.locked()..asyncio-sync.txt;*
+   locked()                        *Condition.locked()..asyncio-sync.txt*
 
       Return "True" if the underlying lock is acquired.
 
-   notify_all()               *Condition.notify_all()..asyncio-sync.txt;*
+   notify_all()                *Condition.notify_all()..asyncio-sync.txt*
 
       Wake up all tasks waiting on this condition.
 
@@ -230,13 +230,13 @@ class asyncio.Condition(lock=None)      *Condition..asyncio-sync.txt;*
       released shortly after.  If called with an _unlocked_ lock a
       "RuntimeError" error is raised.
 
-   release()                     *Condition.release()..asyncio-sync.txt;*
+   release()                      *Condition.release()..asyncio-sync.txt*
 
       Release the underlying lock.
 
       When invoked on an unlocked lock, a "RuntimeError" is raised.
 
-   coroutine wait()                 *Condition.wait()..asyncio-sync.txt;*
+   coroutine wait()                  *Condition.wait()..asyncio-sync.txt*
 
       Wait until notified.
 
@@ -248,7 +248,7 @@ class asyncio.Condition(lock=None)      *Condition..asyncio-sync.txt;*
       awakened, the Condition re-acquires its lock and this method
       returns "True".
 
-                             *Condition.wait_for()..asyncio-sync.txt;*
+                              *Condition.wait_for()..asyncio-sync.txt*
    coroutine wait_for(predicate)
 
       Wait until a predicate becomes _true_.
@@ -261,7 +261,7 @@ class asyncio.Condition(lock=None)      *Condition..asyncio-sync.txt;*
 Semaphore
 =========
 
-class asyncio.Semaphore(value=1)        *Semaphore..asyncio-sync.txt;*
+class asyncio.Semaphore(value=1)         *Semaphore..asyncio-sync.txt*
 
    A Semaphore object.  Not thread-safe.
 
@@ -295,7 +295,7 @@ class asyncio.Semaphore(value=1)        *Semaphore..asyncio-sync.txt;*
       finally:
           sem.release()
 <
-   coroutine acquire()           *Semaphore.acquire()..asyncio-sync.txt;*
+   coroutine acquire()            *Semaphore.acquire()..asyncio-sync.txt*
 
       Acquire a semaphore.
 
@@ -303,11 +303,11 @@ class asyncio.Semaphore(value=1)        *Semaphore..asyncio-sync.txt;*
       one and return "True" immediately.  If it is zero, wait until a
       "release()" is called and return "True".
 
-   locked()                       *Semaphore.locked()..asyncio-sync.txt;*
+   locked()                        *Semaphore.locked()..asyncio-sync.txt*
 
       Returns "True" if semaphore can not be acquired immediately.
 
-   release()                     *Semaphore.release()..asyncio-sync.txt;*
+   release()                      *Semaphore.release()..asyncio-sync.txt*
 
       Release a semaphore, incrementing the internal counter by one.
       Can wake up a task waiting to acquire the semaphore.
@@ -319,7 +319,7 @@ class asyncio.Semaphore(value=1)        *Semaphore..asyncio-sync.txt;*
 BoundedSemaphore
 ================
 
-                                 *BoundedSemaphore..asyncio-sync.txt;*
+                                  *BoundedSemaphore..asyncio-sync.txt*
 class asyncio.BoundedSemaphore(value=1)
 
    A bounded semaphore object.  Not thread-safe.
@@ -334,7 +334,7 @@ class asyncio.BoundedSemaphore(value=1)
 Barrier
 =======
 
-class asyncio.Barrier(parties)            *Barrier..asyncio-sync.txt;*
+class asyncio.Barrier(parties)             *Barrier..asyncio-sync.txt*
 
    A barrier object.  Not thread-safe.
 
@@ -380,7 +380,7 @@ class asyncio.Barrier(parties)            *Barrier..asyncio-sync.txt;*
 <
    New in version 3.11.
 
-   coroutine wait()                   *Barrier.wait()..asyncio-sync.txt;*
+   coroutine wait()                    *Barrier.wait()..asyncio-sync.txt*
 
       Pass the barrier. When all the tasks party to the barrier have
       called this function, they are all unblocked simultaneously.
@@ -404,7 +404,7 @@ class asyncio.Barrier(parties)            *Barrier..asyncio-sync.txt;*
       barrier is broken or reset while a task is waiting. It could
       raise a "CancelledError" if a task is cancelled.
 
-   coroutine reset()                 *Barrier.reset()..asyncio-sync.txt;*
+   coroutine reset()                  *Barrier.reset()..asyncio-sync.txt*
 
       Return the barrier to the default, empty state.  Any tasks
       waiting on it will receive the "BrokenBarrierError" exception.
@@ -412,27 +412,27 @@ class asyncio.Barrier(parties)            *Barrier..asyncio-sync.txt;*
       If a barrier is broken it may be better to just leave it and
       create a new one.
 
-   coroutine abort()                 *Barrier.abort()..asyncio-sync.txt;*
+   coroutine abort()                  *Barrier.abort()..asyncio-sync.txt*
 
       Put the barrier into a broken state.  This causes any active or
       future calls to "wait()" to fail with the "BrokenBarrierError".
       Use this for example if one of the tasks needs to abort, to
       avoid infinite waiting tasks.
 
-   parties                           *Barrier.parties..asyncio-sync.txt;*
+   parties                            *Barrier.parties..asyncio-sync.txt*
 
       The number of tasks required to pass the barrier.
 
-   n_waiting                       *Barrier.n_waiting..asyncio-sync.txt;*
+   n_waiting                        *Barrier.n_waiting..asyncio-sync.txt*
 
       The number of tasks currently waiting in the barrier while
       filling.
 
-   broken                             *Barrier.broken..asyncio-sync.txt;*
+   broken                              *Barrier.broken..asyncio-sync.txt*
 
       A boolean that is "True" if the barrier is in the broken state.
 
-                               *BrokenBarrierError..asyncio-sync.txt;*
+                                *BrokenBarrierError..asyncio-sync.txt*
 exception asyncio.BrokenBarrierError
 
    This exception, a subclass of "RuntimeError", is raised when the

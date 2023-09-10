@@ -1,4 +1,4 @@
-*venv.txt;*                                   Last change: 2023 Sep 09
+*venv.txt;*                                   Last change: 2023 Sep 10
 
 "venv" — Creation of virtual environments
 *****************************************
@@ -235,7 +235,7 @@ provides mechanisms for third-party virtual environment creators to
 customize environment creation according to their needs, the
 "EnvBuilder" class.
 
-                                               *EnvBuilder..venv.txt;*
+                                                *EnvBuilder..venv.txt*
 class venv.EnvBuilder(system_site_packages=False, clear=False, symlinks=False, upgrade=False, with_pip=False, prompt=None, upgrade_deps=False)
 
    The "EnvBuilder" class accepts the following keyword arguments on
@@ -280,7 +280,7 @@ class venv.EnvBuilder(system_site_packages=False, clear=False, symlinks=False, u
 
    The returned env-builder is an object which has a method, "create":
 
-   create(env_dir)                       *EnvBuilder.create()..venv.txt;*
+   create(env_dir)                        *EnvBuilder.create()..venv.txt*
 
       Create a virtual environment by specifying the target directory
       (absolute or relative to the current directory) which is to
@@ -307,7 +307,7 @@ class venv.EnvBuilder(system_site_packages=False, clear=False, symlinks=False, u
       "create_configuration()", "setup_python()", "setup_scripts()"
       and "post_setup()" can be overridden.
 
-                          *EnvBuilder.ensure_directories()..venv.txt;*
+                           *EnvBuilder.ensure_directories()..venv.txt*
    ensure_directories(env_dir)
 
       Creates the environment directory and all necessary
@@ -363,12 +363,12 @@ class venv.EnvBuilder(system_site_packages=False, clear=False, symlinks=False, u
       scheme is used to construct the paths of the created
       directories.
 
-                        *EnvBuilder.create_configuration()..venv.txt;*
+                         *EnvBuilder.create_configuration()..venv.txt*
    create_configuration(context)
 
       Creates the "pyvenv.cfg" configuration file in the environment.
 
-   setup_python(context)           *EnvBuilder.setup_python()..venv.txt;*
+   setup_python(context)            *EnvBuilder.setup_python()..venv.txt*
 
       Creates a copy or symlink to the Python executable in the
       environment. On POSIX systems, if a specific executable
@@ -376,12 +376,12 @@ class venv.EnvBuilder(system_site_packages=False, clear=False, symlinks=False, u
       created pointing to that executable, unless files with those
       names already exist.
 
-   setup_scripts(context)         *EnvBuilder.setup_scripts()..venv.txt;*
+   setup_scripts(context)          *EnvBuilder.setup_scripts()..venv.txt*
 
       Installs activation scripts appropriate to the platform into the
       virtual environment.
 
-                        *EnvBuilder.upgrade_dependencies()..venv.txt;*
+                         *EnvBuilder.upgrade_dependencies()..venv.txt*
    upgrade_dependencies(context)
 
       Upgrades the core venv dependency packages (currently "pip") in
@@ -393,7 +393,7 @@ class venv.EnvBuilder(system_site_packages=False, clear=False, symlinks=False, u
       Changed in version 3.12: "setuptools" is no longer a core venv
       dependency.
 
-   post_setup(context)               *EnvBuilder.post_setup()..venv.txt;*
+   post_setup(context)                *EnvBuilder.post_setup()..venv.txt*
 
       A placeholder method which can be overridden in third party
       implementations to pre-install packages in the virtual
@@ -413,7 +413,7 @@ class venv.EnvBuilder(system_site_packages=False, clear=False, symlinks=False, u
    called from "setup_scripts()" or "post_setup()" in subclasses to
    assist in installing custom scripts into the virtual environment.
 
-                             *EnvBuilder.install_scripts()..venv.txt;*
+                              *EnvBuilder.install_scripts()..venv.txt*
    install_scripts(context, path)
 
       _path_ is the path to a directory that should contain
@@ -442,7 +442,7 @@ class venv.EnvBuilder(system_site_packages=False, clear=False, symlinks=False, u
 
 There is also a module-level convenience function:
 
-                                                 *create()..venv.txt;*
+                                                  *create()..venv.txt*
 venv.create(env_dir, system_site_packages=False, clear=False, symlinks=False, with_pip=False, prompt=None, upgrade_deps=False)
 
    Create an "EnvBuilder" with the given keyword arguments, and call

@@ -1,4 +1,4 @@
-*logginghandlers.txt;*                        Last change: 2023 Sep 09
+*logging.handlers.txt;*                       Last change: 2023 Sep 10
 
 "logging.handlers" — Logging handlers
 *************************************
@@ -34,14 +34,14 @@ sends logging output to streams such as _sys.stdout_, _sys.stderr_ or
 any file-like object (or, more precisely, any object which supports
 "write()" and "flush()" methods).
 
-                                 *StreamHandler..logginghandlers.txt;*
+                                 *StreamHandler..logging.handlers.txt*
 class logging.StreamHandler(stream=None)
 
    Returns a new instance of the "StreamHandler" class. If _stream_ is
    specified, the instance will use it for logging output; otherwise,
    _sys.stderr_ will be used.
 
-   emit(record)              *StreamHandler.emit()..logginghandlers.txt;*
+   emit(record)              *StreamHandler.emit()..logging.handlers.txt*
 
       If a formatter is specified, it is used to format the record.
       The record is then written to the stream followed by
@@ -49,13 +49,13 @@ class logging.StreamHandler(stream=None)
       formatted using "traceback.print_exception()" and appended to
       the stream.
 
-   flush()                  *StreamHandler.flush()..logginghandlers.txt;*
+   flush()                  *StreamHandler.flush()..logging.handlers.txt*
 
       Flushes the stream by calling its "flush()" method. Note that
       the "close()" method is inherited from "Handler" and so does no
       output, so an explicit "flush()" call may be needed at times.
 
-   setStream(stream)    *StreamHandler.setStream()..logginghandlers.txt;*
+   setStream(stream)    *StreamHandler.setStream()..logging.handlers.txt*
 
       Sets the instance’s stream to the specified value, if it is
       different. The old stream is flushed before the new stream is
@@ -70,7 +70,7 @@ class logging.StreamHandler(stream=None)
 
       New in version 3.7.
 
-   terminator            *StreamHandler.terminator..logginghandlers.txt;*
+   terminator            *StreamHandler.terminator..logging.handlers.txt*
 
       String used as the terminator when writing a formatted record to
       a stream. Default value is "'\n'".
@@ -90,7 +90,7 @@ The "FileHandler" class, located in the core "logging" package, sends
 logging output to a disk file.  It inherits the output functionality
 from "StreamHandler".
 
-                                   *FileHandler..logginghandlers.txt;*
+                                   *FileHandler..logging.handlers.txt*
 class logging.FileHandler(filename, mode='a', encoding=None, delay=False, errors=None)
 
    Returns a new instance of the "FileHandler" class. The specified
@@ -106,11 +106,11 @@ class logging.FileHandler(filename, mode='a', encoding=None, delay=False, errors
 
    Changed in version 3.9: The _errors_ parameter was added.
 
-   close()                    *FileHandler.close()..logginghandlers.txt;*
+   close()                    *FileHandler.close()..logging.handlers.txt*
 
       Closes the file.
 
-   emit(record)                *FileHandler.emit()..logginghandlers.txt;*
+   emit(record)                *FileHandler.emit()..logging.handlers.txt*
 
       Outputs the record to the file.
 
@@ -128,19 +128,19 @@ The "NullHandler" class, located in the core "logging" package, does
 not do any formatting or output. It is essentially a ‘no-op’ handler
 for use by library developers.
 
-class logging.NullHandler          *NullHandler..logginghandlers.txt;*
+class logging.NullHandler          *NullHandler..logging.handlers.txt*
 
    Returns a new instance of the "NullHandler" class.
 
-   emit(record)                *NullHandler.emit()..logginghandlers.txt;*
+   emit(record)                *NullHandler.emit()..logging.handlers.txt*
 
       This method does nothing.
 
-   handle(record)            *NullHandler.handle()..logginghandlers.txt;*
+   handle(record)            *NullHandler.handle()..logging.handlers.txt*
 
       This method does nothing.
 
-   createLock()          *NullHandler.createLock()..logginghandlers.txt;*
+   createLock()          *NullHandler.createLock()..logging.handlers.txt*
 
       This method returns "None" for the lock, since there is no
       underlying I/O to which access needs to be serialized.
@@ -169,7 +169,7 @@ files with exclusive locks - and so there is no need for such a
 handler. Furthermore, _ST_INO_ is not supported under Windows;
 "stat()" always returns zero for this value.
 
-                            *WatchedFileHandler..logginghandlers.txt;*
+                            *WatchedFileHandler..logging.handlers.txt*
 class logging.handlers.WatchedFileHandler(filename, mode='a', encoding=None, delay=False, errors=None)
 
    Returns a new instance of the "WatchedFileHandler" class. The
@@ -185,7 +185,7 @@ class logging.handlers.WatchedFileHandler(filename, mode='a', encoding=None, del
 
    Changed in version 3.9: The _errors_ parameter was added.
 
-           *WatchedFileHandler.reopenIfNeeded()..logginghandlers.txt;*
+           *WatchedFileHandler.reopenIfNeeded()..logging.handlers.txt*
    reopenIfNeeded()
 
       Checks to see if the file has changed.  If it has, the existing
@@ -194,7 +194,7 @@ class logging.handlers.WatchedFileHandler(filename, mode='a', encoding=None, del
 
       New in version 3.6.
 
-   emit(record)         *WatchedFileHandler.emit()..logginghandlers.txt;*
+   emit(record)         *WatchedFileHandler.emit()..logging.handlers.txt*
 
       Outputs the record to the file, but first calls
       "reopenIfNeeded()" to reopen the file if it has changed.
@@ -209,12 +209,12 @@ module, is the base class for the rotating file handlers,
 need to instantiate this class, but it has attributes and methods you
 may need to override.
 
-                           *BaseRotatingHandler..logginghandlers.txt;*
+                           *BaseRotatingHandler..logging.handlers.txt*
 class logging.handlers.BaseRotatingHandler(filename, mode, encoding=None, delay=False, errors=None)
 
    The parameters are as for "FileHandler". The attributes are:
 
-   namer                *BaseRotatingHandler.namer..logginghandlers.txt;*
+   namer                *BaseRotatingHandler.namer..logging.handlers.txt*
 
       If this attribute is set to a callable, the
       "rotation_filename()" method delegates to this callable. The
@@ -245,7 +245,7 @@ class logging.handlers.BaseRotatingHandler(filename, mode, encoding=None, delay=
 
       New in version 3.3.
 
-   rotator            *BaseRotatingHandler.rotator..logginghandlers.txt;*
+   rotator            *BaseRotatingHandler.rotator..logging.handlers.txt*
 
       If this attribute is set to a callable, the "rotate()" method
       delegates to this callable.  The parameters passed to the
@@ -253,7 +253,7 @@ class logging.handlers.BaseRotatingHandler(filename, mode, encoding=None, delay=
 
       New in version 3.3.
 
-       *BaseRotatingHandler.rotation_filename()..logginghandlers.txt;*
+       *BaseRotatingHandler.rotation_filename()..logging.handlers.txt*
    rotation_filename(default_name)
 
       Modify the filename of a log file when rotating.
@@ -270,7 +270,7 @@ class logging.handlers.BaseRotatingHandler(filename, mode, encoding=None, delay=
 
       New in version 3.3.
 
-                  *BaseRotatingHandler.rotate()..logginghandlers.txt;*
+                  *BaseRotatingHandler.rotate()..logging.handlers.txt*
    rotate(source, dest)
 
       When rotating, rotate the current log.
@@ -309,7 +309,7 @@ RotatingFileHandler
 The "RotatingFileHandler" class, located in the "logging.handlers"
 module, supports rotation of disk log files.
 
-                           *RotatingFileHandler..logginghandlers.txt;*
+                           *RotatingFileHandler..logging.handlers.txt*
 class logging.handlers.RotatingFileHandler(filename, mode='a', maxBytes=0, backupCount=0, encoding=None, delay=False, errors=None)
 
    Returns a new instance of the "RotatingFileHandler" class. The
@@ -341,12 +341,12 @@ class logging.handlers.RotatingFileHandler(filename, mode='a', maxBytes=0, backu
 
    Changed in version 3.9: The _errors_ parameter was added.
 
-              *RotatingFileHandler.doRollover()..logginghandlers.txt;*
+              *RotatingFileHandler.doRollover()..logging.handlers.txt*
    doRollover()
 
       Does a rollover, as described above.
 
-   emit(record)        *RotatingFileHandler.emit()..logginghandlers.txt;*
+   emit(record)        *RotatingFileHandler.emit()..logging.handlers.txt*
 
       Outputs the record to the file, catering for rollover as
       described previously.
@@ -359,7 +359,7 @@ The "TimedRotatingFileHandler" class, located in the
 "logging.handlers" module, supports rotation of disk log files at
 certain timed intervals.
 
-                      *TimedRotatingFileHandler..logginghandlers.txt;*
+                      *TimedRotatingFileHandler..logging.handlers.txt*
 class logging.handlers.TimedRotatingFileHandler(filename, when='h', interval=1, backupCount=0, encoding=None, delay=False, utc=False, atTime=None, errors=None)
 
    Returns a new instance of the "TimedRotatingFileHandler" class. The
@@ -449,17 +449,17 @@ class logging.handlers.TimedRotatingFileHandler(filename, when='h', interval=1, 
 
    Changed in version 3.9: The _errors_ parameter was added.
 
-         *TimedRotatingFileHandler.doRollover()..logginghandlers.txt;*
+         *TimedRotatingFileHandler.doRollover()..logging.handlers.txt*
    doRollover()
 
       Does a rollover, as described above.
 
-   emit(record)   *TimedRotatingFileHandler.emit()..logginghandlers.txt;*
+   emit(record)   *TimedRotatingFileHandler.emit()..logging.handlers.txt*
 
       Outputs the record to the file, catering for rollover as
       described above.
 
-   *TimedRotatingFileHandler.getFilesToDelete()..logginghandlers.txt;*
+   *TimedRotatingFileHandler.getFilesToDelete()..logging.handlers.txt*
    getFilesToDelete()
 
       Returns a list of filenames which should be deleted as part of
@@ -474,7 +474,7 @@ The "SocketHandler" class, located in the "logging.handlers" module,
 sends logging output to a network socket. The base class uses a TCP
 socket.
 
-                                 *SocketHandler..logginghandlers.txt;*
+                                 *SocketHandler..logging.handlers.txt*
 class logging.handlers.SocketHandler(host, port)
 
    Returns a new instance of the "SocketHandler" class intended to
@@ -485,11 +485,11 @@ class logging.handlers.SocketHandler(host, port)
    domain socket is created using the value in "host" - otherwise, a
    TCP socket is created.
 
-   close()                  *SocketHandler.close()..logginghandlers.txt;*
+   close()                  *SocketHandler.close()..logging.handlers.txt*
 
       Closes the socket.
 
-   emit()                    *SocketHandler.emit()..logginghandlers.txt;*
+   emit()                    *SocketHandler.emit()..logging.handlers.txt*
 
       Pickles the record’s attribute dictionary and writes it to the
       socket in binary format. If there is an error with the socket,
@@ -498,19 +498,19 @@ class logging.handlers.SocketHandler(host, port)
       the receiving end into a "LogRecord", use the "makeLogRecord()"
       function.
 
-   handleError()      *SocketHandler.handleError()..logginghandlers.txt;*
+   handleError()      *SocketHandler.handleError()..logging.handlers.txt*
 
       Handles an error which has occurred during "emit()". The most
       likely cause is a lost connection. Closes the socket so that we
       can retry on the next event.
 
-   makeSocket()        *SocketHandler.makeSocket()..logginghandlers.txt;*
+   makeSocket()        *SocketHandler.makeSocket()..logging.handlers.txt*
 
       This is a factory method which allows subclasses to define the
       precise type of socket they want. The default implementation
       creates a TCP socket ("socket.SOCK_STREAM").
 
-                    *SocketHandler.makePickle()..logginghandlers.txt;*
+                    *SocketHandler.makePickle()..logging.handlers.txt*
    makePickle(record)
 
       Pickles the record’s attribute dictionary in binary format with
@@ -528,7 +528,7 @@ class logging.handlers.SocketHandler(host, port)
       alternatively you can disable unpickling of global objects on
       the receiving end.
 
-   send(packet)              *SocketHandler.send()..logginghandlers.txt;*
+   send(packet)              *SocketHandler.send()..logging.handlers.txt*
 
       Send a pickled byte-string _packet_ to the socket. The format of
       the sent byte-string is as described in the documentation for
@@ -537,7 +537,7 @@ class logging.handlers.SocketHandler(host, port)
       This function allows for partial sends, which can happen when
       the network is busy.
 
-   createSocket()    *SocketHandler.createSocket()..logginghandlers.txt;*
+   createSocket()    *SocketHandler.createSocket()..logging.handlers.txt*
 
       Tries to create a socket; on failure, uses an exponential back-
       off algorithm.  On initial failure, the handler will drop the
@@ -571,7 +571,7 @@ The "DatagramHandler" class, located in the "logging.handlers" module,
 inherits from "SocketHandler" to support sending logging messages over
 UDP sockets.
 
-                               *DatagramHandler..logginghandlers.txt;*
+                               *DatagramHandler..logging.handlers.txt*
 class logging.handlers.DatagramHandler(host, port)
 
    Returns a new instance of the "DatagramHandler" class intended to
@@ -592,7 +592,7 @@ class logging.handlers.DatagramHandler(host, port)
    domain socket is created using the value in "host" - otherwise, a
    UDP socket is created.
 
-   emit()                  *DatagramHandler.emit()..logginghandlers.txt;*
+   emit()                  *DatagramHandler.emit()..logging.handlers.txt*
 
       Pickles the record’s attribute dictionary and writes it to the
       socket in binary format. If there is an error with the socket,
@@ -600,12 +600,12 @@ class logging.handlers.DatagramHandler(host, port)
       receiving end into a "LogRecord", use the "makeLogRecord()"
       function.
 
-   makeSocket()      *DatagramHandler.makeSocket()..logginghandlers.txt;*
+   makeSocket()      *DatagramHandler.makeSocket()..logging.handlers.txt*
 
       The factory method of "SocketHandler" is here overridden to
       create a UDP socket ("socket.SOCK_DGRAM").
 
-   send(s)                 *DatagramHandler.send()..logginghandlers.txt;*
+   send(s)                 *DatagramHandler.send()..logging.handlers.txt*
 
       Send a pickled byte-string to a socket. The format of the sent
       byte-string is as described in the documentation for
@@ -618,7 +618,7 @@ SysLogHandler
 The "SysLogHandler" class, located in the "logging.handlers" module,
 supports sending logging messages to a remote or local Unix syslog.
 
-                                 *SysLogHandler..logginghandlers.txt;*
+                                 *SysLogHandler..logging.handlers.txt*
 class logging.handlers.SysLogHandler(address=('localhost', SYSLOG_UDP_PORT), facility=LOG_USER, socktype=socket.SOCK_DGRAM)
 
    Returns a new instance of the "SysLogHandler" class intended to
@@ -652,11 +652,11 @@ class logging.handlers.SysLogHandler(address=('localhost', SYSLOG_UDP_PORT), fac
 
    Changed in version 3.2: _socktype_ was added.
 
-   close()                  *SysLogHandler.close()..logginghandlers.txt;*
+   close()                  *SysLogHandler.close()..logging.handlers.txt*
 
       Closes the socket to the remote host.
 
-   createSocket()    *SysLogHandler.createSocket()..logginghandlers.txt;*
+   createSocket()    *SysLogHandler.createSocket()..logging.handlers.txt*
 
       Tries to create a socket and, if it’s not a datagram socket,
       connect it to the other end. This method is called during
@@ -669,7 +669,7 @@ class logging.handlers.SysLogHandler(address=('localhost', SYSLOG_UDP_PORT), fac
 
       New in version 3.11.
 
-   emit(record)              *SysLogHandler.emit()..logginghandlers.txt;*
+   emit(record)              *SysLogHandler.emit()..logging.handlers.txt*
 
       The record is formatted, and then sent to the syslog server. If
       exception information is present, it is _not_ sent to the
@@ -700,7 +700,7 @@ class logging.handlers.SysLogHandler(address=('localhost', SYSLOG_UDP_PORT), fac
       every message handled. Note that the provided ident must be
       text, not bytes, and is prepended to the message exactly as is.
 
-                *SysLogHandler.encodePriority()..logginghandlers.txt;*
+                *SysLogHandler.encodePriority()..logging.handlers.txt*
    encodePriority(facility, priority)
 
       Encodes the facility and priority into an integer. You can pass
@@ -778,7 +778,7 @@ class logging.handlers.SysLogHandler(address=('localhost', SYSLOG_UDP_PORT), fac
       | "local7"        | LOG_LOCAL7      |
       +-----------------+-----------------+
 
-                   *SysLogHandler.mapPriority()..logginghandlers.txt;*
+                   *SysLogHandler.mapPriority()..logging.handlers.txt*
    mapPriority(levelname)
 
       Maps a logging level name to a syslog priority name. You may
@@ -797,7 +797,7 @@ module, supports sending logging messages to a local Windows NT,
 Windows 2000 or Windows XP event log. Before you can use it, you need
 Mark Hammond’s Win32 extensions for Python installed.
 
-                             *NTEventLogHandler..logginghandlers.txt;*
+                             *NTEventLogHandler..logging.handlers.txt*
 class logging.handlers.NTEventLogHandler(appname, dllname=None, logtype='Application')
 
    Returns a new instance of the "NTEventLogHandler" class. The
@@ -814,7 +814,7 @@ class logging.handlers.NTEventLogHandler(appname, dllname=None, logtype='Applica
    use in the event log). The _logtype_ is one of "'Application'",
    "'System'" or "'Security'", and defaults to "'Application'".
 
-   close()              *NTEventLogHandler.close()..logginghandlers.txt;*
+   close()              *NTEventLogHandler.close()..logging.handlers.txt*
 
       At this point, you can remove the application name from the
       registry as a source of event log entries. However, if you do
@@ -823,18 +823,18 @@ class logging.handlers.NTEventLogHandler(appname, dllname=None, logtype='Applica
       registry to get the .dll name. The current version does not do
       this.
 
-   emit(record)          *NTEventLogHandler.emit()..logginghandlers.txt;*
+   emit(record)          *NTEventLogHandler.emit()..logging.handlers.txt*
 
       Determines the message ID, event category and event type, and
       then logs the message in the NT event log.
 
-          *NTEventLogHandler.getEventCategory()..logginghandlers.txt;*
+          *NTEventLogHandler.getEventCategory()..logging.handlers.txt*
    getEventCategory(record)
 
       Returns the event category for the record. Override this if you
       want to specify your own categories. This version returns 0.
 
-              *NTEventLogHandler.getEventType()..logginghandlers.txt;*
+              *NTEventLogHandler.getEventType()..logging.handlers.txt*
    getEventType(record)
 
       Returns the event type for the record. Override this if you want
@@ -845,7 +845,7 @@ class logging.handlers.NTEventLogHandler(appname, dllname=None, logtype='Applica
       levels, you will either need to override this method or place a
       suitable dictionary in the handler’s _typemap_ attribute.
 
-              *NTEventLogHandler.getMessageID()..logginghandlers.txt;*
+              *NTEventLogHandler.getMessageID()..logging.handlers.txt*
    getMessageID(record)
 
       Returns the message ID for the record. If you are using your own
@@ -862,7 +862,7 @@ SMTPHandler
 The "SMTPHandler" class, located in the "logging.handlers" module,
 supports sending logging messages to an email address via SMTP.
 
-                                   *SMTPHandler..logginghandlers.txt;*
+                                   *SMTPHandler..logging.handlers.txt*
 class logging.handlers.SMTPHandler(mailhost, fromaddr, toaddrs, subject, credentials=None, secure=None, timeout=1.0)
 
    Returns a new instance of the "SMTPHandler" class. The instance is
@@ -885,11 +885,11 @@ class logging.handlers.SMTPHandler(mailhost, fromaddr, toaddrs, subject, credent
 
    New in version 3.3: The _timeout_ argument was added.
 
-   emit(record)                *SMTPHandler.emit()..logginghandlers.txt;*
+   emit(record)                *SMTPHandler.emit()..logging.handlers.txt*
 
       Formats the record and sends it to the specified addressees.
 
-   getSubject(record)    *SMTPHandler.getSubject()..logginghandlers.txt;*
+   getSubject(record)    *SMTPHandler.getSubject()..logging.handlers.txt*
 
       If you want to specify a subject line which is record-dependent,
       override this method.
@@ -909,30 +909,30 @@ Whenever each record is added to the buffer, a check is made by
 calling "shouldFlush()" to see if the buffer should be flushed.  If it
 should, then "flush()" is expected to do the flushing.
 
-                              *BufferingHandler..logginghandlers.txt;*
+                              *BufferingHandler..logging.handlers.txt*
 class logging.handlers.BufferingHandler(capacity)
 
    Initializes the handler with a buffer of the specified capacity.
    Here, _capacity_ means the number of logging records buffered.
 
-   emit(record)           *BufferingHandler.emit()..logginghandlers.txt;*
+   emit(record)           *BufferingHandler.emit()..logging.handlers.txt*
 
       Append the record to the buffer. If "shouldFlush()" returns
       true, call "flush()" to process the buffer.
 
-   flush()               *BufferingHandler.flush()..logginghandlers.txt;*
+   flush()               *BufferingHandler.flush()..logging.handlers.txt*
 
       For a "BufferingHandler" instance, flushing means that it sets
       the buffer to an empty list. This method can be overwritten to
       implement more useful flushing behavior.
 
-                *BufferingHandler.shouldFlush()..logginghandlers.txt;*
+                *BufferingHandler.shouldFlush()..logging.handlers.txt*
    shouldFlush(record)
 
       Return "True" if the buffer is up to capacity. This method can
       be overridden to implement custom flushing strategies.
 
-                                 *MemoryHandler..logginghandlers.txt;*
+                                 *MemoryHandler..logging.handlers.txt*
 class logging.handlers.MemoryHandler(capacity, flushLevel=ERROR, target=None, flushOnClose=True)
 
    Returns a new instance of the "MemoryHandler" class. The instance
@@ -947,23 +947,23 @@ class logging.handlers.MemoryHandler(capacity, flushLevel=ERROR, target=None, fl
 
    Changed in version 3.6: The _flushOnClose_ parameter was added.
 
-   close()                  *MemoryHandler.close()..logginghandlers.txt;*
+   close()                  *MemoryHandler.close()..logging.handlers.txt*
 
       Calls "flush()", sets the target to "None" and clears the
       buffer.
 
-   flush()                  *MemoryHandler.flush()..logginghandlers.txt;*
+   flush()                  *MemoryHandler.flush()..logging.handlers.txt*
 
       For a "MemoryHandler" instance, flushing means just sending the
       buffered records to the target, if there is one. The buffer is
       also cleared when buffered records are sent to the target.
       Override if you want different behavior.
 
-   setTarget(target)    *MemoryHandler.setTarget()..logginghandlers.txt;*
+   setTarget(target)    *MemoryHandler.setTarget()..logging.handlers.txt*
 
       Sets the target handler for this handler.
 
-                   *MemoryHandler.shouldFlush()..logginghandlers.txt;*
+                   *MemoryHandler.shouldFlush()..logging.handlers.txt*
    shouldFlush(record)
 
       Checks for buffer full or a record at the _flushLevel_ or
@@ -977,7 +977,7 @@ The "HTTPHandler" class, located in the "logging.handlers" module,
 supports sending logging messages to a web server, using either "GET"
 or "POST" semantics.
 
-                                   *HTTPHandler..logginghandlers.txt;*
+                                   *HTTPHandler..logging.handlers.txt*
 class logging.handlers.HTTPHandler(host, url, method='GET', secure=False, credentials=None, context=None)
 
    Returns a new instance of the "HTTPHandler" class. The _host_ can
@@ -994,7 +994,7 @@ class logging.handlers.HTTPHandler(host, url, method='GET', secure=False, creden
 
    Changed in version 3.5: The _context_ parameter was added.
 
-                    *HTTPHandler.mapLogRecord()..logginghandlers.txt;*
+                    *HTTPHandler.mapLogRecord()..logging.handlers.txt*
    mapLogRecord(record)
 
       Provides a dictionary, based on "record", which is to be URL-
@@ -1004,7 +1004,7 @@ class logging.handlers.HTTPHandler(host, url, method='GET', secure=False, creden
       server, or if more specific customization of what’s sent to the
       server is required.
 
-   emit(record)                *HTTPHandler.emit()..logginghandlers.txt;*
+   emit(record)                *HTTPHandler.emit()..logging.handlers.txt*
 
       Sends the record to the web server as a URL-encoded dictionary.
       The "mapLogRecord()" method is used to convert the record to the
@@ -1036,7 +1036,7 @@ service applications where threads servicing clients need to respond
 as quickly as possible, while any potentially slow operations (such as
 sending an email via "SMTPHandler") are done on a separate thread.
 
-                                  *QueueHandler..logginghandlers.txt;*
+                                  *QueueHandler..logging.handlers.txt*
 class logging.handlers.QueueHandler(queue)
 
    Returns a new instance of the "QueueHandler" class. The instance is
@@ -1051,7 +1051,7 @@ class logging.handlers.QueueHandler(queue)
      If you are using "multiprocessing", you should avoid using
      "SimpleQueue" and instead use "multiprocessing.Queue".
 
-   emit(record)               *QueueHandler.emit()..logginghandlers.txt;*
+   emit(record)               *QueueHandler.emit()..logging.handlers.txt*
 
       Enqueues the result of preparing the LogRecord. Should an
       exception occur (e.g. because a bounded queue has filled up),
@@ -1060,7 +1060,7 @@ class logging.handlers.QueueHandler(queue)
       "logging.raiseExceptions" is "False") or a message printed to
       "sys.stderr" (if "logging.raiseExceptions" is "True").
 
-   prepare(record)         *QueueHandler.prepare()..logginghandlers.txt;*
+   prepare(record)         *QueueHandler.prepare()..logging.handlers.txt*
 
       Prepares a record for queuing. The object returned by this
       method is enqueued.
@@ -1094,13 +1094,13 @@ class logging.handlers.QueueHandler(queue)
         consider not only your own code but also code in any libraries
         that you use.)
 
-   enqueue(record)         *QueueHandler.enqueue()..logginghandlers.txt;*
+   enqueue(record)         *QueueHandler.enqueue()..logging.handlers.txt*
 
       Enqueues the record on the queue using "put_nowait()"; you may
       want to override this if you want to use blocking behaviour, or
       a timeout, or a customized queue implementation.
 
-   listener                 *QueueHandler.listener..logginghandlers.txt;*
+   listener                 *QueueHandler.listener..logging.handlers.txt*
 
       When created via configuration using "dictConfig()", this
       attribute will contain a "QueueListener" instance for use with
@@ -1129,7 +1129,7 @@ service applications where threads servicing clients need to respond
 as quickly as possible, while any potentially slow operations (such as
 sending an email via "SMTPHandler") are done on a separate thread.
 
-                                 *QueueListener..logginghandlers.txt;*
+                                 *QueueListener..logging.handlers.txt*
 class logging.handlers.QueueListener(queue, *handlers, respect_handler_level=False)
 
    Returns a new instance of the "QueueListener" class. The instance
@@ -1155,7 +1155,7 @@ class logging.handlers.QueueListener(queue, *handlers, respect_handler_level=Fal
    Changed in version 3.5: The "respect_handler_level" argument was
    added.
 
-   dequeue(block)         *QueueListener.dequeue()..logginghandlers.txt;*
+   dequeue(block)         *QueueListener.dequeue()..logging.handlers.txt*
 
       Dequeues a record and return it, optionally blocking.
 
@@ -1163,7 +1163,7 @@ class logging.handlers.QueueListener(queue, *handlers, respect_handler_level=Fal
       this method if you want to use timeouts or work with custom
       queue implementations.
 
-   prepare(record)        *QueueListener.prepare()..logginghandlers.txt;*
+   prepare(record)        *QueueListener.prepare()..logging.handlers.txt*
 
       Prepare a record for handling.
 
@@ -1172,7 +1172,7 @@ class logging.handlers.QueueListener(queue, *handlers, respect_handler_level=Fal
       marshalling or manipulation of the record before passing it to
       the handlers.
 
-   handle(record)          *QueueListener.handle()..logginghandlers.txt;*
+   handle(record)          *QueueListener.handle()..logging.handlers.txt*
 
       Handle a record.
 
@@ -1180,14 +1180,14 @@ class logging.handlers.QueueListener(queue, *handlers, respect_handler_level=Fal
       handle. The actual object passed to the handlers is that which
       is returned from "prepare()".
 
-   start()                  *QueueListener.start()..logginghandlers.txt;*
+   start()                  *QueueListener.start()..logging.handlers.txt*
 
       Starts the listener.
 
       This starts up a background thread to monitor the queue for
       LogRecords to process.
 
-   stop()                    *QueueListener.stop()..logginghandlers.txt;*
+   stop()                    *QueueListener.stop()..logging.handlers.txt*
 
       Stops the listener.
 
@@ -1196,7 +1196,7 @@ class logging.handlers.QueueListener(queue, *handlers, respect_handler_level=Fal
       exits, there may be some records still left on the queue, which
       won’t be processed.
 
-              *QueueListener.enqueue_sentinel()..logginghandlers.txt;*
+              *QueueListener.enqueue_sentinel()..logging.handlers.txt*
    enqueue_sentinel()
 
       Writes a sentinel to the queue to tell the listener to quit.

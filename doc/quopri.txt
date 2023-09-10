@@ -1,4 +1,4 @@
-*quopri.txt;*                                 Last change: 2023 Sep 09
+*quopri.txt;*                                 Last change: 2023 Sep 10
 
 "quopri" — Encode and decode MIME quoted-printable data
 *******************************************************
@@ -16,7 +16,7 @@ characters; the base64 encoding scheme available via the "base64"
 module is more compact if there are many such characters, as when
 sending a graphics file.
 
-quopri.decode(input, output, header=False)     *decode()..quopri.txt;*
+quopri.decode(input, output, header=False)      *decode()..quopri.txt*
 
    Decode the contents of the _input_ file and write the resulting
    decoded binary data to the _output_ file. _input_ and _output_ must
@@ -26,7 +26,7 @@ quopri.decode(input, output, header=False)     *decode()..quopri.txt;*
    (Multipurpose Internet Mail Extensions) Part Two: Message Header
    Extensions for Non-ASCII Text”.
 
-                                               *encode()..quopri.txt;*
+                                                *encode()..quopri.txt*
 quopri.encode(input, output, quotetabs, header=False)
 
    Encode the contents of the _input_ file and write the resulting
@@ -39,12 +39,12 @@ quopri.encode(input, output, quotetabs, header=False)
    which controls if spaces are encoded as underscores as per **RFC
    1522**.
 
-quopri.decodestring(s, header=False)     *decodestring()..quopri.txt;*
+quopri.decodestring(s, header=False)      *decodestring()..quopri.txt*
 
    Like "decode()", except that it accepts a source "bytes" and
    returns the corresponding decoded "bytes".
 
-                                         *encodestring()..quopri.txt;*
+                                          *encodestring()..quopri.txt*
 quopri.encodestring(s, quotetabs=False, header=False)
 
    Like "encode()", except that it accepts a source "bytes" and

@@ -1,4 +1,4 @@
-*html.txt;*                                   Last change: 2023 Sep 09
+*html.txt;*                                   Last change: 2023 Sep 10
 
 "html" — HyperText Markup Language support
 ******************************************
@@ -9,7 +9,7 @@
 
 This module defines utilities to manipulate HTML.
 
-html.escape(s, quote=True)                       *escape()..html.txt;*
+html.escape(s, quote=True)                        *escape()..html.txt*
 
    Convert the characters "&", "<" and ">" in string _s_ to HTML-safe
    sequences.  Use this if you need to display text that might contain
@@ -20,7 +20,7 @@ html.escape(s, quote=True)                       *escape()..html.txt;*
 
    New in version 3.2.
 
-html.unescape(s)                               *unescape()..html.txt;*
+html.unescape(s)                                *unescape()..html.txt*
 
    Convert all named and numeric character references (e.g. "&gt;",
    "&#62;", "&#x3e;") in the string _s_ to the corresponding Unicode

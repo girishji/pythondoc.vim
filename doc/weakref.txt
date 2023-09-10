@@ -1,4 +1,4 @@
-*weakref.txt;*                                Last change: 2023 Sep 09
+*weakref.txt;*                                Last change: 2023 Sep 10
 
 "weakref" — Weak references
 ***************************
@@ -84,7 +84,7 @@ is disabled unless a "'__weakref__'" string is also present in the
 sequence of strings in the "__slots__" declaration. See __slots__
 documentation for details.
 
-class weakref.ref(object[, callback])              *ref..weakref.txt;*
+class weakref.ref(object[, callback])               *ref..weakref.txt*
 
    Return a weak reference to _object_.  The original object can be
    retrieved by calling the reference object if the referent is still
@@ -118,7 +118,7 @@ class weakref.ref(object[, callback])              *ref..weakref.txt;*
 
    This is a subclassable type rather than a factory function.
 
-   __callback__                          *ref.__callback__..weakref.txt;*
+   __callback__                           *ref.__callback__..weakref.txt*
 
       This read-only attribute returns the callback currently
       associated to the weakref.  If there is no callback or if the
@@ -127,7 +127,7 @@ class weakref.ref(object[, callback])              *ref..weakref.txt;*
 
    Changed in version 3.4: Added the "__callback__" attribute.
 
-weakref.proxy(object[, callback])              *proxy()..weakref.txt;*
+weakref.proxy(object[, callback])               *proxy()..weakref.txt*
 
    Return a proxy to _object_ which uses a weak reference.  This
    supports use of the proxy in most contexts instead of requiring the
@@ -146,17 +146,17 @@ weakref.proxy(object[, callback])              *proxy()..weakref.txt;*
    objects to include the matrix multiplication operators "@" and
    "@=".
 
-weakref.getweakrefcount(object)      *getweakrefcount()..weakref.txt;*
+weakref.getweakrefcount(object)       *getweakrefcount()..weakref.txt*
 
    Return the number of weak references and proxies which refer to
    _object_.
 
-weakref.getweakrefs(object)              *getweakrefs()..weakref.txt;*
+weakref.getweakrefs(object)               *getweakrefs()..weakref.txt*
 
    Return a list of all weak reference and proxy objects which refer
    to _object_.
 
-                                     *WeakKeyDictionary..weakref.txt;*
+                                      *WeakKeyDictionary..weakref.txt*
 class weakref.WeakKeyDictionary([dict])
 
    Mapping class that references keys weakly.  Entries in the
@@ -201,12 +201,12 @@ references needs to be checked before being used.  This can be used to
 avoid creating references that will cause the garbage collector to
 keep the keys around longer than needed.
 
-                           *WeakKeyDictionary.keyrefs()..weakref.txt;*
+                            *WeakKeyDictionary.keyrefs()..weakref.txt*
 WeakKeyDictionary.keyrefs()
 
    Return an iterable of the weak references to the keys.
 
-                                   *WeakValueDictionary..weakref.txt;*
+                                    *WeakValueDictionary..weakref.txt*
 class weakref.WeakValueDictionary([dict])
 
    Mapping class that references values weakly.  Entries in the
@@ -219,17 +219,17 @@ class weakref.WeakValueDictionary([dict])
 "WeakValueDictionary" objects have an additional method that has the
 same issues as the "keyrefs()" method of "WeakKeyDictionary" objects.
 
-                       *WeakValueDictionary.valuerefs()..weakref.txt;*
+                        *WeakValueDictionary.valuerefs()..weakref.txt*
 WeakValueDictionary.valuerefs()
 
    Return an iterable of the weak references to the values.
 
-class weakref.WeakSet([elements])              *WeakSet..weakref.txt;*
+class weakref.WeakSet([elements])               *WeakSet..weakref.txt*
 
    Set class that keeps weak references to its elements.  An element
    will be discarded when no strong reference to it exists any more.
 
-                                            *WeakMethod..weakref.txt;*
+                                             *WeakMethod..weakref.txt*
 class weakref.WeakMethod(method[, callback])
 
    A custom "ref" subclass which simulates a weak reference to a bound
@@ -262,7 +262,7 @@ class weakref.WeakMethod(method[, callback])
 
    New in version 3.4.
 
-                                              *finalize..weakref.txt;*
+                                               *finalize..weakref.txt*
 class weakref.finalize(obj, func, /, *args, **kwargs)
 
    Return a callable finalizer object which will be called when _obj_
@@ -289,29 +289,29 @@ class weakref.finalize(obj, func, /, *args, **kwargs)
    the _interpreter shutdown_ when module globals are liable to have
    been replaced by "None".
 
-   __call__()                         *finalize.__call__()..weakref.txt;*
+   __call__()                          *finalize.__call__()..weakref.txt*
 
       If _self_ is alive then mark it as dead and return the result of
       calling "func(*args, **kwargs)".  If _self_ is dead then return
       "None".
 
-   detach()                             *finalize.detach()..weakref.txt;*
+   detach()                              *finalize.detach()..weakref.txt*
 
       If _self_ is alive then mark it as dead and return the tuple
       "(obj, func, args, kwargs)".  If _self_ is dead then return
       "None".
 
-   peek()                                 *finalize.peek()..weakref.txt;*
+   peek()                                  *finalize.peek()..weakref.txt*
 
       If _self_ is alive then return the tuple "(obj, func, args,
       kwargs)".  If _self_ is dead then return "None".
 
-   alive                                   *finalize.alive..weakref.txt;*
+   alive                                    *finalize.alive..weakref.txt*
 
       Property which is true if the finalizer is alive, false
       otherwise.
 
-   atexit                                 *finalize.atexit..weakref.txt;*
+   atexit                                  *finalize.atexit..weakref.txt*
 
       A writable boolean property which by default is true.  When the
       program exits, it calls all remaining live finalizers for which
@@ -326,19 +326,19 @@ class weakref.finalize(obj, func, /, *args, **kwargs)
 
    New in version 3.4.
 
-weakref.ReferenceType                    *ReferenceType..weakref.txt;*
+weakref.ReferenceType                     *ReferenceType..weakref.txt*
 
    The type object for weak references objects.
 
-weakref.ProxyType                            *ProxyType..weakref.txt;*
+weakref.ProxyType                             *ProxyType..weakref.txt*
 
    The type object for proxies of objects which are not callable.
 
-weakref.CallableProxyType            *CallableProxyType..weakref.txt;*
+weakref.CallableProxyType             *CallableProxyType..weakref.txt*
 
    The type object for proxies of callable objects.
 
-weakref.ProxyTypes                          *ProxyTypes..weakref.txt;*
+weakref.ProxyTypes                           *ProxyTypes..weakref.txt*
 
    Sequence containing all the type objects for proxies.  This can
    make it simpler to test if an object is a proxy without being

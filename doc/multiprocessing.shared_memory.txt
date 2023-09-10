@@ -1,4 +1,4 @@
-*multiprocessingshared_memory.txt;*           Last change: 2023 Sep 09
+*multiprocessing.shared_memory.txt;*          Last change: 2023 Sep 10
 
 "multiprocessing.shared_memory" — Shared memory for direct access across processes
 **********************************************************************************
@@ -29,7 +29,7 @@ significant performance benefits compared to sharing data via disk or
 socket or other communications requiring the
 serialization/deserialization and copying of data.
 
-                     *SharedMemory..multiprocessingshared_memory.txt;*
+                     *SharedMemory..multiprocessing.shared_memory.txt*
 class multiprocessing.shared_memory.SharedMemory(name=None, create=False, size=0)
 
    Creates a new shared memory block or attaches to an existing shared
@@ -61,7 +61,7 @@ class multiprocessing.shared_memory.SharedMemory(name=None, create=False, size=0
    size requested.  When attaching to an existing shared memory block,
    the "size" parameter is ignored.
 
-   close()      *SharedMemory.close()..multiprocessingshared_memory.txt;*
+   close()      *SharedMemory.close()..multiprocessing.shared_memory.txt*
 
       Closes access to the shared memory from this instance.  In order
       to ensure proper cleanup of resources, all instances should call
@@ -69,7 +69,7 @@ class multiprocessing.shared_memory.SharedMemory(name=None, create=False, size=0
       calling "close()" does not cause the shared memory block itself
       to be destroyed.
 
-   unlink()    *SharedMemory.unlink()..multiprocessingshared_memory.txt;*
+   unlink()    *SharedMemory.unlink()..multiprocessing.shared_memory.txt*
 
       Requests that the underlying shared memory block be destroyed.
       In order to ensure proper cleanup of resources, "unlink()"
@@ -82,15 +82,15 @@ class multiprocessing.shared_memory.SharedMemory(name=None, create=False, size=0
       Note: the last process relinquishing its hold on a shared memory
       block may call "unlink()" and "close()" in either order.
 
-   buf              *SharedMemory.buf..multiprocessingshared_memory.txt;*
+   buf              *SharedMemory.buf..multiprocessing.shared_memory.txt*
 
       A memoryview of contents of the shared memory block.
 
-   name            *SharedMemory.name..multiprocessingshared_memory.txt;*
+   name            *SharedMemory.name..multiprocessing.shared_memory.txt*
 
       Read-only access to the unique name of the shared memory block.
 
-   size            *SharedMemory.size..multiprocessingshared_memory.txt;*
+   size            *SharedMemory.size..multiprocessing.shared_memory.txt*
 
       Read-only access to size in bytes of the shared memory block.
 
@@ -166,7 +166,7 @@ The following example demonstrates a practical use of the
    >>> shm.unlink()  # Free and release the shared memory block at the very end
 <
 
-              *SharedMemoryManager..multiprocessingshared_memory.txt;*
+              *SharedMemoryManager..multiprocessing.shared_memory.txt*
 class multiprocessing.managers.SharedMemoryManager([address[, authkey]])
 
    A subclass of "BaseManager" which can be used for the management of
@@ -192,13 +192,13 @@ class multiprocessing.managers.SharedMemoryManager([address[, authkey]])
    and how they may be used to connect to an existing
    "SharedMemoryManager" service from other processes.
 
-*SharedMemoryManager.SharedMemory()..multiprocessingshared_memory.txt;*
+*SharedMemoryManager.SharedMemory()..multiprocessing.shared_memory.txt*
    SharedMemory(size)
 
       Create and return a new "SharedMemory" object with the specified
       "size" in bytes.
 
-*SharedMemoryManager.ShareableList()..multiprocessingshared_memory.txt;*
+*SharedMemoryManager.ShareableList()..multiprocessing.shared_memory.txt*
    ShareableList(sequence)
 
       Create and return a new "ShareableList" object, initialized by
@@ -239,7 +239,7 @@ When using a "SharedMemoryManager" in a "with" statement, the shared
 memory blocks created using that manager are all released when the
 "with" statement’s code block finishes execution.
 
-                    *ShareableList..multiprocessingshared_memory.txt;*
+                    *ShareableList..multiprocessing.shared_memory.txt*
 class multiprocessing.shared_memory.ShareableList(sequence=None, \*, name=None)
 
    Provides a mutable list-like object where all values stored within
@@ -289,23 +289,23 @@ class multiprocessing.shared_memory.ShareableList(sequence=None, \*, name=None)
       >>> padded.shm.unlink()
 <
 
-            *ShareableList.count()..multiprocessingshared_memory.txt;*
+            *ShareableList.count()..multiprocessing.shared_memory.txt*
    count(value)
 
       Returns the number of occurrences of "value".
 
-            *ShareableList.index()..multiprocessingshared_memory.txt;*
+            *ShareableList.index()..multiprocessing.shared_memory.txt*
    index(value)
 
       Returns first index position of "value".  Raises "ValueError" if
       "value" is not present.
 
-   format       *ShareableList.format..multiprocessingshared_memory.txt;*
+   format       *ShareableList.format..multiprocessing.shared_memory.txt*
 
       Read-only attribute containing the "struct" packing format used
       by all currently stored values.
 
-   shm             *ShareableList.shm..multiprocessingshared_memory.txt;*
+   shm             *ShareableList.shm..multiprocessing.shared_memory.txt*
 
       The "SharedMemory" instance where the values are stored.
 

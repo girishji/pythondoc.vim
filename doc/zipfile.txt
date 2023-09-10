@@ -1,4 +1,4 @@
-*zipfile.txt;*                                Last change: 2023 Sep 09
+*zipfile.txt;*                                Last change: 2023 Sep 10
 
 "zipfile" — Work with ZIP archives
 **********************************
@@ -21,30 +21,30 @@ Python rather than C.
 
 The module defines the following items:
 
-exception zipfile.BadZipFile                *BadZipFile..zipfile.txt;*
+exception zipfile.BadZipFile                 *BadZipFile..zipfile.txt*
 
    The error raised for bad ZIP files.
 
    New in version 3.2.
 
-exception zipfile.BadZipfile                *BadZipfile..zipfile.txt;*
+exception zipfile.BadZipfile                 *BadZipfile..zipfile.txt*
 
    Alias of "BadZipFile", for compatibility with older Python
    versions.
 
    Deprecated since version 3.2.
 
-exception zipfile.LargeZipFile            *LargeZipFile..zipfile.txt;*
+exception zipfile.LargeZipFile             *LargeZipFile..zipfile.txt*
 
    The error raised when a ZIP file would require ZIP64 functionality
    but that has not been enabled.
 
-class zipfile.ZipFile                          *ZipFile..zipfile.txt;*
+class zipfile.ZipFile                           *ZipFile..zipfile.txt*
 
    The class for reading and writing ZIP files.  See section ZipFile
    Objects for constructor details.
 
-class zipfile.Path                                *Path..zipfile.txt;*
+class zipfile.Path                                 *Path..zipfile.txt*
 
    Class that implements a subset of the interface provided by
    "pathlib.Path", including the full
@@ -52,11 +52,11 @@ class zipfile.Path                                *Path..zipfile.txt;*
 
    New in version 3.8.
 
-class zipfile.PyZipFile                      *PyZipFile..zipfile.txt;*
+class zipfile.PyZipFile                       *PyZipFile..zipfile.txt*
 
    Class for creating ZIP archives containing Python libraries.
 
-                                               *ZipInfo..zipfile.txt;*
+                                                *ZipInfo..zipfile.txt*
 class zipfile.ZipInfo(filename='NoName', date_time=(1980, 1, 1, 0, 0, 0))
 
    Class used to represent information about a member of an archive.
@@ -68,7 +68,7 @@ class zipfile.ZipInfo(filename='NoName', date_time=(1980, 1, 1, 0, 0, 0))
    fields which describe the time of the last modification to the
    file; the fields are described in section ZipInfo Objects.
 
-zipfile.is_zipfile(filename)              *is_zipfile()..zipfile.txt;*
+zipfile.is_zipfile(filename)               *is_zipfile()..zipfile.txt*
 
    Returns "True" if _filename_ is a valid ZIP file based on its magic
    number, otherwise returns "False".  _filename_ may be a file or
@@ -76,23 +76,23 @@ zipfile.is_zipfile(filename)              *is_zipfile()..zipfile.txt;*
 
    Changed in version 3.1: Support for file and file-like objects.
 
-zipfile.ZIP_STORED                          *ZIP_STORED..zipfile.txt;*
+zipfile.ZIP_STORED                           *ZIP_STORED..zipfile.txt*
 
    The numeric constant for an uncompressed archive member.
 
-zipfile.ZIP_DEFLATED                      *ZIP_DEFLATED..zipfile.txt;*
+zipfile.ZIP_DEFLATED                       *ZIP_DEFLATED..zipfile.txt*
 
    The numeric constant for the usual ZIP compression method.  This
    requires the "zlib" module.
 
-zipfile.ZIP_BZIP2                            *ZIP_BZIP2..zipfile.txt;*
+zipfile.ZIP_BZIP2                             *ZIP_BZIP2..zipfile.txt*
 
    The numeric constant for the BZIP2 compression method.  This
    requires the "bz2" module.
 
    New in version 3.3.
 
-zipfile.ZIP_LZMA                              *ZIP_LZMA..zipfile.txt;*
+zipfile.ZIP_LZMA                               *ZIP_LZMA..zipfile.txt*
 
    The numeric constant for the LZMA compression method.  This
    requires the "lzma" module.
@@ -216,28 +216,28 @@ class zipfile.ZipFile(file, mode='r', compression=ZIP_STORED, allowZip64=True, c
    encoding for reading metadata in the zipfile’s directory and file
    headers.
 
-ZipFile.close()                        *ZipFile.close()..zipfile.txt;*
+ZipFile.close()                         *ZipFile.close()..zipfile.txt*
 
    Close the archive file.  You must call "close()" before exiting
    your program or essential records will not be written.
 
-ZipFile.getinfo(name)                *ZipFile.getinfo()..zipfile.txt;*
+ZipFile.getinfo(name)                 *ZipFile.getinfo()..zipfile.txt*
 
    Return a "ZipInfo" object with information about the archive member
    _name_.  Calling "getinfo()" for a name not currently contained in
    the archive will raise a "KeyError".
 
-ZipFile.infolist()                  *ZipFile.infolist()..zipfile.txt;*
+ZipFile.infolist()                   *ZipFile.infolist()..zipfile.txt*
 
    Return a list containing a "ZipInfo" object for each member of the
    archive.  The objects are in the same order as their entries in the
    actual ZIP file on disk if an existing archive was opened.
 
-ZipFile.namelist()                  *ZipFile.namelist()..zipfile.txt;*
+ZipFile.namelist()                   *ZipFile.namelist()..zipfile.txt*
 
    Return a list of archive members by name.
 
-                                        *ZipFile.open()..zipfile.txt;*
+                                         *ZipFile.open()..zipfile.txt*
 ZipFile.open(name, mode='r', pwd=None, *, force_zip64=False)
 
    Access a member of the archive as a binary file-like object.
@@ -286,7 +286,7 @@ ZipFile.open(name, mode='r', pwd=None, *, force_zip64=False)
    Changed in version 3.6: Calling "open()" on a closed ZipFile will
    raise a "ValueError". Previously, a "RuntimeError" was raised.
 
-                                     *ZipFile.extract()..zipfile.txt;*
+                                      *ZipFile.extract()..zipfile.txt*
 ZipFile.extract(member, path=None, pwd=None)
 
    Extract a member from the archive to the current working directory;
@@ -315,7 +315,7 @@ ZipFile.extract(member, path=None, pwd=None)
    Changed in version 3.6.2: The _path_ parameter accepts a _path-like
    object_.
 
-                                  *ZipFile.extractall()..zipfile.txt;*
+                                   *ZipFile.extractall()..zipfile.txt*
 ZipFile.extractall(path=None, members=None, pwd=None)
 
    Extract all members from the archive to the current working
@@ -339,16 +339,16 @@ ZipFile.extractall(path=None, members=None, pwd=None)
    Changed in version 3.6.2: The _path_ parameter accepts a _path-like
    object_.
 
-ZipFile.printdir()                  *ZipFile.printdir()..zipfile.txt;*
+ZipFile.printdir()                   *ZipFile.printdir()..zipfile.txt*
 
    Print a table of contents for the archive to "sys.stdout".
 
-ZipFile.setpassword(pwd)         *ZipFile.setpassword()..zipfile.txt;*
+ZipFile.setpassword(pwd)          *ZipFile.setpassword()..zipfile.txt*
 
    Set _pwd_ (a "bytes" object) as default password to extract
    encrypted files.
 
-ZipFile.read(name, pwd=None)            *ZipFile.read()..zipfile.txt;*
+ZipFile.read(name, pwd=None)             *ZipFile.read()..zipfile.txt*
 
    Return the bytes of the file _name_ in the archive.  _name_ is the
    name of the file in the archive, or a "ZipInfo" object.  The
@@ -363,7 +363,7 @@ ZipFile.read(name, pwd=None)            *ZipFile.read()..zipfile.txt;*
    Changed in version 3.6: Calling "read()" on a closed ZipFile will
    raise a "ValueError". Previously, a "RuntimeError" was raised.
 
-ZipFile.testzip()                    *ZipFile.testzip()..zipfile.txt;*
+ZipFile.testzip()                     *ZipFile.testzip()..zipfile.txt*
 
    Read all the files in the archive and check their CRC’s and file
    headers. Return the name of the first bad file, or else return
@@ -373,7 +373,7 @@ ZipFile.testzip()                    *ZipFile.testzip()..zipfile.txt;*
    will raise a "ValueError".  Previously, a "RuntimeError" was
    raised.
 
-                                       *ZipFile.write()..zipfile.txt;*
+                                        *ZipFile.write()..zipfile.txt*
 ZipFile.write(filename, arcname=None, compress_type=None, compresslevel=None)
 
    Write the file named _filename_ to the archive, giving it the
@@ -414,7 +414,7 @@ ZipFile.write(filename, arcname=None, compress_type=None, compresslevel=None)
    mode "'r'" or a closed ZipFile will raise a "ValueError".
    Previously, a "RuntimeError" was raised.
 
-                                    *ZipFile.writestr()..zipfile.txt;*
+                                     *ZipFile.writestr()..zipfile.txt*
 ZipFile.writestr(zinfo_or_arcname, data, compress_type=None, compresslevel=None)
 
    Write a file into the archive.  The contents is _data_, which may
@@ -444,7 +444,7 @@ ZipFile.writestr(zinfo_or_arcname, data, compress_type=None, compresslevel=None)
    with mode "'r'" or a closed ZipFile will raise a "ValueError".
    Previously, a "RuntimeError" was raised.
 
-                                       *ZipFile.mkdir()..zipfile.txt;*
+                                        *ZipFile.mkdir()..zipfile.txt*
 ZipFile.mkdir(zinfo_or_directory, mode=511)
 
    Create a directory inside the archive.  If _zinfo_or_directory_ is
@@ -459,17 +459,17 @@ ZipFile.mkdir(zinfo_or_directory, mode=511)
 
 The following data attributes are also available:
 
-ZipFile.filename                      *ZipFile.filename..zipfile.txt;*
+ZipFile.filename                       *ZipFile.filename..zipfile.txt*
 
    Name of the ZIP file.
 
-ZipFile.debug                            *ZipFile.debug..zipfile.txt;*
+ZipFile.debug                             *ZipFile.debug..zipfile.txt*
 
    The level of debug output to use.  This may be set from "0" (the
    default, no output) to "3" (the most output).  Debugging
    information is written to "sys.stdout".
 
-ZipFile.comment                        *ZipFile.comment..zipfile.txt;*
+ZipFile.comment                         *ZipFile.comment..zipfile.txt*
 
    The comment associated with the ZIP file as a "bytes" object. If
    assigning a comment to a "ZipFile" instance created with mode
@@ -494,11 +494,11 @@ Path objects expose the following features of "pathlib.Path" objects:
 
 Path objects are traversable using the "/" operator or "joinpath".
 
-Path.name                                    *Path.name..zipfile.txt;*
+Path.name                                     *Path.name..zipfile.txt*
 
    The final path component.
 
-Path.open(mode='r', *, pwd, **)            *Path.open()..zipfile.txt;*
+Path.open(mode='r', *, pwd, **)             *Path.open()..zipfile.txt*
 
    Invoke "ZipFile.open()" on the current path. Allows opening for
    read or write, text or binary through supported modes: ‘r’, ‘w’,
@@ -515,43 +515,43 @@ Path.open(mode='r', *, pwd, **)            *Path.open()..zipfile.txt;*
    versions must pass all "io.TextIOWrapper" arguments, "encoding"
    included, as keywords.
 
-Path.iterdir()                          *Path.iterdir()..zipfile.txt;*
+Path.iterdir()                           *Path.iterdir()..zipfile.txt*
 
    Enumerate the children of the current directory.
 
-Path.is_dir()                            *Path.is_dir()..zipfile.txt;*
+Path.is_dir()                             *Path.is_dir()..zipfile.txt*
 
    Return "True" if the current context references a directory.
 
-Path.is_file()                          *Path.is_file()..zipfile.txt;*
+Path.is_file()                           *Path.is_file()..zipfile.txt*
 
    Return "True" if the current context references a file.
 
-Path.exists()                            *Path.exists()..zipfile.txt;*
+Path.exists()                             *Path.exists()..zipfile.txt*
 
    Return "True" if the current context references a file or directory
    in the zip file.
 
-Path.suffix                                *Path.suffix..zipfile.txt;*
+Path.suffix                                 *Path.suffix..zipfile.txt*
 
    The last dot-separated portion of the final component, if any. This
    is commonly called the file extension.
 
    New in version 3.11: Added "Path.suffix" property.
 
-Path.stem                                    *Path.stem..zipfile.txt;*
+Path.stem                                     *Path.stem..zipfile.txt*
 
    The final path component, without its suffix.
 
    New in version 3.11: Added "Path.stem" property.
 
-Path.suffixes                            *Path.suffixes..zipfile.txt;*
+Path.suffixes                             *Path.suffixes..zipfile.txt*
 
    A list of the path’s suffixes, commonly called file extensions.
 
    New in version 3.11: Added "Path.suffixes" property.
 
-Path.read_text(*, **)                 *Path.read_text()..zipfile.txt;*
+Path.read_text(*, **)                  *Path.read_text()..zipfile.txt*
 
    Read the current file as unicode text. Positional and keyword
    arguments are passed through to "io.TextIOWrapper" (except
@@ -563,11 +563,11 @@ Path.read_text(*, **)                 *Path.read_text()..zipfile.txt;*
    versions must pass all "io.TextIOWrapper" arguments, "encoding"
    included, as keywords.
 
-Path.read_bytes()                    *Path.read_bytes()..zipfile.txt;*
+Path.read_bytes()                     *Path.read_bytes()..zipfile.txt*
 
    Read the current file as bytes.
 
-Path.joinpath(*other)                  *Path.joinpath()..zipfile.txt;*
+Path.joinpath(*other)                   *Path.joinpath()..zipfile.txt*
 
    Return a new Path object with each of the _other_ arguments joined.
    The following are equivalent:
@@ -599,7 +599,7 @@ class zipfile.PyZipFile(file, mode='r', compression=ZIP_STORED, allowZip64=True,
    Instances have one method in addition to those of "ZipFile"
    objects:
 
-                                   *PyZipFile.writepy()..zipfile.txt;*
+                                    *PyZipFile.writepy()..zipfile.txt*
    writepy(pathname, basename='', filterfunc=None)
 
       Search for files "*.py" and add the corresponding file to the
@@ -668,7 +668,7 @@ information about a single member of the ZIP archive.
 There is one classmethod to make a "ZipInfo" instance for a filesystem
 file:
 
-                                   *ZipInfo.from_file()..zipfile.txt;*
+                                    *ZipInfo.from_file()..zipfile.txt*
 classmethod ZipInfo.from_file(filename, arcname=None, *, strict_timestamps=True)
 
    Construct a "ZipInfo" instance for a file on the filesystem, in
@@ -696,7 +696,7 @@ classmethod ZipInfo.from_file(filename, arcname=None, *, strict_timestamps=True)
 
 Instances have the following methods and attributes:
 
-ZipInfo.is_dir()                      *ZipInfo.is_dir()..zipfile.txt;*
+ZipInfo.is_dir()                       *ZipInfo.is_dir()..zipfile.txt*
 
    Return "True" if this archive member is a directory.
 
@@ -704,11 +704,11 @@ ZipInfo.is_dir()                      *ZipInfo.is_dir()..zipfile.txt;*
 
    New in version 3.6.
 
-ZipInfo.filename                      *ZipInfo.filename..zipfile.txt;*
+ZipInfo.filename                       *ZipInfo.filename..zipfile.txt*
 
    Name of the file in the archive.
 
-ZipInfo.date_time                    *ZipInfo.date_time..zipfile.txt;*
+ZipInfo.date_time                     *ZipInfo.date_time..zipfile.txt*
 
    The time and date of the last modification to the archive member.
    This is a tuple of six values:
@@ -733,65 +733,65 @@ ZipInfo.date_time                    *ZipInfo.date_time..zipfile.txt;*
 
      The ZIP file format does not support timestamps before 1980.
 
-ZipInfo.compress_type            *ZipInfo.compress_type..zipfile.txt;*
+ZipInfo.compress_type             *ZipInfo.compress_type..zipfile.txt*
 
    Type of compression for the archive member.
 
-ZipInfo.comment                        *ZipInfo.comment..zipfile.txt;*
+ZipInfo.comment                         *ZipInfo.comment..zipfile.txt*
 
    Comment for the individual archive member as a "bytes" object.
 
-ZipInfo.extra                            *ZipInfo.extra..zipfile.txt;*
+ZipInfo.extra                             *ZipInfo.extra..zipfile.txt*
 
    Expansion field data.  The PKZIP Application Note contains some
    comments on the internal structure of the data contained in this
    "bytes" object.
 
-ZipInfo.create_system            *ZipInfo.create_system..zipfile.txt;*
+ZipInfo.create_system             *ZipInfo.create_system..zipfile.txt*
 
    System which created ZIP archive.
 
-ZipInfo.create_version          *ZipInfo.create_version..zipfile.txt;*
+ZipInfo.create_version           *ZipInfo.create_version..zipfile.txt*
 
    PKZIP version which created ZIP archive.
 
-ZipInfo.extract_version        *ZipInfo.extract_version..zipfile.txt;*
+ZipInfo.extract_version         *ZipInfo.extract_version..zipfile.txt*
 
    PKZIP version needed to extract archive.
 
-ZipInfo.reserved                      *ZipInfo.reserved..zipfile.txt;*
+ZipInfo.reserved                       *ZipInfo.reserved..zipfile.txt*
 
    Must be zero.
 
-ZipInfo.flag_bits                    *ZipInfo.flag_bits..zipfile.txt;*
+ZipInfo.flag_bits                     *ZipInfo.flag_bits..zipfile.txt*
 
    ZIP flag bits.
 
-ZipInfo.volume                          *ZipInfo.volume..zipfile.txt;*
+ZipInfo.volume                           *ZipInfo.volume..zipfile.txt*
 
    Volume number of file header.
 
-ZipInfo.internal_attr            *ZipInfo.internal_attr..zipfile.txt;*
+ZipInfo.internal_attr             *ZipInfo.internal_attr..zipfile.txt*
 
    Internal attributes.
 
-ZipInfo.external_attr            *ZipInfo.external_attr..zipfile.txt;*
+ZipInfo.external_attr             *ZipInfo.external_attr..zipfile.txt*
 
    External file attributes.
 
-ZipInfo.header_offset            *ZipInfo.header_offset..zipfile.txt;*
+ZipInfo.header_offset             *ZipInfo.header_offset..zipfile.txt*
 
    Byte offset to the file header.
 
-ZipInfo.CRC                                *ZipInfo.CRC..zipfile.txt;*
+ZipInfo.CRC                                 *ZipInfo.CRC..zipfile.txt*
 
    CRC-32 of the uncompressed file.
 
-ZipInfo.compress_size            *ZipInfo.compress_size..zipfile.txt;*
+ZipInfo.compress_size             *ZipInfo.compress_size..zipfile.txt*
 
    Size of the compressed data.
 
-ZipInfo.file_size                    *ZipInfo.file_size..zipfile.txt;*
+ZipInfo.file_size                     *ZipInfo.file_size..zipfile.txt*
 
    Size of the uncompressed file.
 

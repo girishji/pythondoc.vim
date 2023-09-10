@@ -1,4 +1,4 @@
-*rlcompleter.txt;*                            Last change: 2023 Sep 09
+*rlcompleter.txt;*                            Last change: 2023 Sep 10
 
 "rlcompleter" — Completion function for GNU readline
 ****************************************************
@@ -40,7 +40,7 @@ Completer Objects
 
 Completer objects have the following method:
 
-                              *Completer.complete()..rlcompleter.txt;*
+                               *Completer.complete()..rlcompleter.txt*
 Completer.complete(text, state)
 
    Return the _state_th completion for _text_.

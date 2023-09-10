@@ -1,4 +1,4 @@
-*getopt.txt;*                                 Last change: 2023 Sep 09
+*getopt.txt;*                                 Last change: 2023 Sep 10
 
 "getopt" — C-style parser for command line options
 **************************************************
@@ -27,7 +27,7 @@ software may be used as well via an optional third argument.
 
 This module provides two functions and an exception:
 
-getopt.getopt(args, shortopts, longopts=[])    *getopt()..getopt.txt;*
+getopt.getopt(args, shortopts, longopts=[])     *getopt()..getopt.txt*
 
    Parses command line options and parameter list.  _args_ is the
    argument list to be parsed, without the leading reference to the
@@ -66,7 +66,7 @@ getopt.getopt(args, shortopts, longopts=[])    *getopt()..getopt.txt;*
    allowing multiple occurrences.  Long and short options may be
    mixed.
 
-                                           *gnu_getopt()..getopt.txt;*
+                                            *gnu_getopt()..getopt.txt*
 getopt.gnu_getopt(args, shortopts, longopts=[])
 
    This function works like "getopt()", except that GNU style scanning
@@ -78,7 +78,7 @@ getopt.gnu_getopt(args, shortopts, longopts=[])
    environment variable "POSIXLY_CORRECT" is set, then option
    processing stops as soon as a non-option argument is encountered.
 
-exception getopt.GetoptError                *GetoptError..getopt.txt;*
+exception getopt.GetoptError                 *GetoptError..getopt.txt*
 
    This is raised when an unrecognized option is found in the argument
    list or when an option requiring an argument is given none. The
@@ -89,7 +89,7 @@ exception getopt.GetoptError                *GetoptError..getopt.txt;*
    option; if there is no specific option to which the exception
    relates, "opt" is an empty string.
 
-exception getopt.error                            *error..getopt.txt;*
+exception getopt.error                             *error..getopt.txt*
 
    Alias for "GetoptError"; for backward compatibility.
 

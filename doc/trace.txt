@@ -1,4 +1,4 @@
-*trace.txt;*                                  Last change: 2023 Sep 09
+*trace.txt;*                                  Last change: 2023 Sep 10
 
 "trace" — Trace or track Python statement execution
 ***************************************************
@@ -132,7 +132,7 @@ These options may be repeated multiple times.
 Programmatic Interface
 ======================
 
-                                                   *Trace..trace.txt;*
+                                                    *Trace..trace.txt*
 class trace.Trace(count=1, trace=1, countfuncs=0, countcallers=0, ignoremods=(), ignoredirs=(), infile=None, outfile=None, timing=False)
 
    Create an object to trace execution of a single statement or
@@ -147,41 +147,41 @@ class trace.Trace(count=1, trace=1, countfuncs=0, countcallers=0, ignoremods=(),
    in which to write updated count information.  _timing_ enables a
    timestamp relative to when tracing was started to be displayed.
 
-   run(cmd)                                     *Trace.run()..trace.txt;*
+   run(cmd)                                      *Trace.run()..trace.txt*
 
       Execute the command and gather statistics from the execution
       with the current tracing parameters.  _cmd_ must be a string or
       code object, suitable for passing into "exec()".
 
-   runctx(cmd, globals=None, locals=None)    *Trace.runctx()..trace.txt;*
+   runctx(cmd, globals=None, locals=None)     *Trace.runctx()..trace.txt*
 
       Execute the command and gather statistics from the execution
       with the current tracing parameters, in the defined global and
       local environments.  If not defined, _globals_ and _locals_
       default to empty dictionaries.
 
-   runfunc(func, /, *args, **kwds)          *Trace.runfunc()..trace.txt;*
+   runfunc(func, /, *args, **kwds)           *Trace.runfunc()..trace.txt*
 
       Call _func_ with the given arguments under control of the
       "Trace" object with the current tracing parameters.
 
-   results()                                *Trace.results()..trace.txt;*
+   results()                                 *Trace.results()..trace.txt*
 
       Return a "CoverageResults" object that contains the cumulative
       results of all previous calls to "run", "runctx" and "runfunc"
       for the given "Trace" instance.  Does not reset the accumulated
       trace results.
 
-class trace.CoverageResults              *CoverageResults..trace.txt;*
+class trace.CoverageResults               *CoverageResults..trace.txt*
 
    A container for coverage results, created by "Trace.results()".
    Should not be created directly by the user.
 
-   update(other)                   *CoverageResults.update()..trace.txt;*
+   update(other)                    *CoverageResults.update()..trace.txt*
 
       Merge in data from another "CoverageResults" object.
 
-                         *CoverageResults.write_results()..trace.txt;*
+                          *CoverageResults.write_results()..trace.txt*
    write_results(show_missing=True, summary=False, coverdir=None)
 
       Write coverage results.  Set _show_missing_ to show lines that

@@ -1,4 +1,4 @@
-*xmletreeelementtree.txt;*                    Last change: 2023 Sep 09
+*xml.etree.elementtree.txt;*                  Last change: 2023 Sep 10
 
 "xml.etree.ElementTree" — The ElementTree XML API
 *************************************************
@@ -479,7 +479,7 @@ Reference
 Functions
 ---------
 
-                            *canonicalize()..xmletreeelementtree.txt;*
+                           *canonicalize()..xml.etree.elementtree.txt*
 xml.etree.ElementTree.canonicalize(xml_data=None, *, out=None, from_file=None, **options)
 
    C14N 2.0 transformation function.
@@ -539,7 +539,7 @@ xml.etree.ElementTree.canonicalize(xml_data=None, *, out=None, from_file=None, *
 
    New in version 3.8.
 
-                                 *Comment()..xmletreeelementtree.txt;*
+                                *Comment()..xml.etree.elementtree.txt*
 xml.etree.ElementTree.Comment(text=None)
 
    Comment element factory.  This factory function creates a special
@@ -553,7 +553,7 @@ xml.etree.ElementTree.Comment(text=None)
    contain comment nodes if they have been inserted into to the tree
    using one of the "Element" methods.
 
-xml.etree.ElementTree.dump(elem)    *dump()..xmletreeelementtree.txt;*
+xml.etree.ElementTree.dump(elem)   *dump()..xml.etree.elementtree.txt*
 
    Writes an element tree or element structure to sys.stdout.  This
    function should be used for debugging only.
@@ -566,7 +566,7 @@ xml.etree.ElementTree.dump(elem)    *dump()..xmletreeelementtree.txt;*
    Changed in version 3.8: The "dump()" function now preserves the
    attribute order specified by the user.
 
-                              *fromstring()..xmletreeelementtree.txt;*
+                             *fromstring()..xml.etree.elementtree.txt*
 xml.etree.ElementTree.fromstring(text, parser=None)
 
    Parses an XML section from a string constant.  Same as "XML()".
@@ -574,7 +574,7 @@ xml.etree.ElementTree.fromstring(text, parser=None)
    parser instance. If not given, the standard "XMLParser" parser is
    used. Returns an "Element" instance.
 
-                          *fromstringlist()..xmletreeelementtree.txt;*
+                         *fromstringlist()..xml.etree.elementtree.txt*
 xml.etree.ElementTree.fromstringlist(sequence, parser=None)
 
    Parses an XML document from a sequence of string fragments.
@@ -585,7 +585,7 @@ xml.etree.ElementTree.fromstringlist(sequence, parser=None)
 
    New in version 3.2.
 
-                                  *indent()..xmletreeelementtree.txt;*
+                                 *indent()..xml.etree.elementtree.txt*
 xml.etree.ElementTree.indent(tree, space='  ', level=0)
 
    Appends whitespace to the subtree to indent the tree visually. This
@@ -597,14 +597,14 @@ xml.etree.ElementTree.indent(tree, space='  ', level=0)
 
    New in version 3.9.
 
-                               *iselement()..xmletreeelementtree.txt;*
+                              *iselement()..xml.etree.elementtree.txt*
 xml.etree.ElementTree.iselement(element)
 
    Check if an object appears to be a valid element object.  _element_
    is an element instance.  Return "True" if this is an element
    object.
 
-                               *iterparse()..xmletreeelementtree.txt;*
+                              *iterparse()..xml.etree.elementtree.txt*
 xml.etree.ElementTree.iterparse(source, events=None, parser=None)
 
    Parses an XML section into an element tree incrementally, and
@@ -638,7 +638,7 @@ xml.etree.ElementTree.iterparse(source, events=None, parser=None)
 
    Changed in version 3.8: The "comment" and "pi" events were added.
 
-                                   *parse()..xmletreeelementtree.txt;*
+                                  *parse()..xml.etree.elementtree.txt*
 xml.etree.ElementTree.parse(source, parser=None)
 
    Parses an XML section into an element tree.  _source_ is a filename
@@ -646,7 +646,7 @@ xml.etree.ElementTree.parse(source, parser=None)
    instance.  If not given, the standard "XMLParser" parser is used.
    Returns an "ElementTree" instance.
 
-                   *ProcessingInstruction()..xmletreeelementtree.txt;*
+                  *ProcessingInstruction()..xml.etree.elementtree.txt*
 xml.etree.ElementTree.ProcessingInstruction(target, text=None)
 
    PI element factory.  This factory function creates a special
@@ -661,7 +661,7 @@ xml.etree.ElementTree.ProcessingInstruction(target, text=None)
    they have been inserted into to the tree using one of the "Element"
    methods.
 
-                      *register_namespace()..xmletreeelementtree.txt;*
+                     *register_namespace()..xml.etree.elementtree.txt*
 xml.etree.ElementTree.register_namespace(prefix, uri)
 
    Registers a namespace prefix.  The registry is global, and any
@@ -672,7 +672,7 @@ xml.etree.ElementTree.register_namespace(prefix, uri)
 
    New in version 3.2.
 
-                              *SubElement()..xmletreeelementtree.txt;*
+                             *SubElement()..xml.etree.elementtree.txt*
 xml.etree.ElementTree.SubElement(parent, tag, attrib={}, **extra)
 
    Subelement factory.  This function creates an element instance, and
@@ -685,7 +685,7 @@ xml.etree.ElementTree.SubElement(parent, tag, attrib={}, **extra)
    additional attributes, given as keyword arguments.  Returns an
    element instance.
 
-                                *tostring()..xmletreeelementtree.txt;*
+                               *tostring()..xml.etree.elementtree.txt*
 xml.etree.ElementTree.tostring(element, encoding='us-ascii', method='xml', *, xml_declaration=None, default_namespace=None, short_empty_elements=True)
 
    Generates a string representation of an XML element, including all
@@ -706,7 +706,7 @@ xml.etree.ElementTree.tostring(element, encoding='us-ascii', method='xml', *, xm
    Changed in version 3.8: The "tostring()" function now preserves the
    attribute order specified by the user.
 
-                            *tostringlist()..xmletreeelementtree.txt;*
+                           *tostringlist()..xml.etree.elementtree.txt*
 xml.etree.ElementTree.tostringlist(element, encoding='us-ascii', method='xml', *, xml_declaration=None, default_namespace=None, short_empty_elements=True)
 
    Generates a string representation of an XML element, including all
@@ -731,7 +731,7 @@ xml.etree.ElementTree.tostringlist(element, encoding='us-ascii', method='xml', *
    Changed in version 3.8: The "tostringlist()" function now preserves
    the attribute order specified by the user.
 
-                                     *XML()..xmletreeelementtree.txt;*
+                                    *XML()..xml.etree.elementtree.txt*
 xml.etree.ElementTree.XML(text, parser=None)
 
    Parses an XML section from a string constant.  This function can be
@@ -740,7 +740,7 @@ xml.etree.ElementTree.XML(text, parser=None)
    not given, the standard "XMLParser" parser is used.  Returns an
    "Element" instance.
 
-                                   *XMLID()..xmletreeelementtree.txt;*
+                                  *XMLID()..xml.etree.elementtree.txt*
 xml.etree.ElementTree.XMLID(text, parser=None)
 
    Parses an XML section from a string constant, and also returns a
@@ -822,7 +822,7 @@ Reference
 Functions
 ---------
 
- *xml.etree.ElementInclude.default_loader()..xmletreeelementtree.txt;*
+*xml.etree.ElementInclude.default_loader()..xml.etree.elementtree.txt*
 xml.etree.ElementInclude.default_loader(href, parse, encoding=None)
 
    Default loader. This default loader reads an included resource from
@@ -833,7 +833,7 @@ xml.etree.ElementInclude.default_loader(href, parse, encoding=None)
    mode is “text”, this is a Unicode string.  If the loader fails, it
    can return None or raise an exception.
 
-        *xml.etree.ElementInclude.include()..xmletreeelementtree.txt;*
+       *xml.etree.ElementInclude.include()..xml.etree.elementtree.txt*
 xml.etree.ElementInclude.include(elem, loader=None, base_url=None, max_depth=6)
 
    This function expands XInclude directives.  _elem_ is the root
@@ -856,7 +856,7 @@ xml.etree.ElementInclude.include(elem, loader=None, base_url=None, max_depth=6)
 Element Objects
 ---------------
 
-                                   *Element..xmletreeelementtree.txt;*
+                                  *Element..xml.etree.elementtree.txt*
 class xml.etree.ElementTree.Element(tag, attrib={}, **extra)
 
    Element class.  This class defines the Element interface, and
@@ -867,13 +867,13 @@ class xml.etree.ElementTree.Element(tag, attrib={}, **extra)
    _attrib_ is an optional dictionary, containing element attributes.
    _extra_ contains additional attributes, given as keyword arguments.
 
-   tag                            *Element.tag..xmletreeelementtree.txt;*
+   tag                           *Element.tag..xml.etree.elementtree.txt*
 
       A string identifying what kind of data this element represents
       (the element type, in other words).
 
-   text                          *Element.text..xmletreeelementtree.txt;*
-   tail                          *Element.tail..xmletreeelementtree.txt;*
+   text                         *Element.text..xml.etree.elementtree.txt*
+   tail                         *Element.tail..xml.etree.elementtree.txt*
 
       These attributes can be used to hold additional data associated
       with the element.  Their values are usually strings but may be
@@ -896,7 +896,7 @@ class xml.etree.ElementTree.Element(tag, attrib={}, **extra)
 
       Applications may store arbitrary objects in these attributes.
 
-   attrib                      *Element.attrib..xmletreeelementtree.txt;*
+   attrib                     *Element.attrib..xml.etree.elementtree.txt*
 
       A dictionary containing the element’s attributes.  Note that
       while the _attrib_ value is always a real mutable Python
@@ -909,42 +909,42 @@ class xml.etree.ElementTree.Element(tag, attrib={}, **extra)
    The following dictionary-like methods work on the element
    attributes.
 
-   clear()                    *Element.clear()..xmletreeelementtree.txt;*
+   clear()                   *Element.clear()..xml.etree.elementtree.txt*
 
       Resets an element.  This function removes all subelements,
       clears all attributes, and sets the text and tail attributes to
       "None".
 
-   get(key, default=None)       *Element.get()..xmletreeelementtree.txt;*
+   get(key, default=None)      *Element.get()..xml.etree.elementtree.txt*
 
       Gets the element attribute named _key_.
 
       Returns the attribute value, or _default_ if the attribute was
       not found.
 
-   items()                    *Element.items()..xmletreeelementtree.txt;*
+   items()                   *Element.items()..xml.etree.elementtree.txt*
 
       Returns the element attributes as a sequence of (name, value)
       pairs.  The attributes are returned in an arbitrary order.
 
-   keys()                      *Element.keys()..xmletreeelementtree.txt;*
+   keys()                     *Element.keys()..xml.etree.elementtree.txt*
 
       Returns the elements attribute names as a list.  The names are
       returned in an arbitrary order.
 
-   set(key, value)              *Element.set()..xmletreeelementtree.txt;*
+   set(key, value)             *Element.set()..xml.etree.elementtree.txt*
 
       Set the attribute _key_ on the element to _value_.
 
    The following methods work on the element’s children (subelements).
 
-   append(subelement)        *Element.append()..xmletreeelementtree.txt;*
+   append(subelement)       *Element.append()..xml.etree.elementtree.txt*
 
       Adds the element _subelement_ to the end of this element’s
       internal list of subelements.  Raises "TypeError" if
       _subelement_ is not an "Element".
 
-   extend(subelements)       *Element.extend()..xmletreeelementtree.txt;*
+   extend(subelements)      *Element.extend()..xml.etree.elementtree.txt*
 
       Appends _subelements_ from a sequence object with zero or more
       elements. Raises "TypeError" if a subelement is not an
@@ -952,7 +952,7 @@ class xml.etree.ElementTree.Element(tag, attrib={}, **extra)
 
       New in version 3.2.
 
-                            *Element.find()..xmletreeelementtree.txt;*
+                           *Element.find()..xml.etree.elementtree.txt*
    find(match, namespaces=None)
 
       Finds the first subelement matching _match_.  _match_ may be a
@@ -961,7 +961,7 @@ class xml.etree.ElementTree.Element(tag, attrib={}, **extra)
       full name.  Pass "''" as prefix to move all unprefixed tag names
       in the expression into the given namespace.
 
-                         *Element.findall()..xmletreeelementtree.txt;*
+                        *Element.findall()..xml.etree.elementtree.txt*
    findall(match, namespaces=None)
 
       Finds all matching subelements, by tag name or path.  Returns a
@@ -970,7 +970,7 @@ class xml.etree.ElementTree.Element(tag, attrib={}, **extra)
       full name.  Pass "''" as prefix to move all unprefixed tag names
       in the expression into the given namespace.
 
-                        *Element.findtext()..xmletreeelementtree.txt;*
+                       *Element.findtext()..xml.etree.elementtree.txt*
    findtext(match, default=None, namespaces=None)
 
       Finds text for the first subelement matching _match_.  _match_
@@ -981,13 +981,13 @@ class xml.etree.ElementTree.Element(tag, attrib={}, **extra)
       namespace prefix to full name.  Pass "''" as prefix to move all
       unprefixed tag names in the expression into the given namespace.
 
-                          *Element.insert()..xmletreeelementtree.txt;*
+                         *Element.insert()..xml.etree.elementtree.txt*
    insert(index, subelement)
 
       Inserts _subelement_ at the given position in this element.
       Raises "TypeError" if _subelement_ is not an "Element".
 
-   iter(tag=None)              *Element.iter()..xmletreeelementtree.txt;*
+   iter(tag=None)             *Element.iter()..xml.etree.elementtree.txt*
 
       Creates a tree _iterator_ with the current element as the root.
       The iterator iterates over this element and all elements below
@@ -998,7 +998,7 @@ class xml.etree.ElementTree.Element(tag, attrib={}, **extra)
 
       New in version 3.2.
 
-                        *Element.iterfind()..xmletreeelementtree.txt;*
+                       *Element.iterfind()..xml.etree.elementtree.txt*
    iterfind(match, namespaces=None)
 
       Finds all matching subelements, by tag name or path.  Returns an
@@ -1008,7 +1008,7 @@ class xml.etree.ElementTree.Element(tag, attrib={}, **extra)
 
       New in version 3.2.
 
-   itertext()              *Element.itertext()..xmletreeelementtree.txt;*
+   itertext()             *Element.itertext()..xml.etree.elementtree.txt*
 
       Creates a text iterator.  The iterator loops over this element
       and all subelements, in document order, and returns all inner
@@ -1016,14 +1016,14 @@ class xml.etree.ElementTree.Element(tag, attrib={}, **extra)
 
       New in version 3.2.
 
-                     *Element.makeelement()..xmletreeelementtree.txt;*
+                    *Element.makeelement()..xml.etree.elementtree.txt*
    makeelement(tag, attrib)
 
       Creates a new element object of the same type as this element.
       Do not call this method, use the "SubElement()" factory function
       instead.
 
-   remove(subelement)        *Element.remove()..xmletreeelementtree.txt;*
+   remove(subelement)       *Element.remove()..xml.etree.elementtree.txt*
 
       Removes _subelement_ from the element.  Unlike the find* methods
       this method compares elements based on the instance identity,
@@ -1085,7 +1085,7 @@ class xml.etree.ElementTree.Element(tag, attrib={}, **extra)
 ElementTree Objects
 -------------------
 
-                               *ElementTree..xmletreeelementtree.txt;*
+                              *ElementTree..xml.etree.elementtree.txt*
 class xml.etree.ElementTree.ElementTree(element=None, file=None)
 
    ElementTree wrapper class.  This class represents an entire element
@@ -1095,46 +1095,47 @@ class xml.etree.ElementTree.ElementTree(element=None, file=None)
    _element_ is the root element.  The tree is initialized with the
    contents of the XML _file_ if given.
 
-   _setroot(element)   *ElementTree._setroot()..xmletreeelementtree.txt;*
+                   *ElementTree._setroot()..xml.etree.elementtree.txt*
+   _setroot(element)
 
       Replaces the root element for this tree.  This discards the
       current contents of the tree, and replaces it with the given
       element.  Use with care.  _element_ is an element instance.
 
-                        *ElementTree.find()..xmletreeelementtree.txt;*
+                       *ElementTree.find()..xml.etree.elementtree.txt*
    find(match, namespaces=None)
 
       Same as "Element.find()", starting at the root of the tree.
 
-                     *ElementTree.findall()..xmletreeelementtree.txt;*
+                    *ElementTree.findall()..xml.etree.elementtree.txt*
    findall(match, namespaces=None)
 
       Same as "Element.findall()", starting at the root of the tree.
 
-                    *ElementTree.findtext()..xmletreeelementtree.txt;*
+                   *ElementTree.findtext()..xml.etree.elementtree.txt*
    findtext(match, default=None, namespaces=None)
 
       Same as "Element.findtext()", starting at the root of the tree.
 
-   getroot()            *ElementTree.getroot()..xmletreeelementtree.txt;*
+   getroot()           *ElementTree.getroot()..xml.etree.elementtree.txt*
 
       Returns the root element for this tree.
 
-   iter(tag=None)          *ElementTree.iter()..xmletreeelementtree.txt;*
+   iter(tag=None)         *ElementTree.iter()..xml.etree.elementtree.txt*
 
       Creates and returns a tree iterator for the root element.  The
       iterator loops over all elements in this tree, in section order.
       _tag_ is the tag to look for (default is to return all
       elements).
 
-                    *ElementTree.iterfind()..xmletreeelementtree.txt;*
+                   *ElementTree.iterfind()..xml.etree.elementtree.txt*
    iterfind(match, namespaces=None)
 
       Same as "Element.iterfind()", starting at the root of the tree.
 
       New in version 3.2.
 
-                       *ElementTree.parse()..xmletreeelementtree.txt;*
+                      *ElementTree.parse()..xml.etree.elementtree.txt*
    parse(source, parser=None)
 
       Loads an external XML section into this element tree.  _source_
@@ -1142,7 +1143,7 @@ class xml.etree.ElementTree.ElementTree(element=None, file=None)
       instance. If not given, the standard "XMLParser" parser is used.
       Returns the section root element.
 
-                       *ElementTree.write()..xmletreeelementtree.txt;*
+                      *ElementTree.write()..xml.etree.elementtree.txt*
    write(file, encoding='us-ascii', xml_declaration=None, default_namespace=None, method='xml', *, short_empty_elements=True)
 
       Writes the element tree to a file, as XML.  _file_ is a file
@@ -1205,7 +1206,7 @@ paragraph:
 QName Objects
 -------------
 
-                                     *QName..xmletreeelementtree.txt;*
+                                    *QName..xml.etree.elementtree.txt*
 class xml.etree.ElementTree.QName(text_or_uri, tag=None)
 
    QName wrapper.  This can be used to wrap a QName attribute value,
@@ -1220,7 +1221,7 @@ class xml.etree.ElementTree.QName(text_or_uri, tag=None)
 TreeBuilder Objects
 -------------------
 
-                               *TreeBuilder..xmletreeelementtree.txt;*
+                              *TreeBuilder..xml.etree.elementtree.txt*
 class xml.etree.ElementTree.TreeBuilder(element_factory=None, *, comment_factory=None, pi_factory=None, insert_comments=False, insert_pis=False)
 
    Generic element structure builder.  This builder converts a
@@ -1241,35 +1242,35 @@ class xml.etree.ElementTree.TreeBuilder(element_factory=None, *, comment_factory
    tree if they appear within the root element (but not outside of
    it).
 
-   close()                *TreeBuilder.close()..xmletreeelementtree.txt;*
+   close()               *TreeBuilder.close()..xml.etree.elementtree.txt*
 
       Flushes the builder buffers, and returns the toplevel document
       element.  Returns an "Element" instance.
 
-   data(data)              *TreeBuilder.data()..xmletreeelementtree.txt;*
+   data(data)             *TreeBuilder.data()..xml.etree.elementtree.txt*
 
       Adds text to the current element.  _data_ is a string.  This
       should be either a bytestring, or a Unicode string.
 
-   end(tag)                 *TreeBuilder.end()..xmletreeelementtree.txt;*
+   end(tag)                *TreeBuilder.end()..xml.etree.elementtree.txt*
 
       Closes the current element.  _tag_ is the element name.  Returns
       the closed element.
 
-   start(tag, attrs)      *TreeBuilder.start()..xmletreeelementtree.txt;*
+   start(tag, attrs)     *TreeBuilder.start()..xml.etree.elementtree.txt*
 
       Opens a new element.  _tag_ is the element name.  _attrs_ is a
       dictionary containing element attributes.  Returns the opened
       element.
 
-   comment(text)        *TreeBuilder.comment()..xmletreeelementtree.txt;*
+   comment(text)       *TreeBuilder.comment()..xml.etree.elementtree.txt*
 
       Creates a comment with the given _text_.  If "insert_comments"
       is true, this will also add it to the tree.
 
       New in version 3.8.
 
-   pi(target, text)          *TreeBuilder.pi()..xmletreeelementtree.txt;*
+   pi(target, text)         *TreeBuilder.pi()..xml.etree.elementtree.txt*
 
       Creates a comment with the given _target_ name and _text_.  If
       "insert_pis" is true, this will also add it to the tree.
@@ -1279,7 +1280,7 @@ class xml.etree.ElementTree.TreeBuilder(element_factory=None, *, comment_factory
    In addition, a custom "TreeBuilder" object can provide the
    following methods:
 
-                     *TreeBuilder.doctype()..xmletreeelementtree.txt;*
+                    *TreeBuilder.doctype()..xml.etree.elementtree.txt*
    doctype(name, pubid, system)
 
       Handles a doctype declaration.  _name_ is the doctype name.
@@ -1289,7 +1290,7 @@ class xml.etree.ElementTree.TreeBuilder(element_factory=None, *, comment_factory
 
       New in version 3.2.
 
-                    *TreeBuilder.start_ns()..xmletreeelementtree.txt;*
+                   *TreeBuilder.start_ns()..xml.etree.elementtree.txt*
    start_ns(prefix, uri)
 
       Is called whenever the parser encounters a new namespace
@@ -1300,7 +1301,7 @@ class xml.etree.ElementTree.TreeBuilder(element_factory=None, *, comment_factory
 
       New in version 3.8.
 
-   end_ns(prefix)        *TreeBuilder.end_ns()..xmletreeelementtree.txt;*
+   end_ns(prefix)       *TreeBuilder.end_ns()..xml.etree.elementtree.txt*
 
       Is called after the "end()" callback of an element that declared
       a namespace prefix mapping, with the name of the _prefix_ that
@@ -1308,7 +1309,7 @@ class xml.etree.ElementTree.TreeBuilder(element_factory=None, *, comment_factory
 
       New in version 3.8.
 
-                          *C14NWriterTarget..xmletreeelementtree.txt;*
+                         *C14NWriterTarget..xml.etree.elementtree.txt*
 class xml.etree.ElementTree.C14NWriterTarget(write, *, with_comments=False, strip_text=False, rewrite_prefixes=False, qname_aware_tags=None, qname_aware_attrs=None, exclude_attrs=None, exclude_tags=None)
 
    A C14N 2.0 writer.  Arguments are the same as for the
@@ -1322,7 +1323,7 @@ class xml.etree.ElementTree.C14NWriterTarget(write, *, with_comments=False, stri
 XMLParser Objects
 -----------------
 
-                                 *XMLParser..xmletreeelementtree.txt;*
+                                *XMLParser..xml.etree.elementtree.txt*
 class xml.etree.ElementTree.XMLParser(*, target=None, encoding=None)
 
    This class is the low-level building block of the module.  It uses
@@ -1336,13 +1337,13 @@ class xml.etree.ElementTree.XMLParser(*, target=None, encoding=None)
    Changed in version 3.8: Parameters are now keyword-only. The _html_
    argument no longer supported.
 
-   close()                  *XMLParser.close()..xmletreeelementtree.txt;*
+   close()                 *XMLParser.close()..xml.etree.elementtree.txt*
 
       Finishes feeding data to the parser.  Returns the result of
       calling the "close()" method of the _target_ passed during
       construction; by default, this is the toplevel document element.
 
-   feed(data)                *XMLParser.feed()..xmletreeelementtree.txt;*
+   feed(data)               *XMLParser.feed()..xml.etree.elementtree.txt*
 
       Feeds data to the parser.  _data_ is encoded data.
 
@@ -1390,7 +1391,7 @@ class xml.etree.ElementTree.XMLParser(*, target=None, encoding=None)
 XMLPullParser Objects
 ---------------------
 
-                             *XMLPullParser..xmletreeelementtree.txt;*
+                            *XMLPullParser..xml.etree.elementtree.txt*
 class xml.etree.ElementTree.XMLPullParser(events=None)
 
    A pull parser suitable for non-blocking applications.  Its input-
@@ -1403,18 +1404,18 @@ class xml.etree.ElementTree.XMLPullParser(events=None)
    information).  If _events_ is omitted, only ""end"" events are
    reported.
 
-   feed(data)            *XMLPullParser.feed()..xmletreeelementtree.txt;*
+   feed(data)           *XMLPullParser.feed()..xml.etree.elementtree.txt*
 
       Feed the given bytes data to the parser.
 
-   close()              *XMLPullParser.close()..xmletreeelementtree.txt;*
+   close()             *XMLPullParser.close()..xml.etree.elementtree.txt*
 
       Signal the parser that the data stream is terminated. Unlike
       "XMLParser.close()", this method always returns "None". Any
       events not yet retrieved when the parser is closed can still be
       read with "read_events()".
 
-               *XMLPullParser.read_events()..xmletreeelementtree.txt;*
+              *XMLPullParser.read_events()..xml.etree.elementtree.txt*
    read_events()
 
       Return an iterator over the events which have been encountered
@@ -1455,7 +1456,7 @@ class xml.etree.ElementTree.XMLPullParser(events=None)
 Exceptions
 ----------
 
-                                *ParseError..xmletreeelementtree.txt;*
+                               *ParseError..xml.etree.elementtree.txt*
 class xml.etree.ElementTree.ParseError
 
    XML parse error, raised by the various parsing methods in this
@@ -1464,13 +1465,13 @@ class xml.etree.ElementTree.ParseError
    message.  In addition, it will have the following attributes
    available:
 
-   code                       *ParseError.code..xmletreeelementtree.txt;*
+   code                      *ParseError.code..xml.etree.elementtree.txt*
 
       A numeric error code from the expat parser. See the
       documentation of "xml.parsers.expat" for the list of error codes
       and their meanings.
 
-   position               *ParseError.position..xmletreeelementtree.txt;*
+   position              *ParseError.position..xml.etree.elementtree.txt*
 
       A tuple of _line_, _column_ numbers, specifying where the error
       occurred.

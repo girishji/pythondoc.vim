@@ -1,4 +1,4 @@
-*xmlsaxhandler.txt;*                          Last change: 2023 Sep 09
+*xml.sax.handler.txt;*                        Last change: 2023 Sep 10
 
 "xml.sax.handler" — Base classes for SAX handlers
 *************************************************
@@ -15,21 +15,21 @@ single object or in multiple objects. Handler implementations should
 inherit from the base classes provided in the module
 "xml.sax.handler", so that all methods get default implementations.
 
-                                  *ContentHandler..xmlsaxhandler.txt;*
+                                 *ContentHandler..xml.sax.handler.txt*
 class xml.sax.handler.ContentHandler
 
    This is the main callback interface in SAX, and the one most
    important to applications. The order of events in this interface
    mirrors the order of the information in the document.
 
-class xml.sax.handler.DTDHandler      *DTDHandler..xmlsaxhandler.txt;*
+class xml.sax.handler.DTDHandler     *DTDHandler..xml.sax.handler.txt*
 
    Handle DTD events.
 
    This interface specifies only those DTD events required for basic
    parsing (unparsed entities and attributes).
 
-                                  *EntityResolver..xmlsaxhandler.txt;*
+                                 *EntityResolver..xml.sax.handler.txt*
 class xml.sax.handler.EntityResolver
 
    Basic interface for resolving entities. If you create an object
@@ -37,7 +37,7 @@ class xml.sax.handler.EntityResolver
    Parser, the parser will call the method in your object to resolve
    all external entities.
 
-                                    *ErrorHandler..xmlsaxhandler.txt;*
+                                   *ErrorHandler..xml.sax.handler.txt*
 class xml.sax.handler.ErrorHandler
 
    Interface used by the parser to present error and warning messages
@@ -45,7 +45,7 @@ class xml.sax.handler.ErrorHandler
    errors are immediately converted to exceptions or are handled in
    some other way.
 
-                                  *LexicalHandler..xmlsaxhandler.txt;*
+                                 *LexicalHandler..xml.sax.handler.txt*
 class xml.sax.handler.LexicalHandler
 
    Interface used by the parser to represent low frequency events
@@ -54,7 +54,7 @@ class xml.sax.handler.LexicalHandler
 In addition to these classes, "xml.sax.handler" provides symbolic
 constants for the feature and property names.
 
-                              *feature_namespaces..xmlsaxhandler.txt;*
+                             *feature_namespaces..xml.sax.handler.txt*
 xml.sax.handler.feature_namespaces
 
       value: ""http://xml.org/sax/features/namespaces""
@@ -63,7 +63,7 @@ xml.sax.handler.feature_namespaces
       namespace-prefixes; default).
       access: (parsing) read-only; (not parsing) read/write
 
-                      *feature_namespace_prefixes..xmlsaxhandler.txt;*
+                     *feature_namespace_prefixes..xml.sax.handler.txt*
 xml.sax.handler.feature_namespace_prefixes
 
       value: ""http://xml.org/sax/features/namespace-prefixes""
@@ -73,7 +73,7 @@ xml.sax.handler.feature_namespace_prefixes
       optionally do not report original prefixed names (default).
       access: (parsing) read-only; (not parsing) read/write
 
-                        *feature_string_interning..xmlsaxhandler.txt;*
+                       *feature_string_interning..xml.sax.handler.txt*
 xml.sax.handler.feature_string_interning
 
       value: ""http://xml.org/sax/features/string-interning""
@@ -82,7 +82,7 @@ xml.sax.handler.feature_string_interning
       false: Names are not necessarily interned, although they may be (default).
       access: (parsing) read-only; (not parsing) read/write
 
-                              *feature_validation..xmlsaxhandler.txt;*
+                             *feature_validation..xml.sax.handler.txt*
 xml.sax.handler.feature_validation
 
       value: ""http://xml.org/sax/features/validation""
@@ -91,7 +91,7 @@ xml.sax.handler.feature_validation
       false: Do not report validation errors.
       access: (parsing) read-only; (not parsing) read/write
 
-                            *feature_external_ges..xmlsaxhandler.txt;*
+                           *feature_external_ges..xml.sax.handler.txt*
 xml.sax.handler.feature_external_ges
 
       value: ""http://xml.org/sax/features/external-general-entities""
@@ -99,7 +99,7 @@ xml.sax.handler.feature_external_ges
       false: Do not include external general entities.
       access: (parsing) read-only; (not parsing) read/write
 
-                            *feature_external_pes..xmlsaxhandler.txt;*
+                           *feature_external_pes..xml.sax.handler.txt*
 xml.sax.handler.feature_external_pes
 
       value: ""http://xml.org/sax/features/external-parameter-entities""
@@ -109,11 +109,11 @@ xml.sax.handler.feature_external_pes
       DTD subset.
       access: (parsing) read-only; (not parsing) read/write
 
-xml.sax.handler.all_features        *all_features..xmlsaxhandler.txt;*
+xml.sax.handler.all_features       *all_features..xml.sax.handler.txt*
 
    List of all features.
 
-                        *property_lexical_handler..xmlsaxhandler.txt;*
+                       *property_lexical_handler..xml.sax.handler.txt*
 xml.sax.handler.property_lexical_handler
 
       value: ""http://xml.org/sax/properties/lexical-handler""
@@ -122,7 +122,7 @@ xml.sax.handler.property_lexical_handler
       comments.
       access: read/write
 
-                    *property_declaration_handler..xmlsaxhandler.txt;*
+                   *property_declaration_handler..xml.sax.handler.txt*
 xml.sax.handler.property_declaration_handler
 
       value: ""http://xml.org/sax/properties/declaration-handler""
@@ -131,7 +131,7 @@ xml.sax.handler.property_declaration_handler
       than notations and unparsed entities.
       access: read/write
 
-                               *property_dom_node..xmlsaxhandler.txt;*
+                              *property_dom_node..xml.sax.handler.txt*
 xml.sax.handler.property_dom_node
 
       value: ""http://xml.org/sax/properties/dom-node""
@@ -140,7 +140,7 @@ xml.sax.handler.property_dom_node
       a DOM iterator; when not parsing, the root DOM node for iteration.
       access: (parsing) read-only; (not parsing) read/write
 
-                             *property_xml_string..xmlsaxhandler.txt;*
+                            *property_xml_string..xml.sax.handler.txt*
 xml.sax.handler.property_xml_string
 
       value: ""http://xml.org/sax/properties/xml-string""
@@ -149,7 +149,7 @@ xml.sax.handler.property_xml_string
       current event.
       access: read-only
 
-xml.sax.handler.all_properties    *all_properties..xmlsaxhandler.txt;*
+xml.sax.handler.all_properties   *all_properties..xml.sax.handler.txt*
 
    List of all known property names.
 
@@ -161,7 +161,7 @@ Users are expected to subclass "ContentHandler" to support their
 application.  The following methods are called by the parser on the
 appropriate events in the input document:
 
-             *ContentHandler.setDocumentLocator()..xmlsaxhandler.txt;*
+            *ContentHandler.setDocumentLocator()..xml.sax.handler.txt*
 ContentHandler.setDocumentLocator(locator)
 
    Called by the parser to give the application a locator for locating
@@ -184,7 +184,7 @@ ContentHandler.setDocumentLocator(locator)
    the invocation of the events in this interface. The application
    should not attempt to use it at any other time.
 
-                  *ContentHandler.startDocument()..xmlsaxhandler.txt;*
+                 *ContentHandler.startDocument()..xml.sax.handler.txt*
 ContentHandler.startDocument()
 
    Receive notification of the beginning of a document.
@@ -193,7 +193,7 @@ ContentHandler.startDocument()
    methods in this interface or in DTDHandler (except for
    "setDocumentLocator()").
 
-                    *ContentHandler.endDocument()..xmlsaxhandler.txt;*
+                   *ContentHandler.endDocument()..xml.sax.handler.txt*
 ContentHandler.endDocument()
 
    Receive notification of the end of a document.
@@ -203,7 +203,7 @@ ContentHandler.endDocument()
    invoke this method until it has either abandoned parsing (because
    of an unrecoverable error) or reached the end of input.
 
-             *ContentHandler.startPrefixMapping()..xmlsaxhandler.txt;*
+            *ContentHandler.startPrefixMapping()..xml.sax.handler.txt*
 ContentHandler.startPrefixMapping(prefix, uri)
 
    Begin the scope of a prefix-URI Namespace mapping.
@@ -227,7 +227,7 @@ ContentHandler.startPrefixMapping(prefix, uri)
    events will occur after the corresponding "endElement()" event, but
    their order is not guaranteed.
 
-               *ContentHandler.endPrefixMapping()..xmlsaxhandler.txt;*
+              *ContentHandler.endPrefixMapping()..xml.sax.handler.txt*
 ContentHandler.endPrefixMapping(prefix)
 
    End the scope of a prefix-URI mapping.
@@ -236,7 +236,7 @@ ContentHandler.endPrefixMapping(prefix)
    occur after the corresponding "endElement()" event, but the order
    of "endPrefixMapping()" events is not otherwise guaranteed.
 
-                   *ContentHandler.startElement()..xmlsaxhandler.txt;*
+                  *ContentHandler.startElement()..xml.sax.handler.txt*
 ContentHandler.startElement(name, attrs)
 
    Signals the start of an element in non-namespace mode.
@@ -249,7 +249,7 @@ ContentHandler.startElement(name, attrs)
    reliable way to keep a copy of the attributes. To keep a copy of
    the attributes, use the "copy()" method of the _attrs_ object.
 
-                     *ContentHandler.endElement()..xmlsaxhandler.txt;*
+                    *ContentHandler.endElement()..xml.sax.handler.txt*
 ContentHandler.endElement(name)
 
    Signals the end of an element in non-namespace mode.
@@ -257,7 +257,7 @@ ContentHandler.endElement(name)
    The _name_ parameter contains the name of the element type, just as
    with the "startElement()" event.
 
-                 *ContentHandler.startElementNS()..xmlsaxhandler.txt;*
+                *ContentHandler.startElementNS()..xml.sax.handler.txt*
 ContentHandler.startElementNS(name, qname, attrs)
 
    Signals the start of an element in namespace mode.
@@ -276,7 +276,7 @@ ContentHandler.startElementNS(name, qname, attrs)
    Parsers may set the _qname_ parameter to "None", unless the
    "feature_namespace_prefixes" feature is activated.
 
-                   *ContentHandler.endElementNS()..xmlsaxhandler.txt;*
+                  *ContentHandler.endElementNS()..xml.sax.handler.txt*
 ContentHandler.endElementNS(name, qname)
 
    Signals the end of an element in namespace mode.
@@ -284,7 +284,7 @@ ContentHandler.endElementNS(name, qname)
    The _name_ parameter contains the name of the element type, just as
    with the "startElementNS()" method, likewise the _qname_ parameter.
 
-                     *ContentHandler.characters()..xmlsaxhandler.txt;*
+                    *ContentHandler.characters()..xml.sax.handler.txt*
 ContentHandler.characters(content)
 
    Receive notification of character data.
@@ -307,7 +307,7 @@ ContentHandler.characters(content)
      To convert old code to the new interface, use _content_ instead
      of slicing content with the old _offset_ and _length_ parameters.
 
-            *ContentHandler.ignorableWhitespace()..xmlsaxhandler.txt;*
+           *ContentHandler.ignorableWhitespace()..xml.sax.handler.txt*
 ContentHandler.ignorableWhitespace(whitespace)
 
    Receive notification of ignorable whitespace in element content.
@@ -322,7 +322,7 @@ ContentHandler.ignorableWhitespace(whitespace)
    characters in any single event must come from the same external
    entity, so that the Locator provides useful information.
 
-          *ContentHandler.processingInstruction()..xmlsaxhandler.txt;*
+         *ContentHandler.processingInstruction()..xml.sax.handler.txt*
 ContentHandler.processingInstruction(target, data)
 
    Receive notification of a processing instruction.
@@ -335,7 +335,7 @@ ContentHandler.processingInstruction(target, data)
    section 2.8) or a text declaration (XML 1.0, section 4.3.1) using
    this method.
 
-                  *ContentHandler.skippedEntity()..xmlsaxhandler.txt;*
+                 *ContentHandler.skippedEntity()..xml.sax.handler.txt*
 ContentHandler.skippedEntity(name)
 
    Receive notification of a skipped entity.
@@ -353,12 +353,12 @@ DTDHandler Objects
 
 "DTDHandler" instances provide the following methods:
 
-                       *DTDHandler.notationDecl()..xmlsaxhandler.txt;*
+                      *DTDHandler.notationDecl()..xml.sax.handler.txt*
 DTDHandler.notationDecl(name, publicId, systemId)
 
    Handle a notation declaration event.
 
-                 *DTDHandler.unparsedEntityDecl()..xmlsaxhandler.txt;*
+                *DTDHandler.unparsedEntityDecl()..xml.sax.handler.txt*
 DTDHandler.unparsedEntityDecl(name, publicId, systemId, ndata)
 
    Handle an unparsed entity declaration event.
@@ -367,7 +367,7 @@ DTDHandler.unparsedEntityDecl(name, publicId, systemId, ndata)
 EntityResolver Objects
 ======================
 
-                  *EntityResolver.resolveEntity()..xmlsaxhandler.txt;*
+                 *EntityResolver.resolveEntity()..xml.sax.handler.txt*
 EntityResolver.resolveEntity(publicId, systemId)
 
    Resolve the system identifier of an entity and return either the
@@ -388,7 +388,7 @@ All methods take a "SAXParseException" as the only parameter.  Errors
 and warnings may be converted to an exception by raising the passed-in
 exception object.
 
-                            *ErrorHandler.error()..xmlsaxhandler.txt;*
+                           *ErrorHandler.error()..xml.sax.handler.txt*
 ErrorHandler.error(exception)
 
    Called when the parser encounters a recoverable error.  If this
@@ -397,13 +397,13 @@ ErrorHandler.error(exception)
    application.  Allowing the parser to continue may allow additional
    errors to be discovered in the input document.
 
-                       *ErrorHandler.fatalError()..xmlsaxhandler.txt;*
+                      *ErrorHandler.fatalError()..xml.sax.handler.txt*
 ErrorHandler.fatalError(exception)
 
    Called when the parser encounters an error it cannot recover from;
    parsing is expected to terminate when this method returns.
 
-                          *ErrorHandler.warning()..xmlsaxhandler.txt;*
+                         *ErrorHandler.warning()..xml.sax.handler.txt*
 ErrorHandler.warning(exception)
 
    Called when the parser presents minor warning information to the
@@ -428,24 +428,24 @@ Set the LexicalHandler of an XMLReader by using the setProperty method
 with the property identifier "'http://xml.org/sax/properties/lexical-
 handler'".
 
-                        *LexicalHandler.comment()..xmlsaxhandler.txt;*
+                       *LexicalHandler.comment()..xml.sax.handler.txt*
 LexicalHandler.comment(content)
 
    Reports a comment anywhere in the document (including the DTD and
    outside the document element).
 
-                       *LexicalHandler.startDTD()..xmlsaxhandler.txt;*
+                      *LexicalHandler.startDTD()..xml.sax.handler.txt*
 LexicalHandler.startDTD(name, public_id, system_id)
 
    Reports the start of the DTD declarations if the document has an
    associated DTD.
 
-                         *LexicalHandler.endDTD()..xmlsaxhandler.txt;*
+                        *LexicalHandler.endDTD()..xml.sax.handler.txt*
 LexicalHandler.endDTD()
 
    Reports the end of DTD declaration.
 
-                     *LexicalHandler.startCDATA()..xmlsaxhandler.txt;*
+                    *LexicalHandler.startCDATA()..xml.sax.handler.txt*
 LexicalHandler.startCDATA()
 
    Reports the start of a CDATA marked section.
@@ -453,7 +453,7 @@ LexicalHandler.startCDATA()
    The contents of the CDATA marked section will be reported through
    the characters handler.
 
-                       *LexicalHandler.endCDATA()..xmlsaxhandler.txt;*
+                      *LexicalHandler.endCDATA()..xml.sax.handler.txt*
 LexicalHandler.endCDATA()
 
    Reports the end of a CDATA marked section.

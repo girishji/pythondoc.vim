@@ -1,4 +1,4 @@
-*urlliberror.txt;*                            Last change: 2023 Sep 09
+*urllib.error.txt;*                           Last change: 2023 Sep 10
 
 "urllib.error" — Exception classes raised by urllib.request
 ***********************************************************
@@ -12,12 +12,12 @@ raised by "urllib.request".  The base exception class is "URLError".
 
 The following exceptions are raised by "urllib.error" as appropriate:
 
-exception urllib.error.URLError           *URLError..urlliberror.txt;*
+exception urllib.error.URLError           *URLError..urllib.error.txt*
 
    The handlers raise this exception (or derived exceptions) when they
    run into a problem.  It is a subclass of "OSError".
 
-   reason                             *URLError.reason..urlliberror.txt;*
+   reason                             *URLError.reason..urllib.error.txt*
 
       The reason for this error.  It can be a message string or
       another exception instance.
@@ -25,7 +25,7 @@ exception urllib.error.URLError           *URLError..urlliberror.txt;*
    Changed in version 3.3: "URLError" has been made a subclass of
    "OSError" instead of "IOError".
 
-                                         *HTTPError..urlliberror.txt;*
+                                         *HTTPError..urllib.error.txt*
 exception urllib.error.HTTPError(url, code, msg, hdrs, fp)
 
    Though being an exception (a subclass of "URLError"), an
@@ -34,40 +34,40 @@ exception urllib.error.HTTPError(url, code, msg, hdrs, fp)
    when handling exotic HTTP errors, such as requests for
    authentication.
 
-   url                                  *HTTPError.url..urlliberror.txt;*
+   url                                  *HTTPError.url..urllib.error.txt*
 
       Contains the request URL. An alias for _filename_ attribute.
 
-   code                                *HTTPError.code..urlliberror.txt;*
+   code                                *HTTPError.code..urllib.error.txt*
 
       An HTTP status code as defined in **RFC 2616**.  This numeric
       value corresponds to a value found in the dictionary of codes as
       found in "http.server.BaseHTTPRequestHandler.responses".
 
-   reason                            *HTTPError.reason..urlliberror.txt;*
+   reason                            *HTTPError.reason..urllib.error.txt*
 
       This is usually a string explaining the reason for this error.
       An alias for _msg_ attribute.
 
-   headers                          *HTTPError.headers..urlliberror.txt;*
+   headers                          *HTTPError.headers..urllib.error.txt*
 
       The HTTP response headers for the HTTP request that caused the
       "HTTPError". An alias for _hdrs_ attribute.
 
       New in version 3.4.
 
-   fp                                    *HTTPError.fp..urlliberror.txt;*
+   fp                                    *HTTPError.fp..urllib.error.txt*
 
       A file-like object where the HTTP error body can be read from.
 
-                              *ContentTooShortError..urlliberror.txt;*
+                              *ContentTooShortError..urllib.error.txt*
 exception urllib.error.ContentTooShortError(msg, content)
 
    This exception is raised when the "urlretrieve()" function detects
    that the amount of the downloaded data is less than the expected
    amount (given by the _Content-Length_ header).
 
-   content               *ContentTooShortError.content..urlliberror.txt;*
+   content               *ContentTooShortError.content..urllib.error.txt*
 
       The downloaded (and supposedly truncated) data.
 

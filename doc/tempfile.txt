@@ -1,4 +1,4 @@
-*tempfile.txt;*                               Last change: 2023 Sep 09
+*tempfile.txt;*                               Last change: 2023 Sep 10
 
 "tempfile" — Generate temporary files and directories
 *****************************************************
@@ -24,7 +24,7 @@ to use keyword arguments for clarity.
 
 The module defines the following user-callable items:
 
-                                      *TemporaryFile()..tempfile.txt;*
+                                       *TemporaryFile()..tempfile.txt*
 tempfile.TemporaryFile(mode='w+b', buffering=-1, encoding=None, newline=None, suffix=None, prefix=None, dir=None, *, errors=None)
 
    Return a _file-like object_ that can be used as a temporary storage
@@ -68,7 +68,7 @@ tempfile.TemporaryFile(mode='w+b', buffering=-1, encoding=None, newline=None, su
 
    Changed in version 3.8: Added _errors_ parameter.
 
-                                 *NamedTemporaryFile()..tempfile.txt;*
+                                  *NamedTemporaryFile()..tempfile.txt*
 tempfile.NamedTemporaryFile(mode='w+b', buffering=-1, encoding=None, newline=None, suffix=None, prefix=None, dir=None, delete=True, *, errors=None, delete_on_close=True)
 
    This function operates exactly as "TemporaryFile()" does, except
@@ -143,7 +143,7 @@ tempfile.NamedTemporaryFile(mode='w+b', buffering=-1, encoding=None, newline=Non
 
    Changed in version 3.12: Added _delete_on_close_ parameter.
 
-                                 *SpooledTemporaryFile..tempfile.txt;*
+                                  *SpooledTemporaryFile..tempfile.txt*
 class tempfile.SpooledTemporaryFile(max_size=0, mode='w+b', buffering=-1, encoding=None, newline=None, suffix=None, prefix=None, dir=None, *, errors=None)
 
    This class operates exactly as "TemporaryFile()" does, except that
@@ -172,7 +172,7 @@ class tempfile.SpooledTemporaryFile(max_size=0, mode='w+b', buffering=-1, encodi
    and "io.TextIOBase" abstract base classes (depending on whether
    binary or text _mode_ was specified).
 
-                                   *TemporaryDirectory..tempfile.txt;*
+                                    *TemporaryDirectory..tempfile.txt*
 class tempfile.TemporaryDirectory(suffix=None, prefix=None, dir=None, ignore_cleanup_errors=False, *, delete=True)
 
    This class securely creates a temporary directory using the same
@@ -211,7 +211,7 @@ class tempfile.TemporaryDirectory(suffix=None, prefix=None, dir=None, ignore_cle
 
    Changed in version 3.12: Added the _delete_ parameter.
 
-                                            *mkstemp()..tempfile.txt;*
+                                             *mkstemp()..tempfile.txt*
 tempfile.mkstemp(suffix=None, prefix=None, dir=None, text=False)
 
    Creates a temporary file in the most secure manner possible.  There
@@ -267,7 +267,7 @@ tempfile.mkstemp(suffix=None, prefix=None, dir=None, text=False)
    Changed in version 3.6: The _dir_ parameter now accepts a _path-
    like object_.
 
-                                            *mkdtemp()..tempfile.txt;*
+                                             *mkdtemp()..tempfile.txt*
 tempfile.mkdtemp(suffix=None, prefix=None, dir=None)
 
    Creates a temporary directory in the most secure manner possible.
@@ -297,7 +297,7 @@ tempfile.mkdtemp(suffix=None, prefix=None, dir=None)
    Changed in version 3.12: "mkdtemp()" now always returns an absolute
    path, even if _dir_ is relative.
 
-tempfile.gettempdir()                    *gettempdir()..tempfile.txt;*
+tempfile.gettempdir()                     *gettempdir()..tempfile.txt*
 
    Return the name of the directory used for temporary files. This
    defines the default value for the _dir_ argument to all functions
@@ -329,18 +329,18 @@ tempfile.gettempdir()                    *gettempdir()..tempfile.txt;*
    return any "tempdir" value regardless of type so long as it was not
    "None".
 
-tempfile.gettempdirb()                  *gettempdirb()..tempfile.txt;*
+tempfile.gettempdirb()                   *gettempdirb()..tempfile.txt*
 
    Same as "gettempdir()" but the return value is in bytes.
 
    New in version 3.5.
 
-tempfile.gettempprefix()              *gettempprefix()..tempfile.txt;*
+tempfile.gettempprefix()               *gettempprefix()..tempfile.txt*
 
    Return the filename prefix used to create temporary files.  This
    does not contain the directory component.
 
-tempfile.gettempprefixb()            *gettempprefixb()..tempfile.txt;*
+tempfile.gettempprefixb()             *gettempprefixb()..tempfile.txt*
 
    Same as "gettempprefix()" but the return value is in bytes.
 
@@ -353,7 +353,7 @@ All functions in this module take a _dir_ argument which can be used
 to specify the directory. This is the recommended approach that does
 not surprise other unsuspecting code by changing global API behavior.
 
-tempfile.tempdir                              *tempdir..tempfile.txt;*
+tempfile.tempdir                               *tempdir..tempfile.txt*
 
    When set to a value other than "None", this variable defines the
    default value for the _dir_ argument to the functions defined in
@@ -433,7 +433,7 @@ first process. The solution is to combine the two steps and create the
 file immediately. This approach is used by "mkstemp()" and the other
 functions described above.
 
-                                             *mktemp()..tempfile.txt;*
+                                              *mktemp()..tempfile.txt*
 tempfile.mktemp(suffix='', prefix='tmp', dir=None)
 
    Deprecated since version 2.3: Use "mkstemp()" instead.

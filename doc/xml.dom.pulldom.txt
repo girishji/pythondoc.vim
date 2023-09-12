@@ -1,4 +1,4 @@
-*xml.dom.pulldom.txt;*                        Last change: 2023 Sep 10
+*xml.dom.pulldom.txt;*                        Last change: 2023 Sep 12
 
 "xml.dom.pulldom" — Support for building partial DOM trees
 **********************************************************

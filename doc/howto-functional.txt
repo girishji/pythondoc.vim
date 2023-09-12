@@ -1,4 +1,4 @@
-*howto-functional.txt;*                       Last change: 2023 Sep 10
+*howto-functional.txt;*                       Last change: 2023 Sep 12
 
 Functional Programming HOWTO
 ****************************

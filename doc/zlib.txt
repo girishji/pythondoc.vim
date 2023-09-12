@@ -1,4 +1,4 @@
-*zlib.txt;*                                   Last change: 2023 Sep 10
+*zlib.txt;*                                   Last change: 2023 Sep 12
 
 "zlib" — Compression compatible with **gzip**
 *********************************************

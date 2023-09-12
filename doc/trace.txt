@@ -1,4 +1,4 @@
-*trace.txt;*                                  Last change: 2023 Sep 10
+*trace.txt;*                                  Last change: 2023 Sep 12
 
 "trace" — Trace or track Python statement execution
 ***************************************************

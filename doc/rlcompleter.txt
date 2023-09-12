@@ -1,4 +1,4 @@
-*rlcompleter.txt;*                            Last change: 2023 Sep 10
+*rlcompleter.txt;*                            Last change: 2023 Sep 12
 
 "rlcompleter" — Completion function for GNU readline
 ****************************************************

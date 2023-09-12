@@ -1,4 +1,4 @@
-*functions.txt;*                              Last change: 2023 Sep 10
+*functions.txt;*                              Last change: 2023 Sep 12
 
 Built-in Functions
 ******************

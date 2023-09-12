@@ -1,4 +1,4 @@
-*decimal.txt;*                                Last change: 2023 Sep 10
+*decimal.txt;*                                Last change: 2023 Sep 12
 
 "decimal" — Decimal fixed point and floating point arithmetic
 *************************************************************

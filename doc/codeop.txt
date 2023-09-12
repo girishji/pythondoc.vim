@@ -1,4 +1,4 @@
-*codeop.txt;*                                 Last change: 2023 Sep 10
+*codeop.txt;*                                 Last change: 2023 Sep 12
 
 "codeop" — Compile Python code
 ******************************

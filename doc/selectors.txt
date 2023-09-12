@@ -1,4 +1,4 @@
-*selectors.txt;*                              Last change: 2023 Sep 10
+*selectors.txt;*                              Last change: 2023 Sep 12
 
 "selectors" — High-level I/O multiplexing
 *****************************************

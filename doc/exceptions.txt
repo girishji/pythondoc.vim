@@ -1,4 +1,4 @@
-*exceptions.txt;*                             Last change: 2023 Sep 10
+*exceptions.txt;*                             Last change: 2023 Sep 12
 
 Built-in Exceptions
 *******************

@@ -1,4 +1,4 @@
-*resource.txt;*                               Last change: 2023 Sep 10
+*resource.txt;*                               Last change: 2023 Sep 12
 
 "resource" — Resource usage information
 ***************************************

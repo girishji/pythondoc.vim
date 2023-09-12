@@ -1,4 +1,4 @@
-*pydoc.txt;*                                  Last change: 2023 Sep 10
+*pydoc.txt;*                                  Last change: 2023 Sep 12
 
 "pydoc" — Documentation generator and online help system
 ********************************************************

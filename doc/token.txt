@@ -1,4 +1,4 @@
-*token.txt;*                                  Last change: 2023 Sep 10
+*token.txt;*                                  Last change: 2023 Sep 12
 
 "token" — Constants used with Python parse trees
 ************************************************

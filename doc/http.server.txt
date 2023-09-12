@@ -1,4 +1,4 @@
-*http.server.txt;*                            Last change: 2023 Sep 10
+*http.server.txt;*                            Last change: 2023 Sep 12
 
 "http.server" — HTTP servers
 ****************************

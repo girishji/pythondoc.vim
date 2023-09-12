@@ -1,4 +1,4 @@
-*random.txt;*                                 Last change: 2023 Sep 10
+*random.txt;*                                 Last change: 2023 Sep 12
 
 "random" — Generate pseudo-random numbers
 *****************************************

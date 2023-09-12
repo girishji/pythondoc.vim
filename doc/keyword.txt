@@ -1,4 +1,4 @@
-*keyword.txt;*                                Last change: 2023 Sep 10
+*keyword.txt;*                                Last change: 2023 Sep 12
 
 "keyword" — Testing for Python keywords
 ***************************************

@@ -1,4 +1,4 @@
-*tokenize.txt;*                               Last change: 2023 Sep 10
+*tokenize.txt;*                               Last change: 2023 Sep 12
 
 "tokenize" — Tokenizer for Python source
 ****************************************

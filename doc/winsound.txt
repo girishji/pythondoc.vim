@@ -1,4 +1,4 @@
-*winsound.txt;*                               Last change: 2023 Sep 10
+*winsound.txt;*                               Last change: 2023 Sep 12
 
 "winsound" — Sound-playing interface for Windows
 ************************************************

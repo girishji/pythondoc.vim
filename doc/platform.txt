@@ -1,4 +1,4 @@
-*platform.txt;*                               Last change: 2023 Sep 10
+*platform.txt;*                               Last change: 2023 Sep 12
 
 "platform" —  Access to underlying platform’s identifying data
 **************************************************************

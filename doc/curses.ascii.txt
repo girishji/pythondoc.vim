@@ -1,4 +1,4 @@
-*curses.ascii.txt;*                           Last change: 2023 Sep 10
+*curses.ascii.txt;*                           Last change: 2023 Sep 12
 
 "curses.ascii" — Utilities for ASCII characters
 ***********************************************

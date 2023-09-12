@@ -1,4 +1,4 @@
-*xmlrpc.server.txt;*                          Last change: 2023 Sep 10
+*xmlrpc.server.txt;*                          Last change: 2023 Sep 12
 
 "xmlrpc.server" — Basic XML-RPC servers
 ***************************************

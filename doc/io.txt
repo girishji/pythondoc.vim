@@ -1,4 +1,4 @@
-*io.txt;*                                     Last change: 2023 Sep 10
+*io.txt;*                                     Last change: 2023 Sep 12
 
 "io" — Core tools for working with streams
 ******************************************

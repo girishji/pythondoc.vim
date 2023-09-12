@@ -1,4 +1,4 @@
-*locale.txt;*                                 Last change: 2023 Sep 10
+*locale.txt;*                                 Last change: 2023 Sep 12
 
 "locale" — Internationalization services
 ****************************************

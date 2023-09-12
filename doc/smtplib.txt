@@ -1,4 +1,4 @@
-*smtplib.txt;*                                Last change: 2023 Sep 10
+*smtplib.txt;*                                Last change: 2023 Sep 12
 
 "smtplib" — SMTP protocol client
 ********************************

@@ -1,4 +1,4 @@
-*test.txt;*                                   Last change: 2023 Sep 10
+*test.txt;*                                   Last change: 2023 Sep 12
 
 "test" — Regression tests package for Python
 ********************************************

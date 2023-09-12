@@ -1,4 +1,4 @@
-*array.txt;*                                  Last change: 2023 Sep 10
+*array.txt;*                                  Last change: 2023 Sep 12
 
 "array" — Efficient arrays of numeric values
 ********************************************

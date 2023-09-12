@@ -1,4 +1,4 @@
-*syslog.txt;*                                 Last change: 2023 Sep 10
+*syslog.txt;*                                 Last change: 2023 Sep 12
 
 "syslog" — Unix syslog library routines
 ***************************************

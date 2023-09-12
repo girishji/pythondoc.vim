@@ -1,4 +1,4 @@
-*stat.txt;*                                   Last change: 2023 Sep 10
+*stat.txt;*                                   Last change: 2023 Sep 12
 
 "stat" — Interpreting "stat()" results
 **************************************

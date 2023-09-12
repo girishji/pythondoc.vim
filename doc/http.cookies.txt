@@ -1,4 +1,4 @@
-*http.cookies.txt;*                           Last change: 2023 Sep 10
+*http.cookies.txt;*                           Last change: 2023 Sep 12
 
 "http.cookies" — HTTP state management
 **************************************

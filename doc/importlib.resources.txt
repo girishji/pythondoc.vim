@@ -1,4 +1,4 @@
-*importlib.resources.txt;*                    Last change: 2023 Sep 10
+*importlib.resources.txt;*                    Last change: 2023 Sep 12
 
 "importlib.resources" – Package resource reading, opening and access
 ********************************************************************

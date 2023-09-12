@@ -1,4 +1,4 @@
-*curses.panel.txt;*                           Last change: 2023 Sep 10
+*curses.panel.txt;*                           Last change: 2023 Sep 12
 
 "curses.panel" — A panel stack extension for curses
 ***************************************************

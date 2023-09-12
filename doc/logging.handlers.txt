@@ -1,4 +1,4 @@
-*logging.handlers.txt;*                       Last change: 2023 Sep 10
+*logging.handlers.txt;*                       Last change: 2023 Sep 12
 
 "logging.handlers" — Logging handlers
 *************************************

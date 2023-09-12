@@ -1,4 +1,4 @@
-*grp.txt;*                                    Last change: 2023 Sep 10
+*grp.txt;*                                    Last change: 2023 Sep 12
 
 "grp" — The group database
 **************************

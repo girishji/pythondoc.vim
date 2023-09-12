@@ -1,4 +1,4 @@
-*howto-urllib2.txt;*                          Last change: 2023 Sep 10
+*howto-urllib2.txt;*                          Last change: 2023 Sep 12
 
 HOWTO Fetch Internet Resources Using The urllib Package
 *******************************************************

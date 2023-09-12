@@ -1,4 +1,4 @@
-*email.message.txt;*                          Last change: 2023 Sep 10
+*email.message.txt;*                          Last change: 2023 Sep 12
 
 "email.message": Representing an email message
 **********************************************

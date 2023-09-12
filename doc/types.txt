@@ -1,4 +1,4 @@
-*types.txt;*                                  Last change: 2023 Sep 10
+*types.txt;*                                  Last change: 2023 Sep 12
 
 "types" — Dynamic type creation and names for built-in types
 ************************************************************

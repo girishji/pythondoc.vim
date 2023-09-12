@@ -1,4 +1,4 @@
-*unicodedata.txt;*                            Last change: 2023 Sep 10
+*unicodedata.txt;*                            Last change: 2023 Sep 12
 
 "unicodedata" — Unicode Database
 ********************************

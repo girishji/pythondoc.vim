@@ -1,4 +1,4 @@
-*tkinter.txt;*                                Last change: 2023 Sep 10
+*tkinter.txt;*                                Last change: 2023 Sep 12
 
 "tkinter" — Python interface to Tcl/Tk
 **************************************

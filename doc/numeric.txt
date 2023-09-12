@@ -1,4 +1,4 @@
-*numeric.txt;*                                Last change: 2023 Sep 10
+*numeric.txt;*                                Last change: 2023 Sep 12
 
 Numeric and Mathematical Modules
 ********************************

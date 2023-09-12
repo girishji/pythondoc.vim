@@ -1,4 +1,4 @@
-*fcntl.txt;*                                  Last change: 2023 Sep 10
+*fcntl.txt;*                                  Last change: 2023 Sep 12
 
 "fcntl" — The "fcntl" and "ioctl" system calls
 **********************************************

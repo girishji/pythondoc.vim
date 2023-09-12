@@ -1,4 +1,4 @@
-*mailbox.txt;*                                Last change: 2023 Sep 10
+*mailbox.txt;*                                Last change: 2023 Sep 12
 
 "mailbox" — Manipulate mailboxes in various formats
 ***************************************************

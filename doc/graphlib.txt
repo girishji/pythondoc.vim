@@ -1,4 +1,4 @@
-*graphlib.txt;*                               Last change: 2023 Sep 10
+*graphlib.txt;*                               Last change: 2023 Sep 12
 
 "graphlib" — Functionality to operate with graph-like structures
 ****************************************************************

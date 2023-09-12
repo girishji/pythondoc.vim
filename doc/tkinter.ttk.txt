@@ -1,4 +1,4 @@
-*tkinter.ttk.txt;*                            Last change: 2023 Sep 10
+*tkinter.ttk.txt;*                            Last change: 2023 Sep 12
 
 "tkinter.ttk" — Tk themed widgets
 *********************************

@@ -1,4 +1,4 @@
-*linecache.txt;*                              Last change: 2023 Sep 10
+*linecache.txt;*                              Last change: 2023 Sep 12
 
 "linecache" — Random access to text lines
 *****************************************

@@ -1,4 +1,4 @@
-*functools.txt;*                              Last change: 2023 Sep 10
+*functools.txt;*                              Last change: 2023 Sep 12
 
 "functools" — Higher-order functions and operations on callable objects
 ***********************************************************************

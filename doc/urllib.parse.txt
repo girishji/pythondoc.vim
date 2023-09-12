@@ -1,4 +1,4 @@
-*urllib.parse.txt;*                           Last change: 2023 Sep 10
+*urllib.parse.txt;*                           Last change: 2023 Sep 12
 
 "urllib.parse" — Parse URLs into components
 *******************************************

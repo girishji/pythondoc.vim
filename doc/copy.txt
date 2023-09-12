@@ -1,4 +1,4 @@
-*copy.txt;*                                   Last change: 2023 Sep 10
+*copy.txt;*                                   Last change: 2023 Sep 12
 
 "copy" — Shallow and deep copy operations
 *****************************************

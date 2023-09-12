@@ -1,4 +1,4 @@
-*email.generator.txt;*                        Last change: 2023 Sep 10
+*email.generator.txt;*                        Last change: 2023 Sep 12
 
 "email.generator": Generating MIME documents
 ********************************************

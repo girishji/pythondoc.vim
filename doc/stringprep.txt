@@ -1,4 +1,4 @@
-*stringprep.txt;*                             Last change: 2023 Sep 10
+*stringprep.txt;*                             Last change: 2023 Sep 12
 
 "stringprep" — Internet String Preparation
 ******************************************

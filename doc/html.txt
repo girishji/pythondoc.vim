@@ -1,4 +1,4 @@
-*html.txt;*                                   Last change: 2023 Sep 10
+*html.txt;*                                   Last change: 2023 Sep 12
 
 "html" — HyperText Markup Language support
 ******************************************

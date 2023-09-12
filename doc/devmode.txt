@@ -1,4 +1,4 @@
-*devmode.txt;*                                Last change: 2023 Sep 10
+*devmode.txt;*                                Last change: 2023 Sep 12
 
 Python Development Mode
 ***********************

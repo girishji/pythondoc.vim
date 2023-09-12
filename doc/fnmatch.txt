@@ -1,4 +1,4 @@
-*fnmatch.txt;*                                Last change: 2023 Sep 10
+*fnmatch.txt;*                                Last change: 2023 Sep 12
 
 "fnmatch" — Unix filename pattern matching
 ******************************************

@@ -1,4 +1,4 @@
-*fractions.txt;*                              Last change: 2023 Sep 10
+*fractions.txt;*                              Last change: 2023 Sep 12
 
 "fractions" — Rational numbers
 ******************************

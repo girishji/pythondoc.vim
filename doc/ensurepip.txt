@@ -1,4 +1,4 @@
-*ensurepip.txt;*                              Last change: 2023 Sep 10
+*ensurepip.txt;*                              Last change: 2023 Sep 12
 
 "ensurepip" — Bootstrapping the "pip" installer
 ***********************************************

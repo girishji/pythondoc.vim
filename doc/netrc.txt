@@ -1,4 +1,4 @@
-*netrc.txt;*                                  Last change: 2023 Sep 10
+*netrc.txt;*                                  Last change: 2023 Sep 12
 
 "netrc" — netrc file processing
 *******************************

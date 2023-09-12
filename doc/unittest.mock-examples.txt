@@ -1,4 +1,4 @@
-*unittest.mock-examples.txt;*                 Last change: 2023 Sep 10
+*unittest.mock-examples.txt;*                 Last change: 2023 Sep 12
 
 "unittest.mock" — getting started
 *********************************

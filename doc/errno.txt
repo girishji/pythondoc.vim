@@ -1,4 +1,4 @@
-*errno.txt;*                                  Last change: 2023 Sep 10
+*errno.txt;*                                  Last change: 2023 Sep 12
 
 "errno" — Standard errno system symbols
 ***************************************

@@ -1,4 +1,4 @@
-*bisect.txt;*                                 Last change: 2023 Sep 10
+*bisect.txt;*                                 Last change: 2023 Sep 12
 
 "bisect" — Array bisection algorithm
 ************************************

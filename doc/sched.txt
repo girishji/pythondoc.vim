@@ -1,4 +1,4 @@
-*sched.txt;*                                  Last change: 2023 Sep 10
+*sched.txt;*                                  Last change: 2023 Sep 12
 
 "sched" — Event scheduler
 *************************

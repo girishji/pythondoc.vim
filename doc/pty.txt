@@ -1,4 +1,4 @@
-*pty.txt;*                                    Last change: 2023 Sep 10
+*pty.txt;*                                    Last change: 2023 Sep 12
 
 "pty" — Pseudo-terminal utilities
 *********************************

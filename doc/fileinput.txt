@@ -1,4 +1,4 @@
-*fileinput.txt;*                              Last change: 2023 Sep 10
+*fileinput.txt;*                              Last change: 2023 Sep 12
 
 "fileinput" — Iterate over lines from multiple input streams
 ************************************************************

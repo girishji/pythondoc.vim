@@ -1,4 +1,4 @@
-*email.txt;*                                  Last change: 2023 Sep 10
+*email.txt;*                                  Last change: 2023 Sep 12
 
 "email" — An email and MIME handling package
 ********************************************

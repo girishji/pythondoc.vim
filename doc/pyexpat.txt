@@ -1,4 +1,4 @@
-*pyexpat.txt;*                                Last change: 2023 Sep 10
+*pyexpat.txt;*                                Last change: 2023 Sep 12
 
 "xml.parsers.expat" — Fast XML parsing using Expat
 **************************************************

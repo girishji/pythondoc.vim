@@ -1,4 +1,4 @@
-*email.utils.txt;*                            Last change: 2023 Sep 10
+*email.utils.txt;*                            Last change: 2023 Sep 12
 
 "email.utils": Miscellaneous utilities
 **************************************

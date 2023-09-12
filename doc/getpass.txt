@@ -1,4 +1,4 @@
-*getpass.txt;*                                Last change: 2023 Sep 10
+*getpass.txt;*                                Last change: 2023 Sep 12
 
 "getpass" — Portable password input
 ***********************************

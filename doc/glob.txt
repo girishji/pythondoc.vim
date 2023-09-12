@@ -1,4 +1,4 @@
-*glob.txt;*                                   Last change: 2023 Sep 10
+*glob.txt;*                                   Last change: 2023 Sep 12
 
 "glob" — Unix style pathname pattern expansion
 **********************************************

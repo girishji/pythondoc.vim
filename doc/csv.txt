@@ -1,4 +1,4 @@
-*csv.txt;*                                    Last change: 2023 Sep 10
+*csv.txt;*                                    Last change: 2023 Sep 12
 
 "csv" — CSV File Reading and Writing
 ************************************

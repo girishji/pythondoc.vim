@@ -1,4 +1,4 @@
-*difflib.txt;*                                Last change: 2023 Sep 10
+*difflib.txt;*                                Last change: 2023 Sep 12
 
 "difflib" — Helpers for computing deltas
 ****************************************

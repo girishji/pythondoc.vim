@@ -1,4 +1,4 @@
-*signal.txt;*                                 Last change: 2023 Sep 10
+*signal.txt;*                                 Last change: 2023 Sep 12
 
 "signal" — Set handlers for asynchronous events
 ***********************************************

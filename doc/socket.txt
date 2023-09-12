@@ -1,4 +1,4 @@
-*socket.txt;*                                 Last change: 2023 Sep 10
+*socket.txt;*                                 Last change: 2023 Sep 12
 
 "socket" — Low-level networking interface
 *****************************************

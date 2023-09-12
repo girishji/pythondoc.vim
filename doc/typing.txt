@@ -1,4 +1,4 @@
-*typing.txt;*                                 Last change: 2023 Sep 10
+*typing.txt;*                                 Last change: 2023 Sep 12
 
 "typing" — Support for type hints
 *********************************

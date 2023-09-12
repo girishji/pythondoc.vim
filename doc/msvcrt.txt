@@ -1,4 +1,4 @@
-*msvcrt.txt;*                                 Last change: 2023 Sep 10
+*msvcrt.txt;*                                 Last change: 2023 Sep 12
 
 "msvcrt" — Useful routines from the MS VC++ runtime
 ***************************************************

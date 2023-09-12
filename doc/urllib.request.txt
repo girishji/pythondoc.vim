@@ -1,4 +1,4 @@
-*urllib.request.txt;*                         Last change: 2023 Sep 10
+*urllib.request.txt;*                         Last change: 2023 Sep 12
 
 "urllib.request" — Extensible library for opening URLs
 ******************************************************

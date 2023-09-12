@@ -1,4 +1,4 @@
-*colorsys.txt;*                               Last change: 2023 Sep 10
+*colorsys.txt;*                               Last change: 2023 Sep 12
 
 "colorsys" — Conversions between color systems
 **********************************************

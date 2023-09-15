@@ -40,7 +40,7 @@ if get(g:, 'pythondoc_hh_expand')
         endif
         return false
     enddef
-    cabbr <buffer><expr> hh     <SID>ExpandHH() ? 'Help' : 'hh'
+    cabbr <expr> hh     <SID>ExpandHH() ? 'Help' : 'hh'
 endif
 
 # XXX: Mapping 'hh' has a side effect that it pauses when you type first 'h' of 'hh'

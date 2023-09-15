@@ -1,0 +1,452 @@
+*bdb.pyx*                                     Last change: 2023 Sep 15
+
+"bdb" — Debugger framework
+**************************
+
+**Source code:** Lib/bdb.py
+
+======================================================================
+
+The "bdb" module handles basic debugger functions, like setting
+breakpoints or managing execution via the debugger.
+
+The following exception is defined:
+
+exception bdb.BdbQuit                               *BdbQuit..bdb.pyx*
+
+   Exception raised by the "Bdb" class for quitting the debugger.
+
+The "bdb" module also defines two classes:
+
+                                                 *Breakpoint..bdb.pyx*
+class bdb.Breakpoint(self, file, line, temporary=False, cond=None, funcname=None)
+
+   This class implements temporary breakpoints, ignore counts,
+   disabling and (re-)enabling, and conditionals.
+
+   Breakpoints are indexed by number through a list called
+   "bpbynumber" and by "(file, line)" pairs through "bplist".  The
+   former points to a single instance of class "Breakpoint".  The
+   latter points to a list of such instances since there may be more
+   than one breakpoint per line.
+
+   When creating a breakpoint, its associated "file name" should be in
+   canonical form.  If a "funcname" is defined, a breakpoint "hit"
+   will be counted when the first line of that function is executed.
+   A "conditional" breakpoint always counts a "hit".
+
+   "Breakpoint" instances have the following methods:
+
+   deleteMe()                            *Breakpoint.deleteMe()..bdb.pyx*
+
+      Delete the breakpoint from the list associated to a file/line.
+      If it is the last breakpoint in that position, it also deletes
+      the entry for the file/line.
+
+   enable()                                *Breakpoint.enable()..bdb.pyx*
+
+      Mark the breakpoint as enabled.
+
+   disable()                              *Breakpoint.disable()..bdb.pyx*
+
+      Mark the breakpoint as disabled.
+
+   bpformat()                            *Breakpoint.bpformat()..bdb.pyx*
+
+      Return a string with all the information about the breakpoint,
+      nicely formatted:
+
+      * Breakpoint number.
+
+      * Temporary status (del or keep).
+
+      * File/line position.
+
+      * Break condition.
+
+      * Number of times to ignore.
+
+      * Number of times hit.
+
+      New in version 3.2.
+
+   bpprint(out=None)                      *Breakpoint.bpprint()..bdb.pyx*
+
+      Print the output of "bpformat()" to the file _out_, or if it is
+      "None", to standard output.
+
+   "Breakpoint" instances have the following attributes:
+
+   file                                        *Breakpoint.file..bdb.pyx*
+
+      File name of the "Breakpoint".
+
+   line                                        *Breakpoint.line..bdb.pyx*
+
+      Line number of the "Breakpoint" within "file".
+
+   temporary                              *Breakpoint.temporary..bdb.pyx*
+
+      True if a "Breakpoint" at (file, line) is temporary.
+
+   cond                                        *Breakpoint.cond..bdb.pyx*
+
+      Condition for evaluating a "Breakpoint" at (file, line).
+
+   funcname                                *Breakpoint.funcname..bdb.pyx*
+
+      Function name that defines whether a "Breakpoint" is hit upon
+      entering the function.
+
+   enabled                                  *Breakpoint.enabled..bdb.pyx*
+
+      True if "Breakpoint" is enabled.
+
+   bpbynumber                            *Breakpoint.bpbynumber..bdb.pyx*
+
+      Numeric index for a single instance of a "Breakpoint".
+
+   bplist                                    *Breakpoint.bplist..bdb.pyx*
+
+      Dictionary of "Breakpoint" instances indexed by ("file", "line")
+      tuples.
+
+   ignore                                    *Breakpoint.ignore..bdb.pyx*
+
+      Number of times to ignore a "Breakpoint".
+
+   hits                                        *Breakpoint.hits..bdb.pyx*
+
+      Count of the number of times a "Breakpoint" has been hit.
+
+class bdb.Bdb(skip=None)                                *Bdb..bdb.pyx*
+
+   The "Bdb" class acts as a generic Python debugger base class.
+
+   This class takes care of the details of the trace facility; a
+   derived class should implement user interaction.  The standard
+   debugger class ("pdb.Pdb") is an example.
+
+   The _skip_ argument, if given, must be an iterable of glob-style
+   module name patterns.  The debugger will not step into frames that
+   originate in a module that matches one of these patterns. Whether a
+   frame is considered to originate in a certain module is determined
+   by the "__name__" in the frame globals.
+
+   New in version 3.1: The _skip_ argument.
+
+   The following methods of "Bdb" normally don’t need to be
+   overridden.
+
+   canonic(filename)                             *Bdb.canonic()..bdb.pyx*
+
+      Return canonical form of _filename_.
+
+      For real file names, the canonical form is an operating-system-
+      dependent, "case-normalized" "absolute path". A _filename_ with
+      angle brackets, such as ""<stdin>"" generated in interactive
+      mode, is returned unchanged.
+
+   reset()                                         *Bdb.reset()..bdb.pyx*
+
+      Set the "botframe", "stopframe", "returnframe" and "quitting"
+      attributes with values ready to start debugging.
+
+   trace_dispatch(frame, event, arg)      *Bdb.trace_dispatch()..bdb.pyx*
+
+      This function is installed as the trace function of debugged
+      frames.  Its return value is the new trace function (in most
+      cases, that is, itself).
+
+      The default implementation decides how to dispatch a frame,
+      depending on the type of event (passed as a string) that is
+      about to be executed. _event_ can be one of the following:
+
+      * ""line"": A new line of code is going to be executed.
+
+      * ""call"": A function is about to be called, or another code
+        block entered.
+
+      * ""return"": A function or other code block is about to return.
+
+      * ""exception"": An exception has occurred.
+
+      * ""c_call"": A C function is about to be called.
+
+      * ""c_return"": A C function has returned.
+
+      * ""c_exception"": A C function has raised an exception.
+
+      For the Python events, specialized functions (see below) are
+      called.  For the C events, no action is taken.
+
+      The _arg_ parameter depends on the previous event.
+
+      See the documentation for "sys.settrace()" for more information
+      on the trace function.  For more information on code and frame
+      objects, refer to The standard type hierarchy.
+
+   dispatch_line(frame)                    *Bdb.dispatch_line()..bdb.pyx*
+
+      If the debugger should stop on the current line, invoke the
+      "user_line()" method (which should be overridden in subclasses).
+      Raise a "BdbQuit" exception if the "Bdb.quitting" flag is set
+      (which can be set from "user_line()").  Return a reference to
+      the "trace_dispatch()" method for further tracing in that scope.
+
+   dispatch_call(frame, arg)               *Bdb.dispatch_call()..bdb.pyx*
+
+      If the debugger should stop on this function call, invoke the
+      "user_call()" method (which should be overridden in subclasses).
+      Raise a "BdbQuit" exception if the "Bdb.quitting" flag is set
+      (which can be set from "user_call()").  Return a reference to
+      the "trace_dispatch()" method for further tracing in that scope.
+
+   dispatch_return(frame, arg)           *Bdb.dispatch_return()..bdb.pyx*
+
+      If the debugger should stop on this function return, invoke the
+      "user_return()" method (which should be overridden in
+      subclasses). Raise a "BdbQuit" exception if the "Bdb.quitting"
+      flag is set (which can be set from "user_return()").  Return a
+      reference to the "trace_dispatch()" method for further tracing
+      in that scope.
+
+   dispatch_exception(frame, arg)     *Bdb.dispatch_exception()..bdb.pyx*
+
+      If the debugger should stop at this exception, invokes the
+      "user_exception()" method (which should be overridden in
+      subclasses). Raise a "BdbQuit" exception if the "Bdb.quitting"
+      flag is set (which can be set from "user_exception()").  Return
+      a reference to the "trace_dispatch()" method for further tracing
+      in that scope.
+
+   Normally derived classes don’t override the following methods, but
+   they may if they want to redefine the definition of stopping and
+   breakpoints.
+
+   is_skipped_line(module_name)          *Bdb.is_skipped_line()..bdb.pyx*
+
+      Return True if _module_name_ matches any skip pattern.
+
+   stop_here(frame)                            *Bdb.stop_here()..bdb.pyx*
+
+      Return True if _frame_ is below the starting frame in the stack.
+
+   break_here(frame)                          *Bdb.break_here()..bdb.pyx*
+
+      Return True if there is an effective breakpoint for this line.
+
+      Check whether a line or function breakpoint exists and is in
+      effect.  Delete temporary breakpoints based on information from
+      "effective()".
+
+   break_anywhere(frame)                  *Bdb.break_anywhere()..bdb.pyx*
+
+      Return True if any breakpoint exists for _frame_’s filename.
+
+   Derived classes should override these methods to gain control over
+   debugger operation.
+
+   user_call(frame, argument_list)             *Bdb.user_call()..bdb.pyx*
+
+      Called from "dispatch_call()" if a break might stop inside the
+      called function.
+
+   user_line(frame)                            *Bdb.user_line()..bdb.pyx*
+
+      Called from "dispatch_line()" when either "stop_here()" or
+      "break_here()" returns "True".
+
+   user_return(frame, return_value)          *Bdb.user_return()..bdb.pyx*
+
+      Called from "dispatch_return()" when "stop_here()" returns
+      "True".
+
+   user_exception(frame, exc_info)        *Bdb.user_exception()..bdb.pyx*
+
+      Called from "dispatch_exception()" when "stop_here()" returns
+      "True".
+
+   do_clear(arg)                                *Bdb.do_clear()..bdb.pyx*
+
+      Handle how a breakpoint must be removed when it is a temporary
+      one.
+
+      This method must be implemented by derived classes.
+
+   Derived classes and clients can call the following methods to
+   affect the stepping state.
+
+   set_step()                                   *Bdb.set_step()..bdb.pyx*
+
+      Stop after one line of code.
+
+   set_next(frame)                              *Bdb.set_next()..bdb.pyx*
+
+      Stop on the next line in or below the given frame.
+
+   set_return(frame)                          *Bdb.set_return()..bdb.pyx*
+
+      Stop when returning from the given frame.
+
+   set_until(frame, lineno=None)               *Bdb.set_until()..bdb.pyx*
+
+      Stop when the line with the _lineno_ greater than the current
+      one is reached or when returning from current frame.
+
+   set_trace([frame])                          *Bdb.set_trace()..bdb.pyx*
+
+      Start debugging from _frame_.  If _frame_ is not specified,
+      debugging starts from caller’s frame.
+
+   set_continue()                           *Bdb.set_continue()..bdb.pyx*
+
+      Stop only at breakpoints or when finished.  If there are no
+      breakpoints, set the system trace function to "None".
+
+   set_quit()                                   *Bdb.set_quit()..bdb.pyx*
+
+      Set the "quitting" attribute to "True".  This raises "BdbQuit"
+      in the next call to one of the "dispatch_*()" methods.
+
+   Derived classes and clients can call the following methods to
+   manipulate breakpoints.  These methods return a string containing
+   an error message if something went wrong, or "None" if all is well.
+
+                                            *Bdb.set_break()..bdb.pyx*
+   set_break(filename, lineno, temporary=False, cond=None, funcname=None)
+
+      Set a new breakpoint.  If the _lineno_ line doesn’t exist for
+      the _filename_ passed as argument, return an error message.  The
+      _filename_ should be in canonical form, as described in the
+      "canonic()" method.
+
+   clear_break(filename, lineno)             *Bdb.clear_break()..bdb.pyx*
+
+      Delete the breakpoints in _filename_ and _lineno_.  If none were
+      set, return an error message.
+
+   clear_bpbynumber(arg)                *Bdb.clear_bpbynumber()..bdb.pyx*
+
+      Delete the breakpoint which has the index _arg_ in the
+      "Breakpoint.bpbynumber".  If _arg_ is not numeric or out of
+      range, return an error message.
+
+                                *Bdb.clear_all_file_breaks()..bdb.pyx*
+   clear_all_file_breaks(filename)
+
+      Delete all breakpoints in _filename_.  If none were set, return
+      an error message.
+
+   clear_all_breaks()                   *Bdb.clear_all_breaks()..bdb.pyx*
+
+      Delete all existing breakpoints.  If none were set, return an
+      error message.
+
+   get_bpbynumber(arg)                    *Bdb.get_bpbynumber()..bdb.pyx*
+
+      Return a breakpoint specified by the given number.  If _arg_ is
+      a string, it will be converted to a number.  If _arg_ is a non-
+      numeric string, if the given breakpoint never existed or has
+      been deleted, a "ValueError" is raised.
+
+      New in version 3.2.
+
+   get_break(filename, lineno)                 *Bdb.get_break()..bdb.pyx*
+
+      Return True if there is a breakpoint for _lineno_ in _filename_.
+
+   get_breaks(filename, lineno)               *Bdb.get_breaks()..bdb.pyx*
+
+      Return all breakpoints for _lineno_ in _filename_, or an empty
+      list if none are set.
+
+   get_file_breaks(filename)             *Bdb.get_file_breaks()..bdb.pyx*
+
+      Return all breakpoints in _filename_, or an empty list if none
+      are set.
+
+   get_all_breaks()                       *Bdb.get_all_breaks()..bdb.pyx*
+
+      Return all breakpoints that are set.
+
+   Derived classes and clients can call the following methods to get a
+   data structure representing a stack trace.
+
+   get_stack(f, t)                             *Bdb.get_stack()..bdb.pyx*
+
+      Return a list of (frame, lineno) tuples in a stack trace, and a
+      size.
+
+      The most recently called frame is last in the list. The size is
+      the number of frames below the frame where the debugger was
+      invoked.
+
+                                   *Bdb.format_stack_entry()..bdb.pyx*
+   format_stack_entry(frame_lineno, lprefix=': ')
+
+      Return a string with information about a stack entry, which is a
+      "(frame, lineno)" tuple.  The return string contains:
+
+      * The canonical filename which contains the frame.
+
+      * The function name or ""<lambda>"".
+
+      * The input arguments.
+
+      * The return value.
+
+      * The line of code (if it exists).
+
+   The following two methods can be called by clients to use a
+   debugger to debug a _statement_, given as a string.
+
+   run(cmd, globals=None, locals=None)               *Bdb.run()..bdb.pyx*
+
+      Debug a statement executed via the "exec()" function.  _globals_
+      defaults to "__main__.__dict__", _locals_ defaults to _globals_.
+
+   runeval(expr, globals=None, locals=None)      *Bdb.runeval()..bdb.pyx*
+
+      Debug an expression executed via the "eval()" function.
+      _globals_ and _locals_ have the same meaning as in "run()".
+
+   runctx(cmd, globals, locals)                   *Bdb.runctx()..bdb.pyx*
+
+      For backwards compatibility.  Calls the "run()" method.
+
+   runcall(func, /, *args, **kwds)               *Bdb.runcall()..bdb.pyx*
+
+      Debug a single function call, and return its result.
+
+Finally, the module defines the following functions:
+
+bdb.checkfuncname(b, frame)                 *checkfuncname()..bdb.pyx*
+
+   Return True if we should break here, depending on the way the
+   "Breakpoint" _b_ was set.
+
+   If it was set via line number, it checks if "b.line" is the same as
+   the one in _frame_. If the breakpoint was set via "function name",
+   we have to check we are in the right _frame_ (the right function)
+   and if we are on its first executable line.
+
+bdb.effective(file, line, frame)                *effective()..bdb.pyx*
+
+   Return "(active breakpoint, delete temporary flag)" or "(None,
+   None)" as the breakpoint to act upon.
+
+   The _active breakpoint_ is the first entry in "bplist" for the
+   ("file", "line") (which must exist) that is "enabled", for which
+   "checkfuncname()" is True, and that has neither a False "condition"
+   nor positive "ignore" count.  The _flag_, meaning that a temporary
+   breakpoint should be deleted, is False only when the "cond" cannot
+   be evaluated (in which case, "ignore" count is ignored).
+
+   If no such entry exists, then (None, None) is returned.
+
+bdb.set_trace()                                 *set_trace()..bdb.pyx*
+
+   Start debugging with a "Bdb" instance from caller’s frame.
+
+vim:tw=78:ts=8:ft=help:norl:

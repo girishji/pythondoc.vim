@@ -1,0 +1,282 @@
+*http.cookies.pyx*                            Last change: 2023 Sep 15
+
+"http.cookies" — HTTP state management
+**************************************
+
+**Source code:** Lib/http/cookies.py
+
+======================================================================
+
+The "http.cookies" module defines classes for abstracting the concept
+of cookies, an HTTP state management mechanism. It supports both
+simple string-only cookies, and provides an abstraction for having any
+serializable data-type as cookie value.
+
+The module formerly strictly applied the parsing rules described in
+the **RFC 2109** and **RFC 2068** specifications.  It has since been
+discovered that MSIE 3.0x doesn’t follow the character rules outlined
+in those specs and also many current day browsers and servers have
+relaxed parsing rules when comes to Cookie handling.  As a result, the
+parsing rules used are a bit less strict.
+
+The character set, "string.ascii_letters", "string.digits" and
+"!#$%&'*+-.^_`|~:" denote the set of valid characters allowed by this
+module in Cookie name (as "key").
+
+Changed in version 3.3: Allowed ‘:’ as a valid Cookie name character.
+
+Note:
+
+  On encountering an invalid cookie, "CookieError" is raised, so if
+  your cookie data comes from a browser you should always prepare for
+  invalid data and catch "CookieError" on parsing.
+
+exception http.cookies.CookieError     *CookieError..http.cookies.pyx*
+
+   Exception failing because of **RFC 2109** invalidity: incorrect
+   attributes, incorrect _Set-Cookie_ header, etc.
+
+                                        *BaseCookie..http.cookies.pyx*
+class http.cookies.BaseCookie([input])
+
+   This class is a dictionary-like object whose keys are strings and
+   whose values are "Morsel" instances. Note that upon setting a key
+   to a value, the value is first converted to a "Morsel" containing
+   the key and the value.
+
+   If _input_ is given, it is passed to the "load()" method.
+
+                                      *SimpleCookie..http.cookies.pyx*
+class http.cookies.SimpleCookie([input])
+
+   This class derives from "BaseCookie" and overrides "value_decode()"
+   and "value_encode()". SimpleCookie supports strings as cookie
+   values. When setting the value, SimpleCookie calls the builtin
+   "str()" to convert the value to a string. Values received from HTTP
+   are kept as strings.
+
+See also:
+
+  Module "http.cookiejar"
+     HTTP cookie handling for web _clients_.  The "http.cookiejar" and
+     "http.cookies" modules do not depend on each other.
+
+  **RFC 2109** - HTTP State Management Mechanism
+     This is the state management specification implemented by this
+     module.
+
+
+Cookie Objects
+==============
+
+                         *BaseCookie.value_decode()..http.cookies.pyx*
+BaseCookie.value_decode(val)
+
+   Return a tuple "(real_value, coded_value)" from a string
+   representation. "real_value" can be any type. This method does no
+   decoding in "BaseCookie" — it exists so it can be overridden.
+
+                         *BaseCookie.value_encode()..http.cookies.pyx*
+BaseCookie.value_encode(val)
+
+   Return a tuple "(real_value, coded_value)". _val_ can be any type,
+   but "coded_value" will always be converted to a string. This method
+   does no encoding in "BaseCookie" — it exists so it can be
+   overridden.
+
+   In general, it should be the case that "value_encode()" and
+   "value_decode()" are inverses on the range of _value_decode_.
+
+                               *BaseCookie.output()..http.cookies.pyx*
+BaseCookie.output(attrs=None, header='Set-Cookie:', sep='\r\n')
+
+   Return a string representation suitable to be sent as HTTP headers.
+   _attrs_ and _header_ are sent to each "Morsel"’s "output()" method.
+   _sep_ is used to join the headers together, and is by default the
+   combination "'\r\n'" (CRLF).
+
+                            *BaseCookie.js_output()..http.cookies.pyx*
+BaseCookie.js_output(attrs=None)
+
+   Return an embeddable JavaScript snippet, which, if run on a browser
+   which supports JavaScript, will act the same as if the HTTP headers
+   was sent.
+
+   The meaning for _attrs_ is the same as in "output()".
+
+BaseCookie.load(rawdata)         *BaseCookie.load()..http.cookies.pyx*
+
+   If _rawdata_ is a string, parse it as an "HTTP_COOKIE" and add the
+   values found there as "Morsel"s. If it is a dictionary, it is
+   equivalent to:
+>
+      for k, v in rawdata.items():
+          cookie[k] = v
+<
+
+Morsel Objects
+==============
+
+class http.cookies.Morsel                   *Morsel..http.cookies.pyx*
+
+   Abstract a key/value pair, which has some **RFC 2109** attributes.
+
+   Morsels are dictionary-like objects, whose set of keys is constant
+   — the valid **RFC 2109** attributes, which are
+
+   * "expires"
+
+   * "path"
+
+   * "comment"
+
+   * "domain"
+
+   * "max-age"
+
+   * "secure"
+
+   * "version"
+
+   * "httponly"
+
+   * "samesite"
+
+   The attribute "httponly" specifies that the cookie is only
+   transferred in HTTP requests, and is not accessible through
+   JavaScript. This is intended to mitigate some forms of cross-site
+   scripting.
+
+   The attribute "samesite" specifies that the browser is not allowed
+   to send the cookie along with cross-site requests. This helps to
+   mitigate CSRF attacks. Valid values for this attribute are “Strict”
+   and “Lax”.
+
+   The keys are case-insensitive and their default value is "''".
+
+   Changed in version 3.5: "__eq__()" now takes "key" and "value" into
+   account.
+
+   Changed in version 3.7: Attributes "key", "value" and "coded_value"
+   are read-only.  Use "set()" for setting them.
+
+   Changed in version 3.8: Added support for the "samesite" attribute.
+
+Morsel.value                          *Morsel.value..http.cookies.pyx*
+
+   The value of the cookie.
+
+Morsel.coded_value              *Morsel.coded_value..http.cookies.pyx*
+
+   The encoded value of the cookie — this is what should be sent.
+
+Morsel.key                              *Morsel.key..http.cookies.pyx*
+
+   The name of the cookie.
+
+Morsel.set(key, value, coded_value)   *Morsel.set()..http.cookies.pyx*
+
+   Set the _key_, _value_ and _coded_value_ attributes.
+
+Morsel.isReservedKey(K)     *Morsel.isReservedKey()..http.cookies.pyx*
+
+   Whether _K_ is a member of the set of keys of a "Morsel".
+
+                                   *Morsel.output()..http.cookies.pyx*
+Morsel.output(attrs=None, header='Set-Cookie:')
+
+   Return a string representation of the Morsel, suitable to be sent
+   as an HTTP header. By default, all the attributes are included,
+   unless _attrs_ is given, in which case it should be a list of
+   attributes to use. _header_ is by default ""Set-Cookie:"".
+
+Morsel.js_output(attrs=None)    *Morsel.js_output()..http.cookies.pyx*
+
+   Return an embeddable JavaScript snippet, which, if run on a browser
+   which supports JavaScript, will act the same as if the HTTP header
+   was sent.
+
+   The meaning for _attrs_ is the same as in "output()".
+
+                             *Morsel.OutputString()..http.cookies.pyx*
+Morsel.OutputString(attrs=None)
+
+   Return a string representing the Morsel, without any surrounding
+   HTTP or JavaScript.
+
+   The meaning for _attrs_ is the same as in "output()".
+
+Morsel.update(values)              *Morsel.update()..http.cookies.pyx*
+
+   Update the values in the Morsel dictionary with the values in the
+   dictionary _values_.  Raise an error if any of the keys in the
+   _values_ dict is not a valid **RFC 2109** attribute.
+
+   Changed in version 3.5: an error is raised for invalid keys.
+
+Morsel.copy(value)                   *Morsel.copy()..http.cookies.pyx*
+
+   Return a shallow copy of the Morsel object.
+
+   Changed in version 3.5: return a Morsel object instead of a dict.
+
+                               *Morsel.setdefault()..http.cookies.pyx*
+Morsel.setdefault(key, value=None)
+
+   Raise an error if key is not a valid **RFC 2109** attribute,
+   otherwise behave the same as "dict.setdefault()".
+
+
+Example
+=======
+
+The following example demonstrates how to use the "http.cookies"
+module.
+>
+   >>> from http import cookies
+   >>> C = cookies.SimpleCookie()
+   >>> C["fig"] = "newton"
+   >>> C["sugar"] = "wafer"
+   >>> print(C) # generate HTTP headers
+   Set-Cookie: fig=newton
+   Set-Cookie: sugar=wafer
+   >>> print(C.output()) # same thing
+   Set-Cookie: fig=newton
+   Set-Cookie: sugar=wafer
+   >>> C = cookies.SimpleCookie()
+   >>> C["rocky"] = "road"
+   >>> C["rocky"]["path"] = "/cookie"
+   >>> print(C.output(header="Cookie:"))
+   Cookie: rocky=road; Path=/cookie
+   >>> print(C.output(attrs=[], header="Cookie:"))
+   Cookie: rocky=road
+   >>> C = cookies.SimpleCookie()
+   >>> C.load("chips=ahoy; vienna=finger") # load from a string (HTTP header)
+   >>> print(C)
+   Set-Cookie: chips=ahoy
+   Set-Cookie: vienna=finger
+   >>> C = cookies.SimpleCookie()
+   >>> C.load('keebler="E=everybody; L=\\"Loves\\"; fudge=\\012;";')
+   >>> print(C)
+   Set-Cookie: keebler="E=everybody; L=\"Loves\"; fudge=\012;"
+   >>> C = cookies.SimpleCookie()
+   >>> C["oreo"] = "doublestuff"
+   >>> C["oreo"]["path"] = "/"
+   >>> print(C)
+   Set-Cookie: oreo=doublestuff; Path=/
+   >>> C = cookies.SimpleCookie()
+   >>> C["twix"] = "none for you"
+   >>> C["twix"].value
+   'none for you'
+   >>> C = cookies.SimpleCookie()
+   >>> C["number"] = 7 # equivalent to C["number"] = str(7)
+   >>> C["string"] = "seven"
+   >>> C["number"].value
+   '7'
+   >>> C["string"].value
+   'seven'
+   >>> print(C)
+   Set-Cookie: number=7
+   Set-Cookie: string=seven
+<
+vim:tw=78:ts=8:ft=help:norl:

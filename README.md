@@ -13,11 +13,14 @@ comparable to [Dash](https://kapeli.com/dash) or [Zeal](https://zealdocs.org/).
 The help files are generated from the official Python repository using the
 [offical tool](https://www.sphinx-doc.org/en/master/)
 and [extension](https://github.com/girishji/vimbuilder). Tags appear in
-`function()..topic.txt` format. You can open the topic by typing `:h topic.txt;`.
+`function()..topic.pyx` format. You can open the topic by typing `:h topic.pyx`.
 With `wildmenu` enabled, when you type `:h foo<tab>` it will complete functions, methods, classes,
 attributes, topics, etc. which start with letters `foo`. You can also enable fuzzy
-completion. Python library document and howto guides are fully tokenized. Python
-tutorial is intentionally left out as it adds little value.
+completion. Python library document, howto guides, and tutorial are tokenized.
+
+This plugin provides `:Help` command which searches only Python tags. It is
+a filter on top of builtin `:help` command. Vim adds a `@py` suffix to Python
+tags (unless `helplang` variable is set to `py`) which makes it easy to distinguish.
 
 
 ## Requirements
@@ -77,10 +80,13 @@ the steps to generate help files from official Python repository.
 - Clone [Python repository](https://github.com/python/cpython) into `tmp`
 - Create virtual environment using the official makefile (`make venv` inside `pythondoc.vim/tmp/cpython/Doc`)
 - Add "vimbuilder" to `requirements.txt` file
+- Set `vimhelp_filename_extension = 'pyx'` in conf.py file
 - Edit the Makefile in `Doc` directory to
     * Create a new target 'vimhelp' akin to one of the existing targets like 'html' or 'text'
     * (Optional) Comment out lines related to `Blurb` or `NEWS` to avoid a harmless error at the end
 - (Recommended) Rename `rst` files in `howto` directory by prepending `howto-` to filenames
     * Edit `howto/howto-index.rst` and `content.rst` to reflect filenames change
 - Generate Vim help files (`make vimhelp`)
-- Copy `txt` files from `build/vimhelp/[library|howto]` to `doc` directory
+- Copy `pyx` files from `build/vimhelp/[library|howto]` to `doc` directory
+- Generate tags from main directory: `vim "+helptags ./doc | q"`
+

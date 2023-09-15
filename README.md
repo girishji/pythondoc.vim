@@ -30,7 +30,8 @@ tags (unless `helplang` variable is set to `py`) which makes it easy to distingu
 
 ## Installation
 
-Install using [vim-plug](https://github.com/junegunn/vim-plug).
+Install using [vim-plug](https://github.com/junegunn/vim-plug). Put the
+following lines in `.vimrc` file.
 
 ```
 call plug#begin()

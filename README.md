@@ -50,6 +50,8 @@ require("lazy").setup({
 
 ## Usage
 
+Use either `:help <tag>` or `:Help <tag>`. Latter filters only Python documentation.
+
 Python help tags look different from Vim help when you use `:help`. Python tags
 have a topic (filename) suffixed to the tag. Activate the `wildmenu` for <Tab> completion.
 

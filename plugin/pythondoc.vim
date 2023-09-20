@@ -5,6 +5,8 @@ endif
 
 vim9script
 
+g:loaded_pythondoc = true
+
 :command -nargs=1 -complete=customlist,GetHelpTags Help help <args>
 
 def GetHelpTags(argLead: string, line: string, cursorPos: number): list<string>

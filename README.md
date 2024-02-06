@@ -55,7 +55,12 @@ Use either `:help <tag>` or `:Help <tag>`. Latter filters only Python
 documentation and it is preferred.
 
 If you set `g:pythondoc_hh_expand = 1`, you can use `:hh <tag>` instead of `:Help <tag>`.
-This is easier to type.
+This is easier to type. If you decide to put all our settings in after/ftplugin directory, then setting the above global variable is done too late. You could do the following:
+
+```
+import 'pythondoc_abbrev.vim' as abbrev
+abbrev.ExpandHH()
+```
 
 You can activate the `wildmenu` for <Tab> completion. You can type `:Help foo<tab>`
 for completion suggestions.

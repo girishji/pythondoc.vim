@@ -33,28 +33,5 @@ def GetHelpTags(argLead: string, line: string, cursorPos: number): list<string>
 enddef
 
 if get(g:, 'pythondoc_hh_expand')
-    def ExpandHH(): bool
-        if getcmdtype() == ':'
-            var context = getcmdline()->strpart(0, getcmdpos() - 1)
-            if context == 'hh'
-                return true
-            endif
-        endif
-        return false
-    enddef
-    cabbr <expr> hh     <SID>ExpandHH() ? 'Help' : 'hh'
+    pythondoc_abbrev.ExpandHH()
 endif
-
-# XXX: Mapping 'hh' has a side effect that it pauses when you type first 'h' of 'hh'
-#      Use an abbreviation instead.
-# def g:ExpandHH(): string
-#     if getcmdtype() == ':'
-#         var context = getcmdline()->strpart(0, getcmdpos() - 1)
-#         if context->empty()
-#             return 'Help '
-#         endif
-#     endif
-#     return 'hh'
-# enddef
-# cnoremap <expr> hh <SID>ExpandHH()
-

@@ -51,10 +51,10 @@ require("lazy").setup({
 
 ## Usage
 
-Use either `:help <tag>` or `:Help <tag>`. Latter filters only Python
-documentation and it is preferred.
+Use `:help <tag>`. It works for both Vim and Nvim. In Vim you can also use
+`:Help <tag>`. It filters only Python documentation.
 
-If you set `g:pythondoc_hh_expand = 1`, you can use `:hh <tag>` instead of `:Help <tag>`.
+In Vim, if you set `g:pythondoc_hh_expand = 1`, you can use `:hh <tag>` instead of `:Help <tag>`.
 This is easier to type. If you decide to put all our settings in after/ftplugin directory, then setting the above global variable is done too late. You could do the following:
 
 ```

@@ -11,7 +11,7 @@ This plugin is not related to the lousy _pydoc_. The quality of information is
 comparable to [Dash](https://kapeli.com/dash) or [Zeal](https://zealdocs.org/).
 
 The help files are generated from the official Python repository using the
-[offical tool](https://www.sphinx-doc.org/en/master/)
+[official tool](https://www.sphinx-doc.org/en/master/)
 and [extension](https://github.com/girishji/vimbuilder). Tags appear in
 `function()..topic.pyx` format. You can open the topic by typing `:h topic.pyx`.
 With `wildmenu` enabled, when you type `:h foo<tab>` it will complete functions, methods, classes,

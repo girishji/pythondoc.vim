@@ -54,12 +54,20 @@ require("lazy").setup({
 Use `:help <tag>`. It works for both Vim and Nvim. In Vim you can also use
 `:Help <tag>`. It filters only Python documentation.
 
-In Vim, if you set `g:pythondoc_hh_expand = 1`, you can use `:hh <tag>` instead of `:Help <tag>`.
+In Vim, if you set `g:pythondoc_h_expand = 1`, you can use `:h <tag>` instead of `:Help <tag>`.
+Add
+
+```vim
+exe 'nnoremap <buffer> dK :<c-u>Help <c-r><c-w>'..nr2char(&wildcharm)
+```
+
+to `ftplugin/python.vim` to search for the keyword under the cursor by hitting `dK`.
+
 This is easier to type. If you decide to put all our settings in after/ftplugin directory, then setting the above global variable is done too late. You could do the following:
 
 ```
 import 'pythondoc_abbrev.vim' as abbrev
-abbrev.ExpandHH()
+abbrev.ExpandH()
 ```
 
 You can activate the `wildmenu` for <Tab> completion. You can type `:Help foo<tab>`

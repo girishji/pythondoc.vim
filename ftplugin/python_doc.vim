@@ -1,12 +1,8 @@
-if exists("g:loaded_pythondoc") || &cp || v:version < 700
-  finish
-endif
+command! -buffer -nargs=1 -complete=customlist,s:getHelpTags Help help <args>
 
-let g:loaded_pythondoc = 1
+" setlocal keywordprg=:Help
 
-:command -nargs=1 -complete=customlist,s:getHelpTags Help help <args>
-
-fun! s:shortestFirst(x, y)
+silent! fun s:shortestFirst(x, y)
     let pat = '\v.+\ze\.\.\S+(\.\w{3})?(\@py)?'
     let xstr = a:x->matchstr(pat)
     let ystr = a:y->matchstr(pat)
@@ -19,7 +15,7 @@ fun! s:shortestFirst(x, y)
     endif
 endfun
 
-fun! s:getHelpTags(argLead, line, cursorPos)
+silent! fun s:getHelpTags(argLead, line, cursorPos)
     let words = a:argLead->getcompletion('help')
     let filtered = words->copy()->filter({_, v -> v =~# '@py$'})
     if filtered->empty()
@@ -31,20 +27,16 @@ fun! s:getHelpTags(argLead, line, cursorPos)
     return matching->extend(nonmatch)
 endfun
 
-fun! s:canExpandHH()
-    if getcmdtype() == ':'
-        let context = getcmdline()->strpart(0, getcmdpos() - 1)
-        if context == 'hh'
-            return 1
-        endif
-    endif
-    return 0
-endfun
-
-fun! PythondocExpandHH()
-    cabbr <expr> hh     <SID>canExpandHH() ? 'Help' : 'hh'
-endfun
-
 if get(g:, 'pythondoc_hh_expand')
-    call PythondocExpandHH()
+    silent! fun s:canExpandHH()
+        if getcmdtype() == ':'
+            let context = getcmdline()->strpart(0, getcmdpos() - 1)
+            if context == 'hh'
+                return 1
+            endif
+        endif
+        return 0
+    endfun
+
+    cabbr <buffer> <expr> hh     <SID>canExpandHH() ? 'Help' : 'hh'
 endif

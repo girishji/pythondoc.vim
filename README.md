@@ -9,7 +9,6 @@ Access the complete Python official API documentation directly within your edito
 - Comprehensive tags database for precise documentation lookup
 - High-quality documentation comparable to [Dash](https://kapeli.com/dash) or [Zeal](https://zealdocs.org/)
 - Full integration with Vim's help system
-- Fuzzy search support
 
 [![Demo Video](https://asciinema.org/a/vRjU8x5KjkES4RX5BLJixqcQj.svg)](https://asciinema.org/a/vRjU8x5KjkES4RX5BLJixqcQj)
 
@@ -97,17 +96,6 @@ let g:pythondoc_h_expand = 1
 ```vim
 " In ftplugin/python.vim
 exe 'nnoremap <buffer> dK :<c-u>Help <c-r><c-w>'..nr2char(&wildcharm)
-```
-
-3. Configure tab completion (:h 'wildmenu'):
-
-```vim
-" Enhanced completion settings
-set wildchar=<Tab>      " Use Tab for completion
-set wildmenu            " Enable completion menu
-set wildmode=full       " Complete first full match
-set wildoptions+=pum    " Use popup menu
-set wildoptions+=fuzzy  " Optional: Enable fuzzy matching
 ```
 
 ### Tag Format

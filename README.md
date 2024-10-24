@@ -11,9 +11,7 @@ Access the complete Python official API documentation directly within your edito
 - Full integration with Vim's help system
 - Fuzzy search support
 
-------
 [![Demo Video](https://asciinema.org/a/vRjU8x5KjkES4RX5BLJixqcQj.svg)](https://asciinema.org/a/vRjU8x5KjkES4RX5BLJixqcQj)
-------
 
 ## Requirements
 

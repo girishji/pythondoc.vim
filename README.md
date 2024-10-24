@@ -13,6 +13,8 @@ Access the complete Python official API documentation directly within your edito
 
 [![Demo Video](https://asciinema.org/a/vRjU8x5KjkES4RX5BLJixqcQj.svg)](https://asciinema.org/a/vRjU8x5KjkES4RX5BLJixqcQj)
 
+Demo uses [vimsuggest](https://github.com/girishji/vimsuggest) for autocompletion.
+
 ## Requirements
 
 - Vim or Neovim

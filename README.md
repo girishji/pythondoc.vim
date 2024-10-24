@@ -1,47 +1,44 @@
-# Pythondoc - Python Documentation Browser
+# Pythondoc - Python Documentation Browser for Vim/Neovim
 
-Python official API documentation at your fingertips in Vim or Neovim.
+Access the complete Python official API documentation directly within your editor. Search, browse, and autocomplete Python API documentation using Vim's native `:help` and `:helpgrep` commands.
 
-Autocomplete and search Python API using `:help` and `:helpgrep` commands. Open [official API
-documentation](https://docs.python.org/3/) within Vim and lookup function
-signatures, example code, topics, or howto guides. Use the comprehensive tags
-database to target specific topics or function calls to browse.
+## Features
 
-This plugin is not related to the lousy _pydoc_. The quality of information is
-comparable to [Dash](https://kapeli.com/dash) or [Zeal](https://zealdocs.org/).
+- Browse [official Python API documentation](https://docs.python.org/3/) without leaving your editor
+- Search function signatures, example code, topics, tutorials, and howto guides
+- Comprehensive tags database for precise documentation lookup
+- High-quality documentation comparable to [Dash](https://kapeli.com/dash) or [Zeal](https://zealdocs.org/)
+- Full integration with Vim's help system
+- Fuzzy search support
 
-The help files are generated from the official Python repository using the
-[official tool](https://www.sphinx-doc.org/en/master/)
-and [extension](https://github.com/girishji/vimbuilder). Tags appear in
-`function()..topic.pyx` format. You can open the topic by typing `:h topic.pyx`.
-With `wildmenu` enabled, when you type `:h foo<tab>` it will complete functions, methods, classes,
-attributes, topics, etc. which start with letters `foo`. You can also enable fuzzy
-completion. Python library document, howto guides, and tutorial are tokenized.
+## Demo
 
-This plugin provides `:Help` command which searches only Python tags. It is
-a filter on top of builtin `:help` command. Vim adds a `@py` suffix to Python
-tags (unless `helplang` variable is set to `py`) which makes it easy to distinguish.
-
+[![Demo Video](https://asciinema.org/a/vRjU8x5KjkES4RX5BLJixqcQj.svg)](https://asciinema.org/a/vRjU8x5KjkES4RX5BLJixqcQj)
 
 ## Requirements
 
-- Vim
-- Neovim
+- Vim or Neovim
 
 ## Installation
 
-Install using [vim-plug](https://github.com/junegunn/vim-plug). Put the
-following lines in `.vimrc` file.
+Install via [vim-plug](https://github.com/junegunn/vim-plug), [lazy](https://github.com/folke/lazy.nvim) or Vim's built-in package manager.
 
-```
+<details>
+<summary><b>Show installation instructions</b></summary>
+
+### Using vim-plug
+
+Add to your `.vimrc`:
+
+```vim
 call plug#begin()
 Plug 'girishji/pythondoc.vim'
 call plug#end()
 ```
 
-Or use Vim's builtin package manager.
+### Using Neovim's [Lazy](https://github.com/folke/lazy.nvim)
 
-Neovim users could use [Lazy](https://github.com/folke/lazy.nvim)
+Add to your Lua config:
 
 ```lua
 require("lazy").setup({
@@ -49,64 +46,113 @@ require("lazy").setup({
 })
 ```
 
-## Usage
+### Using Vim's built-in package manager
 
-Use `:help <tag>`. It works for both Vim and Nvim. In Vim you can also use
-`:Help <tag>`. It filters only Python documentation.
+#### Linux
 
-In Vim, if you set `g:pythondoc_h_expand = 1`, you can use `:h <tag>` instead of `:Help <tag>`.
-Add
+```bash
+git clone https://github.com/girishji/pythondoc.vim.git $HOME/.vim/pack/downloads/opt/pythondoc.vim
+```
+
+Then add this line to your _vimrc_ file:
 
 ```vim
+packadd vimsuggest
+```
+
+#### Windows
+
+```bash
+git clone https://github.com/girishji/pythondoc.vim.git %USERPROFILE%\vimfiles\pack\downloads\opt\pythondoc.vim
+```
+
+Then add this line to your _vimrc_ file:
+
+```vim
+packadd vimsuggest
+```
+
+</details>
+
+## Basic Usage
+
+### Core Commands
+
+```vim
+:help <tag>     " Access all helpfiles (Python and Vim)
+:Help <tag>     " Python-specific documentation
+```
+
+### Quick Customization Guide
+
+1. Enable shorthand `:h` command:
+
+```vim
+" In vimrc
+let g:pythondoc_h_expand = 1
+```
+
+2. Add keyboard shortcut for cursor word lookup:
+
+```vim
+" In ftplugin/python.vim
 exe 'nnoremap <buffer> dK :<c-u>Help <c-r><c-w>'..nr2char(&wildcharm)
 ```
 
-to `ftplugin/python.vim` to search for the keyword under the cursor by hitting `dK`.
+3. Configure tab completion (:h 'wildmenu'):
 
-This is easier to type. If you decide to put all our settings in after/ftplugin directory, then setting the above global variable is done too late. You could do the following:
-
-```
-import 'pythondoc_abbrev.vim' as abbrev
-abbrev.ExpandH()
-```
-
-You can activate the `wildmenu` for <Tab> completion. You can type `:Help foo<tab>`
-for completion suggestions.
-
-```
-:set wildchar=<Tab>
-:set wildmenu
-:set wildmode=full
-:set wildoptions+=pum
+```vim
+" Enhanced completion settings
+set wildchar=<Tab>      " Use Tab for completion
+set wildmenu            " Enable completion menu
+set wildmode=full       " Complete first full match
+set wildoptions+=pum    " Use popup menu
+set wildoptions+=fuzzy  " Optional: Enable fuzzy matching
 ```
 
-Optionally, you can `:set wildoptions+=fuzzy`.
+### Tag Format
+- Python tags include `@py` suffix in Vim (unless `helplang` is set to `py`)
+- Makes Python documentation easily distinguishable
+- Format: `function()..topic.pyx` (Open the topic by typing `:h topic.pyx`)
 
-## Demo
+## For Maintainers
 
-[![asciicast](https://asciinema.org/a/vRjU8x5KjkES4RX5BLJixqcQj.svg)](https://asciinema.org/a/vRjU8x5KjkES4RX5BLJixqcQj)
+The help files are generated from the official Python repository using the [official tool](https://www.sphinx-doc.org/en/master/)  and [extension](https://github.com/girishji/vimbuilder).
 
-Demo uses [autosuggest](https://github.com/girishji/autosuggest.vim) plugin,
-but <Tab> completion using `wildmenu` works the same.
+Here are the steps to generate help files:
 
-## Note to Maintainers
+1. **Setup:**
+   ```bash
+   # Clone repositories
+   git clone https://github.com/girishji/pythondoc.vim
+   mkdir tmp
+   git clone https://github.com/python/cpython tmp/
+   ```
 
-This plugin is created for personal use. I plan to keep the documentation up to
-date with new Python releases. However, here are
-the steps to generate help files from official Python repository.
+2. **Create Python Environment:**
+   ```bash
+   cd pythondoc.vim/tmp/cpython/Doc
+   make venv
+   ```
 
-- Clone this plugin in your workspace
-- Create a `tmp` directory
-- Clone [Python repository](https://github.com/python/cpython) into `tmp`
-- Create virtual environment using the official makefile (`make venv` inside `pythondoc.vim/tmp/cpython/Doc`)
-- Add "vimbuilder" to `requirements.txt` file
-- Set `vimhelp_filename_extension = 'pyx'` in conf.py file
-- Edit the Makefile in `Doc` directory to
-    * Create a new target 'vimhelp' akin to one of the existing targets like 'html' or 'text'
-    * (Optional) Comment out lines related to `Blurb` or `NEWS` to avoid a harmless error at the end
-- (Recommended) Rename `rst` files in `howto` directory by prepending `howto-` to filenames
-    * Edit `howto/howto-index.rst` and `content.rst` to reflect filenames change
-- Generate Vim help files (`make vimhelp`)
-- Copy `pyx` files from `build/vimhelp/[library|howto]` to `doc` directory
-- Generate tags from main directory: `vim "+helptags ./doc | q"`
+3. **Configure Build:**
+   - Add "vimbuilder" to `requirements.txt`
+   - Set in conf.py: `vimhelp_filename_extension = 'pyx'`
+   - Modify Doc/Makefile:
+     - Add 'vimhelp' target (similar to 'html' or 'text')
+     - Optional: Comment out Blurb/NEWS lines to avoid harmless errors
 
+4. **Prepare Documentation:**
+   - Rename howto/*.rst files: prepend 'howto-'
+   - Update references in (to reflect change of file name):
+     - howto/howto-index.rst
+     - content.rst
+
+5. **Generate Documentation:**
+   ```bash
+   make vimhelp
+   cp build/vimhelp/{library,howto}/*.pyx doc/
+   vim "+helptags ./doc | q"
+   ```
+
+This plugin is maintained for personal use but aims to stay current with Python releases.

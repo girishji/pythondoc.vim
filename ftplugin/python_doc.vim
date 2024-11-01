@@ -1,7 +1,10 @@
-command! -buffer -nargs=1 -complete=customlist,s:getHelpTags Help help <args>
+" Only do this when not yet done for this buffer
+if exists("b:did_pythondoc_ftplugin")
+    finish
+endif
+let b:did_pythondoc_ftplugin = 1
 
-" " reserve to pydoc since `:help` leads to Vim9script doc, say on `import`
-" setlocal keywordprg=:Help
+command! -buffer -nargs=1 -complete=customlist,s:getHelpTags Help help <args>
 
 silent! fun s:shortestFirst(x, y)
     let pat = '\v.+\ze\.\.\S+(\.\w{3})?(\@py)?'
@@ -41,3 +44,12 @@ if get(g:, 'pythondoc_h_expand')
 
     cabbr <buffer> <expr> h     <SID>canExpandH() ? 'Help' : 'h'
 endif
+
+" Load the docs only for python filetype
+silent! fun s:docDir()
+    let script = getscriptinfo({'name': 'pythondoc\.vim.*python_doc\.vim'})
+    return script == [] ? '' : $'{script[0].name->fnamemodify(":p:h:h")}/_doc'
+endfun
+exec $'set rtp+={s:docDir()}'
+" XXX: b:undo_ftplugin gets overwritten by global (Vim's) python ftplugin
+" let b:undo_ftplugin .= $' | set rtp-={s:docDir()}'

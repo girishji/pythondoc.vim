@@ -139,8 +139,8 @@ Here are the steps to generate help files:
 5. **Generate Documentation:**
    ```bash
    make vimhelp
-   cp build/vimhelp/{library,howto}/*.pyx doc/
-   vim "+helptags ./doc | q"
+   cp build/vimhelp/{library,howto}/*.pyx _doc/doc/
+   vim "+helptags ./_doc/doc | q"
    ```
 
 This plugin is maintained for personal use but aims to stay current with Python releases.
